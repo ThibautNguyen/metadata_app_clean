@@ -7,9 +7,10 @@ def get_db_connection():
     try:
         conn = psycopg2.connect(
             host=st.secrets["NEON_HOST"],
-            database=st.secrets["NEON_DATABASE"],
+            database="neondb",
             user=st.secrets["NEON_USER"],
-            password=st.secrets["NEON_PASSWORD"]
+            password=st.secrets["NEON_PASSWORD"],
+            sslmode='require'
         )
         return conn
     except Exception as e:
@@ -90,9 +91,10 @@ def test_connection():
     try:
         conn = psycopg2.connect(
             host=st.secrets["NEON_HOST"],
-            database=st.secrets["NEON_DATABASE"],
+            database="neondb",
             user=st.secrets["NEON_USER"],
-            password=st.secrets["NEON_PASSWORD"]
+            password=st.secrets["NEON_PASSWORD"],
+            sslmode='require'
         )
         with conn.cursor() as cur:
             cur.execute("SELECT version();")
