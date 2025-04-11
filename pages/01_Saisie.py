@@ -60,7 +60,7 @@ with tab1:
 
         # Description détaillée
         st.subheader("Description")
-        description = st.text_area("Description détaillée *", key="description", 
+        description = st.text_area("Description détaillée", key="description", 
                                  help="Description complète de la donnée, son contexte et son utilisation")
 
         # Informations supplémentaires
@@ -68,15 +68,28 @@ with tab1:
         col3, col4 = st.columns(2)
         
         with col3:
-            contact = st.text_input("Contact *", key="contact", help="Personne ou service à contacter")
+            contact = st.text_input("Contact", key="contact", help="Personne ou service à contacter")
             source = st.text_input("Source", key="source", help="Source originale des données")
         
         with col4:
-            year = st.number_input("Année *", min_value=1900, max_value=datetime.now().year, 
+            year = st.number_input("Année", min_value=1900, max_value=datetime.now().year, 
                                  value=datetime.now().year, key="year")
-            license = st.selectbox("Licence *", 
+            license = st.selectbox("Licence", 
                                  ["CC BY", "CC BY-SA", "CC BY-NC", "CC BY-ND", "CC BY-NC-SA", "CC BY-NC-ND"],
                                  key="license")
+
+        # 4 premières lignes du fichier CSV
+        st.subheader("4 premières lignes du fichier CSV")
+        st.write("Copiez-collez les 4 premières lignes (en-tête compris) de la table au format CSV")
+        separator = st.radio("Séparateur", [";", ","], horizontal=True)
+        csv_content = st.text_area("Contenu CSV", height=150, 
+                                 help="Collez ici les 4 premières lignes de votre fichier CSV")
+
+        # Dictionnaire des variables
+        st.subheader("Dictionnaire des variables")
+        st.write("Copiez-collez le dictionnaire des variables depuis le fichier CSV correspondant")
+        variable_dict = st.text_area("Dictionnaire", height=150,
+                                   help="Collez ici le dictionnaire des variables")
 
         # Bouton de soumission
         submitted = st.form_submit_button("Enregistrer les métadonnées")
@@ -87,10 +100,8 @@ with tab1:
                 "table_name": "Nom de la table",
                 "producer": "Producteur",
                 "title": "Titre",
-                "description": "Description",
-                "contact": "Contact",
-                "year": "Année",
-                "license": "Licence"
+                "category": "Catégorie",
+                "frequency": "Fréquence de mise à jour"
             }
             
             missing_fields = []
@@ -115,7 +126,10 @@ with tab1:
                     "contact": st.session_state.contact,
                     "source": st.session_state.source,
                     "year": st.session_state.year,
-                    "license": st.session_state.license
+                    "license": st.session_state.license,
+                    "csv_separator": separator,
+                    "csv_content": csv_content,
+                    "variable_dictionary": variable_dict
                 }
                 
                 # Sauvegarde en JSON
