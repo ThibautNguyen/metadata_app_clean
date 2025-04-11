@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from db_utils import test_connection
+from db_utils import test_connection, init_db
 
 # Configuration de la page
 st.set_page_config(
@@ -26,15 +26,23 @@ st.markdown("""
 st.title("Catalogue des métadonnées")
 st.write("Recherchez et explorez les métadonnées disponibles pour vos analyses et projets.")
 
-# Test de connexion à la base de données
-col1, col2, col3 = st.columns([1,2,1])
-with col2:
-    if st.button("🔌 Tester la connexion à la base de données", use_container_width=True):
+# Test de connexion et initialisation de la base de données
+col1, col2, col3 = st.columns([1,1,1])
+with col1:
+    if st.button("🔌 Tester la connexion", use_container_width=True):
         succes, message = test_connection()
         if succes:
             st.success(message)
         else:
             st.error(message)
+
+with col2:
+    if st.button("🗃️ Initialiser la base de données", use_container_width=True):
+        try:
+            init_db()
+            st.success("Table des métadonnées créée avec succès!")
+        except Exception as e:
+            st.error(f"Erreur lors de l'initialisation : {str(e)}")
 
 # Interface de recherche
 st.markdown("## Recherche")
