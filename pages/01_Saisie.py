@@ -36,7 +36,7 @@ st.title("Saisie des métadonnées")
 st.write("Remplissez le formulaire ci-dessous pour ajouter de nouvelles métadonnées.")
 
 # Création des onglets
-tab1, tab2, tab3 = st.tabs(["Informations générales", "Structure des données", "Validation"])
+tab1, tab2 = st.tabs(["Saisie manuelle", "Charger fichier"])
 
 with tab1:
     with st.form("metadata_form"):
@@ -80,6 +80,51 @@ with tab1:
 
         # Bouton de soumission
         submitted = st.form_submit_button("Enregistrer les métadonnées")
+        
+        if submitted:
+            # Validation des champs obligatoires
+            required_fields = {
+                "table_name": "Nom de la table",
+                "producer": "Producteur",
+                "title": "Titre",
+                "description": "Description",
+                "contact": "Contact",
+                "year": "Année",
+                "license": "Licence"
+            }
+            
+            missing_fields = []
+            for field, label in required_fields.items():
+                if not st.session_state.get(field):
+                    missing_fields.append(label)
+            
+            if missing_fields:
+                st.error("Veuillez remplir les champs obligatoires suivants :")
+                for field in missing_fields:
+                    st.write(f"- {field}")
+            else:
+                # Préparation des métadonnées
+                metadata = {
+                    "table_name": st.session_state.table_name,
+                    "producer": st.session_state.producer,
+                    "title": st.session_state.title,
+                    "description": st.session_state.description,
+                    "category": st.session_state.category,
+                    "last_update": st.session_state.last_update.strftime("%Y-%m-%d"),
+                    "frequency": st.session_state.frequency,
+                    "contact": st.session_state.contact,
+                    "source": st.session_state.source,
+                    "year": st.session_state.year,
+                    "license": st.session_state.license
+                }
+                
+                # Sauvegarde en JSON
+                os.makedirs("metadata", exist_ok=True)
+                with open(f"metadata/{st.session_state.table_name}.json", "w", encoding="utf-8") as f:
+                    json.dump(metadata, f, ensure_ascii=False, indent=4)
+                
+                st.success("Métadonnées enregistrées avec succès!")
+                st.json(metadata)
 
 with tab2:
     st.subheader("Structure des données")
@@ -106,53 +151,6 @@ with tab2:
         except Exception as e:
             st.error(f"Erreur lors de la lecture du fichier : {str(e)}")
 
-with tab3:
-    st.subheader("Validation des métadonnées")
-    if submitted:
-        # Validation des champs obligatoires
-        required_fields = {
-            "table_name": "Nom de la table",
-            "producer": "Producteur",
-            "title": "Titre",
-            "description": "Description",
-            "contact": "Contact",
-            "year": "Année",
-            "license": "Licence"
-        }
-        
-        missing_fields = []
-        for field, label in required_fields.items():
-            if not st.session_state.get(field):
-                missing_fields.append(label)
-        
-        if missing_fields:
-            st.error("Veuillez remplir les champs obligatoires suivants :")
-            for field in missing_fields:
-                st.write(f"- {field}")
-        else:
-            # Préparation des métadonnées
-            metadata = {
-                "table_name": st.session_state.table_name,
-                "producer": st.session_state.producer,
-                "title": st.session_state.title,
-                "description": st.session_state.description,
-                "category": st.session_state.category,
-                "last_update": st.session_state.last_update.strftime("%Y-%m-%d"),
-                "frequency": st.session_state.frequency,
-                "contact": st.session_state.contact,
-                "source": st.session_state.source,
-                "year": st.session_state.year,
-                "license": st.session_state.license
-            }
-            
-            # Sauvegarde en JSON
-            os.makedirs("metadata", exist_ok=True)
-            with open(f"metadata/{st.session_state.table_name}.json", "w", encoding="utf-8") as f:
-                json.dump(metadata, f, ensure_ascii=False, indent=4)
-            
-            st.success("Métadonnées enregistrées avec succès!")
-            st.json(metadata)
-
 # Section d'aide
 with st.expander("Aide pour la saisie"):
     st.markdown("""
@@ -169,7 +167,7 @@ with st.expander("Aide pour la saisie"):
     1. Soyez aussi précis que possible dans la description
     2. Indiquez la source des données si disponible
     3. Mettez à jour la date de dernière modification
-    4. Utilisez l'onglet "Structure des données" pour importer un fichier CSV
+    4. Utilisez l'onglet "Charger fichier" pour importer un fichier CSV
     """)
 
 # Pied de page
