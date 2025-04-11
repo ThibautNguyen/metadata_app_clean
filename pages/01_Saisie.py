@@ -93,16 +93,28 @@ with tab1:
         col7, col8 = st.columns(2)
         
         with col7:
-            contact = st.text_input("Contact", key="contact", help="Personne ou service à contacter")
-            source = st.text_input("Source", key="source", help="Source originale des données")
+            contact = st.text_input("Envoi par", 
+                                  help="Personne ayant rempli le formulaire",
+                                  key="contact")
+            source = st.text_input("Source", 
+                                 help="URL de la source originale ou nom du client référent ayant transmis la donnée",
+                                 key="source")
         
         with col8:
-            last_update = st.date_input("Dernière mise à jour", key="last_update", value=datetime.now())
+            last_update = st.date_input("Dernière mise à jour", 
+                                      help="date de la dernière mise à jour de la table sur la plateforme de téléchargement",
+                                      key="last_update", 
+                                      value=datetime.now())
             frequency = st.selectbox("Fréquence de mise à jour *", 
                                    ["Quotidienne", "Hebdomadaire", "Mensuelle", "Annuelle", "Ponctuelle"],
+                                   index=3,  # "Annuelle" par défaut
                                    key="frequency")
             license = st.selectbox("Licence", 
-                                 ["CC BY", "CC BY-SA", "CC BY-NC", "CC BY-ND", "CC BY-NC-SA", "CC BY-NC-ND"],
+                                 ["Licence ouverte / Open License (Etalab)",
+                                  "Licence ODbL (Open Database License)",
+                                  "Creative Commons (CC)",
+                                  "Autre licence de donnée ouverte",
+                                  "Licence de données privées"],
                                  key="license")
 
         # 4 premières lignes du fichier CSV
@@ -199,8 +211,8 @@ with tab2:
 with st.expander("Aide pour la saisie"):
     st.markdown("""
     ### Champs obligatoires
-    - **Nom de la base** : Nom de la base de données
-    - **Schéma** : Schéma de la table
+    - **Nom de la base** : Nom de la base de données dans le SGBD Intelligence des Territoires
+    - **Schéma** : Schéma de la table dans le SGBD Intelligence des Territoires
     - **Nom de la table** : Nom de la table dans la base de données
     - **Producteur de la donnée** : Nom de l'organisme pourvoyeur de la donnée
     - **Nom du jeu de données** : Nom donné par le producteur de données
@@ -208,10 +220,30 @@ with st.expander("Aide pour la saisie"):
     - **Fréquence de mise à jour** : Fréquence à laquelle les données sont mises à jour
     
     ### Conseils de saisie
-    1. Soyez aussi précis que possible dans la description
-    2. Indiquez la source des données si disponible
-    3. Mettez à jour la date de dernière modification
-    4. Utilisez l'onglet "Charger fichier" pour importer un fichier CSV
+    1. **Informations de base**
+       - Le nom de la base est actuellement limité à "opendata"
+       - Le schéma doit correspondre à l'une des catégories prédéfinies
+       - Le nom de la table doit être unique dans la base de données
+       - Le producteur de la donnée doit être l'organisme source des données
+       - Le nom du jeu de données doit être celui utilisé par le producteur
+       - Le millésime doit correspondre à l'année de référence des données
+    
+    2. **Description**
+       - Soyez aussi précis que possible dans la description
+       - Incluez le contexte d'utilisation des données
+       - Mentionnez les limitations éventuelles
+    
+    3. **Informations supplémentaires**
+       - Indiquez la personne qui remplit le formulaire
+       - Précisez la source originale des données (URL ou client référent)
+       - Mettez à jour la date de dernière modification
+       - Sélectionnez la fréquence de mise à jour appropriée
+       - Choisissez la licence qui correspond aux conditions d'utilisation
+    
+    4. **Données CSV**
+       - Copiez-collez les 4 premières lignes du fichier CSV
+       - Indiquez le séparateur utilisé (; ou ,)
+       - Ajoutez le dictionnaire des variables si disponible
     """)
 
 # Pied de page
