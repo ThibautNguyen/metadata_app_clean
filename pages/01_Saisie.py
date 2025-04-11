@@ -42,21 +42,46 @@ with tab1:
     with st.form("metadata_form"):
         # Informations de base
         st.subheader("Informations de base")
+        
+        # Première ligne : Nom de la base et Schéma
         col1, col2 = st.columns(2)
-        
         with col1:
-            table_name = st.text_input("Nom de la table *", key="table_name", help="Nom unique de la table")
-            producer = st.text_input("Producteur *", key="producer", help="Organisation responsable de la donnée")
-            category = st.selectbox("Catégorie *", 
-                                  ["Économie", "Environnement", "Démographie", "Transport", "Énergie", "Autre"],
-                                  key="category")
-        
+            database_name = st.selectbox("Nom de la base *", 
+                                       ["opendata"],
+                                       help="dans le SGBD Intelligence des Territoires",
+                                       key="database_name")
         with col2:
-            title = st.text_input("Titre *", key="title", help="Titre descriptif de la donnée")
-            last_update = st.date_input("Dernière mise à jour", key="last_update", value=datetime.now())
-            frequency = st.selectbox("Fréquence de mise à jour *", 
-                                   ["Quotidienne", "Hebdomadaire", "Mensuelle", "Annuelle", "Ponctuelle"],
-                                   key="frequency")
+            schema = st.selectbox("Schéma *",
+                                ["admin", "economie", "education", "energie", "environnement", 
+                                 "logement", "mobilite", "population", "public", "referentiels", 
+                                 "sante", "securite", "social"],
+                                help="dans le SGBD Intelligence des Territoires",
+                                key="schema")
+        
+        # Deuxième ligne : Nom de la table et Producteur
+        col3, col4 = st.columns(2)
+        with col3:
+            table_name = st.text_input("Nom de la table *", 
+                                     help="dans le SGBD Intelligence des Territoires",
+                                     key="table_name")
+        with col4:
+            producer = st.text_input("Producteur de la donnée *",
+                                   help="Nom de l'organisme pourvoyeur de la donnée",
+                                   key="producer")
+        
+        # Troisième ligne : Nom du jeu de données et Millésime
+        col5, col6 = st.columns(2)
+        with col5:
+            dataset_name = st.text_input("Nom du jeu de données *",
+                                       help="Nom donné par le producteur de données",
+                                       key="dataset_name")
+        with col6:
+            year = st.number_input("Millésime/année *",
+                                 min_value=1900,
+                                 max_value=datetime.now().year,
+                                 value=datetime.now().year,
+                                 help="Année de référence des données",
+                                 key="year")
 
         # Description détaillée
         st.subheader("Description")
@@ -65,15 +90,17 @@ with tab1:
 
         # Informations supplémentaires
         st.subheader("Informations supplémentaires")
-        col3, col4 = st.columns(2)
+        col7, col8 = st.columns(2)
         
-        with col3:
+        with col7:
             contact = st.text_input("Contact", key="contact", help="Personne ou service à contacter")
             source = st.text_input("Source", key="source", help="Source originale des données")
         
-        with col4:
-            year = st.number_input("Année", min_value=1900, max_value=datetime.now().year, 
-                                 value=datetime.now().year, key="year")
+        with col8:
+            last_update = st.date_input("Dernière mise à jour", key="last_update", value=datetime.now())
+            frequency = st.selectbox("Fréquence de mise à jour *", 
+                                   ["Quotidienne", "Hebdomadaire", "Mensuelle", "Annuelle", "Ponctuelle"],
+                                   key="frequency")
             license = st.selectbox("Licence", 
                                  ["CC BY", "CC BY-SA", "CC BY-NC", "CC BY-ND", "CC BY-NC-SA", "CC BY-NC-ND"],
                                  key="license")
@@ -97,10 +124,12 @@ with tab1:
         if submitted:
             # Validation des champs obligatoires
             required_fields = {
+                "database_name": "Nom de la base",
+                "schema": "Schéma",
                 "table_name": "Nom de la table",
-                "producer": "Producteur",
-                "title": "Titre",
-                "category": "Catégorie",
+                "producer": "Producteur de la donnée",
+                "dataset_name": "Nom du jeu de données",
+                "year": "Millésime/année",
                 "frequency": "Fréquence de mise à jour"
             }
             
@@ -116,16 +145,17 @@ with tab1:
             else:
                 # Préparation des métadonnées
                 metadata = {
+                    "database_name": st.session_state.database_name,
+                    "schema": st.session_state.schema,
                     "table_name": st.session_state.table_name,
                     "producer": st.session_state.producer,
-                    "title": st.session_state.title,
+                    "dataset_name": st.session_state.dataset_name,
+                    "year": st.session_state.year,
                     "description": st.session_state.description,
-                    "category": st.session_state.category,
                     "last_update": st.session_state.last_update.strftime("%Y-%m-%d"),
                     "frequency": st.session_state.frequency,
                     "contact": st.session_state.contact,
                     "source": st.session_state.source,
-                    "year": st.session_state.year,
                     "license": st.session_state.license,
                     "csv_separator": separator,
                     "csv_content": csv_content,
@@ -169,13 +199,13 @@ with tab2:
 with st.expander("Aide pour la saisie"):
     st.markdown("""
     ### Champs obligatoires
-    - **Nom de la table** : Identifiant unique de la table
-    - **Producteur** : Organisation responsable
-    - **Titre** : Titre descriptif de la donnée
-    - **Description** : Description détaillée
-    - **Contact** : Personne ou service à contacter
-    - **Année** : Année de référence
-    - **Licence** : Type de licence d'utilisation
+    - **Nom de la base** : Nom de la base de données
+    - **Schéma** : Schéma de la table
+    - **Nom de la table** : Nom de la table dans la base de données
+    - **Producteur de la donnée** : Nom de l'organisme pourvoyeur de la donnée
+    - **Nom du jeu de données** : Nom donné par le producteur de données
+    - **Millésime/année** : Année de référence des données
+    - **Fréquence de mise à jour** : Fréquence à laquelle les données sont mises à jour
     
     ### Conseils de saisie
     1. Soyez aussi précis que possible dans la description
