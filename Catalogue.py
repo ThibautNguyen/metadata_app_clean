@@ -9,13 +9,20 @@ st.set_page_config(
     layout="wide"
 )
 
+# Titre de la page
+st.title("Catalogue de Métadonnées")
+
 # Test de connexion à la base de données
-if st.sidebar.button("🔌 Tester la connexion"):
-    succes, message = test_connection()
-    if succes:
-        st.sidebar.success(message)
-    else:
-        st.sidebar.error(message)
+col1, col2, col3 = st.columns([1,2,1])
+with col2:
+    if st.button("🔌 Tester la connexion à la base de données", use_container_width=True):
+        succes, message = test_connection()
+        if succes:
+            st.success(message)
+        else:
+            st.error(message)
+
+st.write("Bienvenue dans le catalogue de métadonnées. Utilisez la barre latérale pour naviguer.")
 
 # CSS pour le style de l'interface
 st.markdown("""
@@ -29,10 +36,6 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
-# Titre de la page
-st.title("Catalogue de Métadonnées")
-st.write("Bienvenue dans le catalogue de métadonnées. Utilisez la barre latérale pour naviguer.")
 
 # Données de démonstration
 demo_metadata = [
