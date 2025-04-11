@@ -4,25 +4,10 @@ from db_utils import test_connection
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Catalogue de Métadonnées",
+    page_title="Catalogue des métadonnées",
     page_icon="📚",
     layout="wide"
 )
-
-# Titre de la page
-st.title("Catalogue de Métadonnées")
-
-# Test de connexion à la base de données
-col1, col2, col3 = st.columns([1,2,1])
-with col2:
-    if st.button("🔌 Tester la connexion à la base de données", use_container_width=True):
-        succes, message = test_connection()
-        if succes:
-            st.success(message)
-        else:
-            st.error(message)
-
-st.write("Bienvenue dans le catalogue de métadonnées. Utilisez la barre latérale pour naviguer.")
 
 # CSS pour le style de l'interface
 st.markdown("""
@@ -36,6 +21,30 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+# Titre et description
+st.title("Catalogue des métadonnées")
+st.write("Recherchez et explorez les métadonnées disponibles pour vos analyses et projets.")
+
+# Test de connexion à la base de données
+col1, col2, col3 = st.columns([1,2,1])
+with col2:
+    if st.button("🔌 Tester la connexion à la base de données", use_container_width=True):
+        succes, message = test_connection()
+        if succes:
+            st.success(message)
+        else:
+            st.error(message)
+
+# Interface de recherche
+st.markdown("## Recherche")
+col1, col2 = st.columns([3, 1])
+
+with col1:
+    search_text = st.text_input("Rechercher par mot-clé", placeholder="Entrez un terme à rechercher...")
+
+with col2:
+    selected_producer = st.selectbox("Filtrer par producteur", ["Tous", "INSEE", "Météo France", "Citepa (GES)"])
 
 # Données de démonstration
 demo_metadata = [
@@ -61,16 +70,6 @@ demo_metadata = [
         "last_updated": "2022-11-30 16:45:10"
     }
 ]
-
-# Interface de recherche
-st.markdown("## Recherche")
-col1, col2 = st.columns([3, 1])
-
-with col1:
-    search_text = st.text_input("Rechercher par mot-clé", placeholder="Entrez un terme à rechercher...")
-
-with col2:
-    selected_producer = st.selectbox("Filtrer par producteur", ["Tous", "INSEE", "Météo France", "Citepa (GES)"])
 
 # Afficher le nombre total de métadonnées
 st.info(f"Nombre total de métadonnées disponibles : {len(demo_metadata)}")
