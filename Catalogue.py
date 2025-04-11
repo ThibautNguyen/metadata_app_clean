@@ -1,12 +1,21 @@
 import streamlit as st
 import pandas as pd
+from db_utils import test_connection
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Catalogue des métadonnées",
+    page_title="Catalogue de Métadonnées",
     page_icon="📚",
     layout="wide"
 )
+
+# Test de connexion à la base de données
+if st.sidebar.button("🔌 Tester la connexion"):
+    succes, message = test_connection()
+    if succes:
+        st.sidebar.success(message)
+    else:
+        st.sidebar.error(message)
 
 # CSS pour le style de l'interface
 st.markdown("""
@@ -21,9 +30,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Titre et description
-st.title("Catalogue des métadonnées")
-st.write("Recherchez et explorez les métadonnées disponibles pour vos analyses et projets.")
+# Titre de la page
+st.title("Catalogue de Métadonnées")
+st.write("Bienvenue dans le catalogue de métadonnées. Utilisez la barre latérale pour naviguer.")
 
 # Données de démonstration
 demo_metadata = [
