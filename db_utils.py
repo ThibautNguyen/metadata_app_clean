@@ -52,36 +52,142 @@ def init_db():
     if conn:
         try:
             with conn.cursor() as cur:
-                # Création de la table si elle n'existe pas
+                # Vérification si la table metadata existe
                 cur.execute("""
-                    CREATE TABLE IF NOT EXISTS metadata (
-                        id SERIAL PRIMARY KEY,
-                        nom_fichier VARCHAR(255) NOT NULL,
-                        nom_base VARCHAR(255),
-                        schema VARCHAR(255),
-                        description TEXT,
-                        date_creation DATE,
-                        date_maj DATE,
-                        source VARCHAR(255),
-                        frequence_maj VARCHAR(255),
-                        licence VARCHAR(255),
-                        envoi_par VARCHAR(255),
-                        contact VARCHAR(255),
-                        mots_cles TEXT,
-                        notes TEXT,
-                        contenu_csv JSONB,
-                        dictionnaire JSONB,
-                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                    )
+                    SELECT table_name 
+                    FROM information_schema.tables 
+                    WHERE table_name = 'metadata'
                 """)
+                
+                table_exists = cur.fetchone() is not None
+                
+                # Création de la table si elle n'existe pas
+                if not table_exists:
+                    cur.execute("""
+                        CREATE TABLE metadata (
+                            id SERIAL PRIMARY KEY,
+                            nom_table VARCHAR(255),
+                            nom_base VARCHAR(255) NOT NULL,
+                            producteur VARCHAR(255),
+                            schema VARCHAR(255),
+                            description TEXT,
+                            millesime DATE,
+                            date_maj DATE,
+                            source VARCHAR(255),
+                            frequence_maj VARCHAR(255),
+                            licence VARCHAR(255),
+                            envoi_par VARCHAR(255),
+                            contact VARCHAR(255),
+                            mots_cles TEXT,
+                            notes TEXT,
+                            contenu_csv JSONB,
+                            dictionnaire JSONB,
+                            granularite_geo VARCHAR(100),
+                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                        )
+                    """)
+                    logging.info("Table metadata créée")
+                else:
+                    # Vérifier si les anciennes colonnes nom_fichier existe
+                    cur.execute("""
+                        SELECT column_name 
+                        FROM information_schema.columns 
+                        WHERE table_name = 'metadata' AND column_name = 'nom_fichier'
+                    """)
+                    old_column_exists = cur.fetchone() is not None
+                    
+                    # Si l'ancienne colonne existe, la renommer
+                    if old_column_exists:
+                        try:
+                            cur.execute("ALTER TABLE metadata RENAME COLUMN nom_fichier TO nom_base")
+                            logging.info("Colonne nom_fichier renommée en nom_base")
+                        except Exception as e:
+                            logging.warning(f"Erreur lors du renommage de la colonne nom_fichier : {str(e)}")
+                    
+                    # Vérifier si l'ancienne colonne date_creation existe
+                    cur.execute("""
+                        SELECT column_name 
+                        FROM information_schema.columns 
+                        WHERE table_name = 'metadata' AND column_name = 'date_creation'
+                    """)
+                    date_creation_exists = cur.fetchone() is not None
+                    
+                    # Vérifier si la nouvelle colonne millesime existe
+                    cur.execute("""
+                        SELECT column_name 
+                        FROM information_schema.columns 
+                        WHERE table_name = 'metadata' AND column_name = 'millesime'
+                    """)
+                    millesime_exists = cur.fetchone() is not None
+                    
+                    # Si l'ancienne colonne existe mais pas la nouvelle, la renommer
+                    if date_creation_exists and not millesime_exists:
+                        try:
+                            cur.execute("ALTER TABLE metadata RENAME COLUMN date_creation TO millesime")
+                            logging.info("Colonne date_creation renommée en millesime")
+                        except Exception as e:
+                            logging.warning(f"Erreur lors du renommage de la colonne date_creation : {str(e)}")
+                
+                # Vérification pour les autres colonnes nom_table et granularite_geo
+                cur.execute("""
+                    SELECT column_name 
+                    FROM information_schema.columns 
+                    WHERE table_name = 'metadata' AND column_name = 'nom_table'
+                """)
+                
+                nom_table_exists = cur.fetchone() is not None
+                if not nom_table_exists:
+                    try:
+                        cur.execute("ALTER TABLE metadata ADD COLUMN nom_table VARCHAR(255)")
+                        logging.info("Colonne nom_table ajoutée à la table metadata")
+                    except Exception as e:
+                        logging.warning(f"Impossible d'ajouter la colonne nom_table : {str(e)}")
+                
+                cur.execute("""
+                    SELECT column_name 
+                    FROM information_schema.columns 
+                    WHERE table_name = 'metadata' AND column_name = 'granularite_geo'
+                """)
+                
+                granularite_geo_exists = cur.fetchone() is not None
+                if not granularite_geo_exists:
+                    try:
+                        cur.execute("ALTER TABLE metadata ADD COLUMN granularite_geo VARCHAR(100)")
+                        logging.info("Colonne granularite_geo ajoutée à la table metadata")
+                    except Exception as e:
+                        logging.warning(f"Impossible d'ajouter la colonne granularite_geo : {str(e)}")
+                
                 conn.commit()
-                logging.info("Table metadata créée ou déjà existante")
-                st.success("Table metadata créée ou déjà existante")
+                logging.info("Table metadata configurée")
         except Exception as e:
             logging.error(f"Erreur lors de l'initialisation de la base de données : {str(e)}")
             st.error(f"Erreur lors de l'initialisation de la base de données : {str(e)}")
         finally:
             conn.close()
+
+def get_metadata_columns():
+    """Récupère la liste des colonnes de la table metadata"""
+    conn = get_db_connection()
+    if not conn:
+        return []
+        
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT column_name 
+                FROM information_schema.columns 
+                WHERE table_name = 'metadata'
+                ORDER BY ordinal_position
+            """)
+            
+            columns = [row[0] for row in cur.fetchall()]
+            return columns
+            
+    except Exception as e:
+        logging.error(f"Erreur lors de la récupération des colonnes : {str(e)}")
+        return []
+    finally:
+        conn.close()
 
 def get_metadata(filters=None):
     """Récupère les métadonnées de la base de données avec des filtres optionnels"""
@@ -98,13 +204,17 @@ def get_metadata(filters=None):
             if filters is not None and isinstance(filters, str) and filters.strip():
                 search_term = f"%{filters}%"
                 query += """ WHERE 
-                    nom_fichier ILIKE %s OR 
                     nom_base ILIKE %s OR 
+                    producteur ILIKE %s OR 
                     schema ILIKE %s OR 
-                    description ILIKE %s OR 
-                    mots_cles ILIKE %s
+                    description ILIKE %s OR
+                    COALESCE(nom_table, '') ILIKE %s OR
+                    COALESCE(source, '') ILIKE %s OR
+                    COALESCE(licence, '') ILIKE %s OR
+                    COALESCE(envoi_par, '') ILIKE %s
                 """
-                params = [search_term, search_term, search_term, search_term, search_term]
+                
+                params = [search_term] * 8  # Répète le terme pour chaque condition OR
             # Si un dictionnaire de filtres est passé
             elif filters and isinstance(filters, dict):
                 conditions = []
@@ -133,7 +243,6 @@ def get_metadata(filters=None):
                         if isinstance(metadata["contenu_csv"], str):
                             metadata["contenu_csv"] = json.loads(metadata["contenu_csv"])
                     except json.JSONDecodeError:
-                        st.warning("Erreur lors du décodage du contenu CSV")
                         logging.warning("Erreur lors du décodage du contenu CSV")
                 
                 if metadata.get("dictionnaire"):
@@ -141,7 +250,6 @@ def get_metadata(filters=None):
                         if isinstance(metadata["dictionnaire"], str):
                             metadata["dictionnaire"] = json.loads(metadata["dictionnaire"])
                     except json.JSONDecodeError:
-                        st.warning("Erreur lors du décodage du dictionnaire")
                         logging.warning("Erreur lors du décodage du dictionnaire")
                 
                 results.append(metadata)
@@ -158,8 +266,6 @@ def get_metadata(filters=None):
 
 def save_metadata(metadata):
     """Sauvegarde les métadonnées dans la base de données"""
-    st.write("=== Début de la sauvegarde des métadonnées ===")
-    st.write("Données reçues :", metadata)
     logging.info("Début de la sauvegarde des métadonnées")
     logging.debug(f"Données reçues : {metadata}")
     
@@ -182,13 +288,12 @@ def save_metadata(metadata):
         with conn.cursor() as cur:
             # Vérification des champs requis
             required_fields = {
-                "nom_fichier": metadata.get("nom_fichier"),
-                "nom_base": metadata.get("informations_base", {}).get("nom_base"),
+                "nom_base": metadata.get("nom_fichier"),  # nom_fichier dans le dictionnaire correspond à nom_base dans la BD
+                "producteur": metadata.get("informations_base", {}).get("nom_base"),  # nom_base dans le dictionnaire correspond à producteur dans la BD
                 "schema": metadata.get("informations_base", {}).get("schema"),
                 "description": metadata.get("informations_base", {}).get("description")
             }
             
-            st.write("Champs requis vérifiés :", required_fields)
             logging.debug(f"Champs requis vérifiés : {required_fields}")
             
             missing_fields = [field for field, value in required_fields.items() if not value]
@@ -209,7 +314,20 @@ def save_metadata(metadata):
                 dictionnaire_json = None
                 if "dictionnaire" in metadata:
                     logging.debug("Conversion du dictionnaire en JSON")
+                    # Vérifier si le dictionnaire est volumineux
+                    dict_data = metadata["dictionnaire"].get("data", [])
+                    dict_header = metadata["dictionnaire"].get("header", [])
+                    dict_separator = metadata["dictionnaire"].get("separator", ";")
+                    
+                    # Vérifier la taille du dictionnaire
+                    if len(dict_data) > 2000:
+                        logging.warning(f"Dictionnaire très volumineux ({len(dict_data)} lignes). Traitement optimisé.")
+                        # Limiter le dictionnaire aux 2000 premières lignes
+                        metadata["dictionnaire"]["data"] = dict_data[:2000]
+                        logging.info(f"Dictionnaire limité aux 2000 premières lignes pour des raisons de performance")
+                    
                     dictionnaire_json = json.dumps(metadata["dictionnaire"])
+                    logging.debug(f"Taille du dictionnaire JSON: {len(dictionnaire_json)} caractères")
                 
                 # Préparation des dates
                 date_creation = metadata["informations_base"]["date_creation"]
@@ -218,6 +336,10 @@ def save_metadata(metadata):
                 # Conversion des chaînes de date en objets date si nécessaire
                 if isinstance(date_creation, str):
                     try:
+                        # Si la date de création est juste une année (ex: "2020")
+                        if date_creation.isdigit() and len(date_creation) == 4:
+                            date_creation = f"{date_creation}-01-01"
+                        
                         date_creation = datetime.strptime(date_creation, "%Y-%m-%d").date()
                         logging.debug(f"Date de création convertie : {date_creation}")
                     except ValueError as e:
@@ -230,9 +352,37 @@ def save_metadata(metadata):
                     except ValueError as e:
                         logging.warning(f"Erreur de conversion de la date de mise à jour : {str(e)}")
                 
-                values = (
-                    metadata["nom_fichier"],
-                    metadata["informations_base"]["nom_base"],
+                # Récupération du nom de la table depuis les informations de base
+                nom_table = metadata["informations_base"].get("nom_table", "")
+                
+                # Récupération de la granularité géographique
+                granularite_geo = metadata["informations_base"].get("granularite_geo", "")
+                
+                # Vérifier si la colonne date_creation a été renommée en millesime
+                cur.execute("""
+                    SELECT column_name 
+                    FROM information_schema.columns 
+                    WHERE table_name = 'metadata' AND column_name = 'millesime'
+                """)
+                
+                use_millesime = cur.fetchone() is not None
+                
+                # Construire les colonnes et valeurs pour l'insertion en fonction de la présence de millesime
+                if use_millesime:
+                    columns = ["nom_table", "nom_base", "producteur", "schema", "description", 
+                               "millesime", "date_maj", "source", "frequence_maj",
+                               "licence", "envoi_par", "contact", "mots_cles", "notes",
+                               "contenu_csv", "dictionnaire", "granularite_geo"]
+                else:
+                    columns = ["nom_table", "nom_base", "producteur", "schema", "description", 
+                               "date_creation", "date_maj", "source", "frequence_maj",
+                               "licence", "envoi_par", "contact", "mots_cles", "notes",
+                               "contenu_csv", "dictionnaire", "granularite_geo"]
+                
+                values = [
+                    nom_table,
+                    metadata["nom_fichier"],  # nom_fichier dans le dictionnaire correspond à nom_base dans la BD
+                    metadata["informations_base"]["nom_base"],  # nom_base dans le dictionnaire correspond à producteur dans la BD
                     metadata["informations_base"]["schema"],
                     metadata["informations_base"]["description"],
                     date_creation,
@@ -245,9 +395,22 @@ def save_metadata(metadata):
                     "",  # champ mots_cles vide
                     "",  # champ notes vide
                     contenu_csv_json,
-                    dictionnaire_json
-                )
-                st.write("Valeurs préparées pour l'insertion :", values)
+                    dictionnaire_json,
+                    granularite_geo
+                ]
+                
+                # Construire la requête SQL dynamiquement
+                placeholders = ", ".join(["%s"] * len(values))
+                columns_str = ", ".join(columns)
+                
+                query = f"""
+                    INSERT INTO metadata (
+                        {columns_str}
+                    ) VALUES (
+                        {placeholders}
+                    )
+                """
+                
                 logging.debug(f"Valeurs préparées pour l'insertion : {values}")
             except KeyError as e:
                 error_msg = f"Champ manquant dans la structure des métadonnées : {str(e)}"
@@ -257,39 +420,20 @@ def save_metadata(metadata):
             
             # Insertion dans la base de données
             try:
-                query = """
-                    INSERT INTO metadata (
-                        nom_fichier, nom_base, schema, description,
-                        date_creation, date_maj, source, frequence_maj,
-                        licence, envoi_par, contact, mots_cles, notes,
-                        contenu_csv, dictionnaire
-                    ) VALUES (
-                        %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
-                        %s, %s
-                    )
-                """
-                st.write("Requête SQL :", query)
-                st.write("Paramètres :", values)
-                logging.debug(f"Requête SQL : {query}")
-                logging.debug(f"Paramètres : {values}")
-                
                 cur.execute(query, values)
-                st.write("Requête d'insertion exécutée avec succès")
                 logging.info("Requête d'insertion exécutée avec succès")
                 
                 conn.commit()
-                st.write("Transaction validée")
                 logging.info("Transaction validée")
                 
-                # Vérification de l'insertion
-                cur.execute("SELECT * FROM metadata WHERE nom_fichier = %s", (metadata["nom_fichier"],))
+                # Vérification de l'insertion avec nom_base au lieu de nom_fichier
+                cur.execute("SELECT * FROM metadata WHERE nom_base = %s AND nom_table = %s", 
+                           (metadata["nom_fichier"], nom_table))
                 inserted_row = cur.fetchone()
                 if inserted_row:
-                    st.write(f"Vérification : ligne insérée avec succès - ID: {inserted_row[0]}")
                     logging.info(f"Vérification : ligne insérée avec succès - ID: {inserted_row[0]}")
                 else:
                     warning_msg = "Vérification : aucune ligne trouvée après l'insertion"
-                    st.warning(warning_msg)
                     logging.warning(warning_msg)
                 
                 return True, "Métadonnées sauvegardées avec succès dans la base de données"
@@ -309,5 +453,4 @@ def save_metadata(metadata):
         return False, error_msg
     finally:
         conn.close()
-        st.write("Connexion à la base de données fermée")
         logging.info("Connexion à la base de données fermée")
