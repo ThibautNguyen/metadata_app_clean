@@ -240,10 +240,10 @@ def save_metadata(metadata):
                     metadata["informations_base"]["source"],
                     metadata["informations_base"]["frequence_maj"],
                     metadata["informations_base"]["licence"],
-                    metadata["informations_supplementaires"]["envoi_par"],
-                    metadata["informations_supplementaires"]["contact"],
-                    metadata["informations_supplementaires"]["mots_cles"],
-                    metadata["informations_supplementaires"]["notes"],
+                    metadata["informations_base"]["envoi_par"],
+                    "",  # champ contact vide
+                    "",  # champ mots_cles vide
+                    "",  # champ notes vide
                     contenu_csv_json,
                     dictionnaire_json
                 )
