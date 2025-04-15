@@ -314,13 +314,23 @@ def save_metadata(metadata):
     try:
         logging.info("Connexion à la base de données établie")
         with conn.cursor() as cur:
-            # Vérification des champs requis
-            required_fields = {
-                "nom_base": metadata.get("nom_fichier"),  # nom_fichier dans le dictionnaire correspond à nom_base dans la BD
-                "producteur": metadata.get("informations_base", {}).get("nom_base"),  # nom_base dans le dictionnaire correspond à producteur dans la BD
-                "schema": metadata.get("informations_base", {}).get("schema"),
-                "description": metadata.get("informations_base", {}).get("description")
-            }
+            # Vérification des champs requis avec une structure plus flexible
+            if "informations_base" not in metadata:
+                # Ancienne structure (plat)
+                required_fields = {
+                    "nom_base": metadata.get("nom_base"),
+                    "producteur": metadata.get("producteur"),
+                    "schema": metadata.get("schema"),
+                    "description": metadata.get("description")
+                }
+            else:
+                # Nouvelle structure (avec informations_base)
+                required_fields = {
+                    "nom_base": metadata.get("nom_fichier"),  # nom_fichier dans le dictionnaire correspond à nom_base dans la BD
+                    "producteur": metadata.get("informations_base", {}).get("nom_base"),  # nom_base dans le dictionnaire correspond à producteur dans la BD
+                    "schema": metadata.get("informations_base", {}).get("schema"),
+                    "description": metadata.get("informations_base", {}).get("description")
+                }
             
             logging.debug(f"Champs requis vérifiés : {required_fields}")
             
@@ -337,29 +347,63 @@ def save_metadata(metadata):
                 contenu_csv_json = None
                 if "contenu_csv" in metadata:
                     logging.debug("Conversion du contenu CSV en JSON")
-                    contenu_csv_json = json.dumps(metadata["contenu_csv"])
+                    # Assurer que c'est un dictionnaire et pas déjà une chaîne JSON
+                    if isinstance(metadata["contenu_csv"], dict):
+                        contenu_csv_json = json.dumps(metadata["contenu_csv"])
+                    else:
+                        contenu_csv_json = metadata["contenu_csv"]
                 
                 dictionnaire_json = None
                 if "dictionnaire" in metadata:
                     logging.debug("Conversion du dictionnaire en JSON")
-                    # Vérifier si le dictionnaire est volumineux
-                    dict_data = metadata["dictionnaire"].get("data", [])
-                    dict_header = metadata["dictionnaire"].get("header", [])
-                    dict_separator = metadata["dictionnaire"].get("separator", ";")
+                    # Assurer que c'est un dictionnaire et pas déjà une chaîne JSON
+                    if isinstance(metadata["dictionnaire"], dict):
+                        # Vérifier si le dictionnaire est volumineux
+                        dict_data = metadata["dictionnaire"].get("data", [])
+                        
+                        # Vérifier la taille du dictionnaire
+                        if len(dict_data) > 2000:
+                            logging.warning(f"Dictionnaire très volumineux ({len(dict_data)} lignes). Traitement optimisé.")
+                            # Limiter le dictionnaire aux 2000 premières lignes
+                            metadata["dictionnaire"]["data"] = dict_data[:2000]
+                            logging.info(f"Dictionnaire limité aux 2000 premières lignes pour des raisons de performance")
+                        
+                        dictionnaire_json = json.dumps(metadata["dictionnaire"])
+                    else:
+                        dictionnaire_json = metadata["dictionnaire"]
                     
-                    # Vérifier la taille du dictionnaire
-                    if len(dict_data) > 2000:
-                        logging.warning(f"Dictionnaire très volumineux ({len(dict_data)} lignes). Traitement optimisé.")
-                        # Limiter le dictionnaire aux 2000 premières lignes
-                        metadata["dictionnaire"]["data"] = dict_data[:2000]
-                        logging.info(f"Dictionnaire limité aux 2000 premières lignes pour des raisons de performance")
-                    
-                    dictionnaire_json = json.dumps(metadata["dictionnaire"])
-                    logging.debug(f"Taille du dictionnaire JSON: {len(dictionnaire_json)} caractères")
+                    logging.debug(f"Taille du dictionnaire JSON: {len(str(dictionnaire_json))} caractères")
                 
-                # Préparation des dates
-                date_creation = metadata["informations_base"]["date_creation"]
-                date_maj = metadata["informations_base"]["date_maj"]
+                # Récupération des données selon la structure
+                if "informations_base" in metadata:
+                    # Nouvelle structure
+                    info_base = metadata["informations_base"]
+                    nom_table = info_base.get("nom_table", "")
+                    granularite_geo = info_base.get("granularite_geo", "")
+                    date_creation = info_base.get("date_creation", datetime.now().strftime("%Y-%m-%d"))
+                    date_maj = info_base.get("date_maj", datetime.now().strftime("%Y-%m-%d"))
+                    producteur = info_base.get("nom_base", "")  # nom_base dans le dictionnaire correspond à producteur dans la BD
+                    schema = info_base.get("schema", "")
+                    description = info_base.get("description", "")
+                    source = info_base.get("source", "")
+                    frequence_maj = info_base.get("frequence_maj", "")
+                    licence = info_base.get("licence", "")
+                    envoi_par = info_base.get("envoi_par", "")
+                    nom_base = metadata.get("nom_fichier", "")  # nom_fichier correspond à nom_base dans la BD
+                else:
+                    # Ancienne structure
+                    nom_table = metadata.get("nom_table", "")
+                    nom_base = metadata.get("nom_base", "")
+                    producteur = metadata.get("producteur", "")
+                    schema = metadata.get("schema", "")
+                    description = metadata.get("description", "")
+                    date_creation = metadata.get("millesime", metadata.get("date_creation", datetime.now().strftime("%Y-%m-%d")))
+                    date_maj = metadata.get("date_maj", datetime.now().strftime("%Y-%m-%d"))
+                    source = metadata.get("source", "")
+                    frequence_maj = metadata.get("frequence_maj", "")
+                    licence = metadata.get("licence", "")
+                    envoi_par = metadata.get("envoi_par", "")
+                    granularite_geo = metadata.get("granularite_geo", "")
                 
                 # Conversion des chaînes de date en objets date si nécessaire
                 if isinstance(date_creation, str):
@@ -372,6 +416,8 @@ def save_metadata(metadata):
                         logging.debug(f"Date de création convertie : {date_creation}")
                     except ValueError as e:
                         logging.warning(f"Erreur de conversion de la date de création : {str(e)}")
+                        # Utiliser la date actuelle comme fallback
+                        date_creation = datetime.now().date()
                 
                 if isinstance(date_maj, str):
                     try:
@@ -379,12 +425,8 @@ def save_metadata(metadata):
                         logging.debug(f"Date de mise à jour convertie : {date_maj}")
                     except ValueError as e:
                         logging.warning(f"Erreur de conversion de la date de mise à jour : {str(e)}")
-                
-                # Récupération du nom de la table depuis les informations de base
-                nom_table = metadata["informations_base"].get("nom_table", "")
-                
-                # Récupération de la granularité géographique
-                granularite_geo = metadata["informations_base"].get("granularite_geo", "")
+                        # Utiliser la date actuelle comme fallback
+                        date_maj = datetime.now().date()
                 
                 # Vérifier si la colonne date_creation a été renommée en millesime
                 cur.execute("""
@@ -409,16 +451,16 @@ def save_metadata(metadata):
                 
                 values = [
                     nom_table,
-                    metadata["nom_fichier"],  # nom_fichier dans le dictionnaire correspond à nom_base dans la BD
-                    metadata["informations_base"]["nom_base"],  # nom_base dans le dictionnaire correspond à producteur dans la BD
-                    metadata["informations_base"]["schema"],
-                    metadata["informations_base"]["description"],
+                    nom_base,
+                    producteur,
+                    schema,
+                    description,
                     date_creation,
                     date_maj,
-                    metadata["informations_base"]["source"],
-                    metadata["informations_base"]["frequence_maj"],
-                    metadata["informations_base"]["licence"],
-                    metadata["informations_base"]["envoi_par"],
+                    source,
+                    frequence_maj,
+                    licence,
+                    envoi_par,
                     "",  # champ contact vide
                     "",  # champ mots_cles vide
                     "",  # champ notes vide
@@ -439,6 +481,7 @@ def save_metadata(metadata):
                     )
                 """
                 
+                logging.debug(f"Requête SQL: {query}")
                 logging.debug(f"Valeurs préparées pour l'insertion : {values}")
             except KeyError as e:
                 error_msg = f"Champ manquant dans la structure des métadonnées : {str(e)}"
@@ -454,9 +497,9 @@ def save_metadata(metadata):
                 conn.commit()
                 logging.info("Transaction validée")
                 
-                # Vérification de l'insertion avec nom_base au lieu de nom_fichier
+                # Vérification de l'insertion
                 cur.execute("SELECT * FROM metadata WHERE nom_base = %s AND nom_table = %s", 
-                           (metadata["nom_fichier"], nom_table))
+                           (nom_base, nom_table))
                 inserted_row = cur.fetchone()
                 if inserted_row:
                     logging.info(f"Vérification : ligne insérée avec succès - ID: {inserted_row[0]}")
