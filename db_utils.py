@@ -217,77 +217,33 @@ def get_metadata_columns():
     finally:
         conn.close()
 
-def get_metadata(filters=None):
-    """Récupère les métadonnées de la base de données avec des filtres optionnels"""
+def get_metadata(search_term=None):
+    """Récupère les métadonnées depuis la base de données avec possibilité de recherche"""
     conn = get_db_connection()
-    if not conn:
-        return []
-        
     try:
         with conn.cursor() as cur:
-            query = "SELECT * FROM metadata"
-            params = []
-            
-            # Si un filtre texte est passé directement (pour rétrocompatibilité)
-            if filters is not None and isinstance(filters, str) and filters.strip():
-                search_term = f"%{filters}%"
-                query += """ WHERE 
-                    nom_base ILIKE %s OR 
-                    producteur ILIKE %s OR 
-                    schema ILIKE %s OR 
-                    description ILIKE %s OR
-                    COALESCE(nom_table, '') ILIKE %s OR
-                    COALESCE(source, '') ILIKE %s OR
-                    COALESCE(licence, '') ILIKE %s OR
-                    COALESCE(envoi_par, '') ILIKE %s
+            if search_term:
+                # Recherche dans les colonnes spécifiées
+                query = """
+                SELECT * FROM metadata 
+                WHERE LOWER(nom_table) LIKE LOWER(%s)
+                OR LOWER(description) LIKE LOWER(%s)
+                OR LOWER(producteur) LIKE LOWER(%s)
+                OR LOWER(dictionnaire) LIKE LOWER(%s)
+                ORDER BY nom_table
                 """
-                
-                params = [search_term] * 8  # Répète le terme pour chaque condition OR
-            # Si un dictionnaire de filtres est passé
-            elif filters and isinstance(filters, dict):
-                conditions = []
-                
-                # Filtres exacts (égalité)
-                for key, value in filters.items():
-                    if value:
-                        conditions.append(f"{key} = %s")
-                        params.append(value)
-                
-                if conditions:
-                    query += " WHERE " + " AND ".join(conditions)
+                search_pattern = f'%{search_term}%'
+                cur.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern))
+            else:
+                # Récupération de toutes les métadonnées
+                query = "SELECT * FROM metadata ORDER BY nom_table"
+                cur.execute(query)
             
-            logging.debug(f"Requête SQL get_metadata: {query}")
-            logging.debug(f"Paramètres: {params}")
-            
-            cur.execute(query, params)
-            columns = [desc[0] for desc in cur.description]
-            results = []
-            
-            for row in cur.fetchall():
-                metadata = dict(zip(columns, row))
-                # Décodage des données JSON
-                if metadata.get("contenu_csv"):
-                    try:
-                        if isinstance(metadata["contenu_csv"], str):
-                            metadata["contenu_csv"] = json.loads(metadata["contenu_csv"])
-                    except json.JSONDecodeError:
-                        logging.warning("Erreur lors du décodage du contenu CSV")
-                
-                if metadata.get("dictionnaire"):
-                    try:
-                        if isinstance(metadata["dictionnaire"], str):
-                            metadata["dictionnaire"] = json.loads(metadata["dictionnaire"])
-                    except json.JSONDecodeError:
-                        logging.warning("Erreur lors du décodage du dictionnaire")
-                
-                results.append(metadata)
-            
+            results = cur.fetchall()
             logging.info(f"Nombre de résultats trouvés : {len(results)}")
             return results
-            
     except Exception as e:
         logging.error(f"Erreur lors de la récupération des métadonnées : {str(e)}")
-        st.error(f"Erreur lors de la récupération des métadonnées : {str(e)}")
         return []
     finally:
         conn.close()

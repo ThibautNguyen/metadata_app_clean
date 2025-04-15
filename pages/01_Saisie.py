@@ -20,64 +20,33 @@ st.set_page_config(
 # Initialisation de la base de données
 init_db()
 
-# CSS pour le style du formulaire - RECRÉATION EXACTE DU STYLE PRÉFÉRÉ
+# CSS pour le style du formulaire
 st.markdown("""
 <style>
-    /* Styles généraux */
-    .main {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
     /* Style du titre */
-    .main h1 {
+    h1 {
         color: #1E4B88;
         font-size: 2rem;
         margin-bottom: 0.5rem;
     }
     
-    /* Style du conteneur principal avec cadre et ombre */
-    .form-container {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        padding: 20px;
+    /* Style des sous-titres */
+    h2, h3, .stSubheader {
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 16px;
     }
     
-    /* Style des sous-titres */
-    .stSubheader {
-        color: #333;
-        border-bottom: 1px solid #e0e0e0;
-        padding-bottom: 8px;
-        margin-top: 20px;
-        margin-bottom: 16px;
+    /* Style des boîtes */
+    .block-container {
+        max-width: 1200px;
+        padding-top: 1rem;
     }
     
     /* Style des champs obligatoires */
     .required label::after {
         content: " *";
         color: red;
-    }
-    
-    /* Style des onglets */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 1rem;
-    }
-    .stTabs [data-baseweb="tab"] {
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-        font-weight: 500;
-    }
-    .stTabs [data-baseweb="tab-highlight"] {
-        background-color: #1E88E5;
-    }
-    
-    /* Style des boutons dépliables */
-    button[data-baseweb="accordion"] {
-        background-color: #f8f9fa;
-        border-radius: 5px;
-        margin-bottom: 10px;
     }
     
     /* Style du bouton de sauvegarde */
@@ -90,19 +59,16 @@ st.markdown("""
         width: 100%;
     }
     
-    /* Style des champs de saisie */
-    .stTextInput, .stSelectbox, .stDateInput, .stTextArea {
-        margin-bottom: 15px;
-    }
-    .stTextInput > label, .stSelectbox > label, .stDateInput > label, .stTextArea > label {
+    /* Améliorations visuelles générales */
+    label {
         font-weight: 500;
     }
     
-    /* Style des informations d'aide */
-    .stExpander {
-        border: 1px solid #e0e0e0;
+    .stInfo {
+        background-color: #E3F2FD;
+        padding: 10px;
         border-radius: 5px;
-        margin-top: 1rem;
+        border-left: 5px solid #1E88E5;
     }
     
     /* Style des messages de succès */
@@ -112,15 +78,20 @@ st.markdown("""
         border-radius: 5px;
         border-left: 5px solid #4CAF50;
     }
+    
+    /* Style du séparateur */
+    hr {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border: 0;
+        border-top: 1px solid #eee;
+    }
 </style>
 """, unsafe_allow_html=True)
 
 # Titre et description
 st.title("Saisie des métadonnées")
 st.write("Remplissez le formulaire ci-dessous pour ajouter de nouvelles métadonnées.")
-
-# Conteneur du formulaire avec style cadré
-st.markdown('<div class="form-container">', unsafe_allow_html=True)
 
 # Section Informations de base
 st.subheader("Informations de base")
@@ -130,51 +101,56 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown('<div class="required">', unsafe_allow_html=True)
-    schema = st.selectbox("Schéma du SGBD", 
+    schema = st.selectbox("Schéma thématique*", 
         ["economie", "education", "energie", "environnement", 
          "geo", "logement", "mobilite", "population", "securite"],
-         help="Catégorie thématique des données")
+         help="Schéma du SGBD dans lequel la table est importée")
     st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown('<div class="required">', unsafe_allow_html=True)
-    nom_base = st.selectbox("Nom de la base de données", 
-        ["opendata"], 
-        help="Nom de la base de données dans le SGBD")
+    nom_table = st.text_input("Nom de la table*", help="Nom de la table dans la base de données")
     st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown('<div class="required">', unsafe_allow_html=True)
-    nom_table = st.text_input("Nom de la table", help="Nom de la table dans la base de données")
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    producteur = st.text_input("Producteur de la donnée", help="Organisme producteur de la donnée")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-with col2:
-    granularite_geo = st.selectbox("Granularité géographique", 
-        ["", "commune", "EPCI", "département", "région", "IRIS", "autre"],
-        help="Niveau géographique le plus fin des données")
-    
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    millesime = st.number_input("Millésime/année", 
+    millesime = st.number_input("Millésime/année*", 
         min_value=1900, 
         max_value=datetime.now().year, 
         value=datetime.now().year,
         help="Année de référence des données")
     st.markdown('</div>', unsafe_allow_html=True)
     
+    granularite_geo = st.selectbox("Granularité géographique*", 
+        ["", "commune", "IRIS", "carreau", "adresse", "EPCI", "département", "région", "autre"],
+        index=1,  # Index 1 correspond à "commune"
+        help="Niveau géographique le plus fin des données")
+
+with col2:
     st.markdown('<div class="required">', unsafe_allow_html=True)
-    date_maj = st.date_input("Dernière mise à jour", 
+    nom_base = st.selectbox("Nom de la base de données*", 
+        ["opendata"], 
+        help="Nom de la base de données dans le SGBD")
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    st.markdown('<div class="required">', unsafe_allow_html=True)
+    producteur = st.text_input("Producteur de la donnée*", help="Organisme producteur de la donnée")
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    st.markdown('<div class="required">', unsafe_allow_html=True)
+    date_maj = st.date_input("Dernière mise à jour*", 
         datetime.now().date(),
+        format="DD/MM/YYYY",
         help="Date de la dernière mise à jour des données")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Section Description
+# Section Description (pleine largeur)
 st.markdown('<div class="required">', unsafe_allow_html=True)
-description = st.text_area("Description", 
+description = st.text_area("Description*", 
     height=150,
     help="Description détaillée des données, leur collecte, leur utilité, etc.")
 st.markdown('</div>', unsafe_allow_html=True)
+
+# Note sur les champs obligatoires
+st.markdown('<p style="color: #666;">Les champs marqués d\'un * sont obligatoires.</p>', unsafe_allow_html=True)
 
 # Section Informations supplémentaires
 st.subheader("Informations supplémentaires")
@@ -183,68 +159,31 @@ col1, col2 = st.columns(2)
 
 with col1:
     source = st.text_input("Source (URL)", help="Source des données (URL, nom du service, etc.)")
+    
+    licence = st.selectbox("Licence d'utilisation des données",
+        ["", "Licence Ouverte Etalab", "Open Data Commons Open Database License (ODbL)", 
+         "CC0", "CC BY", "CC BY-SA", "CC BY-NC", "CC BY-ND", 
+         "Domaine public", "Licence propriétaire"],
+        help="Licence sous laquelle les données sont publiées")
+
+with col2:
     frequence_maj = st.selectbox("Fréquence de mises à jour des données",
         ["", "Annuelle", "Semestrielle", "Trimestrielle", "Mensuelle", "Quotidienne", "Ponctuelle"],
         help="Fréquence à laquelle les données sont mises à jour")
-
-with col2:
-    licence = st.selectbox("Licence d'utilisation des données",
-        ["", "Licence ouverte / Etalab", "ODbL", "CC-BY", "CC-BY-SA", "CC-BY-NC", "CC-BY-ND", "Autre"],
-        help="Licence sous laquelle les données sont publiées")
+        
     envoi_par = st.text_input("Personne remplissant le formulaire", help="Nom de la personne remplissant ce formulaire")
 
-# Section Contenu CSV
-st.subheader("Contenu CSV")
-with st.expander("Déplier", expanded=False):
+# Sections dépliables
+with st.expander("Contenu CSV", expanded=False):
     separateur = st.radio("Séparateur", [";", ","], horizontal=True)
-    
-    st.info("""
-    Copiez-collez ici les 4 premières lignes de la table. Format attendu :
-    
-    COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
-    COM;Commune ou ARM;Code du département suivi du numéro de commune
-    """)
-    
-    contenu_csv = st.text_area("4 premières lignes du CSV :", 
-        height=200,
-        help="Copiez-collez ici les 4 premières lignes du fichier CSV")
-    
-    if contenu_csv:
-        try:
-            # Vérification du format
-            lines = contenu_csv.strip().split('\n')
-            header = lines[0].split(separateur)
-            
-            # Affichage d'un aperçu
-            st.write("Aperçu des données (5 premières lignes) :")
-            preview_data = []
-            for line in lines[1:6]:  # Afficher les 5 premières lignes de données
-                if line.strip():
-                    preview_data.append(line.split(separateur))
-            st.table(preview_data)
-        except Exception as e:
-            st.error(f"Erreur lors de l'analyse du CSV : {str(e)}")
+    contenu_csv = st.text_area("Coller ici les 4 premières lignes du fichier CSV", height=150)
 
-# Section Dictionnaire des variables
-st.subheader("Dictionnaire des variables")
-with st.expander("Déplier", expanded=False):
+with st.expander("Dictionnaire des variables", expanded=False):
     dict_separateur = st.radio("Séparateur du dictionnaire", [";", ","], horizontal=True)
-    
-    st.info("""
-    Copiez-collez ici le dictionnaire des variables. Format attendu :
-    
-    CODE;LIBELLÉ;DESCRIPTION;TYPE;LONGUEUR
-    CODGEO;Code géographique;Code de la commune;VARCHAR;5
-    """)
-    
-    dictionnaire = st.text_area("Dictionnaire des variables :", 
-        height=200,
-        help="Copiez-collez ici le dictionnaire des variables (format CSV)")
+    dictionnaire = st.text_area("Coller ici le dictionnaire des variables depuis le fichier CSV", height=150)
 
-# Bouton de soumission
+# Bouton de sauvegarde
 submitted = st.button("Sauvegarder les métadonnées")
-
-st.markdown('</div>', unsafe_allow_html=True)  # Fermeture du conteneur du formulaire
 
 # Traitement de la soumission
 if submitted:
@@ -395,7 +334,6 @@ if submitted:
             st.error("Veuillez vérifier les logs pour plus de détails.")
 
 # Section d'aide
-st.markdown('<div class="form-container">', unsafe_allow_html=True)
 with st.expander("Aide pour la saisie"):
     st.markdown("""
     ### Champs obligatoires
@@ -430,7 +368,6 @@ with st.expander("Aide pour la saisie"):
        - Indiquez le séparateur utilisé (par défaut, point-virgule)
        - Ajoutez le dictionnaire des variables si le fichier CSV est disponible
     """)
-st.markdown('</div>', unsafe_allow_html=True)
 
 # Pied de page
 st.markdown("---")

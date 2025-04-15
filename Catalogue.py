@@ -3,6 +3,8 @@ import pandas as pd
 import sys
 from pathlib import Path
 import json
+import io
+import csv
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent))
@@ -144,12 +146,26 @@ st.markdown("""
     .stSelectbox > div > div {
         border-radius: 5px;
     }
+    
+    /* Style pour les expanders de résultats */
+    .metadata-result {
+        border-left: 4px solid #1E88E5;
+        margin-bottom: 1rem;
+        background-color: #f8f9fa;
+    }
+    
+    /* Style pour les expanders d'aide */
+    .help-section {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e0e0e0;
+    }
 </style>
 """, unsafe_allow_html=True)
 
 # Titre et description
 st.title("Catalogue des métadonnées")
-st.write("Recherchez et explorez les métadonnées disponibles pour vos analyses et projets.")
+st.write("Consultez et recherchez les métadonnées disponibles.")
 
 # Initialisation automatique de la base de données
 try:
@@ -158,13 +174,13 @@ except Exception as e:
     st.error(f"Erreur lors de l'initialisation : {str(e)}")
 
 # Interface de recherche
-st.markdown("## Recherche")
+st.subheader("Recherche")
+st.write("La recherche s'effectue dans les champs suivants : nom de la table, description, producteur de la donnée et dictionnaire des variables.")
+
 col1, col2 = st.columns([3, 1])
 
 with col1:
     search_text = st.text_input("Rechercher", placeholder="Entrez un terme à rechercher...")
-    if search_text:
-        st.caption("La recherche s'effectue dans le nom de la base, le producteur, la description et le schéma")
 
 with col2:
     selected_schema = st.selectbox("Filtrer par schéma", 
@@ -182,341 +198,148 @@ else:
     # Récupérer toutes les métadonnées
     metadata_results = get_metadata()
 
-# Afficher le nombre total de métadonnées
+# Affichage du nombre total de résultats
 st.info(f"Nombre total de métadonnées disponibles : {len(metadata_results)}")
 
 # Affichage des résultats
-st.markdown("## Résultats")
-
-if metadata_results:
-    # Création d'un conteneur avec style
-    st.markdown('<div class="results-container" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">', unsafe_allow_html=True)
+if not metadata_results:
+    st.info("Aucun résultat trouvé.")
+else:
+    # Création d'une liste de dictionnaires pour le DataFrame
+    data_list = []
+    for meta in metadata_results:
+        data_dict = {
+            'Nom de la table': meta[17] if meta[17] else '',  # nom_table
+            'Producteur': meta[2] if meta[2] else '',         # producteur
+            'Schéma': meta[3] if meta[3] else '',            # schema
+            'Granularité géographique': meta[18] if meta[18] else '',  # granularite_geo
+            'Millésime': meta[5].strftime('%Y') if meta[5] else '',  # millesime (YYYY)
+            'Dernière mise à jour': meta[6].strftime('%d-%m-%Y') if meta[6] else ''  # date_maj (DD-MM-YYYY)
+        }
+        data_list.append(data_dict)
+    
+    # Création du DataFrame
+    df = pd.DataFrame(data_list)
     
     # Affichage du nombre de résultats
-    st.info(f"{len(metadata_results)} métadonnées trouvées")
+    st.write(f"**{len(metadata_results)} résultat(s) trouvé(s)**")
     
-    # Conversion des résultats en DataFrame avec gestion des clés manquantes
-    results_df = pd.DataFrame([
-        {
-            "Nom de la table": meta.get("nom_table", "") or meta.get("nom_base", "") or meta.get("nom_fichier", "Non spécifié"),
-            "Producteur de la donnée": meta.get("producteur", "Non spécifié"),
-            "Schéma du SGBD": meta.get("schema", "Non spécifié"),
-            "Granularité géographique": meta.get("granularite_geo", "Non spécifiée"),
-            "Millésime/année": meta.get("millesime", meta.get("date_creation", "")).strftime("%Y") if meta.get("millesime") or meta.get("date_creation") else "Non spécifié",
-            "Dernière mise à jour": meta.get("date_maj", "").strftime("%d/%m/%Y") if meta.get("date_maj") else "Non spécifiée"
-        }
-        for meta in metadata_results
-    ])
+    # Affichage du DataFrame
+    st.dataframe(df, use_container_width=True)
 
-    # Réorganiser les colonnes selon l'ordre demandé
-    columns_order = ["Nom de la table", "Producteur de la donnée", "Schéma du SGBD", "Granularité géographique"]
-    all_columns = list(results_df.columns)
-    remaining_columns = [col for col in all_columns if col not in columns_order]
-    ordered_columns = columns_order + remaining_columns
-    
-    # Afficher le tableau avec les colonnes réorganisées et style amélioré
-    st.dataframe(results_df[ordered_columns], use_container_width=True)
+    # Affichage détaillé des métadonnées
+    for i, meta in enumerate(metadata_results):
+        with st.expander(f"📄 {meta[17] if meta[17] else 'Métadonnée ' + str(i+1)}", expanded=False):
+            st.markdown('<div class="metadata-result">', unsafe_allow_html=True)
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("**Informations de base**")
+                st.write(f"**Producteur :** {meta[2] if meta[2] else 'Non spécifié'}")
+                st.write(f"**Schéma :** {meta[3] if meta[3] else 'Non spécifié'}")
+                st.write(f"**Millésime :** {meta[5].strftime('%Y') if meta[5] else 'Non spécifié'}")
+                st.write(f"**Dernière mise à jour :** {meta[6].strftime('%d-%m-%Y') if meta[6] else 'Non spécifié'}")
+                st.write(f"**Fréquence de mise à jour :** {meta[8] if meta[8] else 'Non spécifié'}")
+                st.write(f"**Licence :** {meta[9] if meta[9] else 'Non spécifié'}")
+                
+            with col2:
+                st.markdown("**Description**")
+                st.write(meta[4] if meta[4] else "Aucune description disponible")
+                
+                if meta[7]:  # URL source
+                    st.markdown("**Source des données**")
+                    st.write(f"[Lien vers les données]({meta[7]})")
+            
+            # Affichage des données et du dictionnaire des variables dans des onglets
+            if meta[15] and meta[16]:  # Vérification de l'existence des données et du dictionnaire
+                tab1, tab2 = st.tabs(["Aperçu des données", "Dictionnaire des variables"])
+                
+                with tab1:
+                    try:
+                        # Conversion des données en DataFrame
+                        if isinstance(meta[15], str):
+                            # Si c'est une chaîne, on essaie de la parser comme du CSV
+                            try:
+                                # Essayer d'abord avec le séparateur spécifié dans les métadonnées
+                                if meta[10]:
+                                    csv_data = pd.read_csv(io.StringIO(meta[15]), sep=meta[10], nrows=4)
+                                else:
+                                    # Essayer avec le séparateur par défaut (;)
+                                    csv_data = pd.read_csv(io.StringIO(meta[15]), sep=';', nrows=4)
+                            except:
+                                try:
+                                    # Si ça échoue, essayer avec la virgule
+                                    csv_data = pd.read_csv(io.StringIO(meta[15]), sep=',', nrows=4)
+                                except:
+                                    csv_data = None
+                        elif isinstance(meta[15], dict) and 'data' in meta[15]:
+                            # Si c'est un dictionnaire avec une clé 'data'
+                            headers = meta[15].get('header', [])
+                            data = meta[15].get('data', [])
+                            csv_data = pd.DataFrame(data, columns=headers)
+                            csv_data = csv_data.head(4)  # Limiter à 4 lignes
+                        else:
+                            csv_data = None
 
-    # Option pour afficher les détails
-    with st.expander("Afficher les détails complets des métadonnées", expanded=False):
-        # Affichage détaillé des métadonnées
-        for i, meta in enumerate(metadata_results):
-            with st.expander(f"📄 {meta.get('nom_table', '') or meta.get('nom_base', '') or 'Métadonnée ' + str(i+1)}", expanded=False):
-                # Utilisation de colonnes pour l'affichage
-                col1, col2 = st.columns(2)
-                
-                with col1:
-                    st.markdown("##### Informations de base")
-                    st.write(f"- **Nom de la table :** {meta.get('nom_table', 'Non spécifié') or meta.get('nom_base', 'Non spécifié')}")
-                    st.write(f"- **Producteur de la donnée :** {meta.get('producteur', 'Non spécifié')}")
-                    st.write(f"- **Schéma du SGBD :** {meta.get('schema', 'Non spécifié')}")
-                    st.write(f"- **Granularité géographique :** {meta.get('granularite_geo', 'Non spécifiée')}")
-                    st.write(f"- **Nom de la base de données :** {meta.get('nom_base', 'Non spécifié')}")
-                    millesime = meta.get("millesime") or meta.get("date_creation")
-                    st.write(f"- **Millésime/année :** {millesime.strftime('%Y') if millesime else 'Non spécifié'}")
-                    st.write(f"- **Dernière mise à jour :** {meta.get('date_maj', '').strftime('%d/%m/%Y') if meta.get('date_maj') else 'Non spécifiée'}")
-                
-                with col2:
-                    st.markdown("##### Informations supplémentaires")
-                    st.write(f"- **Source (URL) :** {meta.get('source', 'Non spécifiée')}")
-                    st.write(f"- **Fréquence de mise à jour :** {meta.get('frequence_maj', 'Non spécifiée')}")
-                    st.write(f"- **Licence d'utilisation :** {meta.get('licence', 'Non spécifiée')}")
-                    st.write(f"- **Personne remplissant le formulaire :** {meta.get('envoi_par', 'Non spécifiée')}")
-                
-                # Description sur toute la largeur
-                st.markdown("##### Description")
-                description_text = meta.get('description', 'Pas de description disponible')
-                if description_text and len(description_text) > 10:  # Vérification que la description existe et n'est pas vide
-                    st.markdown(f"<div style='background-color: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 3px solid #1E88E5;'>{description_text}</div>", unsafe_allow_html=True)
-                else:
-                    st.markdown("<div style='background-color: #f8f9fa; padding: 10px; border-radius: 5px; color: #777;'>Pas de description disponible</div>", unsafe_allow_html=True)
-                
-                # Onglets pour le contenu CSV et le dictionnaire
-                if meta.get('contenu_csv') or meta.get('dictionnaire'):
-                    data_tab, dict_tab = st.tabs(["Contenu CSV", "Dictionnaire des variables"])
-                    
-                    with data_tab:
-                        if meta.get('contenu_csv'):
-                            st.markdown("##### Aperçu des données")
-                            # Affichage du contenu CSV (code existant)
-                            try:
-                                contenu_csv = meta['contenu_csv']
-                                # Si c'est une chaîne, essayer de la décoder en JSON
-                                if isinstance(contenu_csv, str):
-                                    try:
-                                        contenu_csv = json.loads(contenu_csv)
-                                    except json.JSONDecodeError as e:
-                                        st.warning(f"Erreur lors du décodage JSON du contenu CSV : {str(e)}")
-                                        st.info("Contenu brut : " + str(meta['contenu_csv'])[:200] + "...")
-                                        continue  # Passer à l'élément suivant
-                                
-                                # Vérifier si le contenu CSV a un format valide
-                                if isinstance(contenu_csv, dict):
-                                    # Assouplir la vérification du format - accepter différentes structures
-                                    header = contenu_csv.get('header', [])
-                                    data = contenu_csv.get('data', [])
-                                    separator = contenu_csv.get('separator', ';')
-                                    
-                                    has_valid_data = len(data) > 0
-                                    has_valid_header = len(header) > 0
-                                    
-                                    if has_valid_data and has_valid_header:
-                                        st.caption(f"Séparateur utilisé: '{separator}'")
-                                        
-                                        # Traitement des données
-                                        data_rows = []
-                                        
-                                        # Traiter chaque ligne de données
-                                        for row in data:
-                                            # Si la ligne est une chaîne, la diviser selon le séparateur
-                                            if isinstance(row, str):
-                                                data_rows.append(row.split(separator))
-                                            # Si c'est déjà une liste, l'utiliser telle quelle
-                                            elif isinstance(row, list):
-                                                data_rows.append(row)
-                                    
-                                    # Vérifier si les données sont uniformes
-                                    if data_rows:
-                                        # Déterminer le nombre maximum de colonnes dans les données
-                                        max_cols = max(len(row) for row in data_rows)
-                                        
-                                        # Si le header a moins de colonnes que les données, ajuster
-                                        if len(header) < max_cols:
-                                            # Ajouter des colonnes manquantes
-                                            header.extend([f"Col{i+1}" for i in range(len(header), max_cols)])
-                                            st.info(f"L'en-tête a été complété avec des noms de colonnes génériques")
-                                        
-                                        # Créer le DataFrame avec les données traitées
-                                        try:
-                                            # Uniformiser les données pour éviter les erreurs
-                                            uniform_data = []
-                                            for row in data_rows:
-                                                # Si la ligne a moins de colonnes que l'en-tête, ajouter des valeurs vides
-                                                if len(row) < len(header):
-                                                    row.extend([''] * (len(header) - len(row)))
-                                                # Si la ligne a plus de colonnes que l'en-tête, tronquer
-                                                elif len(row) > len(header):
-                                                    row = row[:len(header)]
-                                                uniform_data.append(row)
-                                            
-                                            df_csv = pd.DataFrame(uniform_data, columns=header)
-                                            st.dataframe(df_csv, use_container_width=True)
-                                        except Exception as e:
-                                            st.warning(f"Erreur lors de la création du DataFrame : {str(e)}")
-                                            st.write("Données brutes (5 premières lignes) :")
-                                            for i, row in enumerate(data_rows[:5]):
-                                                st.write(f"Ligne {i+1}: {row}")
-                                    else:
-                                        st.warning("Aucune donnée à afficher")
-                                else:
-                                    st.warning(f"Format de données CSV non reconnu (type: {type(contenu_csv)})")
-                                # Tenter d'afficher le contenu de manière intelligente
-                                if isinstance(contenu_csv, list):
-                                    st.write("Liste détectée, affichage des 5 premiers éléments:")
-                                    st.code("\n".join([str(item) for item in contenu_csv[:5]]))
-                                else:
-                                    st.write("Contenu brut (extrait):")
-                                    st.code(str(contenu_csv)[:500] + "..." if len(str(contenu_csv)) > 500 else str(contenu_csv))
-                            except Exception as e:
-                                st.error(f"Erreur lors de l'affichage du contenu CSV : {str(e)}")
-                                st.info("Contenu brut (extrait) : " + str(meta.get('contenu_csv', ''))[:200] + "..." if len(str(meta.get('contenu_csv', ''))) > 200 else str(meta.get('contenu_csv', '')))
+                        if csv_data is not None and not csv_data.empty:
+                            st.dataframe(csv_data, use_container_width=True)
                         else:
-                            st.info("Aucun aperçu CSV disponible pour cette métadonnée.")
-                    
-                    with dict_tab:
-                        if meta.get('dictionnaire'):
-                            st.markdown("##### Dictionnaire des variables")
-                            # Affichage du dictionnaire (code existant)
+                            st.info("Aucune donnée disponible")
+                    except Exception as e:
+                        st.info("Erreur lors du chargement des données")
+                        st.error(str(e))
+                        
+                with tab2:
+                    try:
+                        # Conversion du dictionnaire en DataFrame
+                        if isinstance(meta[16], str):
+                            # Si c'est une chaîne, on essaie de la parser
                             try:
-                                dictionnaire = meta['dictionnaire']
-                                # Si c'est une chaîne, essayer de la décoder en JSON
-                                if isinstance(dictionnaire, str):
-                                    try:
-                                        dictionnaire = json.loads(dictionnaire)
-                                    except json.JSONDecodeError as e:
-                                        st.warning(f"Erreur lors du décodage JSON du dictionnaire : {str(e)}")
-                                        st.info("Contenu brut : " + str(meta['dictionnaire'])[:200] + "...")
-                                        continue  # Passer à l'élément suivant
+                                # Diviser le texte en lignes
+                                lines = [line.strip() for line in meta[16].split('\n') if line.strip()]
+                                data = []
                                 
-                                # Vérifier si le dictionnaire a un format valide
-                                if isinstance(dictionnaire, dict):
-                                    # Assouplir la vérification du format - accepter différentes structures
-                                    header = dictionnaire.get('header', [])
-                                    data = dictionnaire.get('data', [])
-                                    separator = dictionnaire.get('separator', ';')
-                                    
-                                    has_valid_data = len(data) > 0
-                                    has_valid_header = len(header) > 0
-                                    
-                                    if has_valid_data and has_valid_header:
-                                        st.caption(f"Séparateur utilisé: '{separator}'")
-                                        
-                                        # Traitement des données
-                                        data_rows = []
-                                        
-                                        # Traiter chaque ligne de données
-                                        for row in data:
-                                            # Si la ligne est une chaîne, la diviser selon le séparateur
-                                            if isinstance(row, str):
-                                                data_rows.append(row.split(separator))
-                                            # Si c'est déjà une liste, l'utiliser telle quelle
-                                            elif isinstance(row, list):
-                                                data_rows.append(row)
-                                    
-                                    # Afficher une information sur la taille du dictionnaire
-                                    total_rows = len(data_rows)
-                                    st.info(f"Dictionnaire contenant {total_rows} variables")
-                                    
-                                    # Vérifier si les données sont uniformes
-                                    if data_rows:
-                                        # Déterminer le nombre maximum de colonnes dans les données
-                                        max_cols = max(len(row) for row in data_rows)
-                                        
-                                        # Si le header a moins de colonnes que les données, ajuster
-                                        if len(header) < max_cols:
-                                            # Ajouter des colonnes manquantes
-                                            header.extend([f"Col{i+1}" for i in range(len(header), max_cols)])
-                                            st.info(f"L'en-tête a été complété avec des noms de colonnes génériques")
-                                        
-                                        # Uniformiser les données pour éviter les erreurs
-                                        uniform_data = []
-                                        for row in data_rows:
-                                            # Si la ligne a moins de colonnes que l'en-tête, ajouter des valeurs vides
-                                            if len(row) < len(header):
-                                                row.extend([''] * (len(header) - len(row)))
-                                            # Si la ligne a plus de colonnes que l'en-tête, tronquer
-                                            elif len(row) > len(header):
-                                                row = row[:len(header)]
-                                            uniform_data.append(row)
-                                        
-                                        # Pagination pour les grands dictionnaires
-                                        if total_rows > 100:
-                                            # Afficher un avertissement 
-                                            st.warning(f"Le dictionnaire est volumineux. Affichage des 100 premières lignes sur {total_rows}.")
-                                            # Créer le DataFrame avec les 100 premières lignes
-                                            df_dict = pd.DataFrame(uniform_data[:100], columns=header)
-                                        else:
-                                            # Créer le DataFrame avec toutes les données
-                                            df_dict = pd.DataFrame(uniform_data, columns=header)
-                                        
-                                        try:
-                                            st.dataframe(df_dict, use_container_width=True)
-                                        except Exception as e:
-                                            st.warning(f"Erreur lors de la création du DataFrame : {str(e)}")
-                                            st.write("Données brutes (5 premières lignes) :")
-                                            for i, row in enumerate(uniform_data[:5]):
-                                                st.write(f"Ligne {i+1}: {row}")
-                                        
-                                        # Proposer de télécharger le dictionnaire complet si volumineux
-                                        if total_rows > 100:
-                                            try:
-                                                # Créer un DataFrame complet pour le téléchargement
-                                                df_full = pd.DataFrame(uniform_data, columns=header)
-                                                # Convertir en CSV pour le téléchargement
-                                                csv = df_full.to_csv(index=False)
-                                                st.download_button(
-                                                    label="Télécharger le dictionnaire complet",
-                                                    data=csv,
-                                                    file_name="dictionnaire_variables.csv",
-                                                    mime="text/csv"
-                                                )
-                                            except Exception as e:
-                                                st.warning(f"Erreur lors de la création du fichier de téléchargement : {str(e)}")
-                                    else:
-                                        # Format incomplet mais essayer d'afficher ce qu'on a
-                                        if not has_valid_header and has_valid_data:
-                                            st.warning("En-tête manquant dans le dictionnaire, utilisation d'en-têtes génériques")
-                                            # Créer un en-tête générique basé sur la première ligne de données
-                                            sample_row = data[0]
-                                            if isinstance(sample_row, str):
-                                                col_count = len(sample_row.split(separator))
-                                            elif isinstance(sample_row, list):
-                                                col_count = len(sample_row)
-                                            else:
-                                                col_count = 1
-                                            
-                                            header = [f"Colonne {i+1}" for i in range(col_count)]
-                                            
-                                            # Traiter les données comme avant
-                                            data_rows = []
-                                            for row in data:
-                                                if isinstance(row, str):
-                                                    data_rows.append(row.split(separator))
-                                                elif isinstance(row, list):
-                                                    data_rows.append(row)
-                                            
-                                            try:
-                                                # Uniformiser les données
-                                                uniform_data = []
-                                                for row in data_rows:
-                                                    if len(row) < len(header):
-                                                        row.extend([''] * (len(header) - len(row)))
-                                                    elif len(row) > len(header):
-                                                        row = row[:len(header)]
-                                                    uniform_data.append(row)
-                                                
-                                                # Limiter l'affichage si le dictionnaire est volumineux
-                                                if len(uniform_data) > 100:
-                                                    st.warning(f"Affichage limité aux 100 premières lignes sur {len(uniform_data)}")
-                                                    uniform_data = uniform_data[:100]
-                                                
-                                                df_dict = pd.DataFrame(uniform_data, columns=header)
-                                                st.dataframe(df_dict, use_container_width=True)
-                                            except Exception as e:
-                                                st.error(f"Impossible de créer un tableau pour le dictionnaire : {str(e)}")
-                                                st.write("Données brutes (extrait) :")
-                                                st.code(str(data[:5]))
-                                        elif has_valid_header and not has_valid_data:
-                                            st.warning("Aucune donnée trouvée dans le dictionnaire, affichage de l'en-tête uniquement")
-                                            st.write("En-tête du dictionnaire :")
-                                            st.code(header)
-                                        else:
-                                            st.warning("Format de données du dictionnaire non reconnu")
-                                            st.write("Structure détectée :")
-                                            st.json(dictionnaire)
+                                for line in lines:
+                                    # Vérifier si la ligne contient des virgules
+                                    if ',' in line:
+                                        # Diviser la ligne en respectant les virgules
+                                        parts = line.split(',', 3)  # Maximum 4 parties
+                                        if len(parts) >= 4:
+                                            data.append({
+                                                'Variable': parts[0].strip(),
+                                                'Description': parts[1].strip(),
+                                                'Type': parts[2].strip(),
+                                                'Valeurs possibles': parts[3].strip()
+                                            })
+                                
+                                if data:
+                                    dict_data = pd.DataFrame(data)
                                 else:
-                                    st.warning(f"Format de données du dictionnaire non reconnu (type: {type(dictionnaire)})")
-                                    # Tenter d'afficher le contenu de manière intelligente
-                                    if isinstance(dictionnaire, list):
-                                        st.write("Liste détectée, affichage des 5 premiers éléments:")
-                                        st.code("\n".join([str(item) for item in dictionnaire[:5]]))
-                                    else:
-                                        st.write("Contenu brut (extrait):")
-                                        st.code(str(dictionnaire)[:500] + "..." if len(str(dictionnaire)) > 500 else str(dictionnaire))
+                                    # Si aucune donnée n'a été extraite, essayer avec pandas
+                                    dict_data = pd.read_csv(io.StringIO(meta[16]), sep=None, engine='python')
                             except Exception as e:
-                                st.error(f"Erreur lors de l'affichage du dictionnaire : {str(e)}")
-                                # Afficher les 200 premiers caractères du contenu brut
-                                st.info("Contenu brut (extrait) : " + str(meta.get('dictionnaire', ''))[:200] + "..." if len(str(meta.get('dictionnaire', ''))) > 200 else str(meta.get('dictionnaire', '')))
+                                st.error(f"Erreur lors du parsing des données : {str(e)}")
+                                dict_data = None
+
+                        elif isinstance(meta[16], dict) and 'data' in meta[16]:
+                            # Si c'est un dictionnaire avec une clé 'data'
+                            dict_data = pd.DataFrame(meta[16]['data'])
+                            if len(dict_data.columns) >= 4:
+                                dict_data.columns = ['Variable', 'Description', 'Type', 'Valeurs possibles']
                         else:
-                            st.info("Aucun dictionnaire de variables disponible pour cette métadonnée.")
-    
-    # Fermeture du conteneur
-    st.markdown('</div>', unsafe_allow_html=True)
-else:
-    st.warning("Aucune métadonnée trouvée. Utilisez le formulaire de saisie pour en ajouter.")
+                            dict_data = None
+
+                        if dict_data is not None and not dict_data.empty:
+                            st.dataframe(dict_data, use_container_width=True)
+                        else:
+                            st.info("Aucune information sur les variables disponible")
+                    except Exception as e:
+                        st.error(f"Erreur lors du chargement du dictionnaire des variables : {str(e)}")
+            st.markdown('</div>', unsafe_allow_html=True)
 
 # Section d'aide et informations
-with st.expander("Aide et informations"):
+st.markdown('<div class="help-section">', unsafe_allow_html=True)
+with st.expander("❓ Aide et informations"):
     st.markdown("""
     ### Comment utiliser ce catalogue
     
@@ -535,7 +358,7 @@ with st.expander("Aide et informations"):
     """)
 
 # Section de mapping des colonnes (visible uniquement si expanded)
-with st.expander("Mapping des colonnes de la base de données"):
+with st.expander("🔍 Mapping des colonnes de la base de données"):
     # Récupérer les colonnes de la base de données
     db_columns = get_metadata_columns()
     
@@ -569,6 +392,7 @@ with st.expander("Mapping des colonnes de la base de données"):
     })
     
     st.dataframe(mapping_df, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
 # Pied de page
 st.markdown("---")
