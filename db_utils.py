@@ -17,7 +17,7 @@ def get_db_connection():
         # Essayer d'utiliser les variables d'environnement de Streamlit (pour le déploiement)
         # Paramètres par défaut pour la connexion locale
         db_params = {
-            'host': 'ep-steep-sky-59276024.eu-central-1.aws.neon.tech',
+            'host': 'ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
             'database': 'neondb',
             'user': 'neondb_owner',
             'password': 'npg_XsA4wfvHy2Rn',
@@ -48,7 +48,7 @@ def test_connection():
     try:
         # Utiliser les mêmes paramètres que get_db_connection
         db_params = {
-            'host': 'ep-steep-sky-59276024.eu-central-1.aws.neon.tech',
+            'host': 'ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
             'database': 'neondb',
             'user': 'neondb_owner',
             'password': 'npg_XsA4wfvHy2Rn',

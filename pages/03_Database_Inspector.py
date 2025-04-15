@@ -24,7 +24,7 @@ st.write("Cet outil permet d'examiner la base de données Neon.tech et de diagno
 # Paramètres de connexion
 st.subheader("Paramètres de connexion")
 with st.expander("Voir/modifier les paramètres", expanded=True):
-    host = st.text_input("Host", value="ep-steep-sky-59276024.eu-central-1.aws.neon.tech")
+    host = st.text_input("Host", value="ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech")
     database = st.text_input("Database", value="neondb")
     user = st.text_input("User", value="neondb_owner")
     password = st.text_input("Password", value="npg_XsA4wfvHy2Rn", type="password")

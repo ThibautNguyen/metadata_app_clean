@@ -5,7 +5,7 @@ from psycopg2.extras import RealDictCursor
 
 # Paramètres de connexion à la base de données
 DB_PARAMS = {
-    "host": os.getenv("NEON_HOST", "ep-steep-sky-59276024.eu-central-1.aws.neon.tech"),
+    "host": os.getenv("NEON_HOST", "ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech"),
     "database": os.getenv("NEON_DATABASE", "neondb"),
     "user": os.getenv("NEON_USER", "neondb_owner"),
     "password": os.getenv("NEON_PASSWORD", "npg_XsA4wfvHy2Rn"),
