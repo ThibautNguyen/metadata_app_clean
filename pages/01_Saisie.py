@@ -314,7 +314,7 @@ with tab1:
     
     with dict_tab2:
         st.write("Téléchargement du dictionnaire (à venir)")
-        uploaded_file = st.file_uploader("Choisir un fichier CSV", type="csv")
+        uploaded_file = st.file_uploader("Choisir un fichier CSV", type="csv", key="csv_uploader_input")
         if uploaded_file is not None:
             try:
                 df = pd.read_csv(uploaded_file, sep=None, engine='python')
