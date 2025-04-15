@@ -121,12 +121,27 @@ if metadata_results:
                     st.write("**Contenu CSV**")
                     try:
                         contenu_csv = meta['contenu_csv']
+                        # Si c'est une chaîne, essayer de la décoder en JSON
                         if isinstance(contenu_csv, str):
-                            contenu_csv = json.loads(contenu_csv)
+                            try:
+                                contenu_csv = json.loads(contenu_csv)
+                                st.success("Décodage JSON réussi")
+                            except json.JSONDecodeError as e:
+                                st.warning(f"Erreur lors du décodage JSON du contenu CSV : {str(e)}")
+                                st.info("Contenu brut : " + str(meta['contenu_csv'])[:200] + "...")
+                                continue  # Passer à l'élément suivant
                             
-                        # Vérifier si le contenu CSV a le bon format
+                        # Vérifier si le contenu CSV a un format valide
                         if isinstance(contenu_csv, dict):
-                            if 'data' in contenu_csv and 'header' in contenu_csv:
+                            # Assouplir la vérification du format
+                            has_data = 'data' in contenu_csv and contenu_csv['data']
+                            has_header = 'header' in contenu_csv and contenu_csv['header']
+                            
+                            if has_data and has_header:
+                                # Récupérer le séparateur du CSV
+                                separator = contenu_csv.get('separator', ';')
+                                st.caption(f"Séparateur utilisé: '{separator}'")
+                                
                                 # Traitement des données
                                 header = contenu_csv['header']
                                 data_rows = []
@@ -135,19 +150,52 @@ if metadata_results:
                                 for row in contenu_csv['data']:
                                     # Si la ligne est une chaîne, la diviser selon le séparateur
                                     if isinstance(row, str):
-                                        separator = contenu_csv.get('separator', ';')
                                         data_rows.append(row.split(separator))
                                     # Si c'est déjà une liste, l'utiliser telle quelle
                                     elif isinstance(row, list):
                                         data_rows.append(row)
                                 
-                                # Créer le DataFrame avec les données traitées
-                                df_csv = pd.DataFrame(data_rows, columns=header)
-                                st.dataframe(df_csv)
+                                # Vérifier si les données sont uniformes
+                                if data_rows:
+                                    # Si le header a moins de colonnes que les données, ajuster
+                                    max_cols = max(len(row) for row in data_rows)
+                                    if len(header) < max_cols:
+                                        # Ajouter des colonnes manquantes
+                                        header.extend([f"Col{i+1}" for i in range(len(header), max_cols)])
+                                        st.warning(f"L'en-tête a été étendu avec des noms de colonnes génériques (Col1, Col2, etc.)")
+                                    
+                                    # Créer le DataFrame avec les données traitées
+                                    try:
+                                        # Uniformiser les données pour éviter les erreurs
+                                        uniform_data = []
+                                        for row in data_rows:
+                                            # Si la ligne a moins de colonnes que l'en-tête, ajouter des valeurs vides
+                                            if len(row) < len(header):
+                                                row.extend([''] * (len(header) - len(row)))
+                                            # Si la ligne a plus de colonnes que l'en-tête, tronquer
+                                            elif len(row) > len(header):
+                                                row = row[:len(header)]
+                                            uniform_data.append(row)
+                                        
+                                        df_csv = pd.DataFrame(uniform_data, columns=header)
+                                        st.dataframe(df_csv)
+                                    except Exception as e:
+                                        st.warning(f"Erreur lors de la création du DataFrame : {str(e)}")
+                                        st.write("Données brutes :")
+                                        st.write(data_rows[:5])  # Afficher les 5 premières lignes
+                                else:
+                                    st.warning("Aucune donnée à afficher")
                             else:
-                                st.warning("Format de données CSV incomplet (manque header ou data)")
+                                missing = []
+                                if not has_header:
+                                    missing.append("header")
+                                if not has_data:
+                                    missing.append("data")
+                                st.warning(f"Format de données CSV incomplet (manque {', '.join(missing)})")
+                                st.json(contenu_csv)  # Afficher le contenu JSON tel quel
                         else:
-                            st.warning("Format de données CSV non reconnu")
+                            st.warning(f"Format de données CSV non reconnu (type: {type(contenu_csv)})")
+                            st.write(str(contenu_csv)[:500] + "...")  # Afficher un extrait
                     except Exception as e:
                         st.warning(f"Erreur lors de l'affichage du contenu CSV : {str(e)}")
                         st.info("Contenu brut : " + str(meta['contenu_csv'])[:200] + "...")
@@ -157,13 +205,24 @@ if metadata_results:
                     st.write("**Dictionnaire des variables**")
                     try:
                         dictionnaire = meta['dictionnaire']
+                        # Si c'est une chaîne, essayer de la décoder en JSON
                         if isinstance(dictionnaire, str):
-                            dictionnaire = json.loads(dictionnaire)
+                            try:
+                                dictionnaire = json.loads(dictionnaire)
+                                st.success("Décodage JSON réussi")
+                            except json.JSONDecodeError as e:
+                                st.warning(f"Erreur lors du décodage JSON du dictionnaire : {str(e)}")
+                                st.info("Contenu brut : " + str(meta['dictionnaire'])[:200] + "...")
+                                continue  # Passer à l'élément suivant
                             
-                        # Vérifier si le dictionnaire a le bon format
+                        # Vérifier si le dictionnaire a un format valide
                         if isinstance(dictionnaire, dict):
-                            if 'data' in dictionnaire and 'header' in dictionnaire:
-                                # Récupérer le séparateur du dictionnaire ou utiliser ';' par défaut
+                            # Assouplir la vérification du format
+                            has_data = 'data' in dictionnaire and dictionnaire['data']
+                            has_header = 'header' in dictionnaire and dictionnaire['header']
+                            
+                            if has_data and has_header:
+                                # Récupérer le séparateur du dictionnaire
                                 separator = dictionnaire.get('separator', ';')
                                 st.caption(f"Séparateur utilisé: '{separator}'")
                                 
@@ -184,34 +243,71 @@ if metadata_results:
                                 total_rows = len(data_rows)
                                 st.info(f"Dictionnaire contenant {total_rows} variables")
                                 
-                                # Pagination pour les grands dictionnaires
-                                if total_rows > 100:
-                                    # Afficher un avertissement 
-                                    st.warning(f"Le dictionnaire est volumineux. Affichage des 100 premières lignes sur {total_rows}.")
-                                    # Créer le DataFrame avec les 100 premières lignes
-                                    df_dict = pd.DataFrame(data_rows[:100], columns=header)
+                                # Vérifier si les données sont uniformes
+                                if data_rows:
+                                    # Si le header a moins de colonnes que les données, ajuster
+                                    max_cols = max(len(row) for row in data_rows)
+                                    if len(header) < max_cols:
+                                        # Ajouter des colonnes manquantes
+                                        header.extend([f"Col{i+1}" for i in range(len(header), max_cols)])
+                                        st.warning(f"L'en-tête a été étendu avec des noms de colonnes génériques (Col1, Col2, etc.)")
+                                    
+                                    # Uniformiser les données pour éviter les erreurs
+                                    uniform_data = []
+                                    for row in data_rows:
+                                        # Si la ligne a moins de colonnes que l'en-tête, ajouter des valeurs vides
+                                        if len(row) < len(header):
+                                            row.extend([''] * (len(header) - len(row)))
+                                        # Si la ligne a plus de colonnes que l'en-tête, tronquer
+                                        elif len(row) > len(header):
+                                            row = row[:len(header)]
+                                        uniform_data.append(row)
+                                    
+                                    # Pagination pour les grands dictionnaires
+                                    if total_rows > 100:
+                                        # Afficher un avertissement 
+                                        st.warning(f"Le dictionnaire est volumineux. Affichage des 100 premières lignes sur {total_rows}.")
+                                        # Créer le DataFrame avec les 100 premières lignes
+                                        df_dict = pd.DataFrame(uniform_data[:100], columns=header)
+                                    else:
+                                        # Créer le DataFrame avec toutes les données
+                                        df_dict = pd.DataFrame(uniform_data, columns=header)
+                                    
+                                    try:
+                                        st.dataframe(df_dict)
+                                    except Exception as e:
+                                        st.warning(f"Erreur lors de la création du DataFrame : {str(e)}")
+                                        st.write("Données brutes (5 premières lignes) :")
+                                        st.write(uniform_data[:5])
+                                    
+                                    # Proposer de télécharger le dictionnaire complet si volumineux
+                                    if total_rows > 100:
+                                        try:
+                                            # Créer un DataFrame complet pour le téléchargement
+                                            df_full = pd.DataFrame(uniform_data, columns=header)
+                                            # Convertir en CSV pour le téléchargement
+                                            csv = df_full.to_csv(index=False)
+                                            st.download_button(
+                                                label="Télécharger le dictionnaire complet",
+                                                data=csv,
+                                                file_name="dictionnaire_variables.csv",
+                                                mime="text/csv"
+                                            )
+                                        except Exception as e:
+                                            st.warning(f"Erreur lors de la création du fichier de téléchargement : {str(e)}")
                                 else:
-                                    # Créer le DataFrame avec toutes les données
-                                    df_dict = pd.DataFrame(data_rows, columns=header)
-                                
-                                st.dataframe(df_dict)
-                                
-                                # Proposer de télécharger le dictionnaire complet si volumineux
-                                if total_rows > 100:
-                                    # Créer un DataFrame complet pour le téléchargement
-                                    df_full = pd.DataFrame(data_rows, columns=header)
-                                    # Convertir en CSV pour le téléchargement
-                                    csv = df_full.to_csv(index=False)
-                                    st.download_button(
-                                        label="Télécharger le dictionnaire complet",
-                                        data=csv,
-                                        file_name="dictionnaire_variables.csv",
-                                        mime="text/csv"
-                                    )
+                                    st.warning("Aucune donnée à afficher dans le dictionnaire")
                             else:
-                                st.warning("Format de données du dictionnaire incomplet (manque header ou data)")
+                                missing = []
+                                if not has_header:
+                                    missing.append("header")
+                                if not has_data:
+                                    missing.append("data")
+                                st.warning(f"Format de données du dictionnaire incomplet (manque {', '.join(missing)})")
+                                st.json(dictionnaire)  # Afficher le contenu JSON tel quel
                         else:
-                            st.warning("Format de données du dictionnaire non reconnu")
+                            st.warning(f"Format de données du dictionnaire non reconnu (type: {type(dictionnaire)})")
+                            st.write(str(dictionnaire)[:500] + "...")  # Afficher un extrait
                     except Exception as e:
                         st.warning(f"Erreur lors de l'affichage du dictionnaire : {str(e)}")
                         # Afficher les 500 premiers caractères du contenu brut

@@ -1,4 +1,6 @@
-# Application de Gestion des Métadonnées
+# Metadata App
+
+Application de gestion des métadonnées pour bases de données PostgreSQL.
 
 ## État actuel (11/04/2024)
 
@@ -79,3 +81,35 @@ CREATE TABLE metadata (
 - Branch de développement : dev-metadata-app
 - Déploiement : via Streamlit Cloud
 - Repository : https://github.com/ThibautNguyen/DOCS 
+
+## Fonctionnalités
+
+- Saisie et consultation des métadonnées
+- Support pour dictionnaires de variables volumineux
+- Affichage des données CSV
+- Flexibilité dans les séparateurs (virgule ou point-virgule)
+
+## Déploiement sur Streamlit Cloud
+
+1. Connectez-vous à [Streamlit Cloud](https://streamlit.io/cloud)
+2. Créez une nouvelle application pointant vers ce dépôt
+3. Utilisez la branche `main`
+4. Spécifiez `Catalogue.py` comme fichier principal
+5. Configurez les variables d'environnement suivantes :
+   - `NEON_USER` = "neondb_owner"
+   - `NEON_PASSWORD` = "npg_XsA4wfvHy2Rn"
+   - `NEON_HOST` = "ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech"
+   - `NEON_DATABASE` = "neondb"
+
+## Exécution locale
+
+```
+streamlit run Catalogue.py
+```
+
+## Structure du projet
+
+- `Catalogue.py` : Point d'entrée principal pour la consultation des métadonnées
+- `db_utils.py` : Fonctions d'accès à la base de données
+- `pages/01_Saisie.py` : Interface de saisie des métadonnées
+- `pages/03_Database_Inspector.py` : Outil d'inspection de la base de données 

@@ -3,6 +3,7 @@ import logging
 import streamlit as st
 import psycopg2
 from datetime import datetime
+import os
 
 # Configuration du logging
 logging.basicConfig(
@@ -13,14 +14,28 @@ logging.basicConfig(
 def get_db_connection():
     """Établit une connexion à la base de données Neon.tech"""
     try:
+        # Essayer d'utiliser les variables d'environnement de Streamlit (pour le déploiement)
+        # Paramètres par défaut pour la connexion locale
+        db_params = {
+            'host': 'ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
+            'database': 'neondb',
+            'user': 'neondb_owner',
+            'password': 'npg_XsA4wfvHy2Rn',
+            'sslmode': 'require'
+        }
+        
+        # Remplacer par les variables d'environnement si elles existent
+        if os.environ.get('NEON_HOST'):
+            db_params['host'] = os.environ.get('NEON_HOST')
+        if os.environ.get('NEON_DATABASE'):
+            db_params['database'] = os.environ.get('NEON_DATABASE')
+        if os.environ.get('NEON_USER'):
+            db_params['user'] = os.environ.get('NEON_USER')
+        if os.environ.get('NEON_PASSWORD'):
+            db_params['password'] = os.environ.get('NEON_PASSWORD')
+            
         logging.info("Tentative de connexion à la base de données")
-        conn = psycopg2.connect(
-            host='ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
-            database='neondb',
-            user='neondb_owner',
-            password='npg_XsA4wfvHy2Rn',
-            sslmode='require'
-        )
+        conn = psycopg2.connect(**db_params)
         logging.info("Connexion à la base de données réussie")
         return conn
     except Exception as e:
