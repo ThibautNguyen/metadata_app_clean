@@ -4,6 +4,7 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 import json
 from datetime import datetime
+import os
 
 # Configuration de la page
 st.set_page_config(
@@ -18,10 +19,10 @@ st.write("Vérifiez l'état de la base de données et testez les insertions")
 
 # Paramètres de connexion
 DB_PARAMS = {
-    "host": "ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech",
-    "database": "neondb",
-    "user": "neondb_owner",
-    "password": "npg_XsA4wfvHy2Rn",
+    "host": os.getenv("NEON_HOST", "ep-steep-sky-59276024.eu-central-1.aws.neon.tech"),
+    "database": os.getenv("NEON_DATABASE", "neondb"),
+    "user": os.getenv("NEON_USER", "neondb_owner"),
+    "password": os.getenv("NEON_PASSWORD", "npg_XsA4wfvHy2Rn"),
     "sslmode": "require"
 }
 

@@ -48,7 +48,7 @@ Application de gestion des métadonnées pour bases de données PostgreSQL.
 ## Configuration
 
 ### Base de données
-- Host: ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech
+- Host: ep-steep-sky-59276024.eu-central-1.aws.neon.tech
 - Database: neondb
 - User: neondb_owner
 - SSL Mode: require
@@ -98,7 +98,7 @@ CREATE TABLE metadata (
 5. Configurez les variables d'environnement suivantes :
    - `NEON_USER` = "neondb_owner"
    - `NEON_PASSWORD` = "npg_XsA4wfvHy2Rn"
-   - `NEON_HOST` = "ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech"
+   - `NEON_HOST` = "ep-steep-sky-59276024.eu-central-1.aws.neon.tech"
    - `NEON_DATABASE` = "neondb"
 
 ## Exécution locale

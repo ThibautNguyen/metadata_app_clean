@@ -505,7 +505,7 @@ with tab1:
 
 with tab2:
     st.subheader("Structure des données")
-    uploaded_file = st.file_uploader("Choisir un fichier CSV", type="csv")
+    uploaded_file = st.file_uploader("Choisir un fichier CSV", type="csv", key="csv_uploader")
     if uploaded_file is not None:
         df = pd.read_csv(uploaded_file)
         st.write("Aperçu des données :")

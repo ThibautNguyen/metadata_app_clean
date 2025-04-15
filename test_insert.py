@@ -2,6 +2,7 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 import json
 from datetime import datetime
+import os
 
 def test_database_insertion():
     """
@@ -10,13 +11,14 @@ def test_database_insertion():
     try:
         # Connexion à la base de données
         print("Tentative de connexion à la base de données...")
-        conn = psycopg2.connect(
-            host='ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
-            database='neondb',
-            user='neondb_owner',
-            password='npg_XsA4wfvHy2Rn',
-            sslmode='require'
-        )
+        db_params = {
+            "host": os.getenv("NEON_HOST", "ep-steep-sky-59276024.eu-central-1.aws.neon.tech"),
+            "database": os.getenv("NEON_DATABASE", "neondb"),
+            "user": os.getenv("NEON_USER", "neondb_owner"),
+            "password": os.getenv("NEON_PASSWORD", "npg_XsA4wfvHy2Rn"),
+            "sslmode": "require"
+        }
+        conn = psycopg2.connect(**db_params)
         print("Connexion réussie.")
         
         # Vérification de la structure de la table
