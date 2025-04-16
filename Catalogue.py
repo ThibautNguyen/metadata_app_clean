@@ -5,10 +5,42 @@ from pathlib import Path
 import json
 import io
 import csv
+import unicodedata
+import logging
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent))
 from db_utils import test_connection, init_db, get_metadata, get_metadata_columns
+
+def remove_accents(input_str):
+    """Supprime les accents d'une chaîne de caractères"""
+    nfkd_form = unicodedata.normalize('NFKD', input_str)
+    return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
+
+def highlight_text(text, search_term):
+    """Met en surbrillance le terme recherché dans le texte"""
+    if not text or not search_term:
+        return text
+    try:
+        # Convertir en minuscules pour la comparaison
+        text_lower = str(text).lower()
+        search_lower = str(search_term).lower()
+        
+        # Trouver toutes les occurrences du terme recherché
+        start = 0
+        highlighted_text = str(text)  # Conserver le texte original
+        while True:
+            pos = text_lower.find(search_lower, start)
+            if pos == -1:
+                break
+            # Remplacer uniquement la partie correspondante dans le texte original
+            original_part = text[pos:pos+len(search_term)]
+            highlighted_text = highlighted_text[:pos] + f'<span style="background-color: #FFFF00">{original_part}</span>' + highlighted_text[pos+len(search_term):]
+            start = pos + len(search_term)
+        return highlighted_text
+    except Exception as e:
+        logging.error(f"Erreur lors de la mise en surbrillance : {str(e)}")
+        return text
 
 # Configuration de la page
 st.set_page_config(
@@ -189,11 +221,12 @@ with col2:
 
 # Récupération des métadonnées depuis la base de données
 if search_text:
-    # Utiliser la fonction de recherche générique de get_metadata
-    metadata_results = get_metadata(search_text)
+    # Utiliser la fonction de recherche avec le filtre de schéma si nécessaire
+    schema_filter = selected_schema if selected_schema != "Tous" else None
+    metadata_results = get_metadata(search_text, schema_filter)
 elif selected_schema and selected_schema != "Tous":
     # Filtrer par schéma uniquement
-    metadata_results = get_metadata({"schema": selected_schema})
+    metadata_results = get_metadata(None, selected_schema)
 else:
     # Récupérer toutes les métadonnées
     metadata_results = get_metadata()
@@ -205,137 +238,164 @@ st.info(f"Nombre total de métadonnées disponibles : {len(metadata_results)}")
 if not metadata_results:
     st.info("Aucun résultat trouvé.")
 else:
-    # Création d'une liste de dictionnaires pour le DataFrame
-    data_list = []
-    for meta in metadata_results:
-        data_dict = {
-            'Nom de la table': meta[17] if meta[17] else '',  # nom_table
-            'Producteur': meta[2] if meta[2] else '',         # producteur
-            'Schéma': meta[3] if meta[3] else '',            # schema
-            'Granularité géographique': meta[18] if meta[18] else '',  # granularite_geo
-            'Millésime': meta[5].strftime('%Y') if meta[5] else '',  # millesime (YYYY)
-            'Dernière mise à jour': meta[6].strftime('%d-%m-%Y') if meta[6] else ''  # date_maj (DD-MM-YYYY)
-        }
-        data_list.append(data_dict)
-    
-    # Création du DataFrame
-    df = pd.DataFrame(data_list)
-    
-    # Affichage du nombre de résultats
-    st.write(f"**{len(metadata_results)} résultat(s) trouvé(s)**")
-    
-    # Affichage du DataFrame
-    st.dataframe(df, use_container_width=True)
+    # Création du DataFrame avec les colonnes principales
+    if metadata_results:
+        # Création d'une liste de dictionnaires pour le DataFrame
+        data_list = []
+        for meta in metadata_results:
+            data_dict = {
+                'Nom de la table': meta[17] if meta[17] else '',
+                'Producteur de la donnée': meta[2] if meta[2] else '',
+                'Schéma du SGBD': meta[3] if meta[3] else '',
+                'Granularité géographique': meta[18] if meta[18] else '',
+                'Millésime/année': meta[5].strftime('%Y') if meta[5] else '',
+                'Dernière mise à jour': meta[6].strftime('%d-%m-%Y') if meta[6] else ''
+            }
+            data_list.append(data_dict)
+        
+        # Création du DataFrame
+        df = pd.DataFrame(data_list)
+        
+        # Affichage du nombre de résultats
+        st.write(f"**{len(metadata_results)} résultat(s) trouvé(s)**")
+        
+        # Configuration de la mise en forme conditionnelle
+        def highlight_search_term(val):
+            if search_text and isinstance(val, str):
+                if search_text.lower() in val.lower():
+                    return 'background-color: yellow'
+            return ''
+        
+        # Application de la mise en forme conditionnelle
+        styled_df = df.style.map(highlight_search_term, subset=['Nom de la table', 'Producteur de la donnée'])
+        
+        # Affichage du DataFrame avec mise en forme
+        st.dataframe(
+            styled_df,
+            column_config={
+                "Nom de la table": st.column_config.TextColumn(
+                    "Nom de la table",
+                    help="Nom de la table dans la base de données",
+                    width="medium"
+                ),
+                "Producteur de la donnée": st.column_config.TextColumn(
+                    "Producteur de la donnée",
+                    help="Organisme producteur des données",
+                    width="medium"
+                )
+            },
+            hide_index=True,
+            use_container_width=True
+        )
 
-    # Affichage détaillé des métadonnées
-    for i, meta in enumerate(metadata_results):
-        with st.expander(f"📄 {meta[17] if meta[17] else 'Métadonnée ' + str(i+1)}", expanded=False):
-            st.markdown('<div class="metadata-result">', unsafe_allow_html=True)
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                st.markdown("**Informations de base**")
-                st.write(f"**Producteur :** {meta[2] if meta[2] else 'Non spécifié'}")
-                st.write(f"**Schéma :** {meta[3] if meta[3] else 'Non spécifié'}")
-                st.write(f"**Millésime :** {meta[5].strftime('%Y') if meta[5] else 'Non spécifié'}")
-                st.write(f"**Dernière mise à jour :** {meta[6].strftime('%d-%m-%Y') if meta[6] else 'Non spécifié'}")
-                st.write(f"**Fréquence de mise à jour :** {meta[8] if meta[8] else 'Non spécifié'}")
-                st.write(f"**Licence :** {meta[9] if meta[9] else 'Non spécifié'}")
+        # Affichage détaillé des métadonnées
+        for i, meta in enumerate(metadata_results):
+            with st.expander(f"📄 {meta[17] if meta[17] else 'Métadonnée ' + str(i+1)}", expanded=False):
+                st.markdown('<div class="metadata-result">', unsafe_allow_html=True)
+                col1, col2 = st.columns(2)
                 
-            with col2:
-                st.markdown("**Description**")
-                st.write(meta[4] if meta[4] else "Aucune description disponible")
+                with col1:
+                    st.markdown("**Informations de base**")
+                    st.write(f"**Producteur :** {meta[2] if meta[2] else 'Non spécifié'}")
+                    st.write(f"**Schéma :** {meta[3] if meta[3] else 'Non spécifié'}")
+                    st.write(f"**Millésime :** {meta[5].strftime('%Y') if meta[5] else 'Non spécifié'}")
+                    st.write(f"**Dernière mise à jour :** {meta[6].strftime('%d-%m-%Y') if meta[6] else 'Non spécifié'}")
+                    st.write(f"**Fréquence de mise à jour :** {meta[8] if meta[8] else 'Non spécifié'}")
+                    st.write(f"**Licence :** {meta[9] if meta[9] else 'Non spécifié'}")
+                    
+                with col2:
+                    st.markdown("**Description**")
+                    st.write(meta[4] if meta[4] else "Aucune description disponible")
+                    
+                    if meta[7]:  # URL source
+                        st.markdown("**Source des données**")
+                        st.write(f"[Lien vers les données]({meta[7]})")
                 
-                if meta[7]:  # URL source
-                    st.markdown("**Source des données**")
-                    st.write(f"[Lien vers les données]({meta[7]})")
-            
-            # Affichage des données et du dictionnaire des variables dans des onglets
-            if meta[15] and meta[16]:  # Vérification de l'existence des données et du dictionnaire
-                tab1, tab2 = st.tabs(["Aperçu des données", "Dictionnaire des variables"])
-                
-                with tab1:
-                    try:
-                        # Conversion des données en DataFrame
-                        if isinstance(meta[15], str):
-                            # Si c'est une chaîne, on essaie de la parser comme du CSV
-                            try:
-                                # Essayer d'abord avec le séparateur spécifié dans les métadonnées
-                                if meta[10]:
-                                    csv_data = pd.read_csv(io.StringIO(meta[15]), sep=meta[10], nrows=4)
-                                else:
-                                    # Essayer avec le séparateur par défaut (;)
-                                    csv_data = pd.read_csv(io.StringIO(meta[15]), sep=';', nrows=4)
-                            except:
+                # Affichage des données et du dictionnaire des variables dans des onglets
+                if meta[15] and meta[16]:  # Vérification de l'existence des données et du dictionnaire
+                    tab1, tab2 = st.tabs(["Aperçu des données", "Dictionnaire des variables"])
+                    
+                    with tab1:
+                        try:
+                            # Conversion des données en DataFrame
+                            if isinstance(meta[15], str):
+                                # Si c'est une chaîne, on essaie de la parser comme du CSV
                                 try:
-                                    # Si ça échoue, essayer avec la virgule
-                                    csv_data = pd.read_csv(io.StringIO(meta[15]), sep=',', nrows=4)
+                                    # Essayer d'abord avec le séparateur spécifié dans les métadonnées
+                                    if meta[10]:
+                                        csv_data = pd.read_csv(io.StringIO(meta[15]), sep=meta[10], nrows=4)
+                                    else:
+                                        # Essayer avec le séparateur par défaut (;)
+                                        csv_data = pd.read_csv(io.StringIO(meta[15]), sep=';', nrows=4)
                                 except:
-                                    csv_data = None
-                        elif isinstance(meta[15], dict) and 'data' in meta[15]:
-                            # Si c'est un dictionnaire avec une clé 'data'
-                            headers = meta[15].get('header', [])
-                            data = meta[15].get('data', [])
-                            csv_data = pd.DataFrame(data, columns=headers)
-                            csv_data = csv_data.head(4)  # Limiter à 4 lignes
-                        else:
-                            csv_data = None
+                                    try:
+                                        # Si ça échoue, essayer avec la virgule
+                                        csv_data = pd.read_csv(io.StringIO(meta[15]), sep=',', nrows=4)
+                                    except:
+                                        csv_data = None
+                            elif isinstance(meta[15], dict) and 'data' in meta[15]:
+                                # Si c'est un dictionnaire avec une clé 'data'
+                                headers = meta[15].get('header', [])
+                                data = meta[15].get('data', [])
+                                csv_data = pd.DataFrame(data, columns=headers)
+                                csv_data = csv_data.head(4)  # Limiter à 4 lignes
+                            else:
+                                csv_data = None
 
-                        if csv_data is not None and not csv_data.empty:
-                            st.dataframe(csv_data, use_container_width=True)
-                        else:
-                            st.info("Aucune donnée disponible")
-                    except Exception as e:
-                        st.info("Erreur lors du chargement des données")
-                        st.error(str(e))
-                        
-                with tab2:
-                    try:
-                        # Conversion du dictionnaire en DataFrame
-                        if isinstance(meta[16], str):
-                            # Si c'est une chaîne, on essaie de la parser
-                            try:
-                                # Diviser le texte en lignes
-                                lines = [line.strip() for line in meta[16].split('\n') if line.strip()]
-                                data = []
-                                
-                                for line in lines:
-                                    # Vérifier si la ligne contient des virgules
-                                    if ',' in line:
-                                        # Diviser la ligne en respectant les virgules
-                                        parts = line.split(',', 3)  # Maximum 4 parties
-                                        if len(parts) >= 4:
-                                            data.append({
-                                                'Variable': parts[0].strip(),
-                                                'Description': parts[1].strip(),
-                                                'Type': parts[2].strip(),
-                                                'Valeurs possibles': parts[3].strip()
-                                            })
-                                
-                                if data:
-                                    dict_data = pd.DataFrame(data)
-                                else:
-                                    # Si aucune donnée n'a été extraite, essayer avec pandas
-                                    dict_data = pd.read_csv(io.StringIO(meta[16]), sep=None, engine='python')
-                            except Exception as e:
-                                st.error(f"Erreur lors du parsing des données : {str(e)}")
+                            if csv_data is not None and not csv_data.empty:
+                                st.dataframe(csv_data, use_container_width=True)
+                            else:
+                                st.info("Aucune donnée disponible")
+                        except Exception as e:
+                            st.info("Erreur lors du chargement des données")
+                            st.error(str(e))
+                            
+                    with tab2:
+                        try:
+                            # Conversion du dictionnaire en DataFrame
+                            if isinstance(meta[16], str):
+                                try:
+                                    # Essayer d'abord avec le séparateur spécifié dans les métadonnées
+                                    if meta[10]:
+                                        dict_data = pd.read_csv(io.StringIO(meta[16]), sep=meta[10])
+                                    else:
+                                        # Essayer avec le point-virgule par défaut
+                                        dict_data = pd.read_csv(io.StringIO(meta[16]), sep=';')
+                                except:
+                                    try:
+                                        # Si ça échoue, essayer avec la virgule
+                                        dict_data = pd.read_csv(io.StringIO(meta[16]), sep=',')
+                                    except:
+                                        dict_data = None
+                            elif isinstance(meta[16], dict) and 'data' in meta[16]:
+                                # Si c'est un dictionnaire avec une clé 'data'
+                                headers = meta[16].get('header', [])
+                                data = meta[16].get('data', [])
+                                dict_data = pd.DataFrame(data, columns=headers)
+                            else:
                                 dict_data = None
 
-                        elif isinstance(meta[16], dict) and 'data' in meta[16]:
-                            # Si c'est un dictionnaire avec une clé 'data'
-                            dict_data = pd.DataFrame(meta[16]['data'])
-                            if len(dict_data.columns) >= 4:
-                                dict_data.columns = ['Variable', 'Description', 'Type', 'Valeurs possibles']
-                        else:
-                            dict_data = None
-
-                        if dict_data is not None and not dict_data.empty:
-                            st.dataframe(dict_data, use_container_width=True)
-                        else:
-                            st.info("Aucune information sur les variables disponible")
-                    except Exception as e:
-                        st.error(f"Erreur lors du chargement du dictionnaire des variables : {str(e)}")
-            st.markdown('</div>', unsafe_allow_html=True)
+                            if dict_data is not None and not dict_data.empty:
+                                # Configuration de la mise en forme conditionnelle pour le dictionnaire
+                                def highlight_search_term_dict(val):
+                                    if search_text and isinstance(val, str):
+                                        if search_text.lower() in val.lower():
+                                            return 'background-color: yellow'
+                                    return ''
+                                
+                                # Application de la mise en forme conditionnelle au dictionnaire
+                                styled_dict_data = dict_data.style.map(highlight_search_term_dict)
+                                
+                                # Affichage du DataFrame avec mise en forme
+                                st.dataframe(
+                                    styled_dict_data,
+                                    use_container_width=True
+                                )
+                            else:
+                                st.info("Aucune information sur les variables disponible")
+                        except Exception as e:
+                            st.error(f"Erreur lors du chargement du dictionnaire des variables : {str(e)}")
+                st.markdown('</div>', unsafe_allow_html=True)
 
 # Section d'aide et informations
 st.markdown('<div class="help-section">', unsafe_allow_html=True)

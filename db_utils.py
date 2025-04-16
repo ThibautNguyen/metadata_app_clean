@@ -4,6 +4,7 @@ import streamlit as st
 import psycopg2
 from datetime import datetime
 import os
+import unicodedata
 
 # Configuration du logging
 logging.basicConfig(
@@ -217,23 +218,84 @@ def get_metadata_columns():
     finally:
         conn.close()
 
-def get_metadata(search_term=None):
-    """Récupère les métadonnées depuis la base de données avec possibilité de recherche"""
+def remove_accents(input_str):
+    """Supprime les accents d'une chaîne de caractères"""
+    nfkd_form = unicodedata.normalize('NFKD', input_str)
+    return ''.join([c for c in nfkd_form if not unicodedata.combining(c)])
+
+def get_metadata(search_term=None, schema_filter=None):
+    """Récupère les métadonnées depuis la base de données avec possibilité de recherche et filtre par schéma"""
     conn = get_db_connection()
     try:
         with conn.cursor() as cur:
-            if search_term:
-                # Recherche dans les colonnes spécifiées
+            if search_term and schema_filter:
+                # Recherche avec filtre par schéma et calcul du score de pertinence
                 query = """
-                SELECT * FROM metadata 
-                WHERE LOWER(nom_table) LIKE LOWER(%s)
-                OR LOWER(description) LIKE LOWER(%s)
+                SELECT *, 
+                    (CASE 
+                        WHEN LOWER(nom_table) LIKE LOWER(%s) THEN 4
+                        WHEN LOWER(producteur) LIKE LOWER(%s) THEN 3
+                        WHEN LOWER(description) LIKE LOWER(%s) THEN 2
+                        WHEN LOWER(dictionnaire::text) LIKE LOWER(%s) THEN 1
+                        ELSE 0
+                    END) +
+                    (CASE 
+                        WHEN position(LOWER(%s) in LOWER(nom_table)) = 1 THEN 2
+                        WHEN position(LOWER(%s) in LOWER(producteur)) = 1 THEN 1.5
+                        ELSE 1
+                    END) as score
+                FROM metadata 
+                WHERE (LOWER(nom_table) LIKE LOWER(%s)
                 OR LOWER(producteur) LIKE LOWER(%s)
-                OR LOWER(dictionnaire) LIKE LOWER(%s)
-                ORDER BY nom_table
+                OR LOWER(description) LIKE LOWER(%s)
+                OR LOWER(dictionnaire::text) LIKE LOWER(%s))
+                AND LOWER(schema) = LOWER(%s)
+                ORDER BY score DESC, nom_table
                 """
                 search_pattern = f'%{search_term}%'
-                cur.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern))
+                cur.execute(query, (
+                    search_pattern, search_pattern, search_pattern, search_pattern,  # Pour le CASE du type de champ
+                    search_term, search_term,  # Pour le CASE de la position
+                    search_pattern, search_pattern, search_pattern, search_pattern,  # Pour le WHERE
+                    schema_filter
+                ))
+            elif search_term:
+                # Recherche sans filtre par schéma avec calcul du score de pertinence
+                query = """
+                SELECT *, 
+                    (CASE 
+                        WHEN LOWER(nom_table) LIKE LOWER(%s) THEN 4
+                        WHEN LOWER(producteur) LIKE LOWER(%s) THEN 3
+                        WHEN LOWER(description) LIKE LOWER(%s) THEN 2
+                        WHEN LOWER(dictionnaire::text) LIKE LOWER(%s) THEN 1
+                        ELSE 0
+                    END) +
+                    (CASE 
+                        WHEN position(LOWER(%s) in LOWER(nom_table)) = 1 THEN 2
+                        WHEN position(LOWER(%s) in LOWER(producteur)) = 1 THEN 1.5
+                        ELSE 1
+                    END) as score
+                FROM metadata 
+                WHERE LOWER(nom_table) LIKE LOWER(%s)
+                OR LOWER(producteur) LIKE LOWER(%s)
+                OR LOWER(description) LIKE LOWER(%s)
+                OR LOWER(dictionnaire::text) LIKE LOWER(%s)
+                ORDER BY score DESC, nom_table
+                """
+                search_pattern = f'%{search_term}%'
+                cur.execute(query, (
+                    search_pattern, search_pattern, search_pattern, search_pattern,  # Pour le CASE du type de champ
+                    search_term, search_term,  # Pour le CASE de la position
+                    search_pattern, search_pattern, search_pattern, search_pattern  # Pour le WHERE
+                ))
+            elif schema_filter:
+                # Filtre par schéma uniquement
+                query = """
+                SELECT * FROM metadata 
+                WHERE LOWER(schema) = LOWER(%s)
+                ORDER BY nom_table
+                """
+                cur.execute(query, (schema_filter,))
             else:
                 # Récupération de toutes les métadonnées
                 query = "SELECT * FROM metadata ORDER BY nom_table"
@@ -314,45 +376,40 @@ def save_metadata(metadata):
                     logging.debug("Conversion du dictionnaire en JSON")
                     # Assurer que c'est un dictionnaire et pas déjà une chaîne JSON
                     if isinstance(metadata["dictionnaire"], dict):
-                        # Vérifier si le dictionnaire est volumineux
-                        dict_data = metadata["dictionnaire"].get("data", [])
-                        
-                        # Vérifier la taille du dictionnaire
-                        if len(dict_data) > 2000:
-                            logging.warning(f"Dictionnaire très volumineux ({len(dict_data)} lignes). Traitement optimisé.")
-                            # Limiter le dictionnaire aux 2000 premières lignes
-                            metadata["dictionnaire"]["data"] = dict_data[:2000]
-                            logging.info(f"Dictionnaire limité aux 2000 premières lignes pour des raisons de performance")
-                        
                         dictionnaire_json = json.dumps(metadata["dictionnaire"])
                     else:
                         dictionnaire_json = metadata["dictionnaire"]
-                    
-                    logging.debug(f"Taille du dictionnaire JSON: {len(str(dictionnaire_json))} caractères")
                 
                 # Récupération des données selon la structure
                 if "informations_base" in metadata:
                     # Nouvelle structure
                     info_base = metadata["informations_base"]
                     nom_table = info_base.get("nom_table", "")
+                    nom_table_normalized = remove_accents(nom_table.lower())
                     granularite_geo = info_base.get("granularite_geo", "")
                     date_creation = info_base.get("date_creation", datetime.now().strftime("%Y-%m-%d"))
                     date_maj = info_base.get("date_maj", datetime.now().strftime("%Y-%m-%d"))
                     producteur = info_base.get("nom_base", "")  # nom_base dans le dictionnaire correspond à producteur dans la BD
+                    producteur_normalized = remove_accents(producteur.lower())
                     schema = info_base.get("schema", "")
                     description = info_base.get("description", "")
+                    description_normalized = remove_accents(description.lower())
                     source = info_base.get("source", "")
                     frequence_maj = info_base.get("frequence_maj", "")
                     licence = info_base.get("licence", "")
                     envoi_par = info_base.get("envoi_par", "")
                     nom_base = metadata.get("nom_fichier", "")  # nom_fichier correspond à nom_base dans la BD
+                    dictionnaire_normalized = remove_accents(str(dictionnaire_json).lower()) if dictionnaire_json else ""
                 else:
                     # Ancienne structure
                     nom_table = metadata.get("nom_table", "")
+                    nom_table_normalized = remove_accents(nom_table.lower())
                     nom_base = metadata.get("nom_base", "")
                     producteur = metadata.get("producteur", "")
+                    producteur_normalized = remove_accents(producteur.lower())
                     schema = metadata.get("schema", "")
                     description = metadata.get("description", "")
+                    description_normalized = remove_accents(description.lower())
                     date_creation = metadata.get("millesime", metadata.get("date_creation", datetime.now().strftime("%Y-%m-%d")))
                     date_maj = metadata.get("date_maj", datetime.now().strftime("%Y-%m-%d"))
                     source = metadata.get("source", "")
@@ -360,6 +417,7 @@ def save_metadata(metadata):
                     licence = metadata.get("licence", "")
                     envoi_par = metadata.get("envoi_par", "")
                     granularite_geo = metadata.get("granularite_geo", "")
+                    dictionnaire_normalized = remove_accents(str(dictionnaire_json).lower()) if dictionnaire_json else ""
                 
                 # Conversion des chaînes de date en objets date si nécessaire
                 if isinstance(date_creation, str):
@@ -395,22 +453,25 @@ def save_metadata(metadata):
                 
                 # Construire les colonnes et valeurs pour l'insertion en fonction de la présence de millesime
                 if use_millesime:
-                    columns = ["nom_table", "nom_base", "producteur", "schema", "description", 
-                               "millesime", "date_maj", "source", "frequence_maj",
-                               "licence", "envoi_par", "contact", "mots_cles", "notes",
-                               "contenu_csv", "dictionnaire", "granularite_geo"]
+                    columns = ["nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
+                             "schema", "description", "description_normalized", "millesime", "date_maj", 
+                             "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
+                             "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"]
                 else:
-                    columns = ["nom_table", "nom_base", "producteur", "schema", "description", 
-                               "date_creation", "date_maj", "source", "frequence_maj",
-                               "licence", "envoi_par", "contact", "mots_cles", "notes",
-                               "contenu_csv", "dictionnaire", "granularite_geo"]
+                    columns = ["nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
+                             "schema", "description", "description_normalized", "date_creation", "date_maj", 
+                             "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
+                             "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"]
                 
                 values = [
                     nom_table,
+                    nom_table_normalized,
                     nom_base,
                     producteur,
+                    producteur_normalized,
                     schema,
                     description,
+                    description_normalized,
                     date_creation,
                     date_maj,
                     source,
@@ -422,6 +483,7 @@ def save_metadata(metadata):
                     "",  # champ notes vide
                     contenu_csv_json,
                     dictionnaire_json,
+                    dictionnaire_normalized,
                     granularite_geo
                 ]
                 
