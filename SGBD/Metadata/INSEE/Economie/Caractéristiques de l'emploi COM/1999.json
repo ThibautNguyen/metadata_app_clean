@@ -1,0 +1,109 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "caracterist_emploi_COM_1999",
+    "description": "Caractéristiques de l'emploi en 1999 Sans page web dédiée https://www.insee.fr/fr/statistiques/2044664",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "CODGEO",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal",
+      "nullable": true
+    },
+    {
+      "name": "REG",
+      "type": "VARCHAR",
+      "description": "Code de la région",
+      "nullable": true
+    },
+    {
+      "name": "DEP",
+      "type": "VARCHAR",
+      "description": "Code du département",
+      "nullable": true
+    },
+    {
+      "name": "LIBGEO",
+      "type": "VARCHAR",
+      "description": "Libellé de la commune ou de l'arrondissement municipal",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P99_HSAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P99_HSAL15P_TP",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus à temps partiel ",
+      "nullable": true
+    },
+    {
+      "name": "P99_FSAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P99_FSAL15P_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus à temps partiel ",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P_ILT1",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P_ILT2P",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P_ILT2",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P_ILT3",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P_ILT4",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région en France métropolitaine",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P_ILT5",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger)",
+      "nullable": true
+    },
+    {
+      "name": "P99_ACTOCC15P_ILT45D",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus dans les DOM qui travaillent dans une autre région",
+      "nullable": true
+    }
+  ]
+}

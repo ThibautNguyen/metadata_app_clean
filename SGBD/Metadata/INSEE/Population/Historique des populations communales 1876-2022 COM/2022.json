@@ -1,0 +1,253 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "POP_COM_EVOL_1876",
+    "description": "https://www.insee.fr/fr/statistiques/3698339#consulter) C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\Historique des populations communales  COM",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "CODGEO",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal",
+      "nullable": true
+    },
+    {
+      "name": "REG",
+      "type": "VARCHAR",
+      "description": "Code de la région",
+      "nullable": true
+    },
+    {
+      "name": "DEP",
+      "type": "VARCHAR",
+      "description": "Code du département",
+      "nullable": true
+    },
+    {
+      "name": "LIBGEO",
+      "type": "VARCHAR",
+      "description": "Libellé géographique",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2022",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2022",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2021",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2021",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2020",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2020",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2019",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2019",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2018",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2018",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2017",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2017",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2016",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2016",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2015",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2015",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2014",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2014",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2013",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2013",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2012",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2012",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2011",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2011",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2010",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2010",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2009",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2009",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2008",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2008",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2007",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2007",
+      "nullable": true
+    },
+    {
+      "name": "PMUN2006",
+      "type": "VARCHAR",
+      "description": "Population municipale en 2006",
+      "nullable": true
+    },
+    {
+      "name": "PSDC1999",
+      "type": "VARCHAR",
+      "description": "Population sans double compte en 1999",
+      "nullable": true
+    },
+    {
+      "name": "PSDC1990",
+      "type": "VARCHAR",
+      "description": "Population sans double compte en 1990",
+      "nullable": true
+    },
+    {
+      "name": "PSDC1982",
+      "type": "VARCHAR",
+      "description": "Population sans double compte en 1982",
+      "nullable": true
+    },
+    {
+      "name": "PSDC1975",
+      "type": "VARCHAR",
+      "description": "Population sans double compte en 1975",
+      "nullable": true
+    },
+    {
+      "name": "PSDC1968",
+      "type": "VARCHAR",
+      "description": "Population sans double compte en 1968",
+      "nullable": true
+    },
+    {
+      "name": "PSDC1962",
+      "type": "VARCHAR",
+      "description": "Population sans double compte en 1962",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1954",
+      "type": "VARCHAR",
+      "description": "Population totale en 1954",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1936",
+      "type": "VARCHAR",
+      "description": "Population totale en 1936",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1931",
+      "type": "VARCHAR",
+      "description": "Population totale en 1931",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1926",
+      "type": "VARCHAR",
+      "description": "Population totale en 1926",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1921",
+      "type": "VARCHAR",
+      "description": "Population totale en 1921",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1911",
+      "type": "VARCHAR",
+      "description": "Population totale en 1911",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1906",
+      "type": "VARCHAR",
+      "description": "Population totale en 1906",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1901",
+      "type": "VARCHAR",
+      "description": "Population totale en 1901",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1896",
+      "type": "VARCHAR",
+      "description": "Population totale en 1896",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1891",
+      "type": "VARCHAR",
+      "description": "Population totale en 1891",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1886",
+      "type": "VARCHAR",
+      "description": "Population totale en 1886",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1881",
+      "type": "VARCHAR",
+      "description": "Population totale en 1881",
+      "nullable": true
+    },
+    {
+      "name": "PTOT1876",
+      "type": "VARCHAR",
+      "description": "Population totale en 1876",
+      "nullable": true
+    }
+  ]
+}

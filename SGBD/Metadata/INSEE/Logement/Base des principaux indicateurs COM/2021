@@ -1,0 +1,266 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/8202349
+
+
+## Tableau SQL : 
+Principaux_indicateurs_COM_2021
+
+##Chemin du tableau : 
+C:\Users\thiba\OneDrive\Documents\Données\Logement\Principaux indicateurs COM\2021
+
+
+
+## 4 premières lignes :
+CODGEO;P21_LOG;P21_RP;P21_RSECOCC;P21_LOGVAC;P21_MAISON;P21_APPART;P21_RP_1P;P21_RP_2P;P21_RP_3P;P21_RP_4P;P21_RP_5PP;P21_NBPI_RP;P21_RPMAISON;P21_NBPI_RPMAISON;P21_RPAPPART;P21_NBPI_RPAPPART;C21_RP_HSTU1P;C21_RP_HSTU1P_SUROCC;P21_RP_ACHTOT;P21_RP_ACH19;P21_RP_ACH45;P21_RP_ACH70;P21_RP_ACH90;P21_RP_ACH05;P21_RP_ACH18;P21_RPMAISON_ACH19;P21_RPMAISON_ACH45;P21_RPMAISON_ACH70;P21_RPMAISON_ACH90;P21_RPMAISON_ACH05;P21_RPMAISON_ACH18;P21_RPAPPART_ACH19;P21_RPAPPART_ACH45;P21_RPAPPART_ACH70;P21_RPAPPART_ACH90;P21_RPAPPART_ACH05;P21_RPAPPART_ACH18;P21_MEN;P21_MEN_ANEM0002;P21_MEN_ANEM0204;P21_MEN_ANEM0509;P21_MEN_ANEM10P;P21_MEN_ANEM1019;P21_MEN_ANEM2029;P21_MEN_ANEM30P;P21_PMEN;P21_PMEN_ANEM0002;P21_PMEN_ANEM0204;P21_PMEN_ANEM0509;P21_PMEN_ANEM10P;P21_NBPI_RP_ANEM0002;P21_NBPI_RP_ANEM0204;P21_NBPI_RP_ANEM0509;P21_NBPI_RP_ANEM10P;P21_RP_PROP;P21_RP_LOC;P21_RP_LOCHLMV;P21_RP_GRAT;P21_NPER_RP;P21_NPER_RP_PROP;P21_NPER_RP_LOC;P21_NPER_RP_LOCHLMV;P21_NPER_RP_GRAT;P21_ANEM_RP;P21_ANEM_RP_PROP;P21_ANEM_RP_LOC;P21_ANEM_RP_LOCHLMV;P21_ANEM_RP_GRAT;P21_RP_SDB;P21_RP_CCCOLL;P21_RP_CCIND;P21_RP_CINDELEC;P21_RP_ELEC;P21_RP_EAUCH;P21_RP_BDWC;P21_RP_CHOS;P21_RP_CLIM;P21_RP_TTEGOU;P21_RP_GARL;P21_RP_VOIT1P;P21_RP_VOIT1;P21_RP_VOIT2P;P21_RP_HABFOR;P21_RP_CASE;P21_RP_MIBOIS;P21_RP_MIDUR;P15_LOG;P15_RP;P15_RSECOCC;P15_LOGVAC;P15_MAISON;P15_APPART;P15_RP_1P;P15_RP_2P;P15_RP_3P;P15_RP_4P;P15_RP_5PP;P15_NBPI_RP;P15_RPMAISON;P15_NBPI_RPMAISON;P15_RPAPPART;P15_NBPI_RPAPPART;C15_RP_HSTU1P;C15_RP_HSTU1P_SUROCC;P15_RP_ACHTOT;P15_RP_ACH19;P15_RP_ACH45;P15_RP_ACH70;P15_RP_ACH90;P15_RP_ACH05;P15_RP_ACH12;P15_RPMAISON_ACH19;P15_RPMAISON_ACH45;P15_RPMAISON_ACH70;P15_RPMAISON_ACH90;P15_RPMAISON_ACH05;P15_RPMAISON_ACH12;P15_RPAPPART_ACH19;P15_RPAPPART_ACH45;P15_RPAPPART_ACH70;P15_RPAPPART_ACH90;P15_RPAPPART_ACH05;P15_RPAPPART_ACH12;P15_MEN;P15_MEN_ANEM0002;P15_MEN_ANEM0204;P15_MEN_ANEM0509;P15_MEN_ANEM10P;P15_MEN_ANEM1019;P15_MEN_ANEM2029;P15_MEN_ANEM30P;P15_PMEN;P15_PMEN_ANEM0002;P15_PMEN_ANEM0204;P15_PMEN_ANEM0509;P15_PMEN_ANEM10P;P15_NBPI_RP_ANEM0002;P15_NBPI_RP_ANEM0204;P15_NBPI_RP_ANEM0509;P15_NBPI_RP_ANEM10P;P15_RP_PROP;P15_RP_LOC;P15_RP_LOCHLMV;P15_RP_GRAT;P15_NPER_RP;P15_NPER_RP_PROP;P15_NPER_RP_LOC;P15_NPER_RP_LOCHLMV;P15_NPER_RP_GRAT;P15_ANEM_RP;P15_ANEM_RP_PROP;P15_ANEM_RP_LOC;P15_ANEM_RP_LOCHLMV;P15_ANEM_RP_GRAT;P15_RP_SDB;P15_RP_CCCOLL;P15_RP_CCIND;P15_RP_CINDELEC;P15_RP_ELEC;P15_RP_EAUCH;P15_RP_BDWC;P15_RP_CHOS;P15_RP_CLIM;P15_RP_TTEGOU;P15_RP_GARL;P15_RP_VOIT1P;P15_RP_VOIT1;P15_RP_VOIT2P;P15_RP_HABFOR;P15_RP_CASE;P15_RP_MIBOIS;P15_RP_MIDUR;P10_LOG;P10_RP;P10_RSECOCC;P10_LOGVAC;P10_MAISON;P10_APPART;P10_RP_1P;P10_RP_2P;P10_RP_3P;P10_RP_4P;P10_RP_5PP;P10_NBPI_RP;P10_RPMAISON;P10_NBPI_RPMAISON;P10_RPAPPART;P10_NBPI_RPAPPART;C10_RP_HSTU1P;C10_RP_HSTU1P_SUROCC;P10_MEN;P10_MEN_ANEM0002;P10_MEN_ANEM0204;P10_MEN_ANEM0509;P10_MEN_ANEM10P;P10_MEN_ANEM1019;P10_MEN_ANEM2029;P10_MEN_ANEM30P;P10_PMEN;P10_PMEN_ANEM0002;P10_PMEN_ANEM0204;P10_PMEN_ANEM0509;P10_PMEN_ANEM10P;P10_NBPI_RP_ANEM0002;P10_NBPI_RP_ANEM0204;P10_NBPI_RP_ANEM0509;P10_NBPI_RP_ANEM10P;P10_RP_PROP;P10_RP_LOC;P10_RP_LOCHLMV;P10_RP_GRAT;P10_NPER_RP;P10_NPER_RP_PROP;P10_NPER_RP_LOC;P10_NPER_RP_LOCHLMV;P10_NPER_RP_GRAT;P10_ANEM_RP;P10_ANEM_RP_PROP;P10_ANEM_RP_LOC;P10_ANEM_RP_LOCHLMV;P10_ANEM_RP_GRAT;P10_RP_SDB;P10_RP_CCCOLL;P10_RP_CCIND;P10_RP_CINDELEC;P10_RP_ELEC;P10_RP_EAUCH;P10_RP_BDWC;P10_RP_CHOS;P10_RP_CLIM;P10_RP_TTEGOU;P10_RP_GARL;P10_RP_VOIT1P;P10_RP_VOIT1;P10_RP_VOIT2P;P10_RP_HABFOR;P10_RP_CASE;P10_RP_MIBOIS;P10_RP_MIDUR
+01001;372.387493855914;341.234562367113;13.7072898550724;17.4456416337286;362.548321646553;8.59305494980861;0;7.62442087417736;29.7039977107693;91.3590624959263;212.54708128624;1723.39083212678;332.641507417304;1700.4593986965;8.59305494980861;22.9314334302727;347.030546406168;0;320.966217369233;74.1497078013686;21.2367589185817;14.4808867690299;96.1275919954267;84.9563028196532;30.0149690651726;74.1497078013686;21.2367589185817;13.5205628087901;93.2632403454905;82.1002612851085;28.1026312600846;0;0;0.960323960239741;2.8643516499362;2.8560415345447;1.91233780508797;341.234562367113;35.6926447131841;57.9499485783559;56.1547439124238;191.437225163149;56.9971240532895;54.8656658508761;79.5744352589836;832;90.1111686190194;154.508836456712;165.380033152735;421.999961771534;176.80369266704;292.345806660401;271.413002965513;982.828329833822;292.172831181122;47.1325549002898;13.4115125984296;1.92917628570112;832;723.870776678168;103.268559713572;23.0650481264546;4.8606636082598;6023.86772694757;5507.44448473269;507.729374631219;122.766476273439;8.69386758365739;337.393048276324;2.87266176532771;166.84713578845;73.0551818467009;;;;;;;295.928973767827;331.689275322626;109.305986129615;222.383289193011;;;;;345.367367367367;306;14.9970923304257;24.3702750369417;337.555412555413;5.87463654130321;1;3;21;100;181;1521;301;1507;4;10;310;0;293;84;9;8;94;90;8;83;9;6;92;90;8;0;0;2;2;0;0;306;24;41;36;205;96;47;62;767;60;122;107;478;112;203;179;1027;260;41;8;5;767;669;86;19;12;5483;4972;376;60;135;301;7;150;67;;;;;;;261;292;100;192;;;;;336.849922767997;303.548717948719;20.5683912119065;12.7328136073707;320.844914499629;16.0050082683677;0;7.03589743589747;29.1487179487181;90.4615384615389;176.902564102565;1477.53846153847;290.482051282053;1429.29230769231;13.0666666666667;48.2461538461541;305.558974358974;0;303.548717948719;16.0820512820514;35.1794871794874;61.3128205128208;190.97435897436;85.4358974358978;49.2512820512823;56.2871794871798;784.000000000004;41.2102564102566;104.533333333334;193.989743589745;444.266666666669;77.3948717948722;174.892307692309;297.51794871795;927.733333333338;250.276923076924;47.2410256410259;13.0666666666667;6.03076923076926;784.000000000004;656.348717948721;115.589743589744;30.1538461538463;12.0615384615385;5220.63589743592;4652.73846153848;429.189743589746;110.564102564103;138.707692307693;296.512820512822;7.03589743589747;146.748717948719;68.3487179487183;;;;;;;260.328205128206;292.492307692309;114.584615384616;177.907692307693;;;;
+01002;174.93867203683;115.722510420668;44.9604190048634;14.2557426112982;173.0995732852;1.83909875162981;0.919549375814906;1.89722650476444;13.0167839537446;27.6463289257063;72.2426216606381;590.738459020017;113.883411669039;584.301613389313;1.83909875162981;6.43684563070434;114.880886053273;0;111.987075840474;57.7972815941249;5.83747195516739;12.479156176018;8.50848311481003;9.69188951010613;17.6727934902479;57.7972815941249;5.83747195516739;11.5596068002031;8.50848311481003;9.69188951010613;17.6727934902479;0;0;0.919549375814906;0;0;0;115.722510420668;6.55401953311122;17.3693508931036;25.8492154694464;65.9499245250071;32.9553873725895;16.1564630030774;16.8380741493402;267;10.5265016666571;44.9914049746815;60.3472738567514;151.13481950191;29.4434218695171;77.6262325936401;136.616640612641;347.052163944219;101.578666472362;11.3851958208619;0;2.75864812744472;267;241.000483268803;23.2408686037518;0;2.75864812744472;1947.96060172138;1866.70226682589;43.5568104870813;0;37.7015244084112;111.987075840474;2.90352217218116;62.1337329329469;14.421115957077;;;;;;;88.0207534903655;110.176595627312;48.5678026720614;61.6087929552503;;;;;165.080116684899;100.168724279835;49.6381236038719;15.2732688011914;165.080116684899;0;1.98353909465021;1.98353909465021;13.8847736625514;29.7530864197531;52.5637860082305;475.057613168724;100.168724279835;475.057613168724;0;0;104.135802469136;4.95884773662551;97.1934156378601;53.5555555555556;9.91769547325103;6.94238683127572;7.93415637860082;11.9012345679012;6.94238683127572;53.5555555555556;9.91769547325103;6.94238683127572;7.93415637860082;11.9012345679012;6.94238683127572;0;0;0;0;0;0;100.168724279835;11.9012345679012;14.8765432098765;26.7777777777778;46.6131687242798;23.8024691358025;8.92592592592593;13.8847736625514;241;29.7530864197531;35.7037037037037;70.4156378600823;105.127572016461;56.5308641975309;68.4320987654321;119.012345679012;231.082304526749;85.2921810699589;11.9012345679012;0;2.97530864197531;241;211.246913580247;26.7777777777778;0;2.97530864197531;1445.00823045267;1366.65843621399;58.5144032921811;0;19.8353909465021;97.1934156378601;0.991769547325103;50.5802469135803;17.8518518518519;;;;;;;75.3744855967078;97.1934156378601;28.761316872428;68.4320987654321;;;;;161.055555555556;95.3888888888888;55.477011494253;10.1896551724138;160.111111111111;0.944444444444444;0.944444444444444;7.55555555555555;8.5;22.6666666666667;55.7222222222222;447.666666666666;94.4444444444444;443.888888888889;0.944444444444444;3.77777777777778;98.2222222222223;3.77777777777778;95.3888888888888;8.5;21.7222222222222;21.7222222222222;43.4444444444444;20.7777777777778;8.5;14.1666666666667;221;22.6666666666667;47.2222222222222;51.9444444444444;99.1666666666666;40.6111111111111;97.2777777777777;94.4444444444444;215.333333333333;79.3333333333333;11.3333333333333;0;4.72222222222222;221;184.166666666667;30.2222222222222;0;6.61111111111111;1301.44444444444;1131.44444444444;97.2777777777777;0;72.7222222222222;92.5555555555555;0.944444444444444;47.2222222222222;15.1111111111111;;;;;;;70.8333333333333;90.6666666666666;27.3888888888889;63.2777777777777;;;;
+01004;7846.02178904681;6932.83919790318;137.979343506403;775.203247637224;3281.35205915124;4488.25943326036;322.52263041729;820.025148493805;1789.2731082674;1923.47279139175;2077.54551933294;26714.0197605145;2974.86130815276;14586.1372258944;3915.75364650333;12051.6651884821;6752.93427066884;223.57603353117;6819.70890182266;303.254364093142;340.01259536301;1438.41359816143;1880.35382200742;1380.84579911512;1476.82872308254;191.96137107643;193.837944167544;545.24945496558;809.003336270216;736.65063620889;445.653333149279;108.419233863858;146.174651195465;892.282568157714;1058.27871593995;620.914195983286;1029.05921759737;6932.83919790318;1016.1901636045;1955.55718402243;1417.60184893167;2543.49000134458;1084.03879698946;686.32457287295;773.126631482172;14352.9984254147;1902.82317549836;4411.33160884947;3207.97403977585;4830.86960129101;3204.60315687923;6854.73162111188;5339.44039484202;11315.2445876814;2899.11660826546;3913.53469957631;1643.08009657719;120.187890061404;14352.9984254147;6236.3815521781;7884.29014728941;3706.27874066247;232.326725947178;80035.1354397393;51289.0021313099;27898.2881951497;15246.8154006588;847.845113279812;6643.76524385388;1360.65376869859;3506.47850200482;1743.8568059459;;;;;;;5068.49055716563;5877.11740358064;3590.67691358331;2286.44048999733;;;;;6962.51273982016;6250.79976910825;120.235153065587;591.477817646322;3262.25058804042;3668.77340633909;181.499207150765;669.077657104141;1821.15869025054;1746.66469624603;1832.39951835677;24454.0269169094;2987.1659899476;14312.6420430378;3235.22672197676;10081.0430916779;6079.09039369957;184.531717667207;6018.05960378796;478.491174964698;433.936748159067;1254.45242532782;1818.33216731639;1087.09377050382;945.753317516167;366.527916716907;265.721895754217;433.386547354153;911.867127497538;616.663146124936;329.565997744942;111.963258247791;168.21485240485;820.058997994744;893.405400722073;457.096966249618;615.180439792305;6250.79976910825;1046.26373312162;1620.64672821604;1167.93556632261;2415.95374144798;1039.58865236859;572.023586896508;804.341502182877;13651.9990318956;2228.28652788019;3659.16518006422;2807.41086906049;4957.13645489068;3341.93404699763;5699.02542756816;4535.22772066378;10877.8397216798;2898.97499983757;3181.03708607686;1251.63279405707;170.787683193817;13651.9990318956;6563.41801198686;6707.47848098747;3025.5015250183;381.102538921253;74241.260953674;51749.0531070148;21285.2609755051;12026.2992894966;1206.94687115402;6086.8712310373;1333.44765595931;3009.00781713263;1543.02758028376;;;;;;;4532.54689649279;5343.82222538631;3242.11282222726;2101.70940315905;;;;;6428.55331050172;5823.66650006287;110.281519502727;494.605290936121;3134.49578174449;3267.73670119351;126.163805862668;590.789415113768;1484.10212518822;1699.13054693074;1923.48060696748;23501.3094320294;2824.75527152909;13820.5290233287;2977.83747103949;9627.025447252;5708.72762304563;173.568921789436;5823.66650006287;904.596389731797;1603.83584643654;976.208958538653;2339.02530535589;1156.71798584174;491.331235953163;690.976083560983;13266.9948004162;1903.20680561641;3991.69970067022;2632.83191660728;4739.25637752226;2985.84429921097;6007.93203651894;4071.23084139181;10436.3022549077;2573.61764827467;3137.4084714138;1257.30598452485;112.640380374405;13266.9948004162;6196.9133694806;6797.32324936256;2968.93447549512;272.758181573009;67820.8909178882;45127.5216189068;22116.4142665797;12196.6529734222;576.955032401686;5613.46197392362;1292.63924587607;2893.11691721041;1267.88326906352;;;;;;;4099.52212534773;4998.07609658045;2974.29016159405;2023.78593498641;;;;
+01005;898.44294738601;794.75302490539;7.56072351421191;96.1291989664086;660.199129097204;234.958103574174;6.69364600490727;54.2312709430049;108.867661590127;215.827564273361;409.132882093989;3683.44862812189;594.312824187643;3042.37447524761;198.234589362288;634.457318807902;793.782530435595;10.7749551287535;779.539507171282;108.550097552563;34.9133207162326;80.9884404510982;211.823871477396;146.66206931292;196.601707661072;84.2359894248709;21.7808932428962;56.8710581086117;193.162864224225;130.356237523579;92.6922639293522;24.3141081276922;13.1324274733364;21.9117709870277;18.6610072531708;16.3058317893412;103.909443731719;794.75302490539;103.996828845314;190.005897299204;121.251654043561;379.49864471731;150.378739410379;118.981370524544;110.138534782387;1897;234.016063054667;455.269099168987;321.733815628504;885.981022147842;406.622051187559;775.743956578146;540.620276760126;1960.46234359606;581.510357899193;199.092413871919;74.0480826369341;14.150253134278;1897;1456.89674033029;411.184722473559;149.966052772516;28.9185371961468;10876.0040147378;9450.18454758377;1227.34962557284;404.289679434298;198.469841581219;785.03843668942;36.2861032874541;356.026533983785;249.15071759951;;;;;;;651.864864243849;766.913453547984;310.875494588962;456.037958959022;;;;;663;618;12;33;534;128;2;36;70;181;329;2946;499;2558;118;384;605;15;612;116;22;54;189;138;93;87;20;44;175;121;46;29;2;9;14;17;47;618;45;120;124;329;136;107;86;1619;118;328;353;820;192;515;571;1668;471;141;30;6;1619;1294;312;62;13;9341;7929;1344;258;68;610;30;266;194;;;;;;;483;590;230;360;;;;;636;605;8;23;516;120;8;34;81;161;321;2821;489;2445;116;376;600;8;605;66;141;93;305;145;86;74;1616;144;375;299;798;266;585;460;1510;448;150;29;7;1616;1283;317;62;16;8225;7038;1039;236;148;593;34;256;188;;;;;;;512;571;208;363;;;;
+
+
+
+
+
+## Dictionnaire des variables :
+
+COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+P21_LOG;Logements en 2021 (princ);Nombre de logements en 2021;;;NUM;16
+P21_RP;Résidences principales en 2021 (princ);Nombre de résidences principales en 2021;;;NUM;16
+P21_RSECOCC;Rés secondaires et logts occasionnels en 2021 (princ);Nombre de résidences secondaires et logements occasionnels en 2021;;;NUM;17
+P21_LOGVAC;Logements vacants en 2021 (princ);Nombre de logements vacants en 2021;;;NUM;17
+P21_MAISON;Maisons en 2021 (princ);Nombre de maisons en 2021;;;NUM;16
+P21_APPART;Appartements en 2021 (princ);Nombre d'appartements en 2021;;;NUM;17
+P21_RP_1P;Rés princ 1 pièce en 2021 (princ);Nombre de résidences principales d'1 pièce en 2021;;;NUM;17
+P21_RP_2P;Rés princ 2 pièces en 2021 (princ);Nombre de résidences principales de 2 pièces en 2021;;;NUM;17
+P21_RP_3P;Rés princ 3 pièces en 2021 (princ);Nombre de résidences principales de 3 pièces en 2021;;;NUM;17
+P21_RP_4P;Rés princ 4 pièces en 2021 (princ);Nombre de résidences principales de 4 pièces en 2021;;;NUM;17
+P21_RP_5PP;Rés princ 5 pièces ou plus en 2021 (princ);Nombre de résidences principales de 5 pièces ou plus en 2021;;;NUM;17
+P21_NBPI_RP;Pièces rés princ en 2021 (princ);Nombre de pièces des résidences principales en 2021;;;NUM;16
+P21_RPMAISON;Rés princ type maison en 2021 (princ);Nombre de résidences principales de type maison en 2021;;;NUM;16
+P21_NBPI_RPMAISON;Pièces rés princ type maison en 2021 (princ);Nombre de pièces des résidences principales de type maison en 2021;;;NUM;16
+P21_RPAPPART;Rés princ type appartement en 2021 (princ);Nombre de résidences principales de type appartement en 2021;;;NUM;17
+P21_NBPI_RPAPPART;Pièces rés princ type appartement en 2021 (princ);Nombre de pièces des résidences principales de type appartement en 2021;;;NUM;17
+C21_RP_HSTU1P;Rés princ hors studio de 1 personne en 2021 (compl);Nombre de résidences principales hors studio de 1 personne en 2021;;;NUM;16
+C21_RP_HSTU1P_SUROCC;Rés princ hors studio de 1 personne en suroccupation en 2021 (compl);Nombre de résidences principales hors studio de 1 personne en suroccupation en 2021;;;NUM;17
+P21_RP_ACHTOT;Rés princ avt 2019 en 2021 (princ);Nombre de résidences principales construites avant 2019 en 2021;;;NUM;16
+P21_RP_ACH19;Rés princ avt 1919 en 2021 (princ);Nombre de résidences principales construites avant 1919 en 2021;;;NUM;17
+P21_RP_ACH45;Rés princ 1919 à 1945 en 2021 (princ);Nombre de résidences principales construites de 1919 à 1945 en 2021;;;NUM;17
+P21_RP_ACH70;Rés princ 1946 à 1970 en 2021 (princ);Nombre de résidences principales construites de 1946 à 1970 en 2021;;;NUM;17
+P21_RP_ACH90;Rés princ 1971 à 1990 en 2021 (princ);Nombre de résidences principales construites de 1971 à 1990 en 2021;;;NUM;17
+P21_RP_ACH05;Rés princ 1991 à 2005 en 2021 (princ);Nombre de résidences principales construites de 1991 à 2005 en 2021;;;NUM;17
+P21_RP_ACH18;Rés princ 2006 à 2018 en 2021 (princ);Nombre de résidences principales construites de 2006 à 2018 en 2021;;;NUM;17
+P21_RPMAISON_ACH19;Rés princ Type maison avt 1919 en 2021 (princ);Nombre de résidences principales de type maison construites avant 1919 en 2021;;;NUM;17
+P21_RPMAISON_ACH45;Rés princ Type maison 1919 à 1945 en 2021 (princ);Nombre de résidences principales de type maison construites de 1919 à 1945 en 2021;;;NUM;17
+P21_RPMAISON_ACH70;Rés princ Type maison 1946 à 1970 en 2021 (princ);Nombre de résidences principales de type maison construites de 1946 à 1970 en 2021;;;NUM;17
+P21_RPMAISON_ACH90;Rés princ Type maison 1971 à 1990 en 2021 (princ);Nombre de résidences principales de type maison construites de 1971 à 1990 en 2021;;;NUM;17
+P21_RPMAISON_ACH05;Rés princ Type maison 1991 à 2005 en 2021 (princ);Nombre de résidences principales de type maison construites de 1991 à 2005 en 2021;;;NUM;17
+P21_RPMAISON_ACH18;Rés princ Type maison 2006 à 2018 en 2021 (princ);Nombre de résidences principales de type maison construites de 2006 à 2018 en 2021;;;NUM;17
+P21_RPAPPART_ACH19;Rés princ Type appart avt 1919 en 2021 (princ);Nombre de résidences principales de type appartement construites avant 1919 en 2021;;;NUM;17
+P21_RPAPPART_ACH45;Rés princ Type appart 1919 à 1945 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1919 à 1945 en 2021;;;NUM;17
+P21_RPAPPART_ACH70;Rés princ Type appart 1946 à 1970 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1946 à 1970 en 2021;;;NUM;17
+P21_RPAPPART_ACH90;Rés princ Type appart 1971 à 1990 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1971 à 1990 en 2021;;;NUM;17
+P21_RPAPPART_ACH05;Rés princ Type appart 1991 à 2005 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1991 à 2005 en 2021;;;NUM;17
+P21_RPAPPART_ACH18;Rés princ Type appart 2006 à 2018 en 2021 (princ);Nombre de résidences principales de type appartement construites de 2006 à 2018 en 2021;;;NUM;17
+P21_MEN;Ménages en 2021 (princ);Nombre de ménages en 2021;;;NUM;16
+P21_MEN_ANEM0002;Ménages emménagés moins 2 ans en 2021 (princ);Nombre de ménages ayant emménagé depuis moins de 2 ans en 2021;;;NUM;17
+P21_MEN_ANEM0204;Ménages emménagés entre 2-4 ans en 2021 (princ);Nombre de ménages ayant emménagé entre 2 et 4 ans en 2021;;;NUM;17
+P21_MEN_ANEM0509;Ménages emménagés entre 5-9 ans en 2021 (princ);Nombre de ménages ayant emménagé entre 5 et 9 ans en 2021;;;NUM;17
+P21_MEN_ANEM10P;Ménages emménagés depuis 10 ans ou plus en 2021 (princ);Nombre de ménages ayant emménagé depuis 10 ans ou plus en 2021;;;NUM;17
+P21_MEN_ANEM1019;Ménages emménagés entre 10-19 ans en 2021 (princ);Nombre de ménages ayant emménagé entre 10 et 19 ans en 2021;;;NUM;17
+P21_MEN_ANEM2029;Ménages emménagés entre 20-29 ans en 2021 (princ);Nombre de ménages ayant emménagé entre 20 et 29 ans en 2021;;;NUM;17
+P21_MEN_ANEM30P;Ménages emménagés depuis 30 ans ou plus en 2021 (princ);Nombre de ménages ayant emménagé depuis 30 ans ou plus en 2021;;;NUM;17
+P21_PMEN;Pop ménages en 2021 (princ);Population des ménages en 2021;;;NUM;16
+P21_PMEN_ANEM0002;Pop mén emménagés moins 2 ans en 2021 (princ);Population des ménages ayant emménagé depuis moins de 2 ans en 2021;;;NUM;17
+P21_PMEN_ANEM0204;Pop mén emménagés entre 2-4 ans en 2021 (princ);Population des ménages ayant emménagé entre 2 et 4 ans en 2021;;;NUM;17
+P21_PMEN_ANEM0509;Pop mén emménagés entre 5-9 ans en 2021 (princ);Population des ménages ayant emménagé entre 5 et 9 ans en 2021;;;NUM;17
+P21_PMEN_ANEM10P;Pop mén emménagés depuis 10 ans ou plus en 2021 (princ);Population des ménages ayant emménagé depuis 10 ans ou plus en 2021;;;NUM;17
+P21_NBPI_RP_ANEM0002;Pièces Rés princ Mén. emménagés moins 2 ans en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans en 2021;;;NUM;17
+P21_NBPI_RP_ANEM0204;Pièces Rés princ Mén. emménagés entre 2-4 ans en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans en 2021;;;NUM;17
+P21_NBPI_RP_ANEM0509;Pièces Rés princ Mén. emménagés entre 5-9 ans en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans en 2021;;;NUM;17
+P21_NBPI_RP_ANEM10P;Pièces Rés princ Mén. emménagés depuis 10 ans ou plus en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus en 2021;;;NUM;16
+P21_RP_PROP;Rés princ occupées Propriétaires en 2021 (princ);Nombre de résidences principales occupées par propriétaires en 2021;;;NUM;17
+P21_RP_LOC;Rés princ occupées Locataires en 2021 (princ);Nombre de résidences principales occupées par locataires en 2021;;;NUM;17
+P21_RP_LOCHLMV;Rés princ HLM louée vide en 2021 (princ);Nombre de résidences principales HLM loué vide en 2021;;;NUM;17
+P21_RP_GRAT;Rés princ logé gratuit en 2021 (princ);Nombre de résidences principales occupées gratuitement en 2021;;;NUM;17
+P21_NPER_RP;Personnes Rés princ en 2021 (princ);Nombre de personnes des résidences principales en 2021;;;NUM;16
+P21_NPER_RP_PROP;Pers Rés princ occupées Propriétaires en 2021 (princ);Nombre de personnes des résidences principales occupées par des propriétaires en 2021;;;NUM;16
+P21_NPER_RP_LOC;Pers Rés princ occupées Locataires en 2021 (princ);Nombre de personnes des résidences principales occupées par des locataires en 2021;;;NUM;17
+P21_NPER_RP_LOCHLMV;Pers Rés princ HLM louées vides en 2021 (princ);Nombre de personnes des résidences principales HLM louées vides en 2021;;;NUM;17
+P21_NPER_RP_GRAT;Pers Rés princ occupées gratuit en 2021 (princ);Nombre de personnes des résidences principales occupées gratuitement en 2021;;;NUM;17
+P21_ANEM_RP;Anc tot Emméngt Rés princ (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales en années en 2021;;;NUM;16
+P21_ANEM_RP_PROP;Anc tot Emméngt Rés princ occ par Propriétaires (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années en 2021;;;NUM;16
+P21_ANEM_RP_LOC;Anc tot Emméngt Rés princ occ par Locataires (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années en 2021;;;NUM;17
+P21_ANEM_RP_LOCHLMV;Anc tot Emméngt Rés princ HLM louées vides (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années en 2021;;;NUM;17
+P21_ANEM_RP_GRAT;Anc tot Emméngt Rés princ occ gratuit (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années en 2021;;;NUM;17
+P21_RP_SDB;Rés princ SDB baignoire douche en 2021 (princ);Nombre de résidences principales avec salle de bain, baignoire ou douche en 2021;;;NUM;16
+P21_RP_CCCOLL;Rés princ Chauffage Central Collectif  en 2021 (princ);Nombre de résidences principales avec chauffage central collectif en 2021;;;NUM;17
+P21_RP_CCIND;Rés princ Chauffage Central Individuel en 2021 (princ);Nombre de résidences principales avec chauffage central individuel en 2021;;;NUM;17
+P21_RP_CINDELEC;Rés princ Chauffage Individuel Electrique en 2021 (princ);Nombre de résidences principales avec chauffage individuel électrique en 2021;;;NUM;17
+P21_RP_ELEC;Rés princ avec électricité en 2021 (princ);Nombre de résidences principales avec électricité dans le logement en 2021;;;NUM;16
+P21_RP_EAUCH;Rés princ avec eau chaude en 2021 (princ);Nombre de résidences principales avec eau chaude dans le logement en 2021;;;NUM;16
+P21_RP_BDWC;Rés princ avec Bain/Douche WC en 2021 (princ);Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement en 2021;;;NUM;16
+P21_RP_CHOS;Rés princ avec chauffe-eau solaire en 2021 (princ);Nombre de résidences principales avec chauffe-eau solaire en 2021;;;NUM;16
+P21_RP_CLIM;Rés princ avec pièce climatisée en 2021 (princ);Nombre de résidences principales avec pièce climatisée en 2021;;;NUM;17
+P21_RP_TTEGOU;Rés princ avec tout à l'égout en 2021 (princ);Nombre de résidences principales avec tout à l'égout en 2021;;;NUM;16
+P21_RP_GARL;Ménages au moins un parking en 2021 (princ);Nombre de ménages disposant au moins d'un emplacement réservé au stationnement en 2021;;;NUM;17
+P21_RP_VOIT1P;Ménages au moins une voiture en 2021 (princ);Nombre de ménages disposant au moins d'une voiture en 2021;;;NUM;16
+P21_RP_VOIT1;Ménages une voiture en 2021 (princ);Nombre de ménages disposant d'une voiture en 2021;;;NUM;17
+P21_RP_VOIT2P;Ménages deux voitures ou plus en 2021 (princ);Nombre de ménages disposant de deux voitures ou plus en 2021;;;NUM;17
+P21_RP_HABFOR;Habitations de fortune en 2021 (princ);Nombre de résidences principales habitations de fortune en 2021;;;NUM;16
+P21_RP_CASE;Cases traditionnelles en 2021 (princ);Nombre de résidences principales cases traditionnelles en 2021;;;NUM;17
+P21_RP_MIBOIS;Maisons ou Immeubles en bois en 2021 (princ);Nombre de résidences principales maisons ou immeubles en bois en 2021;;;NUM;16
+P21_RP_MIDUR;Maisons ou Immeubles en dur en 2021 (princ);Nombre de résidences principales maisons ou immeubles en dur en 2021;;;NUM;16
+P15_LOG;Logements en 2015 (princ);Nombre de logements en 2015;;;NUM;16
+P15_RP;Résidences principales en 2015 (princ);Nombre de résidences principales en 2015;;;NUM;16
+P15_RSECOCC;Rés secondaires et logts occasionnels en 2015 (princ);Nombre de résidences secondaires et logements occasionnels en 2015;;;NUM;17
+P15_LOGVAC;Logements vacants en 2015 (princ);Nombre de logements vacants en 2015;;;NUM;17
+P15_MAISON;Maisons en 2015 (princ);Nombre de maisons en 2015;;;NUM;16
+P15_APPART;Appartements en 2015 (princ);Nombre d'appartements en 2015;;;NUM;17
+P15_RP_1P;Rés princ 1 pièce en 2015 (princ);Nombre de résidences principales d'1 pièce en 2015;;;NUM;17
+P15_RP_2P;Rés princ 2 pièces en 2015 (princ);Nombre de résidences principales de 2 pièces en 2015;;;NUM;17
+P15_RP_3P;Rés princ 3 pièces en 2015 (princ);Nombre de résidences principales de 3 pièces en 2015;;;NUM;17
+P15_RP_4P;Rés princ 4 pièces en 2015 (princ);Nombre de résidences principales de 4 pièces en 2015;;;NUM;17
+P15_RP_5PP;Rés princ 5 pièces ou plus en 2015 (princ);Nombre de résidences principales de 5 pièces ou plus en 2015;;;NUM;17
+P15_NBPI_RP;Pièces rés princ en 2015 (princ);Nombre de pièces des résidences principales en 2015;;;NUM;16
+P15_RPMAISON;Rés princ type maison en 2015 (princ);Nombre de résidences principales de type maison en 2015;;;NUM;16
+P15_NBPI_RPMAISON;Pièces rés princ type maison en 2015 (princ);Nombre de pièces des résidences principales de type maison en 2015;;;NUM;16
+P15_RPAPPART;Rés princ type appartement en 2015 (princ);Nombre de résidences principales de type appartement en 2015;;;NUM;17
+P15_NBPI_RPAPPART;Pièces rés princ type appartement en 2015 (princ);Nombre de pièces des résidences principales de type appartement en 2015;;;NUM;17
+C15_RP_HSTU1P;Rés princ hors studio de 1 personne en 2015 (compl);Nombre de résidences principales hors studio de 1 personne en 2015;;;NUM;16
+C15_RP_HSTU1P_SUROCC;Rés princ hors studio de 1 personne en suroccupation en 2015 (compl);Nombre de résidences principales hors studio de 1 personne en suroccupation en 2015;;;NUM;17
+P15_RP_ACHTOT;Rés princ avt 2013 en 2015 (princ);Nombre de résidences principales construites avant 2013 en 2015;;;NUM;16
+P15_RP_ACH19;Rés princ avt 1919 en 2015 (princ);Nombre de résidences principales construites avant 1919 en 2015;;;NUM;17
+P15_RP_ACH45;Rés princ 1919 à 1945 en 2015 (princ);Nombre de résidences principales construites de 1919 à 1945 en 2015;;;NUM;17
+P15_RP_ACH70;Rés princ 1946 à 1970 en 2015 (princ);Nombre de résidences principales construites de 1946 à 1970 en 2015;;;NUM;17
+P15_RP_ACH90;Rés princ 1971 à 1990 en 2015 (princ);Nombre de résidences principales construites de 1971 à 1990 en 2015;;;NUM;17
+P15_RP_ACH05;Rés princ 1991 à 2005 en 2015 (princ);Nombre de résidences principales construites de 1991 à 2005 en 2015;;;NUM;17
+P15_RP_ACH12;Rés princ 2006 à 2012 en 2015 (princ);Nombre de résidences principales construites de 2006 à 2012 en 2015;;;NUM;17
+P15_RPMAISON_ACH19;Rés princ Type maison avt 1919 en 2015 (princ);Nombre de résidences principales de type maison construites avant 1919 en 2015;;;NUM;17
+P15_RPMAISON_ACH45;Rés princ Type maison 1919 à 1945 en 2015 (princ);Nombre de résidences principales de type maison construites de 1919 à 1945 en 2015;;;NUM;17
+P15_RPMAISON_ACH70;Rés princ Type maison 1946 à 1970 en 2015 (princ);Nombre de résidences principales de type maison construites de 1946 à 1970 en 2015;;;NUM;17
+P15_RPMAISON_ACH90;Rés princ Type maison 1971 à 1990 en 2015 (princ);Nombre de résidences principales de type maison construites de 1971 à 1990 en 2015;;;NUM;17
+P15_RPMAISON_ACH05;Rés princ Type maison 1991 à 2005 en 2015 (princ);Nombre de résidences principales de type maison construites de 1991 à 2005 en 2015;;;NUM;17
+P15_RPMAISON_ACH12;Rés princ Type maison 2006 à 2012 en 2015 (princ);Nombre de résidences principales de type maison construites de 2006 à 2012 en 2015;;;NUM;17
+P15_RPAPPART_ACH19;Rés princ Type appart avt 1919 en 2015 (princ);Nombre de résidences principales de type appartement construites avant 1919 en 2015;;;NUM;17
+P15_RPAPPART_ACH45;Rés princ Type appart 1919 à 1945 en 2015 (princ);Nombre de résidences principales de type appartement construites de 1919 à 1945 en 2015;;;NUM;17
+P15_RPAPPART_ACH70;Rés princ Type appart 1946 à 1970 en 2015 (princ);Nombre de résidences principales de type appartement construites de 1946 à 1970 en 2015;;;NUM;17
+P15_RPAPPART_ACH90;Rés princ Type appart 1971 à 1990 en 2015 (princ);Nombre de résidences principales de type appartement construites de 1971 à 1990 en 2015;;;NUM;17
+P15_RPAPPART_ACH05;Rés princ Type appart 1991 à 2005 en 2015 (princ);Nombre de résidences principales de type appartement construites de 1991 à 2005 en 2015;;;NUM;17
+P15_RPAPPART_ACH12;Rés princ Type appart 2006 à 2012 en 2015 (princ);Nombre de résidences principales de type appartement construites de 2006 à 2012 en 2015;;;NUM;17
+P15_MEN;Ménages en 2015 (princ);Nombre de ménages en 2015;;;NUM;16
+P15_MEN_ANEM0002;Ménages emménagés moins 2 ans en 2015 (princ);Nombre de ménages ayant emménagé depuis moins de 2 ans en 2015;;;NUM;17
+P15_MEN_ANEM0204;Ménages emménagés entre 2-4 ans en 2015 (princ);Nombre de ménages ayant emménagé entre 2 et 4 ans en 2015;;;NUM;17
+P15_MEN_ANEM0509;Ménages emménagés entre 5-9 ans en 2015 (princ);Nombre de ménages ayant emménagé entre 5 et 9 ans en 2015;;;NUM;17
+P15_MEN_ANEM10P;Ménages emménagés depuis 10 ans ou plus en 2015 (princ);Nombre de ménages ayant emménagé depuis 10 ans ou plus en 2015;;;NUM;17
+P15_MEN_ANEM1019;Ménages emménagés entre 10-19 ans en 2015 (princ);Nombre de ménages ayant emménagé entre 10 et 19 ans en 2015;;;NUM;17
+P15_MEN_ANEM2029;Ménages emménagés entre 20-29 ans en 2015 (princ);Nombre de ménages ayant emménagé entre 20 et 29 ans en 2015;;;NUM;17
+P15_MEN_ANEM30P;Ménages emménagés depuis 30 ans ou plus en 2015 (princ);Nombre de ménages ayant emménagé depuis 30 ans ou plus en 2015;;;NUM;17
+P15_PMEN;Pop ménages en 2015 (princ);Population des ménages en 2015;;;NUM;16
+P15_PMEN_ANEM0002;Pop mén emménagés moins 2 ans en 2015 (princ);Population des ménages ayant emménagé depuis moins de 2 ans en 2015;;;NUM;17
+P15_PMEN_ANEM0204;Pop mén emménagés entre 2-4 ans en 2015 (princ);Population des ménages ayant emménagé entre 2 et 4 ans en 2015;;;NUM;17
+P15_PMEN_ANEM0509;Pop mén emménagés entre 5-9 ans en 2015 (princ);Population des ménages ayant emménagé entre 5 et 9 ans en 2015;;;NUM;17
+P15_PMEN_ANEM10P;Pop mén emménagés depuis 10 ans ou plus en 2015 (princ);Population des ménages ayant emménagé depuis 10 ans ou plus en 2015;;;NUM;17
+P15_NBPI_RP_ANEM0002;Pièces Rés princ Mén. emménagés moins 2 ans en 2015 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans en 2015;;;NUM;17
+P15_NBPI_RP_ANEM0204;Pièces Rés princ Mén. emménagés entre 2-4 ans en 2015 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans en 2015;;;NUM;17
+P15_NBPI_RP_ANEM0509;Pièces Rés princ Mén. emménagés entre 5-9 ans en 2015 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans en 2015;;;NUM;17
+P15_NBPI_RP_ANEM10P;Pièces Rés princ Mén. emménagés depuis 10 ans ou plus en 2015 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus en 2015;;;NUM;16
+P15_RP_PROP;Rés princ occupées Propriétaires en 2015 (princ);Nombre de résidences principales occupées par propriétaires en 2015;;;NUM;17
+P15_RP_LOC;Rés princ occupées Locataires en 2015 (princ);Nombre de résidences principales occupées par locataires en 2015;;;NUM;17
+P15_RP_LOCHLMV;Rés princ HLM louée vide en 2015 (princ);Nombre de résidences principales HLM loué vide en 2015;;;NUM;17
+P15_RP_GRAT;Rés princ logé gratuit en 2015 (princ);Nombre de résidences principales occupées gratuitement en 2015;;;NUM;17
+P15_NPER_RP;Personnes Rés princ en 2015 (princ);Nombre de personnes des résidences principales en 2015;;;NUM;16
+P15_NPER_RP_PROP;Pers Rés princ occupées Propriétaires en 2015 (princ);Nombre de personnes des résidences principales occupées par des propriétaires en 2015;;;NUM;16
+P15_NPER_RP_LOC;Pers Rés princ occupées Locataires en 2015 (princ);Nombre de personnes des résidences principales occupées par des locataires en 2015;;;NUM;17
+P15_NPER_RP_LOCHLMV;Pers Rés princ HLM louées vides en 2015 (princ);Nombre de personnes des résidences principales HLM louées vides en 2015;;;NUM;17
+P15_NPER_RP_GRAT;Pers Rés princ occupées gratuit en 2015 (princ);Nombre de personnes des résidences principales occupées gratuitement en 2015;;;NUM;17
+P15_ANEM_RP;Anc tot Emméngt Rés princ (années) en 2015 (princ);Ancienneté totale d'emménagement dans les résidences principales en années en 2015;;;NUM;16
+P15_ANEM_RP_PROP;Anc tot Emméngt Rés princ occ par Propriétaires (années) en 2015 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années en 2015;;;NUM;16
+P15_ANEM_RP_LOC;Anc tot Emméngt Rés princ occ par Locataires (années) en 2015 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années en 2015;;;NUM;17
+P15_ANEM_RP_LOCHLMV;Anc tot Emméngt Rés princ HLM louées vides (années) en 2015 (princ);Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années en 2015;;;NUM;17
+P15_ANEM_RP_GRAT;Anc tot Emméngt Rés princ occ gratuit (années) en 2015 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années en 2015;;;NUM;17
+P15_RP_SDB;Rés princ SDB baignoire douche en 2015 (princ);Nombre de résidences principales avec salle de bain, baignoire ou douche en 2015;;;NUM;16
+P15_RP_CCCOLL;Rés princ Chauffage Central Collectif  en 2015 (princ);Nombre de résidences principales avec chauffage central collectif en 2015;;;NUM;17
+P15_RP_CCIND;Rés princ Chauffage Central Individuel en 2015 (princ);Nombre de résidences principales avec chauffage central individuel en 2015;;;NUM;17
+P15_RP_CINDELEC;Rés princ Chauffage Individuel Electrique en 2015 (princ);Nombre de résidences principales avec chauffage individuel électrique en 2015;;;NUM;17
+P15_RP_ELEC;Rés princ avec électricité en 2015 (princ);Nombre de résidences principales avec électricité dans le logement en 2015;;;NUM;16
+P15_RP_EAUCH;Rés princ avec eau chaude en 2015 (princ);Nombre de résidences principales avec eau chaude dans le logement en 2015;;;NUM;16
+P15_RP_BDWC;Rés princ avec Bain/Douche WC en 2015 (princ);Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement en 2015;;;NUM;16
+P15_RP_CHOS;Rés princ avec chauffe-eau solaire en 2015 (princ);Nombre de résidences principales avec chauffe-eau solaire en 2015;;;NUM;17
+P15_RP_CLIM;Rés princ avec pièce climatisée en 2015 (princ);Nombre de résidences principales avec pièce climatisée en 2015;;;NUM;16
+P15_RP_TTEGOU;Rés princ avec tout à l'égout en 2015 (princ);Nombre de résidences principales avec tout à l'égout en 2015;;;NUM;16
+P15_RP_GARL;Ménages au moins un parking en 2015 (princ);Nombre de ménages disposant au moins d'un emplacement réservé au stationnement en 2015;;;NUM;17
+P15_RP_VOIT1P;Ménages au moins une voiture en 2015 (princ);Nombre de ménages disposant au moins d'une voiture en 2015;;;NUM;16
+P15_RP_VOIT1;Ménages une voiture en 2015 (princ);Nombre de ménages disposant d'une voiture en 2015;;;NUM;17
+P15_RP_VOIT2P;Ménages deux voitures ou plus en 2015 (princ);Nombre de ménages disposant de deux voitures ou plus en 2015;;;NUM;17
+P15_RP_HABFOR;Habitations de fortune en 2015 (princ);Nombre de résidences principales habitations de fortune en 2015;;;NUM;16
+P15_RP_CASE;Cases traditionnelles en 2015 (princ);Nombre de résidences principales cases traditionnelles en 2015;;;NUM;16
+P15_RP_MIBOIS;Maisons ou Immeubles en bois en 2015 (princ);Nombre de résidences principales maisons ou immeubles en bois en 2015;;;NUM;16
+P15_RP_MIDUR;Maisons ou Immeubles en dur en 2015 (princ);Nombre de résidences principales maisons ou immeubles en dur en 2015;;;NUM;16
+P10_LOG;Logements en 2010 (princ);Nombre de logements en 2010;;;NUM;16
+P10_RP;Résidences principales en 2010 (princ);Nombre de résidences principales en 2010;;;NUM;16
+P10_RSECOCC;Rés secondaires et logts occasionnels en 2010 (princ);Nombre de résidences secondaires et logements occasionnels en 2010;;;NUM;17
+P10_LOGVAC;Logements vacants en 2010 (princ);Nombre de logements vacants en 2010;;;NUM;17
+P10_MAISON;Maisons en 2010 (princ);Nombre de maisons en 2010;;;NUM;16
+P10_APPART;Appartements en 2010 (princ);Nombre d'appartements en 2010;;;NUM;17
+P10_RP_1P;Rés princ 1 pièce en 2010 (princ);Nombre de résidences principales d'1 pièce en 2010;;;NUM;17
+P10_RP_2P;Rés princ 2 pièces en 2010 (princ);Nombre de résidences principales de 2 pièces en 2010;;;NUM;17
+P10_RP_3P;Rés princ 3 pièces en 2010 (princ);Nombre de résidences principales de 3 pièces en 2010;;;NUM;17
+P10_RP_4P;Rés princ 4 pièces en 2010 (princ);Nombre de résidences principales de 4 pièces en 2010;;;NUM;17
+P10_RP_5PP;Rés princ 5 pièces ou plus en 2010 (princ);Nombre de résidences principales de 5 pièces ou plus en 2010;;;NUM;17
+P10_NBPI_RP;Pièces rés princ en 2010 (princ);Nombre de pièces des résidences principales en 2010;;;NUM;16
+P10_RPMAISON;Rés princ type maison en 2010 (princ);Nombre de résidences principales de type maison en 2010;;;NUM;16
+P10_NBPI_RPMAISON;Pièces rés princ type maison en 2010 (princ);Nombre de pièces des résidences principales de type maison en 2010;;;NUM;16
+P10_RPAPPART;Rés princ type appartement en 2010 (princ);Nombre de résidences principales de type appartement en 2010;;;NUM;17
+P10_NBPI_RPAPPART;Pièces rés princ type appartement en 2010 (princ);Nombre de pièces des résidences principales de type appartement en 2010;;;NUM;17
+C10_RP_HSTU1P;Rés princ hors studio de 1 personne en 2010 (compl);Nombre de résidences principales hors studio de 1 personne en 2010;;;NUM;16
+C10_RP_HSTU1P_SUROCC;Rés princ hors studio de 1 personne en suroccupation en 2010 (compl);Nombre de résidences principales hors studio de 1 personne en suroccupation en 2010;;;NUM;17
+P10_MEN;Ménages en 2010 (princ);Nombre de ménages en 2010;;;NUM;16
+P10_MEN_ANEM0002;Ménages emménagés moins 2 ans en 2010 (princ);Nombre de ménages ayant emménagé depuis moins de 2 ans en 2010;;;NUM;17
+P10_MEN_ANEM0204;Ménages emménagés entre 2-4 ans en 2010 (princ);Nombre de ménages ayant emménagé entre 2 et 4 ans en 2010;;;NUM;17
+P10_MEN_ANEM0509;Ménages emménagés entre 5-9 ans en 2010 (princ);Nombre de ménages ayant emménagé entre 5 et 9 ans en 2010;;;NUM;17
+P10_MEN_ANEM10P;Ménages emménagés depuis 10 ans ou plus en 2010 (princ);Nombre de ménages ayant emménagé depuis 10 ans ou plus en 2010;;;NUM;17
+P10_MEN_ANEM1019;Ménages emménagés entre 10-19 ans en 2010 (princ);Nombre de ménages ayant emménagé entre 10 et 19 ans en 2010;;;NUM;17
+P10_MEN_ANEM2029;Ménages emménagés entre 20-29 ans en 2010 (princ);Nombre de ménages ayant emménagé entre 20 et 29 ans en 2010;;;NUM;17
+P10_MEN_ANEM30P;Ménages emménagés depuis 30 ans ou plus en 2010 (princ);Nombre de ménages ayant emménagé depuis 30 ans ou plus en 2010;;;NUM;17
+P10_PMEN;Pop ménages en 2010 (princ);Population des ménages en 2010;;;NUM;16
+P10_PMEN_ANEM0002;Pop mén emménagés moins 2 ans en 2010 (princ);Population des ménages ayant emménagé depuis moins de 2 ans en 2010;;;NUM;17
+P10_PMEN_ANEM0204;Pop mén emménagés entre 2-4 ans en 2010 (princ);Population des ménages ayant emménagé entre 2 et 4 ans en 2010;;;NUM;17
+P10_PMEN_ANEM0509;Pop mén emménagés entre 5-9 ans en 2010 (princ);Population des ménages ayant emménagé entre 5 et 9 ans en 2010;;;NUM;17
+P10_PMEN_ANEM10P;Pop mén emménagés depuis 10 ans ou plus en 2010 (princ);Population des ménages ayant emménagé depuis 10 ans ou plus en 2010;;;NUM;17
+P10_NBPI_RP_ANEM0002;Pièces Rés princ Mén. emménagés moins 2 ans en 2010 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans en 2010;;;NUM;17
+P10_NBPI_RP_ANEM0204;Pièces Rés princ Mén. emménagés entre 2-4 ans en 2010 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans en 2010;;;NUM;17
+P10_NBPI_RP_ANEM0509;Pièces Rés princ Mén. emménagés entre 5-9 ans en 2010 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans en 2010;;;NUM;17
+P10_NBPI_RP_ANEM10P;Pièces Rés princ Mén. emménagés depuis 10 ans ou plus en 2010 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus en 2010;;;NUM;16
+P10_RP_PROP;Rés princ occupées Propriétaires en 2010 (princ);Nombre de résidences principales occupées par propriétaires en 2010;;;NUM;17
+P10_RP_LOC;Rés princ occupées Locataires en 2010 (princ);Nombre de résidences principales occupées par locataires en 2010;;;NUM;17
+P10_RP_LOCHLMV;Rés princ HLM louée vide en 2010 (princ);Nombre de résidences principales HLM loué vide en 2010;;;NUM;17
+P10_RP_GRAT;Rés princ logé gratuit en 2010 (princ);Nombre de résidences principales occupées gratuitement en 2010;;;NUM;17
+P10_NPER_RP;Personnes Rés princ en 2010 (princ);Nombre de personnes des résidences principales en 2010;;;NUM;16
+P10_NPER_RP_PROP;Pers Rés princ occupées Propriétaires en 2010 (princ);Nombre de personnes des résidences principales occupées par des propriétaires en 2010;;;NUM;16
+P10_NPER_RP_LOC;Pers Rés princ occupées Locataires en 2010 (princ);Nombre de personnes des résidences principales occupées par des locataires en 2010;;;NUM;17
+P10_NPER_RP_LOCHLMV;Pers Rés princ HLM louées vides en 2010 (princ);Nombre de personnes des résidences principales HLM louées vides en 2010;;;NUM;17
+P10_NPER_RP_GRAT;Pers Rés princ occupées gratuit en 2010 (princ);Nombre de personnes des résidences principales occupées gratuitement en 2010;;;NUM;17
+P10_ANEM_RP;Anc tot Emméngt Rés princ (années) en 2010 (princ);Ancienneté totale d'emménagement dans les résidences principales en années en 2010;;;NUM;16
+P10_ANEM_RP_PROP;Anc tot Emméngt Rés princ occ par Propriétaires (années) en 2010 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années en 2010;;;NUM;16
+P10_ANEM_RP_LOC;Anc tot Emméngt Rés princ occ par Locataires (années) en 2010 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années en 2010;;;NUM;17
+P10_ANEM_RP_LOCHLMV;Anc tot Emméngt Rés princ HLM louées vides (années) en 2010 (princ);Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années en 2010;;;NUM;17
+P10_ANEM_RP_GRAT;Anc tot Emméngt Rés princ occ gratuit (années) en 2010 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années en 2010;;;NUM;17
+P10_RP_SDB;Rés princ SDB baignoire douche (MET) en 2010 (princ);Nombre de résidences principales avec salle de bain, baignoire ou douche (variable spécifique à la France métropolitaine) en 2010;;;NUM;16
+P10_RP_CCCOLL;Rés princ Chauffage Central Collectif (MET) en 2010 (princ);Nombre de résidences principales avec chauffage central collectif (variable spécifique à la France métropolitaine) en 2010;;;NUM;17
+P10_RP_CCIND;Rés princ Chauffage Central Individuel (MET) en 2010 (princ);Nombre de résidences principales avec chauffage central individuel (variable spécifique à la France métropolitaine) en 2010;;;NUM;17
+P10_RP_CINDELEC;Rés princ Chauffage Individuel Electrique (MET) en 2010 (princ);Nombre de résidences principales avec chauffage individuel électrique (variable spécifique à la France métropolitaine) en 2010;;;NUM;17
+P10_RP_ELEC;Rés princ avec électricité (DOM) en 2010 (princ);Nombre de résidences principales avec électricité dans le logement (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+P10_RP_EAUCH;Rés princ avec eau chaude (DOM) en 2010 (princ);Nombre de résidences principales avec eau chaude dans le logement (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+P10_RP_BDWC;Rés princ avec Bain/Douche WC (DOM) en 2010 (princ);Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+P10_RP_CHOS;Rés princ avec chauffe-eau solaire (DOM) en 2010 (princ);Nombre de résidences principales avec chauffe-eau solaire (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+P10_RP_CLIM;Rés princ avec pièce climatisée (DOM) en 2010 (princ);Nombre de résidences principales avec pièce climatisée (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+P10_RP_TTEGOU;Rés princ avec tout à l'égout (DOM) en 2010 (princ);Nombre de résidences principales avec tout à l'égout (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;17
+P10_RP_GARL;Ménages au moins un parking en 2010 (princ);Nombre de ménages disposant au moins d'un emplacement réservé au stationnement en 2010;;;NUM;17
+P10_RP_VOIT1P;Ménages au moins une voiture en 2010 (princ);Nombre de ménages disposant au moins d'une voiture en 2010;;;NUM;16
+P10_RP_VOIT1;Ménages une voiture en 2010 (princ);Nombre de ménages disposant d'une voiture en 2010;;;NUM;17
+P10_RP_VOIT2P;Ménages deux voitures ou plus en 2010 (princ);Nombre de ménages disposant de deux voitures ou plus en 2010;;;NUM;17
+P10_RP_HABFOR;Habitations de fortune (DOM) en 2010 (princ);Nombre de résidences principales habitations de fortune (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+P10_RP_CASE;Cases traditionnelles (DOM) en 2010 (princ);Nombre de résidences principales cases traditionnelles (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;17
+P10_RP_MIBOIS;Maisons ou Immeubles en bois (DOM) en 2010 (princ);Nombre de résidences principales maisons ou immeubles en bois (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+P10_RP_MIDUR;Maisons ou Immeubles en dur (DOM) en 2010 (princ);Nombre de résidences principales maisons ou immeubles en dur (variable spécifique aux Départements d'outre-mer) en 2010;;;NUM;16
+

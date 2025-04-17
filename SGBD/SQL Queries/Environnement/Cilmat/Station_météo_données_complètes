@@ -1,0 +1,27 @@
+-- Identifier les stations météo fournissant le plus de données
+
+WITH donnees_valides AS (
+    SELECT 
+        NUM_POSTE,
+        NOM_USUEL,
+        substr(AAAAMM, 1, 4) as ANNEE,
+        substr(AAAAMM, 5, 2) as MOIS,
+        COUNT(CASE 
+            WHEN TX IS NOT NULL AND TN IS NOT NULL 
+            AND TX != 0 AND TN != 0 
+            AND NBTX >= 15 AND NBTN >= 15 
+            THEN 1 
+        END) as NB_MOIS_VALIDES
+    FROM Climato_51
+    GROUP BY NUM_POSTE, NOM_USUEL, substr(AAAAMM, 1, 4), substr(AAAAMM, 5, 2)
+)
+SELECT 
+    NUM_POSTE,
+    NOM_USUEL,
+    COUNT(DISTINCT ANNEE) as NB_ANNEES,
+    SUM(NB_MOIS_VALIDES) as TOTAL_MOIS_VALIDES,
+    ROUND(AVG(NB_MOIS_VALIDES), 2) as MOY_MOIS_VALIDES_PAR_AN
+FROM donnees_valides
+GROUP BY NUM_POSTE, NOM_USUEL
+ORDER BY TOTAL_MOIS_VALIDES DESC
+LIMIT 5;

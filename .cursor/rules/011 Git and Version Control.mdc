@@ -1,0 +1,76 @@
+---
+description: Git and version control best practices for AI-assisted projects
+globs: **/*
+alwaysApply: true
+---
+
+## Context
+You use Git (via GitHub) to manage your codebase.  
+This project involves AI-assisted development, and many changes are made via suggestions or code completion tools.  
+These rules help ensure that versioning remains clear, traceable, and collaborative.
+
+## Commit Conventions
+
+- Write clear, concise commit messages in English.
+- Use the imperative mood for consistency: `Add`, `Fix`, `Refactor`, `Remove`, `Update`, etc.
+- Always describe the purpose of the commit — avoid vague messages like `Update` or `Fix`.
+- If the commit includes AI-generated code, prefix the message with `AI:` (e.g., `AI: Add SQLAlchemy connection setup`).
+- For fixes or additions suggested by you manually, no prefix is needed.
+
+### Examples
+
+✅ `AI: Add filters to Streamlit UI`  
+✅ `Fix bug in PostgreSQL connection string`  
+✅ `Refactor indicator aggregation logic`  
+❌ `Update code`  
+❌ `Fixes`  
+❌ `Commit from Cursor`
+
+## Branching Strategy
+
+- Main development happens on the `main` or `dev` branch.
+- For any substantial changes (new feature, refactor, dataset import), create a branch named:
+  - `feature/<short-description>`
+  - `fix/<short-description>`
+  - `refactor/<short-description>`
+
+Examples:  
+`feature/postgresql-connector`  
+`refactor/ui-layout`  
+`fix/sql-injection`
+
+## Pull Requests
+
+- Even if working solo, simulate Pull Requests by reviewing diffs **before merging** to `main`.
+- Group logically related changes into a single PR.
+- Always describe what was done and why.
+- Use checklists if changes span multiple layers (e.g., frontend, backend, database).
+
+## Code History and Diffs
+
+- Regularly use `git diff` or GitHub UI to inspect changes made by AI tools.
+- If Cursor/AI suggests batch edits, **review each section individually** before committing.
+- NEVER accept AI suggestions blindly across the whole file without understanding the impact.
+- If in doubt, comment code instead of deleting it.
+
+## Ignored Files
+
+Always keep a clean `.gitignore`, including:
+
+```
+__pycache__/
+.env
+*.sqlite
+*.db
+*.log
+*.ipynb_checkpoints
+.vscode/
+.DS_Store
+```
+
+## Critical Notes
+
+- NEVER commit `.env` or credentials — even in private repos.
+- ALWAYS test AI-generated code before committing.
+- USE `git log` to explore history when troubleshooting bugs.
+- DOCUMENT major changes in `CHANGELOG.md` if used.

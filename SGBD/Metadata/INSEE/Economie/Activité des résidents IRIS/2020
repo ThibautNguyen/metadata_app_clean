@@ -1,0 +1,137 @@
+## Activité des résidents en 2020 
+## Recensement de la population - Base infracommunale (IRIS)
+
+## Source : 
+https://www.insee.fr/fr/statistiques/7704089
+
+## Tableau SQL : activite_residents_2020
+
+
+## 4 premières lignes :
+IRIS;COM;TYP_IRIS;LAB_IRIS;P20_POP1564;P20_POP1524;P20_POP2554;P20_POP5564;P20_H1564;P20_H1524;P20_H2554;P20_H5564;P20_F1564;P20_F1524;P20_F2554;P20_F5564;P20_ACT1564;P20_ACT1524;P20_ACT2554;P20_ACT5564;P20_HACT1564;P20_HACT1524;P20_HACT2554;P20_HACT5564;P20_FACT1564;P20_FACT1524;P20_FACT2554;P20_FACT5564;P20_ACTOCC1564;P20_ACTOCC1524;P20_ACTOCC2554;P20_ACTOCC5564;P20_HACTOCC1564;P20_HACTOCC1524;P20_HACTOCC2554;P20_HACTOCC5564;P20_FACTOCC1564;P20_FACTOCC1524;P20_FACTOCC2554;P20_CHOM_CAPBEP;P20_FACTOCC5564;P20_CHOM_BAC;P20_CHOM1564;P20_CHOM_SUP2;P20_CHOM1524;P20_CHOM_SUP34;P20_CHOM2554;P20_CHOM_SUP5;P20_CHOM5564;P20_ACT_DIPLMIN;P20_CHOM_DIPLMIN;P20_ACT_BEPC;P20_CHOM_BEPC;P20_ACT_CAPBEP;P20_ACT_BAC;P20_ACT_SUP2;P20_ACT_SUP34;P20_ACT_SUP5;P20_INACT1564;P20_HINACT1564;P20_FINACT1564;P20_ETUD1564;P20_HETUD1564;P20_FETUD1564;P20_RETR1564;P20_HRETR1564;P20_FRETR1564;P20_AINACT1564;P20_HAINACT1564;P20_FAINACT1564;C20_ACT1564;C20_ACT1564_CS1;C20_ACT1564_CS2;C20_ACT1564_CS3;C20_ACT1564_CS4;C20_ACT1564_CS5;C20_ACT1564_CS6;C20_ACTOCC1564;C20_ACTOCC1564_CS1;C20_ACTOCC1564_CS2;C20_ACTOCC1564_CS3;C20_ACTOCC1564_CS4;C20_ACTOCC1564_CS5;C20_ACTOCC1564_CS6;P20_ACTOCC15P;P20_HACTOCC15P;P20_FACTOCC15P;P20_SAL15P;P20_HSAL15P;P20_FSAL15P;P20_NSAL15P;P20_HNSAL15P;P20_FNSAL15P;P20_ACTOCC15P_TP;P20_SAL15P_TP;P20_HSAL15P_TP;P20_FSAL15P_TP;P20_NSAL15P_TP;P20_SAL15P_CDI;P20_SAL15P_CDD;P20_SAL15P_INTERIM;P20_SAL15P_EMPAID;P20_SAL15P_APPR;P20_NSAL15P_INDEP;P20_NSAL15P_EMPLOY;P20_NSAL15P_AIDFAM;P20_ACTOCC15P_ILT1;P20_ACTOCC15P_ILT2P;P20_ACTOCC15P_ILT2;P20_ACTOCC15P_ILT3;P20_ACTOCC15P_ILT4;P20_ACTOCC15P_ILT5;C20_ACTOCC15P;C20_ACTOCC15P_PAS;C20_ACTOCC15P_MAR;C20_ACTOCC15P_VELO;C20_ACTOCC15P_2ROUESMOT;C20_ACTOCC15P_VOIT;C20_ACTOCC15P_TCOM
+010010000;01001;Z;5;492.625378411239;62.5766148780974;308.977536798213;121.071226734928;245.898463096042;30.5124238903465;154.347023421424;61.039015784272;246.726915315196;32.0641909877509;154.630513376789;60.0322109506564;404.675822369453;28.3450249940877;301.381455029432;74.9493423459332;210.312193990256;17.1151836664837;153.408569029754;39.7884412940178;194.363628379197;11.229841327604;147.972885999678;35.1609010519154;378.311925234016;24.5571837015233;283.447847125738;70.3068944067547;199.920845337703;14.265796765589;146.788352699237;38.8666958728763;178.391079896313;10.2913869359343;136.659494426501;11.3130940736942;31.4401985338784;8.46430756469672;26.3638971354365;1.87690878333954;3.78784129256447;1.86019981281129;17.9336079036934;0.955466254612466;4.64244793917854;32.9209727917327;0.955466254612466;15.1899655215672;0.93845439166977;101.770136837028;104.272277196892;70.5800378704524;48.678122801441;31.2643093503395;87.949556041786;35.5862691057867;52.3632869359994;33.2588033833478;13.3972402238628;19.861563159485;37.8094666281933;19.4070836479711;18.4023829802222;16.881286030245;2.78194523395281;14.0993407962922;432.120459018623;4.69227195834885;42.4917108710302;61.7742384237732;102.402052938306;98.4662824580651;122.293902369099;422.819459954566;4.69227195834885;42.4917108710302;61.7742384237732;97.7933258325988;98.4662824580651;117.60163041075;382.920652339724;204.52957244341;178.391079896313;313.45706776483;161.316281775329;152.140785989501;69.4635845748943;43.2132906680817;26.2502939068126;59.3219279665864;50.8053458877032;14.1983440177299;36.6070018699733;8.51658207888322;282.430048369783;19.5252418325316;5.69938507731053;0;5.80239248520392;43.1631251172373;26.300459457657;0;46.8795703743415;336.041081965382;230.997077280877;92.7918449436202;12.2521597408851;0;422.819459954566;18.9407209248946;0;0;9.72943487327652;389.540577050688;4.6087271057076
+010020000;01002;Z;5;160.745895813447;25.9112995910663;111.492800805188;23.3417954171924;85.7121954456065;17.7154860801412;57.0196904354843;10.977018929981;75.0337003678406;8.19581351092515;54.473110369704;12.3647764872115;127.938671497366;4.73723733566533;108.792925746711;14.4085084149896;68.2945772992355;3.83845381560381;56.1754551138353;8.28066836979639;59.6440941981302;0.898783520061527;52.6174706328755;6.12784004519325;125.611397355818;4.73723733566533;107.774244608117;13.0999154120355;66.9859842962814;3.83845381560381;56.1754551138353;6.97207536684229;58.6254130595364;0.898783520061527;51.5987894942816;1.01868113859387;6.12784004519325;1.3085930029541;2.32727414154797;0;0;0;1.01868113859387;0;1.3085930029541;4.9617997799057;0;1.68847064329809;0;20.626618764252;33.2557334339984;26.3935639104335;24.1044223982974;16.9080625671806;32.8072243160814;17.417618146371;15.3896061697104;18.9666857323854;11.6696557415218;7.29702999086362;8.03450348214126;2.69635056018458;5.33815292195668;5.80603510155474;3.05161184466467;2.75442325689007;115.721420620386;25.1579038557125;5.09340569296936;18.283656376223;28.5268247090397;18.8655219774197;19.7941080090218;110.628014927417;25.1579038557125;5.09340569296936;18.283656376223;28.5268247090397;13.7721162844504;19.7941080090218;128.198651519177;68.6744549395795;59.5241965795979;91.7964387257453;47.9904428246175;43.8059959011278;36.402212793432;20.684012114962;15.71820067847;19.9831242634204;12.3452710484601;3.66048350036597;8.6847875480941;7.6378532149603;84.2975014097756;3.66048350036597;1.86291646024292;0;1.97553735536089;23.5890595653739;11.0155861879351;1.79756704012305;22.712251818451;105.486399700726;91.5109584325021;9.29275213097146;4.68268913725285;0;110.628014927417;4.49391760030764;0;0;0;101.912920718864;4.22117660824523
+010040101;01004;H;1;1205.87159313764;390.798380380198;646.551506786395;168.52170597105;605.733665204879;205.209974614451;333.282041961112;67.2416486293157;600.137927932765;185.588405765747;313.269464825283;101.280057341735;912.157519443856;207.549973791246;608.984577397999;95.6229682546104;484.275262564023;120.259197985988;330.365815258805;33.6502493192296;427.882256879833;87.2907758052579;278.618762139194;61.9727189353809;830.625122869636;181.597060852405;556.774250923938;92.2538110932925;463.757041368749;112.946038536991;317.160753512528;33.6502493192296;366.868081500887;68.6510223154139;239.61349741141;12.9978717368364;58.6035617740629;19.6118290572795;81.5323965742201;15.6967908242358;25.9529129388409;2.82418560346959;52.2103264740612;6.87523035598043;3.36915716131794;152.998437200126;21.5823378615471;37.8797011691057;1.94415113487112;182.510933438187;225.675078460074;145.927322750693;86.4258545533907;80.7401918722783;293.714073693788;121.458402640856;172.255671052932;175.33082668944;80.4023538902684;94.9284727991712;45.9683926145427;23.9081175749417;22.060275039601;72.4148543898054;17.1479311756457;55.2669232141597;935.157106977842;0;22.9874756725291;88.9257519546862;226.88033585802;348.300212885687;237.682454464112;853.624710403622;0;22.9874756725291;88.9257519546862;210.984450499344;322.130115555129;208.596916721934;838.501169503253;463.757041368749;374.744128134505;795.268764313722;433.604147363996;361.664616949725;43.2324051895318;30.1528940047522;13.0795111847795;106.066769196178;97.3563972394118;22.9837948138594;74.3726024255524;8.71037195676652;592.878487570903;101.881074476483;16.8519020047418;3.9720217675208;79.6852784940731;37.464086384496;5.76831880503579;0;402.617547121154;435.883622382099;259.455220296471;161.473159818297;14.9552422673312;0;861.50075703724;69.1879913246331;88.5083408435944;11.1932530982629;17.464470107452;571.962639070696;103.184062592602
+
+
+## Dictionnaire des variables :
+
+COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;;;CHAR;5
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);;;CHAR;1
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS;;;CHAR;1
+P20_POP1564;Pop 15-64 ans en 2020 (princ);Nombre de personnes de 15 à 64 ans;;;NUM;17
+P20_POP1524;Pop 15-24 ans en 2020 (princ);Nombre de personnes de 15 à 24 ans;;;NUM;17
+P20_POP2554;Pop 25-54 ans en 2020 (princ);Nombre de personnes de 25 à 54 ans;;;NUM;17
+P20_POP5564;Pop 55-64 ans en 2020 (princ);Nombre de personnes de 55 à 64 ans;;;NUM;17
+P20_H1564;Pop 15-64 ans Hommes en 2020 (princ);Nombre d'hommes de 15 à 64 ans;;;NUM;17
+P20_H1524;Pop 15-24 ans Hommes en 2020 (princ);Nombre d'hommes de 15 à 24 ans;;;NUM;17
+P20_H2554;Pop 25-54 ans Hommes en 2020 (princ);Nombre d'hommes de 25 à 54 ans;;;NUM;17
+P20_H5564;Pop 55-64 ans Hommes en 2020 (princ);Nombre d'hommes de 55 à 64 ans;;;NUM;17
+P20_F1564;Pop 15-64 ans Femmes en 2020 (princ);Nombre de femmes de 15 à 64 ans;;;NUM;17
+P20_F1524;Pop 15-24 ans Femmes en 2020 (princ);Nombre de femmes de 15 à 24 ans;;;NUM;17
+P20_F2554;Pop 25-54 ans Femmes en 2020 (princ);Nombre de femmes de 25 à 54 ans;;;NUM;17
+P20_F5564;Pop 55-64 ans Femmes en 2020 (princ);Nombre de femmes de 55 à 64 ans;;;NUM;17
+P20_ACT1564;Actifs 15-64 ans en 2020 (princ);Nombre de personnes actives de 15 à 64 ans;;;NUM;17
+P20_ACT1524;Actifs 15-24 ans en 2020 (princ);Nombre de personnes actives de 15 à 24 ans;;;NUM;17
+P20_ACT2554;Actifs 25-54 ans en 2020 (princ);Nombre de personnes actives de 25 à 54 ans;;;NUM;17
+P20_ACT5564;Actifs 55-64 ans en 2020 (princ);Nombre de personnes actives de 55 à 64 ans;;;NUM;17
+P20_HACT1564;Actifs 15-64 ans Hommes en 2020 (princ);Nombre d'hommes actifs de 15 à 64 ans;;;NUM;17
+P20_HACT1524;Actifs 15-24 ans Hommes en 2020 (princ);Nombre d'hommes actifs de 15 à 24 ans;;;NUM;17
+P20_HACT2554;Actifs 25-54 ans Hommes en 2020 (princ);Nombre d'hommes actifs de 25 à 54 ans;;;NUM;17
+P20_HACT5564;Actifs 55-64 ans Hommes en 2020 (princ);Nombre d'hommes actifs de 55 à 64 ans;;;NUM;17
+P20_FACT1564;Actifs 15-64 ans Femmes en 2020 (princ);Nombre de femmes actives de 15 à 64 ans;;;NUM;17
+P20_FACT1524;Actifs 15-24 ans Femmes en 2020 (princ);Nombre de femmes actives de 15 à 24 ans;;;NUM;17
+P20_FACT2554;Actifs 25-54 ans Femmes en 2020 (princ);Nombre de femmes actives de 25 à 54 ans;;;NUM;17
+P20_FACT5564;Actifs 55-64 ans Femmes en 2020 (princ);Nombre de femmes actives de 55 à 64 ans;;;NUM;17
+P20_ACTOCC1564;Actifs occupés 15-64 ans en 2020 (princ);Nombre de personnes actives occupées de 15 à 64 ans;;;NUM;17
+P20_ACTOCC1524;Actifs occupés 15-24 ans en 2020 (princ);Nombre de personnes actives occupées de 15 à 24 ans;;;NUM;17
+P20_ACTOCC2554;Actifs occupés 25-54 ans en 2020 (princ);Nombre de personnes actives occupées de 25 à 54 ans;;;NUM;17
+P20_ACTOCC5564;Actifs occupés 55-64 ans en 2020 (princ);Nombre de personnes actives occupées de 55 à 64 ans;;;NUM;17
+P20_HACTOCC1564;Actifs occupés 15-64 ans Hommes en 2020 (princ);Nombre d'hommes actifs occupés de 15 à 64 ans;;;NUM;17
+P20_HACTOCC1524;Actifs occupés 15-24 ans Hommes en 2020 (princ);Nombre d'hommes actifs occupés de 15 à 24 ans;;;NUM;17
+P20_HACTOCC2554;Actifs occupés 25-54 ans Hommes en 2020 (princ);Nombre d'hommes actifs occupés de 25 à 54 ans;;;NUM;17
+P20_HACTOCC5564;Actifs occupés 55-64 ans Hommes en 2020 (princ);Nombre d'hommes actifs occupés de 55 à 64 ans;;;NUM;17
+P20_FACTOCC1564;Actifs occupés 15-64 ans Femmes en 2020 (princ);Nombre de femmes actives occupées de 15 à 64 ans;;;NUM;17
+P20_FACTOCC1524;Actifs occupés 15-24 ans Femmes en 2020 (princ);Nombre de femmes actives occupées de 15 à 24 ans;;;NUM;17
+P20_FACTOCC2554;Actifs occupés 25-54 ans Femmes en 2020 (princ);Nombre de femmes actives occupées de 25 à 54 ans;;;NUM;17
+P20_CHOM_CAPBEP;Chômeurs CAP-BEP ou équiv. en 2020 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un CAP, d'un BEP ou équivalent;;;NUM;17
+P20_FACTOCC5564;Actifs occupés 55-64 ans Femmes en 2020 (princ);Nombre de femmes actives occupées de 55 à 64 ans;;;NUM;17
+P20_CHOM_BAC;Chômeurs Bac, brevet pro. ou équiv.  en 2020 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un Baccalauréat, brevet professionnel ou équivalent;;;NUM;17
+P20_CHOM1564;Chômeurs 15-64 ans en 2020 (princ);Nombre de chômeurs de 15 à 64 ans;;;NUM;17
+P20_CHOM_SUP2;Chômeurs Enseignement sup de niveau bac + 2  en 2020 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 2;;;NUM;17
+P20_CHOM1524;Chômeurs 15-24 ans en 2020 (princ);Nombre de chômeurs de 15 à 24 ans;;;NUM;17
+P20_CHOM_SUP34;Chômeurs Enseignement sup de niveau bac + 3 ou 4  en 2020 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 3 ou Bac + 4;;;NUM;17
+P20_CHOM2554;Chômeurs 25-54 ans en 2020 (princ);Nombre de chômeurs de 25 à 54 ans;;;NUM;17
+P20_CHOM_SUP5;Chômeurs Enseignement sup de niveau bac + 5 ou plus  en 2020 (princ);Nombre de chômeurs de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement;;;NUM;17
+P20_CHOM5564;Chômeurs 55-64 ans en 2020 (princ);Nombre de chômeurs de 55 à 64 ans;;;NUM;17
+P20_ACT_DIPLMIN;Actifs Sans diplôme ou CEP en 2020 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'aucun diplôme ou au plus un CEP;;;NUM;17
+P20_CHOM_DIPLMIN;Chômeurs Sans diplôme ou CEP en 2020 (princ);Nombre de chômeurs de 15 ans à 64 ans titulaires d'aucun diplôme ou au plus un CEP;;;NUM;17
+P20_ACT_BEPC;Actifs BEPC, brevet des collèges, DNB en 2020 (princ);Nombre de personnes actives de 15 ans à 64 ans  titulaires d'un BEPC, brevet des collèges, DNB;;;NUM;17
+P20_CHOM_BEPC;Chômeurs BEPC, brevet des collèges, DNB en 2020 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un BEPC, brevet des collèges, DNB;;;NUM;19
+P20_ACT_CAPBEP;Actifs CAP-BEP ou équiv. en 2020 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un CAP, d'un BEP ou équivalent;;;NUM;17
+P20_ACT_BAC;Actifs Bac, brevet pro. ou équiv.  en 2020 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un Baccalauréat, brevet professionnel ou équivalent;;;NUM;17
+P20_ACT_SUP2;Actifs Enseignement sup de niveau bac + 2  en 2020 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 2;;;NUM;17
+P20_ACT_SUP34;Actifs Enseignement sup de niveau bac + 3 ou 4  en 2020 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 3 ou Bac + 4;;;NUM;17
+P20_ACT_SUP5;Actifs Enseignement sup de niveau bac + 5 ou plus  en 2020 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement;;;NUM;17
+P20_INACT1564;Inactifs 15-64 ans en 2020 (princ);Nombre de personnes inactives de 15 à 64 ans;;;NUM;17
+P20_HINACT1564;Inactifs 15-64 ans Hommes en 2020 (princ);Nombre d'hommes inactifs de 15 à 64 ans;;;NUM;17
+P20_FINACT1564;Inactifs 15-64 ans Femmes en 2020 (princ);Nombre de femmes inactives de 15 à 64 ans;;;NUM;17
+P20_ETUD1564;Elèv. Etud. Stag. non rémunérés 15-64 ans en 2020 (princ);Nombre d'élèves, étudiants et stagiaires non rémunérés de 15 à 64 ans;;;NUM;17
+P20_HETUD1564;Elèv. Etud. Stag. non rémunérés 15-64 ans Hommes en 2020 (princ);Nombre d'élèves, étudiants et stagiaires non rémunérés hommes de 15 à 64 ans;;;NUM;17
+P20_FETUD1564;Elèv. Etud. Stag. non rémunérés 15-64 ans Femmes en 2020 (princ);Nombre d'élèves, étudiants et stagiaires non rémunérés femmes de 15 à 64 ans;;;NUM;17
+P20_RETR1564;Retraités Préretraités 15-64 ans en 2020 (princ);Nombre de retraités ou préretraités de 15 à 64 ans;;;NUM;17
+P20_HRETR1564;Retraités Préretraités 15-64 ans Hommes en 2020 (princ);Nombre de retraités ou préretraités hommes de 15 à 64 ans;;;NUM;17
+P20_FRETR1564;Retraités Préretraités 15-64 ans Femmes en 2020 (princ);Nombre de retraités ou préretraités femmes de 15 à 64 ans;;;NUM;17
+P20_AINACT1564;Autres inactifs 15-64 ans en 2020 (princ);Nombre d'autres inactifs de 15 à 64 ans;;;NUM;17
+P20_HAINACT1564;Autres inactifs 15-64 ans Hommes en 2020 (princ);Nombre d'autres inactifs hommes de 15 à 64 ans;;;NUM;17
+P20_FAINACT1564;Autres inactifs 15-64 ans Femmes en 2020 (princ);Nombre d'autres inactifs femmes de 15 à 64 ans;;;NUM;17
+C20_ACT1564;Actifs 15-64 ans en 2020 (compl);Nombre de personnes actives de 15 à 64 ans;;;NUM;17
+C20_ACT1564_CS1;Actifs 15-64 ans Agriculteurs exploitants en 2020 (compl);Nombre d'agriculteurs exploitants actifs de 15 à 64 ans;;;NUM;18
+C20_ACT1564_CS2;Actifs 15-64 ans Artisans, Comm., Chefs entr. en 2020 (compl);Nombre d'artisans, commerçants, chefs d'entreprise actifs de 15 à 64 ans;;;NUM;17
+C20_ACT1564_CS3;Actifs 15-64 ans Cadres, Prof. intel. sup. en 2020 (compl);Nombre de cadres et professions intellectuelles supérieures actifs de 15 à 64 ans;;;NUM;17
+C20_ACT1564_CS4;Actifs 15-64 ans Prof. intermédiaires en 2020 (compl);Nombre de professions intermédiaires actifs de 15 à 64 ans;;;NUM;17
+C20_ACT1564_CS5;Actifs 15-64 ans Employés en 2020 (compl);Nombre d'employés actifs de 15 à 64 ans;;;NUM;17
+C20_ACT1564_CS6;Actifs 15-64 ans Ouvriers en 2020 (compl);Nombre d'ouvriers actifs de 15 à 64 ans;;;NUM;17
+C20_ACTOCC1564;Actifs occupés 15-64 ans en 2020 (compl);Nombre de personnes actives occupées de 15 à 64 ans;;;NUM;17
+C20_ACTOCC1564_CS1;Actifs occ 15-64 ans Agriculteurs exploitants en 2020 (compl);Nombre d'agriculteurs exploitants actifs occupés de 15 à 64 ans;;;NUM;18
+C20_ACTOCC1564_CS2;Actifs occ 15-64 ans Artisans, Comm., Chefs entr. en 2020 (compl);Nombre d'artisans, commerçants, chefs d'entreprise actifs occupés de 15 à 64 ans;;;NUM;17
+C20_ACTOCC1564_CS3;Actifs occ 15-64 ans Cadres Prof. intel. sup. en 2020 (compl);Nombre de cadres, professions intellectuelles supérieures actifs occupés de 15 à 64 ans;;;NUM;17
+C20_ACTOCC1564_CS4;Actifs occ 15-64 ans Prof. intermédiaires en 2020 (compl);Nombre de professions intermédiaires actifs occupés de 15 à 64 ans;;;NUM;17
+C20_ACTOCC1564_CS5;Actifs occupés 15-64 ans Employés en 2020 (compl);Nombre d'employés actifs occupés de 15 à 64 ans;;;NUM;17
+C20_ACTOCC1564_CS6;Actifs occupés 15-64 ans Ouvriers en 2020 (compl);Nombre d'ouvriers actifs occupés de 15 à 64 ans;;;NUM;17
+P20_ACTOCC15P;Actifs occupés 15 ans ou plus en 2020 (princ);Nombre de personnes actives occupées de 15 ans ou plus;;;NUM;17
+P20_HACTOCC15P;Actifs occupés 15 ans ou plus Hommes en 2020 (princ);Nombre d'hommes actifs occupés de 15 ans ou plus;;;NUM;17
+P20_FACTOCC15P;Actifs occupés 15 ans ou plus Femmes en 2020 (princ);Nombre de femmes actives occupées de 15 ans ou plus;;;NUM;17
+P20_SAL15P;Salariés 15 ans ou plus en 2020 (princ);Nombre de personnes salariées de 15 ans ou plus;;;NUM;17
+P20_HSAL15P;Salariés 15 ans ou plus Hommes en 2020 (princ);Nombre d'hommes salariés de 15 ans ou plus;;;NUM;17
+P20_FSAL15P;Salariés 15 ans ou plus Femmes en 2020 (princ);Nombre de femmes salariées de 15 ans ou plus;;;NUM;17
+P20_NSAL15P;Non-salariés 15 ans ou plus en 2020 (princ);Nombre de personnes non-salariées de 15 ans ou plus;;;NUM;17
+P20_HNSAL15P;Non-salariés 15 ans ou plus Hommes en 2020 (princ);Nombre d'hommes non-salariés de 15 ans ou plus;;;NUM;17
+P20_FNSAL15P;Non-salariés 15 ans ou plus Femmes en 2020 (princ);Nombre de femmes non-salariées de 15 ans ou plus;;;NUM;17
+P20_ACTOCC15P_TP;Actifs occ 15 ans ou plus TP en 2020 (princ);Nombre de personnes actives occupées de 15 ans ou plus à temps partiel;;;NUM;17
+P20_SAL15P_TP;Salariés 15 ans ou plus TP en 2020 (princ);Nombre de personnes salariées de 15 ans ou plus à temps partiel;;;NUM;17
+P20_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes en 2020 (princ);Nombre d'hommes salariés de 15 ans ou plus à temps partiel;;;NUM;17
+P20_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes en 2020 (princ);Nombre de femmes salariées de 15 ans ou plus à temps partiel;;;NUM;17
+P20_NSAL15P_TP;Non-salariés 15 ans ou plus TP en 2020 (princ);Nombre de personnes non-salariées de 15 ans ou plus à temps partiel;;;NUM;17
+P20_SAL15P_CDI;Salariés 15 ans ou plus Fonct publ, CDI en 2020 (princ);Nombre de personnes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée;;;NUM;17
+P20_SAL15P_CDD;Salariés 15 ans ou plus CDD en 2020 (princ);Nombre de personnes salariées de 15 ans ou plus ayant un contrat à durée déterminée;;;NUM;17
+P20_SAL15P_INTERIM;Salariés 15 ans ou plus Intérim en 2020 (princ);Nombre de personnes salariées de 15 ans ou plus intérimaires;;;NUM;18
+P20_SAL15P_EMPAID;Salariés 15 ans ou plus Emplois aidés en 2020 (princ);Nombre de personnes salariées de 15 ans ou plus Emplois aidés;;;NUM;18
+P20_SAL15P_APPR;Salariés 15 ans ou plus Apprentissage - Stage en 2020 (princ);Nombre de personnes salariées de 15 ans ou plus en apprentissage ou stagiaires;;;NUM;17
+P20_NSAL15P_INDEP;Non-salariés 15 ans ou plus Indépendants en 2020 (princ);Nombre de personnes non-salariées de 15 ans ou plus indépendants;;;NUM;17
+P20_NSAL15P_EMPLOY;Non-salariés 15 ans ou plus Employeurs en 2020 (princ);Nombre de personnes non-salariées de 15 ans ou plus employeurs;;;NUM;17
+P20_NSAL15P_AIDFAM;Non-salariés 15 ans ou plus Aides familiaux en 2020 (princ);Nombre de personnes non-salariées de 15 ans ou plus aides familiaux;;;NUM;18
+P20_ACTOCC15P_ILT1;Actif occ 15 ans ou plus travaille commune résidence en 2020 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence;;;NUM;17
+P20_ACTOCC15P_ILT2P;Actif occ 15 ans ou plus travaille autre commune que commune résidence en 2020 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence;;;NUM;17
+P20_ACTOCC15P_ILT2;Actif occ 15 ans ou plus travaille autre commune même dépt résidence en 2020 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence;;;NUM;17
+P20_ACTOCC15P_ILT3;Actif occ 15 ans ou plus travaille autre dépt même région résidence en 2020 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence;;;NUM;17
+P20_ACTOCC15P_ILT4;Actif occ 15 ans ou plus travaille autre région en métropole en 2020 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une commune située dans une autre région en France métropolitaine;;;NUM;17
+P20_ACTOCC15P_ILT5;Actif occ 15 ans ou plus travaille autre région hors métropole en 2020 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent ailleurs, hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger);;;NUM;20
+C20_ACTOCC15P;Actif occ 15 ans ou plus en 2020 (compl);Nombre d'actifs occupés de 15 ans ou plus;;;NUM;17
+C20_ACTOCC15P_PAS;Actifs occ 15 ans ou plus pas de transport pour travail en 2020 (compl);Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler;;;NUM;17
+C20_ACTOCC15P_MAR;Actifs occ 15 ans ou plus marche à pied pour travail en 2020 (compl);Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied;;;NUM;17
+C20_ACTOCC15P_VELO;Actifs occ 15 ans ou plus vélo en 2020 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un vélo pour aller travailler;;;NUM;17
+C20_ACTOCC15P_2ROUESMOT;Actifs occ 15 ans ou plus deux-roues motorisé en 2020 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux-roues motorisé pour aller travailler;;;NUM;17
+C20_ACTOCC15P_VOIT;Actifs occ 15 ans ou plus voiture en 2020 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement la voiture pour aller travailler;;;NUM;17
+C20_ACTOCC15P_TCOM;Actifs occ 15 ans ou plus transport en commun en 2020 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler;;;NUM;17

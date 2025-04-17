@@ -1,0 +1,517 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "POP_IRIS_2015",
+    "description": "https://www.insee.fr/fr/statistiques/3627376 POP_IRIS_2015 Chemin disque dur : C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\Evol_IRIS\\2015",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "IRIS",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "REG",
+      "type": "VARCHAR",
+      "description": "Code de la région",
+      "nullable": true
+    },
+    {
+      "name": "DEP",
+      "type": "VARCHAR",
+      "description": "Code du département",
+      "nullable": true
+    },
+    {
+      "name": "UU2010",
+      "type": "VARCHAR",
+      "description": "\"Code du département ou \"\"00\"\" pour les unités urbaines qui s'étendent sur plusieurs départements voire au-delà de la frontière suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille\"",
+      "nullable": true
+    },
+    {
+      "name": "COM",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "LIBCOM",
+      "type": "VARCHAR",
+      "description": "Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "TRIRIS",
+      "type": "VARCHAR",
+      "description": "Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS",
+      "nullable": true
+    },
+    {
+      "name": "GRD_QUART",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier",
+      "nullable": true
+    },
+    {
+      "name": "LIBIRIS",
+      "type": "VARCHAR",
+      "description": "Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "TYP_IRIS",
+      "type": "VARCHAR",
+      "description": "Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z)",
+      "nullable": true
+    },
+    {
+      "name": "MODIF_IRIS",
+      "type": "VARCHAR",
+      "description": "Type de modification de l'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "LAB_IRIS",
+      "type": "VARCHAR",
+      "description": "Label de qualité de l'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP",
+      "type": "VARCHAR",
+      "description": "Population",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0002",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 0 à 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0305",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 3 à 5 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0610",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 6 à 10 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP1117",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 11 à 17 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP1824",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 18 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP2539",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 25 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP4054",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 40 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP5564",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP6579",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 65 à 79 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP80P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 80 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0014",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 0 à 14 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP1529",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 à 29 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP3044",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 30 à 44 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP4559",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 45 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP6074",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP75P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0019",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 0 à 19 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP2064",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 20 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP65P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 65 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P15_POPH",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes",
+      "nullable": true
+    },
+    {
+      "name": "P15_H0014",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 0 à 14 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_H1529",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 à 29 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_H3044",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 30 à 44 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_H4559",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 45 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_H6074",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_H75P",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P15_H0019",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 0 à 19 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_H2064",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 20 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_H65P",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 65 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P15_POPF",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes",
+      "nullable": true
+    },
+    {
+      "name": "P15_F0014",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 0 à 14 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_F1529",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 à 29 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_F3044",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 30 à 44 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_F4559",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 45 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_F6074",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_F75P",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P15_F0019",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 0 à 19 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_F2064",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 20 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P15_F65P",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 65 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS1",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Agriculteurs exploitants",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS2",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS3",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS4",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Professions intermédiaires",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS5",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Employés",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS6",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Ouvriers",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS7",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Retraités",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS8",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS1",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS2",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS3",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS4",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Professions intermédiaires",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS5",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Employés",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS6",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Ouvriers",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS7",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Retraités",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS8",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS1",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Agriculteurs exploitants",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS2",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS3",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS4",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Professions intermédiaires",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS5",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Employés",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS6",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Ouvriers",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS7",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Retraités",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS8",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP_FR",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes de nationalité française",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP_ETR",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes étrangères",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP_IMM",
+      "type": "VARCHAR",
+      "description": "Nombres de personnes immigrées",
+      "nullable": true
+    },
+    {
+      "name": "P15_PMEN",
+      "type": "VARCHAR",
+      "description": "Population des ménages",
+      "nullable": true
+    },
+    {
+      "name": "P15_PHORMEN",
+      "type": "VARCHAR",
+      "description": "Population hors ménages",
+      "nullable": true
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+---
+description: Good Practices for using PowerShell in development workflows (especially with Cursor AI)
+globs: **/*.ps1
+alwaysApply: true
+---
+
+## Context
+
+You use PowerShell to run local Python scripts, manage virtual environments, and interact with tools like DBeaver, Git, and PostgreSQL.  
+These conventions are designed to reduce common Windows-related errors, especially when working with AI tools like Cursor that may suggest Unix-style syntax incompatible with PowerShell.
+
+## Rules
+
+### 1. Command Chaining
+
+- ✅ Use `;` to separate multiple commands on one line.
+- ❌ Do NOT use `&&` or `||`, which are Unix-style operators and will cause syntax errors in PowerShell.
+
+```powershell
+# ✅ Correct
+python script.py; echo "Done"
+
+# ❌ Incorrect
+python script.py && echo "Done"
+
+
+### 2. Quoting and Paths
+- Always use double quotes around paths or arguments containing spaces.
+
+- Use backslashes (\) for file paths on Windows.
+Example : 
+python "C:\Users\thiba\My Project\script.py"
+
+- Use Join-Path or variables for building dynamic paths:
+Example :
+$base = "C:\Users\thiba\Documents"
+$script = Join-Path $base "app\main.py"
+python $script
+
+
+### 3. Virtual Environments
+- To activate a Python virtual environment in PowerShell:
+Example:
+.\venv\Scripts\Activate.ps1
+
+- Once activated, run scripts like this:
+Example:
+python .\main.py
+
+
+### 4. Running Streamlit Apps
+Use the following syntax to launch a Streamlit application:
+Example :
+streamlit run .\my_app\main.py
+
+
+### 5. Debugging Tips
+- Run your commands line by line in PowerShell if a script fails without visible error.
+- Use Write-Host "Message" for debugging.
+- Always confirm your current directory with:
+Example :
+Get-Location
+or
+$PWD.Path
+
+
+### 6. Git and CLI Tools
+- Make sure git, psql, streamlit, and other CLI tools are installed and in your system PATH.
+
+- PowerShell supports standard Git commands like:
+Example:
+git status
+git pull
+git add .
+git commit -m "Message"
+
+- For PostgreSQL via CLI, use:
+Example:
+psql -U postgres -d my_database
+
+
+<Critical Notes>
+- NEVER use Unix-style command chaining (&&, ||) unless using Git Bash or WSL.
+- ALWAYS close quotes and parentheses explicitly to avoid syntax ambiguity.
+- USE Ctrl + C to stop long-running processes cleanly.
+- VERIFY you're in the right virtual environment before running a Python/Streamlit script.
+- DO NOT use Unix commands like chmod, rm, or touch unless you're in WSL or Git Bash.
+Example:
+
+### À noter :
+- Tu peux garder ce fichier tel quel pour **tout usage courant de PowerShell dans ton environnement Windows**.
+- Tu peux également en faire un fichier **universel applicable à tous les projets**, ou bien le restreindre à un projet donné en ajustant le `globs`.
+

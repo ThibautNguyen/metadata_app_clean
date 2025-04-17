@@ -1,0 +1,193 @@
+Emploi-Activité en 2021 
+Recensement de la population
+Caractéristiques de l'emploi en 2021 
+
+
+## Source : 
+https://www.insee.fr/fr/statistiques/8200707
+
+
+
+##Tableau SQL : 
+caracterist_emploi_COM_2021
+
+
+
+4 premières lignes :
+CODGEO;P21_ACTOCC15P;P21_SAL15P;P21_NSAL15P;P21_ACTOCC15P_TP;P21_SAL15P_TP;P21_HSAL15P_TP;P21_FSAL15P_TP;P21_NSAL15P_TP;P21_HACTOCC15P;P21_HSAL15P;P21_HSAL15P_CDI;P21_HSAL15P_CDD;P21_HSAL15P_INTERIM;P21_HSAL15P_EMPAID;P21_HSAL15P_APPR;P21_HNSAL15P;P21_HNSAL15P_INDEP;P21_HNSAL15P_EMPLOY;P21_HNSAL15P_AIDFAM;P21_FACTOCC15P;P21_FSAL15P;P21_FSAL15P_CDI;P21_FSAL15P_CDD;P21_FSAL15P_INTERIM;P21_FSAL15P_EMPAID;P21_FSAL15P_APPR;P21_FNSAL15P;P21_FNSAL15P_INDEP;P21_FNSAL15P_EMPLOY;P21_FNSAL15P_AIDFAM;P21_HSAL1564;P21_HSAL1524;P21_HSAL2554;P21_HSAL5564;P21_HSAL1564_TP;P21_HSAL1524_TP;P21_HSAL2554_TP;P21_HSAL5564_TP;P21_FSAL1564;P21_FSAL1524;P21_FSAL2554;P21_FSAL5564;P21_FSAL1564_TP;P21_FSAL1524_TP;P21_FSAL2554_TP;P21_FSAL5564_TP;P21_ACTOCC15P_ILT1;P21_ACTOCC15P_ILT2P;P21_ACTOCC15P_ILT2;P21_ACTOCC15P_ILT3;P21_ACTOCC15P_ILT4;P21_ACTOCC15P_ILT5;P21_ACTOCC15P_PASTRANS;P21_ACTOCC15P_MARCHE;P21_ACTOCC15P_VELO;P21_ACTOCC15P_2ROUESMOT;P21_ACTOCC15P_VOITURE;P21_ACTOCC15P_COMMUN;P15_ACTOCC15P;P15_SAL15P;P15_NSAL15P;P15_ACTOCC15P_TP;P15_SAL15P_TP;P15_HSAL15P_TP;P15_FSAL15P_TP;P15_NSAL15P_TP;P15_HACTOCC15P;P15_HSAL15P;P15_HSAL15P_CDI;P15_HSAL15P_CDD;P15_HSAL15P_INTERIM;P15_HSAL15P_EMPAID;P15_HSAL15P_APPR;P15_HNSAL15P;P15_HNSAL15P_INDEP;P15_HNSAL15P_EMPLOY;P15_HNSAL15P_AIDFAM;P15_FACTOCC15P;P15_FSAL15P;P15_FSAL15P_CDI;P15_FSAL15P_CDD;P15_FSAL15P_INTERIM;P15_FSAL15P_EMPAID;P15_FSAL15P_APPR;P15_FNSAL15P;P15_FNSAL15P_INDEP;P15_FNSAL15P_EMPLOY;P15_FNSAL15P_AIDFAM;P15_HSAL1564;P15_HSAL1524;P15_HSAL2554;P15_HSAL5564;P15_HSAL1564_TP;P15_HSAL1524_TP;P15_HSAL2554_TP;P15_HSAL5564_TP;P15_FSAL1564;P15_FSAL1524;P15_FSAL2554;P15_FSAL5564;P15_FSAL1564_TP;P15_FSAL1524_TP;P15_FSAL2554_TP;P15_FSAL5564_TP;P15_ACTOCC15P_ILT1;P15_ACTOCC15P_ILT2P;P15_ACTOCC15P_ILT2;P15_ACTOCC15P_ILT3;P15_ACTOCC15P_ILT4;P15_ACTOCC15P_ILT5;P15_ACTOCC15P_PASTRANS;P15_ACTOCC15P_MARCHE;P15_ACTOCC15P_2ROUES;P15_ACTOCC15P_VOITURE;P15_ACTOCC15P_COMMUN;P10_ACTOCC15P;P10_SAL15P;P10_NSAL15P;P10_ACTOCC15P_TP;P10_SAL15P_TP;P10_HSAL15P_TP;P10_FSAL15P_TP;P10_NSAL15P_TP;P10_HACTOCC15P;P10_HSAL15P;P10_HSAL15P_CDI;P10_HSAL15P_CDD;P10_HSAL15P_INTERIM;P10_HSAL15P_EMPAID;P10_HSAL15P_APPR;P10_HNSAL15P;P10_HNSAL15P_INDEP;P10_HNSAL15P_EMPLOY;P10_HNSAL15P_AIDFAM;P10_FACTOCC15P;P10_FSAL15P;P10_FSAL15P_CDI;P10_FSAL15P_CDD;P10_FSAL15P_INTERIM;P10_FSAL15P_EMPAID;P10_FSAL15P_APPR;P10_FNSAL15P;P10_FNSAL15P_INDEP;P10_FNSAL15P_EMPLOY;P10_FNSAL15P_AIDFAM;P10_HSAL1564;P10_HSAL1524;P10_HSAL2554;P10_HSAL5564;P10_HSAL1564_TP;P10_HSAL1524_TP;P10_HSAL2554_TP;P10_HSAL5564_TP;P10_FSAL1564;P10_FSAL1524;P10_FSAL2554;P10_FSAL5564;P10_FSAL1564_TP;P10_FSAL1524_TP;P10_FSAL2554_TP;P10_FSAL5564_TP;P10_ACTOCC15P_ILT1;P10_ACTOCC15P_ILT2P;P10_ACTOCC15P_ILT2;P10_ACTOCC15P_ILT3;P10_ACTOCC15P_ILT4;P10_ACTOCC15P_ILT5
+01001;395.22678534892;323.538168442315;71.6886169066049;61.1244640850129;52.3716933176094;14.5903779334951;37.7813153841143;8.75277076740342;211.139028738109;166.559117263923;150.047871877107;8.668208682731;1.9458690553639;0;5.89716764872114;44.5799114741865;20.3354806705028;24.2444308036837;0;184.087756610811;156.979051178392;141.495925272667;11.5827849857968;3.90034091992889;0;0;27.1087054324185;24.2192783585482;2.88942707387025;0;164.638469343443;14.6240561777327;120.18503516379;29.8293780019209;12.6697300130156;6.84028470754742;4.86912134522848;0.960323960239741;156.979051178392;8.71026893141942;123.266828663655;25.0019535833184;37.7813153841143;3.88335545645654;24.2695723624465;9.62838756521122;48.411867008851;346.814918340069;238.356708026282;95.839363519118;12.6188467946692;0;20.3520277292152;6.78094630157707;0.96870661451101;4.92000520786825;358.338582519905;3.86651697584339;343;290;53;51;47;8;39;4;185;152;133;5;4;1;9;33;17;16;0;158;138;123;9;0;3;3;20;16;3;1;152;14;113;25;8;4;4;0;138;4;112;22;39;0;31;8;55;288;189;79;19;1;20;4;5;302;12;328.676923076925;280.430769230771;48.2461538461541;59.3025641025644;54.2769230769233;4.02051282051284;50.2564102564105;5.02564102564105;171.876923076924;140.717948717949;129.661538461539;5.02564102564105;1.00512820512821;1.00512820512821;4.02051282051284;31.1589743589745;13.0666666666667;18.0923076923078;0;156.800000000001;139.712820512821;124.635897435898;11.0564102564103;2.01025641025642;0;2.01025641025642;17.0871794871796;13.0666666666667;3.01538461538463;1.00512820512821;139.712820512821;8.04102564102568;120.615384615385;11.0564102564103;3.01538461538463;1.00512820512821;2.01025641025642;0;139.712820512821;10.0512820512821;110.564102564103;19.097435897436;50.2564102564105;4.02051282051284;43.220512820513;3.01538461538463;47.2410256410259;281.435897435899;181.928205128206;84.4307692307696;15.0769230769231;0
+01002;130.864696228606;93.7338812271841;37.1308150014221;20.4582510838219;12.6562669038974;3.82398994413369;8.83227695976373;7.80198417992451;70.200508482837;48.9042788962332;43.06318879639;1.9276541155695;1.9276541155695;0;1.98578186870413;21.2962295866038;13.3987055518329;6.00118820620665;1.89633582856419;60.6641877457693;44.8296023309509;42.9332665023867;1.89633582856419;0;0;0;15.8345854148183;10.8549169376555;4.97966847716285;0;48.9042788962332;3.91343598427363;40.3644774944178;4.62636541754172;3.82398994413369;0;1.95627265403669;1.867717290097;43.8814344166688;0.948167914282093;38.2210454694435;4.71222103294328;8.83227695976373;0;6.93594113119954;1.89633582856419;22.7794532268802;108.085243001726;93.6194142808036;9.63284336083389;4.83298536008854;0;11.8576149728455;0;0;1.00810473975459;111.358210691293;6.64076582471303;113.061728395062;89.2592592592593;23.8024691358025;23.8024691358025;20.8271604938272;9.91769547325103;10.9094650205761;2.97530864197531;60.4979423868313;46.6131687242798;43.6378600823045;2.97530864197531;0;0;0;13.8847736625514;9.91769547325103;3.96707818930041;0;52.5637860082305;42.6460905349794;35.7037037037037;3.96707818930041;0.991769547325103;0;1.98353909465021;9.91769547325103;6.94238683127572;2.97530864197531;0;45.6213991769547;0;38.679012345679;6.94238683127572;9.91769547325103;0;6.94238683127572;2.97530864197531;42.6460905349794;1.98353909465021;33.7201646090535;6.94238683127572;10.9094650205761;0;10.9094650205761;0;10.9094650205761;102.152263374486;80.3333333333333;20.8271604938272;0.991769547325103;0;3.96707818930041;0;0;103.144032921811;5.95061728395062;102;85;17;22.6666666666667;19.8333333333333;5.66666666666666;14.1666666666667;2.83333333333333;51.9444444444444;41.5555555555555;36.8333333333333;3.77777777777778;0;0.944444444444444;0;10.3888888888889;3.77777777777778;6.61111111111111;0;50.0555555555555;43.4444444444444;37.7777777777778;3.77777777777778;0.944444444444444;0;0.944444444444444;6.61111111111111;5.66666666666666;0.944444444444444;0;41.5555555555555;2.83333333333333;34.9444444444444;3.77777777777778;5.66666666666666;0;5.66666666666666;0;43.4444444444444;3.77777777777778;35.8888888888889;3.77777777777778;14.1666666666667;0;12.2777777777778;1.88888888888889;11.3333333333333;90.6666666666666;62.3333333333333;26.4444444444444;1.88888888888889;0
+01004;6211.67629985574;5665.52454044945;546.151759406286;921.686645072239;809.652990096641;191.832918033709;617.820072062932;112.033654975598;3338.11387942052;3012.68893493998;2466.35879606112;216.396353264579;167.184628614933;22.2069725937691;140.542184405574;325.424944480541;152.07496083467;173.349983645871;0;2873.56242043521;2652.83560550947;2122.29349771933;342.128402025397;89.1334226487443;24.328162724329;74.9521203916676;220.726814925745;173.618387507508;47.1084274182368;0;3006.11653455823;445.225364001062;2223.10066599469;337.790504562479;188.558530225866;80.2767498290176;82.7350274910706;25.5467529057776;2630.82795620148;330.932064668881;1790.4753818481;509.420509684496;610.405623840254;61.8935606631832;420.232282477912;128.279780699158;2502.71572859276;3708.96057126298;2576.19846086445;1048.50967103623;76.1696529861245;8.08278637616636;263.794771332353;504.584191774032;134.131744171604;65.6033603828304;4402.13206389015;841.430168304763;5687.15297539302;5227.52358424461;459.629391148411;896.114700456852;813.763338820926;182.48695204886;631.276386772065;82.3513616359263;3100.44297454644;2809.6952855805;2326.58452417508;295.008705507428;85.703837950523;11.8104696407327;90.5877483067289;290.747688965944;155.870680812364;134.87700815358;0;2586.71000084658;2417.82829866411;1937.32343226066;329.995665254983;35.9141754982096;57.7904584408496;56.8045672094106;168.881702182466;128.730226778225;40.1514754042418;0;2806.06541435212;365.482656458999;2124.48956350909;316.093194384034;182.48695204886;52.0324388301834;104.499083041867;25.9554301768099;2399.48588588285;301.551837536127;1749.84124640348;348.092801943247;621.482335613188;63.6005638547092;468.732954628431;89.1488171300477;2331.32437805782;3355.8285973352;2338.98208589413;930.785081200462;74.3432164141843;11.7182138264257;219.262745990125;392.728530944643;190.378622528092;4098.36787884235;786.415197087803;5861.72189405457;5424.46058412157;437.261309933007;885.575416217369;818.119950614719;178.87428114837;639.245669466349;67.4554656026503;3243.13909219858;2967.00084874754;2413.18273714041;303.773097354568;87.3051727898609;19.65529779038;143.084543672317;276.138243451039;105.484079404967;164.247799066895;6.40636497917693;2618.582801856;2457.45973537403;2022.65286203828;290.667557610438;68.2618670691484;27.0103602469579;48.8670884092052;161.123066481967;83.986810113771;71.8891382660454;5.247118102151;2945.82530808488;477.504574961605;2288.61520011952;179.70553300375;165.557941875762;51.0895344562241;91.2686253168708;23.1997821026674;2448.18171393196;338.725654232117;1895.99820185178;213.457857848065;634.672063768292;77.4862989433728;508.347738346936;48.8380264779832;2513.52650993022;3348.19538412436;2316.2697288342;971.889266666518;58.8817416287714;1.15464699486361
+
+
+
+## Dictionnaire des variables : 
+
+COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+P21_ACTOCC15P;Actifs occupés 15 ans ou plus en 2021 (princ);Nombre de personnes actives occupées de 15 ans ou plus en 2021;;;NUM;17
+P21_SAL15P;Salariés 15 ans ou plus en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus en 2021;;;NUM;17
+P21_NSAL15P;Non-salariés 15 ans ou plus en 2021 (princ);Nombre de personnes non-salariées de 15 ans ou plus en 2021;;;NUM;17
+P21_ACTOCC15P_TP;Actifs occ 15 ans ou plus TP en 2021 (princ);Nombre de personnes actives occupées de 15 ans ou plus à temps partiel en 2021;;;NUM;17
+P21_SAL15P_TP;Salariés 15 ans ou plus TP en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus à temps partiel en 2021;;;NUM;17
+P21_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus à temps partiel en 2021;;;NUM;17
+P21_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus à temps partiel en 2021;;;NUM;17
+P21_NSAL15P_TP;Non-salariés 15 ans ou plus TP en 2021 (princ);Nombre de personnes non-salariées de 15 ans ou plus à temps partiel en 2021;;;NUM;17
+P21_HACTOCC15P;Actifs occupés 15 ans ou plus Hommes en 2021 (princ);Nombre d'hommes actifs occupés de 15 ans ou plus en 2021;;;NUM;17
+P21_HSAL15P;Salariés 15 ans ou plus Hommes en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus en 2021;;;NUM;17
+P21_HSAL15P_CDI;Salariés 15 ans ou plus Hommes Fonct publ, CDI en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2021;;;NUM;17
+P21_HSAL15P_CDD;Salariés 15 ans ou plus Hommes CDD en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus ayant un contrat à durée déterminée en 2021;;;NUM;17
+P21_HSAL15P_INTERIM;Salariés 15 ans ou plus Hommes Intérim en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus intérimaires en 2021;;;NUM;17
+P21_HSAL15P_EMPAID;Salariés 15 ans ou plus Hommes Emplois aidés en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus Emplois aidés en 2021;;;NUM;17
+P21_HSAL15P_APPR;Salariés 15 ans ou plus Hommes Apprentissage - Stage en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus en apprentissage, en stage en 2021;;;NUM;17
+P21_HNSAL15P;Non-salariés 15 ans ou plus Hommes en 2021 (princ);Nombre d'hommes non-salariés de 15 ans ou plus en 2021;;;NUM;17
+P21_HNSAL15P_INDEP;Non-salariés 15 ans ou plus Hommes Indépendants en 2021 (princ);Nombre d'hommes non-salariés de 15 ans ou plus indépendants en 2021;;;NUM;17
+P21_HNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Hommes Employeurs en 2021 (princ);Nombre d'hommes non-salariés de 15 ans ou plus employeurs en 2021;;;NUM;17
+P21_HNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Hommes Aides familiaux en 2021 (princ);Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux en 2021;;;NUM;17
+P21_FACTOCC15P;Actifs occupés 15 ans ou plus Femmes en 2021 (princ);Nombre de femmes actives occupées de 15 ans ou plus en 2021;;;NUM;17
+P21_FSAL15P;Salariés 15 ans ou plus Femmes en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus en 2021;;;NUM;17
+P21_FSAL15P_CDI;Salariés 15 ans ou plus Femmes Fonct publ, CDI en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2021;;;NUM;17
+P21_FSAL15P_CDD;Salariés 15 ans ou plus Femmes CDD en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée en 2021;;;NUM;17
+P21_FSAL15P_INTERIM;Salariés 15 ans ou plus Femmes Intérim en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus intérimaires en 2021;;;NUM;17
+P21_FSAL15P_EMPAID;Salariés 15 ans ou plus Femmes Emplois aidés en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus Emplois aidés en 2021;;;NUM;17
+P21_FSAL15P_APPR;Salariés 15 ans ou plus Femmes Apprentissage - Stage en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus en apprentissage, en stage en 2021;;;NUM;17
+P21_FNSAL15P;Non-salariés 15 ans ou plus Femmes en 2021 (princ);Nombre de femmes non-salariées de 15 ans ou plus en 2021;;;NUM;17
+P21_FNSAL15P_INDEP;Non-salariés 15 ans ou plus Femmes Indépendantes en 2021 (princ);Nombre de femmes non-salariées de 15 ans ou plus indépendantes en 2021;;;NUM;17
+P21_FNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Femmes Employeurs en 2021 (princ);Nombre de femmes non-salariées de 15 ans ou plus employeurs en 2021;;;NUM;17
+P21_FNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Femmes Aides familiales en 2021 (princ);Nombre de femmes non-salariées de 15 ans ou plus aides familiales en 2021;;;NUM;17
+P21_HSAL1564;Salariés 15-64 ans Hommes en 2021 (princ);Nombre d'hommes salariés de 15 à 64 ans en 2021;;;NUM;17
+P21_HSAL1524;Salariés 15-24 ans Hommes en 2021 (princ);Nombre d'hommes salariés de 15 à 24 ans en 2021;;;NUM;17
+P21_HSAL2554;Salariés 25-54 ans Hommes en 2021 (princ);Nombre d'hommes salariés de 25 à 54 ans en 2021;;;NUM;17
+P21_HSAL5564;Salariés 55-64 ans Hommes en 2021 (princ);Nombre d'hommes salariés de 55 à 64 ans en 2021;;;NUM;17
+P21_HSAL1564_TP;Salariés 15-64 ans Hommes TP en 2021 (princ);Nombre d'hommes salariés de 15 à 64 ans à temps partiel en 2021;;;NUM;17
+P21_HSAL1524_TP;Salariés 15-24 ans Hommes TP en 2021 (princ);Nombre d'hommes salariés de 15 à 24 ans à temps partiel en 2021;;;NUM;17
+P21_HSAL2554_TP;Salariés 25-54 ans Hommes TP en 2021 (princ);Nombre d'hommes salariés de 25 à 54 ans à temps partiel en 2021;;;NUM;17
+P21_HSAL5564_TP;Salariés 55-64 ans Hommes TP en 2021 (princ);Nombre d'hommes salariés de 55 à 64 ans à temps partiel en 2021;;;NUM;17
+P21_FSAL1564;Salariés 15-64 ans Femmes en 2021 (princ);Nombre de femmes salariées de 15 à 64 ans en 2021;;;NUM;17
+P21_FSAL1524;Salariés 15-24 ans Femmes en 2021 (princ);Nombre de femmes salariées de 15 à 24 ans en 2021;;;NUM;17
+P21_FSAL2554;Salariés 25-54 ans Femmes en 2021 (princ);Nombre de femmes salariées de 25 à 54 ans en 2021;;;NUM;17
+P21_FSAL5564;Salariés 55-64 ans Femmes en 2021 (princ);Nombre de femmes salariées de 55 à 64 ans en 2021;;;NUM;17
+P21_FSAL1564_TP;Salariés 15-64 ans Femmes TP en 2021 (princ);Nombre de femmes salariées de 15 à 64 ans à temps partiel en 2021;;;NUM;17
+P21_FSAL1524_TP;Salariés 15-24 ans Femmes TP en 2021 (princ);Nombre de femmes salariées de 15 à 24 ans à temps partiel en 2021;;;NUM;17
+P21_FSAL2554_TP;Salariés 25-54 ans Femmes TP en 2021 (princ);Nombre de femmes salariées de 25 à 54 ans à temps partiel en 2021;;;NUM;17
+P21_FSAL5564_TP;Salariés 55-64 ans Femmes TP en 2021 (princ);Nombre de femmes salariées de 55 à 64 ans à temps partiel en 2021;;;NUM;17
+P21_ACTOCC15P_ILT1;Actifs occ 15 ans ou plus travaillent commune résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence en 2021;;;NUM;17
+P21_ACTOCC15P_ILT2P;Actifs occ 15 ans ou plus travaillent autre commune que commune résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence en 2021;;;NUM;17
+P21_ACTOCC15P_ILT2;Actifs occ 15 ans ou plus travaillent autre commune même dépt résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence en 2021;;;NUM;17
+P21_ACTOCC15P_ILT3;Actifs occ 15 ans ou plus travaillent autre dépt même région résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence en 2021;;;NUM;17
+P21_ACTOCC15P_ILT4;Actifs occ 15 ans ou plus travaillent autre région en métropole en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région en France métropolitaine en 2021;;;NUM;17
+P21_ACTOCC15P_ILT5;Actifs occ 15 ans ou plus travaillent autre région hors métropole en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger) en 2021;;;NUM;17
+P21_ACTOCC15P_PASTRANS;Actifs occ 15 ans ou plus pas de transport pour travail en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler en 2021;;;NUM;17
+P21_ACTOCC15P_MARCHE;Actifs occ 15 ans ou plus marche à pied pour travail en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied en 2021;;;NUM;17
+P21_ACTOCC15P_VELO;Actifs occ 15 ans ou plus vélo en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un vélo pour aller travailler en 2021;;;NUM;17
+P21_ACTOCC15P_2ROUESMOT;Actifs occ 15 ans ou plus deux-roues motorisé en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux-roues motorisé pour aller travailler en 2021;;;NUM;17
+P21_ACTOCC15P_VOITURE;Actifs occ 15 ans ou plus voiture en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement la voiture pour aller travailler en 2021;;;NUM;17
+P21_ACTOCC15P_COMMUN;Actifs occ 15 ans ou plus transport en commun en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler en 2021;;;NUM;17
+P15_ACTOCC15P;Actifs occupés 15 ans ou plus en 2015 (princ);Nombre de personnes actives occupées de 15 ans ou plus en 2015;;;NUM;17
+P15_SAL15P;Salariés 15 ans ou plus en 2015 (princ);Nombre de personnes salariées de 15 ans ou plus en 2015;;;NUM;17
+P15_NSAL15P;Non-salariés 15 ans ou plus en 2015 (princ);Nombre de personnes non-salariées de 15 ans ou plus en 2015;;;NUM;17
+P15_ACTOCC15P_TP;Actifs occ 15 ans ou plus TP en 2015 (princ);Nombre de personnes actives occupées de 15 ans ou plus à temps partiel en 2015;;;NUM;17
+P15_SAL15P_TP;Salariés 15 ans ou plus TP en 2015 (princ);Nombre de personnes salariées de 15 ans ou plus à temps partiel en 2015;;;NUM;17
+P15_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes en 2015 (princ);Nombre d'hommes salariés de 15 ans ou plus à temps partiel en 2015;;;NUM;17
+P15_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes en 2015 (princ);Nombre de femmes salariées de 15 ans ou plus à temps partiel en 2015;;;NUM;17
+P15_NSAL15P_TP;Non-salariés 15 ans ou plus TP en 2015 (princ);Nombre de personnes non-salariées de 15 ans ou plus à temps partiel en 2015;;;NUM;17
+P15_HACTOCC15P;Actifs occupés 15 ans ou plus Hommes en 2015 (princ);Nombre d'hommes actifs occupés de 15 ans ou plus en 2015;;;NUM;17
+P15_HSAL15P;Salariés 15 ans ou plus Hommes en 2015 (princ);Nombre d'hommes salariés de 15 ans ou plus en 2015;;;NUM;17
+P15_HSAL15P_CDI;Salariés 15 ans ou plus Hommes Fonct publ, CDI en 2015 (princ);Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2015;;;NUM;17
+P15_HSAL15P_CDD;Salariés 15 ans ou plus Hommes CDD en 2015 (princ);Nombre d'hommes salariés de 15 ans ou plus ayant un contrat à durée déterminée en 2015;;;NUM;17
+P15_HSAL15P_INTERIM;Salariés 15 ans ou plus Hommes Intérim en 2015 (princ);Nombre d'hommes salariés de 15 ans ou plus intérimaires en 2015;;;NUM;17
+P15_HSAL15P_EMPAID;Salariés 15 ans ou plus Hommes Emplois aidés en 2015 (princ);Nombre d'hommes salariés de 15 ans ou plus Emplois aidés en 2015;;;NUM;17
+P15_HSAL15P_APPR;Salariés 15 ans ou plus Hommes Apprentissage - Stage en 2015 (princ);Nombre d'hommes salariés de 15 ans ou plus en apprentissage, en stage en 2015;;;NUM;17
+P15_HNSAL15P;Non-salariés 15 ans ou plus Hommes en 2015 (princ);Nombre d'hommes non-salariés de 15 ans ou plus en 2015;;;NUM;17
+P15_HNSAL15P_INDEP;Non-salariés 15 ans ou plus Hommes Indépendants en 2015 (princ);Nombre d'hommes non-salariés de 15 ans ou plus indépendants en 2015;;;NUM;17
+P15_HNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Hommes Employeurs en 2015 (princ);Nombre d'hommes non-salariés de 15 ans ou plus employeurs en 2015;;;NUM;17
+P15_HNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Hommes Aides familiaux en 2015 (princ);Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux en 2015;;;NUM;17
+P15_FACTOCC15P;Actifs occupés 15 ans ou plus Femmes en 2015 (princ);Nombre de femmes actives occupées de 15 ans ou plus en 2015;;;NUM;17
+P15_FSAL15P;Salariés 15 ans ou plus Femmes en 2015 (princ);Nombre de femmes salariées de 15 ans ou plus en 2015;;;NUM;17
+P15_FSAL15P_CDI;Salariés 15 ans ou plus Femmes Fonct publ, CDI en 2015 (princ);Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2015;;;NUM;17
+P15_FSAL15P_CDD;Salariés 15 ans ou plus Femmes CDD en 2015 (princ);Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée en 2015;;;NUM;17
+P15_FSAL15P_INTERIM;Salariés 15 ans ou plus Femmes Intérim en 2015 (princ);Nombre de femmes salariées de 15 ans ou plus intérimaires en 2015;;;NUM;17
+P15_FSAL15P_EMPAID;Salariés 15 ans ou plus Femmes Emplois aidés en 2015 (princ);Nombre de femmes salariées de 15 ans ou plus Emplois aidés en 2015;;;NUM;17
+P15_FSAL15P_APPR;Salariés 15 ans ou plus Femmes Apprentissage - Stage en 2015 (princ);Nombre de femmes salariées de 15 ans ou plus en apprentissage, en stage en 2015;;;NUM;17
+P15_FNSAL15P;Non-salariés 15 ans ou plus Femmes en 2015 (princ);Nombre de femmes non-salariées de 15 ans ou plus en 2015;;;NUM;17
+P15_FNSAL15P_INDEP;Non-salariés 15 ans ou plus Femmes Indépendantes en 2015 (princ);Nombre de femmes non-salariées de 15 ans ou plus indépendantes en 2015;;;NUM;17
+P15_FNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Femmes Employeurs en 2015 (princ);Nombre de femmes non-salariées de 15 ans ou plus employeurs en 2015;;;NUM;17
+P15_FNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Femmes Aides familiales en 2015 (princ);Nombre de femmes non-salariées de 15 ans ou plus aides familiales en 2015;;;NUM;17
+P15_HSAL1564;Salariés 15-64 ans Hommes en 2015 (princ);Nombre d'hommes salariés de 15 à 64 ans en 2015;;;NUM;17
+P15_HSAL1524;Salariés 15-24 ans Hommes en 2015 (princ);Nombre d'hommes salariés de 15 à 24 ans en 2015;;;NUM;17
+P15_HSAL2554;Salariés 25-54 ans Hommes en 2015 (princ);Nombre d'hommes salariés de 25 à 54 ans en 2015;;;NUM;17
+P15_HSAL5564;Salariés 55-64 ans Hommes en 2015 (princ);Nombre d'hommes salariés de 55 à 64 ans en 2015;;;NUM;17
+P15_HSAL1564_TP;Salariés 15-64 ans Hommes TP en 2015 (princ);Nombre d'hommes salariés de 15 à 64 ans à temps partiel en 2015;;;NUM;17
+P15_HSAL1524_TP;Salariés 15-24 ans Hommes TP en 2015 (princ);Nombre d'hommes salariés de 15 à 24 ans à temps partiel en 2015;;;NUM;17
+P15_HSAL2554_TP;Salariés 25-54 ans Hommes TP en 2015 (princ);Nombre d'hommes salariés de 25 à 54 ans à temps partiel en 2015;;;NUM;17
+P15_HSAL5564_TP;Salariés 55-64 ans Hommes TP en 2015 (princ);Nombre d'hommes salariés de 55 à 64 ans à temps partiel en 2015;;;NUM;17
+P15_FSAL1564;Salariés 15-64 ans Femmes en 2015 (princ);Nombre de femmes salariées de 15 à 64 ans en 2015;;;NUM;17
+P15_FSAL1524;Salariés 15-24 ans Femmes en 2015 (princ);Nombre de femmes salariées de 15 à 24 ans en 2015;;;NUM;17
+P15_FSAL2554;Salariés 25-54 ans Femmes en 2015 (princ);Nombre de femmes salariées de 25 à 54 ans en 2015;;;NUM;17
+P15_FSAL5564;Salariés 55-64 ans Femmes en 2015 (princ);Nombre de femmes salariées de 55 à 64 ans en 2015;;;NUM;17
+P15_FSAL1564_TP;Salariés 15-64 ans Femmes TP en 2015 (princ);Nombre de femmes salariées de 15 à 64 ans à temps partiel en 2015;;;NUM;17
+P15_FSAL1524_TP;Salariés 15-24 ans Femmes TP en 2015 (princ);Nombre de femmes salariées de 15 à 24 ans à temps partiel en 2015;;;NUM;17
+P15_FSAL2554_TP;Salariés 25-54 ans Femmes TP en 2015 (princ);Nombre de femmes salariées de 25 à 54 ans à temps partiel en 2015;;;NUM;17
+P15_FSAL5564_TP;Salariés 55-64 ans Femmes TP en 2015 (princ);Nombre de femmes salariées de 55 à 64 ans à temps partiel en 2015;;;NUM;17
+P15_ACTOCC15P_ILT1;Actifs occ 15 ans ou plus travaillent commune résidence en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence en 2015;;;NUM;17
+P15_ACTOCC15P_ILT2P;Actifs occ 15 ans ou plus travaillent autre commune que commune résidence en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence en 2015;;;NUM;17
+P15_ACTOCC15P_ILT2;Actifs occ 15 ans ou plus travaillent autre commune même dépt résidence en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence en 2015;;;NUM;17
+P15_ACTOCC15P_ILT3;Actifs occ 15 ans ou plus travaillent autre dépt même région résidence en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence en 2015;;;NUM;17
+P15_ACTOCC15P_ILT4;Actifs occ 15 ans ou plus travaillent autre région en métropole en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région en France métropolitaine en 2015;;;NUM;17
+P15_ACTOCC15P_ILT5;Actifs occ 15 ans ou plus travaillent autre région hors métropole en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger) en 2015;;;NUM;17
+P15_ACTOCC15P_PASTRANS;Actifs occ 15 ans ou plus pas de transport pour travail en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler en 2015;;;NUM;17
+P15_ACTOCC15P_MARCHE;Actifs occ 15 ans ou plus marche à pied pour travail en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied en 2015;;;NUM;17
+P15_ACTOCC15P_2ROUES;Actifs occ 15 ans ou plus deux roues en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux roues pour aller travailler en 2015;;;NUM;17
+P15_ACTOCC15P_VOITURE;Actifs occ 15 ans ou plus voiture en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement une voiture pour aller travailler en 2015;;;NUM;17
+P15_ACTOCC15P_COMMUN;Actifs occ 15 ans ou plus transport en commun en 2015 (princ);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler en 2015;;;NUM;17
+P10_ACTOCC15P;Actifs occupés 15 ans ou plus en 2010 (princ);Nombre de personnes actives occupées de 15 ans ou plus en 2010;;;NUM;17
+P10_SAL15P;Salariés 15 ans ou plus en 2010 (princ);Nombre de personnes salariées de 15 ans ou plus en 2010;;;NUM;17
+P10_NSAL15P;Non-salariés 15 ans ou plus en 2010 (princ);Nombre de personnes non-salariées de 15 ans ou plus en 2010;;;NUM;17
+P10_ACTOCC15P_TP;Actifs occ 15 ans ou plus TP en 2010 (princ);Nombre de personnes actives occupées de 15 ans ou plus à temps partiel en 2010;;;NUM;17
+P10_SAL15P_TP;Salariés 15 ans ou plus TP en 2010 (princ);Nombre de personnes salariées de 15 ans ou plus à temps partiel en 2010;;;NUM;17
+P10_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes en 2010 (princ);Nombre d'hommes salariés de 15 ans ou plus à temps partiel en 2010;;;NUM;17
+P10_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes en 2010 (princ);Nombre de femmes salariées de 15 ans ou plus à temps partiel en 2010;;;NUM;17
+P10_NSAL15P_TP;Non-salariés 15 ans ou plus TP en 2010 (princ);Nombre de personnes non-salariées de 15 ans ou plus à temps partiel en 2010;;;NUM;17
+P10_HACTOCC15P;Actifs occupés 15 ans ou plus Hommes en 2010 (princ);Nombre d'hommes actifs occupés de 15 ans ou plus en 2010;;;NUM;17
+P10_HSAL15P;Salariés 15 ans ou plus Hommes en 2010 (princ);Nombre d'hommes salariés de 15 ans ou plus en 2010;;;NUM;17
+P10_HSAL15P_CDI;Salariés 15 ans ou plus Hommes Fonct publ, CDI en 2010 (princ);Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2010;;;NUM;17
+P10_HSAL15P_CDD;Salariés 15 ans ou plus Hommes CDD en 2010 (princ);Nombre d'hommes salariés de 15 ans ou plus ayant un  contrat à durée déterminée en 2010;;;NUM;17
+P10_HSAL15P_INTERIM;Salariés 15 ans ou plus Hommes Intérim en 2010 (princ);Nombre d'hommes salariés de 15 ans ou plus intérimaires en 2010;;;NUM;17
+P10_HSAL15P_EMPAID;Salariés 15 ans ou plus Hommes Emplois aidés en 2010 (princ);Nombre d'hommes salariés de 15 ans ou plus Emplois aidés en 2010;;;NUM;17
+P10_HSAL15P_APPR;Salariés 15 ans ou plus Hommes Apprentissage - Stage en 2010 (princ);Nombre d'hommes salariés de 15 ans ou plus en apprentissage ou stagiaire en 2010;;;NUM;17
+P10_HNSAL15P;Non-salariés 15 ans ou plus Hommes en 2010 (princ);Nombre d'hommes non-salariés de 15 ans ou plus en 2010;;;NUM;17
+P10_HNSAL15P_INDEP;Non-salariés 15 ans ou plus Hommes Indépendants en 2010 (princ);Nombre d'hommes non-salariés de 15 ans ou plus indépendants en 2010;;;NUM;17
+P10_HNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Hommes Employeurs en 2010 (princ);Nombre d'hommes non-salariés de 15 ans ou plus employeurs en 2010;;;NUM;17
+P10_HNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Hommes Aides familiaux en 2010 (princ);Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux en 2010;;;NUM;17
+P10_FACTOCC15P;Actifs occupés 15 ans ou plus Femmes en 2010 (princ);Nombre de femmes actives occupées de 15 ans ou plus en 2010;;;NUM;17
+P10_FSAL15P;Salariés 15 ans ou plus Femmes en 2010 (princ);Nombre de femmes salariées de 15 ans ou plus en 2010;;;NUM;17
+P10_FSAL15P_CDI;Salariés 15 ans ou plus Femmes Fonct publ, CDI en 2010 (princ);Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2010;;;NUM;17
+P10_FSAL15P_CDD;Salariés 15 ans ou plus Femmes CDD en 2010 (princ);Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée en 2010;;;NUM;17
+P10_FSAL15P_INTERIM;Salariés 15 ans ou plus Femmes Intérim en 2010 (princ);Nombre de femmes salariées de 15 ans ou plus intérimaires en 2010;;;NUM;17
+P10_FSAL15P_EMPAID;Salariés 15 ans ou plus Femmes Emplois aidés en 2010 (princ);Nombre de femmes salariées de 15 ans ou plus Emplois aidés en 2010;;;NUM;17
+P10_FSAL15P_APPR;Salariés 15 ans ou plus Femmes Apprentissage - Stage en 2010 (princ);Nombre de femmes salariées de 15 ans ou plus en apprentissage, stagiaire en 2010;;;NUM;17
+P10_FNSAL15P;Non-salariés 15 ans ou plus Femmes en 2010 (princ);Nombre de femmes non-salariées de 15 ans ou plus en 2010;;;NUM;17
+P10_FNSAL15P_INDEP;Non-salariés 15 ans ou plus Femmes Indépendantes en 2010 (princ);Nombre de femmes non-salariées de 15 ans ou plus indépendantes en 2010;;;NUM;17
+P10_FNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Femmes Employeurs en 2010 (princ);Nombre de femmes non-salariées de 15 ans ou plus employeurs en 2010;;;NUM;17
+P10_FNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Femmes Aides familiales en 2010 (princ);Nombre de femmes non-salariées de 15 ans ou plus aides familiales en 2010;;;NUM;17
+P10_HSAL1564;Salariés 15-64 ans Hommes en 2010 (princ);Nombre d'hommes salariés de 15 à 64 ans en 2010;;;NUM;17
+P10_HSAL1524;Salariés 15-24 ans Hommes en 2010 (princ);Nombre d'hommes salariés de 15 à 24 ans en 2010;;;NUM;17
+P10_HSAL2554;Salariés 25-54 ans Hommes en 2010 (princ);Nombre d'hommes salariés de 25 à 54 ans en 2010;;;NUM;17
+P10_HSAL5564;Salariés 55-64 ans Hommes en 2010 (princ);Nombre d'hommes salariés de 55 à 64 ans en 2010;;;NUM;17
+P10_HSAL1564_TP;Salariés 15-64 ans Hommes TP en 2010 (princ);Nombre d'hommes salariés de 15 à 64 ans à temps partiel en 2010;;;NUM;17
+P10_HSAL1524_TP;Salariés 15-24 ans Hommes TP en 2010 (princ);Nombre d'hommes salariés de 15 à 24 ans à temps partiel en 2010;;;NUM;17
+P10_HSAL2554_TP;Salariés 25-54 ans Hommes TP en 2010 (princ);Nombre d'hommes salariés de 25 à 54 ans à temps partiel en 2010;;;NUM;17
+P10_HSAL5564_TP;Salariés 55-64 ans Hommes TP en 2010 (princ);Nombre d'hommes salariés de 55 à 64 ans à temps partiel en 2010;;;NUM;17
+P10_FSAL1564;Salariés 15-64 ans Femmes en 2010 (princ);Nombre de femmes salariées de 15 à 64 ans en 2010;;;NUM;17
+P10_FSAL1524;Salariés 15-24 ans Femmes en 2010 (princ);Nombre de femmes salariées de 15 à 24 ans en 2010;;;NUM;17
+P10_FSAL2554;Salariés 25-54 ans Femmes en 2010 (princ);Nombre de femmes salariées de 25 à 54 ans en 2010;;;NUM;17
+P10_FSAL5564;Salariés 55-64 ans Femmes en 2010 (princ);Nombre de femmes salariées de 55 à 64 ans en 2010;;;NUM;17
+P10_FSAL1564_TP;Salariés 15-64 ans Femmes TP en 2010 (princ);Nombre de femmes salariées de 15 à 64 ans à temps partiel en 2010;;;NUM;17
+P10_FSAL1524_TP;Salariés 15-24 ans Femmes TP en 2010 (princ);Nombre de femmes salariées de 15 à 24 ans à temps partiel en 2010;;;NUM;17
+P10_FSAL2554_TP;Salariés 25-54 ans Femmes TP en 2010 (princ);Nombre de femmes salariées de 25 à 54 ans à temps partiel en 2010;;;NUM;17
+P10_FSAL5564_TP;Salariés 55-64 ans Femmes TP en 2010 (princ);Nombre de femmes salariées de 55 à 64 ans à temps partiel en 2010;;;NUM;17
+P10_ACTOCC15P_ILT1;Actif occ 15 ans ou plus travaille commune résidence en 2010 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence en 2010;;;NUM;17
+P10_ACTOCC15P_ILT2P;Actif occ 15 ans ou plus travaille autre commune que commune résidence en 2010 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence en 2010;;;NUM;17
+P10_ACTOCC15P_ILT2;Actif occ 15 ans ou plus travaille autre commune même dépt résidence en 2010 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence en 2010;;;NUM;17
+P10_ACTOCC15P_ILT3;Actif occ 15 ans ou plus travaille autre dépt même région résidence en 2010 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence en 2010;;;NUM;17
+P10_ACTOCC15P_ILT4;Actif occ 15 ans ou plus travaille autre région en métropole en 2010 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région en France métropolitaine en 2010;;;NUM;17
+P10_ACTOCC15P_ILT5;Actif occ 15 ans ou plus travaille autre région hors métropole en 2010 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger) en 2010;;;NUM;17

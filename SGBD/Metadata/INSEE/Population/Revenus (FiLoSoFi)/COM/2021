@@ -1,0 +1,754 @@
+## Source :
+https://www.insee.fr/fr/statistiques/7756855
+
+
+## Tableau SQL : 
+FiLo_revenus_disp_COM_2021
+
+## Chemin du tableau :
+C:\Users\thiba\OneDrive\Documents\Données\Population\FiLoSoFi\2021\COM et +
+
+
+## 4 premières lignes :
+CODGEO;NBMEN21;NBPERS21;NBUC21;PMIMP21;Q121;Q221;Q321;Q3_Q1;D121;D221;D321;D421;D621;D721;D821;D921;RD;S80S2021;GI21;PACT21;PTSA21;PCHO21;PBEN21;PPEN21;PAUT21;AGE1Q121;AGE1Q221;AGE1Q321;AGE1Q3_Q1;AGE1D121;AGE1D221;AGE1D321;AGE1D421;AGE1D621;AGE1D721;AGE1D821;AGE1D921;AGE1RD;AGE1S80S2021;AGE1GI21;AGE1PACT21;AGE1PTSA21;AGE1PCHO21;AGE1PBEN21;AGE1PPEN21;AGE1PAUT21;AGE2Q121;AGE2Q221;AGE2Q321;AGE2Q3_Q1;AGE2D121;AGE2D221;AGE2D321;AGE2D421;AGE2D621;AGE2D721;AGE2D821;AGE2D921;AGE2RD;AGE2S80S2021;AGE2GI21;AGE2PACT21;AGE2PTSA21;AGE2PCHO21;AGE2PBEN21;AGE2PPEN21;AGE2PAUT21;AGE3Q121;AGE3Q221;AGE3Q321;AGE3Q3_Q1;AGE3D121;AGE3D221;AGE3D321;AGE3D421;AGE3D621;AGE3D721;AGE3D821;AGE3D921;AGE3RD;AGE3S80S2021;AGE3GI21;AGE3PACT21;AGE3PTSA21;AGE3PCHO21;AGE3PBEN21;AGE3PPEN21;AGE3PAUT21;AGE4Q121;AGE4Q221;AGE4Q321;AGE4Q3_Q1;AGE4D121;AGE4D221;AGE4D321;AGE4D421;AGE4D621;AGE4D721;AGE4D821;AGE4D921;AGE4RD;AGE4S80S2021;AGE4GI21;AGE4PACT21;AGE4PTSA21;AGE4PCHO21;AGE4PBEN21;AGE4PPEN21;AGE4PAUT21;AGE5Q121;AGE5Q221;AGE5Q321;AGE5Q3_Q1;AGE5D121;AGE5D221;AGE5D321;AGE5D421;AGE5D621;AGE5D721;AGE5D821;AGE5D921;AGE5RD;AGE5S80S2021;AGE5GI21;AGE5PACT21;AGE5PTSA21;AGE5PCHO21;AGE5PBEN21;AGE5PPEN21;AGE5PAUT21;AGE6Q121;AGE6Q221;AGE6Q321;AGE6Q3_Q1;AGE6D121;AGE6D221;AGE6D321;AGE6D421;AGE6D621;AGE6D721;AGE6D821;AGE6D921;AGE6RD;AGE6S80S2021;AGE6GI21;AGE6PACT21;AGE6PTSA21;AGE6PCHO21;AGE6PBEN21;AGE6PPEN21;AGE6PAUT21;TME1Q121;TME1Q221;TME1Q321;TME1Q3_Q1;TME1D121;TME1D221;TME1D321;TME1D421;TME1D621;TME1D721;TME1D821;TME1D921;TME1RD;TME1S80S2021;TME1GI21;TME1PACT21;TME1PTSA21;TME1PCHO21;TME1PBEN21;TME1PPEN21;TME1PAUT21;TME2Q121;TME2Q221;TME2Q321;TME2Q3_Q1;TME2D121;TME2D221;TME2D321;TME2D421;TME2D621;TME2D721;TME2D821;TME2D921;TME2RD;TME2S80S2021;TME2GI21;TME2PACT21;TME2PTSA21;TME2PCHO21;TME2PBEN21;TME2PPEN21;TME2PAUT21;TME3Q121;TME3Q221;TME3Q321;TME3Q3_Q1;TME3D121;TME3D221;TME3D321;TME3D421;TME3D621;TME3D721;TME3D821;TME3D921;TME3RD;TME3S80S2021;TME3GI21;TME3PACT21;TME3PTSA21;TME3PCHO21;TME3PBEN21;TME3PPEN21;TME3PAUT21;TME4Q121;TME4Q221;TME4Q321;TME4Q3_Q1;TME4D121;TME4D221;TME4D321;TME4D421;TME4D621;TME4D721;TME4D821;TME4D921;TME4RD;TME4S80S2021;TME4GI21;TME4PACT21;TME4PTSA21;TME4PCHO21;TME4PBEN21;TME4PPEN21;TME4PAUT21;TME5Q121;TME5Q221;TME5Q321;TME5Q3_Q1;TME5D121;TME5D221;TME5D321;TME5D421;TME5D621;TME5D721;TME5D821;TME5D921;TME5RD;TME5S80S2021;TME5GI21;TME5PACT21;TME5PTSA21;TME5PCHO21;TME5PBEN21;TME5PPEN21;TME5PAUT21;TOL1Q121;TOL1Q221;TOL1Q321;TOL1Q3_Q1;TOL1D121;TOL1D221;TOL1D321;TOL1D421;TOL1D621;TOL1D721;TOL1D821;TOL1D921;TOL1RD;TOL1S80S2021;TOL1GI21;TOL1PACT21;TOL1PTSA21;TOL1PCHO21;TOL1PBEN21;TOL1PPEN21;TOL1PAUT21;TOL2Q121;TOL2Q221;TOL2Q321;TOL2Q3_Q1;TOL2D121;TOL2D221;TOL2D321;TOL2D421;TOL2D621;TOL2D721;TOL2D821;TOL2D921;TOL2RD;TOL2S80S2021;TOL2GI21;TOL2PACT21;TOL2PTSA21;TOL2PCHO21;TOL2PBEN21;TOL2PPEN21;TOL2PAUT21;TLD2Q121;TLD2Q221;TLD2Q321;TLD2Q3_Q1;TLD2D121;TLD2D221;TLD2D321;TLD2D421;TLD2D621;TLD2D721;TLD2D821;TLD2D921;TLD2RD;TLD2S80S2021;TLD2GI21;TLD2PACT21;TLD2PTSA21;TLD2PCHO21;TLD2PBEN21;TLD2PPEN21;TLD2PAUT21;TLD3Q121;TLD3Q221;TLD3Q321;TLD3Q3_Q1;TLD3D121;TLD3D221;TLD3D321;TLD3D421;TLD3D621;TLD3D721;TLD3D821;TLD3D921;TLD3RD;TLD3S80S2021;TLD3GI21;TLD3PACT21;TLD3PTSA21;TLD3PCHO21;TLD3PBEN21;TLD3PPEN21;TLD3PAUT21;TYM1Q121;TYM1Q221;TYM1Q321;TYM1Q3_Q1;TYM1D121;TYM1D221;TYM1D321;TYM1D421;TYM1D621;TYM1D721;TYM1D821;TYM1D921;TYM1RD;TYM1S80S2021;TYM1GI21;TYM1PACT21;TYM1PTSA21;TYM1PCHO21;TYM1PBEN21;TYM1PPEN21;TYM1PAUT21;TYM2Q121;TYM2Q221;TYM2Q321;TYM2Q3_Q1;TYM2D121;TYM2D221;TYM2D321;TYM2D421;TYM2D621;TYM2D721;TYM2D821;TYM2D921;TYM2RD;TYM2S80S2021;TYM2GI21;TYM2PACT21;TYM2PTSA21;TYM2PCHO21;TYM2PBEN21;TYM2PPEN21;TYM2PAUT21;TYM3Q121;TYM3Q221;TYM3Q321;TYM3Q3_Q1;TYM3D121;TYM3D221;TYM3D321;TYM3D421;TYM3D621;TYM3D721;TYM3D821;TYM3D921;TYM3RD;TYM3S80S2021;TYM3GI21;TYM3PACT21;TYM3PTSA21;TYM3PCHO21;TYM3PBEN21;TYM3PPEN21;TYM3PAUT21;TYM4Q121;TYM4Q221;TYM4Q321;TYM4Q3_Q1;TYM4D121;TYM4D221;TYM4D321;TYM4D421;TYM4D621;TYM4D721;TYM4D821;TYM4D921;TYM4RD;TYM4S80S2021;TYM4GI21;TYM4PACT21;TYM4PTSA21;TYM4PCHO21;TYM4PBEN21;TYM4PPEN21;TYM4PAUT21;TYM5Q121;TYM5Q221;TYM5Q321;TYM5Q3_Q1;TYM5D121;TYM5D221;TYM5D321;TYM5D421;TYM5D621;TYM5D721;TYM5D821;TYM5D921;TYM5RD;TYM5S80S2021;TYM5GI21;TYM5PACT21;TYM5PTSA21;TYM5PCHO21;TYM5PBEN21;TYM5PPEN21;TYM5PAUT21;TYM6Q121;TYM6Q221;TYM6Q321;TYM6Q3_Q1;TYM6D121;TYM6D221;TYM6D321;TYM6D421;TYM6D621;TYM6D721;TYM6D821;TYM6D921;TYM6RD;TYM6S80S2021;TYM6GI21;TYM6PACT21;TYM6PTSA21;TYM6PCHO21;TYM6PBEN21;TYM6PPEN21;TYM6PAUT21;OPR1Q121;OPR1Q221;OPR1Q321;OPR1Q3_Q1;OPR1D121;OPR1D221;OPR1D321;OPR1D421;OPR1D621;OPR1D721;OPR1D821;OPR1D921;OPR1RD;OPR1S80S2021;OPR1GI21;OPR1PACT21;OPR1PTSA21;OPR1PCHO21;OPR1PBEN21;OPR1PPEN21;OPR1PAUT21;OPR2Q121;OPR2Q221;OPR2Q321;OPR2Q3_Q1;OPR2D121;OPR2D221;OPR2D321;OPR2D421;OPR2D621;OPR2D721;OPR2D821;OPR2D921;OPR2RD;OPR2S80S2021;OPR2GI21;OPR2PACT21;OPR2PTSA21;OPR2PCHO21;OPR2PBEN21;OPR2PPEN21;OPR2PAUT21;OPR3Q121;OPR3Q221;OPR3Q321;OPR3Q3_Q1;OPR3D121;OPR3D221;OPR3D321;OPR3D421;OPR3D621;OPR3D721;OPR3D821;OPR3D921;OPR3RD;OPR3S80S2021;OPR3GI21;OPR3PACT21;OPR3PTSA21;OPR3PCHO21;OPR3PBEN21;OPR3PPEN21;OPR3PAUT21;OPR4Q121;OPR4Q221;OPR4Q321;OPR4Q3_Q1;OPR4D121;OPR4D221;OPR4D321;OPR4D421;OPR4D621;OPR4D721;OPR4D821;OPR4D921;OPR4RD;OPR4S80S2021;OPR4GI21;OPR4PACT21;OPR4PTSA21;OPR4PCHO21;OPR4PBEN21;OPR4PPEN21;OPR4PAUT21;OPR5Q121;OPR5Q221;OPR5Q321;OPR5Q3_Q1;OPR5D121;OPR5D221;OPR5D321;OPR5D421;OPR5D621;OPR5D721;OPR5D821;OPR5D921;OPR5RD;OPR5S80S2021;OPR5GI21;OPR5PACT21;OPR5PTSA21;OPR5PCHO21;OPR5PBEN21;OPR5PPEN21;OPR5PAUT21
+01001;346;895;590,8;s;s;26410;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s
+01002;115;266;181,0;s;s;24950;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s
+01004;6861;15103;10406,5;50,0;13180;20940;29260;16080;7070;11530;15080;18120;23890;27290;31860;39380;5,6;8,1;0,368;67,9;61,5;3,2;3,2;24,4;7,7;12440;18740;24900;12470;6660;10950;14320;16520;21060;23430;26730;32200;4,8;5,7;0,287;99,0;92,9;4,8;1,3;0,6;0,4;10680;19050;26820;16140;4830;9030;12330;16080;21880;25050;28700;35660;7,4;8,8;0,350;97,9;89,2;4,8;3,9;0,6;1,5;11530;19370;28600;17060;5960;9180;13190;16340;22520;26430;31360;38900;6,5;8,8;0,364;94,6;87,8;4,0;2,8;1,4;4,0;13570;23840;33930;20350;7700;12210;15590;20390;26820;31200;36200;44290;5,8;7,6;0,345;89,5;83,0;3,6;2,9;5,7;4,8;16980;23560;31450;14470;10870;15320;18370;21090;26740;29840;35090;44750;4,1;8,7;0,447;27,6;20,4;1,8;5,4;53,0;19,4;17050;22360;28870;11830;12810;15840;18440;20060;24760;27480;31140;37610;2,9;3,7;0,255;2,7;s;s;s;89,8;7,5;14520;19990;26680;12170;7330;12770;15880;18030;22400;25070;28210;34850;4,8;6,3;0,311;57,5;52,9;2,8;1,8;39,1;3,4;17120;24580;33110;15990;10680;15440;18970;21820;27640;30760;35850;43570;4,1;5,8;0,326;53,1;47,2;2,6;3,3;39,7;7,2;14670;22200;31630;16960;8210;12430;15950;19410;25360;29290;34250;41260;5,0;6,8;0,333;85,9;77,4;4,2;4,3;10,5;3,6;14870;22500;30290;15420;8360;12790;16960;19810;24740;28170;33020;39380;4,7;8,7;0,412;79,1;73,5;2,8;2,8;2,1;18,8;7640;12540;20180;12540;3060;6820;8620;10740;15180;18120;22400;29160;9,5;10,3;0,391;93,0;82,4;5,1;5,5;3,4;3,6;19840;26540;35430;15590;14850;18340;21110;23800;29260;33140;37910;45620;3,1;4,9;0,324;60,2;54,3;1,8;4,1;27,8;12,0;9160;15710;23090;13930;4020;7990;10610;12980;18650;21520;25000;30370;7,6;9,2;0,352;80,0;72,9;5,3;1,8;19,0;1,0;7060;12060;18520;11460;1630;5910;8130;9970;13990;16950;20110;25200;15,4;12,8;0,379;77,2;68,7;7,5;1,0;22,2;0,6;13470;20130;26630;13160;7700;12080;15190;17610;22480;25040;28390;34090;4,4;5,5;0,292;81,8;75,6;3,9;2,3;17,1;1,1;16110;21730;28630;12520;7740;14120;17280;19550;24220;27360;31000;39180;5,1;6,8;0,319;72,8;67,2;3,3;2,3;23,7;3,5;13600;18760;24850;11250;7250;12080;14790;16700;21020;23480;26430;31630;4,4;5,7;0,294;42,0;38,5;2,2;1,3;54,6;3,4;20270;27160;35870;15600;14480;18950;21730;24400;29770;33480;38560;47140;3,3;4,7;0,304;46,4;41,0;1,9;3,5;45,5;8,1;12540;20640;29250;16710;7370;11080;14390;17710;23490;27020;31980;39190;5,3;8,4;0,388;84,7;77,6;3,3;3,8;3,7;11,6;7940;14060;21650;13710;1200;6090;9070;11700;16390;19880;23840;30280;25,3;16,1;0,397;86,1;76,7;6,1;3,3;11,3;2,6;12310;20750;29050;16740;6900;11830;13990;16710;24690;27300;30830;38030;5,5;6,9;0,340;72,5;62,9;5,7;3,9;23,6;3,9;14390;21620;29700;15320;9070;12590;15970;18900;24380;27730;32410;39140;4,3;5,2;0,301;95,8;92,2;2,9;0,7;2,5;1,7;4540;7390;11580;7040;1680;3730;5180;6010;8880;10150;12430;16790;10,0;10,3;0,403;94,5;s;s;s;4,6;0,9;7890;19960;39190;31290;3050;6710;8740;14010;28270;33940;42080;58290;19,1;26,5;0,562;92,8;12,2;2,0;78,6;3,0;4,2;16080;22130;29200;13120;10320;14680;17420;19720;24760;27660;31130;38760;3,8;4,2;0,265;6,3;5,2;0,9;0,2;90,3;3,4;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s
+
+
+
+
+## Dictionnaire des variables :
+
+COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+NBMEN21;Nbre de ménages fiscaux;Nbre de ménages fiscaux;;;CHAR;7
+NBPERS21;Nbre de personnes dans les ménages fiscaux;Nbre de personnes dans les ménages fiscaux;;;CHAR;7
+NBUC21;Nbre d'unités de consommation dans les ménages fiscaux;Nombre d'unités de consommation dans les ménages fiscaux;;;CHAR;9
+Q121;1er quartile (€);1er quartile (€);;;CHAR;5
+Q221;Médiane (€);Médiane (€);;;CHAR;5
+Q321;3e quartile (€);3e quartile (€);;;CHAR;5
+Q3_Q1;Écart interquartile (€);Écart interquartile (€);;;CHAR;5
+D121;1er décile (€);1er décile (€);;;CHAR;5
+D221;2e décile (€);2e décile (€);;;CHAR;5
+D321;3e décile (€);3e décile (€);;;CHAR;5
+D421;4e décile (€);4e décile (€);;;CHAR;5
+D621;6e décile (€);6e décile (€);;;CHAR;5
+D721;7e décile (€);7e décile (€);;;CHAR;5
+D821;8e décile (€);8e décile (€);;;CHAR;5
+D921;9e décile (€);9e décile (€);;;CHAR;6
+RD;Rapport interdécile 9e décile/1er decile;Rapport interdécile 9e décile/1er decile;;;CHAR;4
+S80S2021;S80/20;S80/20;;;CHAR;4
+GI21;Indice de Gini;Indice de Gini;;;CHAR;5
+PACT21;Part des revenus d’activité (%);Part des revenus d’activité (%);;;CHAR;5
+PTSA21;dont part des salaires et traitements(%);dont part des salaires et traitements(%);;;CHAR;5
+PCHO21;dont part des indemnités de chômage (%);dont part des indemnités de chômage (%);;;CHAR;3
+PBEN21;dont part des revenus des activités non salariées (%);dont part des revenus des activités non salariées (%);;;CHAR;4
+PPEN21;Part des pensions, retraites et rentes (%);Part des pensions, retraites et rentes (%);;;CHAR;4
+PPAT21;Part des revenus du patrimoine et autres revenus (%);Part des revenus du patrimoine et autres revenus (%);;;CHAR;4
+PPSOC21;Part de l'ensemble des prestations sociales (%);Part de l'ensemble des prestations sociales (%);;;CHAR;4
+PPFAM21;dont part des prestations familiales (%);dont part des prestations familiales (%);;;CHAR;3
+PPMINI21;dont part des minima sociaux (%);dont part des minima sociaux (%);;;CHAR;4
+PPLOGT21;dont part des prestations logement (%);dont part des prestations logement (%);;;CHAR;3
+PIMPOT21;Part des impôts (%);Part des impôts (%);;;CHAR;5
+AGE1Q121;1er quartile (€) - moins de 30 ans;1er quartile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1Q221;Médiane (€) - moins de 30 ans;Médiane (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1Q321;3e quartile (€) - moins de 30 ans;3e quartile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1Q3_Q1;Écart interquartile (€) - moins de 30 ans;Écart interquartile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D121;1er décile (€) - moins de 30 ans;1er décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D221;2e décile (€) - moins de 30 ans;2e décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D321;3e décile (€) - moins de 30 ans;3e décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D421;4e décile (€) - moins de 30 ans;4e décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D621;6e décile (€) - moins de 30 ans;6e décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D721;7e décile (€) - moins de 30 ans;7e décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D821;8e décile (€) - moins de 30 ans;8e décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1D921;9e décile (€) - moins de 30 ans;9e décile (€) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1RD;Rapport interdécile 9e décile/1er decile - moins de 30 ans;Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1S80S2021;S80/20 - moins de 30 ans;S80/20 - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1GI21;Indice de Gini - moins de 30 ans;Indice de Gini - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1PACT21;Part des revenus d’activité (%) - moins de 30 ans;Part des revenus d’activité (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1PTSA21;dont part des salaires et traitements(%) - moins de 30 ans;dont part des salaires et traitements(%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE1PCHO21;dont part des indemnités de chômage (%) - moins de 30 ans;dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PBEN21;dont part des revenus des activités non salariées (%) - moins de 30 ans;dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PPEN21;Part des pensions, retraites et rentes (%) - moins de 30 ans;Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PPAT21;Part des revenus du patrimoine et autres revenus (%) - moins de 30 ans;Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PPSOC21;Part de l'ensemble des prestations sociales (%) - moins de 30 ans;Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PPFAM21;dont part des prestations familiales (%) - moins de 30 ans;dont part des prestations familiales (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PPMINI21;dont part des minima sociaux (%) - moins de 30 ans;dont part des minima sociaux (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PPLOGT21;dont part des prestations logement (%) - moins de 30 ans;dont part des prestations logement (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;4
+AGE1PIMPOT21;Part des impôts (%) - moins de 30 ans;Part des impôts (%) - Ménages dont le référent fiscal a moins de 30 ans;;;CHAR;5
+AGE2Q121;1er quartile (€) - de 30 à 39 ans;1er quartile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2Q221;Médiane (€) - de 30 à 39 ans;Médiane (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2Q321;3e quartile (€) - de 30 à 39 ans;3e quartile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2Q3_Q1;Écart interquartile (€) - de 30 à 39 ans;Écart interquartile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D121;1er décile (€) - de 30 à 39 ans;1er décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D221;2e décile (€) - de 30 à 39 ans;2e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D321;3e décile (€) - de 30 à 39 ans;3e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D421;4e décile (€) - de 30 à 39 ans;4e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D621;6e décile (€) - de 30 à 39 ans;6e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D721;7e décile (€) - de 30 à 39 ans;7e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D821;8e décile (€) - de 30 à 39 ans;8e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2D921;9e décile (€) - de 30 à 39 ans;9e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;6
+AGE2RD;Rapport interdécile 9e décile/1er decile - de 30 à 39 ans;Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2S80S2021;S80/20 - de 30 à 39 ans;S80/20 - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2GI21;Indice de Gini - de 30 à 39 ans;Indice de Gini - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2PACT21;Part des revenus d’activité (%) - de 30 à 39 ans;Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2PTSA21;dont part des salaires et traitements(%) - de 30 à 39 ans;dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE2PCHO21;dont part des indemnités de chômage (%) - de 30 à 39 ans;dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2PBEN21;dont part des revenus des activités non salariées (%) - de 30 à 39 ans;dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2PPEN21;Part des pensions, retraites et rentes (%) - de 30 à 39 ans;Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2PPAT21;Part des revenus du patrimoine et autres revenus (%) - de 30 à 39 ans;Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2PPSOC21;Part de l'ensemble des prestations sociales (%) - de 30 à 39 ans;Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2PPFAM21;dont part des prestations familiales (%) - de 30 à 39 ans;dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2PPMINI21;dont part des minima sociaux (%) - de 30 à 39 ans;dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;4
+AGE2PPLOGT21;dont part des prestations logement (%) - de 30 à 39 ans;dont part des prestations logement (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;3
+AGE2PIMPOT21;Part des impôts (%) - de 30 à 39 ans;Part des impôts (%) - Ménages dont le référent fiscal a de 30 à 39 ans;;;CHAR;5
+AGE3Q121;1er quartile (€) - de 40 à 49 ans;1er quartile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3Q221;Médiane (€) - de 40 à 49 ans;Médiane (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3Q321;3e quartile (€) - de 40 à 49 ans;3e quartile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3Q3_Q1;Écart interquartile (€) - de 40 à 49 ans;Écart interquartile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3D121;1er décile (€) - de 40 à 49 ans;1er décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3D221;2e décile (€) - de 40 à 49 ans;2e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3D321;3e décile (€) - de 40 à 49 ans;3e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3D421;4e décile (€) - de 40 à 49 ans;4e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3D621;6e décile (€) - de 40 à 49 ans;6e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3D721;7e décile (€) - de 40 à 49 ans;7e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3D821;8e décile (€) - de 40 à 49 ans;8e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;6
+AGE3D921;9e décile (€) - de 40 à 49 ans;9e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;6
+AGE3RD;Rapport interdécile 9e décile/1er decile - de 40 à 49 ans;Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3S80S2021;S80/20 - de 40 à 49 ans;S80/20 - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3GI21;Indice de Gini - de 40 à 49 ans;Indice de Gini - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3PACT21;Part des revenus d’activité (%) - de 40 à 49 ans;Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3PTSA21;dont part des salaires et traitements(%) - de 40 à 49 ans;dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE3PCHO21;dont part des indemnités de chômage (%) - de 40 à 49 ans;dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3PBEN21;dont part des revenus des activités non salariées (%) - de 40 à 49 ans;dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3PPEN21;Part des pensions, retraites et rentes (%) - de 40 à 49 ans;Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3PPAT21;Part des revenus du patrimoine et autres revenus (%) - de 40 à 49 ans;Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3PPSOC21;Part de l'ensemble des prestations sociales (%) - de 40 à 49 ans;Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3PPFAM21;dont part des prestations familiales (%) - de 40 à 49 ans;dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3PPMINI21;dont part des minima sociaux (%) - de 40 à 49 ans;dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;4
+AGE3PPLOGT21;dont part des prestations logement (%) - de 40 à 49 ans;dont part des prestations logement (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;3
+AGE3PIMPOT21;Part des impôts (%) - de 40 à 49 ans;Part des impôts (%) - Ménages dont le référent fiscal a de 40 à 49 ans;;;CHAR;5
+AGE4Q121;1er quartile (€) - de 50 à 59 ans;1er quartile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4Q221;Médiane (€) - de 50 à 59 ans;Médiane (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4Q321;3e quartile (€) - de 50 à 59 ans;3e quartile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4Q3_Q1;Écart interquartile (€) - de 50 à 59 ans;Écart interquartile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4D121;1er décile (€) - de 50 à 59 ans;1er décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4D221;2e décile (€) - de 50 à 59 ans;2e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4D321;3e décile (€) - de 50 à 59 ans;3e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4D421;4e décile (€) - de 50 à 59 ans;4e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4D621;6e décile (€) - de 50 à 59 ans;6e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4D721;7e décile (€) - de 50 à 59 ans;7e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4D821;8e décile (€) - de 50 à 59 ans;8e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;6
+AGE4D921;9e décile (€) - de 50 à 59 ans;9e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;6
+AGE4RD;Rapport interdécile 9e décile/1er decile - de 50 à 59 ans;Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4S80S2021;S80/20 - de 50 à 59 ans;S80/20 - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4GI21;Indice de Gini - de 50 à 59 ans;Indice de Gini - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4PACT21;Part des revenus d’activité (%) - de 50 à 59 ans;Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4PTSA21;dont part des salaires et traitements(%) - de 50 à 59 ans;dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE4PCHO21;dont part des indemnités de chômage (%) - de 50 à 59 ans;dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4PBEN21;dont part des revenus des activités non salariées (%) - de 50 à 59 ans;dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4PPEN21;Part des pensions, retraites et rentes (%) - de 50 à 59 ans;Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4PPAT21;Part des revenus du patrimoine et autres revenus (%) - de 50 à 59 ans;Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4PPSOC21;Part de l'ensemble des prestations sociales (%) - de 50 à 59 ans;Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4PPFAM21;dont part des prestations familiales (%) - de 50 à 59 ans;dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;3
+AGE4PPMINI21;dont part des minima sociaux (%) - de 50 à 59 ans;dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;4
+AGE4PPLOGT21;dont part des prestations logement (%) - de 50 à 59 ans;dont part des prestations logement (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;3
+AGE4PIMPOT21;Part des impôts (%) - de 50 à 59 ans;Part des impôts (%) - Ménages dont le référent fiscal a de 50 à 59 ans;;;CHAR;5
+AGE5Q121;1er quartile (€) - de 60 à 74 ans;1er quartile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5Q221;Médiane (€) - de 60 à 74 ans;Médiane (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5Q321;3e quartile (€) - de 60 à 74 ans;3e quartile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5Q3_Q1;Écart interquartile (€) - de 60 à 74 ans;Écart interquartile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5D121;1er décile (€) - de 60 à 74 ans;1er décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5D221;2e décile (€) - de 60 à 74 ans;2e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5D321;3e décile (€) - de 60 à 74 ans;3e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5D421;4e décile (€) - de 60 à 74 ans;4e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5D621;6e décile (€) - de 60 à 74 ans;6e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5D721;7e décile (€) - de 60 à 74 ans;7e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5D821;8e décile (€) - de 60 à 74 ans;8e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;6
+AGE5D921;9e décile (€) - de 60 à 74 ans;9e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;6
+AGE5RD;Rapport interdécile 9e décile/1er decile - de 60 à 74 ans;Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5S80S2021;S80/20 - de 60 à 74 ans;S80/20 - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5GI21;Indice de Gini - de 60 à 74 ans;Indice de Gini - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE5PACT21;Part des revenus d’activité (%) - de 60 à 74 ans;Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5PTSA21;dont part des salaires et traitements(%) - de 60 à 74 ans;dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5PCHO21;dont part des indemnités de chômage (%) - de 60 à 74 ans;dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;3
+AGE5PBEN21;dont part des revenus des activités non salariées (%) - de 60 à 74 ans;dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5PPEN21;Part des pensions, retraites et rentes (%) - de 60 à 74 ans;Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5PPAT21;Part des revenus du patrimoine et autres revenus (%) - de 60 à 74 ans;Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5PPSOC21;Part de l'ensemble des prestations sociales (%) - de 60 à 74 ans;Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5PPFAM21;dont part des prestations familiales (%) - de 60 à 74 ans;dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;3
+AGE5PPMINI21;dont part des minima sociaux (%) - de 60 à 74 ans;dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;4
+AGE5PPLOGT21;dont part des prestations logement (%) - de 60 à 74 ans;dont part des prestations logement (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;3
+AGE5PIMPOT21;Part des impôts (%) - de 60 à 74 ans;Part des impôts (%) - Ménages dont le référent fiscal a de 60 à 74 ans;;;CHAR;5
+AGE6Q121;1er quartile (€) - 75 ans ou plus;1er quartile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6Q221;Médiane (€) - 75 ans ou plus;Médiane (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6Q321;3e quartile (€) - 75 ans ou plus;3e quartile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6Q3_Q1;Écart interquartile (€) - 75 ans ou plus;Écart interquartile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D121;1er décile (€) - 75 ans ou plus;1er décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D221;2e décile (€) - 75 ans ou plus;2e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D321;3e décile (€) - 75 ans ou plus;3e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D421;4e décile (€) - 75 ans ou plus;4e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D621;6e décile (€) - 75 ans ou plus;6e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D721;7e décile (€) - 75 ans ou plus;7e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D821;8e décile (€) - 75 ans ou plus;8e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6D921;9e décile (€) - 75 ans ou plus;9e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;6
+AGE6RD;Rapport interdécile 9e décile/1er decile - 75 ans ou plus;Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;3
+AGE6S80S2021;S80/20 - 75 ans ou plus;S80/20 - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;4
+AGE6GI21;Indice de Gini - 75 ans ou plus;Indice de Gini - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6PACT21;Part des revenus d’activité (%) - 75 ans ou plus;Part des revenus d’activité (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;4
+AGE6PTSA21;dont part des salaires et traitements(%) - 75 ans ou plus;dont part des salaires et traitements(%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;4
+AGE6PCHO21;dont part des indemnités de chômage (%) - 75 ans ou plus;dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;3
+AGE6PBEN21;dont part des revenus des activités non salariées (%) - 75 ans ou plus;dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;4
+AGE6PPEN21;Part des pensions, retraites et rentes (%) - 75 ans ou plus;Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6PPAT21;Part des revenus du patrimoine et autres revenus (%) - 75 ans ou plus;Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+AGE6PPSOC21;Part de l'ensemble des prestations sociales (%) - 75 ans ou plus;Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;4
+AGE6PPFAM21;dont part des prestations familiales (%) - 75 ans ou plus;dont part des prestations familiales (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;3
+AGE6PPMINI21;dont part des minima sociaux (%) - 75 ans ou plus;dont part des minima sociaux (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;4
+AGE6PPLOGT21;dont part des prestations logement (%) - 75 ans ou plus;dont part des prestations logement (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;3
+AGE6PIMPOT21;Part des impôts (%) - 75 ans ou plus;Part des impôts (%) - Ménages dont le référent fiscal a 75 ans ou plus;;;CHAR;5
+TME1Q121;1er quartile (€) - une personne;1er quartile (€) - Ménages d'une personne;;;CHAR;5
+TME1Q221;Médiane (€) - une personne;Médiane (€) - Ménages d'une personne;;;CHAR;5
+TME1Q321;3e quartile (€) - une personne;3e quartile (€) - Ménages d'une personne;;;CHAR;5
+TME1Q3_Q1;Écart interquartile (€) - une personne;Écart interquartile (€) - Ménages d'une personne;;;CHAR;5
+TME1D121;1er décile (€) - une personne;1er décile (€) - Ménages d'une personne;;;CHAR;5
+TME1D221;2e décile (€) - une personne;2e décile (€) - Ménages d'une personne;;;CHAR;5
+TME1D321;3e décile (€) - une personne;3e décile (€) - Ménages d'une personne;;;CHAR;5
+TME1D421;4e décile (€) - une personne;4e décile (€) - Ménages d'une personne;;;CHAR;5
+TME1D621;6e décile (€) - une personne;6e décile (€) - Ménages d'une personne;;;CHAR;5
+TME1D721;7e décile (€) - une personne;7e décile (€) - Ménages d'une personne;;;CHAR;5
+TME1D821;8e décile (€) - une personne;8e décile (€) - Ménages d'une personne;;;CHAR;5
+TME1D921;9e décile (€) - une personne;9e décile (€) - Ménages d'une personne;;;CHAR;5
+TME1RD;Rapport interdécile 9e décile/1er decile - une personne;Rapport interdécile 9e décile/1er decile - Ménages d'une personne;;;CHAR;4
+TME1S80S2021;S80/20 - une personne;S80/20 - Ménages d'une personne;;;CHAR;4
+TME1GI21;Indice de Gini - une personne;Indice de Gini - Ménages d'une personne;;;CHAR;5
+TME1PACT21;Part des revenus d’activité (%) - une personne;Part des revenus d’activité (%) - Ménages d'une personne;;;CHAR;5
+TME1PTSA21;dont part des salaires et traitements(%) - une personne;dont part des salaires et traitements(%) - Ménages d'une personne;;;CHAR;4
+TME1PCHO21;dont part des indemnités de chômage (%) - une personne;dont part des indemnités de chômage (%) - Ménages d'une personne;;;CHAR;3
+TME1PBEN21;dont part des revenus des activités non salariées (%) - une personne;dont part des revenus des activités non salariées (%) - Ménages d'une personne;;;CHAR;4
+TME1PPEN21;Part des pensions, retraites et rentes (%) - une personne;Part des pensions, retraites et rentes (%) - Ménages d'une personne;;;CHAR;4
+TME1PPAT21;Part des revenus du patrimoine et autres revenus (%) - une personne;Part des revenus du patrimoine et autres revenus (%) - Ménages d'une personne;;;CHAR;4
+TME1PPSOC21;Part de l'ensemble des prestations sociales (%) - une personne;Part de l'ensemble des prestations sociales (%) - Ménages d'une personne;;;CHAR;4
+TME1PPFAM21;dont part des prestations familiales (%) - une personne;dont part des prestations familiales (%) - Ménages d'une personne;;;CHAR;3
+TME1PPMINI21;dont part des minima sociaux (%) - une personne;dont part des minima sociaux (%) - Ménages d'une personne;;;CHAR;4
+TME1PPLOGT21;dont part des prestations logement (%) - une personne;dont part des prestations logement (%) - Ménages d'une personne;;;CHAR;3
+TME1PIMPOT21;Part des impôts (%) - une personne;Part des impôts (%) - Ménages d'une personne;;;CHAR;5
+TME2Q121;1er quartile (€) - deux personnes;1er quartile (€) - Ménages de deux personnes;;;CHAR;5
+TME2Q221;Médiane (€) - deux personnes;Médiane (€) - Ménages de deux personnes;;;CHAR;5
+TME2Q321;3e quartile (€) - deux personnes;3e quartile (€) - Ménages de deux personnes;;;CHAR;5
+TME2Q3_Q1;Écart interquartile (€) - deux personnes;Écart interquartile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D121;1er décile (€) - deux personnes;1er décile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D221;2e décile (€) - deux personnes;2e décile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D321;3e décile (€) - deux personnes;3e décile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D421;4e décile (€) - deux personnes;4e décile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D621;6e décile (€) - deux personnes;6e décile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D721;7e décile (€) - deux personnes;7e décile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D821;8e décile (€) - deux personnes;8e décile (€) - Ménages de deux personnes;;;CHAR;5
+TME2D921;9e décile (€) - deux personnes;9e décile (€) - Ménages de deux personnes;;;CHAR;6
+TME2RD;Rapport interdécile 9e décile/1er decile - deux personnes;Rapport interdécile 9e décile/1er decile - Ménages de deux personnes;;;CHAR;3
+TME2S80S2021;S80/20 - deux personnes;S80/20 - Ménages de deux personnes;;;CHAR;4
+TME2GI21;Indice de Gini - deux personnes;Indice de Gini - Ménages de deux personnes;;;CHAR;5
+TME2PACT21;Part des revenus d’activité (%) - deux personnes;Part des revenus d’activité (%) - Ménages de deux personnes;;;CHAR;4
+TME2PTSA21;dont part des salaires et traitements(%) - deux personnes;dont part des salaires et traitements(%) - Ménages de deux personnes;;;CHAR;4
+TME2PCHO21;dont part des indemnités de chômage (%) - deux personnes;dont part des indemnités de chômage (%) - Ménages de deux personnes;;;CHAR;3
+TME2PBEN21;dont part des revenus des activités non salariées (%) - deux personnes;dont part des revenus des activités non salariées (%) - Ménages de deux personnes;;;CHAR;4
+TME2PPEN21;Part des pensions, retraites et rentes (%) - deux personnes;Part des pensions, retraites et rentes (%) - Ménages de deux personnes;;;CHAR;4
+TME2PPAT21;Part des revenus du patrimoine et autres revenus (%) - deux personnes;Part des revenus du patrimoine et autres revenus (%) - Ménages de deux personnes;;;CHAR;4
+TME2PPSOC21;Part de l'ensemble des prestations sociales (%) - deux personnes;Part de l'ensemble des prestations sociales (%) - Ménages de deux personnes;;;CHAR;4
+TME2PPFAM21;dont part des prestations familiales (%) - deux personnes;dont part des prestations familiales (%) - Ménages de deux personnes;;;CHAR;3
+TME2PPMINI21;dont part des minima sociaux (%) - deux personnes;dont part des minima sociaux (%) - Ménages de deux personnes;;;CHAR;4
+TME2PPLOGT21;dont part des prestations logement (%) - deux personnes;dont part des prestations logement (%) - Ménages de deux personnes;;;CHAR;3
+TME2PIMPOT21;Part des impôts (%) - deux personnes;Part des impôts (%) - Ménages de deux personnes;;;CHAR;5
+TME3Q121;1er quartile (€) - trois personnes;1er quartile (€) - Ménages de trois personnes;;;CHAR;5
+TME3Q221;Médiane (€) - trois personnes;Médiane (€) - Ménages de trois personnes;;;CHAR;5
+TME3Q321;3e quartile (€) - trois personnes;3e quartile (€) - Ménages de trois personnes;;;CHAR;5
+TME3Q3_Q1;Écart interquartile (€) - trois personnes;Écart interquartile (€) - Ménages de trois personnes;;;CHAR;5
+TME3D121;1er décile (€) - trois personnes;1er décile (€) - Ménages de trois personnes;;;CHAR;5
+TME3D221;2e décile (€) - trois personnes;2e décile (€) - Ménages de trois personnes;;;CHAR;5
+TME3D321;3e décile (€) - trois personnes;3e décile (€) - Ménages de trois personnes;;;CHAR;5
+TME3D421;4e décile (€) - trois personnes;4e décile (€) - Ménages de trois personnes;;;CHAR;5
+TME3D621;6e décile (€) - trois personnes;6e décile (€) - Ménages de trois personnes;;;CHAR;5
+TME3D721;7e décile (€) - trois personnes;7e décile (€) - Ménages de trois personnes;;;CHAR;5
+TME3D821;8e décile (€) - trois personnes;8e décile (€) - Ménages de trois personnes;;;CHAR;6
+TME3D921;9e décile (€) - trois personnes;9e décile (€) - Ménages de trois personnes;;;CHAR;6
+TME3RD;Rapport interdécile 9e décile/1er decile - trois personnes;Rapport interdécile 9e décile/1er decile - Ménages de trois personnes;;;CHAR;3
+TME3S80S2021;S80/20 - trois personnes;S80/20 - Ménages de trois personnes;;;CHAR;4
+TME3GI21;Indice de Gini - trois personnes;Indice de Gini - Ménages de trois personnes;;;CHAR;5
+TME3PACT21;Part des revenus d’activité (%) - trois personnes;Part des revenus d’activité (%) - Ménages de trois personnes;;;CHAR;5
+TME3PTSA21;dont part des salaires et traitements(%) - trois personnes;dont part des salaires et traitements(%) - Ménages de trois personnes;;;CHAR;5
+TME3PCHO21;dont part des indemnités de chômage (%) - trois personnes;dont part des indemnités de chômage (%) - Ménages de trois personnes;;;CHAR;3
+TME3PBEN21;dont part des revenus des activités non salariées (%) - trois personnes;dont part des revenus des activités non salariées (%) - Ménages de trois personnes;;;CHAR;4
+TME3PPEN21;Part des pensions, retraites et rentes (%) - trois personnes;Part des pensions, retraites et rentes (%) - Ménages de trois personnes;;;CHAR;4
+TME3PPAT21;Part des revenus du patrimoine et autres revenus (%) - trois personnes;Part des revenus du patrimoine et autres revenus (%) - Ménages de trois personnes;;;CHAR;4
+TME3PPSOC21;Part de l'ensemble des prestations sociales (%) - trois personnes;Part de l'ensemble des prestations sociales (%) - Ménages de trois personnes;;;CHAR;4
+TME3PPFAM21;dont part des prestations familiales (%) - trois personnes;dont part des prestations familiales (%) - Ménages de trois personnes;;;CHAR;3
+TME3PPMINI21;dont part des minima sociaux (%) - trois personnes;dont part des minima sociaux (%) - Ménages de trois personnes;;;CHAR;4
+TME3PPLOGT21;dont part des prestations logement (%) - trois personnes;dont part des prestations logement (%) - Ménages de trois personnes;;;CHAR;3
+TME3PIMPOT21;Part des impôts (%) - trois personnes;Part des impôts (%) - Ménages de trois personnes;;;CHAR;5
+TME4Q121;1er quartile (€) - quatre personnes;1er quartile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4Q221;Médiane (€) - quatre personnes;Médiane (€) - Ménages de quatre personnes;;;CHAR;5
+TME4Q321;3e quartile (€) - quatre personnes;3e quartile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4Q3_Q1;Écart interquartile (€) - quatre personnes;Écart interquartile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4D121;1er décile (€) - quatre personnes;1er décile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4D221;2e décile (€) - quatre personnes;2e décile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4D321;3e décile (€) - quatre personnes;3e décile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4D421;4e décile (€) - quatre personnes;4e décile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4D621;6e décile (€) - quatre personnes;6e décile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4D721;7e décile (€) - quatre personnes;7e décile (€) - Ménages de quatre personnes;;;CHAR;5
+TME4D821;8e décile (€) - quatre personnes;8e décile (€) - Ménages de quatre personnes;;;CHAR;6
+TME4D921;9e décile (€) - quatre personnes;9e décile (€) - Ménages de quatre personnes;;;CHAR;6
+TME4RD;Rapport interdécile 9e décile/1er decile - quatre personnes;Rapport interdécile 9e décile/1er decile - Ménages de quatre personnes;;;CHAR;4
+TME4S80S2021;S80/20 - quatre personnes;S80/20 - Ménages de quatre personnes;;;CHAR;4
+TME4GI21;Indice de Gini - quatre personnes;Indice de Gini - Ménages de quatre personnes;;;CHAR;5
+TME4PACT21;Part des revenus d’activité (%) - quatre personnes;Part des revenus d’activité (%) - Ménages de quatre personnes;;;CHAR;5
+TME4PTSA21;dont part des salaires et traitements(%) - quatre personnes;dont part des salaires et traitements(%) - Ménages de quatre personnes;;;CHAR;5
+TME4PCHO21;dont part des indemnités de chômage (%) - quatre personnes;dont part des indemnités de chômage (%) - Ménages de quatre personnes;;;CHAR;3
+TME4PBEN21;dont part des revenus des activités non salariées (%) - quatre personnes;dont part des revenus des activités non salariées (%) - Ménages de quatre personnes;;;CHAR;4
+TME4PPEN21;Part des pensions, retraites et rentes (%) - quatre personnes;Part des pensions, retraites et rentes (%) - Ménages de quatre personnes;;;CHAR;4
+TME4PPAT21;Part des revenus du patrimoine et autres revenus (%) - quatre personnes;Part des revenus du patrimoine et autres revenus (%) - Ménages de quatre personnes;;;CHAR;4
+TME4PPSOC21;Part de l'ensemble des prestations sociales (%) - quatre personnes;Part de l'ensemble des prestations sociales (%) - Ménages de quatre personnes;;;CHAR;4
+TME4PPFAM21;dont part des prestations familiales (%) - quatre personnes;dont part des prestations familiales (%) - Ménages de quatre personnes;;;CHAR;4
+TME4PPMINI21;dont part des minima sociaux (%) - quatre personnes;dont part des minima sociaux (%) - Ménages de quatre personnes;;;CHAR;4
+TME4PPLOGT21;dont part des prestations logement (%) - quatre personnes;dont part des prestations logement (%) - Ménages de quatre personnes;;;CHAR;3
+TME4PIMPOT21;Part des impôts (%) - quatre personnes;Part des impôts (%) - Ménages de quatre personnes;;;CHAR;5
+TME5Q121;1er quartile (€) - cinq personnes ou plus;1er quartile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5Q221;Médiane (€) - cinq personnes ou plus;Médiane (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5Q321;3e quartile (€) - cinq personnes ou plus;3e quartile (€) - Ménages de cinq personnes ou plus;;;CHAR;6
+TME5Q3_Q1;Écart interquartile (€) - cinq personnes ou plus;Écart interquartile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5D121;1er décile (€) - cinq personnes ou plus;1er décile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5D221;2e décile (€) - cinq personnes ou plus;2e décile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5D321;3e décile (€) - cinq personnes ou plus;3e décile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5D421;4e décile (€) - cinq personnes ou plus;4e décile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5D621;6e décile (€) - cinq personnes ou plus;6e décile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5D721;7e décile (€) - cinq personnes ou plus;7e décile (€) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5D821;8e décile (€) - cinq personnes ou plus;8e décile (€) - Ménages de cinq personnes ou plus;;;CHAR;6
+TME5D921;9e décile (€) - cinq personnes ou plus;9e décile (€) - Ménages de cinq personnes ou plus;;;CHAR;6
+TME5RD;Rapport interdécile 9e décile/1er decile - cinq personnes ou plus;Rapport interdécile 9e décile/1er decile - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5S80S2021;S80/20 - cinq personnes ou plus;S80/20 - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5GI21;Indice de Gini - cinq personnes ou plus;Indice de Gini - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5PACT21;Part des revenus d’activité (%) - cinq personnes ou plus;Part des revenus d’activité (%) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5PTSA21;dont part des salaires et traitements(%) - cinq personnes ou plus;dont part des salaires et traitements(%) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5PCHO21;dont part des indemnités de chômage (%) - cinq personnes ou plus;dont part des indemnités de chômage (%) - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5PBEN21;dont part des revenus des activités non salariées (%) - cinq personnes ou plus;dont part des revenus des activités non salariées (%) - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5PPEN21;Part des pensions, retraites et rentes (%) - cinq personnes ou plus;Part des pensions, retraites et rentes (%) - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5PPAT21;Part des revenus du patrimoine et autres revenus (%) - cinq personnes ou plus;Part des revenus du patrimoine et autres revenus (%) - Ménages de cinq personnes ou plus;;;CHAR;5
+TME5PPSOC21;Part de l'ensemble des prestations sociales (%) - cinq personnes ou plus;Part de l'ensemble des prestations sociales (%) - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5PPFAM21;dont part des prestations familiales (%) - cinq personnes ou plus;dont part des prestations familiales (%) - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5PPMINI21;dont part des minima sociaux (%) - cinq personnes ou plus;dont part des minima sociaux (%) - Ménages de cinq personnes ou plus;;;CHAR;4
+TME5PPLOGT21;dont part des prestations logement (%) - cinq personnes ou plus;dont part des prestations logement (%) - Ménages de cinq personnes ou plus;;;CHAR;3
+TME5PIMPOT21;Part des impôts (%) - cinq personnes ou plus;Part des impôts (%) - Ménages de cinq personnes ou plus;;;CHAR;5
+TOL1Q121;1er quartile (€) - propriétaires;1er quartile (€) - Ménages propriétaires;;;CHAR;5
+TOL1Q221;Médiane (€) - propriétaires;Médiane (€) - Ménages propriétaires;;;CHAR;5
+TOL1Q321;3e quartile (€) - propriétaires;3e quartile (€) - Ménages propriétaires;;;CHAR;6
+TOL1Q3_Q1;Écart interquartile (€) - propriétaires;Écart interquartile (€) - Ménages propriétaires;;;CHAR;5
+TOL1D121;1er décile (€) - propriétaires;1er décile (€) - Ménages propriétaires;;;CHAR;5
+TOL1D221;2e décile (€) - propriétaires;2e décile (€) - Ménages propriétaires;;;CHAR;5
+TOL1D321;3e décile (€) - propriétaires;3e décile (€) - Ménages propriétaires;;;CHAR;5
+TOL1D421;4e décile (€) - propriétaires;4e décile (€) - Ménages propriétaires;;;CHAR;5
+TOL1D621;6e décile (€) - propriétaires;6e décile (€) - Ménages propriétaires;;;CHAR;5
+TOL1D721;7e décile (€) - propriétaires;7e décile (€) - Ménages propriétaires;;;CHAR;5
+TOL1D821;8e décile (€) - propriétaires;8e décile (€) - Ménages propriétaires;;;CHAR;6
+TOL1D921;9e décile (€) - propriétaires;9e décile (€) - Ménages propriétaires;;;CHAR;6
+TOL1RD;Rapport interdécile 9e décile/1er decile - propriétaires;Rapport interdécile 9e décile/1er decile - Ménages propriétaires;;;CHAR;4
+TOL1S80S2021;S80/20 - propriétaires;S80/20 - Ménages propriétaires;;;CHAR;4
+TOL1GI21;Indice de Gini - propriétaires;Indice de Gini - Ménages propriétaires;;;CHAR;5
+TOL1PACT21;Part des revenus d’activité (%) - propriétaires;Part des revenus d’activité (%) - Ménages propriétaires;;;CHAR;5
+TOL1PTSA21;dont part des salaires et traitements(%) - propriétaires;dont part des salaires et traitements(%) - Ménages propriétaires;;;CHAR;5
+TOL1PCHO21;dont part des indemnités de chômage (%) - propriétaires;dont part des indemnités de chômage (%) - Ménages propriétaires;;;CHAR;3
+TOL1PBEN21;dont part des revenus des activités non salariées (%) - propriétaires;dont part des revenus des activités non salariées (%) - Ménages propriétaires;;;CHAR;4
+TOL1PPEN21;Part des pensions, retraites et rentes (%) - propriétaires;Part des pensions, retraites et rentes (%) - Ménages propriétaires;;;CHAR;4
+TOL1PPAT21;Part des revenus du patrimoine et autres revenus (%) - propriétaires;Part des revenus du patrimoine et autres revenus (%) - Ménages propriétaires;;;CHAR;4
+TOL1PPSOC21;Part de l'ensemble des prestations sociales (%) - propriétaires;Part de l'ensemble des prestations sociales (%) - Ménages propriétaires;;;CHAR;4
+TOL1PPFAM21;dont part des prestations familiales (%) - propriétaires;dont part des prestations familiales (%) - Ménages propriétaires;;;CHAR;3
+TOL1PPMINI21;dont part des minima sociaux (%) - propriétaires;dont part des minima sociaux (%) - Ménages propriétaires;;;CHAR;4
+TOL1PPLOGT21;dont part des prestations logement (%) - propriétaires;dont part des prestations logement (%) - Ménages propriétaires;;;CHAR;3
+TOL1PIMPOT21;Part des impôts (%) - propriétaires;Part des impôts (%) - Ménages propriétaires;;;CHAR;5
+TOL2Q121;1er quartile (€) - locataires;1er quartile (€) - Ménages locataires;;;CHAR;5
+TOL2Q221;Médiane (€) - locataires;Médiane (€) - Ménages locataires;;;CHAR;5
+TOL2Q321;3e quartile (€) - locataires;3e quartile (€) - Ménages locataires;;;CHAR;5
+TOL2Q3_Q1;Écart interquartile (€) - locataires;Écart interquartile (€) - Ménages locataires;;;CHAR;5
+TOL2D121;1er décile (€) - locataires;1er décile (€) - Ménages locataires;;;CHAR;5
+TOL2D221;2e décile (€) - locataires;2e décile (€) - Ménages locataires;;;CHAR;5
+TOL2D321;3e décile (€) - locataires;3e décile (€) - Ménages locataires;;;CHAR;5
+TOL2D421;4e décile (€) - locataires;4e décile (€) - Ménages locataires;;;CHAR;5
+TOL2D621;6e décile (€) - locataires;6e décile (€) - Ménages locataires;;;CHAR;5
+TOL2D721;7e décile (€) - locataires;7e décile (€) - Ménages locataires;;;CHAR;5
+TOL2D821;8e décile (€) - locataires;8e décile (€) - Ménages locataires;;;CHAR;5
+TOL2D921;9e décile (€) - locataires;9e décile (€) - Ménages locataires;;;CHAR;6
+TOL2RD;Rapport interdécile 9e décile/1er decile - locataires;Rapport interdécile 9e décile/1er decile - Ménages locataires;;;CHAR;4
+TOL2S80S2021;S80/20 - locataires;S80/20 - Ménages locataires;;;CHAR;4
+TOL2GI21;Indice de Gini - locataires;Indice de Gini - Ménages locataires;;;CHAR;5
+TOL2PACT21;Part des revenus d’activité (%) - locataires;Part des revenus d’activité (%) - Ménages locataires;;;CHAR;5
+TOL2PTSA21;dont part des salaires et traitements(%) - locataires;dont part des salaires et traitements(%) - Ménages locataires;;;CHAR;5
+TOL2PCHO21;dont part des indemnités de chômage (%) - locataires;dont part des indemnités de chômage (%) - Ménages locataires;;;CHAR;4
+TOL2PBEN21;dont part des revenus des activités non salariées (%) - locataires;dont part des revenus des activités non salariées (%) - Ménages locataires;;;CHAR;4
+TOL2PPEN21;Part des pensions, retraites et rentes (%) - locataires;Part des pensions, retraites et rentes (%) - Ménages locataires;;;CHAR;4
+TOL2PPAT21;Part des revenus du patrimoine et autres revenus (%) - locataires;Part des revenus du patrimoine et autres revenus (%) - Ménages locataires;;;CHAR;4
+TOL2PPSOC21;Part de l'ensemble des prestations sociales (%) - locataires;Part de l'ensemble des prestations sociales (%) - Ménages locataires;;;CHAR;4
+TOL2PPFAM21;dont part des prestations familiales (%) - locataires;dont part des prestations familiales (%) - Ménages locataires;;;CHAR;4
+TOL2PPMINI21;dont part des minima sociaux (%) - locataires;dont part des minima sociaux (%) - Ménages locataires;;;CHAR;4
+TOL2PPLOGT21;dont part des prestations logement (%) - locataires;dont part des prestations logement (%) - Ménages locataires;;;CHAR;3
+TOL2PIMPOT21;Part des impôts (%) - locataires;Part des impôts (%) - Ménages locataires;;;CHAR;5
+TLD2Q121;1er quartile (€) - locataires du parc social;1er quartile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2Q221;Médiane (€) - locataires du parc social;Médiane (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2Q321;3e quartile (€) - locataires du parc social;3e quartile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2Q3_Q1;Écart interquartile (€) - locataires du parc social;Écart interquartile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D121;1er décile (€) - locataires du parc social;1er décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D221;2e décile (€) - locataires du parc social;2e décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D321;3e décile (€) - locataires du parc social;3e décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D421;4e décile (€) - locataires du parc social;4e décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D621;6e décile (€) - locataires du parc social;6e décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D721;7e décile (€) - locataires du parc social;7e décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D821;8e décile (€) - locataires du parc social;8e décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2D921;9e décile (€) - locataires du parc social;9e décile (€) - Ménages locataires du parc social;;;CHAR;5
+TLD2RD;Rapport interdécile 9e décile/1er decile - locataires du parc social;Rapport interdécile 9e décile/1er decile - Ménages locataires du parc social;;;CHAR;5
+TLD2S80S2021;S80/20 - locataires du parc social;S80/20 - Ménages locataires du parc social;;;CHAR;4
+TLD2GI21;Indice de Gini - locataires du parc social;Indice de Gini - Ménages locataires du parc social;;;CHAR;5
+TLD2PACT21;Part des revenus d’activité (%) - locataires du parc social;Part des revenus d’activité (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PTSA21;dont part des salaires et traitements(%) - locataires du parc social;dont part des salaires et traitements(%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PCHO21;dont part des indemnités de chômage (%) - locataires du parc social;dont part des indemnités de chômage (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PBEN21;dont part des revenus des activités non salariées (%) - locataires du parc social;dont part des revenus des activités non salariées (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PPEN21;Part des pensions, retraites et rentes (%) - locataires du parc social;Part des pensions, retraites et rentes (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PPAT21;Part des revenus du patrimoine et autres revenus (%) - locataires du parc social;Part des revenus du patrimoine et autres revenus (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PPSOC21;Part de l'ensemble des prestations sociales (%) - locataires du parc social;Part de l'ensemble des prestations sociales (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PPFAM21;dont part des prestations familiales (%) - locataires du parc social;dont part des prestations familiales (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PPMINI21;dont part des minima sociaux (%) - locataires du parc social;dont part des minima sociaux (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PPLOGT21;dont part des prestations logement (%) - locataires du parc social;dont part des prestations logement (%) - Ménages locataires du parc social;;;CHAR;4
+TLD2PIMPOT21;Part des impôts (%) - locataires du parc social;Part des impôts (%) - Ménages locataires du parc social;;;CHAR;5
+TLD3Q121;1er quartile (€) - locataires du parc privé;1er quartile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3Q221;Médiane (€) - locataires du parc privé;Médiane (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3Q321;3e quartile (€) - locataires du parc privé;3e quartile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3Q3_Q1;Écart interquartile (€) - locataires du parc privé;Écart interquartile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D121;1er décile (€) - locataires du parc privé;1er décile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D221;2e décile (€) - locataires du parc privé;2e décile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D321;3e décile (€) - locataires du parc privé;3e décile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D421;4e décile (€) - locataires du parc privé;4e décile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D621;6e décile (€) - locataires du parc privé;6e décile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D721;7e décile (€) - locataires du parc privé;7e décile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D821;8e décile (€) - locataires du parc privé;8e décile (€) - Ménages locataires du parc privé;;;CHAR;5
+TLD3D921;9e décile (€) - locataires du parc privé;9e décile (€) - Ménages locataires du parc privé;;;CHAR;6
+TLD3RD;Rapport interdécile 9e décile/1er decile - locataires du parc privé;Rapport interdécile 9e décile/1er decile - Ménages locataires du parc privé;;;CHAR;4
+TLD3S80S2021;S80/20 - locataires du parc privé;S80/20 - Ménages locataires du parc privé;;;CHAR;4
+TLD3GI21;Indice de Gini - locataires du parc privé;Indice de Gini - Ménages locataires du parc privé;;;CHAR;5
+TLD3PACT21;Part des revenus d’activité (%) - locataires du parc privé;Part des revenus d’activité (%) - Ménages locataires du parc privé;;;CHAR;5
+TLD3PTSA21;dont part des salaires et traitements(%) - locataires du parc privé;dont part des salaires et traitements(%) - Ménages locataires du parc privé;;;CHAR;5
+TLD3PCHO21;dont part des indemnités de chômage (%) - locataires du parc privé;dont part des indemnités de chômage (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PBEN21;dont part des revenus des activités non salariées (%) - locataires du parc privé;dont part des revenus des activités non salariées (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PPEN21;Part des pensions, retraites et rentes (%) - locataires du parc privé;Part des pensions, retraites et rentes (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PPAT21;Part des revenus du patrimoine et autres revenus (%) - locataires du parc privé;Part des revenus du patrimoine et autres revenus (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PPSOC21;Part de l'ensemble des prestations sociales (%) - locataires du parc privé;Part de l'ensemble des prestations sociales (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PPFAM21;dont part des prestations familiales (%) - locataires du parc privé;dont part des prestations familiales (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PPMINI21;dont part des minima sociaux (%) - locataires du parc privé;dont part des minima sociaux (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PPLOGT21;dont part des prestations logement (%) - locataires du parc privé;dont part des prestations logement (%) - Ménages locataires du parc privé;;;CHAR;4
+TLD3PIMPOT21;Part des impôts (%) - locataires du parc privé;Part des impôts (%) - Ménages locataires du parc privé;;;CHAR;5
+TYM1Q121;1er quartile (€) - hommes seuls;1er quartile (€) - Hommes seuls;;;CHAR;5
+TYM1Q221;Médiane (€) - hommes seuls;Médiane (€) - Hommes seuls;;;CHAR;5
+TYM1Q321;3e quartile (€) - hommes seuls;3e quartile (€) - Hommes seuls;;;CHAR;5
+TYM1Q3_Q1;Écart interquartile (€) - hommes seuls;Écart interquartile (€) - Hommes seuls;;;CHAR;5
+TYM1D121;1er décile (€) - hommes seuls;1er décile (€) - Hommes seuls;;;CHAR;5
+TYM1D221;2e décile (€) - hommes seuls;2e décile (€) - Hommes seuls;;;CHAR;5
+TYM1D321;3e décile (€) - hommes seuls;3e décile (€) - Hommes seuls;;;CHAR;5
+TYM1D421;4e décile (€) - hommes seuls;4e décile (€) - Hommes seuls;;;CHAR;5
+TYM1D621;6e décile (€) - hommes seuls;6e décile (€) - Hommes seuls;;;CHAR;5
+TYM1D721;7e décile (€) - hommes seuls;7e décile (€) - Hommes seuls;;;CHAR;5
+TYM1D821;8e décile (€) - hommes seuls;8e décile (€) - Hommes seuls;;;CHAR;5
+TYM1D921;9e décile (€) - hommes seuls;9e décile (€) - Hommes seuls;;;CHAR;6
+TYM1RD;Rapport interdécile 9e décile/1er decile - hommes seuls;Rapport interdécile 9e décile/1er decile - Hommes seuls;;;CHAR;4
+TYM1S80S2021;S80/20 - hommes seuls;S80/20 - Hommes seuls;;;CHAR;5
+TYM1GI21;Indice de Gini - hommes seuls;Indice de Gini - Hommes seuls;;;CHAR;5
+TYM1PACT21;Part des revenus d’activité (%) - hommes seuls;Part des revenus d’activité (%) - Hommes seuls;;;CHAR;5
+TYM1PTSA21;dont part des salaires et traitements(%) - hommes seuls;dont part des salaires et traitements(%) - Hommes seuls;;;CHAR;5
+TYM1PCHO21;dont part des indemnités de chômage (%) - hommes seuls;dont part des indemnités de chômage (%) - Hommes seuls;;;CHAR;3
+TYM1PBEN21;dont part des revenus des activités non salariées (%) - hommes seuls;dont part des revenus des activités non salariées (%) - Hommes seuls;;;CHAR;4
+TYM1PPEN21;Part des pensions, retraites et rentes (%) - hommes seuls;Part des pensions, retraites et rentes (%) - Hommes seuls;;;CHAR;4
+TYM1PPAT21;Part des revenus du patrimoine et autres revenus (%) - hommes seuls;Part des revenus du patrimoine et autres revenus (%) - Hommes seuls;;;CHAR;4
+TYM1PPSOC21;Part de l'ensemble des prestations sociales (%) - hommes seuls;Part de l'ensemble des prestations sociales (%) - Hommes seuls;;;CHAR;4
+TYM1PPFAM21;dont part des prestations familiales (%) - hommes seuls;dont part des prestations familiales (%) - Hommes seuls;;;CHAR;3
+TYM1PPMINI21;dont part des minima sociaux (%) - hommes seuls;dont part des minima sociaux (%) - Hommes seuls;;;CHAR;4
+TYM1PPLOGT21;dont part des prestations logement (%) - hommes seuls;dont part des prestations logement (%) - Hommes seuls;;;CHAR;3
+TYM1PIMPOT21;Part des impôts (%) - hommes seuls;Part des impôts (%) - Hommes seuls;;;CHAR;5
+TYM2Q121;1er quartile (€) - femmes seules;1er quartile (€) - Femmes seules;;;CHAR;5
+TYM2Q221;Médiane (€) - femmes seules;Médiane (€) - Femmes seules;;;CHAR;5
+TYM2Q321;3e quartile (€) - femmes seules;3e quartile (€) - Femmes seules;;;CHAR;5
+TYM2Q3_Q1;Écart interquartile (€) - femmes seules;Écart interquartile (€) - Femmes seules;;;CHAR;5
+TYM2D121;1er décile (€) - femmes seules;1er décile (€) - Femmes seules;;;CHAR;5
+TYM2D221;2e décile (€) - femmes seules;2e décile (€) - Femmes seules;;;CHAR;5
+TYM2D321;3e décile (€) - femmes seules;3e décile (€) - Femmes seules;;;CHAR;5
+TYM2D421;4e décile (€) - femmes seules;4e décile (€) - Femmes seules;;;CHAR;5
+TYM2D621;6e décile (€) - femmes seules;6e décile (€) - Femmes seules;;;CHAR;5
+TYM2D721;7e décile (€) - femmes seules;7e décile (€) - Femmes seules;;;CHAR;5
+TYM2D821;8e décile (€) - femmes seules;8e décile (€) - Femmes seules;;;CHAR;5
+TYM2D921;9e décile (€) - femmes seules;9e décile (€) - Femmes seules;;;CHAR;5
+TYM2RD;Rapport interdécile 9e décile/1er decile - femmes seules;Rapport interdécile 9e décile/1er decile - Femmes seules;;;CHAR;4
+TYM2S80S2021;S80/20 - femmes seules;S80/20 - Femmes seules;;;CHAR;4
+TYM2GI21;Indice de Gini - femmes seules;Indice de Gini - Femmes seules;;;CHAR;5
+TYM2PACT21;Part des revenus d’activité (%) - femmes seules;Part des revenus d’activité (%) - Femmes seules;;;CHAR;4
+TYM2PTSA21;dont part des salaires et traitements(%) - femmes seules;dont part des salaires et traitements(%) - Femmes seules;;;CHAR;4
+TYM2PCHO21;dont part des indemnités de chômage (%) - femmes seules;dont part des indemnités de chômage (%) - Femmes seules;;;CHAR;3
+TYM2PBEN21;dont part des revenus des activités non salariées (%) - femmes seules;dont part des revenus des activités non salariées (%) - Femmes seules;;;CHAR;4
+TYM2PPEN21;Part des pensions, retraites et rentes (%) - femmes seules;Part des pensions, retraites et rentes (%) - Femmes seules;;;CHAR;4
+TYM2PPAT21;Part des revenus du patrimoine et autres revenus (%) - femmes seules;Part des revenus du patrimoine et autres revenus (%) - Femmes seules;;;CHAR;4
+TYM2PPSOC21;Part de l'ensemble des prestations sociales (%) - femmes seules;Part de l'ensemble des prestations sociales (%) - Femmes seules;;;CHAR;4
+TYM2PPFAM21;dont part des prestations familiales (%) - femmes seules;dont part des prestations familiales (%) - Femmes seules;;;CHAR;3
+TYM2PPMINI21;dont part des minima sociaux (%) - femmes seules;dont part des minima sociaux (%) - Femmes seules;;;CHAR;4
+TYM2PPLOGT21;dont part des prestations logement (%) - femmes seules;dont part des prestations logement (%) - Femmes seules;;;CHAR;3
+TYM2PIMPOT21;Part des impôts (%) - femmes seules;Part des impôts (%) - Femmes seules;;;CHAR;5
+TYM3Q121;1er quartile (€) - couples sans enfant;1er quartile (€) - Couples sans enfant;;;CHAR;5
+TYM3Q221;Médiane (€) - couples sans enfant;Médiane (€) - Couples sans enfant;;;CHAR;5
+TYM3Q321;3e quartile (€) - couples sans enfant;3e quartile (€) - Couples sans enfant;;;CHAR;5
+TYM3Q3_Q1;Écart interquartile (€) - couples sans enfant;Écart interquartile (€) - Couples sans enfant;;;CHAR;5
+TYM3D121;1er décile (€) - couples sans enfant;1er décile (€) - Couples sans enfant;;;CHAR;5
+TYM3D221;2e décile (€) - couples sans enfant;2e décile (€) - Couples sans enfant;;;CHAR;5
+TYM3D321;3e décile (€) - couples sans enfant;3e décile (€) - Couples sans enfant;;;CHAR;5
+TYM3D421;4e décile (€) - couples sans enfant;4e décile (€) - Couples sans enfant;;;CHAR;5
+TYM3D621;6e décile (€) - couples sans enfant;6e décile (€) - Couples sans enfant;;;CHAR;5
+TYM3D721;7e décile (€) - couples sans enfant;7e décile (€) - Couples sans enfant;;;CHAR;5
+TYM3D821;8e décile (€) - couples sans enfant;8e décile (€) - Couples sans enfant;;;CHAR;6
+TYM3D921;9e décile (€) - couples sans enfant;9e décile (€) - Couples sans enfant;;;CHAR;6
+TYM3RD;Rapport interdécile 9e décile/1er decile - couples sans enfant;Rapport interdécile 9e décile/1er decile - Couples sans enfant;;;CHAR;3
+TYM3S80S2021;S80/20 - couples sans enfant;S80/20 - Couples sans enfant;;;CHAR;4
+TYM3GI21;Indice de Gini - couples sans enfant;Indice de Gini - Couples sans enfant;;;CHAR;5
+TYM3PACT21;Part des revenus d’activité (%) - couples sans enfant;Part des revenus d’activité (%) - Couples sans enfant;;;CHAR;4
+TYM3PTSA21;dont part des salaires et traitements(%) - couples sans enfant;dont part des salaires et traitements(%) - Couples sans enfant;;;CHAR;4
+TYM3PCHO21;dont part des indemnités de chômage (%) - couples sans enfant;dont part des indemnités de chômage (%) - Couples sans enfant;;;CHAR;3
+TYM3PBEN21;dont part des revenus des activités non salariées (%) - couples sans enfant;dont part des revenus des activités non salariées (%) - Couples sans enfant;;;CHAR;4
+TYM3PPEN21;Part des pensions, retraites et rentes (%) - couples sans enfant;Part des pensions, retraites et rentes (%) - Couples sans enfant;;;CHAR;4
+TYM3PPAT21;Part des revenus du patrimoine et autres revenus (%) - couples sans enfant;Part des revenus du patrimoine et autres revenus (%) - Couples sans enfant;;;CHAR;4
+TYM3PPSOC21;Part de l'ensemble des prestations sociales (%) - couples sans enfant;Part de l'ensemble des prestations sociales (%) - Couples sans enfant;;;CHAR;4
+TYM3PPFAM21;dont part des prestations familiales (%) - couples sans enfant;dont part des prestations familiales (%) - Couples sans enfant;;;CHAR;3
+TYM3PPMINI21;dont part des minima sociaux (%) - couples sans enfant;dont part des minima sociaux (%) - Couples sans enfant;;;CHAR;4
+TYM3PPLOGT21;dont part des prestations logement (%) - couples sans enfant;dont part des prestations logement (%) - Couples sans enfant;;;CHAR;3
+TYM3PIMPOT21;Part des impôts (%) - couples sans enfant;Part des impôts (%) - Couples sans enfant;;;CHAR;5
+TYM4Q121;1er quartile (€) - couples avec enfant(s);1er quartile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4Q221;Médiane (€) - couples avec enfant(s);Médiane (€) - Couples avec enfant(s);;;CHAR;5
+TYM4Q321;3e quartile (€) - couples avec enfant(s);3e quartile (€) - Couples avec enfant(s);;;CHAR;6
+TYM4Q3_Q1;Écart interquartile (€) - couples avec enfant(s);Écart interquartile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4D121;1er décile (€) - couples avec enfant(s);1er décile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4D221;2e décile (€) - couples avec enfant(s);2e décile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4D321;3e décile (€) - couples avec enfant(s);3e décile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4D421;4e décile (€) - couples avec enfant(s);4e décile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4D621;6e décile (€) - couples avec enfant(s);6e décile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4D721;7e décile (€) - couples avec enfant(s);7e décile (€) - Couples avec enfant(s);;;CHAR;5
+TYM4D821;8e décile (€) - couples avec enfant(s);8e décile (€) - Couples avec enfant(s);;;CHAR;6
+TYM4D921;9e décile (€) - couples avec enfant(s);9e décile (€) - Couples avec enfant(s);;;CHAR;6
+TYM4RD;Rapport interdécile 9e décile/1er decile - couples avec enfant(s);Rapport interdécile 9e décile/1er decile - Couples avec enfant(s);;;CHAR;4
+TYM4S80S2021;S80/20 - couples avec enfant(s);S80/20 - Couples avec enfant(s);;;CHAR;4
+TYM4GI21;Indice de Gini - couples avec enfant(s);Indice de Gini - Couples avec enfant(s);;;CHAR;5
+TYM4PACT21;Part des revenus d’activité (%) - couples avec enfant(s);Part des revenus d’activité (%) - Couples avec enfant(s);;;CHAR;5
+TYM4PTSA21;dont part des salaires et traitements(%) - couples avec enfant(s);dont part des salaires et traitements(%) - Couples avec enfant(s);;;CHAR;5
+TYM4PCHO21;dont part des indemnités de chômage (%) - couples avec enfant(s);dont part des indemnités de chômage (%) - Couples avec enfant(s);;;CHAR;3
+TYM4PBEN21;dont part des revenus des activités non salariées (%) - couples avec enfant(s);dont part des revenus des activités non salariées (%) - Couples avec enfant(s);;;CHAR;4
+TYM4PPEN21;Part des pensions, retraites et rentes (%) - couples avec enfant(s);Part des pensions, retraites et rentes (%) - Couples avec enfant(s);;;CHAR;4
+TYM4PPAT21;Part des revenus du patrimoine et autres revenus (%) - couples avec enfant(s);Part des revenus du patrimoine et autres revenus (%) - Couples avec enfant(s);;;CHAR;4
+TYM4PPSOC21;Part de l'ensemble des prestations sociales (%) - couples avec enfant(s);Part de l'ensemble des prestations sociales (%) - Couples avec enfant(s);;;CHAR;4
+TYM4PPFAM21;dont part des prestations familiales (%) - couples avec enfant(s);dont part des prestations familiales (%) - Couples avec enfant(s);;;CHAR;4
+TYM4PPMINI21;dont part des minima sociaux (%) - couples avec enfant(s);dont part des minima sociaux (%) - Couples avec enfant(s);;;CHAR;4
+TYM4PPLOGT21;dont part des prestations logement (%) - couples avec enfant(s);dont part des prestations logement (%) - Couples avec enfant(s);;;CHAR;3
+TYM4PIMPOT21;Part des impôts (%) - couples avec enfant(s);Part des impôts (%) - Couples avec enfant(s);;;CHAR;5
+TYM5Q121;1er quartile (€) - familles monoparentales;1er quartile (€) - Familles monoparentales;;;CHAR;5
+TYM5Q221;Médiane (€) - familles monoparentales;Médiane (€) - Familles monoparentales;;;CHAR;5
+TYM5Q321;3e quartile (€) - familles monoparentales;3e quartile (€) - Familles monoparentales;;;CHAR;5
+TYM5Q3_Q1;Écart interquartile (€) - familles monoparentales;Écart interquartile (€) - Familles monoparentales;;;CHAR;5
+TYM5D121;1er décile (€) - familles monoparentales;1er décile (€) - Familles monoparentales;;;CHAR;5
+TYM5D221;2e décile (€) - familles monoparentales;2e décile (€) - Familles monoparentales;;;CHAR;5
+TYM5D321;3e décile (€) - familles monoparentales;3e décile (€) - Familles monoparentales;;;CHAR;5
+TYM5D421;4e décile (€) - familles monoparentales;4e décile (€) - Familles monoparentales;;;CHAR;5
+TYM5D621;6e décile (€) - familles monoparentales;6e décile (€) - Familles monoparentales;;;CHAR;5
+TYM5D721;7e décile (€) - familles monoparentales;7e décile (€) - Familles monoparentales;;;CHAR;5
+TYM5D821;8e décile (€) - familles monoparentales;8e décile (€) - Familles monoparentales;;;CHAR;5
+TYM5D921;9e décile (€) - familles monoparentales;9e décile (€) - Familles monoparentales;;;CHAR;5
+TYM5RD;Rapport interdécile 9e décile/1er decile - familles monoparentales;Rapport interdécile 9e décile/1er decile - Familles monoparentales;;;CHAR;4
+TYM5S80S2021;S80/20 - familles monoparentales;S80/20 - Familles monoparentales;;;CHAR;4
+TYM5GI21;Indice de Gini - familles monoparentales;Indice de Gini - Familles monoparentales;;;CHAR;5
+TYM5PACT21;Part des revenus d’activité (%) - familles monoparentales;Part des revenus d’activité (%) - Familles monoparentales;;;CHAR;5
+TYM5PTSA21;dont part des salaires et traitements(%) - familles monoparentales;dont part des salaires et traitements(%) - Familles monoparentales;;;CHAR;5
+TYM5PCHO21;dont part des indemnités de chômage (%) - familles monoparentales;dont part des indemnités de chômage (%) - Familles monoparentales;;;CHAR;4
+TYM5PBEN21;dont part des revenus des activités non salariées (%) - familles monoparentales;dont part des revenus des activités non salariées (%) - Familles monoparentales;;;CHAR;4
+TYM5PPEN21;Part des pensions, retraites et rentes (%) - familles monoparentales;Part des pensions, retraites et rentes (%) - Familles monoparentales;;;CHAR;4
+TYM5PPAT21;Part des revenus du patrimoine et autres revenus (%) - familles monoparentales;Part des revenus du patrimoine et autres revenus (%) - Familles monoparentales;;;CHAR;4
+TYM5PPSOC21;Part de l'ensemble des prestations sociales (%) - familles monoparentales;Part de l'ensemble des prestations sociales (%) - Familles monoparentales;;;CHAR;4
+TYM5PPFAM21;dont part des prestations familiales (%) - familles monoparentales;dont part des prestations familiales (%) - Familles monoparentales;;;CHAR;4
+TYM5PPMINI21;dont part des minima sociaux (%) - familles monoparentales;dont part des minima sociaux (%) - Familles monoparentales;;;CHAR;4
+TYM5PPLOGT21;dont part des prestations logement (%) - familles monoparentales;dont part des prestations logement (%) - Familles monoparentales;;;CHAR;4
+TYM5PIMPOT21;Part des impôts (%) - familles monoparentales;Part des impôts (%) - Familles monoparentales;;;CHAR;5
+TYM6Q121;1er quartile (€) - ménages complexes;1er quartile (€) - Ménages complexes;;;CHAR;5
+TYM6Q221;Médiane (€) - ménages complexes;Médiane (€) - Ménages complexes;;;CHAR;5
+TYM6Q321;3e quartile (€) - ménages complexes;3e quartile (€) - Ménages complexes;;;CHAR;5
+TYM6Q3_Q1;Écart interquartile (€) - ménages complexes;Écart interquartile (€) - Ménages complexes;;;CHAR;5
+TYM6D121;1er décile (€) - ménages complexes;1er décile (€) - Ménages complexes;;;CHAR;5
+TYM6D221;2e décile (€) - ménages complexes;2e décile (€) - Ménages complexes;;;CHAR;5
+TYM6D321;3e décile (€) - ménages complexes;3e décile (€) - Ménages complexes;;;CHAR;5
+TYM6D421;4e décile (€) - ménages complexes;4e décile (€) - Ménages complexes;;;CHAR;5
+TYM6D621;6e décile (€) - ménages complexes;6e décile (€) - Ménages complexes;;;CHAR;5
+TYM6D721;7e décile (€) - ménages complexes;7e décile (€) - Ménages complexes;;;CHAR;5
+TYM6D821;8e décile (€) - ménages complexes;8e décile (€) - Ménages complexes;;;CHAR;5
+TYM6D921;9e décile (€) - ménages complexes;9e décile (€) - Ménages complexes;;;CHAR;6
+TYM6RD;Rapport interdécile 9e décile/1er decile - ménages complexes;Rapport interdécile 9e décile/1er decile - Ménages complexes;;;CHAR;4
+TYM6S80S2021;S80/20 - ménages complexes;S80/20 - Ménages complexes;;;CHAR;4
+TYM6GI21;Indice de Gini - ménages complexes;Indice de Gini - Ménages complexes;;;CHAR;5
+TYM6PACT21;Part des revenus d’activité (%) - ménages complexes;Part des revenus d’activité (%) - Ménages complexes;;;CHAR;5
+TYM6PTSA21;dont part des salaires et traitements(%) - ménages complexes;dont part des salaires et traitements(%) - Ménages complexes;;;CHAR;4
+TYM6PCHO21;dont part des indemnités de chômage (%) - ménages complexes;dont part des indemnités de chômage (%) - Ménages complexes;;;CHAR;4
+TYM6PBEN21;dont part des revenus des activités non salariées (%) - ménages complexes;dont part des revenus des activités non salariées (%) - Ménages complexes;;;CHAR;4
+TYM6PPEN21;Part des pensions, retraites et rentes (%) - ménages complexes;Part des pensions, retraites et rentes (%) - Ménages complexes;;;CHAR;4
+TYM6PPAT21;Part des revenus du patrimoine et autres revenus (%) - ménages complexes;Part des revenus du patrimoine et autres revenus (%) - Ménages complexes;;;CHAR;5
+TYM6PPSOC21;Part de l'ensemble des prestations sociales (%) - ménages complexes;Part de l'ensemble des prestations sociales (%) - Ménages complexes;;;CHAR;4
+TYM6PPFAM21;dont part des prestations familiales (%) - ménages complexes;dont part des prestations familiales (%) - Ménages complexes;;;CHAR;3
+TYM6PPMINI21;dont part des minima sociaux (%) - ménages complexes;dont part des minima sociaux (%) - Ménages complexes;;;CHAR;4
+TYM6PPLOGT21;dont part des prestations logement (%) - ménages complexes;dont part des prestations logement (%) - Ménages complexes;;;CHAR;3
+TYM6PIMPOT21;Part des impôts (%) - ménages complexes;Part des impôts (%) - Ménages complexes;;;CHAR;5
+OPR1Q121;1er quartile (€) - source principale de revenus déclarés : salaires et traitements;1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1Q221;Médiane (€) - source principale de revenus déclarés : salaires et traitements;Médiane (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1Q321;3e quartile (€) - source principale de revenus déclarés : salaires et traitements;3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1Q3_Q1;Écart interquartile (€) - source principale de revenus déclarés : salaires et traitements;Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D121;1er décile (€) - source principale de revenus déclarés : salaires et traitements;1er décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D221;2e décile (€) - source principale de revenus déclarés : salaires et traitements;2e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D321;3e décile (€) - source principale de revenus déclarés : salaires et traitements;3e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D421;4e décile (€) - source principale de revenus déclarés : salaires et traitements;4e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D621;6e décile (€) - source principale de revenus déclarés : salaires et traitements;6e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D721;7e décile (€) - source principale de revenus déclarés : salaires et traitements;7e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D821;8e décile (€) - source principale de revenus déclarés : salaires et traitements;8e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1D921;9e décile (€) - source principale de revenus déclarés : salaires et traitements;9e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;6
+OPR1RD;Rapport interdécile 9e décile/1er decile - source principale de revenus déclarés : salaires et traitements;Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;3
+OPR1S80S2021;S80/20 - source principale de revenus déclarés : salaires et traitements;S80/20 - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;4
+OPR1GI21;Indice de Gini - source principale de revenus déclarés : salaires et traitements;Indice de Gini - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1PACT21;Part des revenus d’activité (%) - source principale de revenus déclarés : salaires et traitements;Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1PTSA21;dont part des salaires et traitements(%) - source principale de revenus déclarés : salaires et traitements;dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR1PCHO21;dont part des indemnités de chômage (%) - source principale de revenus déclarés : salaires et traitements;dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;3
+OPR1PBEN21;dont part des revenus des activités non salariées (%) - source principale de revenus déclarés : salaires et traitements;dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;3
+OPR1PPEN21;Part des pensions, retraites et rentes (%) - source principale de revenus déclarés : salaires et traitements;Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;3
+OPR1PPAT21;Part des revenus du patrimoine et autres revenus (%) - source principale de revenus déclarés : salaires et traitements;Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;4
+OPR1PPSOC21;Part de l'ensemble des prestations sociales (%) - source principale de revenus déclarés : salaires et traitements;Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;4
+OPR1PPFAM21;dont part des prestations familiales (%) - source principale de revenus déclarés : salaires et traitements;dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;3
+OPR1PPMINI21;dont part des minima sociaux (%) - source principale de revenus déclarés : salaires et traitements;dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;4
+OPR1PPLOGT21;dont part des prestations logement (%) - source principale de revenus déclarés : salaires et traitements;dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;3
+OPR1PIMPOT21;Part des impôts (%) - source principale de revenus déclarés : salaires et traitements;Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements;;;CHAR;5
+OPR2Q121;1er quartile (€) - source principale de revenus déclarés : indemnités de chômage;1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2Q221;Médiane (€) - source principale de revenus déclarés : indemnités de chômage;Médiane (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2Q321;3e quartile (€) - source principale de revenus déclarés : indemnités de chômage;3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2Q3_Q1;Écart interquartile (€) - source principale de revenus déclarés : indemnités de chômage;Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D121;1er décile (€) - source principale de revenus déclarés : indemnités de chômage;1er décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D221;2e décile (€) - source principale de revenus déclarés : indemnités de chômage;2e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D321;3e décile (€) - source principale de revenus déclarés : indemnités de chômage;3e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D421;4e décile (€) - source principale de revenus déclarés : indemnités de chômage;4e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D621;6e décile (€) - source principale de revenus déclarés : indemnités de chômage;6e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D721;7e décile (€) - source principale de revenus déclarés : indemnités de chômage;7e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D821;8e décile (€) - source principale de revenus déclarés : indemnités de chômage;8e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2D921;9e décile (€) - source principale de revenus déclarés : indemnités de chômage;9e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2RD;Rapport interdécile 9e décile/1er decile - source principale de revenus déclarés : indemnités de chômage;Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;3
+OPR2S80S2021;S80/20 - source principale de revenus déclarés : indemnités de chômage;S80/20 - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;3
+OPR2GI21;Indice de Gini - source principale de revenus déclarés : indemnités de chômage;Indice de Gini - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2PACT21;Part des revenus d’activité (%) - source principale de revenus déclarés : indemnités de chômage;Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR2PTSA21;dont part des salaires et traitements(%) - source principale de revenus déclarés : indemnités de chômage;dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PCHO21;dont part des indemnités de chômage (%) - source principale de revenus déclarés : indemnités de chômage;dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PBEN21;dont part des revenus des activités non salariées (%) - source principale de revenus déclarés : indemnités de chômage;dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PPEN21;Part des pensions, retraites et rentes (%) - source principale de revenus déclarés : indemnités de chômage;Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PPAT21;Part des revenus du patrimoine et autres revenus (%) - source principale de revenus déclarés : indemnités de chômage;Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PPSOC21;Part de l'ensemble des prestations sociales (%) - source principale de revenus déclarés : indemnités de chômage;Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PPFAM21;dont part des prestations familiales (%) - source principale de revenus déclarés : indemnités de chômage;dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PPMINI21;dont part des minima sociaux (%) - source principale de revenus déclarés : indemnités de chômage;dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PPLOGT21;dont part des prestations logement (%) - source principale de revenus déclarés : indemnités de chômage;dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;4
+OPR2PIMPOT21;Part des impôts (%) - source principale de revenus déclarés : indemnités de chômage;Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage;;;CHAR;5
+OPR3Q121;1er quartile (€) - source principale de revenus déclarés : revenus des activités non salariées;1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3Q221;Médiane (€) - source principale de revenus déclarés : revenus des activités non salariées;Médiane (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3Q321;3e quartile (€) - source principale de revenus déclarés : revenus des activités non salariées;3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;6
+OPR3Q3_Q1;Écart interquartile (€) - source principale de revenus déclarés : revenus des activités non salariées;Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3D121;1er décile (€) - source principale de revenus déclarés : revenus des activités non salariées;1er décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3D221;2e décile (€) - source principale de revenus déclarés : revenus des activités non salariées;2e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3D321;3e décile (€) - source principale de revenus déclarés : revenus des activités non salariées;3e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3D421;4e décile (€) - source principale de revenus déclarés : revenus des activités non salariées;4e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3D621;6e décile (€) - source principale de revenus déclarés : revenus des activités non salariées;6e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3D721;7e décile (€) - source principale de revenus déclarés : revenus des activités non salariées;7e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;6
+OPR3D821;8e décile (€) - source principale de revenus déclarés : revenus des activités non salariées;8e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;6
+OPR3D921;9e décile (€) - source principale de revenus déclarés : revenus des activités non salariées;9e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;6
+OPR3RD;Rapport interdécile 9e décile/1er decile - source principale de revenus déclarés : revenus des activités non salariées;Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;4
+OPR3S80S2021;S80/20 - source principale de revenus déclarés : revenus des activités non salariées;S80/20 - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;4
+OPR3GI21;Indice de Gini - source principale de revenus déclarés : revenus des activités non salariées;Indice de Gini - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3PACT21;Part des revenus d’activité (%) - source principale de revenus déclarés : revenus des activités non salariées;Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3PTSA21;dont part des salaires et traitements(%) - source principale de revenus déclarés : revenus des activités non salariées;dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;4
+OPR3PCHO21;dont part des indemnités de chômage (%) - source principale de revenus déclarés : revenus des activités non salariées;dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;3
+OPR3PBEN21;dont part des revenus des activités non salariées (%) - source principale de revenus déclarés : revenus des activités non salariées;dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR3PPEN21;Part des pensions, retraites et rentes (%) - source principale de revenus déclarés : revenus des activités non salariées;Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;4
+OPR3PPAT21;Part des revenus du patrimoine et autres revenus (%) - source principale de revenus déclarés : revenus des activités non salariées;Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;4
+OPR3PPSOC21;Part de l'ensemble des prestations sociales (%) - source principale de revenus déclarés : revenus des activités non salariées;Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;4
+OPR3PPFAM21;dont part des prestations familiales (%) - source principale de revenus déclarés : revenus des activités non salariées;dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;3
+OPR3PPMINI21;dont part des minima sociaux (%) - source principale de revenus déclarés : revenus des activités non salariées;dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;3
+OPR3PPLOGT21;dont part des prestations logement (%) - source principale de revenus déclarés : revenus des activités non salariées;dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;3
+OPR3PIMPOT21;Part des impôts (%) - source principale de revenus déclarés : revenus des activités non salariées;Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées;;;CHAR;5
+OPR4Q121;1er quartile (€) - source principale de revenus déclarés : pensions, retraites et rentes;1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4Q221;Médiane (€) - source principale de revenus déclarés : pensions, retraites et rentes;Médiane (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4Q321;3e quartile (€) - source principale de revenus déclarés : pensions, retraites et rentes;3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4Q3_Q1;Écart interquartile (€) - source principale de revenus déclarés : pensions, retraites et rentes;Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D121;1er décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;1er décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D221;2e décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;2e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D321;3e décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;3e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D421;4e décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;4e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D621;6e décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;6e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D721;7e décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;7e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D821;8e décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;8e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4D921;9e décile (€) - source principale de revenus déclarés : pensions, retraites et rentes;9e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4RD;Rapport interdécile 9e décile/1er decile - source principale de revenus déclarés : pensions, retraites et rentes;Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;3
+OPR4S80S2021;S80/20 - source principale de revenus déclarés : pensions, retraites et rentes;S80/20 - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;3
+OPR4GI21;Indice de Gini - source principale de revenus déclarés : pensions, retraites et rentes;Indice de Gini - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4PACT21;Part des revenus d’activité (%) - source principale de revenus déclarés : pensions, retraites et rentes;Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;4
+OPR4PTSA21;dont part des salaires et traitements(%) - source principale de revenus déclarés : pensions, retraites et rentes;dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;4
+OPR4PCHO21;dont part des indemnités de chômage (%) - source principale de revenus déclarés : pensions, retraites et rentes;dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;3
+OPR4PBEN21;dont part des revenus des activités non salariées (%) - source principale de revenus déclarés : pensions, retraites et rentes;dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;4
+OPR4PPEN21;Part des pensions, retraites et rentes (%) - source principale de revenus déclarés : pensions, retraites et rentes;Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR4PPAT21;Part des revenus du patrimoine et autres revenus (%) - source principale de revenus déclarés : pensions, retraites et rentes;Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;4
+OPR4PPSOC21;Part de l'ensemble des prestations sociales (%) - source principale de revenus déclarés : pensions, retraites et rentes;Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;4
+OPR4PPFAM21;dont part des prestations familiales (%) - source principale de revenus déclarés : pensions, retraites et rentes;dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;3
+OPR4PPMINI21;dont part des minima sociaux (%) - source principale de revenus déclarés : pensions, retraites et rentes;dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;4
+OPR4PPLOGT21;dont part des prestations logement (%) - source principale de revenus déclarés : pensions, retraites et rentes;dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;3
+OPR4PIMPOT21;Part des impôts (%) - source principale de revenus déclarés : pensions, retraites et rentes;Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes;;;CHAR;5
+OPR5Q121;1er quartile (€) - source principale de revenus déclarés : revenus du patrimoine;1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5Q221;Médiane (€) - source principale de revenus déclarés : revenus du patrimoine;Médiane (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;6
+OPR5Q321;3e quartile (€) - source principale de revenus déclarés : revenus du patrimoine;3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;6
+OPR5Q3_Q1;Écart interquartile (€) - source principale de revenus déclarés : revenus du patrimoine;Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;6
+OPR5D121;1er décile (€) - source principale de revenus déclarés : revenus du patrimoine;1er décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5D221;2e décile (€) - source principale de revenus déclarés : revenus du patrimoine;2e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5D321;3e décile (€) - source principale de revenus déclarés : revenus du patrimoine;3e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5D421;4e décile (€) - source principale de revenus déclarés : revenus du patrimoine;4e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5D621;6e décile (€) - source principale de revenus déclarés : revenus du patrimoine;6e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;6
+OPR5D721;7e décile (€) - source principale de revenus déclarés : revenus du patrimoine;7e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;6
+OPR5D821;8e décile (€) - source principale de revenus déclarés : revenus du patrimoine;8e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;6
+OPR5D921;9e décile (€) - source principale de revenus déclarés : revenus du patrimoine;9e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;6
+OPR5RD;Rapport interdécile 9e décile/1er decile - source principale de revenus déclarés : revenus du patrimoine;Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5S80S2021;S80/20 - source principale de revenus déclarés : revenus du patrimoine;S80/20 - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5GI21;Indice de Gini - source principale de revenus déclarés : revenus du patrimoine;Indice de Gini - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5PACT21;Part des revenus d’activité (%) - source principale de revenus déclarés : revenus du patrimoine;Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;4
+OPR5PTSA21;dont part des salaires et traitements(%) - source principale de revenus déclarés : revenus du patrimoine;dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;4
+OPR5PCHO21;dont part des indemnités de chômage (%) - source principale de revenus déclarés : revenus du patrimoine;dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;3
+OPR5PBEN21;dont part des revenus des activités non salariées (%) - source principale de revenus déclarés : revenus du patrimoine;dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;4
+OPR5PPEN21;Part des pensions, retraites et rentes (%) - source principale de revenus déclarés : revenus du patrimoine;Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;4
+OPR5PPAT21;Part des revenus du patrimoine et autres revenus (%) - source principale de revenus déclarés : revenus du patrimoine;Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR5PPSOC21;Part de l'ensemble des prestations sociales (%) - source principale de revenus déclarés : revenus du patrimoine;Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;4
+OPR5PPFAM21;dont part des prestations familiales (%) - source principale de revenus déclarés : revenus du patrimoine;dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;3
+OPR5PPMINI21;dont part des minima sociaux (%) - source principale de revenus déclarés : revenus du patrimoine;dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;4
+OPR5PPLOGT21;dont part des prestations logement (%) - source principale de revenus déclarés : revenus du patrimoine;dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;3
+OPR5PIMPOT21;Part des impôts (%) - source principale de revenus déclarés : revenus du patrimoine;Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine;;;CHAR;5
+OPR6Q121;1er quartile (€) - revenu déclaré négatif ou nul;1er quartile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6Q221;Médiane (€) - revenu déclaré négatif ou nul;Médiane (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6Q321;3e quartile (€) - revenu déclaré négatif ou nul;3e quartile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6Q3_Q1;Écart interquartile (€) - revenu déclaré négatif ou nul;Écart interquartile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6D121;1er décile (€) - revenu déclaré négatif ou nul;1er décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6D221;2e décile (€) - revenu déclaré négatif ou nul;2e décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6D321;3e décile (€) - revenu déclaré négatif ou nul;3e décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6D421;4e décile (€) - revenu déclaré négatif ou nul;4e décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6D621;6e décile (€) - revenu déclaré négatif ou nul;6e décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6D721;7e décile (€) - revenu déclaré négatif ou nul;7e décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6D821;8e décile (€) - revenu déclaré négatif ou nul;8e décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6D921;9e décile (€) - revenu déclaré négatif ou nul;9e décile (€) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6RD;Rapport interdécile 9e décile/1er decile - revenu déclaré négatif ou nul;Rapport interdécile 9e décile/1er decile - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;6
+OPR6S80S2021;S80/20 - revenu déclaré négatif ou nul;S80/20 - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6GI21;Indice de Gini - revenu déclaré négatif ou nul;Indice de Gini - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;5
+OPR6PACT21;Part des revenus d’activité (%) - revenu déclaré négatif ou nul;Part des revenus d’activité (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6PTSA21;dont part des salaires et traitements(%) - revenu déclaré négatif ou nul;dont part des salaires et traitements(%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;3
+OPR6PCHO21;dont part des indemnités de chômage (%) - revenu déclaré négatif ou nul;dont part des indemnités de chômage (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;3
+OPR6PBEN21;dont part des revenus des activités non salariées (%) - revenu déclaré négatif ou nul;dont part des revenus des activités non salariées (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6PPEN21;Part des pensions, retraites et rentes (%) - revenu déclaré négatif ou nul;Part des pensions, retraites et rentes (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;3
+OPR6PPAT21;Part des revenus du patrimoine et autres revenus (%) - revenu déclaré négatif ou nul;Part des revenus du patrimoine et autres revenus (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;3
+OPR6PPSOC21;Part de l'ensemble des prestations sociales (%) - revenu déclaré négatif ou nul;Part de l'ensemble des prestations sociales (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6PPFAM21;dont part des prestations familiales (%) - revenu déclaré négatif ou nul;dont part des prestations familiales (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;3
+OPR6PPMINI21;dont part des minima sociaux (%) - revenu déclaré négatif ou nul;dont part des minima sociaux (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6PPLOGT21;dont part des prestations logement (%) - revenu déclaré négatif ou nul;dont part des prestations logement (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;4
+OPR6PIMPOT21;Part des impôts (%) - revenu déclaré négatif ou nul;Part des impôts (%) - Ménages dont le revenu déclaré est négatif ou nul;;;CHAR;3

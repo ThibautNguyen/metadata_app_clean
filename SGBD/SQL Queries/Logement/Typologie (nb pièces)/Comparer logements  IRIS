@@ -1,0 +1,78 @@
+-- Répartition des typologies de résidences principales par nombre de pièces dans le 
+-- périmètre Tours nord – Saint Cyr sur Loire, dans les communes de Ballan-Miré, Mettray 
+-- et Luynes, dans le département d’Indre-et-Loire, en Centre-Val-de-Loire et en France
+
+WITH territories AS (
+  -- DSP Tours nord + Saint-Cyr-sur-Loire
+  SELECT 
+    'DSP Tours nord + Saint-Cyr-sur-Loire' as territoire,
+    SUM(P21_RP_1P) as t1,
+    SUM(P21_RP_2P) as t2,
+    SUM(P21_RP_3P) as t3,
+    SUM(P21_RP_4P) as t4,
+    SUM(P21_RP_5PP) as t5plus,
+    SUM(P21_RP) as total_rp
+  FROM LOG_IRIS_2021
+  WHERE IRIS IN ('372140101', '372140102', '372140103', '372140104', '372140105', '372140106', 
+                '372611801', '372611802', '372611803', '372611701', '372611702', '372611703', 
+                '372611704', '372611705', '372611706', '372611401', '372611402', '372611403', 
+                '372611404', '372611405', '372611503', '372611504', '372611601')
+
+  UNION ALL
+
+  -- Ballan-Miré, Mettray et Luynes
+  SELECT 
+    'Ballan-Miré, Mettray et Luynes' as territoire,
+    SUM(P21_RP_1P) as t1,
+    SUM(P21_RP_2P) as t2,
+    SUM(P21_RP_3P) as t3,
+    SUM(P21_RP_4P) as t4,
+    SUM(P21_RP_5PP) as t5plus,
+    SUM(P21_RP) as total_rp
+  FROM LOG_IRIS_2021
+  WHERE IRIS IN ('370180101', '370180102', '370180103', '371520000', '371390000')
+
+  UNION ALL
+
+  -- Indre-et-Loire
+  SELECT 
+    'Indre-et-Loire' as territoire,
+    SUM(P21_RP_1P) as t1,
+    SUM(P21_RP_2P) as t2,
+    SUM(P21_RP_3P) as t3,
+    SUM(P21_RP_4P) as t4,
+    SUM(P21_RP_5PP) as t5plus,
+    SUM(P21_RP) as total_rp
+  FROM LOG_IRIS_2021
+  WHERE SUBSTR(IRIS,1,2) = '37' AND LENGTH(IRIS) = 9
+
+  UNION ALL
+
+  -- Centre-Val-de-Loire
+  SELECT 
+    'Centre-Val-de-Loire' as territoire,
+    SUM(P21_RP_1P) as t1,
+    SUM(P21_RP_2P) as t2,
+    SUM(P21_RP_3P) as t3,
+    SUM(P21_RP_4P) as t4,
+    SUM(P21_RP_5PP) as t5plus,
+    SUM(P21_RP) as total_rp
+  FROM LOG_IRIS_2021
+  WHERE SUBSTR(IRIS,1,2) IN ('18', '28', '36', '37', '41', '45') AND LENGTH(IRIS) = 9
+)
+
+SELECT 
+  territoire,
+  ROUND(CAST(t1 AS FLOAT) / total_rp, 3) as "T1",
+  ROUND(CAST(t2 AS FLOAT) / total_rp, 3) as "T2",
+  ROUND(CAST(t3 AS FLOAT) / total_rp, 3) as "T3",
+  ROUND(CAST(t4 AS FLOAT) / total_rp, 3) as "T4",
+  ROUND(CAST(t5plus AS FLOAT) / total_rp, 3) as "T5 ou plus"
+FROM territories
+ORDER BY 
+  CASE territoire
+    WHEN 'DSP Tours nord + Saint-Cyr-sur-Loire' THEN 1
+    WHEN 'Ballan-Miré, Mettray et Luynes' THEN 2
+    WHEN 'Indre-et-Loire' THEN 3
+    WHEN 'Centre-Val-de-Loire' THEN 4
+  END;

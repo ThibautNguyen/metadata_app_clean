@@ -1,0 +1,30 @@
+-- Evolution annuelle de la consommation de gaz (2011-2022)
+-- Tableau : Conso_elec_gaz_IRIS_2024
+
+-- Cette requête permet de :
+--- Calculer la consommation totale de gaz par année sur le territoire
+--- Mesurer l'évolution par rapport à l'année précédente
+--- Couvrir la période de 2011 à 2022
+
+SELECT 
+    SUBSTR("Année", 1, 4) as annee,
+    SUM("Conso totale (MWh)") as conso_totale_mwh,
+    REPLACE(ROUND(((SUM("Conso totale (MWh)") - 
+        LAG(SUM("Conso totale (MWh)")) OVER (ORDER BY SUBSTR("Année", 1, 4))) /
+        LAG(SUM("Conso totale (MWh)")) OVER (ORDER BY SUBSTR("Année", 1, 4))), 3), '.', ',') as evolution_vs_annee_precedente
+FROM 
+    "Conso_elec_gaz_IRIS_2024"
+WHERE 
+    "FILIERE" = 'Gaz'
+    AND "Code IRIS" IN (
+        '600570101', '600570102', '600570201', '600570202',
+        '600570301', '600570302', '600570303', '600570401',
+        '600570402', '600570403', '600570404', '600570405',
+        '600570501', '600570601', '600570701', '600570702',
+        '600570703', '600570704'
+    )
+    AND SUBSTR("Année", 1, 4) BETWEEN '2011' AND '2022'
+GROUP BY 
+    SUBSTR("Année", 1, 4)
+ORDER BY 
+    annee;

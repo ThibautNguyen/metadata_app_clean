@@ -1,0 +1,105 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/3627376
+
+## Tableau SQL : 
+POP_IRIS_2015
+
+
+Chemin disque dur : C:\Users\thiba\OneDrive\Documents\Données\Population\Evol_IRIS\2015
+
+
+## 4 premières lignes :
+IRIS,REG,DEP,UU2010,COM,LIBCOM,TRIRIS,GRD_QUART,LIBIRIS,TYP_IRIS,MODIF_IRIS,LAB_IRIS,P15_POP,P15_POP0002,P15_POP0305,P15_POP0610,P15_POP1117,P15_POP1824,P15_POP2539,P15_POP4054,P15_POP5564,P15_POP6579,P15_POP80P,P15_POP0014,P15_POP1529,P15_POP3044,P15_POP4559,P15_POP6074,P15_POP75P,P15_POP0019,P15_POP2064,P15_POP65P,P15_POPH,P15_H0014,P15_H1529,P15_H3044,P15_H4559,P15_H6074,P15_H75P,P15_H0019,P15_H2064,P15_H65P,P15_POPF,P15_F0014,P15_F1529,P15_F3044,P15_F4559,P15_F6074,P15_F75P,P15_F0019,P15_F2064,P15_F65P,C15_POP15P,C15_POP15P_CS1,C15_POP15P_CS2,C15_POP15P_CS3,C15_POP15P_CS4,C15_POP15P_CS5,C15_POP15P_CS6,C15_POP15P_CS7,C15_POP15P_CS8,C15_H15P,C15_H15P_CS1,C15_H15P_CS2,C15_H15P_CS3,C15_H15P_CS4,C15_H15P_CS5,C15_H15P_CS6,C15_H15P_CS7,C15_H15P_CS8,C15_F15P,C15_F15P_CS1,C15_F15P_CS2,C15_F15P_CS3,C15_F15P_CS4,C15_F15P_CS5,C15_F15P_CS6,C15_F15P_CS7,C15_F15P_CS8,P15_POP_FR,P15_POP_ETR,P15_POP_IMM,P15_PMEN,P15_PHORMEN
+010010000,84,01,01000,01001,L'Abergement-Clémenciat,ZZZZZZ,0100100,L'Abergement-Clémenciat (commune non irisée),Z,0,5,767.0,29.0,18.0,57.0,90.0,36.0,106.0,193.0,95.0,111.0,32.0,161.0,102.0,132.0,189.0,125.0,58.0,212.0,412.0,143.0,392.0,84.0,55.0,65.0,99.0,61.0,28.0,113.0,206.0,73.0,375.0,77.0,47.0,67.0,90.0,64.0,30.0,99.0,206.0,70.0,605.0,15.0,20.0,75.0,95.0,100.0,125.0,145.0,30.0,320.0,10.0,15.0,50.0,45.0,15.0,95.0,75.0,15.0,285.0,5.0,5.0,25.0,50.0,85.0,30.0,70.0,15.0,759.0,8.0,20.0,767.0,0.0
+010020000,84,01,01000,01002,L'Abergement-de-Varey,ZZZZZZ,0100200,L'Abergement-de-Varey (commune non irisée),Z,0,5,241.0,13.884773662551442,9.91769547325103,13.884773662551442,23.802469135802472,7.934156378600824,53.55555555555557,49.58847736625515,24.79423868312757,32.7283950617284,10.909465020576134,54.54732510288066,27.769547325102884,69.42386831275721,36.69547325102881,33.720164609053505,18.843621399176957,65.4567901234568,131.9053497942387,43.637860082304535,121.98765432098767,25.78600823045268,9.91769547325103,37.68724279835392,16.860082304526752,21.818930041152267,9.91769547325103,29.75308641975309,65.4567901234568,26.777777777777786,119.01234567901236,28.761316872427987,17.851851851851855,31.736625514403297,19.83539094650206,11.901234567901236,8.925925925925927,35.70370370370371,66.4485596707819,16.860082304526752,193.3950617283949,0.0,19.83539094650204,14.87654320987653,24.79423868312755,39.67078189300408,9.91769547325102,64.46502057613164,19.83539094650204,114.05349794238673,0.0,14.87654320987653,4.95884773662551,4.95884773662551,14.87654320987653,9.91769547325102,44.62962962962959,19.83539094650204,79.34156378600817,0.0,4.95884773662551,9.91769547325102,19.83539094650204,24.79423868312755,0.0,19.83539094650204,0.0,239.01646090534985,1.983539094650206,2.975308641975309,241.0,0.0
+010040101,84,01,01302,01004,Ambérieu-en-Bugey,ZZZZZZ,0100401,Les Perouses-Triangle d'Activite,H,0,1,1809.1710366751545,92.79583842959426,55.90253093834016,101.0782709820182,106.84372573077776,274.6898439618323,387.84133656299184,269.10973200155024,173.80543255138872,226.57913084462703,120.52519467203376,305.296184514942,484.5742381712537,344.0700027176172,231.85127731158823,279.98274725498334,163.39658670476985,464.0816532933391,997.9850578651544,347.1043255166608,965.6391795587476,166.18202009470065,283.190706111665,190.11375689975807,124.47108870293988,128.11796025949653,73.56364749018742,262.2457224538733,546.4681242985682,156.925332806306,843.5318571164066,139.1141644202413,201.38353205958865,153.95624581785907,107.38018860864838,151.86478699548678,89.83293921458244,201.83593083946576,451.5169335665861,190.1789927103548,1489.8748236266067,0.0,10.62146798116833,61.2129614291506,200.8101163420241,275.1557699813524,211.0662045893071,412.0561077230769,318.95219558052725,780.4571207398691,0.0,7.38500114371296,32.75326301737985,104.94265852986642,128.81907908487867,171.38974693055212,180.9513448658727,154.2160271676063,709.4177028867377,0.0,3.23646683745537,28.45969841177075,95.8674578121577,146.33669089647375,39.67645765875496,231.10476285720424,164.73616841292093,1539.753331388722,269.4177052864321,299.3233115827292,1473.1703518686554,336.00068480649884
+
+
+
+
+## Dictionnaire des variables :
+VAR_ID;VAR_LIB;VAR_LIB_LONG
+IRIS;IRIS;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS
+REG;Région;Code de la région
+DEP;Département;Code du département
+UU2010;Unité urbaine;"Code du département ou ""00"" pour les unités urbaines qui s'étendent sur plusieurs départements voire au-delà de la frontière suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille"
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille
+LIBCOM;Libellé commune ou ARM;Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille
+TRIRIS;TRIRIS;Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS
+GRD_QUART;Grand quartier;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier
+LIBIRIS;Libellé de l'IRIS;Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z)
+MODIF_IRIS;Modification de l'IRIS;Type de modification de l'IRIS
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS
+P15_POP;Population en 2015 (princ);Population
+P15_POP0002;Pop 0-2 ans en 2015 (princ);Nombre de personnes de 0 à 2 ans
+P15_POP0305;Pop 3-5 ans en 2015 (princ);Nombre de personnes de 3 à 5 ans
+P15_POP0610;Pop 6-10 ans en 2015 (princ);Nombre de personnes de 6 à 10 ans
+P15_POP1117;Pop 11-17 ans en 2015 (princ);Nombre de personnes de 11 à 17 ans
+P15_POP1824;Pop 18-24 ans en 2015 (princ);Nombre de personnes de 18 à 24 ans
+P15_POP2539;Pop 25-39 ans en 2015 (princ);Nombre de personnes de 25 à 39 ans
+P15_POP4054;Pop 40-54 ans en 2015 (princ);Nombre de personnes de 40 à 54 ans
+P15_POP5564;Pop 55-64 ans en 2015 (princ);Nombre de personnes de 55 à 64 ans
+P15_POP6579;Pop 65-79 ans en 2015 (princ);Nombre de personnes de 65 à 79 ans
+P15_POP80P;Pop 80 ans ou plus en 2015 (princ);Nombre de personnes de 80 ans ou plus
+P15_POP0014;Pop 0-14 ans en 2015 (princ);Nombre de personnes de 0 à 14 ans
+P15_POP1529;Pop 15-29 ans en 2015 (princ);Nombre de personnes de 15 à 29 ans
+P15_POP3044;Pop 30-44 ans en 2015 (princ);Nombre de personnes de 30 à 44 ans
+P15_POP4559;Pop 45-59 ans en 2015 (princ);Nombre de personnes de 45 à 59 ans
+P15_POP6074;Pop 60-74 ans en 2015 (princ);Nombre de personnes de 60 à 74 ans
+P15_POP75P;Pop 75 ans ou plus en 2015 (princ);Nombre de personnes de 75 ans ou plus
+P15_POP0019;Pop 0-19 ans en 2015 (princ);Nombre de personnes de 0 à 19 ans
+P15_POP2064;Pop 20-64 ans en 2015 (princ);Nombre de personnes de 20 à 64 ans
+P15_POP65P;Pop 65 ans ou plus en 2015 (princ);Nombre de personnes de 65 ans ou plus
+P15_POPH;Pop Hommes en 2015 (princ);Nombre d'hommes
+P15_H0014;Pop Hommes 0-14 ans en 2015 (princ);Nombre d'hommes de 0 à 14 ans
+P15_H1529;Pop Hommes 15-29 ans en 2015 (princ);Nombre d'hommes de 15 à 29 ans
+P15_H3044;Pop Hommes 30-44 ans en 2015 (princ);Nombre d'hommes de 30 à 44 ans
+P15_H4559;Pop Hommes 45-59 ans en 2015 (princ);Nombre d'hommes de 45 à 59 ans
+P15_H6074;Pop Hommes 60-74 ans en 2015 (princ);Nombre d'hommes de 60 à 74 ans
+P15_H75P;Pop Hommes 75 ans ou plus en 2015 (princ);Nombre d'hommes de 75 ans ou plus
+P15_H0019;Pop Hommes 0-19 ans en 2015 (princ);Nombre d'hommes de 0 à 19 ans
+P15_H2064;Pop Hommes 20-64 ans en 2015 (princ);Nombre d'hommes de 20 à 64 ans
+P15_H65P;Pop Hommes 65 ans ou plus en 2015 (princ);Nombre d'hommes de 65 ans ou plus
+P15_POPF;Pop Femmes en 2015 (princ);Nombre de femmes
+P15_F0014;Pop Femmes 0-14 ans en 2015 (princ);Nombre de femmes de 0 à 14 ans
+P15_F1529;Pop Femmes 15-29 ans en 2015 (princ);Nombre de femmes de 15 à 29 ans
+P15_F3044;Pop Femmes 30-44 ans en 2015 (princ);Nombre de femmes de 30 à 44 ans
+P15_F4559;Pop Femmes 45-59 ans en 2015 (princ);Nombre de femmes de 45 à 59 ans
+P15_F6074;Pop Femmes 60-74 ans en 2015 (princ);Nombre de femmes de 60 à 74 ans
+P15_F75P;Pop Femmes 75 ans ou plus en 2015 (princ);Nombre de femmes de 75 ans ou plus
+P15_F0019;Pop Femmes 0-19 ans en 2015 (princ);Nombre de femmes de 0 à 19 ans
+P15_F2064;Pop Femmes 20-64 ans en 2015 (princ);Nombre de femmes de 20 à 64 ans
+P15_F65P;Pop Femmes 65 ans ou plus en 2015 (princ);Nombre de femmes de 65 ans ou plus
+C15_POP15P;Pop 15 ans ou plus en 2015 (compl);Nombre de personnes de 15 ans ou plus
+C15_POP15P_CS1;Pop 15 ans ou plus Agriculteurs exploitants en 2015 (compl);Nombre de personnes de 15 ans ou plus Agriculteurs exploitants
+C15_POP15P_CS2;Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2015 (compl);Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise
+C15_POP15P_CS3;Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2015 (compl);Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures
+C15_POP15P_CS4;Pop 15 ans ou plus Prof. intermédiaires en 2015 (compl);Nombre de personnes de 15 ans ou plus Professions intermédiaires
+C15_POP15P_CS5;Pop 15 ans ou plus Employés en 2015 (compl);Nombre de personnes de 15 ans ou plus Employés
+C15_POP15P_CS6;Pop 15 ans ou plus Ouvriers en 2015 (compl);Nombre de personnes de 15 ans ou plus Ouvriers
+C15_POP15P_CS7;Pop 15 ans ou plus Retraités en 2015 (compl);Nombre de personnes de 15 ans ou plus Retraités
+C15_POP15P_CS8;Pop 15 ans ou plus Autres en 2015 (compl);Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle
+C15_H15P;Pop 15 ans ou plus Hommes en 2015 (compl);Nombre d'hommes de 15 ans ou plus
+C15_H15P_CS1;Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2015 (compl);Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants
+C15_H15P_CS2;Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2015 (compl);Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise
+C15_H15P_CS3;Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2015 (compl);Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures
+C15_H15P_CS4;Pop 15 ans ou plus Hommes Prof. intermédiaires en 2015 (compl);Nombre d'hommes de 15 ans ou plus Professions intermédiaires
+C15_H15P_CS5;Pop 15 ans ou plus Hommes Employés en 2015 (compl);Nombre d'hommes de 15 ans ou plus Employés
+C15_H15P_CS6;Pop 15 ans ou plus Hommes Ouvriers en 2015 (compl);Nombre d'hommes de 15 ans ou plus Ouvriers
+C15_H15P_CS7;Pop 15 ans ou plus Hommes Retraités en 2015 (compl);Nombre d'hommes de 15 ans ou plus Retraités
+C15_H15P_CS8;Pop 15 ans ou plus Hommes Autres en 2015 (compl);Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle
+C15_F15P;Pop 15 ans ou plus Femmes en 2015 (compl);Nombre de femmes de 15 ans ou plus
+C15_F15P_CS1;Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2015 (compl);Nombre de femmes de 15 ans ou plus Agriculteurs exploitants
+C15_F15P_CS2;Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2015 (compl);Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise
+C15_F15P_CS3;Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2015 (compl);Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures
+C15_F15P_CS4;Pop 15 ans ou plus Femmes Prof. intermédiaires en 2015 (compl);Nombre de femmes de 15 ans ou plus Professions intermédiaires
+C15_F15P_CS5;Pop 15 ans ou plus Femmes Employés en 2015 (compl);Nombre de femmes de 15 ans ou plus Employés
+C15_F15P_CS6;Pop 15 ans ou plus Femmes Ouvriers en 2015 (compl);Nombre de femmes de 15 ans ou plus Ouvriers
+C15_F15P_CS7;Pop 15 ans ou plus Femmes Retraités en 2015 (compl);Nombre de femmes de 15 ans ou plus Retraités
+C15_F15P_CS8;Pop 15 ans ou plus Femmes Autres en 2015 (compl);Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle
+P15_POP_FR;Pop Français en 2015 (princ);Nombre de personnes de nationalité française
+P15_POP_ETR;Pop Etrangers en 2015 (princ);Nombre de personnes étrangères
+P15_POP_IMM;Pop Immigrés en 2015 (princ);Nombres de personnes immigrées
+P15_PMEN;Pop ménages en 2015 (princ);Population des ménages
+P15_PHORMEN;Pop hors ménages en 2015 (princ);Population hors ménages

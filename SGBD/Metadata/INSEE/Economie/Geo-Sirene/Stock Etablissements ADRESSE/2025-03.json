@@ -1,0 +1,385 @@
+{
+  "table_info": {
+    "schema": "economie",
+    "name": "geo_sirene_stocketablissement_2025_03",
+    "description": "https://www.data.gouv.fr/fr/datasets/base-sirene-des-etablissements-siret-geolocalisee-avec-la-base-dadresse-nationale-ban/ https://files.data.gouv.fr/geo-sirene/last/ economie.geo_sirene_stocketablissement_2025_03",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "siren",
+      "type": "VARCHAR",
+      "description": "Numéro Siren de l'entreprise à laquelle appartient l'établissement",
+      "nullable": true
+    },
+    {
+      "name": "nic",
+      "type": "VARCHAR",
+      "description": "Numéro interne de classement de l'établissement",
+      "nullable": true
+    },
+    {
+      "name": "siret",
+      "type": "VARCHAR",
+      "description": "Numéro Siret de l’établissement",
+      "nullable": true
+    },
+    {
+      "name": "statutDiffusionEtablissement",
+      "type": "VARCHAR",
+      "description": "Statut de diffusion de l’établissement",
+      "nullable": true
+    },
+    {
+      "name": "dateCreationEtablissement",
+      "type": "VARCHAR",
+      "description": "Date de création de l'établissement",
+      "nullable": true
+    },
+    {
+      "name": "trancheEffectifsEtablissement",
+      "type": "VARCHAR",
+      "description": "Tranche d’effectif salarié de l’établissement",
+      "nullable": true
+    },
+    {
+      "name": "anneeEffectifsEtablissement",
+      "type": "VARCHAR",
+      "description": "Année de la tranche d’effectif salarié de l’établissement",
+      "nullable": true
+    },
+    {
+      "name": "activitePrincipaleRegistreMetiersEtablissement",
+      "type": "VARCHAR",
+      "description": "Code de l’activité exercée par l’artisan inscrit au registre des métiers.",
+      "nullable": true
+    },
+    {
+      "name": "dateDernierTraitementEtablissement",
+      "type": "VARCHAR",
+      "description": "Date de la dernière mise à jour effectuée au répertoire Sirene sur l’établissement",
+      "nullable": true
+    },
+    {
+      "name": "etablissementSiege",
+      "type": "VARCHAR",
+      "description": "Indicatrice précisant si le Siret est celui de l’établissement siège ou non",
+      "nullable": true
+    },
+    {
+      "name": "nombrePeriodesEtablissement",
+      "type": "VARCHAR",
+      "description": "Nombre de périodes dans la vie de l’établissement",
+      "nullable": true
+    },
+    {
+      "name": "complementAdresseEtablissement",
+      "type": "VARCHAR",
+      "description": "100 caractères max",
+      "nullable": true
+    },
+    {
+      "name": "numeroVoieEtablissement",
+      "type": "VARCHAR",
+      "description": "9 caractères max",
+      "nullable": true
+    },
+    {
+      "name": "indiceRepetitionEtablissement",
+      "type": "VARCHAR",
+      "description": "4 caractères max",
+      "nullable": true
+    },
+    {
+      "name": "dernierNumeroVoieEtablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "indiceRepetitionDernierNumeroVoieEtablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "typeVoieEtablissement",
+      "type": "VARCHAR",
+      "description": "30 caractères max",
+      "nullable": true
+    },
+    {
+      "name": "libelleVoieEtablissement",
+      "type": "VARCHAR",
+      "description": "100 caractères max",
+      "nullable": true
+    },
+    {
+      "name": "codePostalEtablissement",
+      "type": "VARCHAR",
+      "description": "5 caractères",
+      "nullable": true
+    },
+    {
+      "name": "libelleCommuneEtablissement",
+      "type": "VARCHAR",
+      "description": "100 caractères max",
+      "nullable": true
+    },
+    {
+      "name": "libelleCommuneEtrangerEtablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "distributionSpecialeEtablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "codeCommuneEtablissement",
+      "type": "VARCHAR",
+      "description": "5 caractères",
+      "nullable": true
+    },
+    {
+      "name": "codeCedexEtablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "libelleCedexEtablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "codePaysEtrangerEtablissement",
+      "type": "VARCHAR",
+      "description": "5 caractères",
+      "nullable": true
+    },
+    {
+      "name": "libellePaysEtrangerEtablissement",
+      "type": "VARCHAR",
+      "description": "100 caractères max",
+      "nullable": true
+    },
+    {
+      "name": "identifiantAdresseEtablissement",
+      "type": "VARCHAR",
+      "description": "ID unique adresse",
+      "nullable": true
+    },
+    {
+      "name": "coordonneeLambertAbscisseEtablissement",
+      "type": "VARCHAR",
+      "description": "Coordonnée X Lambert",
+      "nullable": true
+    },
+    {
+      "name": "coordonneeLambertOrdonneeEtablissement",
+      "type": "VARCHAR",
+      "description": "Coordonnée Y Lambert",
+      "nullable": true
+    },
+    {
+      "name": "complementAdresse2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "numeroVoie2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "indiceRepetition2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "typeVoie2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "libelleVoie2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "codePostal2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "libelleCommune2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "libelleCommuneEtranger2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "distributionSpeciale2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "codeCommune2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "codeCedex2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "libelleCedex2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "codePaysEtranger2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "libellePaysEtranger2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "dateDebut",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "etatAdministratifEtablissement",
+      "type": "VARCHAR",
+      "description": "État administratif",
+      "nullable": true
+    },
+    {
+      "name": "enseigne1Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "enseigne2Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "enseigne3Etablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "denominationUsuelleEtablissement",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "activitePrincipaleEtablissement",
+      "type": "VARCHAR",
+      "description": "Code APE",
+      "nullable": true
+    },
+    {
+      "name": "nomenclatureActivitePrincipaleEtablissement",
+      "type": "VARCHAR",
+      "description": "Version de la nomenclature",
+      "nullable": true
+    },
+    {
+      "name": "caractereEmployeurEtablissement",
+      "type": "VARCHAR",
+      "description": "Statut employeur",
+      "nullable": true
+    },
+    {
+      "name": "longitude",
+      "type": "VARCHAR",
+      "description": "longitude de l'établissement",
+      "nullable": true
+    },
+    {
+      "name": "latitude",
+      "type": "VARCHAR",
+      "description": "latitude de l'établissement",
+      "nullable": true
+    },
+    {
+      "name": "geo_score",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "geo_type",
+      "type": "VARCHAR",
+      "description": "type d'adresse trouvée",
+      "nullable": true
+    },
+    {
+      "name": "geo_adresse",
+      "type": "VARCHAR",
+      "description": "libellé de l'adresse trouvée",
+      "nullable": true
+    },
+    {
+      "name": "geo_id",
+      "type": "VARCHAR",
+      "description": "identifiant de cette adresse dans la base source où elle a été trouvée (BAN ou POI)",
+      "nullable": true
+    },
+    {
+      "name": "geo_ligne",
+      "type": "VARCHAR",
+      "description": "quelle ligne d'adresse de la base SIRENE a pu être géocodée (G=géographique, D=déclarée, N = normalisée)",
+      "nullable": true
+    },
+    {
+      "name": "geo_l4",
+      "type": "VARCHAR",
+      "description": "ligne 4 à la norme AFNOR adresse",
+      "nullable": true
+    },
+    {
+      "name": "geo_l5",
+      "type": "VARCHAR",
+      "description": "ligne 5 à la norme AFNOR adresse",
+      "nullable": true
+    }
+  ]
+}

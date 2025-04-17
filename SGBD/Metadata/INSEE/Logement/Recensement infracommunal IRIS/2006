@@ -1,0 +1,118 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/2028562
+
+
+## Chemin disque dur : 
+C:\Users\thiba\OneDrive\Documents\Données\Logement\Logement_IRIS\2006
+
+
+## Tableau SQL : 
+LOG_IRIS_2006
+
+
+
+## 4 premières lignes :
+IRIS;REG;DEP;UU1999;COM;LIBCOM;TRIRIS;GRD_QUART;LIBIRIS;TYP_IRIS;MODIF_IRIS;LAB_IRIS;P06_LOG;P06_RP;P06_RSECOCC;P06_LOGVAC;P06_MAISON;P06_APPART;P06_RP_1P;P06_RP_2P;P06_RP_3P;P06_RP_4P;P06_RP_5PP;P06_NBPI_RP;P06_RPMAISON;P06_NBPI_RPMAISON;P06_RPAPPART;P06_NBPI_RPAPPART;P06_RP_M40M2;P06_RP_4099M2;P06_RP_100M2P;P06_RP_ACHTT;P06_RP_ACHT1;P06_RP_ACHT2;P06_RP_ACHT3;P06_RP_ACHT4;P06_RPMAISON_ACHTT;P06_RPMAISON_ACHT1;P06_RPMAISON_ACHT2;P06_RPMAISON_ACHT3;P06_RPMAISON_ACHT4;P06_RPAPPART_ACHTT;P06_RPAPPART_ACHT1;P06_RPAPPART_ACHT2;P06_RPAPPART_ACHT3;P06_RPAPPART_ACHT4;P06_MEN;P06_MEN_ANEM0002;P06_MEN_ANEM0204;P06_MEN_ANEM0509;P06_MEN_ANEM10P;P06_PMEN;P06_PMEN_ANEM0002;P06_PMEN_ANEM0204;P06_PMEN_ANEM0509;P06_PMEN_ANEM10P;P06_NBPI_RP_ANEM0002;P06_NBPI_RP_ANEM0204;P06_NBPI_RP_ANEM0509;P06_NBPI_RP_ANEM10P;P06_RP_PROP;P06_RP_LOC;P06_RP_LOCHLMV;P06_RP_GRAT;P06_NPER_RP;P06_NPER_RP_PROP;P06_NPER_RP_LOC;P06_NPER_RP_LOCHLMV;P06_NPER_RP_GRAT;P06_ANEM_RP;P06_ANEM_RP_PROP;P06_ANEM_RP_LOC;P06_ANEM_RP_LOCHLMV;P06_ANEM_RP_GRAT;P06_RP_SDB;P06_RP_CCCOLL;P06_RP_CCIND;P06_RP_CINDELEC;P06_RP_GARL;P06_RP_VOIT1P;P06_RP_VOIT1;P06_RP_VOIT2P;P06_RP_ELEC;P06_RP_EAUCH;P06_RP_BDWC;P06_RP_CHOS;P06_RP_CLIM;P06_RP_TTEGOU;P06_RP_HABFOR;P06_RP_CASE;P06_RP_MIBOIS;P06_RP_MIDUR
+010010000;82;01;01000;01001;L'Abergement-Clémenciat;ZZZZZZ;ZZZZZZZ;L'Abergement-Clémenciat;Z;0;7;331;299;24;8;318;11;0;15;34;84;166;1448;287;1416;10;27;2;142;155;283;111;16;82;74;272;109;16;76;71;9;2;0;5;2;299;26;55;72;146;811;72;163;217;359;116;258;362;712;244;47;14;8;811;677;116;28;18;4372;3914;319;57;139;291;3;174;53;257;284;111;173;;;;;;;;;;
+010020000;82;01;01000;01002;L'Abergement-de-Varey;ZZZZZZ;ZZZZZZZ;L'Abergement-de-Varey;Z;0;7;166;85;61;20;163;3;1;5;16;22;41;392;82;380;3;12;6;40;39;85;62;4;10;9;82;60;4;10;8;3;2;0;0;1;85;4;22;20;39;198;6;54;52;86;12;90;91;199;68;10;0;7;198;156;26;0;16;1155;1043;68;0;44;81;4;43;8;64;78;32;46;;;;;;;;;;
+010040101;82;01;01303;01004;Ambérieu-en-Bugey;ZZZZZZ;0100401;Les Perouses-Triangle d'Activite;H;0;1;745;716;5;24;281;463;14;109;190;226;176;2723;260;1186;455;1535;57;543;116;716;123;330;231;32;260;40;98;120;2;455;82;232;112;30;716;118;136;150;311;1706;244;338;432;692;418;472;557;1277;233;434;332;49;1706;524;1027;837;155;9539;5184;4116;3300;239;689;330;317;66;441;587;354;233;;;;;;;;;;
+
+
+
+
+
+## Dictionnaire des variables :
+
+VAR_ID;VAR_LIB;VAR_LIB_LONG;ANNEE;SOURCE
+IRIS;IRIS;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS ;2008;Géographie infra-communale
+REG;Région;Code de la région;2008;Code officiel géographique
+DEP;Département;Code du département;2008;Code officiel géographique
+UU1999;Unité urbaine;"Code du département ou ""00"" pour les unités urbaines interdépartementales suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille";2008;Géographie urbaine
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;2008;Code officiel géographique
+LIBCOM;Libellé commune ou ARM;Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2008;Code officiel géographique
+TRIRIS;TRIRIS;Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS;2008;Géographie infra-communale
+GRD_QUART;Grand quartier;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier ;2008;Géographie infra-communale
+LIBIRIS;Libellé de l'IRIS;Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2008;Géographie infra-communale
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);2008;Géographie infra-communale
+MODIF_IRIS;Modification de l'IRIS;Type de modification de l'IRIS depuis 1999;2008;Géographie infra-communale
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS;2006;RP2006
+P06_LOG;Logements;Nombre de logements;2006;RP2006 exploitation principale
+P06_RP;Résidences principales;Nombre de résidences principales;2006;RP2006 exploitation principale
+P06_RSECOCC;Rés secondaires et logts occasionnels;Nombre de résidences secondaires et logements occasionnels;2006;RP2006 exploitation principale
+P06_LOGVAC;Logements vacants;Nombre de logements vacants;2006;RP2006 exploitation principale
+P06_MAISON;Maisons;Nombre de maisons;2006;RP2006 exploitation principale
+P06_APPART;Appartements;Nombre d'appartements;2006;RP2006 exploitation principale
+P06_RP_1P;Rés princ 1 pièce;Nombre de résidences principales d'1 pièce;2006;RP2006 exploitation principale
+P06_RP_2P;Rés princ 2 pièces;Nombre de résidences principales de 2 pièces;2006;RP2006 exploitation principale
+P06_RP_3P;Rés princ 3 pièces;Nombre de résidences principales de 3 pièces;2006;RP2006 exploitation principale
+P06_RP_4P;Rés princ 4 pièces;Nombre de résidences principales de 4 pièces;2006;RP2006 exploitation principale
+P06_RP_5PP;Rés princ 5 pièces ou plus;Nombre de résidences principales de 5 pièces ou plus;2006;RP2006 exploitation principale
+P06_NBPI_RP;Pièces rés princ;Nombre de pièces des résidences principales;2006;RP2006 exploitation principale
+P06_RPMAISON;Rés princ type maison;Nombre de résidences principales de type maison;2006;RP2006 exploitation principale
+P06_NBPI_RPMAISON;Pièces rés princ type maison;Nombre de pièces des résidences principales de type maison;2006;RP2006 exploitation principale
+P06_RPAPPART;Rés princ type appartement;Nombre de résidences principales de type appartement;2006;RP2006 exploitation principale
+P06_NBPI_RPAPPART;Pièces rés princ type appartement;Nombre de pièces des résidences principales de type appartement;2006;RP2006 exploitation principale
+P06_RP_M40M2;Rés princ de moins de 40 m2;Nombre de résidences principales de moins de 40 m2;2006;RP2006 exploitation principale
+P06_RP_4099M2;Rés princ de 40 à 99 m2;Nombre de résidences principales de  40 à 99 m2;2006;RP2006 exploitation principale
+P06_RP_100M2P;Rés princ de 100 m2 ou plus;Nombre de résidences principales de 100 m2 ou plus;2006;RP2006 exploitation principale
+P06_RP_ACHTT;Rés princ avt 2004;Nombre de résidences principales construites avant 2004;2006;RP2006 exploitation principale
+P06_RP_ACHT1;Rés princ avt 1949;Nombre de résidences principales construites avant 1949;2006;RP2006 exploitation principale
+P06_RP_ACHT2;Rés princ 1949 à 1974;Nombre de résidences principales construites de 1949 à 1974;2006;RP2006 exploitation principale
+P06_RP_ACHT3;Rés princ 1975 à 1989;Nombre de résidences principales construites de 1975 à 1989;2006;RP2006 exploitation principale
+P06_RP_ACHT4;Rés princ 1990 à 2003;Nombre de résidences principales construites de 1990 à 2003;2006;RP2006 exploitation principale
+P06_RPMAISON_ACHTT;Rés princ Type maison avt 2004;Nombre de résidences principales de  type maison construites avant 2004;2006;RP2006 exploitation principale
+P06_RPMAISON_ACHT1;Rés princ Type maison avt 1949;Nombre de résidences principales de  type maison construites avant 1949;2006;RP2006 exploitation principale
+P06_RPMAISON_ACHT2;Rés princ Type maison 1949 à 1974;Nombre de résidences principales de type maison construites de 1949 à 1974;2006;RP2006 exploitation principale
+P06_RPMAISON_ACHT3;Rés princ Type maison 1975 à 1989;Nombre de résidences principales de type maison construites de 1975 à 1989;2006;RP2006 exploitation principale
+P06_RPMAISON_ACHT4;Rés princ Type maison 1990 à 2003;Nombre de résidences principales de type maison construites de 1990 à 2003;2006;RP2006 exploitation principale
+P06_RPAPPART_ACHTT;Rés princ Type appart avt 2004;Nombre de résidences principales de type appartement construites avant 2004;2006;RP2006 exploitation principale
+P06_RPAPPART_ACHT1;Rés princ Type appart avt 1949;Nombre de résidences principales de type appartement construites avant 1949;2006;RP2006 exploitation principale
+P06_RPAPPART_ACHT2;Rés princ Type appart 1949 à 1974;Nombre de résidences principales de type appartement construites de 1949 à 1974;2006;RP2006 exploitation principale
+P06_RPAPPART_ACHT3;Rés princ Type appart 1975 à 1989;Nombre de résidences principales de type appartement construites de 1975 à 1989;2006;RP2006 exploitation principale
+P06_RPAPPART_ACHT4;Rés princ Type appart 1990 à 2003;Nombre de résidences principales de type appartement construites de 1990 à 2003;2006;RP2006 exploitation principale
+P06_MEN;Ménages;Nombre de ménages;2006;RP2006 exploitation principale
+P06_MEN_ANEM0002;Ménages emménagés moins 2 ans;Nombre de ménages ayant emménagé depuis moins de 2 ans;2006;RP2006 exploitation principale
+P06_MEN_ANEM0204;Ménages emménagés entre 2-4 ans;Nombre de ménages ayant emménagé entre 2 et 4 ans;2006;RP2006 exploitation principale
+P06_MEN_ANEM0509;Ménages emménagés entre 5-9 ans;Nombre de ménages ayant emménagé entre 5 et 9 ans;2006;RP2006 exploitation principale
+P06_MEN_ANEM10P;Ménages emménagés depuis 10 ans ou plus;Nombre de ménages ayant emménagé depuis 10 ans ou plus;2006;RP2006 exploitation principale
+P06_PMEN;Pop ménages;Population des ménages;2006;RP2006 exploitation principale
+P06_PMEN_ANEM0002;Pop mén emménagés moins 2 ans;Population des ménages ayant emménagé depuis moins de 2 ans;2006;RP2006 exploitation principale
+P06_PMEN_ANEM0204;Pop mén emménagés entre 2-4 ans;Population des ménages ayant emménagé entre 2 et 4 ans;2006;RP2006 exploitation principale
+P06_PMEN_ANEM0509;Pop mén emménagés entre 5-9 ans;Population des ménages ayant emménagé entre 5 et 9 ans;2006;RP2006 exploitation principale
+P06_PMEN_ANEM10P;Pop mén emménagés depuis 10 ans ou plus;Population des ménages ayant emménagé depuis 10 ans ou plus;2006;RP2006 exploitation principale
+P06_NBPI_RP_ANEM0002;Pièces Rés princ Mén. emménagés moins 2 ans;Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans;2006;RP2006 exploitation principale
+P06_NBPI_RP_ANEM0204;Pièces Rés princ Mén. emménagés entre 2-4 ans;Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans;2006;RP2006 exploitation principale
+P06_NBPI_RP_ANEM0509;Pièces Rés princ Mén. emménagés entre 5-9 ans;Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans;2006;RP2006 exploitation principale
+P06_NBPI_RP_ANEM10P;Pièces Rés princ Mén. emménagés depuis 10 ans ou plus;Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus;2006;RP2006 exploitation principale
+P06_RP_PROP;Rés princ occupées Propriétaires;Nombre de résidences principales occupées par propriétaires;2006;RP2006 exploitation principale
+P06_RP_LOC;Rés princ occupées Locataires;Nombre de résidences principales occupées par locataires;2006;RP2006 exploitation principale
+P06_RP_LOCHLMV;Rés princ HLM louée vide;Nombre de résidences principales HLM loué vide;2006;RP2006 exploitation principale
+P06_RP_GRAT;Rés princ logé gratuit;Nombre de résidences principales occupées gratuitement;2006;RP2006 exploitation principale
+P06_NPER_RP;Personnes Rés princ;Nombre de personnes des résidences principales;2006;RP2006 exploitation principale
+P06_NPER_RP_PROP;Pers Rés princ occupées Propriétaires;Nombre de personnes des résidences principales occupées par des propriétaires;2006;RP2006 exploitation principale
+P06_NPER_RP_LOC;Pers Rés princ occupées Locataires;Nombre de personnes des résidences principales occupées par des locataires;2006;RP2006 exploitation principale
+P06_NPER_RP_LOCHLMV;Pers Rés princ HLM louées vides;Nombre de personnes des résidences principales HLM louées vides;2006;RP2006 exploitation principale
+P06_NPER_RP_GRAT;Pers Rés princ occupées gratuit;Nombre de personnes des résidences principales occupées gratuitement;2006;RP2006 exploitation principale
+P06_ANEM_RP;Anc tot Emméngt Rés princ (années);Ancienneté totale d'emménagement dans les résidences principales en années;2006;RP2006 exploitation principale
+P06_ANEM_RP_PROP;Anc tot Emméngt Rés princ occ par Propriétaires (années);Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années;2006;RP2006 exploitation principale
+P06_ANEM_RP_LOC;Anc tot Emméngt Rés princ occ par Locataires (années);Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années;2006;RP2006 exploitation principale
+P06_ANEM_RP_LOCHLMV;Anc tot Emméngt Rés princ HLM louées vides (années);Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années;2006;RP2006 exploitation principale
+P06_ANEM_RP_GRAT;Anc tot Emméngt Rés princ occ gratuit (années);Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années;2006;RP2006 exploitation principale
+P06_RP_SDB;Rés princ SDB baignoire douche (MET);Nombre de résidences principales avec salle de bain dotée de baignoire ou douche (variable spécifique à la France métropolitaine);2006;RP2006 exploitation principale
+P06_RP_CCCOLL;Rés princ Chauffage Central Collectif (MET);Nombre de résidences principales avec chauffage central collectif (variable spécifique à la France métropolitaine);2006;RP2006 exploitation principale
+P06_RP_CCIND;Rés princ Chauffage Central Individuel (MET);Nombre de résidences principales avec chauffage central individuel (variable spécifique à la France métropolitaine);2006;RP2006 exploitation principale
+P06_RP_CINDELEC;Rés princ Chauffage Individuel Electrique (MET);Nombre de résidences principales avec chauffage individuel électrique (variable spécifique à la France métropolitaine);2006;RP2006 exploitation principale
+P06_RP_GARL;Ménages au moins un parking (MET);Nombre de ménages disposant au moins d'un emplacement réservé au stationnement (variable spécifique à la France métropolitaine);2006;RP2006 exploitation principale
+P06_RP_VOIT1P;Ménages au moins une voiture;Nombre de ménages disposant au moins d'une voiture;2006;RP2006 exploitation principale
+P06_RP_VOIT1;Ménages une voiture;Nombre de ménages disposant d'une voiture;2006;RP2006 exploitation principale
+P06_RP_VOIT2P;Ménages deux voitures ou plus;Nombre de ménages disposant de deux voitures ou plus;2006;RP2006 exploitation principale
+P06_RP_ELEC;Rés princ avec électricité (DOM);Nombre de résidences principales avec électricité dans le logement (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_EAUCH;Rés princ avec eau chaude (DOM);Nombre de résidences principales avec eau chaude dans le logement (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_BDWC;Rés princ avec Bain/Douche WC (DOM);Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_CHOS;Rés princ avec chauffe-eau solaire (DOM);Nombre de résidences principales avec chauffe-eau solaire (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_CLIM;Rés princ avec pièce climatisée (DOM);Nombre de résidences principales avec pièce climatisée (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_TTEGOU;Rés princ avec tout à l'égout (DOM);Nombre de résidences principales avec tout à l'égout (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_HABFOR;Habitations de fortune (DOM);Nombre de résidences principales habitations de fortune (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_CASE;Cases traditionnelles (DOM);Nombre de résidences principales cases traditionnelles (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_MIBOIS;Maisons ou Immeubles en bois (DOM);Nombre de résidences principales maisons ou immeubles en bois (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale
+P06_RP_MIDUR;Maisons ou Immeubles en dur (DOM);Nombre de résidences principales maisons ou immeubles en dur (variable spécifique aux Départements d'outre-mer);2006;RP2006 exploitation principale

@@ -1,0 +1,19 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "vue_etablissements_complet",
+    "description": "Vue de jointure entre les tables : - Stock Etablissements - Stock Unités légales - Nomenclature NAF vue_etablissements_complet   Variable;Contenu",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "NAF",
+      "type": "VARCHAR",
+      "description": "## Tableau SQL : \nvue_etablissements_complet  \n\n## Dictionnaire des variables :\nVariable;Contenu\nsiren;Siren\ndenominationUniteLegale;Dénomination de l'unité légale\ndenominationUsuelle1UniteLegale;Dénomination usuelle 1 de l'unité légale\ntrancheEffectifsEtablissement;Tranche d'effectifs de l'établissement    \nlibelle_tranche_effectifs;Libellé de la tranche d'effectifs de l'établissement\ndateDernierTraitementEtablissement;Date du dernier traitement de l'établissement\netablissementSiege;Etablissement siège\ncomplementAdresseEtablissement;Complément d'adresse de l'établissement\nnumeroVoieEtablissement;Numéro de voie de l'établissement\ntypeVoieEtablissement;Type de voie de l'établissement   \nlibelleVoieEtablissement;Libellé de la voie de l'établissement\nlibelleCommuneEtablissement;Libellé de la commune de l'établissement\nsecteur_economique;Secteur économique de l'établissement\ncodeCommuneEtablissement;Code de la commune de l'établissement\ncaractereEmployeurEtablissement;Caractère employeur de l'établissement\nlibelle_etat_administratif;Libellé de l'état administratif de l'établissement   \nlongitude;Longitude de l'établissement  \nlatitude;Latitude de l'établissement\ngeo_score;Score géographique de l'établissement\ngeo_type;Type de géographie de l'établissement\ngeo_adresse;Adresse géographique de l'établissement\ngeo_id;Identifiant géographique de l'établissement\ngeo_ligne;Ligne géographique de l'établissement",
+      "nullable": true
+    }
+  ]
+}

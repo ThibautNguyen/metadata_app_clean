@@ -1,0 +1,116 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/8268838
+
+## Chemin disque dur : 
+C:\Users\thiba\OneDrive\Documents\Données\Logement\Logement_IRIS\2021
+
+## Tableau SQL : 
+LOG_IRIS_2021
+
+# 4 premières lignes :
+IRIS;COM;TYP_IRIS;LAB_IRIS;P21_LOG;P21_RP;P21_RSECOCC;P21_LOGVAC;P21_MAISON;P21_APPART;P21_RP_1P;P21_RP_2P;P21_RP_3P;P21_RP_4P;P21_RP_5PP;P21_NBPI_RP;P21_RPMAISON;P21_NBPI_RPMAISON;P21_RPAPPART;P21_NBPI_RPAPPART;P21_RP_M30M2;P21_RP_3040M2;P21_RP_4060M2;P21_RP_6080M2;P21_RP_80100M2;P21_RP_100120M2;P21_RP_120M2P;P21_RP_ACHTOT;P21_RP_ACH19;P21_RP_ACH45;P21_RP_ACH70;P21_RP_ACH90;P21_RP_ACH05;P21_RP_ACH18;P21_RPMAISON_ACHTOT;P21_RPMAISON_ACH19;P21_RPMAISON_ACH45;P21_RPMAISON_ACH70;P21_RPMAISON_ACH90;P21_RPMAISON_ACH05;P21_RPMAISON_ACH18;P21_RPAPPART_ACHTOT;P21_RPAPPART_ACH19;P21_RPAPPART_ACH45;P21_RPAPPART_ACH70;P21_RPAPPART_ACH90;P21_RPAPPART_ACH05;P21_RPAPPART_ACH18;P21_MEN;P21_MEN_ANEM0002;P21_MEN_ANEM0204;P21_MEN_ANEM0509;P21_MEN_ANEM10P;P21_PMEN;P21_PMEN_ANEM0002;P21_PMEN_ANEM0204;P21_PMEN_ANEM0509;P21_PMEN_ANEM10P;P21_NBPI_RP_ANEM0002;P21_NBPI_RP_ANEM0204;P21_NBPI_RP_ANEM0509;P21_NBPI_RP_ANEM10P;P21_RP_PROP;P21_RP_LOC;P21_RP_LOCHLMV;P21_RP_GRAT;P21_NPER_RP;P21_NPER_RP_PROP;P21_NPER_RP_LOC;P21_NPER_RP_LOCHLMV;P21_NPER_RP_GRAT;P21_ANEM_RP;P21_ANEM_RP_PROP;P21_ANEM_RP_LOC;P21_ANEM_RP_LOCHLMV;P21_ANEM_RP_GRAT;P21_RP_SDB;P21_RP_CCCOLL;P21_RP_CCIND;P21_RP_CINDELEC;P21_RP_ELEC;P21_RP_EAUCH;P21_RP_BDWC;P21_RP_CHOS;P21_RP_CLIM;P21_RP_TTEGOU;P21_RP_GARL;P21_RP_VOIT1P;P21_RP_VOIT1;P21_RP_VOIT2P;P21_RP_HABFOR;P21_RP_CASE;P21_RP_MIBOIS;P21_RP_MIDUR;C21_RP_HSTU1P;C21_RP_HSTU1P_SUROCC
+010010000;01001;Z;5;372.387493855914;341.234562367113;13.7072898550724;17.4456416337286;362.548321646553;8.59305494980861;0;7.62442087417736;29.7039977107693;91.3590624959263;212.54708128624;1723.39083212678;332.641507417304;1700.4593986965;8.59305494980861;22.9314334302727;0;1.90402768969646;9.52844856387383;24.935545199066;90.4997706912743;89.7076209298914;124.659149293311;320.966217369233;74.1497078013686;21.2367589185817;14.4808867690299;96.1275919954267;84.9563028196532;30.0149690651726;312.373162419424;74.1497078013686;21.2367589185817;13.5205628087901;93.2632403454905;82.1002612851085;28.1026312600846;8.59305494980861;0;0;0.960323960239741;2.8643516499362;2.8560415345447;1.91233780508797;341.234562367113;35.6926447131841;57.9499485783559;56.1547439124238;191.437225163149;832;90.1111686190194;154.508836456712;165.380033152735;421.999961771534;176.80369266704;292.345806660401;271.413002965513;982.828329833822;292.172831181122;47.1325549002898;13.4115125984296;1.92917628570112;832;723.870776678168;103.268559713572;23.0650481264546;4.8606636082598;6023.86772694757;5507.44448473269;507.729374631219;122.766476273439;8.69386758365739;337.393048276324;2.87266176532771;166.84713578845;73.0551818467009;;;;;;;295.928973767827;331.689275322626;109.305986129615;222.383289193011;;;;;347.030546406168;0
+010020000;01002;Z;5;174.93867203683;115.722510420668;44.9604190048634;14.2557426112982;173.0995732852;1.83909875162981;0.919549375814906;1.89722650476444;13.0167839537446;27.6463289257063;72.2426216606381;590.738459020017;113.883411669039;584.301613389313;1.83909875162981;6.43684563070434;0;1.83909875162981;1.89722650476444;13.1795818086463;21.582504145489;28.9012861336241;48.3228130765147;111.987075840474;57.7972815941249;5.83747195516739;12.479156176018;8.50848311481003;9.69188951010613;17.6727934902479;111.067526464659;57.7972815941249;5.83747195516739;11.5596068002031;8.50848311481003;9.69188951010613;17.6727934902479;0.919549375814906;0;0;0.919549375814906;0;0;0;115.722510420668;6.55401953311122;17.3693508931036;25.8492154694464;65.9499245250071;267;10.5265016666571;44.9914049746815;60.3472738567514;151.13481950191;29.4434218695171;77.6262325936401;136.616640612641;347.052163944219;101.578666472362;11.3851958208619;0;2.75864812744472;267;241.000483268803;23.2408686037518;0;2.75864812744472;1947.96060172138;1866.70226682589;43.5568104870813;0;37.7015244084112;111.987075840474;2.90352217218116;62.1337329329469;14.421115957077;;;;;;;88.0207534903655;110.176595627312;48.5678026720614;61.6087929552503;;;;;114.880886053273;0
+010040101;01004;H;1;921.002491261541;792.669629574697;34.6945377768025;93.638323910041;304.557942364194;582.114338400216;158.702313203336;39.2589124850562;159.782330714938;253.999062380399;180.927010790967;2754.73311838838;270.247553877497;1327.37571284571;495.409521833609;1400.34485167908;162.075323181544;8.44676196448263;78.7322756647756;202.956596345066;211.977384747854;73.877717003955;54.6035706670192;792.669629574697;35.5654531196777;15.7457659476689;203.722907070997;235.591736625614;193.024613940637;109.019152870102;270.247553877497;12.5830482343776;15.7457659476689;79.9661697832634;108.408084532655;25.0439819260949;28.5005034534368;495.409521833609;22.9824048853001;0;123.756737287734;118.179467471762;149.972262772148;80.5186494166652;792.669629574697;179.737421839307;261.525336428303;88.3484273681012;263.058443938986;1433.95063343904;232.146565289434;492.275760778448;227.177070607335;482.351236763826;428.158359636707;845.309332194208;348.771965810982;1132.49346074649;311.538452501158;441.105203174343;102.135325467718;40.0259738991958;1433.95063343904;637.839113067106;707.766361573249;193.806136067433;88.3451587986879;8741.31310025553;6458.59777205019;2163.59704704854;770.061217886611;119.118281156809;757.624091453759;109.732938712768;372.842390543546;285.427543605797;;;;;;;555.223980363552;664.163145715721;427.860412598023;236.302733117698;;;;;690.741932753927;15.3693222772697
+
+
+
+
+## Dictionnaire des variables : 
+COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;;;CHAR;5
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);;;CHAR;1
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS;;;CHAR;1
+P21_LOG;Logements en 2021 (princ);Nombre de logements;;;NUM;17
+P21_RP;Résidences principales en 2021 (princ);Nombre de résidences principales;;;NUM;17
+P21_RSECOCC;Rés secondaires et logts occasionnels en 2021 (princ);Nombre de résidences secondaires et logements occasionnels;;;NUM;17
+P21_LOGVAC;Logements vacants en 2021 (princ);Nombre de logements vacants;;;NUM;17
+P21_MAISON;Maisons en 2021 (princ);Nombre de maisons;;;NUM;18
+P21_APPART;Appartements en 2021 (princ);Nombre d'appartements;;;NUM;17
+P21_RP_1P;Rés princ 1 pièce en 2021 (princ);Nombre de résidences principales d'1 pièce;;;NUM;17
+P21_RP_2P;Rés princ 2 pièces en 2021 (princ);Nombre de résidences principales de 2 pièces;;;NUM;17
+P21_RP_3P;Rés princ 3 pièces en 2021 (princ);Nombre de résidences principales de 3 pièces;;;NUM;17
+P21_RP_4P;Rés princ 4 pièces en 2021 (princ);Nombre de résidences principales de 4 pièces;;;NUM;17
+P21_RP_5PP;Rés princ 5 pièces ou plus en 2021 (princ);Nombre de résidences principales de 5 pièces ou plus;;;NUM;17
+P21_NBPI_RP;Pièces rés princ en 2021 (princ);Nombre de pièces des résidences principales;;;NUM;17
+P21_RPMAISON;Rés princ type maison en 2021 (princ);Nombre de résidences principales de type maison;;;NUM;18
+P21_NBPI_RPMAISON;Pièces rés princ type maison en 2021 (princ);Nombre de pièces des résidences principales de type maison;;;NUM;17
+P21_RPAPPART;Rés princ type appartement en 2021 (princ);Nombre de résidences principales de type appartement;;;NUM;17
+P21_NBPI_RPAPPART;Pièces rés princ type appartement en 2021 (princ);Nombre de pièces des résidences principales de type appartement;;;NUM;17
+P21_RP_M30M2;Rés princ de moins de 30 m2 en 2021 (princ);Nombre de résidences principales de moins de 30 m2;;;NUM;17
+P21_RP_3040M2;Rés princ de 30 à moins de 40 m2 en 2021 (princ);Nombre de résidences principales de 30 à moins de 40 m2;;;NUM;19
+P21_RP_4060M2;Rés princ de 40 à moins de 60 m2 en 2021 (princ);Nombre de résidences principales de 40 à moins de 60 m2;;;NUM;17
+P21_RP_6080M2;Rés princ de 60 à moins de 80 m2 en 2021 (princ);Nombre de résidences principales de 60 à moins de 80 m2;;;NUM;17
+P21_RP_80100M2;Rés princ de 80 à moins de 100 m2 en 2021 (princ);Nombre de résidences principales de 80 à moins de 100 m2;;;NUM;17
+P21_RP_100120M2;Rés princ de 100 à moins de 120 m2 en 2021 (princ);Nombre de résidences principales de 100 à moins de 120 m2;;;NUM;17
+P21_RP_120M2P;Rés princ de 120 m2 ou plus en 2021 (princ);Nombre de résidences principales de 120 m2 ou plus;;;NUM;19
+P21_RP_ACHTOT;Rés princ avt 2018 en 2021 (princ);Nombre de résidences principales construites avant 2019;;;NUM;17
+P21_RP_ACH19;Rés princ avt 1919 en 2021 (princ);Nombre de résidences principales construites avant 1919;;;NUM;17
+P21_RP_ACH45;Rés princ 1919 à 1945 en 2021 (princ);Nombre de résidences principales construites de 1919 à 1945;;;NUM;17
+P21_RP_ACH70;Rés princ 1946 à 1970 en 2021 (princ);Nombre de résidences principales construites de 1946 à 1970;;;NUM;17
+P21_RP_ACH90;Rés princ 1971 à 1990 en 2021 (princ);Nombre de résidences principales construites de 1971 à 1990;;;NUM;17
+P21_RP_ACH05;Rés princ 1991 à 2005 en 2021 (princ);Nombre de résidences principales construites de 1991 à 2005;;;NUM;18
+P21_RP_ACH18;Rés princ 2006 à 2018 en 2021 (princ);Nombre de résidences principales construites de 2006 à 2018;;;NUM;20
+P21_RPMAISON_ACHTOT;Rés princ Type maison avt 2019 en 2021 (princ);Nombre de résidences principales de type maison construites avant 2019;;;NUM;18
+P21_RPMAISON_ACH19;Rés princ Type maison avt 1919 en 2021 (princ);Nombre de résidences principales de type maison construites avant 1919;;;NUM;17
+P21_RPMAISON_ACH45;Rés princ Type maison 1919 à 1945 en 2021 (princ);Nombre de résidences principales de type maison construites de 1919 à 1945;;;NUM;17
+P21_RPMAISON_ACH70;Rés princ Type maison 1946 à 1970 en 2021 (princ);Nombre de résidences principales de type maison construites de 1946 à 1970;;;NUM;17
+P21_RPMAISON_ACH90;Rés princ Type maison 1971 à 1990 en 2021 (princ);Nombre de résidences principales de type maison construites de 1971 à 1990;;;NUM;18
+P21_RPMAISON_ACH05;Rés princ Type maison 1991 à 2005 en 2021 (princ);Nombre de résidences principales de type maison construites de 1991 à 2005;;;NUM;17
+P21_RPMAISON_ACH18;Rés princ Type maison 2006 à 2018 en 2021 (princ);Nombre de résidences principales de type maison construites de 2006 à 2018;;;NUM;17
+P21_RPAPPART_ACHTOT;Rés princ Type appart avt 2019 en 2021 (princ);Nombre de résidences principales de type appartement construites avant 2019;;;NUM;17
+P21_RPAPPART_ACH19;Rés princ Type appart avt 1919 en 2021 (princ);Nombre de résidences principales de type appartement construites avant 1919;;;NUM;20
+P21_RPAPPART_ACH45;Rés princ Type appart 1919 à 1945 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1919 à 1945;;;NUM;17
+P21_RPAPPART_ACH70;Rés princ Type appart 1946 à 1970 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1946 à 1970;;;NUM;17
+P21_RPAPPART_ACH90;Rés princ Type appart 1971 à 1990 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1971 à 1990;;;NUM;17
+P21_RPAPPART_ACH05;Rés princ Type appart 1991 à 2005 en 2021 (princ);Nombre de résidences principales de type appartement construites de 1991 à 2005;;;NUM;18
+P21_RPAPPART_ACH18;Rés princ Type appart 2006 à 2018 en 2021 (princ);Nombre de résidences principales de type appartement construites de 2006 à 2018;;;NUM;20
+P21_MEN;Ménages en 2021 (princ);Nombre de ménages;;;NUM;17
+P21_MEN_ANEM0002;Ménages emménagés moins 2 ans en 2021 (princ);Nombre de ménages ayant emménagé depuis moins de 2 ans;;;NUM;18
+P21_MEN_ANEM0204;Ménages emménagés entre 2-4 ans en 2021 (princ);Nombre de ménages ayant emménagé entre 2 et 4 ans;;;NUM;17
+P21_MEN_ANEM0509;Ménages emménagés entre 5-9 ans en 2021 (princ);Nombre de ménages ayant emménagé entre 5 et 9 ans;;;NUM;17
+P21_MEN_ANEM10P;Ménages emménagés depuis 10 ans ou plus en 2021 (princ);Nombre de ménages ayant emménagé depuis 10 ans ou plus;;;NUM;17
+P21_PMEN;Pop ménages en 2021 (princ);Population des ménages;;;NUM;17
+P21_PMEN_ANEM0002;Pop mén emménagés moins 2 ans en 2021 (princ);Population des ménages ayant emménagé depuis moins de 2 ans;;;NUM;18
+P21_PMEN_ANEM0204;Pop mén emménagés entre 2-4 ans en 2021 (princ);Population des ménages ayant emménagé entre 2 et 4 ans;;;NUM;17
+P21_PMEN_ANEM0509;Pop mén emménagés entre 5-9 ans en 2021 (princ);Population des ménages ayant emménagé entre 5 et 9 ans;;;NUM;17
+P21_PMEN_ANEM10P;Pop mén emménagés depuis 10 ans ou plus en 2021 (princ);Population des ménages ayant emménagé depuis 10 ans ou plus;;;NUM;17
+P21_NBPI_RP_ANEM0002;Pièces Rés princ Mén. emménagés moins 2 ans en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans;;;NUM;17
+P21_NBPI_RP_ANEM0204;Pièces Rés princ Mén. emménagés entre 2-4 ans en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans;;;NUM;17
+P21_NBPI_RP_ANEM0509;Pièces Rés princ Mén. emménagés entre 5-9 ans en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans;;;NUM;17
+P21_NBPI_RP_ANEM10P;Pièces Rés princ Mén. emménagés depuis 10 ans ou plus en 2021 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus;;;NUM;17
+P21_RP_PROP;Rés princ occupées Propriétaires en 2021 (princ);Nombre de résidences principales occupées par des propriétaires;;;NUM;17
+P21_RP_LOC;Rés princ occupées Locataires en 2021 (princ);Nombre de résidences principales occupées par des locataires;;;NUM;17
+P21_RP_LOCHLMV;Rés princ HLM louée vide en 2021 (princ);Nombre de résidences principales HLM loué vide;;;NUM;17
+P21_RP_GRAT;Rés princ logé gratuit en 2021 (princ);Nombre de résidences principales occupées gratuitement;;;NUM;17
+P21_NPER_RP;Personnes Rés princ en 2021 (princ);Nombre de personnes des résidences principales;;;NUM;17
+P21_NPER_RP_PROP;Pers Rés princ occupées Propriétaires en 2021 (princ);Nombre de personnes des résidences principales occupées par des propriétaires;;;NUM;17
+P21_NPER_RP_LOC;Pers Rés princ occupées Locataires en 2021 (princ);Nombre de personnes des résidences principales occupées par des locataires;;;NUM;17
+P21_NPER_RP_LOCHLMV;Pers Rés princ HLM louées vides en 2021 (princ);Nombre de personnes des résidences principales HLM louées vides;;;NUM;17
+P21_NPER_RP_GRAT;Pers Rés princ occupées gratuit en 2021 (princ);Nombre de personnes des résidences principales occupées gratuitement;;;NUM;17
+P21_ANEM_RP;Anc tot Emméngt Rés princ (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales en années;;;NUM;16
+P21_ANEM_RP_PROP;Anc tot Emméngt Rés princ occ par Propriétaires (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années;;;NUM;17
+P21_ANEM_RP_LOC;Anc tot Emméngt Rés princ occ par Locataires (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années;;;NUM;17
+P21_ANEM_RP_LOCHLMV;Anc tot Emméngt Rés princ HLM louées vides (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années;;;NUM;17
+P21_ANEM_RP_GRAT;Anc tot Emméngt Rés princ occ gratuit (années) en 2021 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années;;;NUM;17
+P21_RP_SDB;Rés princ SDB baignoire douche (MET) en 2021 (princ);Nombre de résidences principales avec salle de bain dotée de baignoire ou douche (variable spécifique à la France métropolitaine);;;NUM;17
+P21_RP_CCCOLL;Rés princ Chauffage Central Collectif (MET) en 2021 (princ);Nombre de résidences principales avec chauffage central collectif (variable spécifique à la France métropolitaine);;;NUM;18
+P21_RP_CCIND;Rés princ Chauffage Central Individuel (MET) en 2021 (princ);Nombre de résidences principales avec chauffage central individuel (variable spécifique à la France métropolitaine);;;NUM;19
+P21_RP_CINDELEC;Rés princ Chauffage Individuel Electrique (MET) en 2021 (princ);Nombre de résidences principales avec chauffage individuel électrique (variable spécifique à la France métropolitaine);;;NUM;17
+P21_RP_ELEC;Rés princ avec électricité (DOM) en 2021 (princ);Nombre de résidences principales avec électricité dans le logement (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_EAUCH;Rés princ avec eau chaude (DOM) en 2021 (princ);Nombre de résidences principales avec eau chaude dans le logement (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_BDWC;Rés princ avec Bain/Douche WC (DOM) en 2021 (princ);Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_CHOS;Rés princ avec chauffe-eau solaire (DOM) en 2021 (princ);Nombre de résidences principales avec chauffe-eau solaire (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_CLIM;Rés princ avec pièce climatisée (DOM) en 2021 (princ);Nombre de résidences principales avec pièce climatisée (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_TTEGOU;Rés princ avec tout à l'égout (DOM) en 2021 (princ);Nombre de résidences principales avec tout à l'égout (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_GARL;Ménages au moins un parking en 2021 (princ);Nombre de ménages disposant au moins d'un emplacement réservé au stationnement;;;NUM;17
+P21_RP_VOIT1P;Ménages au moins une voiture en 2021 (princ);Nombre de ménages disposant au moins d'une voiture;;;NUM;17
+P21_RP_VOIT1;Ménages une voiture en 2021 (princ);Nombre de ménages disposant d'une voiture;;;NUM;17
+P21_RP_VOIT2P;Ménages deux voitures ou plus en 2021 (princ);Nombre de ménages disposant de deux voitures ou plus;;;NUM;17
+P21_RP_HABFOR;Habitations de fortune (DOM) en 2021 (princ);Nombre de résidences principales habitations de fortune (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_CASE;Cases traditionnelles (DOM) en 2021 (princ);Nombre de résidences principales cases traditionnelles (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_MIBOIS;Maisons ou Immeubles en bois (DOM) en 2021 (princ);Nombre de résidences principales maisons ou immeubles en bois (variable spécifique aux Départements d'outre-mer);;;logical;5
+P21_RP_MIDUR;Maisons ou Immeubles en dur (DOM) en 2021 (princ);Nombre de résidences principales maisons ou immeubles en dur (variable spécifique aux Départements d'outre-mer);;;logical;5
+C21_RP_HSTU1P;Rés princ hors studio de 1 personne en 2021 (compl);Nombre de résidences principales hors studio de 1 personne;;;NUM;17
+C21_RP_HSTU1P_SUROCC;Rés princ hors studio de 1 personne en suroccupation en 2021 (compl);Nombre de résidences principales hors studio de 1 personne en suroccupation;;;NUM;17
+

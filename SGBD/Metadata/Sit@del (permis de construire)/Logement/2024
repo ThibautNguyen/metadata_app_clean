@@ -1,0 +1,189 @@
+## Source : 
+https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=datafile&datafileRid=8b35affb-55fc-4c1f-915b-7750f974446a
+
+
+
+## Chemin disque dur :
+C:\Users\thiba\OneDrive\Documents\Données\Logement\Sit@del\2024-03
+
+
+
+## Tableau SQL :
+Logements_2024
+
+
+
+### 4 premières lignes du CSV :
+"Code de la région du lieu des travaux - Code de la zone";"Code de la région du lieu des travaux - Libellé de la zone";"Code du département du lieu des travaux - Code de la zone";"Code du département du lieu des travaux - Libellé de la zone";"Code de la commune du lieu des travaux";"Type de DAU -- demande d’autorisation d’urbanisme (PC ou DP généralement, rarement PA)";"Numéro d’enregistrement de la DAU";"Etat d’avancement du projet";"Date réelle d’autorisation (PC) ou de non-opposition (DP) initiale";"Date réelle d’ouverture de chantier";"Date réelle d’achèvement des travaux";"Année de dépôt de la DAU";"Date (mois) de prise en compte (DPC) du premier évènement reçu dans Sitadel (dépôt de la demande ou autorisation)";"Date (mois) de prise en compte (DPC) de l’autorisation initiale";"Date (mois) de prise en compte (DPC) de l’ouverture du chantier";"Date (mois) (DPC) de dernière mise à jour des données";"Catégorie du demandeur (maître d’ouvrage) selon Sitadel";"Code d’activité principale de l’établissement d’un demandeur avéré en tant que personne morale";"Catégorie juridique d’un demandeur avéré en tant que personne morale";"Dénomination d’un demandeur avéré en tant que personne morale";"Numéro SIREN d’un demandeur avéré en tant que personne morale";"Numéro SIRET d’un demandeur avéré en tant que personne morale";"Code postal du demandeur";"Localité du demandeur";"Indicateur de recours à un architecte";"Numéro de voie du terrain";"Type de voie du terrain";"Libellé de la voie du terrain";"Lieu-dit du terrain";"Localité du terrain";"Code postal du terrain";"sec_cadastre1";"num_cadastre1";"sec_cadastre2";"num_cadastre2";"sec_cadastre3";"num_cadastre3";"Superficie du terrain";"Code zone opératoire";"Nature du projet déclarée par le demandeur";"Nature de projet détaillée";"Destination principale";"Type principal des logements créés";"Type principal de transformation";"Type principal des locaux d’origine transformés";"Indicateur d’extension";"Indicateur de surélévation";"Indicateur de création de niveau(x) supplémentaire(s)";"Nombre de niveaux du bâtiment le plus élevé";"Utilisation visée des locaux à construire";"Type d’habitation principale ou secondaire";"Type d’annexe";"Présence d’une piscine dans le projet";"Présence d’un garage dans le projet";"Présence d’une véranda dans le projet";"Présence d’un abri de jardin dans le projet";"Présence d’une autre annexe dans le projet";"Type de résidence";"Présence d’une résidence pour personnes âgées";"Présence d’une résidence étudiante";"Présence d’une résidence de tourisme";"Présence d’une résidence hôtelière à vocation sociale";"Présence d’une résidence sociale";"Présence d’une résidence pour personnes handicapées";"Présence d’un autre type de résidence";"Nombre total de logements créés";"Nombre de logements individuels créés";"Nombre de logements collectifs créés";"Nombre de logements individuels purs créés";"Nombre de logements individuels groupés créés (hors résidence)";"Nombre de logements en résidence créés";"Nombre de logements collectifs créés hors résidence";"Nombre de logements démolis";"Nombre de logements de 1 pièce créés";"Nombre de logements de 2 pièces créés";"Nombre de logements de 3 pièces créés";"Nombre de logements de 4 pièces créés";"Nombre de logements de 5 pièces créés";"Nombre de logements de 6 pièces et plus créés";"Nb de logements locatifs sociaux";"Nb de logements aidé (hors ptz)";"Nb de logements ptz";"Surface de plancher de la destination'Habitation'existante avant travaux";"Surface de plancher de la destination'Habitation'nouvelle construite";"Surface de plancher de la destination'Habitation'issue d’une transformation";"Surface de plancher de la destination'Habitation'supprimée (démolie)";"Surface de plancher de la destination'Habitation'transformée";"Surface de plancher de locaux non résidentiels (i.e. autres que d’habitation) existante avant travaux";"Surface de plancher de locaux non résidentiels (i.e. autres que d’habitation) nouvelle construite";"Surface de plancher de locaux non résidentiels (i.e. autres que d’habitation) issue d’une transformation";"Surface de plancher de locaux non résidentiels (i.e. autres que d’habitation) démolie";"Surface de plancher de locaux non résidentiels (i.e. autres que d’habitation) transformée";"Surface d’hébergement hôtelier transformée";"Surface de bureaux transformée";"Surface de commerce transformée";"Surface d’artisanat transformée";"Surface industrielle transformée";"Surface agricole transformée";"Surface d’entrepôt transformée";"Surface de service public ou d’intérêt collectif transformée"
+"REG_CODE";"REG_LIBELLE";"DEP_CODE";"DEP_LIBELLE";"COMM";"TYPE_DAU";"NUM_DAU";"ETAT_DAU";"DATE_REELLE_AUTORISATION";"DATE_REELLE_DOC";"DATE_REELLE_DAACT";"AN_DEPOT";"DPC_PREM";"DPC_AUT";"DPC_DOC";"DPC_DERN";"CAT_DEM";"APE_DEM";"CJ_DEM";"DENOM_DEM";"SIREN_DEM";"SIRET_DEM";"CODPOST_DEM";"LOCALITE_DEM";"REC_ARCHI";"ADR_NUM_TER";"ADR_TYPEVOIE_TER";"ADR_LIBVOIE_TER";"ADR_LIEUDIT_TER";"ADR_LOCALITE_TER";"ADR_CODPOST_TER";"SEC_CADASTRE1";"NUM_CADASTRE1";"SEC_CADASTRE2";"NUM_CADASTRE2";"SEC_CADASTRE3";"NUM_CADASTRE3";"SUPERFICIE_TERRAIN";"ZONE_OP";"NATURE_PROJET_DECLAREE";"NATURE_PROJET_COMPLETEE";"DESTINATION_PRINCIPALE";"TYPE_PRINCIP_LOGTS_CREES";"TYPE_TRANSFO_PRINCIPAL";"TYPE_PRINCIP_LOCAUX_TRANSFORMES";"I_EXTENSION";"I_SURELEVATION";"I_NIVSUPP";"NB_NIV_MAX";"UTILISATION";"RES_PRINCIP_OU_SECOND";"TYP_ANNEXE";"I_PISCINE";"I_GARAGE";"I_VERANDA";"I_ABRI_JARDIN";"I_AUTRE_ANNEXE";"RESIDENCE";"RES_PERS_AGEES";"RES_ETUDIANTS";"RES_TOURISME";"RES_HOTEL_SOCIALE";"RES_SOCIALE";"RES_HANDICAPES";"RES_AUTRE";"NB_LGT_TOT_CREES";"NB_LGT_IND_CREES";"NB_LGT_COL_CREES";"NB_LGT_INDIV_PURS";"NB_LGT_INDIV_GROUPES";"NB_LGT_RES";"NB_LGT_COL_HORS_RES";"NB_LGT_DEMOLIS";"NB_LGT_1P";"NB_LGT_2P";"NB_LGT_3P";"NB_LGT_4P";"NB_LGT_5P";"NB_LGT_6P_PLUS";"NB_LGT_PRET_LOC_SOCIAL";"NB_LGT_ACC_SOC_HORS_PTZ";"NB_LGT_PTZ";"SURF_HAB_AVANT";"SURF_HAB_CREEE";"SURF_HAB_ISSUE_TRANSFO";"SURF_HAB_DEMOLIE";"SURF_HAB_TRANSFORMEE";"SURF_LOC_AVANT";"SURF_LOC_CREEE";"SURF_LOC_ISSUE_TRANSFO";"SURF_LOC_DEMOLIE";"SURF_LOC_TRANSFORMEE";"SURF_HEB_TRANSFORMEE";"SURF_BUR_TRANSFORMEE";"SURF_COM_TRANSFORMEE";"SURF_ART_TRANSFORMEE";"SURF_IND_TRANSFORMEE";"SURF_AGR_TRANSFORMEE";"SURF_ENT_TRANSFORMEE";"SURF_PUB_TRANSFORMEE"
+"82";"Rhône-Alpes";"01";"Ain";"01001";"PC";"00100113V0003";5;"2013-09-20";"2013-11-26";;2013;"2013-08";"2013-11";"2013-12";"2013-12";10;;;;;;"01400";"Chatillon-sur-Chalaronne";"false";;;;"Munetville RD 64c";"L Abergement-Clemenciat";"01400";"A";"1026p";"A";"1024p";;;644;4;1;1;1;1;;;"false";"false";"false";0;5;1;2;"false";"true";"false";"false";"false";9;"false";"false";"false";"false";"false";"false";"false";1;1;0;1;;;0;0;0;0;0;0;1;0;0;0;0;0;105;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+"82";"Rhône-Alpes";"01";"Ain";"01001";"PC";"00100113V0004";6;"2013-09-30";"2013-12-06";"2014-08-08";2013;"2013-08";"2013-10";"2014-01";"2014-08";10;;;;;;"01290";"Biziat";"false";;"LOT";"Le Panoramique";"Lot 7";"L Abergement-Clemenciat";"01400";"A";"1026";"A";"1024";;;550;4;1;1;1;1;;;"false";"false";"false";0;5;1;2;"false";"true";"false";"false";"false";9;"false";"false";"false";"false";"false";"false";"false";1;1;0;1;;;0;0;0;0;1;0;0;0;0;0;0;0;69;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+
+
+
+## Dictionnaire des variables :
+
+Nom de la variable;Description de la variable;Nouveau mai 2022?;Modalités;Format;Observations;Origine
+REG;Code de la région du lieu des travaux;;Nomenclature du Code Officiel Géographique (COG Insee);Alphanumérique, 2 caractères;;Numéro d'enregistrement de la DAU
+DEP;Code du département du lieu des travaux;;;Alphanumérique, 2 caractères;;Numéro d'enregistrement de la DAU
+COMM;Code de la commune du lieu des travaux;;Nomenclature du Code Officiel Géographique (COG Insee);Alphanumérique, 5 caractères;"Le code vient directement du numéro d'enregistrement de la DAU, donc dépend du code de la commune au moment où la DAU a été déposée ; il n'est pas recodifié dans un millésime particulier du COG";Numéro d'enregistrement de la DAU
+Type_DAU;Type de DAU -- demande d'autorisation d'urbanisme (PC ou DP généralement, rarement PA);;"PC (Permis de construire)
+DP (Déclaration Préalable)";Alphanumérique, 2 caractères;;Numéro d'enregistrement de la DAU
+Num_DAU;Numéro d'enregistrement de la DAU;;;Alphanumérique, 13 caractères;Numéro sur 13 caractères : les 6 premiers caractères correspondent au code commune, les 2 suivants à l'année de dépôt de la DAU, les 5 derniers à un numéro d'ordre;Numéro d'enregistrement de la DAU
+Etat_DAU;Etat d'avancement du projet;;"2 = Autorisé
+4 = Annulé
+5 = Commencé
+6 = Terminé";Alphanumérique, 1 caractère;"Toutes les DAU du fichier ont été autorisées ; les modalités 4 à 6 concernent des DAU pour lesquelles est connu l'état postérieur d'avancement du projet .";Décision / suivi des travaux
+DATE_REELLE_AUTORISATION;Date réelle d'autorisation (PC) ou de non-opposition (DP) initiale;;;Date, format AAAA-MM-JJ;Date de décision relative à la demande initiale, sans prise en compte d'éventuels modificatifs.;Décision
+DATE_REELLE_DOC;Date réelle d'ouverture de chantier;;;Date, format AAAA-MM-JJ;;Déclaration officielle (DOC) ou information obtenue par enquête
+DATE_REELLE_DAACT;Date réelle d'achèvement des travaux;;;Date, format AAAA-MM-JJ;;Déclaration officielle (DAACT) ou information obtenue par enquête
+AN_DEPOT;Année de dépôt de la DAU;Introduit en mai 2022;;Alphanumérique, 2 caractères;2 caractères issus du numéro d'enregistrement de la DAU;Numéro d'enregistrement de la DAU
+DPC_PREM;Date (mois) de prise en compte (DPC) du premier évènement reçu dans Sitadel (dépôt de la demande ou autorisation);Introduit en mai 2022;;Date, format AAAAMM;Champ permettant le plus souvent de déterminer un proxy du mois réel de dépôt de la demande d'autorisation d'urbanisme, absent de Sitadel. En effet, dans 90% des cas, le premier évènement reçu dans Sitadel est le dépôt de la demande. Ce n'est évidemment pas le cas quand le mois correspondant à DPC_PREM est postérieur au mois de la date réelle d'autorisation ou quand l'année correspondante est postérieure à l'année de dépôt. Quand DPC_PREM=DPC_AUT, cela peut signifier soit que le dépôt n'a pas été transmis, soit qu'il a été transmis en retard, soit que le dépôt et l'autorisation ont été très proches dans le temps. Pour la notion de date de prise en compte, voir les explications fournies pour DPC_AUT.;Gestion de la collecte
+DPC_AUT;Date (mois) de prise en compte (DPC) de l'autorisation initiale;;;Date, format AAAAMM;"Une autorisation délivrée le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte ""202102"" et pour date réelle ""2020-12-06"" ; elle est diffusée fin mars 2021.";Gestion de la collecte
+DPC_DOC;Date (mois) de prise en compte (DPC) de l'ouverture du chantier;;;Date, format AAAAMM;"Une ouverture de chantier ayant eu lieu le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte ""202102"" et pour date réelle ""2020-12-06"" ; elle est diffusée fin mars 2021.";Gestion de la collecte
+DPC_DERN;Date (mois) (DPC) de dernière mise à jour des données;;;Date, format AAAAMM;Les données sont mises à jour à l'occasion d'un événement de la vie du permis ou d'une correction de la base;Gestion de la collecte
+CAT_DEM;Catégorie du demandeur (maître d'ouvrage) selon Sitadel;;"10 - Particuliers sans autre indication (SAI)
+11 - Particuliers purs
+12 - SCI de particuliers
+20 - Bailleurs sociaux SAI
+21 - Organismes HLM
+22 - EPL (ex SEM)
+23 - Autres organismes
+30 - Promoteurs (SAI)
+31 - Promoteurs reconnus comme tels
+32 - SCI ou autres supports de programmes de construction
+33 - Autres professionnels de la construction
+40 - Administrations publiques (SAI)
+41 - État, ODAC (Organismes Divers d'Administration Centrale) et organismes rattachés divers
+42 - Départements et régions
+43 - Communes, EPIC, syndicats de communes
+50 - Autres sociétés (de fait, intervenant pour compte propre)
+80 - Sans objet (car locaux purs)
+90 - Non déterminé (valeur par défaut à la création du permis)";Alphanumérique, 2 caractères;A partir des données d'identification disponibles dans Sitadel et d'informations externes (dont Sirène);Codification établie par le SDES 
+APE_DEM;Code d'activité principale de l'établissement d'un demandeur avéré en tant que personne morale;;Nomenclature NAF Rév2;Alphanumérique, 6 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Sirène
+CJ_DEM;Catégorie juridique d'un demandeur avéré en tant que personne morale;;Nomenclature du répertoire Sirène;Alphanumérique, 4 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Sirène
+DENOM_DEM;Dénomination d'un demandeur avéré en tant que personne morale;;;Alphanumérique, 120 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Sirène
+SIREN_DEM;Numéro SIREN d'un demandeur avéré en tant que personne morale;;;Alphanumérique, 9 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Formulaire ou recherche à partir de la dénomination
+SIRET_DEM;Numéro SIRET d'un demandeur avéré en tant que personne morale;;;Alphanumérique, 14 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Formulaire ou recherche à partir de la dénomination
+CODPOST_DEM;Code postal du demandeur;;;Alphanumérique, 5 caractères;;Formulaire
+LOCALITE_DEM;Localité du demandeur;;;Alphanumérique, 32 caractères;;Formulaire
+REC_ARCHI;Indicateur de recours à un architecte;;1 si oui, 0 si non;Alphanumérique, 1 caractère;Insuffisamment renseigné;Formulaire
+ADR_NUM_TER;Numéro de voie du terrain;;;Alphanumérique, 5 caractères;;Formulaire
+ADR_TYPEVOIE_TER;Type de voie du terrain;;;Alphanumérique, 5 caractères;;Formulaire
+ADR_LIBVOIE_TER;Libellé de la voie du terrain;;;Alphanumérique, 26 caractères;;Formulaire
+ADR_LIEUDIT_TER;Lieu-dit du terrain;;;Alphanumérique, 38 caractères;;Formulaire
+ADR_LOCALITE_TER;Localité du terrain;;;Alphanumérique, 32 caractères;;Formulaire
+ADR_CODPOST_TER;Code postal du terrain;;;Alphanumérique, 5 caractères;;Formulaire
+SEC_CADASTRE1;Section cadastrale 1;;;Alphanumérique, 3 caractères;Les préfixes sont en général absents de Sitadel;Formulaire
+NUM_CADASTRE1;Numéro parcelle cadastrale 1;;;Alphanumérique, 5 caractères;;Formulaire
+SEC_CADASTRE2;Section cadastrale 2;;;Alphanumérique, 3 caractères;;Formulaire
+NUM_CADASTRE2;Numéro parcelle cadastrale 2;;;Alphanumérique, 5 caractères;;Formulaire
+SEC_CADASTRE3;Section cadastrale 3;;;Alphanumérique, 3 caractères;Un maximum de 3 parcelles peut être renseigné dans Sitadel alors qu'un terrain peut en contenir bien davantage;Formulaire
+NUM_CADASTRE3;Numéro parcelle cadastrale 3;;;Alphanumérique, 5 caractères;;Formulaire
+SUPERFICIE_TERRAIN;Superficie du terrain;;;Numérique, max. 8 chiffres;;Formulaire
+ZONE_OP;"Code ""zone opératoire""";;"1 = Lotissement
+2 = ZAC
+3 = AFU
+4 = Hors zones ou ne sais pas";Alphanumérique, 1 caractère;Très insuffisamment renseigné;Formulaire
+NATURE_PROJET_DECLAREE;Nature du projet déclarée par le demandeur;;"1 = nouvelle construction
+2 = travaux sur construction existante";Alphanumérique, 1 caractère;;Formulaire
+NATURE_PROJET_COMPLETEE;Nature de projet détaillée;Introduit en mai 2022;"1 = nouvelle construction
+2 = transformation sans extension ni diminution de surface (inclut les changements de destination, réhabilitations, scissions/regroupements de logements ...)
+3 = transformation avec extension de surface
+4 = transformation avec diminution de surface
+5 = extension de surface sans transformation
+6 = diminution de surface sans transformation";Alphanumérique, 1 caractère;"A partir du tableau des surfaces de plancher et de la nature de projet déclarée : une petite partie des ""nouvelles constructions"" déclarées sont recodifiées en travaux sur existant";Codification par le SDES 
+DESTINATION_PRINCIPALE;Destination principale;Introduit en mai 2022;"1 = logements
+2 = non résidentiel";Alphanumérique, 1 caractère;Non résidentiel si la surface créée en non résidentiel est supérieure à la surface créée en habitation;Codification par le SDES
+TYPE_PRINCIP_LOGTS_CREES;Type principal des logements créés;Introduit en mai 2022;"1 = un logement individuel
+2 = plusieurs logements individuels
+3 = collectif hors résidence
+4 = résidence";Alphanumérique, 1 caractère;"Type principal selon le nombre de logements créés : il peut donc y avoir des logements individuels dans un permis de type ""collectif hors résidences""";Codification par le SDES
+TYPE_TRANSFO_PRINCIPAL;Type principal de transformation;Introduit en mai 2022;"1 = transformation de locaux en logements (changement de destination)
+2 = transformation de logements (réhabilitation, scission, regroupement ...)
+3 = transformation de logements en locaux non résidentiels (changement de destination)
+4 = transformation de locaux non résidentiels (changement de destination, réhabilitation, scission, regroupement ...)";Alphanumérique, 1 caractère;Selon que la surface transformée et la surface issue de la transformation sont majoritairement des surfaces de logements ou de locaux;Codification par le SDES 
+TYPE_PRINCIP_LOCAUX_TRANSFORMES;Type principal des locaux d'origine transformés;Introduit en mai 2022;"1 = logements 
+2 = hébergement hôtelier
+3 = bureaux
+4 = commerce
+5 = artisanat
+6 = industrie
+7 = agriculture
+8 = entrepôt
+9 = service public ou d'intérêt collectif";Alphanumérique, 1 caractère;Selon la première destination d'origine des surfaces transformées;Codification par le SDES 
+I_EXTENSION;Indicateur d'extension;;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_SURELEVATION;Indicateur de surélévation;;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_NIVSUPP;Indicateur de création de niveau(x) supplémentaire(s);;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+NB_NIV_MAX;Nombre de niveaux du bâtiment le plus élevé;;;Numérique, max. 2 chiffres;Nombre de niveaux au-dessus du sol depuis le nouveau formulaire de 2020, très insuffisamment renseigné;Formulaire
+UTILISATION;Utilisation visée des locaux à construire;;"1 = Occupation personnelle
+2 = Vente
+3 = Location 
+4 = vente - location
+5 = non rempli";Alphanumérique, 1 caractère;Assez mal renseigné;Formulaire
+RES_PRINCIP_OU_SECOND;Type d'habitation principale ou secondaire;;"1 = résidence principale
+2 = résidence secondaire
+3 = non rempli";Alphanumérique, 1 caractère;Seulement si occupation personnelle normalement;Formulaire
+TYP_ANNEXE;Type d'annexe;;"1 = Piscine
+2 = Garage
+3 = Véranda
+4 = Abri de Jardin
+5 = Autre annexe
+6 = plusieurs annexes
+7 = pas d’annexe";Alphanumérique, 1 caractère;;Recodification des cases du formulaire suivantes
+I_PISCINE;Présence d'une piscine dans le projet;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_GARAGE;Présence d'un garage dans le projet;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_VERANDA;Présence d'une véranda dans le projet;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_ABRI_JARDIN;Présence d'un abri de jardin dans le projet;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_AUTRE_ANNEXE;Présence d'une autre annexe dans le projet;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+RESIDENCE;Type de résidence;;"1 = res pour personnes âgées
+2 = res étudiantes
+3 = res de tourisme
+4 = res hôtelière à vocation sociale
+5 = res sociale
+6 = res pour handicapés
+7 = autre résidence
+8 = projet mixte
+9 = Non rempli";Alphanumérique, 1 caractère;Pour les projets mixtes (logements ordinaires / résidence), on fait en sorte que cette catégorie ne soit définie que si la résidence représente la majorité des logements du projet.;Recodification des cases du formulaire suivantes
+RES_PERS_AGEES;Présence d'une résidence pour personnes âgées;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+RES_ETUDIANTS;Présence d'une résidence étudiante;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+RES_TOURISME;Présence d'une résidence de tourisme;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+RES_HOTEL_SOCIALE;Présence d'une résidence hôtelière à vocation sociale;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+RES_SOCIALE;Présence d'une résidence sociale;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+RES_HANDICAPES;Présence d'une résidence pour personnes handicapées;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+RES_AUTRE;Présence d'un autre type de résidence;Introduit en mai 2022;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+NB_LGT_TOT_CREES;Nombre total de logements créés;;;Numérique, max. 3 chiffres;Une transformation d'un 3 pièces en 2 studios est généralement considérée comme créant 2 logements;Formulaire
+NB_LGT_IND_CREES;Nombre de logements individuels créés;;;Numérique, max. 3 chiffres;Une maison individuelle peut comporter 2 logements individuels (au maximum);Formulaire
+NB_LGT_COL_CREES;Nombre de logements collectifs créés;;;Numérique, max. 3 chiffres;Les logements collectifs font partie d’un bâtiment dans lequel sont superposés plus de deux logements distincts dont l'accès nécessite d'emprunter des parties communes;Formulaire
+NB_LGT_INDIV_PURS;Nombre de logements individuels purs créés;Introduit en mai 2022;;Numérique, max. 3 chiffres;Un logement individuel pur fait l’objet d’un permis de construire relatif à un seul logement individuel;Recodification SDES
+NB_LGT_INDIV_GROUPES;Nombre de logements individuels groupés créés (hors résidence);Introduit en mai 2022;;Numérique, max. 3 chiffres;Les logements individuels groupés font l’objet d’un permis de construire relatif à la construction de plusieurs logements individuels (par exemple en lotissement ou dans une maison individuelle de deux logements), ou d'un logement individuel associés à des logements collectifs ou des locaux non résidentiels;Recodification SDES
+NB_LGT_RES;Nombre de logements en résidence créés;Introduit en mai 2022;;Numérique, max. 3 chiffres;Les logements en résidence sont des logements (individuels ou collectifs) construits en vue d’une occupation par un public ciblé selon la nature de la résidence, avec généralement mise à disposition de services adaptés;Recodification SDES
+NB_LGT_COL_HORS_RES;Nombre de logements collectifs créés hors résidence;Introduit en mai 2022;;Numérique, max. 3 chiffres;Les logements collectifs font partie d’un bâtiment dans lequel sont superposés plus de deux logements distincts dont l'accès nécessite d'emprunter des parties communes;Recodification SDES
+NB_LGT_DEMOLIS;Nombre de logements démolis;;;Numérique, max. 3 chiffres;Insuffisamment renseigné;Formulaire
+NB_LGT_1P;Nombre de logements de 1 pièce créés;;;Numérique, max. 3 chiffres;Moyennement renseigné;Formulaire
+NB_LGT_2P;Nombre de logements de 2 pièces créés;;;Numérique, max. 3 chiffres;Moyennement renseigné;Formulaire
+NB_LGT_3P;Nombre de logements de 3 pièces créés;;;Numérique, max. 3 chiffres;Moyennement renseigné;Formulaire
+NB_LGT_4P;Nombre de logements de 4 pièces créés;;;Numérique, max. 3 chiffres;Moyennement renseigné;Formulaire
+NB_LGT_5P;Nombre de logements de 5 pièces créés;;;Numérique, max. 3 chiffres;Moyennement renseigné;Formulaire
+NB_LGT_6P_PLUS;Nombre de logements de 6 pièces et plus créés;;;Numérique, max. 3 chiffres;Moyennement renseigné;Formulaire
+NB_LGT_PRET_LOC_SOCIAL;Nb de logements locatifs sociaux;;;Numérique, max. 3 chiffres;"Pas toujours connu au moment du dépôt du formulaire, et rarement corrigé ensuite ; insuffisamment renseigné";Formulaire
+NB_LGT_ACC_SOC_HORS_PTZ;Nb de logements aidé (hors ptz);;;Numérique, max. 3 chiffres;"Pas toujours connu au moment du dépôt du formulaire, et rarement corrigé ensuite ; insuffisamment renseigné";Formulaire
+NB_LGT_PTZ;Nb de logements ptz;;;Numérique, max. 3 chiffres;"Pas toujours connu au moment du dépôt du formulaire, et rarement corrigé ensuite ; insuffisamment renseigné";Formulaire
+SURF_HAB_AVANT;Surface de plancher de la destination ' Habitation ' existante avant travaux;;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_HAB_CREEE;Surface de plancher de la destination ' Habitation ' nouvelle construite;;;Numérique, max. 7 chiffres;"Lorsque le projet crée des chambres (sans coin cuisine indépendant) et non des logements, on utilise plutôt la destination ""Hébergement hôtelier"" ou ""Service Public"" dans Sitadel plutôt que la destination ""Habitation""";Formulaire, contrôles de cohérence du SDES
+SURF_HAB_ISSUE_TRANSFO;Surface de plancher de la destination ' Habitation ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Surface issue d'un changement de destination ou d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …);Formulaire, contrôles de cohérence du SDES
+SURF_HAB_DEMOLIE;Surface de plancher de la destination ' Habitation ' supprimée (démolie);;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_HAB_TRANSFORMEE;Surface de plancher de la destination ' Habitation ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Surface changée de destination ou faisant l'objet d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …;Formulaire, contrôles de cohérence du SDES
+SURF_LOC_AVANT;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) existante avant travaux;;;Numérique, max. 7 chiffres;Locaux=autres destinations qu'habitation;Formulaire, contrôles de cohérence du SDES
+SURF_LOC_CREEE;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) nouvelle construite;;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_LOC_ISSUE_TRANSFO;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_LOC_DEMOLIE;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) démolie;;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_LOC_TRANSFORMEE;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_HEB_TRANSFORMEE;Surface d'hébergement hôtelier transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_BUR_TRANSFORMEE;Surface de bureaux transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_COM_TRANSFORMEE;Surface de commerce transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_ART_TRANSFORMEE;Surface d'artisanat transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_IND_TRANSFORMEE;Surface industrielle transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_AGR_TRANSFORMEE;Surface agricole transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_ENT_TRANSFORMEE;Surface d'entrepôt transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES
+SURF_PUB_TRANSFORMEE;Surface de service public ou d'intérêt collectif transformée (changement de destination, réhabilitation, scission, regroupement ...);Introduit en mai 2022;;Numérique, max. 7 chiffres;;Formulaire, contrôles de cohérence du SDES

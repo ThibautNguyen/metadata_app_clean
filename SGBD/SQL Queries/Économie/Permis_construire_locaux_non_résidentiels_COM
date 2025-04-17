@@ -1,0 +1,58 @@
+-- Exemple de Choisy-Vitry
+
+SELECT 
+    COMM as "Code commune",
+    CASE 
+        WHEN COMM = '94022' THEN 'Choisy-le-Roi'
+        WHEN COMM = '94081' THEN 'Vitry-sur-Seine'
+    END as "Commune",
+    DATE_REELLE_AUTORISATION as "Date d'autorisation",
+    DATE_REELLE_DOC as "Date d'ouverture du chantier",
+    DATE_REELLE_DAACT as "Date d'achèvement",
+    CASE NATURE_PROJET_DECLAREE
+        WHEN '1' THEN 'Nouvelle construction'
+        WHEN '2' THEN 'Travaux sur construction existante'
+    END as "Nature du projet",
+    CASE NATURE_PROJET_COMPLETEE
+        WHEN '1' THEN 'Nouvelle construction'
+        WHEN '2' THEN 'Transformation sans modification de surface'
+        WHEN '3' THEN 'Transformation avec extension'
+        WHEN '4' THEN 'Transformation avec diminution'
+        WHEN '5' THEN 'Extension sans transformation'
+        WHEN '6' THEN 'Diminution sans transformation'
+    END as "Nature détaillée",
+    CASE DESTINATION_PRINCIPALE
+        WHEN '2' THEN 'Hébergement hôtelier'
+        WHEN '3' THEN 'Bureaux'
+        WHEN '4' THEN 'Commerce'
+        WHEN '5' THEN 'Artisanat'
+        WHEN '6' THEN 'Industrie'
+        WHEN '7' THEN 'Agriculture'
+        WHEN '8' THEN 'Entrepôt'
+        WHEN '9' THEN 'Service public ou d''intérêt collectif'
+    END as "Destination principale",
+    CASE TYPE_SERVICE_PUBLIC
+        WHEN '1' THEN 'Transport'
+        WHEN '2' THEN 'Enseignement et recherche'
+        WHEN '3' THEN 'Action sociale'
+        WHEN '4' THEN 'Santé'
+        WHEN '5' THEN 'Culture et loisir'
+        WHEN '6' THEN 'Ouvrage spécial'
+        WHEN '7' THEN 'Autre équipement collectif'
+    END as "Type de service public",
+    ADR_NUM_TER || ' ' || ADR_TYPEVOIE_TER || ' ' || ADR_LIBVOIE_TER as "Adresse",
+    SUPERFICIE_TERRAIN as "Superficie du terrain (m²)",
+    NB_NIV_MAX as "Nombre de niveaux",
+    SURF_LOC_AVANT as "Surface existante avant travaux",
+    SURF_LOC_CREEE as "Surface nouvelle créée",
+    SURF_LOC_ISSUE_TRANSFO as "Surface issue de transformation",
+    SURF_LOC_DEMOLIE as "Surface démolie",
+    DENOM_DEM as "Demandeur",
+    CASE REC_ARCHI 
+        WHEN 'true' THEN 'Oui'
+        WHEN 'false' THEN 'Non'
+    END as "Recours à un architecte"
+FROM Locaux_non_résidentiels_2024
+WHERE COMM IN ('94022', '94081')
+AND DATE_REELLE_DOC IS NOT NULL  -- Projets démarrés
+ORDER BY DATE_REELLE_DOC DESC;

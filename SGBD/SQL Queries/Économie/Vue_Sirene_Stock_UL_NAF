@@ -1,0 +1,93 @@
+Vue de jointure entre les tables :
+- Stock Etablissements
+- Stock Unités légales
+- Nomenclature NAF
+
+## Tableau SQL : 
+vue_etablissements_complet  
+
+## Dictionnaire des variables :
+Variable;Contenu
+siren;Siren
+denominationUniteLegale;Dénomination de l'unité légale
+denominationUsuelle1UniteLegale;Dénomination usuelle 1 de l'unité légale
+trancheEffectifsEtablissement;Tranche d'effectifs de l'établissement    
+libelle_tranche_effectifs;Libellé de la tranche d'effectifs de l'établissement
+dateDernierTraitementEtablissement;Date du dernier traitement de l'établissement
+etablissementSiege;Etablissement siège
+complementAdresseEtablissement;Complément d'adresse de l'établissement
+numeroVoieEtablissement;Numéro de voie de l'établissement
+typeVoieEtablissement;Type de voie de l'établissement   
+libelleVoieEtablissement;Libellé de la voie de l'établissement
+libelleCommuneEtablissement;Libellé de la commune de l'établissement
+secteur_economique;Secteur économique de l'établissement
+codeCommuneEtablissement;Code de la commune de l'établissement
+caractereEmployeurEtablissement;Caractère employeur de l'établissement
+libelle_etat_administratif;Libellé de l'état administratif de l'établissement   
+longitude;Longitude de l'établissement  
+latitude;Latitude de l'établissement
+geo_score;Score géographique de l'établissement
+geo_type;Type de géographie de l'établissement
+geo_adresse;Adresse géographique de l'établissement
+geo_id;Identifiant géographique de l'établissement
+geo_ligne;Ligne géographique de l'établissement       
+
+
+
+
+
+CREATE OR REPLACE VIEW economie.vue_etablissements_complet AS
+SELECT 
+    etab.siren,
+    ul.denominationUniteLegale,
+    ul.denominationUsuelle1UniteLegale,
+    etab.trancheEffectifsEtablissement,
+    CASE etab.trancheEffectifsEtablissement
+        WHEN 'NN' THEN 'Non-employeur'
+        WHEN '00' THEN '0 salarié (mais ayant été employeur)'
+        WHEN '01' THEN '1-2 salariés'
+        WHEN '02' THEN '3-5 salariés'
+        WHEN '03' THEN '6-9 salariés'
+        WHEN '11' THEN '10-19 salariés'
+        WHEN '12' THEN '20-49 salariés'
+        WHEN '21' THEN '50-99 salariés'
+        WHEN '22' THEN '100-199 salariés'
+        WHEN '31' THEN '200-249 salariés'
+        WHEN '32' THEN '250-499 salariés'
+        WHEN '41' THEN '500-999 salariés'
+        WHEN '42' THEN '1000-1999 salariés'
+        WHEN '51' THEN '2000-4999 salariés'
+        WHEN '52' THEN '5000-9999 salariés'
+        WHEN '53' THEN '10000 salariés et plus'
+        ELSE 'Donnée manquante'
+    END AS libelle_tranche_effectifs,
+    etab.dateDernierTraitementEtablissement,
+    etab.etablissementSiege,
+    etab.complementAdresseEtablissement,
+    etab.numeroVoieEtablissement,
+    etab.typeVoieEtablissement,
+    etab.libelleVoieEtablissement,
+    etab.libelleCommuneEtablissement,
+    etab.activitePrincipaleEtablissement,
+    naf." Intitulés de la  NAF rév. 2, version finale " AS secteur_economique,
+    etab.codeCommuneEtablissement,
+    etab.caractereEmployeurEtablissement,
+    etab.etatAdministratifEtablissement,
+    CASE etab.etatAdministratifEtablissement
+        WHEN 'A' THEN 'Actif'
+        WHEN 'F' THEN 'Fermé'
+        ELSE 'Autre'
+    END AS libelle_etat_administratif,
+    etab.longitude,
+    etab.latitude,
+    etab.geo_score,
+    etab.geo_type,
+    etab.geo_adresse,
+    etab.geo_id,
+    etab.geo_ligne
+FROM 
+    economie.geo_sirene_stocketablissement_2025_03 AS etab
+LEFT JOIN 
+    economie.stockunitelegale_2025_04 AS ul ON etab.siren = ul.siren
+LEFT JOIN 
+    economie.nomenclature_naf AS naf ON etab.activitePrincipaleEtablissement = naf."Code";

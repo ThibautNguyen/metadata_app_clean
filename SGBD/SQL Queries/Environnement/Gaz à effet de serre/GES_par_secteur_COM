@@ -1,0 +1,75 @@
+-- Part des GES émis par secteur dans divers territoires
+
+WITH territoires AS (
+    -- Les 5 communes
+    SELECT 
+        Commune as nom,
+        Agriculture,
+        "Autres transports",
+        "CO2 biomasse hors-total",
+        "Déchets",
+        Energie,
+        "Industrie hors-énergie",
+        "Résidentiel",
+        Routier,
+        Tertiaire,
+        Total
+    FROM GES_2024
+    WHERE "INSEE commune" IN ('45154','45169','45235','45302','45234')
+    
+    UNION ALL
+    
+    -- Le département du Loiret
+    SELECT 
+        'Loiret' as nom,
+        SUM(Agriculture),
+        SUM("Autres transports"),
+        SUM("CO2 biomasse hors-total"),
+        SUM("Déchets"),
+        SUM(Energie),
+        SUM("Industrie hors-énergie"),
+        SUM("Résidentiel"),
+        SUM(Routier),
+        SUM(Tertiaire),
+        SUM(Total)
+    FROM GES_2024
+    WHERE "Code département" = '45'
+    
+    UNION ALL
+    
+    -- La région Centre-Val de Loire
+    SELECT 
+        'Centre-Val de Loire' as nom,
+        SUM(Agriculture),
+        SUM("Autres transports"),
+        SUM("CO2 biomasse hors-total"),
+        SUM("Déchets"),
+        SUM(Energie),
+        SUM("Industrie hors-énergie"),
+        SUM("Résidentiel"),
+        SUM(Routier),
+        SUM(Tertiaire),
+        SUM(Total)
+    FROM GES_2024
+    WHERE "Code département" IN ('18','28','36','37','41','45')
+)
+
+SELECT 
+    nom,
+    REPLACE(ROUND(CAST(Agriculture AS FLOAT) / Total, 3), '.', ',') as "Agriculture",
+    REPLACE(ROUND(CAST("Autres transports" AS FLOAT) / Total, 3), '.', ',') as "Autres transports",
+    REPLACE(ROUND(CAST("CO2 biomasse hors-total" AS FLOAT) / Total, 3), '.', ',') as "CO2 biomasse hors-total",
+    REPLACE(ROUND(CAST("Déchets" AS FLOAT) / Total, 3), '.', ',') as "Déchets",
+    REPLACE(ROUND(CAST(Energie AS FLOAT) / Total, 3), '.', ',') as "Energie",
+    REPLACE(ROUND(CAST("Industrie hors-énergie" AS FLOAT) / Total, 3), '.', ',') as "Industrie hors-énergie",
+    REPLACE(ROUND(CAST("Résidentiel" AS FLOAT) / Total, 3), '.', ',') as "Résidentiel",
+    REPLACE(ROUND(CAST(Routier AS FLOAT) / Total, 3), '.', ',') as "Routier",
+    REPLACE(ROUND(CAST(Tertiaire AS FLOAT) / Total, 3), '.', ',') as "Tertiaire"
+FROM territoires
+ORDER BY 
+    CASE 
+        WHEN nom = 'Centre-Val de Loire' THEN 1
+        WHEN nom = 'Loiret' THEN 2
+        ELSE 3
+    END,
+    nom;

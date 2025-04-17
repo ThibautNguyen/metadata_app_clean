@@ -1,0 +1,92 @@
+Source : 
+https://www.insee.fr/fr/statistiques/8268806
+
+Tableau SQL : POP_IRIS_2021
+
+## 4 premières lignes
+
+IRIS;COM;TYP_IRIS;LAB_IRIS;P21_POP;P21_POP0002;P21_POP0305;P21_POP0610;P21_POP1117;P21_POP1824;P21_POP2539;P21_POP4054;P21_POP5564;P21_POP6579;P21_POP80P;P21_POP0014;P21_POP1529;P21_POP3044;P21_POP4559;P21_POP6074;P21_POP75P;P21_POP0019;P21_POP2064;P21_POP65P;P21_POPH;P21_H0014;P21_H1529;P21_H3044;P21_H4559;P21_H6074;P21_H75P;P21_H0019;P21_H2064;P21_H65P;P21_POPF;P21_F0014;P21_F1529;P21_F3044;P21_F4559;P21_F6074;P21_F75P;P21_F0019;P21_F2064;P21_F65P;C21_POP15P;C21_POP15P_CS1;C21_POP15P_CS2;C21_POP15P_CS3;C21_POP15P_CS4;C21_POP15P_CS5;C21_POP15P_CS6;C21_POP15P_CS7;C21_POP15P_CS8;C21_H15P;C21_H15P_CS1;C21_H15P_CS2;C21_H15P_CS3;C21_H15P_CS4;C21_H15P_CS5;C21_H15P_CS6;C21_H15P_CS7;C21_H15P_CS8;C21_F15P;C21_F15P_CS1;C21_F15P_CS2;C21_F15P_CS3;C21_F15P_CS4;C21_F15P_CS5;C21_F15P_CS6;C21_F15P_CS7;C21_F15P_CS8;P21_POP_FR;P21_POP_ETR;P21_POP_IMM;P21_PMEN;P21_PHORMEN
+010010000;01001;Z;5;832;32.2221772688278;27.4379832465365;54.8418453729531;79.1699499433284;29.1297982157669;146.720566187795;171.578985146351;125.962948087761;122.797688817853;42.138057712827;158.552045228214;100.025669125929;152.787222000046;198.071133518886;149.720217782771;72.8437123441543;206.333157490542;460.731095978778;164.93574653068;423.485016885463;92.9355275683221;47.6380185861432;74.8649592599333;99.5791105400233;72.9684366139067;35.4989643171345;117.365917200565;229.367683115532;76.7514165693656;408.514983114537;65.616517659892;52.3876505397854;77.922262740113;98.4920229788626;76.7517811688641;37.3447480270198;88.9672402899772;231.363412863245;88.1843299613141;681.164442942002;4.84353307255505;43.7201016831258;63.3486468714884;106.140417852504;101.67520816276;126.068241753175;191.732750126687;43.635543419707;357.558108132075;4.84353307255505;24.2610452691337;34.0326696776627;57.8723743520263;19.3744981505733;97.0467486248464;105.511346589898;14.61589239538;323.606334809927;0;19.4590564139921;29.3159771938257;48.2680435004782;82.3007100121866;29.0214931283286;86.221403536789;29.019651024327;822.287126066005;9.71287393399538;18.3810100778466;832;0
+010020000;01002;Z;5;267;5.98777321691745;12.0677762450347;19.0664665554135;34.0503178683653;11.2438158191622;40.4502205046507;72.5969153733279;24.6148338569658;29.9979507954207;16.9239297647417;57.0462860507837;32.4390934255431;57.2722235904477;58.1015060435166;40.5047400920238;21.636150797685;77.2611590597397;142.816960380098;46.9218805601625;139.890359491632;27.0105124263677;22.3473585071835;24.7401578867594;32.7870782781525;21.7130930371851;11.2921593559836;40.0980279107553;73.558433904117;26.2338976767596;127.109640508368;30.0357736244161;10.0917349183597;32.5320657036883;25.314427765364;18.7916470548387;10.3439914417015;37.1631311489844;69.2585264759809;20.6879828834029;192.979797073951;25.0504804398396;5.04052369877297;19.1153577399804;29.2101853931387;19.4105884863416;19.8671455616524;65.6562905380668;9.62922521615814;105.685392295124;14.9694330422936;5.04052369877297;14.2269720952327;4.59774687907453;4.74083957141047;15.1263059902419;42.0951853733505;4.88838564474768;87.2944047788262;10.0810473975459;0;4.88838564474768;24.6124385140641;14.6697489149311;4.74083957141047;23.5611051647164;4.74083957141047;265.991895260245;1.00810473975459;2.87582202985159;267;0
+010040101;01004;H;1;1796.95177430624;77.5196784610302;43.9744055740572;98.9160602098838;122.511552505057;349.080836127386;418.089799333468;239.636958193308;144.751946696402;200.290026088347;102.180511117304;309.874304101087;564.905085590414;335.019301148718;210.165288577278;210.209208838134;166.778586050612;495.720054509168;998.761182591424;302.470537205652;887.294311681657;166.054196372809;314.685366101369;170.836725077475;90.6218201515302;108.088348354211;37.007855624263;269.9534731543;507.53762395647;109.803214570887;909.657462624586;143.820107728278;250.219719489045;164.182576071243;119.543468425748;102.120860483923;129.77073042635;225.766581354868;491.223558634953;192.667322634765;1450.79509974284;0;37.7019791353448;113.530996094985;235.057375620693;361.887948754538;228.461744743088;309.389952519294;164.765102874896;702.640301704245;0;29.4602933761927;68.4365218141565;148.581213465846;101.157998511448;190.806914279196;120.545961519837;43.6513987375681;748.154798038595;0;8.24168575915213;45.0944742808284;86.4761621548466;260.72995024309;37.6548304638921;188.843990999457;121.113704137328;1538.64616952;258.305604786245;211.46919308125;1433.95063343904;363.001140867201
+
+
+
+## Dictionnaire des variables en CSV :
+
+COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;;;CHAR;5
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);;;CHAR;1
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS;;;CHAR;1
+P21_POP;Population en 2021 (princ);Population;;;NUM;17
+P21_POP0002;Pop 0-2 ans en 2021 (princ);Nombre de personnes de 0 à 2 ans;;;NUM;17
+P21_POP0305;Pop 3-5 ans en 2021 (princ);Nombre de personnes de 3 à 5 ans;;;NUM;17
+P21_POP0610;Pop 6-10 ans en 2021 (princ);Nombre de personnes de 6 à 10 ans;;;NUM;17
+P21_POP1117;Pop 11-17 ans en 2021 (princ);Nombre de personnes de 11 à 17 ans;;;NUM;17
+P21_POP1824;Pop 18-24 ans en 2021 (princ);Nombre de personnes de 18 à 24 ans;;;NUM;17
+P21_POP2539;Pop 25-39 ans en 2021 (princ);Nombre de personnes de 25 à 39 ans;;;NUM;17
+P21_POP4054;Pop 40-54 ans en 2021 (princ);Nombre de personnes de 40 à 54 ans;;;NUM;17
+P21_POP5564;Pop 55-64 ans en 2021 (princ);Nombre de personnes de 55 à 64 ans;;;NUM;17
+P21_POP6579;Pop 65-79 ans en 2021 (princ);Nombre de personnes de 65 à 79 ans;;;NUM;17
+P21_POP80P;Pop 80 ans ou plus en 2021 (princ);Nombre de personnes de 80 ans ou plus;;;NUM;17
+P21_POP0014;Pop 0-14 ans en 2021 (princ);Nombre de personnes de 0 à 14 ans;;;NUM;17
+P21_POP1529;Pop 15-29 ans en 2021 (princ);Nombre de personnes de 15 à 29 ans;;;NUM;17
+P21_POP3044;Pop 30-44 ans en 2021 (princ);Nombre de personnes de 30 à 44 ans;;;NUM;17
+P21_POP4559;Pop 45-59 ans en 2021 (princ);Nombre de personnes de 45 à 59 ans;;;NUM;17
+P21_POP6074;Pop 60-74 ans en 2021 (princ);Nombre de personnes de 60 à 74 ans;;;NUM;17
+P21_POP75P;Pop 75 ans ou plus en 2021 (princ);Nombre de personnes de 75 ans ou plus;;;NUM;17
+P21_POP0019;Pop 0-19 ans en 2021 (princ);Nombre de personnes de 0 à 19 ans;;;NUM;17
+P21_POP2064;Pop 20-64 ans en 2021 (princ);Nombre de personnes de 20 à 64 ans;;;NUM;17
+P21_POP65P;Pop 65 ans ou plus en 2021 (princ);Nombre de personnes de 65 ans ou plus;;;NUM;17
+P21_POPH;Pop Hommes en 2021 (princ);Nombre d'hommes;;;NUM;17
+P21_H0014;Pop Hommes 0-14 ans en 2021 (princ);Nombre d'hommes de 0 à 14 ans;;;NUM;17
+P21_H1529;Pop Hommes 15-29 ans en 2021 (princ);Nombre d'hommes de 15 à 29 ans;;;NUM;17
+P21_H3044;Pop Hommes 30-44 ans en 2021 (princ);Nombre d'hommes de 30 à 44 ans;;;NUM;17
+P21_H4559;Pop Hommes 45-59 ans en 2021 (princ);Nombre d'hommes de 45 à 59 ans;;;NUM;17
+P21_H6074;Pop Hommes 60-74 ans en 2021 (princ);Nombre d'hommes de 60 à 74 ans;;;NUM;17
+P21_H75P;Pop Hommes 75 ans ou plus en 2021 (princ);Nombre d'hommes de 75 ans ou plus;;;NUM;17
+P21_H0019;Pop Hommes 0-19 ans en 2021 (princ);Nombre d'hommes de 0 à 19 ans;;;NUM;17
+P21_H2064;Pop Hommes 20-64 ans en 2021 (princ);Nombre d'hommes de 20 à 64 ans;;;NUM;17
+P21_H65P;Pop Hommes 65 ans ou plus en 2021 (princ);Nombre d'hommes de 65 ans ou plus;;;NUM;17
+P21_POPF;Pop Femmes en 2021 (princ);Nombre de femmes;;;NUM;17
+P21_F0014;Pop Femmes 0-14 ans en 2021 (princ);Nombre de femmes de 0 à 14 ans;;;NUM;17
+P21_F1529;Pop Femmes 15-29 ans en 2021 (princ);Nombre de femmes de 15 à 29 ans;;;NUM;17
+P21_F3044;Pop Femmes 30-44 ans en 2021 (princ);Nombre de femmes de 30 à 44 ans;;;NUM;17
+P21_F4559;Pop Femmes 45-59 ans en 2021 (princ);Nombre de femmes de 45 à 59 ans;;;NUM;17
+P21_F6074;Pop Femmes 60-74 ans en 2021 (princ);Nombre de femmes de 60 à 74 ans;;;NUM;17
+P21_F75P;Pop Femmes 75 ans ou plus en 2021 (princ);Nombre de femmes de 75 ans ou plus;;;NUM;17
+P21_F0019;Pop Femmes 0-19 ans en 2021 (princ);Nombre de femmes de 0 à 19 ans;;;NUM;17
+P21_F2064;Pop Femmes 20-64 ans en 2021 (princ);Nombre de femmes de 20 à 64 ans;;;NUM;17
+P21_F65P;Pop Femmes 65 ans ou plus en 2021 (princ);Nombre de femmes de 65 ans ou plus;;;NUM;17
+C21_POP15P;Pop 15 ans ou plus en 2021 (compl);Nombre de personnes de 15 ans ou plus;;;NUM;16
+C21_POP15P_CS1;Pop 15 ans ou plus Agriculteurs exploitants en 2021 (compl);Nombre de personnes de 15 ans ou plus Agriculteurs exploitants;;;NUM;17
+C21_POP15P_CS2;Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2021 (compl);Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;;;NUM;17
+C21_POP15P_CS3;Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2021 (compl);Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;;;NUM;17
+C21_POP15P_CS4;Pop 15 ans ou plus Prof. intermédiaires en 2021 (compl);Nombre de personnes de 15 ans ou plus Professions intermédiaires;;;NUM;17
+C21_POP15P_CS5;Pop 15 ans ou plus Employés en 2021 (compl);Nombre de personnes de 15 ans ou plus Employés;;;NUM;17
+C21_POP15P_CS6;Pop 15 ans ou plus Ouvriers en 2021 (compl);Nombre de personnes de 15 ans ou plus Ouvriers;;;NUM;17
+C21_POP15P_CS7;Pop 15 ans ou plus Retraités en 2021 (compl);Nombre de personnes de 15 ans ou plus Retraités;;;NUM;17
+C21_POP15P_CS8;Pop 15 ans ou plus Autres en 2021 (compl);Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle;;;NUM;17
+C21_H15P;Pop 15 ans ou plus Hommes en 2021 (compl);Nombre d'hommes de 15 ans ou plus;;;NUM;17
+C21_H15P_CS1;Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2021 (compl);Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants;;;NUM;17
+C21_H15P_CS2;Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2021 (compl);Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;;;NUM;17
+C21_H15P_CS3;Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2021 (compl);Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;;;NUM;17
+C21_H15P_CS4;Pop 15 ans ou plus Hommes Prof. intermédiaires en 2021 (compl);Nombre d'hommes de 15 ans ou plus Professions intermédiaires;;;NUM;17
+C21_H15P_CS5;Pop 15 ans ou plus Hommes Employés en 2021 (compl);Nombre d'hommes de 15 ans ou plus Employés;;;NUM;17
+C21_H15P_CS6;Pop 15 ans ou plus Hommes Ouvriers en 2021 (compl);Nombre d'hommes de 15 ans ou plus Ouvriers;;;NUM;17
+C21_H15P_CS7;Pop 15 ans ou plus Hommes Retraités en 2021 (compl);Nombre d'hommes de 15 ans ou plus Retraités;;;NUM;17
+C21_H15P_CS8;Pop 15 ans ou plus Hommes Autres en 2021 (compl);Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle;;;NUM;17
+C21_F15P;Pop 15 ans ou plus Femmes en 2021 (compl);Nombre de femmes de 15 ans ou plus;;;NUM;17
+C21_F15P_CS1;Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2021 (compl);Nombre de femmes de 15 ans ou plus Agriculteurs exploitants;;;NUM;17
+C21_F15P_CS2;Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2021 (compl);Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;;;NUM;17
+C21_F15P_CS3;Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2021 (compl);Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;;;NUM;17
+C21_F15P_CS4;Pop 15 ans ou plus Femmes Prof. intermédiaires en 2021 (compl);Nombre de femmes de 15 ans ou plus Professions intermédiaires;;;NUM;17
+C21_F15P_CS5;Pop 15 ans ou plus Femmes Employés en 2021 (compl);Nombre de femmes de 15 ans ou plus Employés;;;NUM;17
+C21_F15P_CS6;Pop 15 ans ou plus Femmes Ouvriers en 2021 (compl);Nombre de femmes de 15 ans ou plus Ouvriers;;;NUM;17
+C21_F15P_CS7;Pop 15 ans ou plus Femmes Retraités en 2021 (compl);Nombre de femmes de 15 ans ou plus Retraités;;;NUM;17
+C21_F15P_CS8;Pop 15 ans ou plus Femmes Autres en 2021 (compl);Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle;;;NUM;17
+P21_POP_FR;Pop Français en 2021 (princ);Nombre de personnes de nationalité française;;;NUM;17
+P21_POP_ETR;Pop Etrangers en 2021 (princ);Nombre de personnes étrangères;;;NUM;17
+P21_POP_IMM;Pop Immigrés en 2021 (princ);Nombres de personnes immigrées;;;NUM;17
+P21_PMEN;Pop ménages en 2021 (princ);Population des ménages;;;NUM;17
+P21_PHORMEN;Pop hors ménages en 2021 (princ);Population hors ménages;;;NUM;17

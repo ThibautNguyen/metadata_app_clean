@@ -1,0 +1,27 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/4171554
+
+
+## Nom du tableau SQL : 
+MOB_PRO_2016
+
+
+## 4 premières lignes :
+CODGEO;LIBGEO;DCLT;L_DCLT;NBFLUX_C16_ACTOCC15P
+01001;L'Abergement-Clémenciat;01001;L'Abergement-Clémenciat;75
+01001;L'Abergement-Clémenciat;01053;Bourg-en-Bresse;35
+01001;L'Abergement-Clémenciat;01093;Châtillon-sur-Chalaronne;55
+
+
+
+## Dictionnaire des variables :
+VAR_ID;VAR_LIB;VAR_LIB_LONG
+CODGEO;Code géographique - résidence;Code géographique de la commune (ou de l'arrondissement municipal) de résidence
+LIBGEO;Libellé - résidence;Libellé de la commune (ou arrondissement municipal) de résidence
+C16_ACTOCC15P_ILT1;Nb actifs travaillant dans commune  (ou arrondissement municipal) de résidence;Nombre d'actifs travaillant dans leur commune (ou arrondissement municipal) de résidence
+C16_ACTOCC15P_ILTAUT;Nb actifs travaillant dans autre commune;Nombre d'actifs travaillant hors de leur commune (ou arrondissement municipal) de résidence
+C16_ACTOCC15P;Nombre d'actifs de 15 ans ou plus ayant un emploi;Nombre d'actifs de 15 ans ou plus ayant un emploi
+DCLT;Code géographique - lieu de travail;Code géographique de la commune (ou de l'arrondissement municipal) du lieu de travail
+L_DCLT;Libellé - lieu de travail;Commune (ou arrondissement municipal) du lieu de travail
+NBFLUX_C16_ACTOCC15P;Flux d'actifs de 15 ans ou plus ayant un emploi;Flux d'actifs de 15 ans ou plus ayant un emploi
+

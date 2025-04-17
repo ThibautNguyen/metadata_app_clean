@@ -1,0 +1,105 @@
+-- Exemple de Suresnes
+
+WITH communes_2006 AS (
+    SELECT 
+        COM as CODGEO,
+        SUM(P06_RP_1P) as p1,
+        SUM(P06_RP_2P) as p2,
+        SUM(P06_RP_3P) as p3,
+        SUM(P06_RP_4P) as p4,
+        SUM(P06_RP_5PP) as p5
+    FROM LOG_IRIS_2006
+    WHERE COM IN ('92073')
+    GROUP BY COM
+),
+communes_2011 AS (
+    SELECT 
+        COM as CODGEO,
+        SUM(P11_RP_1P) as p1,
+        SUM(P11_RP_2P) as p2,
+        SUM(P11_RP_3P) as p3,
+        SUM(P11_RP_4P) as p4,
+        SUM(P11_RP_5PP) as p5
+    FROM LOG_IRIS_2011
+    WHERE COM IN ('92073')
+    GROUP BY COM
+),
+communes_2016 AS (
+    SELECT 
+        COM as CODGEO,
+        SUM(P16_RP_1P) as p1,
+        SUM(P16_RP_2P) as p2,
+        SUM(P16_RP_3P) as p3,
+        SUM(P16_RP_4P) as p4,
+        SUM(P16_RP_5PP) as p5
+    FROM LOG_IRIS_2016
+    WHERE COM IN ('92073')
+    GROUP BY COM
+),
+communes_2021 AS (
+    SELECT 
+        COM as CODGEO,
+        SUM(P21_RP_1P) as p1,
+        SUM(P21_RP_2P) as p2,
+        SUM(P21_RP_3P) as p3,
+        SUM(P21_RP_4P) as p4,
+        SUM(P21_RP_5PP) as p5
+    FROM LOG_IRIS_2021
+    WHERE COM IN ('92073')
+    GROUP BY COM
+)
+SELECT 
+    'Logements 1 pièce' as taille,
+    SUM(t6.p1) as "2006",
+    SUM(t11.p1) as "2011",
+    SUM(t16.p1) as "2016",
+    SUM(t21.p1) as "2021"
+FROM communes_2006 t6
+JOIN communes_2011 t11 ON t6.CODGEO = t11.CODGEO
+JOIN communes_2016 t16 ON t6.CODGEO = t16.CODGEO
+JOIN communes_2021 t21 ON t6.CODGEO = t21.CODGEO
+UNION ALL
+SELECT 
+    'Logements 2 pièces' as taille,
+    SUM(t6.p2) as "2006",
+    SUM(t11.p2) as "2011",
+    SUM(t16.p2) as "2016",
+    SUM(t21.p2) as "2021"
+FROM communes_2006 t6
+JOIN communes_2011 t11 ON t6.CODGEO = t11.CODGEO
+JOIN communes_2016 t16 ON t6.CODGEO = t16.CODGEO
+JOIN communes_2021 t21 ON t6.CODGEO = t21.CODGEO
+UNION ALL
+SELECT 
+    'Logements 3 pièces' as taille,
+    SUM(t6.p3) as "2006",
+    SUM(t11.p3) as "2011",
+    SUM(t16.p3) as "2016",
+    SUM(t21.p3) as "2021"
+FROM communes_2006 t6
+JOIN communes_2011 t11 ON t6.CODGEO = t11.CODGEO
+JOIN communes_2016 t16 ON t6.CODGEO = t16.CODGEO
+JOIN communes_2021 t21 ON t6.CODGEO = t21.CODGEO
+UNION ALL
+SELECT 
+    'Logements 4 pièces' as taille,
+    SUM(t6.p4) as "2006",
+    SUM(t11.p4) as "2011",
+    SUM(t16.p4) as "2016",
+    SUM(t21.p4) as "2021"
+FROM communes_2006 t6
+JOIN communes_2011 t11 ON t6.CODGEO = t11.CODGEO
+JOIN communes_2016 t16 ON t6.CODGEO = t16.CODGEO
+JOIN communes_2021 t21 ON t6.CODGEO = t21.CODGEO
+UNION ALL
+SELECT 
+    'Logements 5 pièces ou plus' as taille,
+    SUM(t6.p5) as "2006",
+    SUM(t11.p5) as "2011",
+    SUM(t16.p5) as "2016",
+    SUM(t21.p5) as "2021"
+FROM communes_2006 t6
+JOIN communes_2011 t11 ON t6.CODGEO = t11.CODGEO
+JOIN communes_2016 t16 ON t6.CODGEO = t16.CODGEO
+JOIN communes_2021 t21 ON t6.CODGEO = t21.CODGEO
+ORDER BY taille;

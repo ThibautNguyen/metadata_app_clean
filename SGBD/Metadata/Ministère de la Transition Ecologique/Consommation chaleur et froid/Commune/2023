@@ -1,0 +1,78 @@
+## Source :
+https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=dataset&datasetId=6102491997d9292269ce2d70
+
+
+## Tableaux SQL :
+‘Conso_chaleur_froid_COM_2018’, ‘Conso_chaleur_froid_COM_2019’, ‘Conso_chaleur_froid_COM_2020’, ‘Conso_chaleur_froid_COM_2021’, ‘Conso_chaleur_froid_COM_2022’, ‘Conso_chaleur_froid_COM_2023’
+
+
+## 4 premières lignes du CSV :
+"ID";"OPERATEUR";"ANNEE";"FILIERE";"COMMUNE_CODE";"COMMUNE_LIBELLE";"PUISSANCE";"PUISSANCE_GAZ_NATUREL";"PUISSANCE_CHARBON";"PUISSANCE_FIOUL_DOMESTIQUE";"PUISSANCE_FIOUL_LOURD";"PUISSANCE_GPL";"PUISSANCE_BIOMASSE_SOLIDE";"PUISSANCE_DECHETS_INTERNES";"PUISSANCE_UIOM";"PUISSANCE_BIOGAZ";"PUISSANCE_GEOTHERMIE";"PUISSANCE_PAC";"PUISSANCE_SOLAIRE_THERMIQUE";"PUISSANCE_AUTRES_ENR";"PUISSANCE_CHALEUR_INDUSTRIEL";"PUISSANCE_AUTRE_CHALEUR_RECUPEREE";"PUISSANCE_CHAUDIERES_ELECTRIQUES";"PUISSANCE_AUTRES";"PUISSANCE_AUTRES_FROID";"PUISSANCE_GF_COMPRESSION";"PUISSANCE_GF_ABSORPTION";"PUISSANCE_PAC_FROID";"PUISSANCE_FROID_PASSIF";"PRODUCTION_TOTALE";"PRODUCTION_GAZ_NATUREL";"PRODUCTION_CHARBON";"PRODUCTION_FIOUL_DOMESTIQUE";"PRODUCTION_FIOUL_LOURD";"PRODUCTION_GPL";"PRODUCTION_BIOMASSE_SOLIDE";"PRODUCTION_DECHETS_INTERNES";"PRODUCTION_UIOM";"PRODUCTION_BIOGAZ";"PRODUCTION_GEOTHERMIE";"PRODUCTION_PAC";"PRODUCTION_SOLAIRE_THERMIQUE";"PRODUCTION_AUTRES_ENR";"PRODUCTION_CHALEUR_INDUSTRIEL";"PRODUCTION_AUTRE_CHALEUR_RECUPEREE";"PRODUCTION_CHAUDIERES_ELECTRIQUES";"PRODUCTION_AUTRES";"CONTENU_EN_CO2";"CONTENU_EN_CO2_ACV";"PCTCOG";"PCTCOG_GAZ_NATUREL";"PCTCOG_CHARBON";"PCTCOG_FIOUL_DOMESTIQUE";"PCTCOG_FIOUL_LOURD";"PCTCOG_GPL";"PCTCOG_BIOMASSE_SOLIDE";"PCTCOG_DECHETS_INTERNES";"PCTCOG_BIOGAZ";"PCTCOG_AUTRES";"PDL";"CONSOTOT";"CONSOR";"CONSOT";"CONSOI";"CONSOA";"CONSONA";"NCC"
+"0102C";"Réseau de chaleur d'Hauteville Lompnes";"2023";"C";"01185";"Plateau d'Hauteville";10.2;6;0;0;0;0;4.2;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;14150.8869;4603.4163;0;0;0;0;9547.4706;0;0;0;0;0;0;0;0;0;0;0;0.125517387151105;0.160263638170094;0;0;0;0;0;0;0;0;0;0;30;8354;1671;6683;0;0;0;"PLATEAU D HAUTEVILLE"
+"0103C";"Oyonnax BioChaleur";"2023";"C";"01283";"Oyonnax";35.5;24.5;0;0;0;0;11;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;45931;6976;0;0;0;0;38955;0;0;0;0;0;0;0;0;0;0;0;0.0425512050531984;0.0661294804421549;0;0;0;0;0;0;0;0;0;0;98;38629;29744;8885;0;0;0;"OYONNAX"
+"0105C";"Réseau de saint-denis-les-bourg";"2023";"C";"01344";"Saint-Denis-lès-Bourg";1.6;0.8;0;0;0;0;0.8;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1534;103;0;0;0;0;1431;0;0;0;0;0;0;0;0;0;0;0;0.0207044887780549;0.049046965918537;0;0;0;0;0;0;0;0;0;0;13;1203;241;962;0;0;0;"SAINT DENIS LES BOURG"
+
+
+## Dictionnaire des variables :
+
+Nom de la colonne;Description;Format
+ID;identifiant;CHAR
+OPERATEUR;Opérateur;CHAR
+ANNEE;Millésime des données;CHAR
+FILIERE;Énergie concernée;CHAR
+COMMUNE_CODE;Code géographique du territoire - Code de la zone;CHAR
+COMMUNE_LIBELLE;Code géographique du territoire - Libellé de la zone;CHAR
+PUISSANCE;Puissance totale installée sur le réseau (en MW);DECIMAL
+PUISSANCE_GAZ_NATUREL;Puissance installée sur le réseau de la filière gaz naturel (en MWh);DECIMAL
+PUISSANCE_CHARBON;Puissance installée sur le réseau de la filière charbon (en MWh);DECIMAL
+PUISSANCE_FIOUL_DOMESTIQUE;Puissance installée sur le réseau de la filière fioul domestique (en MWh);DECIMAL
+PUISSANCE_FIOUL_LOURD;Puissance installée sur le réseau de la filière fioul lourd (en MWh);DECIMAL
+PUISSANCE_GPL;Puissance installée sur le réseau de la filière gpl (en MWh);DECIMAL
+PUISSANCE_BIOMASSE_SOLIDE;Puissance installée sur le réseau de la filière bois-énergie et résidus agricoles (en MWh);DECIMAL
+PUISSANCE_DECHETS_INTERNES;Puissance installée sur le réseau de la filière déchets urbains incinérés en interne (en MWh);DECIMAL
+PUISSANCE_UIOM;Puissance installée sur le réseau de la filière chaleur issue d'unités de valorisation énergétique externes (en MWh);DECIMAL
+PUISSANCE_BIOGAZ;Puissance installée sur le réseau de la filière biogaz (en MWh);DECIMAL
+PUISSANCE_GEOTHERMIE;Puissance installée sur le réseau de la filière geothermie (en MWh);DECIMAL
+PUISSANCE_PAC;Puissance installée sur le réseau de la filière Pompes à chaleur (en MWh);DECIMAL
+PUISSANCE_SOLAIRE_THERMIQUE;Puissance installée sur le réseau de la filière solaire thermique (en MWh);DECIMAL
+PUISSANCE_AUTRES_ENR;Puissance installée sur le réseau de la filière Autres énergies renouvelables (en MWh);DECIMAL
+PUISSANCE_CHALEUR_INDUSTRIEL;Puissance installée sur le réseau de la filière chaleur issue de procédés industriels (en MWh);DECIMAL
+PUISSANCE_AUTRE_CHALEUR_RECUPEREE;Puissance installée sur le réseau de la filière autre chaleur recuperee (en MWh);DECIMAL
+PUISSANCE_CHAUDIERES_ELECTRIQUES;Puissance installée sur le réseau de la filière chaudieres electriques (en MWh);DECIMAL
+PUISSANCE_AUTRES;Puissance installée sur le réseau de la filière autres (en MWh);DECIMAL
+PRODUCTION_TOTALE;Production totale thermique du réseau (en MW);DECIMAL
+PRODUCTION_GAZ_NATUREL;Production thermique sur le réseau de la filière gaz naturel (en MWh);DECIMAL
+PRODUCTION_CHARBON;Production thermique sur le réseau de la filière charbon (en MWh);DECIMAL
+PRODUCTION_FIOUL_DOMESTIQUE;Production thermique sur le réseau de la filière fioul domestique (en MWh);DECIMAL
+PRODUCTION_FIOUL_LOURD;Production thermique sur le réseau de la filière fioul lourd (en MWh);DECIMAL
+PRODUCTION_GPL;Production thermique sur le réseau de la filière gpl (en MWh);DECIMAL
+PRODUCTION_BIOMASSE_SOLIDE;Production thermique sur le réseau de la filière bois-énergie et résidus agricoles (en MWh);DECIMAL
+PRODUCTION_DECHETS_INTERNES;Production thermique sur le réseau de la filière déchets urbains incinérés en interne (en MWh);DECIMAL
+PRODUCTION_UIOM;Production thermique sur le réseau de la filière chaleur issue d'unités de valorisation énergétique externes (en MWh);DECIMAL
+PRODUCTION_BIOGAZ;Production thermique sur le réseau de la filière biogaz (en MWh);DECIMAL
+PRODUCTION_GEOTHERMIE;Production thermique sur le réseau de la filière geothermie (en MWh);DECIMAL
+PRODUCTION_PAC;Production thermique sur le réseau de la filière Pompes à chaleur (en MWh);DECIMAL
+PRODUCTION_SOLAIRE_THERMIQUE;Production thermique sur le réseau de la filière solaire thermique (en MWh);DECIMAL
+PRODUCTION_AUTRES_ENR;Production thermique sur le réseau de la filière Autres énergies renouvelables (en MWh);DECIMAL
+PRODUCTION_CHALEUR_INDUSTRIEL;Production thermique sur le réseau de la filière chaleur issue de procédés industriels (en MWh);DECIMAL
+PRODUCTION_AUTRE_CHALEUR_RECUPEREE;Production thermique sur le réseau de la filière autre chaleur recuperee (en MWh);DECIMAL
+PRODUCTION_CHAUDIERES_ELECTRIQUES;Production thermique sur le réseau de la filière chaudieres electriques (en MWh);DECIMAL
+PRODUCTION_AUTRES;Production thermique sur le réseau de la filière autres (en MWh);DECIMAL
+CONTENU_EN_CO2;Niveau de rejet de CO2 des réseaux (en kg/kWh);DECIMAL
+PCTCOG;Pourcentage de chaleur produite par cogénération (en pourcent);DECIMAL
+PCTCOG_GAZ_NATUREL;Pourcentage de chaleur produite par cogénération dans la filière gaz naturel (en pourcent);DECIMAL
+PCTCOG_CHARBON;Pourcentage de chaleur produite par cogénération dans la filière charbon (en pourcent);DECIMAL
+PCTCOG_FIOUL_DOMESTIQUE;Pourcentage de chaleur produite par cogénération dans la filière fioul domestique (en pourcent);DECIMAL
+PCTCOG_FIOUL_LOURD;Pourcentage de chaleur produite par cogénération dans la filière fioul lourd (en pourcent);DECIMAL
+PCTCOG_GPL;Pourcentage de chaleur produite par cogénération dans la filière gpl (en pourcent);DECIMAL
+PCTCOG_BIOMASSE_SOLIDE;Pourcentage de chaleur produite par cogénération dans la filière bois-énergie et résidus agricoles (en pourcent);DECIMAL
+PCTCOG_DECHETS_INTERNES;Pourcentage de chaleur produite par cogénération dans la filière déchets urbains incinérés en interne (en pourcent);DECIMAL
+PCTCOG_BIOGAZ;Pourcentage de chaleur produite par cogénération dans la filière biogaz (en pourcent);DECIMAL
+PCTCOG_AUTRES;Pourcentage de chaleur produite par cogénération dans la filière autres (en pourcent);DECIMAL
+PDL;Nombre de points de livraison;CHAR
+CONSOTOT;Consommation totale (en MWh);CHAR
+CONSOR;Consommation dans le secteur résidentiel (en MWh);CHAR
+CONSOT;Consommation dans le secteur tertiaire (en MWh);CHAR
+CONSOI;Consommation dans le secteur industriel (en MWh);CHAR
+CONSOA;Consommation dans le secteur agricole (en MWh);CHAR
+CONSONA;Consommation non affectée dans l'un des quatres secteur (en MWh);CHAR

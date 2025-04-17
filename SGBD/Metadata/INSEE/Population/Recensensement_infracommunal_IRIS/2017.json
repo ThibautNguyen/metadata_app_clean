@@ -1,0 +1,487 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "POP_IRIS_2017",
+    "description": "POP_IRIS_2017 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\Evol_IRIS\\2017 IRIS;COM;TYP_IRIS;MODIF_IRIS;LAB_IRIS;P17_POP;P17_POP0002;P17_POP0305;P17_POP0610;P17_POP1117;P17_POP1824;P17_POP2539;P17_POP4054;P17_POP5564;P17_POP6579;P17_POP80P;P17_POP0014;P17_POP1529;P17_POP3044;P17_POP4559;P17_POP6074;P17_POP75P;P17_POP0019;P17_POP2064;P17_POP65P;P17_POPH;P17_H0014;P17_H1529;P17_H3044;P17_H4559;P17_H6074;P17_H75P;P17_H0019;P17_H2064;P17_H65P;P17_POPF;P17_F0014;P17_F1529;P17_F3044;P17_F4559;P17_F6074;P17_F75P;P17_F0019;P17_F2064;P17_F65P;C17_POP15P;C17_POP15P_CS1;C17_POP15P_CS2;C17_POP15P_CS3;C17_POP15P_CS4;C17_POP15P_CS5;C17_POP15P_CS6;C17_POP15P_CS7;C17_POP15P_CS8;C17_H15P;C17_H15P_CS1;C17_H15P_CS2;C17_H15P_CS3;C17_H15P_CS4;C17_H15P_CS5;C17_H15P_CS6;C17_H15P_CS7;C17_H15P_CS8;C17_F15P;C17_F15P_CS1;C17_F15P_CS2;C17_F15P_CS3;C17_F15P_CS4;C17_F15P_CS5;C17_F15P_CS6;C17_F15P_CS7;C17_F15P_CS8;P17_POP_FR;P17_POP_ETR;P17_POP_IMM;P17_PMEN;P17_PHORMEN",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "4799309",
+      "type": "VARCHAR",
+      "description": "## Tableau SQL :",
+      "nullable": true
+    },
+    {
+      "name": "POP_IRIS_2017",
+      "type": "VARCHAR",
+      "description": "## Chemin disque dur : \nC:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\Evol_IRIS\\2017\n\n## ## 4 premières lignes :",
+      "nullable": true
+    },
+    {
+      "name": "IRIS",
+      "type": "VARCHAR",
+      "description": "COM;TYP_IRIS;MODIF_IRIS;LAB_IRIS;P17_POP;P17_POP0002;P17_POP0305;P17_POP0610;P17_POP1117;P17_POP1824;P17_POP2539;P17_POP4054;P17_POP5564;P17_POP6579;P17_POP80P;P17_POP0014;P17_POP1529;P17_POP3044;P17_POP4559;P17_POP6074;P17_POP75P;P17_POP0019;P17_POP2064;P17_POP65P;P17_POPH;P17_H0014;P17_H1529;P17_H3044;P17_H4559;P17_H6074;P17_H75P;P17_H0019;P17_H2064;P17_H65P;P17_POPF;P17_F0014;P17_F1529;P17_F3044;P17_F4559;P17_F6074;P17_F75P;P17_F0019;P17_F2064;P17_F65P;C17_POP15P;C17_POP15P_CS1;C17_POP15P_CS2;C17_POP15P_CS3;C17_POP15P_CS4;C17_POP15P_CS5;C17_POP15P_CS6;C17_POP15P_CS7;C17_POP15P_CS8;C17_H15P;C17_H15P_CS1;C17_H15P_CS2;C17_H15P_CS3;C17_H15P_CS4;C17_H15P_CS5;C17_H15P_CS6;C17_H15P_CS7;C17_H15P_CS8;C17_F15P;C17_F15P_CS1;C17_F15P_CS2;C17_F15P_CS3;C17_F15P_CS4;C17_F15P_CS5;C17_F15P_CS6;C17_F15P_CS7;C17_F15P_CS8;P17_POP_FR;P17_POP_ETR;P17_POP_IMM;P17_PMEN;P17_PHORMEN",
+      "nullable": true
+    },
+    {
+      "name": "010010000",
+      "type": "VARCHAR",
+      "description": "01001;Z;0;5;776.000000000003;29.1454230451661;18.0579318080486;57.197303561984;90.3354732058697;36.3081363635473;106.958342404532;195.068521455443;96.818490851432;113.392958562304;32.7174187416756;161.554782722304;102.900037142186;132.874127522194;191.794643987343;127.554675936227;59.3217326897486;212.868018568206;417.021604127817;146.11037730398;396.533804405096;84.274172993176;55.5116311019679;65.4910840261551;100.425013386492;62.2322420556101;28.599660841695;113.463958117768;208.536895027605;74.532951259722;379.466195594907;77.2806097291281;47.3884060402185;67.3830434960389;91.3696306008516;65.3224338806165;30.7220718480537;99.4040604504376;208.484709100212;71.577426044258;613.411566912715;15.2641655991556;20.1052456487526;75.8755638889382;96.6117742179715;100.897086943132;126.436911299421;148.098395337426;30.1224239779171;324.206674360497;10.2009979870133;15.0790015534202;50.5591833372265;45.7924948048581;15.1161963157301;96.0201683732575;76.5059820930012;14.9326498959901;289.204892552218;5.06316761214228;5.02624409533248;25.3163805517117;50.8192794131134;85.7808906274024;30.4167429261639;71.5924132444252;15.189774081927;767.876506464989;8.12349353501371;20.2828056065019;776.000000000003;0",
+      "nullable": true
+    },
+    {
+      "name": "010020000",
+      "type": "VARCHAR",
+      "description": "01002;Z;0;5;247.999999999999;14.2880658436214;10.2057613168724;14.2880658436214;24.4938271604938;8.16460905349792;55.111111111111;51.028806584362;25.514403292181;33.6790123456789;11.2263374485596;56.1316872427982;28.5761316872427;71.4403292181068;37.7613168724279;34.6995884773662;19.3909465020576;67.3580246913578;135.736625514403;44.9053497942386;125.530864197531;26.5349794238682;10.2057613168724;38.7818930041151;17.3497942386831;22.4526748971193;10.2057613168724;30.6172839506172;67.3580246913578;27.5555555555555;122.469135802469;29.59670781893;18.3703703703703;32.6584362139917;20.4115226337448;12.2469135802469;9.18518518518516;36.7407407407406;68.3786008230451;17.3497942386831;199.012345679012;0;20.4115226337448;15.3086419753086;25.5144032921811;40.8230452674897;10.2057613168724;66.3374485596707;20.4115226337448;117.366255144033;0;15.3086419753086;5.10288065843621;5.10288065843621;15.3086419753086;10.2057613168724;45.9259259259259;20.4115226337448;81.6460905349794;0;5.10288065843621;10.2057613168724;20.4115226337448;25.5144032921811;0;20.4115226337448;0;245.958847736625;2.04115226337448;3.06172839506172;247.999999999999;0",
+      "nullable": true
+    },
+    {
+      "name": "010040101",
+      "type": "VARCHAR",
+      "description": "01004;H;0;1;1904.58628230919;88.0222084566664;45.2038189184695;103.764113027309;143.77883493206;330.968338016126;423.817063650041;265.671826194476;158.00297191995;238.533038584486;106.824068609603;322.622590990322;583.084588557713;363.972427669927;219.576270444511;254.407591271451;160.922813375262;524.390065858932;1034.83910925617;345.357107194088;967.710183601414;165.298938686706;323.229919863912;180.574861715205;105.612889666731;132.13806175095;60.8555119179113;275.925820175174;532.700167344224;159.084196082016;936.876098707772;157.323652303616;259.854668693801;183.397565954723;113.963380777781;122.269529520502;100.067301457351;248.464245683758;502.138941911943;186.272911112072;1602.1263096959;0;11.8613311934661;91.9309178248446;229.30725935739;346.998235527976;301.391445854071;341.362414292113;279.27470564604;814.066290304419;0;11.8613311934661;56.6710291828229;134.020054876239;117.294283122604;237.742254342536;162.760227982359;93.7171096043916;788.060019391482;0;0;35.2598886420217;95.2872044811512;229.703952405372;63.6491915115345;178.602186309754;185.557596041649;1637.62345763886;266.962824670327;260.068214346845;1546.46888507183;358.117397237353\n\n\n## Dictionnaire des variables",
+      "nullable": true
+    },
+    {
+      "name": "COD_VAR",
+      "type": "VARCHAR",
+      "description": "LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP",
+      "type": "VARCHAR",
+      "description": "Population en 2017 (princ);Population;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP0002",
+      "type": "VARCHAR",
+      "description": "Pop 0-2 ans en 2017 (princ);Nombre de personnes de 0 à 2 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP0305",
+      "type": "VARCHAR",
+      "description": "Pop 3-5 ans en 2017 (princ);Nombre de personnes de 3 à 5 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP0610",
+      "type": "VARCHAR",
+      "description": "Pop 6-10 ans en 2017 (princ);Nombre de personnes de 6 à 10 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP1117",
+      "type": "VARCHAR",
+      "description": "Pop 11-17 ans en 2017 (princ);Nombre de personnes de 11 à 17 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP1824",
+      "type": "VARCHAR",
+      "description": "Pop 18-24 ans en 2017 (princ);Nombre de personnes de 18 à 24 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP2539",
+      "type": "VARCHAR",
+      "description": "Pop 25-39 ans en 2017 (princ);Nombre de personnes de 25 à 39 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP4054",
+      "type": "VARCHAR",
+      "description": "Pop 40-54 ans en 2017 (princ);Nombre de personnes de 40 à 54 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP5564",
+      "type": "VARCHAR",
+      "description": "Pop 55-64 ans en 2017 (princ);Nombre de personnes de 55 à 64 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP6579",
+      "type": "VARCHAR",
+      "description": "Pop 65-79 ans en 2017 (princ);Nombre de personnes de 65 à 79 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP80P",
+      "type": "VARCHAR",
+      "description": "Pop 80 ans ou plus en 2017 (princ);Nombre de personnes de 80 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP0014",
+      "type": "VARCHAR",
+      "description": "Pop 0-14 ans en 2017 (princ);Nombre de personnes de 0 à 14 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP1529",
+      "type": "VARCHAR",
+      "description": "Pop 15-29 ans en 2017 (princ);Nombre de personnes de 15 à 29 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP3044",
+      "type": "VARCHAR",
+      "description": "Pop 30-44 ans en 2017 (princ);Nombre de personnes de 30 à 44 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP4559",
+      "type": "VARCHAR",
+      "description": "Pop 45-59 ans en 2017 (princ);Nombre de personnes de 45 à 59 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP6074",
+      "type": "VARCHAR",
+      "description": "Pop 60-74 ans en 2017 (princ);Nombre de personnes de 60 à 74 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP75P",
+      "type": "VARCHAR",
+      "description": "Pop 75 ans ou plus en 2017 (princ);Nombre de personnes de 75 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP0019",
+      "type": "VARCHAR",
+      "description": "Pop 0-19 ans en 2017 (princ);Nombre de personnes de 0 à 19 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP2064",
+      "type": "VARCHAR",
+      "description": "Pop 20-64 ans en 2017 (princ);Nombre de personnes de 20 à 64 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP65P",
+      "type": "VARCHAR",
+      "description": "Pop 65 ans ou plus en 2017 (princ);Nombre de personnes de 65 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POPH",
+      "type": "VARCHAR",
+      "description": "Pop Hommes en 2017 (princ);Nombre d'hommes;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H0014",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-14 ans en 2017 (princ);Nombre d'hommes de 0 à 14 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H1529",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 15-29 ans en 2017 (princ);Nombre d'hommes de 15 à 29 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H3044",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 30-44 ans en 2017 (princ);Nombre d'hommes de 30 à 44 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H4559",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 45-59 ans en 2017 (princ);Nombre d'hommes de 45 à 59 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H6074",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 60-74 ans en 2017 (princ);Nombre d'hommes de 60 à 74 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H75P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 75 ans ou plus en 2017 (princ);Nombre d'hommes de 75 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H0019",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-19 ans en 2017 (princ);Nombre d'hommes de 0 à 19 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H2064",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 20-64 ans en 2017 (princ);Nombre d'hommes de 20 à 64 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_H65P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 65 ans ou plus en 2017 (princ);Nombre d'hommes de 65 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POPF",
+      "type": "VARCHAR",
+      "description": "Pop Femmes en 2017 (princ);Nombre de femmes;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F0014",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-14 ans en 2017 (princ);Nombre de femmes de 0 à 14 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F1529",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 15-29 ans en 2017 (princ);Nombre de femmes de 15 à 29 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F3044",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 30-44 ans en 2017 (princ);Nombre de femmes de 30 à 44 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F4559",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 45-59 ans en 2017 (princ);Nombre de femmes de 45 à 59 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F6074",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 60-74 ans en 2017 (princ);Nombre de femmes de 60 à 74 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F75P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 75 ans ou plus en 2017 (princ);Nombre de femmes de 75 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F0019",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-19 ans en 2017 (princ);Nombre de femmes de 0 à 19 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F2064",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 20-64 ans en 2017 (princ);Nombre de femmes de 20 à 64 ans;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_F65P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 65 ans ou plus en 2017 (princ);Nombre de femmes de 65 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus en 2017 (compl);Nombre de personnes de 15 ans ou plus;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Agriculteurs exploitants en 2017 (compl);Nombre de personnes de 15 ans ou plus Agriculteurs exploitants;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2017 (compl);Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2017 (compl);Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Prof. intermédiaires en 2017 (compl);Nombre de personnes de 15 ans ou plus Professions intermédiaires;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Employés en 2017 (compl);Nombre de personnes de 15 ans ou plus Employés;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Ouvriers en 2017 (compl);Nombre de personnes de 15 ans ou plus Ouvriers;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Retraités en 2017 (compl);Nombre de personnes de 15 ans ou plus Retraités;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_POP15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Autres en 2017 (compl);Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes en 2017 (compl);Nombre d'hommes de 15 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2017 (compl);Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2017 (compl);Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2017 (compl);Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Prof. intermédiaires en 2017 (compl);Nombre d'hommes de 15 ans ou plus Professions intermédiaires;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Employés en 2017 (compl);Nombre d'hommes de 15 ans ou plus Employés;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Ouvriers en 2017 (compl);Nombre d'hommes de 15 ans ou plus Ouvriers;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Retraités en 2017 (compl);Nombre d'hommes de 15 ans ou plus Retraités;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_H15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Autres en 2017 (compl);Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes en 2017 (compl);Nombre de femmes de 15 ans ou plus;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2017 (compl);Nombre de femmes de 15 ans ou plus Agriculteurs exploitants;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2017 (compl);Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2017 (compl);Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Prof. intermédiaires en 2017 (compl);Nombre de femmes de 15 ans ou plus Professions intermédiaires;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Employés en 2017 (compl);Nombre de femmes de 15 ans ou plus Employés;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Ouvriers en 2017 (compl);Nombre de femmes de 15 ans ou plus Ouvriers;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Retraités en 2017 (compl);Nombre de femmes de 15 ans ou plus Retraités;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C17_F15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Autres en 2017 (compl);Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP_FR",
+      "type": "VARCHAR",
+      "description": "Pop Français en 2017 (princ);Nombre de personnes de nationalité française;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP_ETR",
+      "type": "VARCHAR",
+      "description": "Pop Etrangers en 2017 (princ);Nombre de personnes étrangères;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_POP_IMM",
+      "type": "VARCHAR",
+      "description": "Pop Immigrés en 2017 (princ);Nombres de personnes immigrées;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_PMEN",
+      "type": "VARCHAR",
+      "description": "Pop ménages en 2017 (princ);Population des ménages;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P17_PHORMEN",
+      "type": "VARCHAR",
+      "description": "Pop hors ménages en 2017 (princ);Population hors ménages;;;NUM;17",
+      "nullable": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+---
+description: streamlit-ui
+globs: **/*
+alwaysApply: true
+---
+
+## streamlit-ui
+- Use Streamlit components to build clear, user-friendly interfaces.
+- Group related filters and selectors together.
+- Avoid overloading the UI; prefer progressive disclosure of information.
+- Use columns and tabs for layout clarity.
+

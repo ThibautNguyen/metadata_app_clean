@@ -1,0 +1,266 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/4171531
+
+
+## Nom du tableau : 
+MOB_PRO_DET_2016
+
+
+## 4 premières lignes : 
+COMMUNE;ARM;DCFLT;DCLT;AGEREVQ;CS1;DEROU;DIPL_15;EMPL;ILT;ILTUU;IMMI;INATC;INEEM;INPOM;INPSM;IPONDI;LPRM;METRODOM;MOCO;NA5;NPERR;REGION;REGLT;SEXE;STAT;STOCD;TP;TRANS;TYPL;TYPMR;VOIT
+01001;ZZZZZ;99999;01001;045;2;Z;C;21;1;1;2;1;0;4;2;5.00000000000000;1;M;22;AZ;4;84;84;1;21;10;1;4;1;41;3
+01001;ZZZZZ;99999;01001;055;1;Z;D;21;1;1;1;1;0;2;0;5.00000000000000;1;M;22;AZ;3;84;84;1;21;10;1;1;1;41;1
+01001;ZZZZZ;99999;01001;050;1;Z;C;21;1;1;1;1;0;2;0;5.00000000000000;2;M;22;AZ;3;84;84;2;21;10;1;1;1;41;1
+
+
+## Variable la plus importante pour les calculs : 
+IPONDI
+
+
+
+## Dictionnaire des variables :
+COD_VAR;LIB_VAR;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+AGEREVQ;Âge quinquennal en années révolues;000;0 à 4 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;005;5 à 9 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;010;10 à 14 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;015;15 à 19 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;020;20 à 24 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;025;25 à 29 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;030;30 à 34 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;035;35 à 39 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;040;40 à 44 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;045;45 à 49 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;050;50 à 54 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;055;55 à 59 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;060;60 à 64 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;065;65 à 69 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;070;70 à 74 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;075;75 à 79 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;080;80 à 84 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;085;85 à 89 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;090;90 à 94 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;095;95 à 99 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;100;100 à 104 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;105;105 à 109 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;110;110 à 114 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;115;115 à 119 ans;CHAR;3
+AGEREVQ;Âge quinquennal en années révolues;120;120 ans;CHAR;3
+CS1;Catégorie socioprofessionnelle en 8 postes;1;Agriculteurs exploitants;CHAR;1
+CS1;Catégorie socioprofessionnelle en 8 postes;2;Artisans, commerçants et chefs d'entreprise;CHAR;1
+CS1;Catégorie socioprofessionnelle en 8 postes;3;Cadres et professions intellectuelles supérieures;CHAR;1
+CS1;Catégorie socioprofessionnelle en 8 postes;4;Professions Intermédiaires;CHAR;1
+CS1;Catégorie socioprofessionnelle en 8 postes;5;Employés;CHAR;1
+CS1;Catégorie socioprofessionnelle en 8 postes;6;Ouvriers;CHAR;1
+CS1;Catégorie socioprofessionnelle en 8 postes;7;Retraités;CHAR;1
+CS1;Catégorie socioprofessionnelle en 8 postes;8;Autres personnes sans activité professionnelle;CHAR;1
+DEROU;Nombre de deux-roues à moteur du ménage (DOM);0;Aucun deux-roues à moteur;CHAR;1
+DEROU;Nombre de deux-roues à moteur du ménage (DOM);1;Un seul deux-roues à moteur;CHAR;1
+DEROU;Nombre de deux-roues à moteur du ménage (DOM);2;Deux deux-roues à moteur;CHAR;1
+DEROU;Nombre de deux-roues à moteur du ménage (DOM);3;Trois deux-roues à moteur ou plus;CHAR;1
+DEROU;Nombre de deux-roues à moteur du ménage (DOM);U;Hors logement ordinaire (DOM et France métropolitaine);CHAR;1
+DEROU;Nombre de deux-roues à moteur du ménage (DOM);X;Logement ordinaire inoccupé (DOM);CHAR;1
+DEROU;Nombre de deux-roues à moteur du ménage (DOM);Z;Logement ordinaire France métropolitaine;CHAR;1
+DIPL_15;Diplôme le plus élevé;A;Aucun diplôme ou au mieux BEPC, brevet des collèges ou DNB;CHAR;1
+DIPL_15;Diplôme le plus élevé;B;CAP, BEP;CHAR;1
+DIPL_15;Diplôme le plus élevé;C;Baccalauréat (général, technologique, professionnel);CHAR;1
+DIPL_15;Diplôme le plus élevé;D;Diplôme d'études supérieures;CHAR;1
+DIPL_15;Diplôme le plus élevé;Z;Hors champ (moins de 14 ans);CHAR;1
+EMPL;Condition d'emploi;11;En contrat d'apprentissage ou de professionnalisation;CHAR;2
+EMPL;Condition d'emploi;12;Placés par une agence d'intérim;CHAR;2
+EMPL;Condition d'emploi;13;Emplois aidés (contrat unique d'insertion, d'initiative emploi, d'accompagnement dans l'emploi, avenir, etc.);CHAR;2
+EMPL;Condition d'emploi;14;Stagiaires rémunérés en entreprise;CHAR;2
+EMPL;Condition d'emploi;15;Autres emplois à durée limitée, CDD, contrat court, saisonnier, vacataire, etc.;CHAR;2
+EMPL;Condition d'emploi;16;Emplois sans limite de durée, CDI, titulaire de la fonction publique;CHAR;2
+EMPL;Condition d'emploi;21;Non salariés : Indépendants;CHAR;2
+EMPL;Condition d'emploi;22;Non salariés : Employeurs;CHAR;2
+EMPL;Condition d'emploi;23;Non salariés : Aides familiaux;CHAR;2
+EMPL;Condition d'emploi;ZZ;Sans objet;CHAR;2
+ILT;Indicateur du lieu de travail;1;Dans la commune de résidence actuelle;CHAR;1
+ILT;Indicateur du lieu de travail;2;Dans une autre commune du département de résidence;CHAR;1
+ILT;Indicateur du lieu de travail;3;Dans un autre département de la région de résidence;CHAR;1
+ILT;Indicateur du lieu de travail;4;Hors de la région de résidence actuelle : en métropole;CHAR;1
+ILT;Indicateur du lieu de travail;5;Hors de la région de résidence actuelle : dans un DOM;CHAR;1
+ILT;Indicateur du lieu de travail;6;Hors de la région de résidence actuelle : dans une COM;CHAR;1
+ILT;Indicateur du lieu de travail;7;A l'étranger;CHAR;1
+ILT;Indicateur du lieu de travail;Z;Sans objet;CHAR;1
+ILTUU;Indicateur urbain du lieu de travail;1;Réside dans une commune rurale et travaille dans la même commune;CHAR;1
+ILTUU;Indicateur urbain du lieu de travail;2;Réside dans une commune rurale et travaille hors de la commune;CHAR;1
+ILTUU;Indicateur urbain du lieu de travail;3;Réside dans une commune urbaine et travaille dans la même commune;CHAR;1
+ILTUU;Indicateur urbain du lieu de travail;4;Réside dans une commune urbaine et travaille dans une autre commune de la même unité urbaine;CHAR;1
+ILTUU;Indicateur urbain du lieu de travail;5;Réside dans une commune urbaine et travaille en dehors de l'unité urbaine;CHAR;1
+ILTUU;Indicateur urbain du lieu de travail;Z;Sans objet;CHAR;1
+IMMI;Situation quant à l'immigration;1;Immigrés;CHAR;1
+IMMI;Situation quant à l'immigration;2;Non immigrés;CHAR;1
+INATC;Indicateur de nationalité condensé (Français/Étranger);1;Français;CHAR;1
+INATC;Indicateur de nationalité condensé (Français/Étranger);2;Etrangers;CHAR;1
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;0;0 personne;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;1;1 personne;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;2;2 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;3;3 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;4;4 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;5;5 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;6;6 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;7;7 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;8;8 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;9;9 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;10;10 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;11;11 personnes;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;Y;Hors résidence principale;CHAR;2
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;Z;Hors logement ordinaire;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;0;0 personne;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;1;1 personne;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;2;2 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;3;3 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;4;4 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;5;5 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;6;6 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;7;7 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;8;8 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;9;9 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;10;10 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;11;11 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;14;14 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;15;15 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;16;16 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;17;17 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;18;18 personnes;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;Y;Hors résidence principale;CHAR;2
+INPOM;Nombre de personnes actives ayant un emploi du ménage;Z;Hors logement ordinaire;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;0;0 personne;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;1;1 personne;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;2;2 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;3;3 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;4;4 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;5;5 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;6;6 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;7;7 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;8;8 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;9;9 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;10;10 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;11;11 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;12;12 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;13;13 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;15;15 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;16;16 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;23;23 personnes;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;Y;Hors résidence principale;CHAR;2
+INPSM;Nombre de personnes scolarisées du ménage;Z;Hors logement ordinaire;CHAR;2
+IPONDI;Poids de l'individu;;;NUM;17.15
+LPRM;Lien à la personne de référence du ménage;1;Personne de référence du ménage;CHAR;1
+LPRM;Lien à la personne de référence du ménage;2;Conjoint de la personne de référence du ménage;CHAR;1
+LPRM;Lien à la personne de référence du ménage;3;Enfant de la personne de référence du ménage ou de son conjoint;CHAR;1
+LPRM;Lien à la personne de référence du ménage;4;Petit-enfant;CHAR;1
+LPRM;Lien à la personne de référence du ménage;5;Ascendant;CHAR;1
+LPRM;Lien à la personne de référence du ménage;6;Autre parent;CHAR;1
+LPRM;Lien à la personne de référence du ménage;7;Ami;CHAR;1
+LPRM;Lien à la personne de référence du ménage;8;Pensionnaire ou sous-locataire;CHAR;1
+LPRM;Lien à la personne de référence du ménage;9;Domestique ou salarié logé;CHAR;1
+LPRM;Lien à la personne de référence du ménage;Z;Hors logement ordinaire;CHAR;1
+METRODOM;Indicateur Métropole ou DOM du lieu de résidence;M;France métropolitaine;CHAR;1
+METRODOM;Indicateur Métropole ou DOM du lieu de résidence;D;DOM;CHAR;1
+MOCO;Mode de cohabitation;11;Enfants d'un couple;CHAR;2
+MOCO;Mode de cohabitation;12;Enfants d'une famille monoparentale;CHAR;2
+MOCO;Mode de cohabitation;21;Adultes d'un couple sans enfant;CHAR;2
+MOCO;Mode de cohabitation;22;Adultes d'un couple avec enfant(s);CHAR;2
+MOCO;Mode de cohabitation;23;Adultes d'une famille monoparentale;CHAR;2
+MOCO;Mode de cohabitation;31;Hors famille dans ménage de plusieurs personnes;CHAR;2
+MOCO;Mode de cohabitation;32;Personnes vivant seules;CHAR;2
+MOCO;Mode de cohabitation;40;Personnes vivant hors ménage;CHAR;2
+NA5;Activité économique regroupée en 5 postes;AZ;Agriculture, sylviculture et pêche;CHAR;2
+NA5;Activité économique regroupée en 5 postes;BE;Industrie manufacturière, industries extractives  et autres;CHAR;2
+NA5;Activité économique regroupée en 5 postes;FZ;Construction;CHAR;2
+NA5;Activité économique regroupée en 5 postes;GU;Commerce, transports et services divers;CHAR;2
+NA5;Activité économique regroupée en 5 postes;OQ;Administration publique, enseignement, santé humaine et action sociale;CHAR;2
+NA5;Activité économique regroupée en 5 postes;ZZ;Sans objet;CHAR;2
+NPERR;Nombre de personnes du ménage (regroupé);1;Une personne;CHAR;1
+NPERR;Nombre de personnes du ménage (regroupé);2;2 personnes;CHAR;1
+NPERR;Nombre de personnes du ménage (regroupé);3;3 personnes;CHAR;1
+NPERR;Nombre de personnes du ménage (regroupé);4;4 personnes;CHAR;1
+NPERR;Nombre de personnes du ménage (regroupé);5;5 personnes;CHAR;1
+NPERR;Nombre de personnes du ménage (regroupé);6;6 personnes ou plus;CHAR;1
+NPERR;Nombre de personnes du ménage (regroupé);Z;Hors logement ordinaire;CHAR;1
+REGION;Région du lieu de résidence;01;Guadeloupe;CHAR;2
+REGION;Région du lieu de résidence;02;Martinique;CHAR;2
+REGION;Région du lieu de résidence;03;Guyane;CHAR;2
+REGION;Région du lieu de résidence;04;La Réunion;CHAR;2
+REGION;Région du lieu de résidence;11;Île-de-France;CHAR;2
+REGION;Région du lieu de résidence;24;Centre-Val de Loire;CHAR;2
+REGION;Région du lieu de résidence;27;Bourgogne-Franche-Comté;CHAR;2
+REGION;Région du lieu de résidence;28;Normandie;CHAR;2
+REGION;Région du lieu de résidence;32;Hauts-de-France;CHAR;2
+REGION;Région du lieu de résidence;44;Grand Est;CHAR;2
+REGION;Région du lieu de résidence;52;Pays de la Loire;CHAR;2
+REGION;Région du lieu de résidence;53;Bretagne;CHAR;2
+REGION;Région du lieu de résidence;75;Nouvelle-Aquitaine;CHAR;2
+REGION;Région du lieu de résidence;76;Occitanie;CHAR;2
+REGION;Région du lieu de résidence;84;Auvergne-Rhône-Alpes;CHAR;2
+REGION;Région du lieu de résidence;93;Provence-Alpes-Côte d'Azur;CHAR;2
+REGION;Région du lieu de résidence;94;Corse;CHAR;2
+REGLT;Région du lieu de travail;01;Guadeloupe;CHAR;2
+REGLT;Région du lieu de travail;02;Martinique;CHAR;2
+REGLT;Région du lieu de travail;03;Guyane;CHAR;2
+REGLT;Région du lieu de travail;04;La Réunion;CHAR;2
+REGLT;Région du lieu de travail;06;Mayotte;CHAR;2
+REGLT;Région du lieu de travail;11;Île-de-France;CHAR;2
+REGLT;Région du lieu de travail;24;Centre-Val de Loire;CHAR;2
+REGLT;Région du lieu de travail;27;Bourgogne-Franche-Comté;CHAR;2
+REGLT;Région du lieu de travail;28;Normandie;CHAR;2
+REGLT;Région du lieu de travail;32;Hauts-de-France;CHAR;2
+REGLT;Région du lieu de travail;44;Grand Est;CHAR;2
+REGLT;Région du lieu de travail;52;Pays de la Loire;CHAR;2
+REGLT;Région du lieu de travail;53;Bretagne;CHAR;2
+REGLT;Région du lieu de travail;75;Nouvelle-Aquitaine;CHAR;2
+REGLT;Région du lieu de travail;76;Occitanie;CHAR;2
+REGLT;Région du lieu de travail;84;Auvergne-Rhône-Alpes;CHAR;2
+REGLT;Région du lieu de travail;93;Provence-Alpes-Côte d'Azur;CHAR;2
+REGLT;Région du lieu de travail;94;Corse;CHAR;2
+REGLT;Région du lieu de travail;99;Individus travaillant à l'étranger;CHAR;2
+REGLT;Région du lieu de travail;ZZ;Collectivités d'outre-mer;CHAR;2
+REGLT;Région du lieu de travail;YY;Sans objet;CHAR;2
+SEXE;Sexe;1;Hommes;CHAR;1
+SEXE;Sexe;2;Femmes;CHAR;1
+STAT;Statut professionnel;10;Salariés;CHAR;2
+STAT;Statut professionnel;21;Non salariés : Indépendants;CHAR;2
+STAT;Statut professionnel;22;Non salariés : Employeurs;CHAR;2
+STAT;Statut professionnel;23;Non salariés : Aides familiaux;CHAR;2
+STAT;Statut professionnel;ZZ;Sans objet;CHAR;2
+STOCD;Statut d'occupation détaillé du logement;00;Logement ordinaire inoccupé;CHAR;2
+STOCD;Statut d'occupation détaillé du logement;10;Propriétaire;CHAR;2
+STOCD;Statut d'occupation détaillé du logement;21;Locataire ou sous-locataire d'un logement loué vide non HLM;CHAR;2
+STOCD;Statut d'occupation détaillé du logement;22;Locataire ou sous-locataire d'un logement loué vide HLM;CHAR;2
+STOCD;Statut d'occupation détaillé du logement;23;Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel;CHAR;2
+STOCD;Statut d'occupation détaillé du logement;30;Logé gratuitement;CHAR;2
+STOCD;Statut d'occupation détaillé du logement;ZZ;Hors logement ordinaire;CHAR;2
+TP;Temps de travail;1;Temps complet;CHAR;1
+TP;Temps de travail;2;Temps partiel;CHAR;1
+TP;Temps de travail;Z;Sans objet;CHAR;1
+TRANS;Mode de transport principal le plus souvent utilisé pour aller travailler;1;Pas de transport;CHAR;1
+TRANS;Mode de transport principal le plus souvent utilisé pour aller travailler;2;Marche à pied;CHAR;1
+TRANS;Mode de transport principal le plus souvent utilisé pour aller travailler;3;Deux roues;CHAR;1
+TRANS;Mode de transport principal le plus souvent utilisé pour aller travailler;4;Voiture, camion, fourgonnette;CHAR;1
+TRANS;Mode de transport principal le plus souvent utilisé pour aller travailler;5;Transports en commun;CHAR;1
+TRANS;Mode de transport principal le plus souvent utilisé pour aller travailler;Z;Sans objet;CHAR;1
+TYPL;Type de logement;1;Maison;CHAR;1
+TYPL;Type de logement;2;Appartement;CHAR;1
+TYPL;Type de logement;3;Logement-foyer;CHAR;1
+TYPL;Type de logement;4;Chambre d'hôtel;CHAR;1
+TYPL;Type de logement;5;Habitation de fortune;CHAR;1
+TYPL;Type de logement;6;Pièce indépendante (ayant sa propre entrée);CHAR;1
+TYPL;Type de logement;Z;Hors logement ordinaire;CHAR;1
+TYPMR;Type de ménage regroupé (en 9 postes);11;Homme vivant seul;CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);12;Femme vivant seule;CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);20;Plusieurs personnes sans famille;CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);31;Famille principale monoparentale composée d'un homme avec enfant(s);CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);32;Famille principale monoparentale composée d'une femme avec enfant(s);CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);41;Famille principale composée d'un couple de deux 'actifs ayant un emploi';CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);42;Famille principale composée d'un couple où seul un homme a le statut 'd’actif ayant un emploi';CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);43;Famille principale composée d'un couple où seule une femme a le statut 'd’actif ayant un emploi';CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);44;Famille principale composée d'un couple d’aucun 'actif ayant un emploi';CHAR;2
+TYPMR;Type de ménage regroupé (en 9 postes);ZZ;Hors logement ordinaire;CHAR;2
+VOIT;Nombre de voitures du ménage;0;Aucune voiture;CHAR;1
+VOIT;Nombre de voitures du ménage;1;Une seule voiture;CHAR;1
+VOIT;Nombre de voitures du ménage;2;Deux voitures;CHAR;1
+VOIT;Nombre de voitures du ménage;3;Trois voitures ou plus;CHAR;1
+VOIT;Nombre de voitures du ménage;X;Logement ordinaire inoccupé;CHAR;1
+VOIT;Nombre de voitures du ménage;Z;Hors logement ordinaire;CHAR;1
+

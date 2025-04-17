@@ -1,0 +1,379 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "caracterist_emploi_COM_2011",
+    "description": "Caractéristiques de l'emploi en 2011  Recensement de la population - Base indicateurs de la fiche synthétique https://www.insee.fr/fr/statistiques/2044677",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "CODGEO",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal",
+      "nullable": true
+    },
+    {
+      "name": "REG",
+      "type": "VARCHAR",
+      "description": "Code de la région",
+      "nullable": true
+    },
+    {
+      "name": "DEP",
+      "type": "VARCHAR",
+      "description": "Code du département",
+      "nullable": true
+    },
+    {
+      "name": "LIBGEO",
+      "type": "VARCHAR",
+      "description": "Libellé de la commune ou de l'arrondissement municipal",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P11_SAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes salariées de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P11_NSAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus à temps partiel ",
+      "nullable": true
+    },
+    {
+      "name": "P11_SAL15P_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes salariées de 15 ans ou plus à temps partiel ",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL15P_TP",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus à temps partiel ",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL15P_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus à temps partiel ",
+      "nullable": true
+    },
+    {
+      "name": "P11_NSAL15P_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus à temps partiel ",
+      "nullable": true
+    },
+    {
+      "name": "P11_HACTOCC15P",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes actifs occupés de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL15P_CDI",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée ",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL15P_CDD",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus ayant un  contrat à durée déterminée ",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL15P_INTERIM",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus intérimaires",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL15P_EMPAID",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus Emplois aidés",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL15P_APPR",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus en apprentissage ou stagiaire",
+      "nullable": true
+    },
+    {
+      "name": "P11_HNSAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_HNSAL15P_INDEP",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus indépendants",
+      "nullable": true
+    },
+    {
+      "name": "P11_HNSAL15P_EMPLOY",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus employeurs",
+      "nullable": true
+    },
+    {
+      "name": "P11_HNSAL15P_AIDFAM",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux",
+      "nullable": true
+    },
+    {
+      "name": "P11_FACTOCC15P",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes actives occupées de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus ",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL15P_CDI",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée ",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL15P_CDD",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée ",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL15P_INTERIM",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus intérimaires",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL15P_EMPAID",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus Emplois aidés",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL15P_APPR",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 ans ou plus en apprentissage, stagiaire",
+      "nullable": true
+    },
+    {
+      "name": "P11_FNSAL15P",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_FNSAL15P_INDEP",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus indépendantes",
+      "nullable": true
+    },
+    {
+      "name": "P11_FNSAL15P_EMPLOY",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus employeurs",
+      "nullable": true
+    },
+    {
+      "name": "P11_FNSAL15P_AIDFAM",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus aides familiales",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL1564",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL1524",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL2554",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL5564",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL1564_TP",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL1524_TP",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL2554_TP",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_HSAL5564_TP",
+      "type": "VARCHAR",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL1564",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL1524",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL2554",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL5564",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL1564_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 à 64 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL1524_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 15 à 24 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL2554_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 25 à 54 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_FSAL5564_TP",
+      "type": "VARCHAR",
+      "description": "Nombre de femmes salariées de 55 à 64 ans à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_ILT1",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_ILT2P",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_ILT2",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_ILT3",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_ILT4",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région en France métropolitaine",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_ILT5",
+      "type": "VARCHAR",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger)",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_PASTRANS",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus n'utilisant pas de transport pour se rendre au travail",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_MARCHE",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement la marche pour se rendre au travail",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_2ROUES",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement un deux-roues pour se rendre au travail",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_VOITURE",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement une voiture, camion ou fourgonnette pour se rendre au travail",
+      "nullable": true
+    },
+    {
+      "name": "P11_ACTOCC15P_COMMUN",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement les transports en commun pour se rendre au travail",
+      "nullable": true
+    }
+  ]
+}

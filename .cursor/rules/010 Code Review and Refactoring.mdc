@@ -1,0 +1,54 @@
+---
+description: Guidelines for code review and refactoring with AI agents
+globs: **/*
+alwaysApply: true
+---
+
+## Context
+
+These guidelines apply when the AI agent is reviewing or refactoring code within the project.  
+They are especially important in collaborative environments or when version control (e.g., Git) is used.  
+They ensure changes remain understandable, reversible, and purposeful.
+
+## General Principles
+
+- All changes must serve a clear **functional, structural, or readability** improvement.
+- Do not rename variables, functions, or files **without an explicit justification** (e.g., clarity, consistency).
+- When removing a block of code, **add a comment** explaining why (if not obvious).
+- Prefer **incremental improvements** over large sweeping changes.
+
+## Refactoring Etiquette
+
+- Break down large changes into **separate, logical pull requests or commits**, even in local branches.
+- Always test the application after refactoring before proposing further changes.
+- Keep code style consistent with project conventions (`snake_case`, short functions, type hints, etc.).
+- Use docstrings when modifying public functions or modules.
+
+## Naming During Refactor
+
+✅ Acceptable renaming:
+- Rename `tmp_data` to `cleaned_data` when functionality is clarified
+- Rename `func_a` to `load_csv_data()` when scope becomes precise
+
+❌ Not acceptable:
+- Rename `user_data` to `x` or `u` for brevity
+- Rename `api_connector.py` to `new_script.py` without documented intent
+
+## Examples
+
+<example>
+// ✅ Good refactor
+def load_data(filepath: str) -> pd.DataFrame:
+    """Load CSV from a given path and return a DataFrame."""
+    return pd.read_csv(filepath)
+
+// ❌ Bad refactor
+def do(path):
+    return read(path)
+</example>
+
+<critical>
+- NEVER perform structural refactors and behavior changes at the same time
+- NEVER delete a function without checking for dependencies
+- NEVER mix unrelated updates in a single commit or pull request
+</critical>

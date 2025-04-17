@@ -1,0 +1,685 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "nomenclature_naf",
+    "description": "https://www.insee.fr/fr/information/2120875 nomenclature_naf",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "2120875",
+      "type": "VARCHAR",
+      "description": "## Tableau SQL : \nnomenclature_naf\n\n\n\n## Chemin sur disque dur :\nC:\\Users\\thiba\\OneDrive\\Documents\\Données\\Économie\\Sirene\\Nomenclature d’activités française (NAF)\n\n\n\n## 4 premières lignes du CSV :\nCode; Intitulés de la  NAF rév. 2, version finale",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "A;AGRICULTURE, SYLVICULTURE ET PÊCHE",
+      "nullable": true
+    },
+    {
+      "name": "01",
+      "type": "VARCHAR",
+      "description": "Culture et production animale, chasse et services annexes\n01.1;Cultures non permanentes\n\n## Dictionnaire des variables:\n\nVariable;Contenu\nCode;Code NAF\nIntitulés de la  NAF rév. 2, version finale;Secteur économique de l'établissement\n\nCode; Intitulés de la  NAF rév. 2, version finale",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "A;AGRICULTURE, SYLVICULTURE ET PÊCHE",
+      "nullable": true
+    },
+    {
+      "name": "01",
+      "type": "VARCHAR",
+      "description": "Culture et production animale, chasse et services annexes\n01.1;Cultures non permanentes\n01.11;Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses\n01.11Z;Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses\n01.12;Culture du riz\n01.12Z;Culture du riz\n01.13;Culture de légumes, de melons, de racines et de tubercules\n01.13Z;Culture de légumes, de melons, de racines et de tubercules\n01.14;Culture de la canne à sucre\n01.14Z;Culture de la canne à sucre\n01.15;Culture du tabac\n01.15Z;Culture du tabac\n01.16;Culture de plantes à fibres\n01.16Z;Culture de plantes à fibres\n01.19;Autres cultures non permanentes\n01.19Z;Autres cultures non permanentes\n;\n01.2;Cultures permanentes\n01.21;Culture de la vigne\n01.21Z;Culture de la vigne\n01.22;Culture de fruits tropicaux et subtropicaux\n01.22Z;Culture de fruits tropicaux et subtropicaux\n01.23;Culture d'agrumes\n01.23Z;Culture d'agrumes\n01.24;Culture de fruits à pépins et à noyau\n01.24Z;Culture de fruits à pépins et à noyau\n01.25;Culture d'autres fruits d'arbres ou d'arbustes et de fruits à coque\n01.25Z;Culture d'autres fruits d'arbres ou d'arbustes et de fruits à coque\n01.26;Culture de fruits oléagineux\n01.26Z;Culture de fruits oléagineux\n01.27;Culture de plantes à boissons\n01.27Z;Culture de plantes à boissons\n01.28;Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques\n01.28Z;Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques\n01.29;Autres cultures permanentes\n01.29Z;Autres cultures permanentes\n;\n01.3;Reproduction de plantes\n01.30;Reproduction de plantes\n01.30Z;Reproduction de plantes\n;\n01.4;Production animale\n01.41;Élevage de vaches laitières\n01.41Z;Élevage de vaches laitières\n01.42;Élevage d'autres bovins et de buffles\n01.42Z;Élevage d'autres bovins et de buffles\n01.43;Élevage de chevaux et d'autres équidés\n01.43Z;Élevage de chevaux et d'autres équidés\n01.44;Élevage de chameaux et d'autres camélidés\n01.44Z;Élevage de chameaux et d'autres camélidés\n01.45;Élevage d'ovins et de caprins\n01.45Z;Élevage d'ovins et de caprins\n01.46;Élevage de porcins\n01.46Z;Élevage de porcins\n01.47;Élevage de volailles\n01.47Z;Élevage de volailles\n01.49;Élevage d'autres animaux\n01.49Z;Élevage d'autres animaux\n;\n01.5;Culture et élevage associés\n01.50;Culture et élevage associés\n01.50Z;Culture et élevage associés\n;\n01.6;Activités de soutien à l'agriculture et traitement primaire des récoltes\n01.61;Activités de soutien aux cultures\n01.61Z;Activités de soutien aux cultures\n01.62;Activités de soutien à la production animale\n01.62Z;Activités de soutien à la production animale\n01.63;Traitement primaire des récoltes\n01.63Z;Traitement primaire des récoltes\n01.64;Traitement des semences\n01.64Z;Traitement des semences\n;\n01.7;Chasse, piégeage et services annexes\n01.70;Chasse, piégeage et services annexes\n01.70Z;Chasse, piégeage et services annexes\n;",
+      "nullable": true
+    },
+    {
+      "name": "02",
+      "type": "VARCHAR",
+      "description": "Sylviculture et exploitation forestière\n;\n02.1;Sylviculture et autres activités forestières\n02.10;Sylviculture et autres activités forestières\n02.10Z;Sylviculture et autres activités forestières\n;\n02.2;Exploitation forestière\n02.20;Exploitation forestière\n02.20Z;Exploitation forestière\n;\n02.3;Récolte de produits forestiers non ligneux poussant à l'état sauvage\n02.30;Récolte de produits forestiers non ligneux poussant à l'état sauvage\n02.30Z;Récolte de produits forestiers non ligneux poussant à l'état sauvage\n;\n02.4;Services de soutien à l'exploitation forestière\n02.40;Services de soutien à l'exploitation forestière\n02.40Z;Services de soutien à l'exploitation forestière\n;",
+      "nullable": true
+    },
+    {
+      "name": "03",
+      "type": "VARCHAR",
+      "description": "Pêche et aquaculture\n;\n03.1;Pêche\n03.11;Pêche en mer\n03.11Z;Pêche en mer\n03.12;Pêche en eau douce\n03.12Z;Pêche en eau douce\n;\n03.2;Aquaculture\n03.21;Aquaculture en mer\n03.21Z;Aquaculture en mer\n03.22;Aquaculture en eau douce\n03.22Z;Aquaculture en eau douce\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "B;INDUSTRIES EXTRACTIVES\n;",
+      "nullable": true
+    },
+    {
+      "name": "05",
+      "type": "VARCHAR",
+      "description": "Extraction de houille et de lignite\n;\n05.1;Extraction de houille\n05.10;Extraction de houille\n05.10Z;Extraction de houille\n;\n05.2;Extraction de lignite\n05.20;Extraction de lignite\n05.20Z;Extraction de lignite\n;",
+      "nullable": true
+    },
+    {
+      "name": "06",
+      "type": "VARCHAR",
+      "description": "Extraction d'hydrocarbures\n;\n06.1;Extraction de pétrole brut\n06.10;Extraction de pétrole brut\n06.10Z;Extraction de pétrole brut\n;\n06.2;Extraction de gaz naturel\n06.20;Extraction de gaz naturel\n06.20Z;Extraction de gaz naturel\n;",
+      "nullable": true
+    },
+    {
+      "name": "07",
+      "type": "VARCHAR",
+      "description": "Extraction de minerais métalliques\n;\n07.1;Extraction de minerais de fer\n07.10;Extraction de minerais de fer\n07.10Z;Extraction de minerais de fer\n;\n07.2;Extraction de minerais de métaux non ferreux\n07.21;Extraction de minerais d'uranium et de thorium\n07.21Z;Extraction de minerais d'uranium et de thorium\n07.29;Extraction d'autres minerais de métaux non ferreux\n07.29Z;Extraction d'autres minerais de métaux non ferreux\n;",
+      "nullable": true
+    },
+    {
+      "name": "08",
+      "type": "VARCHAR",
+      "description": "Autres industries extractives\n;\n08.1;Extraction de pierres, de sables et d'argiles\n08.11;Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d'ardoise\n08.11Z;Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d'ardoise\n08.12;Exploitation de gravières et sablières, extraction d’argiles et de kaolin\n08.12Z;Exploitation de gravières et sablières, extraction d’argiles et de kaolin\n;\n08.9;Activités extractives n.c.a.\n08.91;Extraction des minéraux chimiques et d'engrais minéraux \n08.91Z;Extraction des minéraux chimiques et d'engrais minéraux \n08.92;Extraction de tourbe\n08.92Z;Extraction de tourbe\n08.93;Production de sel \n08.93Z;Production de sel \n08.99;Autres activités extractives n.c.a.\n08.99Z;Autres activités extractives n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "09",
+      "type": "VARCHAR",
+      "description": "Services de soutien aux industries extractives\n;\n09.1;Activités de soutien à l'extraction d'hydrocarbures\n09.10;Activités de soutien à l'extraction d'hydrocarbures\n09.10Z;Activités de soutien à l'extraction d'hydrocarbures\n;\n09.9;Activités de soutien aux autres industries extractives\n09.90;Activités de soutien aux autres industries extractives \n09.90Z;Activités de soutien aux autres industries extractives \n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "C;INDUSTRIE MANUFACTURIÈRE\n;",
+      "nullable": true
+    },
+    {
+      "name": "10",
+      "type": "VARCHAR",
+      "description": "Industries alimentaires\n;\n10.1;Transformation et conservation de la viande et préparation de produits à base de viande\n10.11;Transformation et conservation de la viande de boucherie\n10.11Z;Transformation et conservation de la viande de boucherie\n10.12;Transformation et conservation de la viande de volaille\n10.12Z;Transformation et conservation de la viande de volaille\n10.13;Préparation de produits à base de viande\n10.13A;Préparation industrielle de produits à base de viande\n10.13B;Charcuterie\n;\n10.2;Transformation et conservation de poisson, de crustacés et de mollusques\n10.20;Transformation et conservation de poisson, de crustacés et de mollusques\n10.20Z;Transformation et conservation de poisson, de crustacés et de mollusques\n;\n10.3;Transformation et conservation de fruits et légumes\n10.31;Transformation et conservation de pommes de terre\n10.31Z;Transformation et conservation de pommes de terre\n10.32;Préparation de jus de fruits et légumes\n10.32Z;Préparation de jus de fruits et légumes\n10.39;Autre transformation et conservation de fruits et légumes\n10.39A;Autre transformation et conservation de légumes\n10.39B;Transformation et conservation de fruits\n;\n10.4;Fabrication d’huiles et graisses végétales et animales\n10.41;Fabrication d'huiles et graisses\n10.41A;Fabrication d'huiles et graisses brutes\n10.41B;Fabrication d'huiles et graisses raffinées\n10.42;Fabrication de margarine et graisses comestibles similaires\n10.42Z;Fabrication de margarine et graisses comestibles similaires\n;\n10.5;Fabrication de produits laitiers\n10.51;Exploitation de laiteries et fabrication de fromage\n10.51A;Fabrication de lait liquide et de produits frais\n10.51B;Fabrication de beurre\n10.51C;Fabrication de fromage\n10.51D;Fabrication d'autres produits laitiers\n10.52;Fabrication de glaces et sorbets\n10.52Z;Fabrication de glaces et sorbets\n;\n10.6;\"Travail des grains ; fabrication de produits amylacés\"\n10.61;Travail des grains\n10.61A;Meunerie\n10.61B;Autres activités du travail des grains\n10.62;Fabrication de produits amylacés\n10.62Z;Fabrication de produits amylacés\n;\n10.7;Fabrication de produits de boulangerie-pâtisserie et de pâtes alimentaires\n10.71;Fabrication de pain et de pâtisserie fraîche\n10.71A;Fabrication industrielle de pain et de pâtisserie fraîche\n10.71B;Cuisson de produits de boulangerie\n10.71C;Boulangerie et boulangerie-pâtisserie\n10.71D;Pâtisserie\n10.72;Fabrication de biscuits, biscottes et pâtisseries de conservation\n10.72Z;Fabrication de biscuits, biscottes et pâtisseries de conservation\n10.73;Fabrication de pâtes alimentaires\n10.73Z;Fabrication de pâtes alimentaires\n;\n10.8;Fabrication d'autres produits alimentaires\n10.81;Fabrication de sucre\n10.81Z;Fabrication de sucre\n10.82;Fabrication de cacao, chocolat et de produits de confiserie\n10.82Z;Fabrication de cacao, chocolat et de produits de confiserie\n10.83;Transformation du thé et du café\n10.83Z;Transformation du thé et du café\n10.84;Fabrication de condiments et assaisonnements\n10.84Z;Fabrication de condiments et assaisonnements\n10.85;Fabrication de plats préparés\n10.85Z;Fabrication de plats préparés\n10.86;Fabrication d'aliments homogénéisés et diététiques\n10.86Z;Fabrication d'aliments homogénéisés et diététiques\n10.89;Fabrication d'autres produits alimentaires n.c.a.\n10.89Z;Fabrication d'autres produits alimentaires n.c.a.\n;\n10.9;Fabrication d'aliments pour animaux\n10.91;Fabrication d'aliments pour animaux de ferme\n10.91Z;Fabrication d'aliments pour animaux de ferme\n10.92;Fabrication d'aliments pour animaux de compagnie\n10.92Z;Fabrication d'aliments pour animaux de compagnie\n;",
+      "nullable": true
+    },
+    {
+      "name": "11",
+      "type": "VARCHAR",
+      "description": "Fabrication de boissons\n;\n11.0;Fabrication de boissons\n11.01;Production de boissons alcooliques distillées\n11.01Z;Production de boissons alcooliques distillées\n11.02;Production de vin (de raisin)\n11.02A;Fabrication de vins effervescents\n11.02B;Vinification\n11.03;Fabrication de cidre et de vins de fruits  \n11.03Z;Fabrication de cidre et de vins de fruits \n11.04;Production d'autres boissons fermentées non distillées\n11.04Z;Production d'autres boissons fermentées non distillées\n11.05;Fabrication de bière\n11.05Z;Fabrication de bière\n11.06;Fabrication de malt\n11.06Z;Fabrication de malt\n11.07;Industrie des eaux minérales et autres eaux embouteillées et des boissons rafraîchissantes\n11.07A;Industrie des eaux de table\n11.07B;Production de boissons rafraîchissantes\n;",
+      "nullable": true
+    },
+    {
+      "name": "12",
+      "type": "VARCHAR",
+      "description": "Fabrication de produits à base de tabac\n;\n12.0;Fabrication de produits à base de tabac\n12.00;Fabrication de produits à base de tabac\n12.00Z;Fabrication de produits à base de tabac\n;",
+      "nullable": true
+    },
+    {
+      "name": "13",
+      "type": "VARCHAR",
+      "description": "Fabrication de textiles\n;\n13.1;Préparation de fibres textiles et filature\n13.10;Préparation de fibres textiles et filature\n13.10Z;Préparation de fibres textiles et filature\n;\n13.2;Tissage\n13.20;Tissage\n13.20Z;Tissage\n;\n13.3;Ennoblissement textile\n13.30;Ennoblissement textile\n13.30Z;Ennoblissement textile\n;\n13.9;Fabrication d'autres textiles\n13.91;Fabrication d'étoffes à mailles\n13.91Z;Fabrication d'étoffes à mailles\n13.92;Fabrication d'articles textiles, sauf habillement\n13.92Z;Fabrication d'articles textiles, sauf habillement\n13.93;Fabrication de tapis et moquettes\n13.93Z;Fabrication de tapis et moquettes\n13.94;Fabrication de ficelles, cordes et filets\n13.94Z;Fabrication de ficelles, cordes et filets\n13.95;Fabrication de non-tissés, sauf habillement\n13.95Z;Fabrication de non-tissés, sauf habillement\n13.96;Fabrication d'autres textiles techniques et industriels\n13.96Z;Fabrication d'autres textiles techniques et industriels\n13.99;Fabrication d'autres textiles n.c.a.\n13.99Z;Fabrication d'autres textiles n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "14",
+      "type": "VARCHAR",
+      "description": "Industrie de l'habillement\n;\n14.1;Fabrication de vêtements, autres qu'en fourrure\n14.11;Fabrication de vêtements en cuir\n14.11Z;Fabrication de vêtements en cuir\n14.12;Fabrication de vêtements de travail\n14.12Z;Fabrication de vêtements de travail\n14.13;Fabrication de vêtements de dessus\n14.13Z;Fabrication de vêtements de dessus\n14.14;Fabrication de vêtements de dessous\n14.14Z;Fabrication de vêtements de dessous\n14.19;Fabrication d'autres vêtements et accessoires\n14.19Z;Fabrication d'autres vêtements et accessoires\n;\n14.2;Fabrication d'articles en fourrure\n14.20;Fabrication d'articles en fourrure\n14.20Z;Fabrication d'articles en fourrure\n;\n14.3;Fabrication d'articles à mailles\n14.31;Fabrication d'articles chaussants à mailles\n14.31Z;Fabrication d'articles chaussants à mailles\n14.39;Fabrication d'autres articles à mailles\n14.39Z;Fabrication d'autres articles à mailles\n;",
+      "nullable": true
+    },
+    {
+      "name": "15",
+      "type": "VARCHAR",
+      "description": "Industrie du cuir et de la chaussure\n;\n15.1;\"Apprêt et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d'articles de voyage, de maroquinerie et de sellerie\"\n15.11;\"Apprêt et tannage des cuirs ; préparation et teinture des fourrures\"\n15.11Z;\"Apprêt et tannage des cuirs ; préparation et teinture des fourrures\"\n15.12;Fabrication d'articles de voyage, de maroquinerie et de sellerie\n15.12Z;Fabrication d'articles de voyage, de maroquinerie et de sellerie\n;\n15.2;Fabrication de chaussures\n15.20;Fabrication de chaussures\n15.20Z;Fabrication de chaussures\n;",
+      "nullable": true
+    },
+    {
+      "name": "16",
+      "type": "VARCHAR",
+      "description": "\"Travail du bois et fabrication d'articles en bois et en liège, à l’exception des meubles ; fabrication d’articles en vannerie et sparterie\"\n;\n16.1;Sciage et rabotage du bois\n16.10;Sciage et rabotage du bois\n16.10A;Sciage et rabotage du bois, hors imprégnation\n16.10B;Imprégnation du bois\n;\n16.2;Fabrication d'articles en bois, liège, vannerie et sparterie\n16.21;Fabrication de placage et de panneaux de bois\n16.21Z;Fabrication de placage et de panneaux de bois\n16.22;Fabrication de parquets assemblés\n16.22Z;Fabrication de parquets assemblés\n16.23;Fabrication de charpentes et d'autres menuiseries\n16.23Z;Fabrication de charpentes et d'autres menuiseries\n16.24;Fabrication d'emballages en bois\n16.24Z;Fabrication d'emballages en bois\n16.29;\"Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie\"\n16.29Z;\"Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie\"\n;",
+      "nullable": true
+    },
+    {
+      "name": "17",
+      "type": "VARCHAR",
+      "description": "Industrie du papier et du carton\n;\n17.1;Fabrication de pâte à papier, de papier et de carton\n17.11;Fabrication de pâte à papier\n17.11Z;Fabrication de pâte à papier\n17.12;Fabrication de papier et de carton\n17.12Z;Fabrication de papier et de carton\n;\n17.2;Fabrication d'articles en papier ou en carton\n17.21;Fabrication de papier et carton ondulés et d'emballages en papier ou en carton\n17.21A;Fabrication de carton ondulé\n17.21B;Fabrication de cartonnages \n17.21C;Fabrication d'emballages en papier\n17.22;Fabrication d'articles en papier à usage sanitaire ou domestique\n17.22Z;Fabrication d'articles en papier à usage sanitaire ou domestique\n17.23;Fabrication d'articles de papeterie\n17.23Z;Fabrication d'articles de papeterie\n17.24;Fabrication de papiers peints\n17.24Z;Fabrication de papiers peints\n17.29;Fabrication d'autres articles en papier ou en carton\n17.29Z;Fabrication d'autres articles en papier ou en carton\n;",
+      "nullable": true
+    },
+    {
+      "name": "18",
+      "type": "VARCHAR",
+      "description": "Imprimerie et reproduction d'enregistrements\n;\n18.1;Imprimerie et services annexes\n18.11;Imprimerie de journaux\n18.11Z;Imprimerie de journaux\n18.12;Autre imprimerie (labeur)\n18.12Z;Autre imprimerie (labeur)\n18.13;Activités de pré-presse \n18.13Z;Activités de pré-presse \n18.14;Reliure et activités connexes\n18.14Z;Reliure et activités connexes\n;\n18.2;Reproduction d'enregistrements\n18.20;Reproduction d'enregistrements\n18.20Z;Reproduction d'enregistrements\n;",
+      "nullable": true
+    },
+    {
+      "name": "19",
+      "type": "VARCHAR",
+      "description": "Cokéfaction et raffinage\n;\n19.1;Cokéfaction\n19.10;Cokéfaction\n19.10Z;Cokéfaction\n;\n19.2;Raffinage du pétrole\n19.20;Raffinage du pétrole\n19.20Z;Raffinage du pétrole\n;",
+      "nullable": true
+    },
+    {
+      "name": "20",
+      "type": "VARCHAR",
+      "description": "Industrie chimique\n;\n20.1;Fabrication de produits chimiques de base, de produits azotés et d'engrais, de matières plastiques de base et de caoutchouc synthétique\n20.11;Fabrication de gaz industriels\n20.11Z;Fabrication de gaz industriels\n20.12;Fabrication de colorants et de pigments\n20.12Z;Fabrication de colorants et de pigments\n20.13;Fabrication d'autres produits chimiques inorganiques de base\n20.13A;Enrichissement et  retraitement de matières nucléaires\n20.13B;Fabrication d'autres produits chimiques inorganiques de base n.c.a.\n20.14;Fabrication d'autres produits chimiques organiques de base\n20.14Z;Fabrication d'autres produits chimiques organiques de base\n20.15;Fabrication de produits azotés et d'engrais\n20.15Z;Fabrication de produits azotés et d'engrais\n20.16;Fabrication de matières plastiques de base\n20.16Z;Fabrication de matières plastiques de base\n20.17;Fabrication de caoutchouc synthétique\n20.17Z;Fabrication de caoutchouc synthétique\n;\n20.2;Fabrication de pesticides et d’autres produits agrochimiques \n20.20;Fabrication de pesticides et d’autres produits agrochimiques\n20.20Z;Fabrication de pesticides et d’autres produits agrochimiques\n;\n20.3;Fabrication de peintures, vernis, encres et mastics\n20.30;Fabrication de peintures, vernis, encres et mastics\n20.30Z;Fabrication de peintures, vernis, encres et mastics\n;\n20.4;Fabrication de savons, de produits d'entretien et de parfums\n20.41;Fabrication de savons, détergents et produits d'entretien\n20.41Z;Fabrication de savons, détergents et produits d'entretien\n20.42;Fabrication de parfums et de produits pour la toilette\n20.42Z;Fabrication de parfums et de produits pour la toilette\n;\n20.5;Fabrication d'autres produits chimiques\n20.51;Fabrication de produits explosifs\n20.51Z;Fabrication de produits explosifs\n20.52;Fabrication de colles\n20.52Z;Fabrication de colles\n20.53;Fabrication d'huiles essentielles\n20.53Z;Fabrication d'huiles essentielles\n20.59;Fabrication d'autres produits chimiques n.c.a.\n20.59Z;Fabrication d'autres produits chimiques n.c.a.\n;\n20.6;Fabrication de fibres artificielles ou synthétiques\n20.60;Fabrication de fibres artificielles ou synthétiques\n20.60Z;Fabrication de fibres artificielles ou synthétiques\n;",
+      "nullable": true
+    },
+    {
+      "name": "21",
+      "type": "VARCHAR",
+      "description": "Industrie pharmaceutique\n;\n21.1;Fabrication de produits pharmaceutiques de base\n21.10;Fabrication de produits pharmaceutiques de base\n21.10Z;Fabrication de produits pharmaceutiques de base\n;\n21.2;Fabrication de préparations pharmaceutiques\n21.20;Fabrication de préparations pharmaceutiques\n21.20Z;Fabrication de préparations pharmaceutiques\n;",
+      "nullable": true
+    },
+    {
+      "name": "22",
+      "type": "VARCHAR",
+      "description": "Fabrication de produits en caoutchouc et en plastique\n;\n22.1;Fabrication de produits en caoutchouc\n22.11;Fabrication et rechapage de pneumatiques\n22.11Z;Fabrication et rechapage de pneumatiques\n22.19;Fabrication d'autres articles en caoutchouc\n22.19Z;Fabrication d'autres articles en caoutchouc\n;\n22.2;Fabrication  de produits en plastique\n22.21;Fabrication de plaques, feuilles, tubes et profilés en matières plastiques\n22.21Z;Fabrication de plaques, feuilles, tubes et profilés en matières plastiques\n22.22;Fabrication d'emballages en matières plastiques\n22.22Z;Fabrication d'emballages en matières plastiques\n22.23;Fabrication d'éléments en matières plastiques pour la construction\n22.23Z;Fabrication d'éléments en matières plastiques pour la construction\n22.29;Fabrication d'autres articles en matières plastiques\n22.29A;Fabrication de pièces techniques à base de matières plastiques\n22.29B;Fabrication de produits de consommation courante en matières plastiques\n;",
+      "nullable": true
+    },
+    {
+      "name": "23",
+      "type": "VARCHAR",
+      "description": "Fabrication d'autres produits minéraux non métalliques\n;\n23.1;Fabrication de verre et d'articles en verre\n23.11;Fabrication de verre plat\n23.11Z;Fabrication de verre plat\n23.12;Façonnage et transformation du verre plat\n23.12Z;Façonnage et transformation du verre plat\n23.13;Fabrication de verre creux\n23.13Z;Fabrication de verre creux\n23.14;Fabrication de fibres de verre\n23.14Z;Fabrication de fibres de verre\n23.19;Fabrication et façonnage d'autres articles en verre, y compris verre technique\n23.19Z;Fabrication et façonnage d'autres articles en verre, y compris verre technique\n;\n23.2;Fabrication de produits réfractaires\n23.20;Fabrication de produits réfractaires\n23.20Z;Fabrication de produits réfractaires\n;\n23.3;Fabrication de matériaux de construction en terre cuite\n23.31;Fabrication de carreaux en céramique\n23.31Z;Fabrication de carreaux en céramique\n23.32;Fabrication de briques, tuiles et produits de construction, en terre cuite\n23.32Z;Fabrication de briques, tuiles et produits de construction, en terre cuite\n;\n23.4;Fabrication d'autres produits en céramique et en porcelaine \n23.41;Fabrication d'articles céramiques à usage domestique ou ornemental\n23.41Z;Fabrication d'articles céramiques à usage domestique ou ornemental\n23.42;Fabrication d'appareils sanitaires en céramique\n23.42Z;Fabrication d'appareils sanitaires en céramique\n23.43;Fabrication d'isolateurs et pièces isolantes en céramique\n23.43Z;Fabrication d'isolateurs et pièces isolantes en céramique\n23.44;Fabrication d'autres produits céramiques à usage technique\n23.44Z;Fabrication d'autres produits céramiques à usage technique\n23.49;Fabrication d'autres produits céramiques \n23.49Z;Fabrication d'autres produits céramiques\n;\n23.5;Fabrication de ciment, chaux et plâtre\n23.51;Fabrication de ciment\n23.51Z;Fabrication de ciment\n23.52;Fabrication de chaux et plâtre\n23.52Z;Fabrication de chaux et plâtre\n;\n23.6;Fabrication d'ouvrages en béton, en ciment ou en plâtre\n23.61;Fabrication d'éléments en béton pour la construction\n23.61Z;Fabrication d'éléments en béton pour la construction\n23.62;Fabrication d'éléments en plâtre pour la construction\n23.62Z;Fabrication d'éléments en plâtre pour la construction\n23.63;Fabrication de béton prêt à l'emploi\n23.63Z;Fabrication de béton prêt à l'emploi\n23.64;Fabrication de mortiers et bétons secs\n23.64Z;Fabrication de mortiers et bétons secs\n23.65;Fabrication d'ouvrages en fibre-ciment\n23.65Z;Fabrication d'ouvrages en fibre-ciment\n23.69;Fabrication d'autres ouvrages en béton, en ciment ou en plâtre\n23.69Z;Fabrication d'autres ouvrages en béton, en ciment ou en plâtre\n;\n23.7;Taille, façonnage et finissage de pierres \n23.70;Taille, façonnage et finissage de pierres\n23.70Z;Taille, façonnage et finissage de pierres\n;\n23.9;Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a.\n23.91;Fabrication de produits abrasifs\n23.91Z;Fabrication de produits abrasifs\n23.99;Fabrication d'autres produits minéraux non métalliques n.c.a.\n23.99Z;Fabrication d'autres produits minéraux non métalliques n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "24",
+      "type": "VARCHAR",
+      "description": "Métallurgie\n;\n24.1;Sidérurgie\n24.10;Sidérurgie\n24.10Z;Sidérurgie\n;\n24.2;Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier \n24.20;Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier \n24.20Z;Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier \n;\n24.3;Fabrication d'autres produits de première transformation de l'acier\n24.31;Étirage à froid de barres\n24.31Z;Étirage à froid de barres\n24.32;Laminage à froid de feuillards\n24.32Z;Laminage à froid de feuillards\n24.33;Profilage à froid par formage ou pliage\n24.33Z;Profilage à froid par formage ou pliage\n24.34;Tréfilage à froid\n24.34Z;Tréfilage à froid\n;\n24.4;Production de métaux précieux et d'autres métaux non ferreux\n24.41;Production de métaux précieux\n24.41Z;Production de métaux précieux\n24.42;Métallurgie de l'aluminium\n24.42Z;Métallurgie de l'aluminium\n24.43;Métallurgie du plomb, du zinc ou de l'étain\n24.43Z;Métallurgie du plomb, du zinc ou de l'étain\n24.44;Métallurgie du cuivre\n24.44Z;Métallurgie du cuivre\n24.45;Métallurgie des autres métaux non ferreux\n24.45Z;Métallurgie des autres métaux non ferreux\n24.46;Élaboration et transformation de matières nucléaires\n24.46Z;Élaboration et transformation de matières nucléaires\n;\n24.5;Fonderie\n24.51;Fonderie de fonte\n24.51Z;Fonderie de fonte\n24.52;Fonderie d'acier\n24.52Z;Fonderie d'acier\n24.53;Fonderie de métaux légers\n24.53Z;Fonderie de métaux légers\n24.54;Fonderie d'autres métaux non ferreux\n24.54Z;Fonderie d'autres métaux non ferreux\n;",
+      "nullable": true
+    },
+    {
+      "name": "25",
+      "type": "VARCHAR",
+      "description": "Fabrication de produits métalliques, à l’exception des machines et des équipements\n;\n25.1;Fabrication d'éléments en métal pour la construction\n25.11;Fabrication de structures métalliques et de parties de structures\n25.11Z;Fabrication de structures métalliques et de parties de structures\n25.12;Fabrication de portes et fenêtres en métal\n25.12Z;Fabrication de portes et fenêtres en métal\n;\n25.2;Fabrication de réservoirs, citernes et conteneurs métalliques\n25.21;Fabrication de radiateurs et de chaudières pour le chauffage central\n25.21Z;Fabrication de radiateurs et de chaudières pour le chauffage central\n25.29;Fabrication d'autres réservoirs, citernes et conteneurs métalliques\n25.29Z;Fabrication d'autres réservoirs, citernes et conteneurs métalliques\n;\n25.3;Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central\n25.30;Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central\n25.30Z;Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central\n;\n25.4;Fabrication d'armes et de munitions\n25.40;Fabrication d'armes et de munitions\n25.40Z;Fabrication d'armes et de munitions\n;\n25.5;\"Forge, emboutissage, estampage ; métallurgie des poudres\"\n25.50;\"Forge, emboutissage, estampage ; métallurgie des poudres\"\n25.50A;\"Forge, estampage, matriçage ; métallurgie des poudres\"\n25.50B;Découpage, emboutissage\n;\n25.6;\"Traitement et revêtement des métaux ; usinage\"\n25.61;Traitement et revêtement des métaux\n25.61Z;Traitement et revêtement des métaux\n25.62;Usinage\n25.62A;Décolletage\n25.62B;Mécanique industrielle\n;\n25.7;Fabrication de coutellerie, d'outillage et de quincaillerie\n25.71;Fabrication de coutellerie\n25.71Z;Fabrication de coutellerie\n25.72;Fabrication de serrures et de ferrures\n25.72Z;Fabrication de serrures et de ferrures\n25.73;Fabrication d'outillage\n25.73A;Fabrication de moules et modèles\n25.73B;Fabrication d'autres outillages\n;\n25.9;Fabrication d'autres ouvrages en métaux\n25.91;Fabrication de fûts et emballages métalliques similaires\n25.91Z;Fabrication de fûts et emballages métalliques similaires\n25.92;Fabrication d'emballages métalliques légers\n25.92Z;Fabrication d'emballages métalliques légers\n25.93;Fabrication d'articles en fils métalliques, de chaînes et de ressorts\n25.93Z;Fabrication d'articles en fils métalliques, de chaînes et de ressorts\n25.94;Fabrication de vis et de boulons\n25.94Z;Fabrication de vis et de boulons\n25.99;Fabrication d'autres produits métalliques n.c.a.\n25.99A;Fabrication d'articles métalliques ménagers\n25.99B;Fabrication d'autres articles métalliques\n;",
+      "nullable": true
+    },
+    {
+      "name": "26",
+      "type": "VARCHAR",
+      "description": "Fabrication de produits informatiques, électroniques et optiques\n;\n26.1;Fabrication de composants et cartes électroniques\n26.11;Fabrication de composants électroniques\n26.11Z;Fabrication de composants électroniques\n26.12;Fabrication de cartes électroniques assemblées\n26.12Z;Fabrication de cartes électroniques assemblées\n;\n26.2;Fabrication d'ordinateurs et d'équipements périphériques\n26.20;Fabrication d'ordinateurs et d'équipements périphériques\n26.20Z;Fabrication d'ordinateurs et d'équipements périphériques\n;\n26.3;Fabrication d'équipements de communication\n26.30;Fabrication d'équipements de communication \n26.30Z;Fabrication d'équipements de communication \n;\n26.4;Fabrication de produits électroniques grand public\n26.40;Fabrication de produits électroniques grand public\n26.40Z;Fabrication de produits électroniques grand public\n;\n26.5;\"Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation ; horlogerie\"\n26.51;Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation\n26.51A;Fabrication d'équipements d'aide à la navigation\n26.51B;Fabrication d'instrumentation scientifique et technique\n26.52;Horlogerie\n26.52Z;Horlogerie\n;\n26.6;Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques\n26.60;Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques \n26.60Z;Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques \n;\n26.7;Fabrication de matériels optique et photographique\n26.70;Fabrication de matériels optique et photographique\n26.70Z;Fabrication de matériels optique et photographique\n;\n26.8;Fabrication de supports magnétiques et optiques\n26.80;Fabrication de supports magnétiques et optiques\n26.80Z;Fabrication de supports magnétiques et optiques\n;",
+      "nullable": true
+    },
+    {
+      "name": "27",
+      "type": "VARCHAR",
+      "description": "Fabrication d'équipements électriques\n;\n27.1;Fabrication de moteurs, génératrices et transformateurs électriques et de matériel de distribution et de commande électrique\n27.11;Fabrication de moteurs, génératrices et transformateurs électriques\n27.11Z;Fabrication de moteurs, génératrices et transformateurs électriques\n27.12;Fabrication de matériel de distribution et de commande électrique\n27.12Z;Fabrication de matériel de distribution et de commande électrique\n;\n27.2;Fabrication de piles et d'accumulateurs électriques\n27.20;Fabrication de piles et d'accumulateurs électriques\n27.20Z;Fabrication de piles et d'accumulateurs électriques\n;\n27.3;Fabrication de fils et câbles et de matériel d'installation électrique\n27.31;Fabrication de câbles de fibres optiques\n27.31Z;Fabrication de câbles de fibres optiques\n27.32;Fabrication d'autres fils et câbles électroniques ou électriques\n27.32Z;Fabrication d'autres fils et câbles électroniques ou électriques\n27.33;Fabrication de matériel d'installation électrique\n27.33Z;Fabrication de matériel d'installation électrique\n;\n27.4;Fabrication d'appareils d'éclairage électrique\n27.40;Fabrication d'appareils d'éclairage électrique\n27.40Z;Fabrication d'appareils d'éclairage électrique\n;\n27.5;Fabrication d'appareils ménagers\n27.51;Fabrication d'appareils électroménagers\n27.51Z;Fabrication d'appareils électroménagers\n27.52;Fabrication d'appareils ménagers non électriques\n27.52Z;Fabrication d'appareils ménagers non électriques\n;\n27.9;Fabrication d'autres matériels électriques\n27.90;Fabrication d'autres matériels électriques\n27.90Z;Fabrication d'autres matériels électriques\n;",
+      "nullable": true
+    },
+    {
+      "name": "28",
+      "type": "VARCHAR",
+      "description": "Fabrication de machines et équipements n.c.a.\n;\n28.1;Fabrication de machines d'usage général\n28.11;Fabrication de moteurs et turbines, à l'exception des moteurs d’avions et de véhicules\n28.11Z;Fabrication de moteurs et turbines, à l'exception des moteurs d’avions et de véhicules\n28.12;Fabrication d'équipements hydrauliques et pneumatiques\n28.12Z;Fabrication d'équipements hydrauliques et pneumatiques\n28.13;Fabrication d'autres pompes et compresseurs\n28.13Z;Fabrication d'autres pompes et compresseurs\n28.14;Fabrication d'autres articles de robinetterie\n28.14Z;Fabrication d'autres articles de robinetterie\n28.15;Fabrication d'engrenages et d'organes mécaniques de transmission\n28.15Z;Fabrication d'engrenages et d'organes mécaniques de transmission\n;\n28.2;Fabrication d'autres machines d'usage général\n28.21;Fabrication de fours et brûleurs\n28.21Z;Fabrication de fours et brûleurs\n28.22;Fabrication de matériel de levage et de manutention\n28.22Z;Fabrication de matériel de levage et de manutention\n28.23;Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques)\n28.23Z;Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques)\n28.24;Fabrication d'outillage portatif à moteur incorporé\n28.24Z;Fabrication d'outillage portatif à moteur incorporé\n28.25;Fabrication d'équipements aérauliques et frigorifiques industriels\n28.25Z;Fabrication d'équipements aérauliques et frigorifiques industriels\n28.29;Fabrication de machines diverses d'usage général\n28.29A;Fabrication d'équipements d'emballage, de conditionnement et de pesage \n28.29B;Fabrication d'autres machines d'usage général\n;\n28.3;Fabrication de machines agricoles et forestières\n28.30;Fabrication de machines agricoles et forestières\n28.30Z;Fabrication de machines agricoles et forestières\n;\n28.4;Fabrication de machines de formage des métaux et de machines-outils\n28.41;Fabrication de machines de formage des métaux\n28.41Z;Fabrication de machines-outils pour le travail des métaux\n28.49;Fabrication d'autres machines-outils \n28.49Z;Fabrication d'autres machines-outils \n;\n28.9;Fabrication d'autres machines d'usage spécifique\n28.91;Fabrication de machines pour la métallurgie\n28.91Z;Fabrication de machines pour la métallurgie\n28.92;Fabrication de machines pour l'extraction ou la construction\n28.92Z;Fabrication de machines pour l'extraction ou la construction\n28.93;Fabrication de machines pour l'industrie agro-alimentaire\n28.93Z;Fabrication de machines pour l'industrie agro-alimentaire\n28.94;Fabrication de machines pour les industries textiles\n28.94Z;Fabrication de machines pour les industries textiles\n28.95;Fabrication de machines pour les industries du papier et du carton\n28.95Z;Fabrication de machines pour les industries du papier et du carton\n28.96;Fabrication de machines pour le travail du caoutchouc ou des plastiques\n28.96Z;Fabrication de machines pour le travail du caoutchouc ou des plastiques\n28.99;Fabrication d'autres machines d'usage spécifique n.c.a.\n28.99A;Fabrication de machines d'imprimerie\n28.99B;Fabrication d'autres machines spécialisées\n;",
+      "nullable": true
+    },
+    {
+      "name": "29",
+      "type": "VARCHAR",
+      "description": "Industrie automobile\n;\n29.1;Construction de véhicules automobiles\n29.10;Construction de véhicules automobiles\n29.10Z;Construction de véhicules automobiles\n;\n29.2;Fabrication de carrosseries et remorques\n29.20;Fabrication de carrosseries et remorques\n29.20Z;Fabrication de carrosseries et remorques\n;\n29.3;Fabrication d'équipements automobiles\n29.31;Fabrication d'équipements électriques et électroniques automobiles\n29.31Z;Fabrication d'équipements électriques et électroniques automobiles\n29.32;Fabrication d'autres équipements automobiles\n29.32Z;Fabrication d'autres équipements automobiles\n;",
+      "nullable": true
+    },
+    {
+      "name": "30",
+      "type": "VARCHAR",
+      "description": "Fabrication d'autres matériels de transport\n;\n30.1;Construction navale\n30.11;Construction de navires et de structures flottantes\n30.11Z;Construction de navires et de structures flottantes\n30.12;Construction de bateaux de plaisance\n30.12Z;Construction de bateaux de plaisance\n;\n30.2;Construction de locomotives et d'autre matériel ferroviaire roulant\n30.20;Construction de locomotives et d'autre matériel ferroviaire roulant \n30.20Z;Construction de locomotives et d'autre matériel ferroviaire roulant \n;\n30.3;Construction aéronautique et spatiale \n30.30;Construction aéronautique et spatiale \n30.30Z;Construction aéronautique et spatiale \n;\n30.4;Construction de véhicules militaires de combat\n30.40;Construction de véhicules militaires de combat \n30.40Z;Construction de véhicules militaires de combat \n;\n30.9;Fabrication de matériels de transport n.c.a.\n30.91;Fabrication de motocycles\n30.91Z;Fabrication de motocycles\n30.92;Fabrication de bicyclettes et de véhicules pour invalides\n30.92Z;Fabrication de bicyclettes et de véhicules pour invalides\n30.99;Fabrication d’autres équipements de transport n.c.a.\n30.99Z;Fabrication d’autres équipements de transport n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "31",
+      "type": "VARCHAR",
+      "description": "Fabrication de meubles\n;\n31.0;Fabrication de meubles\n31.01;Fabrication de meubles de bureau et de magasin\n31.01Z;Fabrication de meubles de bureau et de magasin\n31.02;Fabrication de meubles de cuisine \n31.02Z;Fabrication de meubles de cuisine \n31.03;Fabrication de matelas\n31.03Z;Fabrication de matelas\n31.09;Fabrication d'autres meubles\n31.09A;Fabrication de sièges d'ameublement d'intérieur\n31.09B;Fabrication d’autres meubles et industries connexes de l’ameublement\n;",
+      "nullable": true
+    },
+    {
+      "name": "32",
+      "type": "VARCHAR",
+      "description": "Autres industries manufacturières\n;\n32.1;Fabrication d’articles de joaillerie, bijouterie et articles similaires\n32.11;Frappe de monnaie\n32.11Z;Frappe de monnaie\n32.12;Fabrication d’articles de joaillerie et bijouterie\n32.12Z;Fabrication d’articles de joaillerie et bijouterie\n32.13;Fabrication d’articles de bijouterie fantaisie et articles similaires\n32.13Z;Fabrication d’articles de bijouterie fantaisie et articles similaires\n;\n32.2;Fabrication d'instruments de musique\n32.20;Fabrication d'instruments de musique\n32.20Z;Fabrication d'instruments de musique\n;\n32.3;Fabrication d'articles de sport\n32.30;Fabrication d'articles de sport\n32.30Z;Fabrication d'articles de sport\n;\n32.4;Fabrication de jeux et jouets\n32.40;Fabrication de jeux et jouets\n32.40Z;Fabrication de jeux et jouets\n;\n32.5;Fabrication d'instruments et de fournitures à usage médical et dentaire\n32.50;Fabrication d'instruments et de fournitures à usage médical et dentaire \n32.50A;Fabrication de matériel médico-chirurgical et dentaire\n32.50B;Fabrication de lunettes\n;\n32.9;Activités manufacturières n.c.a.\n32.91;Fabrication d’articles de brosserie\n32.91Z;Fabrication d’articles de brosserie\n32.99;Autres activités manufacturières n.c.a. \n32.99Z;Autres activités manufacturières n.c.a. \n;",
+      "nullable": true
+    },
+    {
+      "name": "33",
+      "type": "VARCHAR",
+      "description": "Réparation et installation de machines et d'équipements \n;\n33.1;Réparation d'ouvrages en métaux, de machines et d'équipements\n33.11;Réparation d'ouvrages en métaux\n33.11Z;Réparation d'ouvrages en métaux\n33.12;Réparation de machines et équipements mécaniques\n33.12Z;Réparation de machines et équipements mécaniques\n33.13;Réparation de matériels électroniques et optiques\n33.13Z;Réparation de matériels électroniques et optiques\n33.14;Réparation d'équipements électriques\n33.14Z;Réparation d'équipements électriques\n33.15;Réparation et maintenance navale\n33.15Z;Réparation et maintenance navale\n33.16;Réparation et maintenance d'aéronefs et d'engins spatiaux \n33.16Z;Réparation et maintenance d'aéronefs et d'engins spatiaux \n33.17;Réparation et maintenance d'autres équipements de transport\n33.17Z;Réparation et maintenance d'autres équipements de transport\n33.19;Réparation d'autres équipements\n33.19Z;Réparation d'autres équipements\n;\n33.2;Installation de machines et d'équipements industriels\n33.20;Installation de machines et d'équipements industriels\n33.20A;Installation de structures métalliques, chaudronnées et de tuyauterie\n33.20B;Installation de machines et équipements mécaniques\n33.20C;Conception d'ensemble et assemblage sur site industriel d'équipements de contrôle des processus industriels \n33.20D;Installation d'équipements électriques, de matériels électroniques et optiques ou d'autres matériels\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "D;PRODUCTION ET DISTRIBUTION D'ÉLECTRICITÉ, DE GAZ, DE VAPEUR ET D'AIR CONDITIONNÉ\n;",
+      "nullable": true
+    },
+    {
+      "name": "35",
+      "type": "VARCHAR",
+      "description": "Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné\n;\n35.1;Production, transport et distribution d'électricité\n35.11;Production d'électricité\n35.11Z;Production d'électricité\n35.12;Transport d'électricité\n35.12Z;Transport d'électricité\n35.13;Distribution d'électricité\n35.13Z;Distribution d'électricité\n35.14;Commerce d'électricité\n35.14Z;Commerce d'électricité\n;\n35.2;Production et distribution de combustibles gazeux\n35.21;Production de combustibles gazeux\n35.21Z;Production de combustibles gazeux\n35.22;Distribution de combustibles gazeux par conduites\n35.22Z;Distribution de combustibles gazeux par conduites\n35.23;Commerce de combustibles gazeux par conduites\n35.23Z;Commerce de combustibles gazeux par conduites\n;\n35.3;Production et distribution de vapeur et d'air conditionné\n35.30;Production et distribution de vapeur et d'air conditionné \n35.30Z;Production et distribution de vapeur et d'air conditionné \n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "E;\"PRODUCTION ET DISTRIBUTION D'EAU ; ASSAINISSEMENT, GESTION DES DÉCHETS ET DÉPOLLUTION\"\n;",
+      "nullable": true
+    },
+    {
+      "name": "36",
+      "type": "VARCHAR",
+      "description": "Captage, traitement et distribution d'eau \n;\n36.0;Captage, traitement et distribution d'eau\n36.00;Captage, traitement et distribution d'eau\n36.00Z;Captage, traitement et distribution d'eau\n;",
+      "nullable": true
+    },
+    {
+      "name": "37",
+      "type": "VARCHAR",
+      "description": "Collecte et traitement des eaux usées\n;\n37.0;Collecte et traitement des eaux usées\n37.00;Collecte et traitement des eaux usées\n37.00Z;Collecte et traitement des eaux usées\n;",
+      "nullable": true
+    },
+    {
+      "name": "38",
+      "type": "VARCHAR",
+      "description": "\"Collecte, traitement et élimination des déchets ; récupération\"\n;\n38.1;Collecte des déchets\n38.11;Collecte des déchets non dangereux\n38.11Z;Collecte des déchets non dangereux\n38.12;Collecte des déchets dangereux\n38.12Z;Collecte des déchets dangereux\n;\n38.2;Traitement et élimination des déchets\n38.21;Traitement et élimination des déchets non dangereux\n38.21Z;Traitement et élimination des déchets non dangereux\n38.22;Traitement et élimination des déchets dangereux\n38.22Z;Traitement et élimination des déchets dangereux\n;\n38.3;Récupération\n38.31;Démantèlement d'épaves\n38.31Z;Démantèlement d'épaves\n38.32;Récupération de déchets triés\n38.32Z;Récupération de déchets triés\n;",
+      "nullable": true
+    },
+    {
+      "name": "39",
+      "type": "VARCHAR",
+      "description": "Dépollution et autres services de gestion des déchets\n;\n39.0;Dépollution et autres services de gestion des déchets\n39.00;Dépollution et autres services de gestion des déchets\n39.00Z;Dépollution et autres services de gestion des déchets\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "F;CONSTRUCTION\n;",
+      "nullable": true
+    },
+    {
+      "name": "41",
+      "type": "VARCHAR",
+      "description": "Construction de bâtiments \n;\n41.1;Promotion immobilière\n41.10;Promotion immobilière\n41.10A;Promotion immobilière de logements\n41.10B;Promotion immobilière de bureaux\n41.10C;Promotion immobilière d'autres bâtiments\n41.10D;Supports juridiques de programmes\n;\n41.2;Construction de bâtiments résidentiels et non résidentiels\n41.20;Construction de bâtiments résidentiels et non résidentiels\n41.20A;Construction de maisons individuelles\n41.20B;Construction d'autres bâtiments\n;",
+      "nullable": true
+    },
+    {
+      "name": "42",
+      "type": "VARCHAR",
+      "description": "Génie civil\n;\n42.1;Construction de routes et de voies ferrées \n42.11;Construction de routes et autoroutes\n42.11Z;Construction de routes et autoroutes\n42.12;Construction de voies ferrées de surface et souterraines\n42.12Z;Construction de voies ferrées de surface et souterraines\n42.13;Construction de ponts et tunnels\n42.13A;Construction d'ouvrages d'art\n42.13B;Construction et entretien de tunnels\n;\n42.2;Construction de réseaux et de lignes\n42.21;Construction de réseaux pour fluides\n42.21Z;Construction de réseaux pour fluides\n42.22;Construction de réseaux électriques et de télécommunications\n42.22Z;Construction de réseaux électriques et de télécommunications\n;\n42.9;Construction d'autres ouvrages de génie civil \n42.91;Construction d'ouvrages maritimes et fluviaux\n42.91Z;Construction d'ouvrages maritimes et fluviaux\n42.99;Construction d'autres ouvrages de génie civil n.c.a.\n42.99Z;Construction d'autres ouvrages de génie civil n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "43",
+      "type": "VARCHAR",
+      "description": "Travaux de construction spécialisés \n;\n43.1;Démolition et préparation des sites\n43.11;Travaux de démolition\n43.11Z;Travaux de démolition\n43.12;Travaux de préparation des sites\n43.12A;Travaux de terrassement courants et travaux préparatoires\n43.12B;Travaux de terrassement spécialisés ou de grande masse\n43.13;Forages et sondages\n43.13Z;Forages et sondages\n;\n43.2;Travaux d'installation électrique, plomberie et autres travaux d'installation\n43.21;Installation électrique\n43.21A;Travaux d'installation électrique dans tous locaux\n43.21B;Travaux d'installation électrique sur la voie publique\n43.22;Travaux de plomberie et installation de chauffage et de conditionnement d'air\n43.22A;Travaux d'installation d'eau et de gaz en tous locaux\n43.22B;Travaux d'installation d'équipements thermiques et de climatisation\n43.29;Autres travaux d'installation\n43.29A;Travaux d'isolation\n43.29B;Autres travaux d'installation n.c.a.\n;\n43.3;Travaux de finition\n43.31;Travaux de plâtrerie\n43.31Z;Travaux de plâtrerie\n43.32;Travaux de menuiserie\n43.32A;Travaux de menuiserie bois et PVC\n43.32B;Travaux de menuiserie métallique et serrurerie\n43.32C;Agencement de lieux de vente\n43.33;Travaux de revêtement des sols et des murs\n43.33Z;Travaux de revêtement des sols et des murs\n43.34;Travaux de peinture et vitrerie\n43.34Z;Travaux de peinture et vitrerie\n43.39;Autres travaux de finition\n43.39Z;Autres travaux de finition\n;\n43.9;Autres travaux de construction spécialisés\n43.91;Travaux de couverture\n43.91A;Travaux de charpente\n43.91B;Travaux de couverture par éléments\n43.99;Autres travaux de construction spécialisés n.c.a.\n43.99A;Travaux d'étanchéification\n43.99B;Travaux de montage de structures métalliques\n43.99C;Travaux de maçonnerie générale et gros œuvre de bâtiment\n43.99D;Autres travaux spécialisés de construction\n43.99E;Location avec opérateur de matériel de construction\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "G;\"COMMERCE ; RÉPARATION D'AUTOMOBILES ET DE MOTOCYCLES\"\n;",
+      "nullable": true
+    },
+    {
+      "name": "45",
+      "type": "VARCHAR",
+      "description": "Commerce et réparation d'automobiles et de motocycles\n;\n45.1;Commerce de véhicules automobiles\n45.11;Commerce de voitures et de véhicules automobiles légers\n45.11Z;Commerce de voitures et de véhicules automobiles légers\n45.19;Commerce d'autres véhicules automobiles\n45.19Z;Commerce d'autres véhicules automobiles\n;\n45.2;Entretien et réparation de véhicules automobiles\n45.20;Entretien et réparation de véhicules automobiles\n45.20A;Entretien et réparation de véhicules automobiles légers\n45.20B;Entretien et réparation d'autres véhicules automobiles\n;\n45.3;Commerce d'équipements automobiles\n45.31;Commerce de gros d'équipements automobiles\n45.31Z;Commerce de gros d'équipements automobiles\n45.32;Commerce de détail d'équipements automobiles\n45.32Z;Commerce de détail d'équipements automobiles\n;\n45.4;Commerce et réparation de motocycles\n45.40;Commerce et réparation de motocycles\n45.40Z;Commerce et réparation de motocycles\n;",
+      "nullable": true
+    },
+    {
+      "name": "46",
+      "type": "VARCHAR",
+      "description": "Commerce de gros, à l’exception des automobiles et des motocycles\n;\n46.1;Intermédiaires du commerce de gros\n46.11;Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis\n46.11Z;Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis\n46.12;Intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques\n46.12A;Centrales d'achat de carburant\n46.12B;Autres intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques\n46.13;Intermédiaires du commerce en bois et matériaux de construction\n46.13Z;Intermédiaires du commerce en bois et matériaux de construction\n46.14;Intermédiaires du commerce en machines, équipements industriels, navires et avions\n46.14Z;Intermédiaires du commerce en machines, équipements industriels, navires et avions\n46.15;Intermédiaires du commerce en meubles, articles de ménage et quincaillerie\n46.15Z;Intermédiaires du commerce en meubles, articles de ménage et quincaillerie\n46.16;Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir\n46.16Z;Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir\n46.17;Intermédiaires du commerce en denrées, boissons et tabac\n46.17A;Centrales d'achat alimentaires\n46.17B;Autres intermédiaires du commerce en denrées, boissons et tabac\n46.18;Intermédiaires spécialisés dans le commerce d'autres produits spécifiques\n46.18Z;Intermédiaires spécialisés dans le commerce d'autres produits spécifiques\n46.19;Intermédiaires du commerce en produits divers\n46.19A;Centrales d'achat non alimentaires\n46.19B;Autres intermédiaires du commerce en produits divers\n;\n46.2;Commerce de gros de produits agricoles bruts et d'animaux vivants\n46.21;Commerce de gros de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail \n46.21Z;Commerce de gros (commerce interentreprises) de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail \n46.22;Commerce de gros de fleurs et plantes\n46.22Z;Commerce de gros (commerce interentreprises) de fleurs et plantes\n46.23;Commerce de gros d'animaux vivants\n46.23Z;Commerce de gros (commerce interentreprises) d'animaux vivants\n46.24;Commerce de gros de cuirs et peaux\n46.24Z;Commerce de gros (commerce interentreprises) de cuirs et peaux\n;\n46.3;Commerce de gros de produits alimentaires, de boissons et de tabac\n46.31;Commerce de gros de fruits et légumes\n46.31Z;Commerce de gros (commerce interentreprises) de fruits et légumes\n46.32;Commerce de gros de viandes et de produits à base de viande\n46.32A;Commerce de gros (commerce interentreprises) de viandes de boucherie\n46.32B;Commerce de gros (commerce interentreprises) de produits à base de viande\n46.32C;Commerce de gros (commerce interentreprises) de volailles et gibier\n46.33;Commerce de gros de produits laitiers, œufs, huiles et matières grasses comestibles\n46.33Z;Commerce de gros (commerce interentreprises) de produits laitiers, œufs, huiles et matières grasses comestibles\n46.34;Commerce de gros de boissons\n46.34Z;Commerce de gros (commerce interentreprises) de boissons\n46.35;Commerce de gros de produits à base de tabac\n46.35Z;Commerce de gros (commerce interentreprises) de produits à base de tabac\n46.36;Commerce de gros de sucre, chocolat et confiserie\n46.36Z;Commerce de gros (commerce interentreprises) de sucre, chocolat et confiserie\n46.37;Commerce de gros de café, thé, cacao et épices\n46.37Z;Commerce de gros (commerce interentreprises) de café, thé, cacao et épices\n46.38;Commerce de gros d'autres produits alimentaires, y compris poissons, crustacés et mollusques\n46.38A;Commerce de gros (commerce interentreprises) de poissons, crustacés et mollusques\n46.38B;Commerce de gros (commerce interentreprises) alimentaire spécialisé divers\n46.39;Commerce de gros non spécialisé de denrées, boissons et tabac\n46.39A;Commerce de gros (commerce interentreprises) de produits surgelés\n46.39B;Commerce de gros (commerce interentreprises) alimentaire non spécialisé\n;\n46.4;Commerce de gros de biens domestiques\n46.41;Commerce de gros de textiles\n46.41Z;Commerce de gros (commerce interentreprises) de textiles\n46.42;Commerce de gros d'habillement et de chaussures\n46.42Z;Commerce de gros (commerce interentreprises) d'habillement et de chaussures\n46.43;Commerce de gros d'appareils électroménagers\n46.43Z;Commerce de gros (commerce interentreprises) d'appareils électroménagers\n46.44;Commerce de gros de vaisselle, verrerie et produits d'entretien\n46.44Z;Commerce de gros (commerce interentreprises) de vaisselle, verrerie et produits d'entretien\n46.45;Commerce de gros de parfumerie et de produits de beauté\n46.45Z;Commerce de gros (commerce interentreprises) de parfumerie et de produits de beauté\n46.46;Commerce de gros de produits pharmaceutiques\n46.46Z;Commerce de gros (commerce interentreprises) de produits pharmaceutiques\n46.47;Commerce de gros de meubles, de tapis et d'appareils d'éclairage \n46.47Z;Commerce de gros (commerce interentreprises) de meubles, de tapis et d'appareils d'éclairage \n46.48;Commerce de gros d'articles d'horlogerie et de bijouterie\n46.48Z;Commerce de gros (commerce interentreprises) d'articles d'horlogerie et de bijouterie\n46.49;Commerce de gros d'autres biens domestiques\n46.49Z;Commerce de gros (commerce interentreprises) d'autres biens domestiques \n;\n46.5;Commerce de gros d'équipements de l'information et de la communication \n46.51;Commerce de gros d'ordinateurs, d'équipements informatiques périphériques et de logiciels\n46.51Z;Commerce de gros (commerce interentreprises) d'ordinateurs, d'équipements informatiques périphériques et de logiciels\n46.52;Commerce de gros de composants et d'équipements électroniques et de télécommunication\n46.52Z;Commerce de gros (commerce interentreprises) de composants et d'équipements électroniques et de télécommunication\n;\n46.6;Commerce de gros d'autres équipements industriels\n46.61;Commerce de gros de matériel agricole\n46.61Z;Commerce de gros (commerce interentreprises) de matériel agricole\n46.62;Commerce de gros de machines-outils\n46.62Z;Commerce de gros (commerce interentreprises) de machines-outils\n46.63;Commerce de gros de machines pour l'extraction, la construction et le génie civil \n46.63Z;Commerce de gros (commerce interentreprises) de machines pour l'extraction, la construction et le génie civil \n46.64;Commerce de gros de machines pour l'industrie textile et l'habillement\n46.64Z;Commerce de gros (commerce interentreprises) de machines pour l'industrie textile et l'habillement\n46.65;Commerce de gros de mobilier de bureau\n46.65Z;Commerce de gros (commerce interentreprises) de mobilier de bureau\n46.66;Commerce de gros d'autres machines et équipements de bureau \n46.66Z;Commerce de gros (commerce interentreprises) d'autres machines et équipements de bureau \n46.69;Commerce de gros d'autres machines et équipements\n46.69A;Commerce de gros (commerce interentreprises) de matériel électrique\n46.69B;Commerce de gros (commerce interentreprises) de fournitures et équipements industriels divers\n46.69C;Commerce de gros (commerce interentreprises) de fournitures et équipements divers pour le commerce et les services\n;\n46.7;Autres commerces de gros spécialisés\n46.71;Commerce de gros de combustibles et de produits annexes\n46.71Z;Commerce de gros (commerce interentreprises) de combustibles et de produits annexes\n46.72;Commerce de gros de minerais et métaux\n46.72Z;Commerce de gros (commerce interentreprises) de minerais et métaux\n46.73;Commerce de gros de bois, de matériaux de construction et d'appareils sanitaires \n46.73A;Commerce de gros (commerce interentreprises) de bois et de matériaux de construction \n46.73B;Commerce de gros (commerce interentreprises) d'appareils sanitaires et de produits de décoration\n46.74;Commerce de gros de quincaillerie et fournitures pour plomberie et chauffage\n46.74A;Commerce de gros (commerce interentreprises) de quincaillerie\n46.74B;Commerce de gros (commerce interentreprises) de fournitures pour la plomberie et le chauffage\n46.75;Commerce de gros de produits chimiques\n46.75Z;Commerce de gros (commerce interentreprises) de produits chimiques\n46.76;Commerce de gros d'autres produits intermédiaires\n46.76Z;Commerce de gros (commerce interentreprises) d'autres produits intermédiaires\n46.77;Commerce de gros de déchets et débris\n46.77Z;Commerce de gros (commerce interentreprises) de déchets et débris\n;\n46.9;Commerce de gros non spécialisé\n46.90;Commerce de gros non spécialisé\n46.90Z;Commerce de gros (commerce interentreprises) non spécialisé\n;",
+      "nullable": true
+    },
+    {
+      "name": "47",
+      "type": "VARCHAR",
+      "description": "Commerce de détail, à l’exception des automobiles et des motocycles\n;\n47.1;Commerce de détail en magasin non spécialisé\n47.11;Commerce de détail en magasin non spécialisé à prédominance alimentaire\n47.11A;Commerce de détail de produits surgelés\n47.11B;Commerce d'alimentation générale\n47.11C;Supérettes\n47.11D;Supermarchés\n47.11E;Magasins multi-commerces\n47.11F;Hypermarchés\n47.19;Autre commerce de détail en magasin non spécialisé\n47.19A;Grands magasins\n47.19B;Autres commerces de détail en magasin non spécialisé\n;\n47.2;Commerce de détail alimentaire en magasin spécialisé\n47.21;Commerce de détail de fruits et légumes en magasin spécialisé\n47.21Z;Commerce de détail de fruits et légumes en magasin spécialisé\n47.22;Commerce de détail de viandes et de produits à base de viande en magasin spécialisé\n47.22Z;Commerce de détail de viandes et de produits à base de viande en magasin spécialisé\n47.23;Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé\n47.23Z;Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé\n47.24;Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé\n47.24Z;Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé\n47.25;Commerce de détail de boissons en magasin spécialisé\n47.25Z;Commerce de détail de boissons en magasin spécialisé\n47.26;Commerce de détail de produits à base de tabac en magasin spécialisé\n47.26Z;Commerce de détail de produits à base de tabac en magasin spécialisé\n47.29;Autres commerces de détail alimentaires en magasin spécialisé \n47.29Z;Autres commerces de détail alimentaires en magasin spécialisé \n;\n47.3;Commerce de détail de carburants en magasin spécialisé\n47.30;Commerce de détail de carburants en magasin spécialisé\n47.30Z;Commerce de détail de carburants en magasin spécialisé\n;\n47.4;Commerce de détail d'équipements de l'information et de la communication en magasin spécialisé\n47.41;Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé\n47.41Z;Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé\n47.42;Commerce de détail de matériels de télécommunication en magasin spécialisé\n47.42Z;Commerce de détail de matériels de télécommunication en magasin spécialisé\n47.43;Commerce de détail de matériels audio/vidéo en magasin spécialisé\n47.43Z;Commerce de détail de matériels audio et vidéo en magasin spécialisé\n;\n47.5;Commerce de détail d'autres équipements du foyer en magasin spécialisé\n47.51;Commerce de détail de textiles en magasin spécialisé\n47.51Z;Commerce de détail de textiles en magasin spécialisé\n47.52;Commerce de détail de quincaillerie, peintures et verres en magasin spécialisé\n47.52A;Commerce de détail de quincaillerie, peintures et verres en petites surfaces (moins de 400 m2)\n47.52B;Commerce de détail de quincaillerie, peintures et verres en grandes surfaces (400 m2et plus)\n47.53;Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé\n47.53Z;Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé\n47.54;Commerce de détail d'appareils électroménagers en magasin spécialisé\n47.54Z;Commerce de détail d'appareils électroménagers en magasin spécialisé\n47.59;Commerce de détail de meubles, appareils d'éclairage et autres articles de ménage en magasin spécialisé\n47.59A;Commerce de détail de meubles\n47.59B;Commerce de détail d'autres équipements du foyer\n;\n47.6;Commerce de détail de biens culturels et de loisirs en magasin spécialisé\n47.61;Commerce de détail de livres en magasin spécialisé\n47.61Z;Commerce de détail de livres en magasin spécialisé\n47.62;Commerce de détail de journaux et papeterie en magasin spécialisé\n47.62Z;Commerce de détail de journaux et papeterie en magasin spécialisé\n47.63;Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé\n47.63Z;Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé\n47.64;Commerce de détail d'articles de sport en magasin spécialisé\n47.64Z;Commerce de détail d'articles de sport en magasin spécialisé\n47.65;Commerce de détail de jeux et jouets en magasin spécialisé\n47.65Z;Commerce de détail de jeux et jouets en magasin spécialisé\n;\n47.7;Autres commerces de détail en magasin spécialisé\n47.71;Commerce de détail d'habillement en magasin spécialisé\n47.71Z;Commerce de détail d'habillement en magasin spécialisé\n47.72;Commerce de détail de chaussures et d'articles en cuir en magasin spécialisé\n47.72A;Commerce de détail de la chaussure\n47.72B;Commerce de détail de maroquinerie et d'articles de voyage\n47.73;Commerce de détail de produits pharmaceutiques en magasin spécialisé\n47.73Z;Commerce de détail de produits pharmaceutiques en magasin spécialisé\n47.74;Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé\n47.74Z;Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé\n47.75;Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé\n47.75Z;Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé\n47.76;Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé\n47.76Z;Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé\n47.77;Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé\n47.77Z;Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé\n47.78;Autre commerce de détail de biens neufs en magasin spécialisé\n47.78A;Commerces de détail d'optique\n47.78B;Commerces de détail de charbons et combustibles\n47.78C;Autres commerces de détail spécialisés divers\n47.79;Commerce de détail de biens d'occasion en magasin\n47.79Z;Commerce de détail de biens d'occasion en magasin\n;\n47.8;Commerce de détail sur éventaires et marchés\n47.81;Commerce de détail alimentaire sur éventaires et marchés\n47.81Z;Commerce de détail alimentaire sur éventaires et marchés\n47.82;Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés\n47.82Z;Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés\n47.89;Autres commerces de détail sur éventaires et marchés\n47.89Z;Autres commerces de détail sur éventaires et marchés\n;\n47.9;Commerce de détail hors magasin, éventaires ou marchés\n47.91;Vente à distance\n47.91A;Vente à distance sur catalogue général\n47.91B;Vente à distance sur catalogue spécialisé\n47.99;Autres commerces de détail hors magasin, éventaires ou marchés\n47.99A;Vente à domicile\n47.99B;Vente par automates et autres commerces de détail hors magasin, éventaires ou marchés n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "H;TRANSPORTS ET ENTREPOSAGE\n;",
+      "nullable": true
+    },
+    {
+      "name": "49",
+      "type": "VARCHAR",
+      "description": "Transports terrestres et transport par conduites\n;\n49.1;Transport ferroviaire interurbain de voyageurs\n49.10;Transport ferroviaire interurbain de voyageurs\n49.10Z;Transport ferroviaire interurbain de voyageurs\n;\n49.2;Transports ferroviaires de fret\n49.20;Transports ferroviaires de fret \n49.20Z;Transports ferroviaires de fret \n;\n49.3;Autres transports terrestres de voyageurs\n49.31;Transports urbains et suburbains de voyageurs\n49.31Z;Transports urbains et suburbains de voyageurs\n49.32;Transports de voyageurs par taxis\n49.32Z;Transports de voyageurs par taxis\n49.39;Autres transports terrestres de voyageurs n.c.a.\n49.39A;Transports routiers réguliers de voyageurs\n49.39B;Autres transports routiers de voyageurs \n49.39C;Téléphériques et remontées mécaniques\n;\n49.4;Transports routiers de fret et services de déménagement\n49.41;Transports routiers de fret\n49.41A;Transports routiers de fret interurbains\n49.41B;Transports routiers de fret de proximité\n49.41C;Location de camions avec chauffeur\n49.42;Services de déménagement\n49.42Z;Services de déménagement\n;\n49.5;Transports par conduites\n49.50;Transports par conduites\n49.50Z;Transports par conduites\n;",
+      "nullable": true
+    },
+    {
+      "name": "50",
+      "type": "VARCHAR",
+      "description": "Transports par eau\n;\n50.1;Transports maritimes et côtiers de passagers\n50.10;Transports maritimes et côtiers de passagers\n50.10Z;Transports maritimes et côtiers de passagers\n;\n50.2;Transports maritimes et côtiers de fret\n50.20;Transports maritimes et côtiers de fret\n50.20Z;Transports maritimes et côtiers de fret\n;\n50.3;Transports fluviaux de passagers\n50.30;Transports fluviaux de passagers\n50.30Z;Transports fluviaux de passagers\n;\n50.4;Transports fluviaux de fret\n50.40;Transports fluviaux de fret \n50.40Z;Transports fluviaux de fret \n;",
+      "nullable": true
+    },
+    {
+      "name": "51",
+      "type": "VARCHAR",
+      "description": "Transports aériens\n;\n51.1;Transports aériens de passagers\n51.10;Transports aériens de passagers\n51.10Z;Transports aériens de passagers\n;\n51.2;Transports aériens de fret et transports spatiaux\n51.21;Transports aériens de fret\n51.21Z;Transports aériens de fret\n51.22;Transports spatiaux\n51.22Z;Transports spatiaux\n;",
+      "nullable": true
+    },
+    {
+      "name": "52",
+      "type": "VARCHAR",
+      "description": "Entreposage et services auxiliaires des transports\n;\n52.1;Entreposage et stockage\n52.10;Entreposage et stockage\n52.10A;Entreposage et stockage frigorifique\n52.10B;Entreposage et stockage non frigorifique\n;\n52.2;Services auxiliaires des transports\n52.21;Services auxiliaires des transports terrestres\n52.21Z;Services auxiliaires des transports terrestres\n52.22;Services auxiliaires des transports par eau\n52.22Z;Services auxiliaires des transports par eau\n52.23;Services auxiliaires des transports aériens\n52.23Z;Services auxiliaires des transports aériens\n52.24;Manutention\n52.24A;Manutention portuaire\n52.24B;Manutention non portuaire\n52.29;Autres services auxiliaires des transports \n52.29A;Messagerie, fret express\n52.29B;Affrètement et organisation des transports \n;",
+      "nullable": true
+    },
+    {
+      "name": "53",
+      "type": "VARCHAR",
+      "description": "Activités de poste et de courrier\n;\n53.1;Activités de poste dans le cadre d'une obligation de service universel\n53.10;Activités de poste dans le cadre d'une obligation de service universel \n53.10Z;Activités de poste dans le cadre d'une obligation de service universel \n;\n53.2;Autres activités de poste et de courrier\n53.20;Autres activités de poste et de courrier\n53.20Z;Autres activités de poste et de courrier\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "I;HÉBERGEMENT ET RESTAURATION\n;",
+      "nullable": true
+    },
+    {
+      "name": "55",
+      "type": "VARCHAR",
+      "description": "Hébergement\n;\n55.1;Hôtels et hébergement similaire\n55.10;Hôtels et hébergement similaire \n55.10Z;Hôtels et hébergement similaire \n;\n55.2;Hébergement touristique et autre hébergement de courte durée \n55.20;Hébergement touristique et autre hébergement de courte durée \n55.20Z;Hébergement touristique et autre hébergement de courte durée \n;\n55.3;Terrains de camping et parcs pour caravanes ou véhicules de loisirs\n55.30;Terrains de camping et parcs pour caravanes ou véhicules de loisirs\n55.30Z;Terrains de camping et parcs pour caravanes ou véhicules de loisirs\n;\n55.9;Autres hébergements \n55.90;Autres hébergements \n55.90Z;Autres hébergements \n;",
+      "nullable": true
+    },
+    {
+      "name": "56",
+      "type": "VARCHAR",
+      "description": "Restauration\n;\n56.1;Restaurants et services de restauration mobile\n56.10;Restaurants et services de restauration mobile\n56.10A;Restauration traditionnelle\n56.10B;Cafétérias et autres libres-services\n56.10C;Restauration de type rapide\n;\n56.2;Traiteurs et autres services de restauration\n56.21;Services des traiteurs \n56.21Z;Services des traiteurs \n56.29;Autres services de restauration \n56.29A;Restauration collective sous contrat\n56.29B;Autres services de restauration n.c.a.\n;\n56.3;Débits de boissons\n56.30;Débits de boissons\n56.30Z;Débits de boissons\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "J;INFORMATION ET COMMUNICATION\n;",
+      "nullable": true
+    },
+    {
+      "name": "58",
+      "type": "VARCHAR",
+      "description": "Édition\n;\n58.1;Édition de livres et périodiques et autres activités d'édition \n58.11;Édition de livres\n58.11Z;Édition de livres\n58.12;Édition de répertoires et de fichiers d'adresses\n58.12Z;Édition de répertoires et de fichiers d'adresses\n58.13;Édition de journaux\n58.13Z;Édition de journaux\n58.14;Édition de revues et périodiques\n58.14Z;Édition de revues et périodiques\n58.19;Autres activités d'édition\n58.19Z;Autres activités d'édition\n;\n58.2;Édition de logiciels\n58.21;Édition de jeux électroniques\n58.21Z;Édition de jeux électroniques\n58.29;Édition d'autres logiciels\n58.29A;Édition de logiciels système et de réseau\n58.29B;Edition de logiciels outils de développement et de langages\n58.29C;Edition de logiciels applicatifs\n;",
+      "nullable": true
+    },
+    {
+      "name": "59",
+      "type": "VARCHAR",
+      "description": "\"Production de films cinématographiques, de vidéo et de programmes de télévision ; enregistrement sonore et édition musicale\"\n;\n59.1;Activités cinématographiques, vidéo et de télévision\n59.11;Production de films cinématographiques, de vidéo et de programmes de télévision \n59.11A;Production de films et de programmes pour la télévision \n59.11B;Production de films institutionnels et publicitaires\n59.11C;Production de films pour le cinéma\n59.12;Post-production de films cinématographiques, de vidéo et de programmes de télévision\n59.12Z;Post-production de films cinématographiques, de vidéo et de programmes de télévision\n59.13;Distribution de films cinématographiques, de vidéo et de programmes de télévision \n59.13A;Distribution de films cinématographiques\n59.13B;Edition et distribution vidéo\n59.14;Projection de films cinématographiques\n59.14Z;Projection de films cinématographiques\n;\n59.2;Enregistrement sonore et édition musicale\n59.20;Enregistrement sonore et édition musicale \n59.20Z;Enregistrement sonore et édition musicale \n;",
+      "nullable": true
+    },
+    {
+      "name": "60",
+      "type": "VARCHAR",
+      "description": "Programmation et diffusion\n;\n60.1;Édition et diffusion de programmes radio\n60.10;Édition et diffusion de programmes radio\n60.10Z;Édition et diffusion de programmes radio\n;\n60.2;Programmation de télévision et télédiffusion\n60.20;Programmation de télévision et télédiffusion\n60.20A;Edition de chaînes généralistes\n60.20B;Edition de chaînes thématiques\n;",
+      "nullable": true
+    },
+    {
+      "name": "61",
+      "type": "VARCHAR",
+      "description": "Télécommunications\n;\n61.1;Télécommunications filaires\n61.10;Télécommunications filaires\n61.10Z;Télécommunications filaires\n;\n61.2;Télécommunications sans fil \n61.20;Télécommunications sans fil \n61.20Z;Télécommunications sans fil \n;\n61.3;Télécommunications par satellite\n61.30;Télécommunications par satellite\n61.30Z;Télécommunications par satellite\n;\n61.9;Autres activités de télécommunication\n61.90;Autres activités de télécommunication \n61.90Z;Autres activités de télécommunication \n;",
+      "nullable": true
+    },
+    {
+      "name": "62",
+      "type": "VARCHAR",
+      "description": "Programmation, conseil et autres activités informatiques \n;\n62.0;Programmation, conseil et autres activités informatiques \n62.01;Programmation informatique\n62.01Z;Programmation informatique\n62.02;Conseil informatique \n62.02A;Conseil en systèmes et logiciels informatiques\n62.02B;Tierce maintenance de systèmes et d’applications informatiques\n62.03;Gestion d'installations informatiques\n62.03Z;Gestion d'installations informatiques\n62.09;Autres activités informatiques\n62.09Z;Autres activités informatiques\n;",
+      "nullable": true
+    },
+    {
+      "name": "63",
+      "type": "VARCHAR",
+      "description": "Services d'information\n;\n63.1;\"Traitement de données, hébergement et activités connexes ; portails Internet\"\n63.11;Traitement de données, hébergement et activités connexes\n63.11Z;Traitement de données, hébergement et activités connexes\n63.12;Portails Internet\n63.12Z;Portails Internet\n;\n63.9;Autres services d'information\n63.91;Activités des agences de presse\n63.91Z;Activités des agences de presse\n63.99;Autres services d'information n.c.a.\n63.99Z;Autres services d'information n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "K;ACTIVITÉS FINANCIÈRES ET D'ASSURANCE\n;",
+      "nullable": true
+    },
+    {
+      "name": "64",
+      "type": "VARCHAR",
+      "description": "Activités des services financiers, hors assurance et caisses de retraite\n;\n64.1;Intermédiation monétaire\n64.11;Activités de banque centrale\n64.11Z;Activités de banque centrale\n64.19;Autres intermédiations monétaires\n64.19Z;Autres intermédiations monétaires\n;\n64.2;Activités des sociétés holding\n64.20;Activités des sociétés holding\n64.20Z;Activités des sociétés holding\n;\n64.3;Fonds de placement et entités financières similaires\n64.30;Fonds de placement et entités financières similaires\n64.30Z;Fonds de placement et entités financières similaires\n;\n64.9;Autres activités des services financiers, hors assurance et caisses de retraite\n64.91;Crédit-bail \n64.91Z;Crédit-bail \n64.92;Autre distribution de crédit\n64.92Z;Autre distribution de crédit\n64.99;Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a.\n64.99Z;Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "65",
+      "type": "VARCHAR",
+      "description": "Assurance\n;\n65.1;Assurance\n65.11;Assurance vie \n65.11Z;Assurance vie\n65.12;Autres assurances\n65.12Z;Autres assurances\n;\n65.2;Réassurance\n65.20;Réassurance\n65.20Z;Réassurance\n;\n65.3;Caisses de retraite\n65.30;Caisses de retraite\n65.30Z;Caisses de retraite\n;",
+      "nullable": true
+    },
+    {
+      "name": "66",
+      "type": "VARCHAR",
+      "description": "Activités auxiliaires de services financiers et d'assurance \n;\n66.1;Activités auxiliaires de services financiers, hors assurance et caisses de retraite\n66.11;Administration de marchés financiers\n66.11Z;Administration de marchés financiers\n66.12;Courtage de valeurs mobilières et de marchandises\n66.12Z;Courtage de valeurs mobilières et de marchandises\n66.19;Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite\n66.19A;Supports juridiques de gestion de patrimoine mobilier\n66.19B;Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite, n.c.a.\n;\n66.2;Activités auxiliaires d'assurance et de caisses de retraite\n66.21;Évaluation des risques et dommages\n66.21Z;Évaluation des risques et dommages\n66.22;Activités des agents et courtiers d'assurances\n66.22Z;Activités des agents et courtiers d'assurances\n66.29;Autres activités auxiliaires d'assurance et de caisses de retraite\n66.29Z;Autres activités auxiliaires d'assurance et de caisses de retraite\n;\n66.3;Gestion de fonds\n66.30;Gestion de fonds\n66.30Z;Gestion de fonds\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "L;ACTIVITÉS IMMOBILIÈRES\n;",
+      "nullable": true
+    },
+    {
+      "name": "68",
+      "type": "VARCHAR",
+      "description": "Activités immobilières\n;\n68.1;Activités des marchands de biens immobiliers\n68.10;Activités des marchands de biens immobiliers\n68.10Z;Activités des marchands de biens immobiliers\n;\n68.2;Location et exploitation de biens immobiliers propres ou loués\n68.20;Location et exploitation de biens immobiliers propres ou loués \n68.20A;Location de logements\n68.20B;Location de terrains et d'autres biens immobiliers\n;\n68.3;Activités immobilières pour compte de tiers\n68.31;Agences immobilières\n68.31Z;Agences immobilières\n68.32;Administration de biens immobiliers\n68.32A;Administration d'immeubles et autres biens immobiliers\n68.32B;Supports juridiques de gestion de patrimoine immobilier\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "M;ACTIVITÉS SPÉCIALISÉES, SCIENTIFIQUES ET TECHNIQUES\n;",
+      "nullable": true
+    },
+    {
+      "name": "69",
+      "type": "VARCHAR",
+      "description": "Activités juridiques et comptables\n;\n69.1;Activités juridiques\n69.10;Activités juridiques\n69.10Z;Activités juridiques\n;\n69.2;Activités comptables\n69.20;Activités comptables\n69.20Z;Activités comptables\n;",
+      "nullable": true
+    },
+    {
+      "name": "70",
+      "type": "VARCHAR",
+      "description": "\"Activités des sièges sociaux ; conseil de gestion\"\n;\n70.1;Activités des sièges sociaux\n70.10;Activités des sièges sociaux\n70.10Z;Activités des sièges sociaux\n;\n70.2;Conseil de gestion\n70.21;Conseil en relations publiques et communication\n70.21Z;Conseil en relations publiques et communication\n70.22;Conseil pour les affaires et autres conseils de gestion\n70.22Z;Conseil pour les affaires et autres conseils de gestion\n;",
+      "nullable": true
+    },
+    {
+      "name": "71",
+      "type": "VARCHAR",
+      "description": "\"Activités d'architecture et d'ingénierie ; activités de contrôle et analyses techniques\"\n;\n71.1;Activités d'architecture et d'ingénierie\n71.11;Activités d'architecture \n71.11Z;Activités d'architecture \n71.12;Activités d'ingénierie\n71.12A;Activité des géomètres\n71.12B;Ingénierie, études techniques\n;\n71.2;Activités de contrôle et analyses techniques\n71.20;Activités de contrôle et analyses techniques\n71.20A;Contrôle technique automobile\n71.20B;Analyses, essais et inspections techniques\n;",
+      "nullable": true
+    },
+    {
+      "name": "72",
+      "type": "VARCHAR",
+      "description": "Recherche-développement scientifique\n;\n72.1;Recherche-développement en sciences physiques et naturelles\n72.11;Recherche-développement en biotechnologie\n72.11Z;Recherche-développement en biotechnologie\n72.19;Recherche-développement en autres sciences physiques et naturelles\n72.19Z;Recherche-développement en autres sciences physiques et naturelles\n;\n72.2;Recherche-développement en sciences humaines et sociales\n72.20;Recherche-développement en sciences humaines et sociales\n72.20Z;Recherche-développement en sciences humaines et sociales\n;",
+      "nullable": true
+    },
+    {
+      "name": "73",
+      "type": "VARCHAR",
+      "description": "Publicité et études de marché\n;\n73.1;Publicité\n73.11;Activités des agences de publicité\n73.11Z;Activités des agences de publicité\n73.12;Régie publicitaire de médias\n73.12Z;Régie publicitaire de médias\n;\n73.2;Études de marché et sondages\n73.20;Études de marché et sondages\n73.20Z;Études de marché et sondages\n;",
+      "nullable": true
+    },
+    {
+      "name": "74",
+      "type": "VARCHAR",
+      "description": "Autres activités spécialisées, scientifiques et techniques\n;\n74.1;Activités spécialisées de design\n74.10;Activités spécialisées de design\n74.10Z;Activités spécialisées de design\n;\n74.2;Activités photographiques\n74.20;Activités photographiques\n74.20Z;Activités photographiques\n;\n74.3;Traduction et interprétation\n74.30;Traduction et interprétation\n74.30Z;Traduction et interprétation\n;\n74.9;Autres activités spécialisées, scientifiques et techniques n.c.a.\n74.90;Autres activités spécialisées, scientifiques et techniques n.c.a.\n74.90A;Activité des économistes de la construction\n74.90B;Activités spécialisées, scientifiques et techniques diverses\n;",
+      "nullable": true
+    },
+    {
+      "name": "75",
+      "type": "VARCHAR",
+      "description": "Activités vétérinaires\n;\n75.0;Activités vétérinaires\n75.00;Activités vétérinaires\n75.00Z;Activités vétérinaires\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "N;ACTIVITÉS DE SERVICES ADMINISTRATIFS ET DE SOUTIEN\n;",
+      "nullable": true
+    },
+    {
+      "name": "77",
+      "type": "VARCHAR",
+      "description": "Activités de location et location-bail\n;\n77.1;Location et location-bail de véhicules automobiles\n77.11;Location et location-bail de voitures et de véhicules automobiles légers\n77.11A;Location de courte durée de voitures et de véhicules automobiles légers\n77.11B;Location de longue durée de voitures et de véhicules automobiles légers\n77.12;Location et location-bail de camions\n77.12Z;Location et location-bail de camions\n;\n77.2;Location et location-bail de biens personnels et domestiques\n77.21;Location et location-bail d'articles de loisirs et de sport \n77.21Z;Location et location-bail d'articles de loisirs et de sport \n77.22;Location de vidéocassettes et disques vidéo\n77.22Z;Location de vidéocassettes et disques vidéo\n77.29;Location et location-bail d'autres biens personnels et domestiques\n77.29Z;Location et location-bail d'autres biens personnels et domestiques\n;\n77.3;Location et location-bail d'autres machines, équipements et biens\n77.31;Location et location-bail de machines et équipements agricoles\n77.31Z;Location et location-bail de machines et équipements agricoles\n77.32;Location et location-bail de machines et équipements pour la construction\n77.32Z;Location et location-bail de machines et équipements pour la construction\n77.33;Location et location-bail de machines de bureau et de matériel informatique\n77.33Z;Location et location-bail de machines de bureau et de matériel informatique\n77.34;Location et location-bail de matériels de transport par eau\n77.34Z;Location et location-bail de matériels de transport par eau\n77.35;Location et location-bail de matériels de transport aérien\n77.35Z;Location et location-bail de matériels de transport aérien\n77.39;Location et location-bail d'autres machines, équipements et biens matériels n.c.a. \n77.39Z;Location et location-bail d'autres machines, équipements et biens matériels n.c.a. \n;\n77.4;Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright\n77.40;Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright\n77.40Z;Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright\n;",
+      "nullable": true
+    },
+    {
+      "name": "78",
+      "type": "VARCHAR",
+      "description": "Activités liées à l'emploi\n;\n78.1;Activités des agences de placement de main-d'œuvre\n78.10;Activités des agences de placement de main-d'œuvre \n78.10Z;Activités des agences de placement de main-d'œuvre \n;\n78.2;Activités des agences de travail temporaire\n78.20;Activités des agences de travail temporaire \n78.20Z;Activités des agences de travail temporaire \n;\n78.3;Autre mise à disposition de ressources humaines\n78.30;Autre mise à disposition de ressources humaines\n78.30Z;Autre mise à disposition de ressources humaines\n;",
+      "nullable": true
+    },
+    {
+      "name": "79",
+      "type": "VARCHAR",
+      "description": "Activités des agences de voyage, voyagistes, services de réservation et activités connexes\n;\n79.1;Activités des agences de voyage et voyagistes\n79.11;Activités des agences de voyage\n79.11Z;Activités des agences de voyage\n79.12;Activités des voyagistes\n79.12Z;Activités des voyagistes\n;\n79.9;Autres services de réservation et activités connexes\n79.90;Autres services de réservation et activités connexes\n79.90Z;Autres services de réservation et activités connexes\n;",
+      "nullable": true
+    },
+    {
+      "name": "80",
+      "type": "VARCHAR",
+      "description": "Enquêtes et sécurité\n;\n80.1;Activités de sécurité privée\n80.10;Activités de sécurité privée \n80.10Z;Activités de sécurité privée \n;\n80.2;Activités liées aux systèmes de sécurité\n80.20;Activités liées aux systèmes de sécurité \n80.20Z;Activités liées aux systèmes de sécurité \n;\n80.3;Activités d'enquête\n80.30;Activités d'enquête\n80.30Z;Activités d'enquête\n;",
+      "nullable": true
+    },
+    {
+      "name": "81",
+      "type": "VARCHAR",
+      "description": "Services relatifs aux bâtiments et aménagement paysager\n;\n81.1;Activités combinées de soutien lié aux bâtiments\n81.10;Activités combinées de soutien lié aux bâtiments \n81.10Z;Activités combinées de soutien lié aux bâtiments \n;\n81.2;Activités de nettoyage\n81.21;Nettoyage courant des bâtiments\n81.21Z;Nettoyage courant des bâtiments\n81.22;Autres activités de nettoyage des bâtiments et nettoyage industriel\n81.22Z;Autres activités de nettoyage des bâtiments et nettoyage industriel\n81.29;Autres activités de nettoyage\n81.29A;Désinfection, désinsectisation, dératisation\n81.29B;Autres activités de nettoyage n.c.a.\n;\n81.3;Services d'aménagement paysager\n81.30;Services d'aménagement paysager \n81.30Z;Services d'aménagement paysager \n;",
+      "nullable": true
+    },
+    {
+      "name": "82",
+      "type": "VARCHAR",
+      "description": "Activités administratives et autres activités de soutien aux entreprises\n;\n82.1;Activités administratives \n82.11;Services administratifs combinés de bureau\n82.11Z;Services administratifs combinés de bureau\n82.19;Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau\n82.19Z;Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau\n;\n82.2;Activités de centres d'appels\n82.20;Activités de centres d'appels\n82.20Z;Activités de centres d'appels\n;\n82.3;Organisation de salons professionnels et congrès\n82.30;Organisation de salons professionnels et congrès\n82.30Z;Organisation de foires, salons professionnels et congrès\n;\n82.9;Activités de soutien aux entreprises n.c.a.\n82.91;Activités des agences de recouvrement de factures et des sociétés d'information financière sur la clientèle\n82.91Z;Activités des agences de recouvrement de factures et des sociétés d'information financière sur la clientèle\n82.92;Activités de conditionnement\n82.92Z;Activités de conditionnement\n82.99;Autres activités de soutien aux entreprises n.c.a.\n82.99Z;Autres activités de soutien aux entreprises n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "O;ADMINISTRATION PUBLIQUE \n;",
+      "nullable": true
+    },
+    {
+      "name": "84",
+      "type": "VARCHAR",
+      "description": "\"Administration publique et défense ; sécurité sociale obligatoire\"\n;\n84.1;Administration générale, économique et sociale\n84.11;Administration publique générale\n84.11Z;Administration publique générale\n84.12;Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale \n84.12Z;Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale \n84.13;Administration publique (tutelle) des activités économiques\n84.13Z;Administration publique (tutelle) des activités économiques\n;\n84.2;Services de prérogative publique\n84.21;Affaires étrangères\n84.21Z;Affaires étrangères\n84.22;Défense\n84.22Z;Défense\n84.23;Justice\n84.23Z;Justice\n84.24;Activités d’ordre public et de sécurité\n84.24Z;Activités d’ordre public et de sécurité\n84.25;Services du feu et de secours\n84.25Z;Services du feu et de secours\n;\n84.3;Sécurité sociale obligatoire\n84.30;Sécurité sociale obligatoire\n84.30A;Activités générales de sécurité sociale\n84.30B;Gestion des retraites complémentaires\n84.30C;Distribution sociale de revenus\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "P;ENSEIGNEMENT\n;",
+      "nullable": true
+    },
+    {
+      "name": "85",
+      "type": "VARCHAR",
+      "description": "Enseignement\n;\n85.1;Enseignement pré-primaire\n85.10;Enseignement pré-primaire\n85.10Z;Enseignement pré-primaire\n;\n85.2;Enseignement primaire\n85.20;Enseignement primaire\n85.20Z;Enseignement primaire\n;\n85.3;Enseignement secondaire\n85.31;Enseignement secondaire général\n85.31Z;Enseignement secondaire général\n85.32;Enseignement secondaire technique ou professionnel\n85.32Z;Enseignement secondaire technique ou professionnel\n;\n85.4;Enseignement supérieur et post-secondaire non supérieur\n85.41;Enseignement post-secondaire non supérieur\n85.41Z;Enseignement post-secondaire non supérieur\n85.42;Enseignement supérieur\n85.42Z;Enseignement supérieur\n;\n85.5;Autres activités d'enseignement\n85.51;Enseignement de disciplines sportives et d'activités de loisirs\n85.51Z;Enseignement de disciplines sportives et d'activités de loisirs\n85.52;Enseignement culturel\n85.52Z;Enseignement culturel\n85.53;Enseignement de la conduite\n85.53Z;Enseignement de la conduite\n85.59;Enseignements divers\n85.59A;Formation continue d'adultes\n85.59B;Autres enseignements\n;\n85.6;Activités de soutien à l'enseignement\n85.60;Activités de soutien à l'enseignement\n85.60Z;Activités de soutien à l'enseignement\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "Q;SANTÉ HUMAINE ET ACTION SOCIALE\n;",
+      "nullable": true
+    },
+    {
+      "name": "86",
+      "type": "VARCHAR",
+      "description": "Activités pour la santé humaine\n;\n86.1;Activités hospitalières\n86.10;Activités hospitalières\n86.10Z;Activités hospitalières\n;\n86.2;Activité des médecins et des dentistes\n86.21;Activité des médecins généralistes\n86.21Z;Activité des médecins généralistes\n86.22;Activité des médecins spécialistes\n86.22A;Activités de radiodiagnostic et de radiothérapie\n86.22B;Activités chirurgicales\n86.22C;Autres activités des médecins spécialistes\n86.23;Pratique dentaire\n86.23Z;Pratique dentaire\n;\n86.9;Autres activités pour la santé humaine\n86.90;Autres activités pour la santé humaine\n86.90A;Ambulances\n86.90B;Laboratoires d'analyses médicales\n86.90C;Centres de collecte et banques d'organes\n86.90D;Activités des infirmiers et des sages-femmes\n86.90E;Activités des professionnels de la rééducation, de l’appareillage et des pédicures-podologues\n86.90F;Activités de santé humaine non classées ailleurs\n;",
+      "nullable": true
+    },
+    {
+      "name": "87",
+      "type": "VARCHAR",
+      "description": "Hébergement médico-social et social\n;\n87.1;Hébergement médicalisé\n87.10;Hébergement médicalisé\n87.10A;Hébergement médicalisé pour personnes âgées\n87.10B;Hébergement médicalisé pour enfants handicapés \n87.10C;\"Hébergement médicalisé pour adultes handicapés et autre hébergement médicalisé \n\"\n;\n87.2;Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes\n87.20;Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes\n87.20A;Hébergement social pour handicapés mentaux et malades mentaux \n87.20B;Hébergement social pour toxicomanes\n;\n87.3;Hébergement social pour personnes âgées ou handicapées physiques \n87.30;Hébergement social pour personnes âgées ou handicapées physiques \n87.30A;Hébergement social pour personnes âgées\n87.30B;Hébergement social pour handicapés  physiques\n;\n87.9;Autres activités d’hébergement social \n87.90;Autres activités d’hébergement social \n87.90A;Hébergement social pour enfants en difficultés \n87.90B;Hébergement social pour adultes et familles en difficultés et autre hébergement social \n;",
+      "nullable": true
+    },
+    {
+      "name": "88",
+      "type": "VARCHAR",
+      "description": "Action sociale sans hébergement\n;\n88.1;Action sociale sans hébergement pour personnes âgées et pour personnes handicapées \n88.10;Action sociale sans hébergement pour personnes âgées et pour personnes handicapées \n88.10A;Aide à domicile  \n88.10B;Accueil ou accompagnement sans hébergement d’adultes handicapés ou de  personnes âgées\n88.10C;Aide par le travail \n;\n88.9;Autre action sociale sans hébergement\n88.91;Action sociale sans hébergement pour jeunes enfants\n88.91A;Accueil de jeunes enfants\n88.91B;Accueil ou accompagnement sans hébergement d’enfants handicapés\n88.99;Autre action sociale sans hébergement n.c.a.\n88.99A;\"Autre accueil ou accompagnement sans hébergement d’enfants\n et d’adolescents\n\"\n88.99B;Action sociale sans hébergement n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "R;ARTS, SPECTACLES ET ACTIVITÉS RÉCRÉATIVES\n;",
+      "nullable": true
+    },
+    {
+      "name": "90",
+      "type": "VARCHAR",
+      "description": "Activités créatives, artistiques et de spectacle \n;\n90.0;Activités créatives, artistiques et de spectacle \n90.01;Arts du spectacle vivant\n90.01Z;Arts du spectacle vivant\n90.02;Activités de soutien au spectacle vivant\n90.02Z;Activités de soutien au spectacle vivant\n90.03;Création artistique\n90.03A;Création artistique relevant des arts plastiques\n90.03B;Autre création artistique\n90.04;Gestion de salles de spectacles\n90.04Z;Gestion de salles de spectacles\n;",
+      "nullable": true
+    },
+    {
+      "name": "91",
+      "type": "VARCHAR",
+      "description": "Bibliothèques, archives, musées et autres activités culturelles\n;\n91.0;Bibliothèques, archives, musées et autres activités culturelles\n91.01;Gestion des bibliothèques et des archives\n91.01Z;Gestion des bibliothèques et des archives\n91.02;Gestion des musées\n91.02Z;Gestion des musées\n91.03;Gestion des sites et monuments historiques et des attractions touristiques similaires\n91.03Z;Gestion des sites et monuments historiques et des attractions touristiques similaires\n91.04;Gestion des jardins botaniques et zoologiques et des réserves naturelles\n91.04Z;Gestion des jardins botaniques et zoologiques et des réserves naturelles\n;",
+      "nullable": true
+    },
+    {
+      "name": "92",
+      "type": "VARCHAR",
+      "description": "Organisation de jeux de hasard et d'argent\n;\n92.0;Organisation de jeux de hasard et d'argent\n92.00;Organisation de jeux de hasard et d'argent\n92.00Z;Organisation de jeux de hasard et d'argent\n;",
+      "nullable": true
+    },
+    {
+      "name": "93",
+      "type": "VARCHAR",
+      "description": "Activités sportives, récréatives et de loisirs\n;\n93.1;Activités liées au sport\n93.11;Gestion d'installations sportives\n93.11Z;Gestion d'installations sportives\n93.12;Activités de clubs de sports\n93.12Z;Activités de clubs de sports\n93.13;Activités des centres de culture physique\n93.13Z;Activités des centres de culture physique\n93.19;Autres activités liées au sport\n93.19Z;Autres activités liées au sport\n;\n93.2;Activités récréatives et de loisirs\n93.21;Activités des parcs d'attractions et parcs à thèmes\n93.21Z;Activités des parcs d'attractions et parcs à thèmes\n93.29;Autres activités récréatives et de loisirs \n93.29Z;Autres activités récréatives et de loisirs\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "S;AUTRES ACTIVITÉS DE SERVICES\n;",
+      "nullable": true
+    },
+    {
+      "name": "94",
+      "type": "VARCHAR",
+      "description": "Activités des organisations associatives\n;\n94.1;Activités des organisations économiques, patronales et professionnelles\n94.11;Activités des organisations patronales et consulaires\n94.11Z;Activités des organisations patronales et consulaires\n94.12;Activités des organisations professionnelles\n94.12Z;Activités des organisations professionnelles\n;\n94.2;Activités des syndicats de salariés\n94.20;Activités des syndicats de salariés\n94.20Z;Activités des syndicats de salariés\n;\n94.9;Activités des autres organisations associatives\n94.91;Activités des organisations religieuses\n94.91Z;Activités des organisations religieuses\n94.92;Activités des organisations politiques\n94.92Z;Activités des organisations politiques\n94.99;Activités des organisations associatives n.c.a.\n94.99Z;Autres organisations fonctionnant par adhésion volontaire\n;",
+      "nullable": true
+    },
+    {
+      "name": "95",
+      "type": "VARCHAR",
+      "description": "Réparation d'ordinateurs et de biens personnels et domestiques\n;\n95.1;Réparation d'ordinateurs et d'équipements de communication \n95.11;Réparation d'ordinateurs et d'équipements périphériques\n95.11Z;Réparation d'ordinateurs et d'équipements périphériques\n95.12;Réparation d'équipements de communication\n95.12Z;Réparation d'équipements de communication\n;\n95.2;Réparation de biens personnels et domestiques\n95.21;Réparation de produits électroniques grand public\n95.21Z;Réparation de produits électroniques grand public\n95.22;Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin\n95.22Z;Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin\n95.23;Réparation de chaussures et d'articles en cuir\n95.23Z;Réparation de chaussures et d'articles en cuir\n95.24;Réparation de meubles et d'équipements du foyer\n95.24Z;Réparation de meubles et d'équipements du foyer\n95.25;Réparation d'articles d'horlogerie et de bijouterie\n95.25Z;Réparation d'articles d'horlogerie et de bijouterie\n95.29;Réparation d'autres biens personnels et domestiques\n95.29Z;Réparation d'autres biens personnels et domestiques\n;",
+      "nullable": true
+    },
+    {
+      "name": "96",
+      "type": "VARCHAR",
+      "description": "Autres services personnels\n;\n96.0;Autres services personnels\n96.01;Blanchisserie-teinturerie\n96.01A;Blanchisserie-teinturerie de gros\n96.01B;Blanchisserie-teinturerie de détail\n96.02;Coiffure et soins de beauté\n96.02A;Coiffure\n96.02B;Soins de beauté\n96.03;Services funéraires\n96.03Z;Services funéraires\n96.04;Entretien corporel\n96.04Z;Entretien corporel\n96.09;Autres services personnels n.c.a.\n96.09Z;Autres services personnels n.c.a.\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "T;\"ACTIVITÉS DES MÉNAGES EN TANT QU'EMPLOYEURS ; ACTIVITÉS INDIFFÉRENCIÉES DES MÉNAGES EN TANT QUE PRODUCTEURS DE BIENS ET SERVICES POUR USAGE PROPRE\"\n;",
+      "nullable": true
+    },
+    {
+      "name": "97",
+      "type": "VARCHAR",
+      "description": "Activités des ménages en tant qu'employeurs de personnel domestique\n;\n97.0;Activités des ménages en tant qu'employeurs de personnel domestique\n97.00;Activités des ménages en tant qu'employeurs de personnel domestique\n97.00Z;Activités des ménages en tant qu'employeurs de personnel domestique\n;",
+      "nullable": true
+    },
+    {
+      "name": "98",
+      "type": "VARCHAR",
+      "description": "Activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre\n;\n98.1;Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre\n98.10;Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre\n98.10Z;Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre\n;\n98.2;Activités indifférenciées des ménages en tant que producteurs de services pour usage propre\n98.20;Activités indifférenciées des ménages en tant que producteurs de services pour usage propre\n98.20Z;Activités indifférenciées des ménages en tant que producteurs de services pour usage propre\n;",
+      "nullable": true
+    },
+    {
+      "name": "SECTION",
+      "type": "VARCHAR",
+      "description": "U;ACTIVITÉS EXTRA-TERRITORIALES\n;",
+      "nullable": true
+    },
+    {
+      "name": "99",
+      "type": "VARCHAR",
+      "description": "Activités des organisations et organismes extraterritoriaux\n;\n99.0;Activités des organisations et organismes extraterritoriaux\n99.00;Activités des organisations et organismes extraterritoriaux\n99.00Z;Activités des organisations et organismes extraterritoriaux",
+      "nullable": true
+    }
+  ]
+}

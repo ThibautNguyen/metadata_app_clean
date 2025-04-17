@@ -1,0 +1,547 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "LOG_IRIS_2011",
+    "description": "https://www.insee.fr/fr/statistiques/2028269 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Logement\\Logement_IRIS\\2011 LOG_IRIS_2011",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "IRIS",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "REG",
+      "type": "VARCHAR",
+      "description": "Code de la région",
+      "nullable": true
+    },
+    {
+      "name": "DEP",
+      "type": "VARCHAR",
+      "description": "Code du département",
+      "nullable": true
+    },
+    {
+      "name": "UU2010",
+      "type": "VARCHAR",
+      "description": "\"Code du département ou \"\"00\"\" pour les unités urbaines qui s'étendent sur plusieurs départements voire au-delà de la frontière suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille\"",
+      "nullable": true
+    },
+    {
+      "name": "COM",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "LIBCOM",
+      "type": "VARCHAR",
+      "description": "Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "TRIRIS",
+      "type": "VARCHAR",
+      "description": "Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS",
+      "nullable": true
+    },
+    {
+      "name": "GRD_QUART",
+      "type": "VARCHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier",
+      "nullable": true
+    },
+    {
+      "name": "LIBIRIS",
+      "type": "VARCHAR",
+      "description": "Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "TYP_IRIS",
+      "type": "VARCHAR",
+      "description": "Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z)",
+      "nullable": true
+    },
+    {
+      "name": "MODIF_IRIS",
+      "type": "VARCHAR",
+      "description": "Type de modification de l'IRIS depuis 1999",
+      "nullable": true
+    },
+    {
+      "name": "LAB_IRIS",
+      "type": "VARCHAR",
+      "description": "Label de qualité de l'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "P11_LOG",
+      "type": "VARCHAR",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales",
+      "nullable": true
+    },
+    {
+      "name": "P11_RSECOCC",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "P11_LOGVAC",
+      "type": "VARCHAR",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "P11_MAISON",
+      "type": "VARCHAR",
+      "description": "Nombre de maisons",
+      "nullable": true
+    },
+    {
+      "name": "P11_APPART",
+      "type": "VARCHAR",
+      "description": "Nombre d'appartements",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_1P",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales d'1 pièce",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_2P",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de 2 pièces",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_3P",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de 3 pièces",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_4P",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de 4 pièces",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_5PP",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de 5 pièces ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_NBPI_RP",
+      "type": "VARCHAR",
+      "description": "Nombre de pièces des résidences principales",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPMAISON",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type maison",
+      "nullable": true
+    },
+    {
+      "name": "P11_NBPI_RPMAISON",
+      "type": "VARCHAR",
+      "description": "Nombre de pièces des résidences principales de type maison",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPAPPART",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type appartement",
+      "nullable": true
+    },
+    {
+      "name": "P11_NBPI_RPAPPART",
+      "type": "VARCHAR",
+      "description": "Nombre de pièces des résidences principales de type appartement",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_M40M2",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de moins de 40 m2",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_4099M2",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de 40 à 99 m2",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_100M2P",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de 100 m2 ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_ACHTT ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales construites avant 2009",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_ACHT1 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales construites avant 1946",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_ACHT2 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales construites de 1946 à 1990",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_ACHT3 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales construites de 1991 à 2008",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPMAISON_ACHTT",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de  type maison construites avant 2009",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPMAISON_ACHT1 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de  type maison construites avant 1946",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPMAISON_ACHT2 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type maison construites de 1946 à 1990",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPMAISON_ACHT3 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type maison construites de 1991 à 2008",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPAPPART_ACHTT ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type appartement construites avant 2009",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPAPPART_ACHT1 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type appartement construites avant 1946",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPAPPART_ACHT2 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type appartement construites de 1946 à 1990",
+      "nullable": true
+    },
+    {
+      "name": "P11_RPAPPART_ACHT3 ",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales de type appartement construites de 1991 à 2008",
+      "nullable": true
+    },
+    {
+      "name": "P11_MEN",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages",
+      "nullable": true
+    },
+    {
+      "name": "P11_MEN_ANEM0002",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages ayant emménagé depuis moins de 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_MEN_ANEM0204",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages ayant emménagé entre 2 et 4 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_MEN_ANEM0509",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages ayant emménagé entre 5 et 9 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_MEN_ANEM10P",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages ayant emménagé depuis 10 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_PMEN",
+      "type": "VARCHAR",
+      "description": "Population des ménages",
+      "nullable": true
+    },
+    {
+      "name": "P11_PMEN_ANEM0002",
+      "type": "VARCHAR",
+      "description": "Population des ménages ayant emménagé depuis moins de 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_PMEN_ANEM0204",
+      "type": "VARCHAR",
+      "description": "Population des ménages ayant emménagé entre 2 et 4 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_PMEN_ANEM0509",
+      "type": "VARCHAR",
+      "description": "Population des ménages ayant emménagé entre 5 et 9 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_PMEN_ANEM10P",
+      "type": "VARCHAR",
+      "description": "Population des ménages ayant emménagé depuis 10 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_NBPI_RP_ANEM0002",
+      "type": "VARCHAR",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_NBPI_RP_ANEM0204",
+      "type": "VARCHAR",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_NBPI_RP_ANEM0509",
+      "type": "VARCHAR",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans",
+      "nullable": true
+    },
+    {
+      "name": "P11_NBPI_RP_ANEM10P",
+      "type": "VARCHAR",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_PROP",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales occupées par des propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_LOC",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales occupées par des locataires",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_LOCHLMV",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales HLM loué vide",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_GRAT",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales occupées gratuitement",
+      "nullable": true
+    },
+    {
+      "name": "P11_NPER_RP",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes des résidences principales",
+      "nullable": true
+    },
+    {
+      "name": "P11_NPER_RP_PROP",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes des résidences principales occupées par des propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "P11_NPER_RP_LOC",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes des résidences principales occupées par des locataires",
+      "nullable": true
+    },
+    {
+      "name": "P11_NPER_RP_LOCHLMV",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes des résidences principales HLM louées vides",
+      "nullable": true
+    },
+    {
+      "name": "P11_NPER_RP_GRAT",
+      "type": "VARCHAR",
+      "description": "Nombre de personnes des résidences principales occupées gratuitement",
+      "nullable": true
+    },
+    {
+      "name": "P11_ANEM_RP",
+      "type": "VARCHAR",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales en années",
+      "nullable": true
+    },
+    {
+      "name": "P11_ANEM_RP_PROP",
+      "type": "VARCHAR",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années",
+      "nullable": true
+    },
+    {
+      "name": "P11_ANEM_RP_LOC",
+      "type": "VARCHAR",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années",
+      "nullable": true
+    },
+    {
+      "name": "P11_ANEM_RP_LOCHLMV",
+      "type": "VARCHAR",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années",
+      "nullable": true
+    },
+    {
+      "name": "P11_ANEM_RP_GRAT",
+      "type": "VARCHAR",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_SDB",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec salle de bain dotée de baignoire ou douche (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_CCCOLL",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec chauffage central collectif (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_CCIND",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec chauffage central individuel (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_CINDELEC",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec chauffage individuel électrique (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_GARL",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages disposant au moins d'un emplacement réservé au stationnement",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_VOIT1P",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages disposant au moins d'une voiture",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_VOIT1",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages disposant d'une voiture",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_VOIT2P",
+      "type": "VARCHAR",
+      "description": "Nombre de ménages disposant de deux voitures ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_ELEC",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec électricité dans le logement (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_EAUCH",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec eau chaude dans le logement (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_BDWC",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_CHOS",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec chauffe-eau solaire (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_CLIM",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec pièce climatisée (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_TTEGOU",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales avec tout à l'égout (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_HABFOR",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales habitations de fortune (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_CASE",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales cases traditionnelles (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_MIBOIS",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales maisons ou immeubles en bois (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P11_RP_MIDUR",
+      "type": "VARCHAR",
+      "description": "Nombre de résidences principales maisons ou immeubles en dur (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    }
+  ]
+}

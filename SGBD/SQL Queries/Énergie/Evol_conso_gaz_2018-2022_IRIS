@@ -1,0 +1,27 @@
+-- Tableau : Conso_elec_gaz_IRIS_2024
+
+SELECT
+    "Code IRIS",
+    "Nom IRIS",
+    SUM(CASE WHEN SUBSTR("Année", 1, 4) = '2018' THEN "Conso totale (MWh)" ELSE 0 END) AS conso_2018,
+    SUM(CASE WHEN SUBSTR("Année", 1, 4) = '2022' THEN "Conso totale (MWh)" ELSE 0 END) AS conso_2022,
+    REPLACE(ROUND(((SUM(CASE WHEN SUBSTR("Année", 1, 4) = '2022' THEN "Conso totale (MWh)" ELSE 0 END) -
+    SUM(CASE WHEN SUBSTR("Année", 1, 4) = '2018' THEN "Conso totale (MWh)" ELSE 0 END)) /
+    SUM(CASE WHEN SUBSTR("Année", 1, 4) = '2018' THEN "Conso totale (MWh)" ELSE 0 END)), 3), '.', ',') AS ratio_evolution
+FROM
+    "Conso_elec_gaz_IRIS_2024"
+WHERE
+    "FILIERE" = 'Gaz'
+    AND "Code IRIS" IN (
+        '600570101', '600570102', '600570201', '600570202', 
+        '600570301', '600570302', '600570303', '600570401', 
+        '600570402', '600570403', '600570404', '600570405', 
+        '600570501', '600570601', '600570701', '600570702', 
+        '600570703', '600570704'
+    )
+    AND SUBSTR("Année", 1, 4) IN ('2018', '2022')
+GROUP BY
+    "Code IRIS",
+    "Nom IRIS"
+ORDER BY
+    "Code IRIS";

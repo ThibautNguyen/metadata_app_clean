@@ -1,0 +1,112 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/2028269
+
+
+## Chemin disque dur : 
+C:\Users\thiba\OneDrive\Documents\Données\Logement\Logement_IRIS\2011
+
+
+## Tableau SQL : 
+LOG_IRIS_2011
+
+
+## 4 premières lignes :
+IRIS;REG;DEP;UU2010;COM;LIBCOM;TRIRIS;GRD_QUART;LIBIRIS;TYP_IRIS;MODIF_IRIS;LAB_IRIS;P11_LOG;P11_RP;P11_RSECOCC;P11_LOGVAC;P11_MAISON;P11_APPART;P11_RP_1P;P11_RP_2P;P11_RP_3P;P11_RP_4P;P11_RP_5PP;P11_NBPI_RP;P11_RPMAISON;P11_NBPI_RPMAISON;P11_RPAPPART;P11_NBPI_RPAPPART;P11_RP_M40M2;P11_RP_4099M2;P11_RP_100M2P;P11_RP_ACHTT ;P11_RP_ACHT1 ;P11_RP_ACHT2 ;P11_RP_ACHT3 ;P11_RPMAISON_ACHTT;P11_RPMAISON_ACHT1 ;P11_RPMAISON_ACHT2 ;P11_RPMAISON_ACHT3 ;P11_RPAPPART_ACHTT ;P11_RPAPPART_ACHT1 ;P11_RPAPPART_ACHT2 ;P11_RPAPPART_ACHT3 ;P11_MEN;P11_MEN_ANEM0002;P11_MEN_ANEM0204;P11_MEN_ANEM0509;P11_MEN_ANEM10P;P11_PMEN;P11_PMEN_ANEM0002;P11_PMEN_ANEM0204;P11_PMEN_ANEM0509;P11_PMEN_ANEM10P;P11_NBPI_RP_ANEM0002;P11_NBPI_RP_ANEM0204;P11_NBPI_RP_ANEM0509;P11_NBPI_RP_ANEM10P;P11_RP_PROP;P11_RP_LOC;P11_RP_LOCHLMV;P11_RP_GRAT;P11_NPER_RP;P11_NPER_RP_PROP;P11_NPER_RP_LOC;P11_NPER_RP_LOCHLMV;P11_NPER_RP_GRAT;P11_ANEM_RP;P11_ANEM_RP_PROP;P11_ANEM_RP_LOC;P11_ANEM_RP_LOCHLMV;P11_ANEM_RP_GRAT;P11_RP_SDB;P11_RP_CCCOLL;P11_RP_CCIND;P11_RP_CINDELEC;P11_RP_GARL;P11_RP_VOIT1P;P11_RP_VOIT1;P11_RP_VOIT2P;P11_RP_ELEC;P11_RP_EAUCH;P11_RP_BDWC;P11_RP_CHOS;P11_RP_CLIM;P11_RP_TTEGOU;P11_RP_HABFOR;P11_RP_CASE;P11_RP_MIBOIS;P11_RP_MIDUR
+010010000;82;01;01000;01001;L'Abergement-Clémenciat;ZZZZZZ;0100100;L'Abergement-Clémenciat;Z;00;5;336;302;21;13;320;16;0;7;29;90;176;1470;289;1422;13;48;3;127;172;300;101;105;94;287;95;100;92;13;6;5;2;302;16;35;61;190;780;41;104;193;442;77;174;296;923;249;47;13;6;780;653;115;30;12;5194;4629;427;110;138;295;7;146;68;259;291;114;177;;;;;;;;;;
+010020000;82;01;01000;01002;L'Abergement-de-Varey;ZZZZZZ;0100200;L'Abergement-de-Varey;Z;00;5;159;101;49;9;158;1;1;8;9;24;59;474;100;470;1;4;4;34;63;98;66;20;12;97;65;20;12;1;1;0;0;101;9;23;23;46;234;24;50;55;105;43;103;100;228;84;12;0;5;234;195;32;0;7;1378;1198;103;0;77;98;1;50;16;75;96;29;67;;;;;;;;;;
+010040101;82;01;01302;01004;Ambérieu-en-Bugey;ZZZZZZ;0100401;Les Perouses-Triangle d'Activite;H;00;1;773;683;3;87;344;420;54;59;109;247;214;2708;312;1544;362;1151;71;474;137;679;135;439;105;308;67;220;20;362;68;218;77;683;107;159;72;345;1477;166;335;228;749;287;535;313;1572;291;356;178;37;1477;680;730;407;67;8925;6074;2679;1601;172;666;139;329;158;455;565;336;229;;;;;;;;;;
+
+
+
+
+## Dictionnaire des variables :
+VAR_ID;VAR_LIB;VAR_LIB_LONG;ANNEE;SOURCE
+IRIS;IRIS;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS;2013;Géographie infra-communale
+REG;Région;Code de la région;2013;Code officiel géographique
+DEP;Département;Code du département;2013;Code officiel géographique
+UU2010;Unité urbaine;"Code du département ou ""00"" pour les unités urbaines qui s'étendent sur plusieurs départements voire au-delà de la frontière suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille";2013;Géographie urbaine
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;2013;Code officiel géographique
+LIBCOM;Libellé commune ou ARM;Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2013;Code officiel géographique
+TRIRIS;TRIRIS;Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS;2013;Géographie infra-communale
+GRD_QUART;Grand quartier;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier;2013;Géographie infra-communale
+LIBIRIS;Libellé de l'IRIS;Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2013;Géographie infra-communale
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);2013;Géographie infra-communale
+MODIF_IRIS;Modification de l'IRIS;Type de modification de l'IRIS depuis 1999;2013;Géographie infra-communale
+LAB_IRIS;Label de l'IRIS en 2011;Label de qualité de l'IRIS;2011;RP2011
+P11_LOG;Logements en 2011 (princ);Nombre de logements;2011;RP2011 exploitation principale
+P11_RP;Résidences principales en 2011 (princ);Nombre de résidences principales;2011;RP2011 exploitation principale
+P11_RSECOCC;Rés secondaires et logts occasionnels en 2011 (princ);Nombre de résidences secondaires et logements occasionnels;2011;RP2011 exploitation principale
+P11_LOGVAC;Logements vacants en 2011 (princ);Nombre de logements vacants;2011;RP2011 exploitation principale
+P11_MAISON;Maisons en 2011 (princ);Nombre de maisons;2011;RP2011 exploitation principale
+P11_APPART;Appartements en 2011 (princ);Nombre d'appartements;2011;RP2011 exploitation principale
+P11_RP_1P;Rés princ 1 pièce en 2011 (princ);Nombre de résidences principales d'1 pièce;2011;RP2011 exploitation principale
+P11_RP_2P;Rés princ 2 pièces en 2011 (princ);Nombre de résidences principales de 2 pièces;2011;RP2011 exploitation principale
+P11_RP_3P;Rés princ 3 pièces en 2011 (princ);Nombre de résidences principales de 3 pièces;2011;RP2011 exploitation principale
+P11_RP_4P;Rés princ 4 pièces en 2011 (princ);Nombre de résidences principales de 4 pièces;2011;RP2011 exploitation principale
+P11_RP_5PP;Rés princ 5 pièces ou plus en 2011 (princ);Nombre de résidences principales de 5 pièces ou plus;2011;RP2011 exploitation principale
+P11_NBPI_RP;Pièces rés princ en 2011 (princ);Nombre de pièces des résidences principales;2011;RP2011 exploitation principale
+P11_RPMAISON;Rés princ type maison en 2011 (princ);Nombre de résidences principales de type maison;2011;RP2011 exploitation principale
+P11_NBPI_RPMAISON;Pièces rés princ type maison en 2011 (princ);Nombre de pièces des résidences principales de type maison;2011;RP2011 exploitation principale
+P11_RPAPPART;Rés princ type appartement en 2011 (princ);Nombre de résidences principales de type appartement;2011;RP2011 exploitation principale
+P11_NBPI_RPAPPART;Pièces rés princ type appartement en 2011 (princ);Nombre de pièces des résidences principales de type appartement;2011;RP2011 exploitation principale
+P11_RP_M40M2;Rés princ de moins de 40 m2 en 2011 (princ);Nombre de résidences principales de moins de 40 m2;2011;RP2011 exploitation principale
+P11_RP_4099M2;Rés princ de 40 à 99 m2 en 2011 (princ);Nombre de résidences principales de 40 à 99 m2;2011;RP2011 exploitation principale
+P11_RP_100M2P;Rés princ de 100 m2 ou plus en 2011 (princ);Nombre de résidences principales de 100 m2 ou plus;2011;RP2011 exploitation principale
+P11_RP_ACHTT ;Rés princ avt 2009 en 2011 (princ);Nombre de résidences principales construites avant 2009;2011;RP2011 exploitation principale
+P11_RP_ACHT1 ;Rés princ avt 1946 en 2011 (princ);Nombre de résidences principales construites avant 1946;2011;RP2011 exploitation principale
+P11_RP_ACHT2 ;Rés princ 1946 à 1990 en 2011 (princ);Nombre de résidences principales construites de 1946 à 1990;2011;RP2011 exploitation principale
+P11_RP_ACHT3 ;Rés princ 1991 à 2008 en 2011 (princ);Nombre de résidences principales construites de 1991 à 2008;2011;RP2011 exploitation principale
+P11_RPMAISON_ACHTT;Rés princ Type maison avt 2009 en 2011 (princ);Nombre de résidences principales de  type maison construites avant 2009;2011;RP2011 exploitation principale
+P11_RPMAISON_ACHT1 ;Rés princ Type maison avt 1946 en 2011 (princ);Nombre de résidences principales de  type maison construites avant 1946;2011;RP2011 exploitation principale
+P11_RPMAISON_ACHT2 ;Rés princ Type maison 1946 à 1990 en 2011 (princ);Nombre de résidences principales de type maison construites de 1946 à 1990;2011;RP2011 exploitation principale
+P11_RPMAISON_ACHT3 ;Rés princ Type maison 1991 à 2008 en 2011 (princ);Nombre de résidences principales de type maison construites de 1991 à 2008;2011;RP2011 exploitation principale
+P11_RPAPPART_ACHTT ;Rés princ Type appart avt 2009 en 2011 (princ);Nombre de résidences principales de type appartement construites avant 2009;2011;RP2011 exploitation principale
+P11_RPAPPART_ACHT1 ;Rés princ Type appart avt 1946 en 2011 (princ);Nombre de résidences principales de type appartement construites avant 1946;2011;RP2011 exploitation principale
+P11_RPAPPART_ACHT2 ;Rés princ Type appart 1946 à 1990 en 2011 (princ);Nombre de résidences principales de type appartement construites de 1946 à 1990;2011;RP2011 exploitation principale
+P11_RPAPPART_ACHT3 ;Rés princ Type appart 1991 à 2008 en 2011 (princ);Nombre de résidences principales de type appartement construites de 1991 à 2008;2011;RP2011 exploitation principale
+P11_MEN;Ménages en 2011 (princ);Nombre de ménages;2011;RP2011 exploitation principale
+P11_MEN_ANEM0002;Ménages emménagés moins 2 ans en 2011 (princ);Nombre de ménages ayant emménagé depuis moins de 2 ans;2011;RP2011 exploitation principale
+P11_MEN_ANEM0204;Ménages emménagés entre 2-4 ans en 2011 (princ);Nombre de ménages ayant emménagé entre 2 et 4 ans;2011;RP2011 exploitation principale
+P11_MEN_ANEM0509;Ménages emménagés entre 5-9 ans en 2011 (princ);Nombre de ménages ayant emménagé entre 5 et 9 ans;2011;RP2011 exploitation principale
+P11_MEN_ANEM10P;Ménages emménagés depuis 10 ans ou plus en 2011 (princ);Nombre de ménages ayant emménagé depuis 10 ans ou plus;2011;RP2011 exploitation principale
+P11_PMEN;Pop ménages en 2011 (princ);Population des ménages;2011;RP2011 exploitation principale
+P11_PMEN_ANEM0002;Pop mén emménagés moins 2 ans en 2011 (princ);Population des ménages ayant emménagé depuis moins de 2 ans;2011;RP2011 exploitation principale
+P11_PMEN_ANEM0204;Pop mén emménagés entre 2-4 ans en 2011 (princ);Population des ménages ayant emménagé entre 2 et 4 ans;2011;RP2011 exploitation principale
+P11_PMEN_ANEM0509;Pop mén emménagés entre 5-9 ans en 2011 (princ);Population des ménages ayant emménagé entre 5 et 9 ans;2011;RP2011 exploitation principale
+P11_PMEN_ANEM10P;Pop mén emménagés depuis 10 ans ou plus en 2011 (princ);Population des ménages ayant emménagé depuis 10 ans ou plus;2011;RP2011 exploitation principale
+P11_NBPI_RP_ANEM0002;Pièces Rés princ Mén. emménagés moins 2 ans en 2011 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans;2011;RP2011 exploitation principale
+P11_NBPI_RP_ANEM0204;Pièces Rés princ Mén. emménagés entre 2-4 ans en 2011 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans;2011;RP2011 exploitation principale
+P11_NBPI_RP_ANEM0509;Pièces Rés princ Mén. emménagés entre 5-9 ans en 2011 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans;2011;RP2011 exploitation principale
+P11_NBPI_RP_ANEM10P;Pièces Rés princ Mén. emménagés depuis 10 ans ou plus en 2011 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus;2011;RP2011 exploitation principale
+P11_RP_PROP;Rés princ occupées Propriétaires en 2011 (princ);Nombre de résidences principales occupées par des propriétaires;2011;RP2011 exploitation principale
+P11_RP_LOC;Rés princ occupées Locataires en 2011 (princ);Nombre de résidences principales occupées par des locataires;2011;RP2011 exploitation principale
+P11_RP_LOCHLMV;Rés princ HLM louée vide en 2011 (princ);Nombre de résidences principales HLM loué vide;2011;RP2011 exploitation principale
+P11_RP_GRAT;Rés princ logé gratuit en 2011 (princ);Nombre de résidences principales occupées gratuitement;2011;RP2011 exploitation principale
+P11_NPER_RP;Personnes Rés princ en 2011 (princ);Nombre de personnes des résidences principales;2011;RP2011 exploitation principale
+P11_NPER_RP_PROP;Pers Rés princ occupées Propriétaires en 2011 (princ);Nombre de personnes des résidences principales occupées par des propriétaires;2011;RP2011 exploitation principale
+P11_NPER_RP_LOC;Pers Rés princ occupées Locataires en 2011 (princ);Nombre de personnes des résidences principales occupées par des locataires;2011;RP2011 exploitation principale
+P11_NPER_RP_LOCHLMV;Pers Rés princ HLM louées vides en 2011 (princ);Nombre de personnes des résidences principales HLM louées vides;2011;RP2011 exploitation principale
+P11_NPER_RP_GRAT;Pers Rés princ occupées gratuit en 2011 (princ);Nombre de personnes des résidences principales occupées gratuitement;2011;RP2011 exploitation principale
+P11_ANEM_RP;Anc tot Emméngt Rés princ (années) en 2011 (princ);Ancienneté totale d'emménagement dans les résidences principales en années;2011;RP2011 exploitation principale
+P11_ANEM_RP_PROP;Anc tot Emméngt Rés princ occ par Propriétaires (années) en 2011 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années;2011;RP2011 exploitation principale
+P11_ANEM_RP_LOC;Anc tot Emméngt Rés princ occ par Locataires (années) en 2011 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années;2011;RP2011 exploitation principale
+P11_ANEM_RP_LOCHLMV;Anc tot Emméngt Rés princ HLM louées vides (années) en 2011 (princ);Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années;2011;RP2011 exploitation principale
+P11_ANEM_RP_GRAT;Anc tot Emméngt Rés princ occ gratuit (années) en 2011 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années;2011;RP2011 exploitation principale
+P11_RP_SDB;Rés princ SDB baignoire douche (MET) en 2011 (princ);Nombre de résidences principales avec salle de bain dotée de baignoire ou douche (variable spécifique à la France métropolitaine);2011;RP2011 exploitation principale
+P11_RP_CCCOLL;Rés princ Chauffage Central Collectif (MET) en 2011 (princ);Nombre de résidences principales avec chauffage central collectif (variable spécifique à la France métropolitaine);2011;RP2011 exploitation principale
+P11_RP_CCIND;Rés princ Chauffage Central Individuel (MET) en 2011 (princ);Nombre de résidences principales avec chauffage central individuel (variable spécifique à la France métropolitaine);2011;RP2011 exploitation principale
+P11_RP_CINDELEC;Rés princ Chauffage Individuel Electrique (MET) en 2011 (princ);Nombre de résidences principales avec chauffage individuel électrique (variable spécifique à la France métropolitaine);2011;RP2011 exploitation principale
+P11_RP_GARL;Ménages au moins un parking en 2011 (princ);Nombre de ménages disposant au moins d'un emplacement réservé au stationnement;2011;RP2011 exploitation principale
+P11_RP_VOIT1P;Ménages au moins une voiture en 2011 (princ);Nombre de ménages disposant au moins d'une voiture;2011;RP2011 exploitation principale
+P11_RP_VOIT1;Ménages une voiture en 2011 (princ);Nombre de ménages disposant d'une voiture;2011;RP2011 exploitation principale
+P11_RP_VOIT2P;Ménages deux voitures ou plus en 2011 (princ);Nombre de ménages disposant de deux voitures ou plus;2011;RP2011 exploitation principale
+P11_RP_ELEC;Rés princ avec électricité (DOM) en 2011 (princ);Nombre de résidences principales avec électricité dans le logement (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_EAUCH;Rés princ avec eau chaude (DOM) en 2011 (princ);Nombre de résidences principales avec eau chaude dans le logement (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_BDWC;Rés princ avec Bain/Douche WC (DOM) en 2011 (princ);Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_CHOS;Rés princ avec chauffe-eau solaire (DOM) en 2011 (princ);Nombre de résidences principales avec chauffe-eau solaire (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_CLIM;Rés princ avec pièce climatisée (DOM) en 2011 (princ);Nombre de résidences principales avec pièce climatisée (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_TTEGOU;Rés princ avec tout à l'égout (DOM) en 2011 (princ);Nombre de résidences principales avec tout à l'égout (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_HABFOR;Habitations de fortune (DOM) en 2011 (princ);Nombre de résidences principales habitations de fortune (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_CASE;Cases traditionnelles (DOM) en 2011 (princ);Nombre de résidences principales cases traditionnelles (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_MIBOIS;Maisons ou Immeubles en bois (DOM) en 2011 (princ);Nombre de résidences principales maisons ou immeubles en bois (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale
+P11_RP_MIDUR;Maisons ou Immeubles en dur (DOM) en 2011 (princ);Nombre de résidences principales maisons ou immeubles en dur (variable spécifique aux Départements d'outre-mer);2011;RP2011 exploitation principale

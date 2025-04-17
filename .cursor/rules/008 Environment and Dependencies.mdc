@@ -1,0 +1,59 @@
+---
+description: Best practices for Python environments and dependency management
+globs: **/*
+alwaysApply: true
+---
+
+## Context
+
+This file defines how to manage Python environments and dependencies across all projects.  
+It ensures consistency, avoids compatibility issues, and facilitates collaboration with AI agents and other team members.
+
+## Environment Management
+
+- Always use a **virtual environment** per project.
+- Name the environment `.venv` and place it at the root of the project.
+- Activate environments with:
+  - PowerShell: `.\.venv\Scripts\Activate.ps1`
+  - Bash: `source .venv/bin/activate`
+- Never install packages globally (avoid `pip install` outside of `.venv`).
+
+## Dependency Management
+
+- Always include a `requirements.txt` file at the project root.
+- For complex projects, use `pip-tools` or `poetry` (advanced use only).
+- Pin versions explicitly to avoid unpredictable changes:
+
+```txt
+pandas==2.2.2
+streamlit==1.33.0
+SQLAlchemy==2.0.29
+psycopg2-binary==2.9.9
+
+
+## When installing a new library:
+
+- Activate your environment
+- Install the package: pip install [package]
+- Export dependencies: pip freeze > requirements.txt
+
+
+## .env and Secrets
+- Store environment variables in a .env file at the root of the project.
+- Use the python-dotenv library to load it in Python.
+
+Example .env file:
+DATABASE_URL=postgresql://user:password@localhost:5432/mydb
+STREAMLIT_SECRET_KEY=supersecret
+
+
+## Setup Instructions
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1  # or source .venv/bin/activate on Linux/macOS
+pip install -r requirements.txt
+
+
+##Critical Notes
+<critical> - DO NOT install packages without updating `requirements.txt` 
+- ALWAYS test environment recreation on a clean machine - NEVER commit `.env` or system-specific files (e.g., `.venv/`) 
+- ALWAYS isolate environments per project to avoid conflicts </critical> ```

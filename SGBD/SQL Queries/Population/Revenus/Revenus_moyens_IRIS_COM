@@ -1,0 +1,96 @@
+-- Revenus moyens par territoires (IRIS et COM)
+
+WITH pop_territories AS (
+  -- DSP Tours nord + Saint-Cyr-sur-Loire
+  SELECT 
+    'DSP Tours nord + Saint-Cyr-sur-Loire' as territoire,
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE IRIS IN ('372140101', '372140102', '372140103', '372140104', '372140105', '372140106', 
+                '372611801', '372611802', '372611803', '372611701', '372611702', '372611703', 
+                '372611704', '372611705', '372611706', '372611401', '372611402', '372611403', 
+                '372611404', '372611405', '372611503', '372611504', '372611601')
+
+  UNION ALL
+
+  -- Ballan-Miré, Mettray et Luynes
+  SELECT 
+    'Ballan-Miré, Mettray et Luynes' as territoire,
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE IRIS IN ('370180101', '370180102', '370180103', '371520000', '371390000')
+
+  UNION ALL
+
+  -- Indre-et-Loire
+  SELECT 
+    'Indre-et-Loire' as territoire,
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,2) = '37' AND LENGTH(IRIS) = 9
+
+  UNION ALL
+
+  -- Centre-Val-de-Loire
+  SELECT 
+    'Centre-Val-de-Loire' as territoire,
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,2) IN ('18', '28', '36', '37', '41', '45') AND LENGTH(IRIS) = 9
+)
+
+SELECT 
+  territoire,
+  ROUND(CAST(cs1 AS FLOAT) / pop_totale, 3) as "Agriculteurs exploitants",
+  ROUND(CAST(cs2 AS FLOAT) / pop_totale, 3) as "Artisans, Comm., Chefs entr.",
+  ROUND(CAST(cs3 AS FLOAT) / pop_totale, 3) as "Cadres, Prof. intel. sup.",
+  ROUND(CAST(cs4 AS FLOAT) / pop_totale, 3) as "Prof. intermédiaires",
+  ROUND(CAST(cs5 AS FLOAT) / pop_totale, 3) as "Employés",
+  ROUND(CAST(cs6 AS FLOAT) / pop_totale, 3) as "Ouvriers",
+  ROUND(CAST(cs7 AS FLOAT) / pop_totale, 3) as "Retraités",
+  ROUND(CAST(cs8 AS FLOAT) / pop_totale, 3) as "Autres sans activité prof."
+FROM pop_territories
+ORDER BY 
+  CASE territoire
+    WHEN 'DSP Tours nord + Saint-Cyr-sur-Loire' THEN 1
+    WHEN 'Ballan-Miré, Mettray et Luynes' THEN 2
+    WHEN 'Indre-et-Loire' THEN 3
+    WHEN 'Centre-Val-de-Loire' THEN 4
+  END;
+  

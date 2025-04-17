@@ -1,0 +1,83 @@
+-- Evolution du taux de naissances (pour 1 000 habitants)
+-- Exemple de Vitrolles (13117) comparé au département des Bouches-du-Rhône (13) et à la France de 1968 à 2021
+
+WITH periodes AS (
+  SELECT 
+    'NAIS1520' as periode,
+    'P21_POP' as pop_ref,
+    2015 as annee_debut,
+    2020 as annee_fin
+  UNION ALL SELECT 'NAIS1014', 'P15_POP', 2010, 2014
+  UNION ALL SELECT 'NAIS9909', 'P10_POP', 1999, 2009
+  UNION ALL SELECT 'NAIS9099', 'D99_POP', 1990, 1999
+  UNION ALL SELECT 'NAIS8290', 'D90_POP', 1982, 1990
+  UNION ALL SELECT 'NAIS7582', 'D82_POP', 1975, 1982
+  UNION ALL SELECT 'NAIS6875', 'D75_POP', 1968, 1975
+)
+SELECT 
+  p.annee_debut || '-' || p.annee_fin as periode,
+  -- Vitrolles
+  vitrolles_data.population as vitrolles_population,
+  vitrolles_data.deces as vitrolles_deces,
+  ROUND(CAST(vitrolles_data.deces AS FLOAT) / CAST(vitrolles_data.population AS FLOAT) * 1000 / (p.annee_fin - p.annee_debut + 1), 2) as vitrolles_deces_pour_1000_hab,
+  -- Bouches-du-Rhône
+  bdr_data.population as bdr_population,
+  bdr_data.deces as bdr_deces,
+  ROUND(CAST(bdr_data.deces AS FLOAT) / CAST(bdr_data.population AS FLOAT) * 1000 / (p.annee_fin - p.annee_debut + 1), 2) as bdr_deces_pour_1000_hab,
+  -- France
+  france_data.population as france_population,
+  france_data.deces as france_deces,
+  ROUND(CAST(france_data.deces AS FLOAT) / CAST(france_data.population AS FLOAT) * 1000 / (p.annee_fin - p.annee_debut + 1), 2) as france_deces_pour_1000_hab
+FROM periodes p,
+(
+  SELECT 
+    'NAIS1520' as periode, P21_POP as population, DECE1520 as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO = '13117'
+  UNION ALL
+  SELECT 'NAIS1014' as periode, P15_POP as population, DECE1014 as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO = '13117'
+  UNION ALL
+  SELECT 'NAIS9909' as periode, P10_POP as population, DECE9909 as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO = '13117'
+  UNION ALL
+  SELECT 'NAIS9099' as periode, D99_POP as population, DECE9099 as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO = '13117'
+  UNION ALL
+  SELECT 'NAIS8290' as periode, D90_POP as population, DECE8290 as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO = '13117'
+  UNION ALL
+  SELECT 'NAIS7582' as periode, D82_POP as population, DECE7582 as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO = '13117'
+  UNION ALL
+  SELECT 'NAIS6875' as periode, D75_POP as population, DECE6875 as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO = '13117'
+) vitrolles_data,
+(
+  SELECT 
+    'NAIS1520' as periode, SUM(P21_POP) as population, SUM(DECE1520) as deces FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO LIKE '13%' AND LENGTH(CODGEO) = 5
+  UNION ALL
+  SELECT 'NAIS1014', SUM(P15_POP), SUM(DECE1014) FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO LIKE '13%' AND LENGTH(CODGEO) = 5
+  UNION ALL
+  SELECT 'NAIS9909', SUM(P10_POP), SUM(DECE9909) FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO LIKE '13%' AND LENGTH(CODGEO) = 5
+  UNION ALL
+  SELECT 'NAIS9099', SUM(D99_POP), SUM(DECE9099) FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO LIKE '13%' AND LENGTH(CODGEO) = 5
+  UNION ALL
+  SELECT 'NAIS8290', SUM(D90_POP), SUM(DECE8290) FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO LIKE '13%' AND LENGTH(CODGEO) = 5
+  UNION ALL
+  SELECT 'NAIS7582', SUM(D82_POP), SUM(DECE7582) FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO LIKE '13%' AND LENGTH(CODGEO) = 5
+  UNION ALL
+  SELECT 'NAIS6875', SUM(D75_POP), SUM(DECE6875) FROM POP_LOG_séries_historiques_COM_2021 WHERE CODGEO LIKE '13%' AND LENGTH(CODGEO) = 5
+) bdr_data,
+(
+  SELECT 
+    'NAIS1520' as periode, SUM(P21_POP) as population, SUM(DECE1520) as deces FROM POP_LOG_séries_historiques_COM_2021
+  UNION ALL
+  SELECT 'NAIS1014', SUM(P15_POP), SUM(DECE1014) FROM POP_LOG_séries_historiques_COM_2021
+  UNION ALL
+  SELECT 'NAIS9909', SUM(P10_POP), SUM(DECE9909) FROM POP_LOG_séries_historiques_COM_2021
+  UNION ALL
+  SELECT 'NAIS9099', SUM(D99_POP), SUM(DECE9099) FROM POP_LOG_séries_historiques_COM_2021
+  UNION ALL
+  SELECT 'NAIS8290', SUM(D90_POP), SUM(DECE8290) FROM POP_LOG_séries_historiques_COM_2021
+  UNION ALL
+  SELECT 'NAIS7582', SUM(D82_POP), SUM(DECE7582) FROM POP_LOG_séries_historiques_COM_2021
+  UNION ALL
+  SELECT 'NAIS6875', SUM(D75_POP), SUM(DECE6875) FROM POP_LOG_séries_historiques_COM_2021
+) france_data
+WHERE p.periode = vitrolles_data.periode 
+AND p.periode = bdr_data.periode
+AND p.periode = france_data.periode
+ORDER BY p.annee_debut ASC;

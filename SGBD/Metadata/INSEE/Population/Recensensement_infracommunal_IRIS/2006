@@ -1,0 +1,111 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/2028652
+
+
+## Tableau SQL :
+POP_IRIS_2006
+
+
+## 4 premières lignes du CSV :
+IRIS,REG,DEP,UU1999,COM,LIBCOM,TRIRIS,GRD_QUART,LIBIRIS,TYP_IRIS,MODIF_IRIS,LAB_IRIS,P06_POP,P06_POP0002,P06_POP0305,P06_POP0610,P06_POP1117,P06_POP1824,P06_POP2539,P06_POP4054,P06_POP5564,P06_POP6579,P06_POP80P,P06_POP0014,P06_POP1529,P06_POP3044,P06_POP4559,P06_POP6074,P06_POP75P,P06_POP0019,P06_POP2064,P06_POP65P,P06_POPH,P06_H0014,P06_H1529,P06_H3044,P06_H4559,P06_H6074,P06_H75P,P06_H0019,P06_H2064,P06_H65P,P06_POPF,P06_F0014,P06_F1529,P06_F3044,P06_F4559,P06_F6074,P06_F75P,P06_F0019,P06_F2064,P06_F65P,P06_POP05P,P06_POP05P_IRAN1,P06_POP05P_IRAN2,P06_POP05P_IRAN3,P06_POP05P_IRAN4,P06_POP05P_IRAN5,P06_POP05P_IRAN6,P06_POP05P_IRAN7,C06_POP15P,C06_POP15P_CS1,C06_POP15P_CS2,C06_POP15P_CS3,C06_POP15P_CS4,C06_POP15P_CS5,C06_POP15P_CS6,C06_POP15P_CS7,C06_POP15P_CS8,C06_H15P,C06_H15P_CS1,C06_H15P_CS2,C06_H15P_CS3,C06_H15P_CS4,C06_H15P_CS5,C06_H15P_CS6,C06_H15P_CS7,C06_H15P_CS8,C06_F15P,C06_F15P_CS1,C06_F15P_CS2,C06_F15P_CS3,C06_F15P_CS4,C06_F15P_CS5,C06_F15P_CS6,C06_F15P_CS7,C06_F15P_CS8,P06_POP_FR,P06_POP_ETR,P06_POP_IMM,P06_PMEN,P06_PHORMEN
+010010000,82,01,01000,01001,L'Abergement-Clémenciat,ZZZZZZ,ZZZZZZZ,L'Abergement-Clémenciat,Z,0,7,811.0,44.0,36.0,62.0,79.0,50.0,167.0,166.0,103.0,79.0,25.0,187.0,125.0,189.0,158.0,106.0,46.0,237.0,470.0,104.0,424.0,103.0,68.0,100.0,82.0,51.0,20.0,132.0,247.0,45.0,387.0,84.0,57.0,89.0,76.0,55.0,26.0,105.0,223.0,59.0,744.0,538.0,15.0,112.0,55.0,24.0,0.0,0.0,652.0,16.0,12.0,40.0,100.0,96.0,132.0,172.0,84.0,348.0,8.0,12.0,28.0,60.0,8.0,116.0,84.0,32.0,304.0,8.0,0.0,12.0,40.0,88.0,16.0,88.0,52.0,797.0,14.0,20.0,811.0,0.0
+010020000,82,01,01000,01002,L'Abergement-de-Varey,ZZZZZZ,ZZZZZZZ,L'Abergement-de-Varey,Z,0,7,198.0,13.0,8.0,11.0,15.0,9.0,52.0,33.0,21.0,27.0,9.0,44.0,20.0,54.0,33.0,30.0,17.0,50.0,112.0,36.0,106.0,22.0,11.0,29.0,16.0,17.0,11.0,26.0,59.0,21.0,92.0,22.0,9.0,25.0,17.0,13.0,6.0,24.0,53.0,15.0,179.0,126.0,0.0,28.0,16.0,9.0,0.0,0.0,164.0,8.0,4.0,16.0,40.0,16.0,28.0,40.0,12.0,100.0,4.0,4.0,16.0,20.0,0.0,24.0,28.0,4.0,64.0,4.0,0.0,0.0,20.0,16.0,4.0,12.0,8.0,197.0,1.0,3.0,198.0,0.0
+010040101,82,01,01303,01004,Ambérieu-en-Bugey,ZZZZZZ,0100401,Les Perouses-Triangle d'Activite,H,0,1,1957.970821,102.578435,92.400657,100.58305,119.820995,263.545615,460.411348,359.023121,244.872598,154.870367,59.864635,350.03356,484.861837,426.288215,383.800211,193.21602,119.770979,499.756089,1243.479731,214.735002,1008.285958,168.299439,259.571174,229.990062,200.506234,108.866044,41.053006,251.182278,660.425979,96.677701,949.684863,181.734121,225.290663,196.298153,183.293977,84.349976,78.717973,248.573811,583.053752,118.0573,1787.721606,1032.93109,171.574655,276.242601,86.039588,147.798142,4.0,69.13553,1602.937262,0.0,48.874717,46.811475,159.600833,324.343215,392.396579,303.021195,327.889249,842.98652,0.0,34.49731,41.107572,96.745189,104.336096,303.804413,163.705933,98.790007,759.950742,0.0,14.377407,5.703903,62.855644,220.007119,88.592165,139.315262,229.099241,1478.7335,479.237322,470.567343,1705.970821,252.0
+
+
+
+## Dictionnaire des variables :
+VAR_ID;VAR_LIB;VAR_LIB_LONG;ANNEE;SOURCE
+IRIS;IRIS;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS ;2008;Géographie infra-communale
+REG;Région;Code de la région;2008;Code officiel géographique
+DEP;Département;Code du département;2008;Code officiel géographique
+UU1999;Unité urbaine;"Code du département ou ""00"" pour les unités urbaines interdépartementales suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille";2008;Géographie urbaine
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;2008;Code officiel géographique
+LIBCOM;Libellé commune ou ARM;Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2008;Code officiel géographique
+TRIRIS;TRIRIS;Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS;2008;Géographie infra-communale
+GRD_QUART;Grand quartier;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier ;2008;Géographie infra-communale
+LIBIRIS;Libellé de l'IRIS;Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2008;Géographie infra-communale
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);2008;Géographie infra-communale
+MODIF_IRIS;Modification de l'IRIS;Type de modification de l'IRIS depuis 1999;2008;Géographie infra-communale
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS;2006;RP2006
+P06_POP;Population;Population;2006;RP2006 exploitation principale
+P06_POP0002;Pop 0-2 ans;Nombre de personnes de 0 à 2 ans;2006;RP2006 exploitation principale
+P06_POP0305;Pop 3-5 ans;Nombre de personnes de 3 à 5 ans;2006;RP2006 exploitation principale
+P06_POP0610;Pop 6-10 ans;Nombre de personnes de 6 à 10 ans;2006;RP2006 exploitation principale
+P06_POP1117;Pop 11-17 ans;Nombre de personnes de 11 à 17 ans;2006;RP2006 exploitation principale
+P06_POP1824;Pop 18-24 ans;Nombre de personnes de 18 à 24 ans;2006;RP2006 exploitation principale
+P06_POP2539;Pop 25-39 ans;Nombre de personnes de 25 à 39 ans;2006;RP2006 exploitation principale
+P06_POP4054;Pop 40-54 ans;Nombre de personnes de 40 à 54 ans;2006;RP2006 exploitation principale
+P06_POP5564;Pop 55-64 ans;Nombre de personnes de 55 à 64 ans;2006;RP2006 exploitation principale
+P06_POP6579;Pop 65-79 ans;Nombre de personnes de 65 à 79 ans;2006;RP2006 exploitation principale
+P06_POP80P;Pop 80 ans ou plus;Nombre de personnes de 80 ans ou plus;2006;RP2006 exploitation principale
+P06_POP0014;Pop 0-14 ans;Nombre de personnes de 0 à 14 ans;2006;RP2006 exploitation principale
+P06_POP1529;Pop 15-29 ans;Nombre de personnes de 15 à 29 ans;2006;RP2006 exploitation principale
+P06_POP3044;Pop 30-44 ans;Nombre de personnes de 30 à 44 ans;2006;RP2006 exploitation principale
+P06_POP4559;Pop 45-59 ans;Nombre de personnes de 45 à 59 ans;2006;RP2006 exploitation principale
+P06_POP6074;Pop 60-74 ans;Nombre de personnes de 60 à 74 ans;2006;RP2006 exploitation principale
+P06_POP75P;Pop 75 ans ou plus;Nombre de personnes de 75 ans ou plus;2006;RP2006 exploitation principale
+P06_POP0019;Pop 0-19 ans;Nombre de personnes de 0 à 19 ans;2006;RP2006 exploitation principale
+P06_POP2064;Pop 20-64 ans;Nombre de personnes de 20 à 64 ans;2006;RP2006 exploitation principale
+P06_POP65P;Pop 65 ans ou plus;Nombre de personnes de 65 ans ou plus;2006;RP2006 exploitation principale
+P06_POPH;Pop Hommes;Nombre total d'hommes;2006;RP2006 exploitation principale
+P06_H0014;Pop Hommes 0-14 ans;Nombre d'hommes de 0 à 14 ans;2006;RP2006 exploitation principale
+P06_H1529;Pop Hommes 15-29 ans;Nombre d'hommes de 15 à 29 ans;2006;RP2006 exploitation principale
+P06_H3044;Pop Hommes 30-44 ans;Nombre d'hommes de 30 à 44 ans;2006;RP2006 exploitation principale
+P06_H4559;Pop Hommes 45-59 ans;Nombre d'hommes de 45 à 59 ans;2006;RP2006 exploitation principale
+P06_H6074;Pop Hommes 60-74 ans;Nombre d'hommes de 60 à 74 ans;2006;RP2006 exploitation principale
+P06_H75P;Pop Hommes 75 ans ou plus;Nombre d'hommes de 75ans ou plus;2006;RP2006 exploitation principale
+P06_H0019;Pop Hommes 0-19 ans;Nombre d'hommes de 0 à 19 ans;2006;RP2006 exploitation principale
+P06_H2064;Pop Hommes 20-64 ans;Nombre d'hommes de 20 à 64 ans;2006;RP2006 exploitation principale
+P06_H65P;Pop Hommes 65 ans ou plus;Nombre d'hommes de 65 ans ou plus;2006;RP2006 exploitation principale
+P06_POPF;Pop Femmes;Nombre total de femmes;2006;RP2006 exploitation principale
+P06_F0014;Pop Femmes 0-14 ans;Nombre de femmes de 0 à 14 ans;2006;RP2006 exploitation principale
+P06_F1529;Pop Femmes 15-29 ans;Nombre de femmes de 15 à 29 ans;2006;RP2006 exploitation principale
+P06_F3044;Pop Femmes 30-44 ans;Nombre de femmes de 30 à 44 ans;2006;RP2006 exploitation principale
+P06_F4559;Pop Femmes 45-59 ans;Nombre de femmes de 45 à 59 ans;2006;RP2006 exploitation principale
+P06_F6074;Pop Femmes 60-74 ans;Nombre de femmes de 60 à 74 ans;2006;RP2006 exploitation principale
+P06_F75P;Pop Femmes 75 ans ou plus;Nombre de femmes de 75 ans ou plus;2006;RP2006 exploitation principale
+P06_F0019;Pop Femmes 0-19 ans;Nombre de femmes de 0 à 19 ans;2006;RP2006 exploitation principale
+P06_F2064;Pop Femmes 20-64 ans;Nombre de femmes de 20 à 64 ans;2006;RP2006 exploitation principale
+P06_F65P;Pop Femmes 65 ans ou plus;Nombre de femmes de 65 ans ou plus;2006;RP2006 exploitation principale
+P06_POP05P;Pop 5 ans ou plus;Nombre de personnes de 5 ans ou plus;2006;RP2006 exploitation principale
+P06_POP05P_IRAN1;Pop 5 ans ou plus habitant 5 ans avt même logt;Nombre de personnes de 5 ans ou plus habitant 5 ans auparavant le même logement;2006;RP2006 exploitation principale
+P06_POP05P_IRAN2;Pop 5 ans ou plus habitant 5 ans avt autre logt même commune;Nombre de personnes de 5 ans ou plus habitant 5 ans auparavant un autre logement de la même commune;2006;RP2006 exploitation principale
+P06_POP05P_IRAN3;Pop 5 ans ou plus habitant 5 ans avt autre commune même dépt;Nombre de personnes de 5 ans ou plus habitant 5 ans auparavant une autre commune du même département;2006;RP2006 exploitation principale
+P06_POP05P_IRAN4;Pop 5 ans ou plus habitant 5 ans avt autre dépt même région;Nombre de personnes de 5 ans ou plus habitant 5 ans auparavant un autre département de la même région;2006;RP2006 exploitation principale
+P06_POP05P_IRAN5;Pop 5 ans ou plus habitant 5 ans avt autre région métropole;Nombre de personnes de 5 ans ou plus habitant 5 ans auparavant une autre région de France métropolitaine;2006;RP2006 exploitation principale
+P06_POP05P_IRAN6;Pop 5 ans ou plus habitant 5 ans avt un Dom;Nombre de personnes de 5 ans ou plus habitant 5 ans auparavant dans un département d'outre-mer;2006;RP2006 exploitation principale
+P06_POP05P_IRAN7;Pop 5 ans ou plus habitant 5 ans avt hors métro ou Dom;Nombre de personnes de 5 ans ou plus habitant 5 ans auparavant hors de France métropolitaine ou d'un Département d'outre-mer ;2006;RP2006 exploitation principale
+C06_POP15P;Pop 15 ans ou plus;Nombre de personnes de 15 ans ou plus ;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS1;Pop 15 ans ou plus Agriculteurs exploitants;Nombre de personnes de 15 ans ou plus Agriculteurs exploitants;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS2;Pop 15 ans ou plus Artisans, Comm., Chefs entr.;Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS3;Pop 15 ans ou plus Cadres, Prof. intel. sup.;Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS4;Pop 15 ans ou plus Prof. intermédiaires ;Nombre de personnes de 15 ans ou plus Professions intermédiaires;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS5;Pop 15 ans ou plus Employés;Nombre de personnes de 15 ans ou plus Employés;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS6;Pop 15 ans ou plus Ouvriers;Nombre de personnes de 15 ans ou plus Ouvriers;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS7;Pop 15 ans ou plus Retraité ;Nombre de personnes de 15 ans ou plus Retraités;2006;RP2006 exploitation complémentaire
+C06_POP15P_CS8;Pop 15 ans ou plus Autres;Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle;2006;RP2006 exploitation complémentaire
+C06_H15P;Pop 15 ans ou plus Hommes;Nombre d'hommes de 15 ans ou plus ;2006;RP2006 exploitation complémentaire
+C06_H15P_CS1;Pop 15 ans ou plus Hommes Agriculteurs exploitants;Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants;2006;RP2006 exploitation complémentaire
+C06_H15P_CS2;Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr.;Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;2006;RP2006 exploitation complémentaire
+C06_H15P_CS3;Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup.;Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;2006;RP2006 exploitation complémentaire
+C06_H15P_CS4;Pop 15 ans ou plus Hommes Prof. intermédiaires;Nombre d'hommes de 15 ans ou plus Professions intermédiaires;2006;RP2006 exploitation complémentaire
+C06_H15P_CS5;Pop 15 ans ou plus Hommes Employés;Nombre d'hommes de 15 ans ou plus Employés;2006;RP2006 exploitation complémentaire
+C06_H15P_CS6;Pop 15 ans ou plus Hommes Ouvriers;Nombre d'hommes de 15 ans ou plus Ouvriers;2006;RP2006 exploitation complémentaire
+C06_H15P_CS7;Pop 15 ans ou plus Hommes Retraités;Nombre d'hommes de 15 ans ou plus Retraités;2006;RP2006 exploitation complémentaire
+C06_H15P_CS8;Pop 15 ans ou plus Hommes Autres;Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle;2006;RP2006 exploitation complémentaire
+C06_F15P;Pop 15 ans ou plus Femmes;Nombre de femmes de 15 ans ou plus ;2006;RP2006 exploitation complémentaire
+C06_F15P_CS1;Pop 15 ans ou plus Femmes Agriculteurs exploitants;Nombre de femmes de 15 ans ou plus Agriculteurs exploitants;2006;RP2006 exploitation complémentaire
+C06_F15P_CS2;Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr.;Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;2006;RP2006 exploitation complémentaire
+C06_F15P_CS3;Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup.;Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;2006;RP2006 exploitation complémentaire
+C06_F15P_CS4;Pop 15 ans ou plus Femmes Prof. intermédiaires;Nombre de femmes de 15 ans ou plus Professions intermédiaires;2006;RP2006 exploitation complémentaire
+C06_F15P_CS5;Pop 15 ans ou plus Femmes Employés;Nombre de femmes de 15 ans ou plus Employés;2006;RP2006 exploitation complémentaire
+C06_F15P_CS6;Pop 15 ans ou plus Femmes Ouvriers;Nombre de femmes de 15 ans ou plus Ouvriers;2006;RP2006 exploitation complémentaire
+C06_F15P_CS7;Pop 15 ans ou plus Femmes Retraités;Nombre de femmes de 15 ans ou plus Retraités;2006;RP2006 exploitation complémentaire
+C06_F15P_CS8;Pop 15 ans ou plus Femmes Autres;Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle;2006;RP2006 exploitation complémentaire
+P06_POP_FR;Pop Français;Nombre de personnes de nationalité française ;2006;RP2006 exploitation principale
+P06_POP_ETR;Pop Etrangers;Nombre de personnes étrangères;2006;RP2006 exploitation principale
+P06_POP_IMM;Pop Immigrés;Nombres de personnes immigrées;2006;RP2006 exploitation principale
+P06_PMEN;Pop ménages;Population des ménages;2006;RP2006 exploitation principale
+P06_PHORMEN;Pop hors ménages;Population hors ménages;2006;RP2006 exploitation principale
+

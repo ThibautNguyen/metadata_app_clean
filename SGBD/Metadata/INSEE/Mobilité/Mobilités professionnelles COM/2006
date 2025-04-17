@@ -1,0 +1,20 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/2022123
+
+
+## Nom du tableau SQL : 
+MOB_PRO_2006
+
+
+## 4 premières lignes : 
+COMMUNE;L_COMMUNE;DCLT;L_DCLT;NBFLUX_C06_ACTOCC15P
+01001;L'Abergement-Clémenciat;01001;L'Abergement-Clémenciat;80
+01001;L'Abergement-Clémenciat;01053;Bourg-en-Bresse;48
+01001;L'Abergement-Clémenciat;01083;Chaneins;8
+
+## Dictionnaire des variables :
+COMMUNE;Code département et code commune du lieu de résidence (arrondissement pour Paris, Lyon, Marseille)
+L_COMMUNE;Libellé de la commune de résidence
+DCLT;Code département et code commune du lieu de travail (arrondissement pour Paris, Lyon, Marseille) + communes frontalières
+L_DCLT;Libellé de la commune de travail
+NBFLUX_C06_ACTOCC15P;Nombre de personnes actives ayant un emploi effectuant les navettes entre le lieu de résidence et le lieu de travail

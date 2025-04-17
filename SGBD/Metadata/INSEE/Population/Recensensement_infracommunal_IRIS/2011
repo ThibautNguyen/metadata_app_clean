@@ -1,0 +1,104 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/2028584
+
+
+## Tableau SQL :
+POP_IRIS_2011
+
+
+## 4 premières lignes :
+IRIS;REG;DEP;UU2010;COM;LIBCOM;TRIRIS;GRD_QUART;LIBIRIS;TYP_IRIS;MODIF_IRIS;LAB_IRIS;P11_POP;P11_POP0002;P11_POP0305;P11_POP0610;P11_POP1117;P11_POP1824;P11_POP2539;P11_POP4054;P11_POP5564;P11_POP6579;P11_POP80P;P11_POP0014;P11_POP1529;P11_POP3044;P11_POP4559;P11_POP6074;P11_POP75P;P11_POP0019;P11_POP2064;P11_POP65P;P11_POPH;P11_H0014;P11_H1529;P11_H3044;P11_H4559;P11_H6074;P11_H75P;P11_H0019;P11_H2064;P11_H65P;P11_POPF;P11_F0014;P11_F1529;P11_F3044;P11_F4559;P11_F6074;P11_F75P;P11_F0019;P11_F2064;P11_F65P;C11_POP15P;C11_POP15P_CS1;C11_POP15P_CS2;C11_POP15P_CS3;C11_POP15P_CS4;C11_POP15P_CS5;C11_POP15P_CS6;C11_POP15P_CS7;C11_POP15P_CS8;C11_H15P;C11_H15P_CS1;C11_H15P_CS2;C11_H15P_CS3;C11_H15P_CS4;C11_H15P_CS5;C11_H15P_CS6;C11_H15P_CS7;C11_H15P_CS8;C11_F15P;C11_F15P_CS1;C11_F15P_CS2;C11_F15P_CS3;C11_F15P_CS4;C11_F15P_CS5;C11_F15P_CS6;C11_F15P_CS7;C11_F15P_CS8;P11_POP_FR;P11_POP_ETR;P11_POP_IMM;P11_PMEN;P11_PHORMEN
+010010000;82;01;01000;01001;L'Abergement-Clémenciat;ZZZZZZ;0100100;L'Abergement-Clémenciat;Z;00;5;780;33;39;58;79;37;130;179;98;97;30;179;97;166;152;128;58;222;431;127;396;93;53;86;75;66;23;115;222;59;384;86;44;80;77;62;35;107;209;68;620;16;4;80;88;116;72;168;76;316;8;4;64;28;20;64;92;36;304;8;0;16;60;96;8;76;40;760;20;29;780;0
+010020000;82;01;01000;01002;L'Abergement-de-Varey;ZZZZZZ;0100200;L'Abergement-de-Varey;Z;00;5;234;8;8;21;12;13;55;47;29;28;13;44;35;60;38;36;21;52;141;41;124;25;17;34;16;22;10;28;73;23;110;19;18;26;22;14;11;24;68;18;188;0;4;20;52;8;32;64;8;100;0;4;8;28;0;32;28;0;88;0;0;12;24;8;0;36;8;231;3;5;234;0
+010040101;82;01;01302;01004;Ambérieu-en-Bugey;ZZZZZZ;0100401;Les Perouses-Triangle d'Activite;H;00;1;1801;38;59;97;158;263;340;371;212;180;84;265;492;293;388;210;154;446;1091;264;977;123;295;171;224;109;56;229;635;113;824;142;197;123;164;101;98;217;456;151;1544;0;32;83;194;339;237;363;296;869;0;23;51;123;184;199;171;118;676;0;9;32;71;155;38;193;178;1540;262;294;1477;324
+
+
+
+## Dictionnaire des variables :
+
+VAR_ID;VAR_LIB;VAR_LIB_LONG;ANNEE;SOURCE
+IRIS;IRIS;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS;2013;Géographie infra-communale
+REG;Région;Code de la région;2013;Code officiel géographique
+DEP;Département;Code du département;2013;Code officiel géographique
+UU2010;Unité urbaine;"Code du département ou ""00"" pour les unités urbaines qui s'étendent sur plusieurs départements voire au-delà de la frontière suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille";2013;Géographie urbaine
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;2013;Code officiel géographique
+LIBCOM;Libellé commune ou ARM;Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2013;Code officiel géographique
+TRIRIS;TRIRIS;Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS;2013;Géographie infra-communale
+GRD_QUART;Grand quartier;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier;2013;Géographie infra-communale
+LIBIRIS;Libellé de l'IRIS;Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille;2013;Géographie infra-communale
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);2013;Géographie infra-communale
+MODIF_IRIS;Modification de l'IRIS;Type de modification de l'IRIS depuis 1999;2013;Géographie infra-communale
+LAB_IRIS;Label de l'IRIS en 2011;Label de qualité de l'IRIS;2011;RP2011
+P11_POP;Population en 2011 (princ);Population;2011;RP2011 exploitation principale
+P11_POP0002;Pop 0-2 ans en 2011 (princ);Nombre de personnes de 0 à 2 ans;2011;RP2011 exploitation principale
+P11_POP0305;Pop 3-5 ans en 2011 (princ);Nombre de personnes de 3 à 5 ans;2011;RP2011 exploitation principale
+P11_POP0610;Pop 6-10 ans en 2011 (princ);Nombre de personnes de 6 à 10 ans;2011;RP2011 exploitation principale
+P11_POP1117;Pop 11-17 ans en 2011 (princ);Nombre de personnes de 11 à 17 ans;2011;RP2011 exploitation principale
+P11_POP1824;Pop 18-24 ans en 2011 (princ);Nombre de personnes de 18 à 24 ans;2011;RP2011 exploitation principale
+P11_POP2539;Pop 25-39 ans en 2011 (princ);Nombre de personnes de 25 à 39 ans;2011;RP2011 exploitation principale
+P11_POP4054;Pop 40-54 ans en 2011 (princ);Nombre de personnes de 40 à 54 ans;2011;RP2011 exploitation principale
+P11_POP5564;Pop 55-64 ans en 2011 (princ);Nombre de personnes de 55 à 64 ans;2011;RP2011 exploitation principale
+P11_POP6579;Pop 65-79 ans en 2011 (princ);Nombre de personnes de 65 à 79 ans;2011;RP2011 exploitation principale
+P11_POP80P;Pop 80 ans ou plus en 2011 (princ);Nombre de personnes de 80 ans ou plus;2011;RP2011 exploitation principale
+P11_POP0014;Pop 0-14 ans en 2011 (princ);Nombre de personnes de 0 à 14 ans;2011;RP2011 exploitation principale
+P11_POP1529;Pop 15-29 ans en 2011 (princ);Nombre de personnes de 15 à 29 ans;2011;RP2011 exploitation principale
+P11_POP3044;Pop 30-44 ans en 2011 (princ);Nombre de personnes de 30 à 44 ans;2011;RP2011 exploitation principale
+P11_POP4559;Pop 45-59 ans en 2011 (princ);Nombre de personnes de 45 à 59 ans;2011;RP2011 exploitation principale
+P11_POP6074;Pop 60-74 ans en 2011 (princ);Nombre de personnes de 60 à 74 ans;2011;RP2011 exploitation principale
+P11_POP75P;Pop 75 ans ou plus en 2011 (princ);Nombre de personnes de 75 ans ou plus;2011;RP2011 exploitation principale
+P11_POP0019;Pop 0-19 ans en 2011 (princ);Nombre de personnes de 0 à 19 ans;2011;RP2011 exploitation principale
+P11_POP2064;Pop 20-64 ans en 2011 (princ);Nombre de personnes de 20 à 64 ans;2011;RP2011 exploitation principale
+P11_POP65P;Pop 65 ans ou plus en 2011 (princ);Nombre de personnes de 65 ans ou plus;2011;RP2011 exploitation principale
+P11_POPH;Pop Hommes en 2011 (princ);Nombre d'hommes;2011;RP2011 exploitation principale
+P11_H0014;Pop Hommes 0-14 ans en 2011 (princ);Nombre d'hommes de 0 à 14 ans;2011;RP2011 exploitation principale
+P11_H1529;Pop Hommes 15-29 ans en 2011 (princ);Nombre d'hommes de 15 à 29 ans;2011;RP2011 exploitation principale
+P11_H3044;Pop Hommes 30-44 ans en 2011 (princ);Nombre d'hommes de 30 à 44 ans;2011;RP2011 exploitation principale
+P11_H4559;Pop Hommes 45-59 ans en 2011 (princ);Nombre d'hommes de 45 à 59 ans;2011;RP2011 exploitation principale
+P11_H6074;Pop Hommes 60-74 ans en 2011 (princ);Nombre d'hommes de 60 à 74 ans;2011;RP2011 exploitation principale
+P11_H75P;Pop Hommes 75 ans ou plus en 2011 (princ);Nombre d'hommes de 75ans ou plus;2011;RP2011 exploitation principale
+P11_H0019;Pop Hommes 0-19 ans en 2011 (princ);Nombre d'hommes de 0 à 19 ans;2011;RP2011 exploitation principale
+P11_H2064;Pop Hommes 20-64 ans en 2011 (princ);Nombre d'hommes de 20 à 64 ans;2011;RP2011 exploitation principale
+P11_H65P;Pop Hommes 65 ans ou plus en 2011 (princ);Nombre d'hommes de 65 ans ou plus;2011;RP2011 exploitation principale
+P11_POPF;Pop Femmes en 2011 (princ);Nombre de femmes;2011;RP2011 exploitation principale
+P11_F0014;Pop Femmes 0-14 ans en 2011 (princ);Nombre de femmes de 0 à 14 ans;2011;RP2011 exploitation principale
+P11_F1529;Pop Femmes 15-29 ans en 2011 (princ);Nombre de femmes de 15 à 29 ans;2011;RP2011 exploitation principale
+P11_F3044;Pop Femmes 30-44 ans en 2011 (princ);Nombre de femmes de 30 à 44 ans;2011;RP2011 exploitation principale
+P11_F4559;Pop Femmes 45-59 ans en 2011 (princ);Nombre de femmes de 45 à 59 ans;2011;RP2011 exploitation principale
+P11_F6074;Pop Femmes 60-74 ans en 2011 (princ);Nombre de femmes de 60 à 74 ans;2011;RP2011 exploitation principale
+P11_F75P;Pop Femmes 75 ans ou plus en 2011 (princ);Nombre de femmes de 75 ans ou plus;2011;RP2011 exploitation principale
+P11_F0019;Pop Femmes 0-19 ans en 2011 (princ);Nombre de femmes de 0 à 19 ans;2011;RP2011 exploitation principale
+P11_F2064;Pop Femmes 20-64 ans en 2011 (princ);Nombre de femmes de 20 à 64 ans;2011;RP2011 exploitation principale
+P11_F65P;Pop Femmes 65 ans ou plus en 2011 (princ);Nombre de femmes de 65 ans ou plus;2011;RP2011 exploitation principale
+C11_POP15P;Pop 15 ans ou plus en 2011 (compl);Nombre de personnes de 15 ans ou plus;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS1;Pop 15 ans ou plus Agriculteurs exploitants en 2011 (compl);Nombre de personnes de 15 ans ou plus Agriculteurs exploitants;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS2;Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2011 (compl);Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS3;Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2011 (compl);Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS4;Pop 15 ans ou plus Prof. intermédiaires en 2011 (compl);Nombre de personnes de 15 ans ou plus Professions intermédiaires;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS5;Pop 15 ans ou plus Employés en 2011 (compl);Nombre de personnes de 15 ans ou plus Employés;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS6;Pop 15 ans ou plus Ouvriers en 2011 (compl);Nombre de personnes de 15 ans ou plus Ouvriers;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS7;Pop 15 ans ou plus Retraités en 2011 (compl);Nombre de personnes de 15 ans ou plus Retraités;2011;RP2011 exploitation complémentaire
+C11_POP15P_CS8;Pop 15 ans ou plus Autres en 2011 (compl);Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle;2011;RP2011 exploitation complémentaire
+C11_H15P;Pop 15 ans ou plus Hommes en 2011 (compl);Nombre d'hommes de 15 ans ou plus;2011;RP2011 exploitation complémentaire
+C11_H15P_CS1;Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2011 (compl);Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants;2011;RP2011 exploitation complémentaire
+C11_H15P_CS2;Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2011 (compl);Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;2011;RP2011 exploitation complémentaire
+C11_H15P_CS3;Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2011 (compl);Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;2011;RP2011 exploitation complémentaire
+C11_H15P_CS4;Pop 15 ans ou plus Hommes Prof. intermédiaires en 2011 (compl);Nombre d'hommes de 15 ans ou plus Professions intermédiaires;2011;RP2011 exploitation complémentaire
+C11_H15P_CS5;Pop 15 ans ou plus Hommes Employés en 2011 (compl);Nombre d'hommes de 15 ans ou plus Employés;2011;RP2011 exploitation complémentaire
+C11_H15P_CS6;Pop 15 ans ou plus Hommes Ouvriers en 2011 (compl);Nombre d'hommes de 15 ans ou plus Ouvriers;2011;RP2011 exploitation complémentaire
+C11_H15P_CS7;Pop 15 ans ou plus Hommes Retraités en 2011 (compl);Nombre d'hommes de 15 ans ou plus Retraités;2011;RP2011 exploitation complémentaire
+C11_H15P_CS8;Pop 15 ans ou plus Hommes Autres en 2011 (compl);Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle;2011;RP2011 exploitation complémentaire
+C11_F15P;Pop 15 ans ou plus Femmes en 2011 (compl);Nombre de femmes de 15 ans ou plus;2011;RP2011 exploitation complémentaire
+C11_F15P_CS1;Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2011 (compl);Nombre de femmes de 15 ans ou plus Agriculteurs exploitants;2011;RP2011 exploitation complémentaire
+C11_F15P_CS2;Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2011 (compl);Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise;2011;RP2011 exploitation complémentaire
+C11_F15P_CS3;Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2011 (compl);Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures;2011;RP2011 exploitation complémentaire
+C11_F15P_CS4;Pop 15 ans ou plus Femmes Prof. intermédiaires en 2011 (compl);Nombre de femmes de 15 ans ou plus Professions intermédiaires;2011;RP2011 exploitation complémentaire
+C11_F15P_CS5;Pop 15 ans ou plus Femmes Employés en 2011 (compl);Nombre de femmes de 15 ans ou plus Employés;2011;RP2011 exploitation complémentaire
+C11_F15P_CS6;Pop 15 ans ou plus Femmes Ouvriers en 2011 (compl);Nombre de femmes de 15 ans ou plus Ouvriers;2011;RP2011 exploitation complémentaire
+C11_F15P_CS7;Pop 15 ans ou plus Femmes Retraités en 2011 (compl);Nombre de femmes de 15 ans ou plus Retraités;2011;RP2011 exploitation complémentaire
+C11_F15P_CS8;Pop 15 ans ou plus Femmes Autres en 2011 (compl);Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle;2011;RP2011 exploitation complémentaire
+P11_POP_FR;Pop Français en 2011 (princ);Nombre de personnes de nationalité française;2011;RP2011 exploitation principale
+P11_POP_ETR;Pop Etrangers en 2011 (princ);Nombre de personnes étrangères;2011;RP2011 exploitation principale
+P11_POP_IMM;Pop Immigrés en 2011 (princ);Nombres de personnes immigrées;2011;RP2011 exploitation principale
+P11_PMEN;Pop ménages en 2011 (princ);Population des ménages;2011;RP2011 exploitation principale
+P11_PHORMEN;Pop hors ménages en 2011 (princ);Population hors ménages;2011;RP2011 exploitation principale
+

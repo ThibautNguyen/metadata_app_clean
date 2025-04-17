@@ -1,0 +1,27 @@
+## Source :
+https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=dataset&datasetId=610244c9e436671e84ec5da8
+
+
+## Tableaux SQL :
+‘Conso_chaleur_froid_IRIS_2018’, ‘Conso_chaleur_froid_IRIS_2019’, etc. jusqu’à ‘Conso_chaleur_froid_IRIS_2023’
+
+
+## 4 premières lignes du CSV :
+"ID";"OPERATEUR";"ANNEE";"IRIS";"IRIS_LIBELLE";"FILIERE";"CODE_GRAND_SECTEUR";"CONSO";"PDL"
+"0108C";"LA VINAIGRERIE";"2023";"010530103";"Préfecture";"C";"R";1929;4
+"0108C";"LA VINAIGRERIE";"2023";"010530103";"Préfecture";"C";"T";2832;4
+"0108C";"LA VINAIGRERIE";"2023";"010530201";"Citadelle";"C";"R";568;3
+
+
+
+## Dictionnaire des variables :
+Nom de la colonne;Description;Format
+ID;Identifiant;CHAR
+OPERATEUR;Opérateur;CHAR
+ANNEE;Millésime des données;CHAR
+IRIS;Code géographique de l'IRIS;CHAR
+IRIS_LIBELLE;Code géographique de l'IRIS;CHAR
+FILIERE;Énergie concernée;CHAR
+CODE_GRAND_SECTEUR;Code du grand secteur;CHAR
+CONSO;Consommation (en MWh);CHAR
+PDL;Nombre de points de livraison;CHAR

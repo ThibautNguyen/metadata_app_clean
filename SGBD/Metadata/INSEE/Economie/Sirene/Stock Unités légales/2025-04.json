@@ -1,0 +1,217 @@
+{
+  "table_info": {
+    "schema": "economie",
+    "name": "stockunitelegale_2025_04",
+    "description": "https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/ economie.stockunitelegale_2025_04",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "siren",
+      "type": "VARCHAR",
+      "description": "9",
+      "nullable": true
+    },
+    {
+      "name": "statutDiffusionUniteLegale",
+      "type": "VARCHAR",
+      "description": "1",
+      "nullable": true
+    },
+    {
+      "name": "unitePurgeeUniteLegale",
+      "type": "VARCHAR",
+      "description": "4",
+      "nullable": true
+    },
+    {
+      "name": "dateCreationUniteLegale",
+      "type": "VARCHAR",
+      "description": "10",
+      "nullable": true
+    },
+    {
+      "name": "sigleUniteLegale",
+      "type": "VARCHAR",
+      "description": "20",
+      "nullable": true
+    },
+    {
+      "name": "sexeUniteLegale",
+      "type": "VARCHAR",
+      "description": "4",
+      "nullable": true
+    },
+    {
+      "name": "prenom1UniteLegale",
+      "type": "VARCHAR",
+      "description": "20",
+      "nullable": true
+    },
+    {
+      "name": "prenom2UniteLegale",
+      "type": "VARCHAR",
+      "description": "20",
+      "nullable": true
+    },
+    {
+      "name": "prenom3UniteLegale",
+      "type": "VARCHAR",
+      "description": "20",
+      "nullable": true
+    },
+    {
+      "name": "prenom4UniteLegale",
+      "type": "VARCHAR",
+      "description": "20",
+      "nullable": true
+    },
+    {
+      "name": "prenomUsuelUniteLegale",
+      "type": "VARCHAR",
+      "description": "20",
+      "nullable": true
+    },
+    {
+      "name": "pseudonymeUniteLegale",
+      "type": "VARCHAR",
+      "description": "100",
+      "nullable": true
+    },
+    {
+      "name": "identifiantAssociationUniteLegale",
+      "type": "VARCHAR",
+      "description": "10",
+      "nullable": true
+    },
+    {
+      "name": "trancheEffectifsUniteLegale",
+      "type": "VARCHAR",
+      "description": "2",
+      "nullable": true
+    },
+    {
+      "name": "anneeEffectifsUniteLegale",
+      "type": "VARCHAR",
+      "description": "4",
+      "nullable": true
+    },
+    {
+      "name": "dateDernierTraitementUniteLegale",
+      "type": "VARCHAR",
+      "description": "23",
+      "nullable": true
+    },
+    {
+      "name": "nombrePeriodesUniteLegale",
+      "type": "VARCHAR",
+      "description": "2",
+      "nullable": true
+    },
+    {
+      "name": "categorieEntreprise",
+      "type": "VARCHAR",
+      "description": "3",
+      "nullable": true
+    },
+    {
+      "name": "anneeCategorieEntreprise",
+      "type": "VARCHAR",
+      "description": "4",
+      "nullable": true
+    },
+    {
+      "name": "dateDebut",
+      "type": "VARCHAR",
+      "description": "10",
+      "nullable": true
+    },
+    {
+      "name": "etatAdministratifUniteLegale",
+      "type": "VARCHAR",
+      "description": "1",
+      "nullable": true
+    },
+    {
+      "name": "nomUniteLegale",
+      "type": "VARCHAR",
+      "description": "100",
+      "nullable": true
+    },
+    {
+      "name": "nomUsageUniteLegale",
+      "type": "VARCHAR",
+      "description": "100",
+      "nullable": true
+    },
+    {
+      "name": "denominationUniteLegale",
+      "type": "VARCHAR",
+      "description": "130",
+      "nullable": true
+    },
+    {
+      "name": "denominationUsuelle1UniteLegale",
+      "type": "VARCHAR",
+      "description": "70",
+      "nullable": true
+    },
+    {
+      "name": "denominationUsuelle2UniteLegale",
+      "type": "VARCHAR",
+      "description": "70",
+      "nullable": true
+    },
+    {
+      "name": "denominationUsuelle3UniteLegale",
+      "type": "VARCHAR",
+      "description": "70",
+      "nullable": true
+    },
+    {
+      "name": "categorieJuridiqueUniteLegale",
+      "type": "VARCHAR",
+      "description": "4",
+      "nullable": true
+    },
+    {
+      "name": "activitePrincipaleUniteLegale",
+      "type": "VARCHAR",
+      "description": "6",
+      "nullable": true
+    },
+    {
+      "name": "nomenclatureActivitePrincipaleUniteLegale",
+      "type": "VARCHAR",
+      "description": "8",
+      "nullable": true
+    },
+    {
+      "name": "nicSiegeUniteLegale",
+      "type": "VARCHAR",
+      "description": "5",
+      "nullable": true
+    },
+    {
+      "name": "economieSocialeSolidaireUniteLegale",
+      "type": "VARCHAR",
+      "description": "1",
+      "nullable": true
+    },
+    {
+      "name": "societeMissionUniteLegale",
+      "type": "VARCHAR",
+      "description": "1",
+      "nullable": true
+    },
+    {
+      "name": "caractereEmployeurUniteLegale",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    }
+  ]
+}

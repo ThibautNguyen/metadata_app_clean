@@ -1,0 +1,81 @@
+Caractéristiques de l'emploi en 2006 
+Recensement de la population - Base indicateurs de la fiche synthétique
+
+
+## Source : 
+https://www.insee.fr/fr/statistiques/2044664
+
+
+
+##Tableau SQL : 
+caracterist_emploi_COM_2006
+
+
+
+## 4 premières lignes :
+CODGEO;REG;DEP;LIBGEO;P06_ACTOCC15P;P06_SAL15P;P06_NSAL15P;P06_ACTOCC15P_TP;P06_SAL15P_TP;P06_HSAL15P_TP;P06_FSAL15P_TP;P06_NSAL15P_TP;P06_HACTOCC15P;P06_HSAL15P;P06_HSAL15P_CDI;P06_HSAL15P_CDD;P06_HSAL15P_INTERIM;P06_HSAL15P_EMPAID;P06_HSAL15P_APPR;P06_HNSAL15P;P06_HNSAL15P_INDEP;P06_HNSAL15P_EMPLOY;P06_HNSAL15P_AIDFAM;P06_FACTOCC15P;P06_FSAL15P;P06_FSAL15P_CDI;P06_FSAL15P_CDD;P06_FSAL15P_INTERIM;P06_FSAL15P_EMPAID;P06_FSAL15P_APPR;P06_FNSAL15P;P06_FNSAL15P_INDEP;P06_FNSAL15P_EMPLOY;P06_FNSAL15P_AIDFAM;P06_HSAL1564;P06_HSAL1524;P06_HSAL2554;P06_HSAL5564;P06_HSAL1564_TP;P06_HSAL1524_TP;P06_HSAL2554_TP;P06_HSAL5564_TP;P06_FSAL1564;P06_FSAL1524;P06_FSAL2554;P06_FSAL5564;P06_FSAL1564_TP;P06_FSAL1524_TP;P06_FSAL2554_TP;P06_FSAL5564_TP;P06_ACTOCC15P_ILT1;P06_ACTOCC15P_ILT2P;P06_ACTOCC15P_ILT2;P06_ACTOCC15P_ILT3;P06_ACTOCC15P_ILT4;P06_ACTOCC15P_ILT5
+01001;82;01;L'Abergement-Clémenciat;376;328;48;67;63;15;48;4;217;185;159;9;6;0;11;32;17;15;0;159;143;121;15;3;0;4;16;12;4;0;185;26;143;16;15;8;4;3;143;11;115;17;48;4;39;5;49;327;222;84;20;1
+01002;82;01;L'Abergement-de-Varey;93;82;11;21;21;4;17;0;50;41;35;1;3;1;1;9;5;4;0;43;41;33;7;0;1;0;2;2;0;0;41;5;33;3;4;1;2;1;41;1;37;3;17;0;15;2;10;83;67;16;0;0
+01004;82;01;Ambérieu-en-Bugey;5477;5115;362;736;686;140;546;50;3038;2830;2343;220;118;24;125;208;59;146;4;2438;2285;1893;235;66;34;58;153;104;34;15;2830;421;2237;172;140;54;74;12;2281;322;1751;209;546;57;447;43;2434;3042;2203;781;52;6
+
+
+
+## Dictionnaire des variables :
+VAR_ID;VAR_LIB;VAR_LIB_LONG;ANNEE;SOURCE
+CODGEO;Code géographique;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal;2008;Code officiel géographique
+REG;Région;Code de la région;2008;Code officiel géographique
+DEP;Département;Code du département;2008;Code officiel géographique
+LIBGEO;Libellé géographique;Libellé de la commune ou de l'arrondissement municipal;2008;Code officiel géographique
+P06_ACTOCC15P;Actifs occupés 15 ans ou plus;Nombre de personnes actives occupées de 15 ans ou plus ;2006;RP2006 exploitation principale
+P06_SAL15P;Salariés 15 ans ou plus;Nombre de personnes salariées de 15 ans ou plus ;2006;RP2006 exploitation principale
+P06_NSAL15P;Non salariés 15 ans ou plus;Nombre de personnes non salariées de 15 ans ou plus ;2006;RP2006 exploitation principale
+P06_ACTOCC15P_TP;Actifs occ 15 ans ou plus TP;Nombre de personnes actives occupées de 15 ans ou plus à temps partiel ;2006;RP2006 exploitation principale
+P06_SAL15P_TP;Salariés 15 ans ou plus TP;Nombre de personnes salariées de 15 ans ou plus à temps partiel ;2006;RP2006 exploitation principale
+P06_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes;Nombre d'hommes salariés de 15 ans ou plus à temps partiel ;2006;RP2006 exploitation principale
+P06_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes;Nombre de femmes salariées de 15 ans ou plus à temps partiel ;2006;RP2006 exploitation principale
+P06_NSAL15P_TP;Non salariés 15 ans ou plus TP;Nombre de personnes non salariées de 15 ans ou plus à temps partiel ;2006;RP2006 exploitation principale
+P06_HACTOCC15P;Actifs occupés 15 ans ou plus Hommes;Nombre d'hommes actives occupés de 15 ans ou plus ;2006;RP2006 exploitation principale
+P06_HSAL15P;Salariés 15 ans ou plus Hommes;Nombre d'hommes salariés de 15 ans ou plus ;2006;RP2006 exploitation principale
+P06_HSAL15P_CDI;Salariés 15 ans ou plus Hommes Fonct publ, CDI;Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée ;2006;RP2006 exploitation principale
+P06_HSAL15P_CDD;Salariés 15 ans ou plus Hommes CDD;Nombre d'hommes salariés de 15 ans ou plus ayant un  contrat à durée déterminée ;2006;RP2006 exploitation principale
+P06_HSAL15P_INTERIM;Salariés 15 ans ou plus Hommes Intérim;Nombre d'hommes salariés de 15 ans ou plus intérimaires;2006;RP2006 exploitation principale
+P06_HSAL15P_EMPAID;Salariés 15 ans ou plus Hommes Emplois aidés;Nombre d'hommes salariés de 15 ans ou plus Emplois aidés;2006;RP2006 exploitation principale
+P06_HSAL15P_APPR;Salariés 15 ans ou plus Hommes Apprentissage - Stage;Nombre d'hommes salariés de 15 ans ou plus en apprentissage ou stagiaire;2006;RP2006 exploitation principale
+P06_HNSAL15P;Non salariés 15 ans ou plus Hommes;Nombre d'hommes non salariés de 15 ans ou plus;2006;RP2006 exploitation principale
+P06_HNSAL15P_INDEP;Non salariés 15 ans ou plus Hommes Indépendants;Nombre d'hommes non salariés de 15 ans ou plus indépendants;2006;RP2006 exploitation principale
+P06_HNSAL15P_EMPLOY;Non salariés 15 ans ou plus Hommes Employeurs;Nombre d'hommes non salariés de 15 ans ou plus employeurs;2006;RP2006 exploitation principale
+P06_HNSAL15P_AIDFAM;Non salariés 15 ans ou plus Hommes Aides familiaux;Nombre d'hommes non salariés de 15 ans ou plus aides familiaux;2006;RP2006 exploitation principale
+P06_FACTOCC15P;Actifs occupés 15 ans ou plus Femmes;Nombre de femmes actives occupées de 15 ans ou plus ;2006;RP2006 exploitation principale
+P06_FSAL15P;Salariés 15 ans ou plus Femmes;Nombre de femmes salariées de 15 ans ou plus ;2006;RP2006 exploitation principale
+P06_FSAL15P_CDI;Salariés 15 ans ou plus Femmes Fonct publ, CDI;Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée ;2006;RP2006 exploitation principale
+P06_FSAL15P_CDD;Salariés 15 ans ou plus Femmes CDD;Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée ;2006;RP2006 exploitation principale
+P06_FSAL15P_INTERIM;Salariés 15 ans ou plus Femmes Intérim;Nombre de femmes salariées de 15 ans ou plus intérimaires;2006;RP2006 exploitation principale
+P06_FSAL15P_EMPAID;Salariés 15 ans ou plus Femmes Emplois aidés;Nombre de femmes salariées de 15 ans ou plus Emplois aidés;2006;RP2006 exploitation principale
+P06_FSAL15P_APPR;Salariés 15 ans ou plus Femmes Apprentissage - Stage;Nombre de femmes salariées de 15 ans ou plus en apprentissage, stagiaire;2006;RP2006 exploitation principale
+P06_FNSAL15P;Non salariés 15 ans ou plus Femmes;Nombre de femmes non salariées de 15 ans ou plus;2006;RP2006 exploitation principale
+P06_FNSAL15P_INDEP;Non salariés 15 ans ou plus Femmes Indépendantes;Nombre de femmes non salariées de 15 ans ou plus indépendantes;2006;RP2006 exploitation principale
+P06_FNSAL15P_EMPLOY;Non salariés 15 ans ou plus Femmes Employeurs;Nombre de femmes non salariées de 15 ans ou plus employeurs;2006;RP2006 exploitation principale
+P06_FNSAL15P_AIDFAM;Non salariés 15 ans ou plus Femmes Aides familiales;Nombre de femmes non salariées de 15 ans ou plus aides familiales;2006;RP2006 exploitation principale
+P06_HSAL1564;Salariés 15-64 ans Hommes;Nombre d'hommes salariés de 15 à 64 ans;2006;RP2006 exploitation principale
+P06_HSAL1524;Salariés 15-24 ans Hommes;Nombre d'hommes salariés de 15 à 24 ans;2006;RP2006 exploitation principale
+P06_HSAL2554;Salariés 25-54 ans Hommes;Nombre d'hommes salariés de 25 à 54 ans;2006;RP2006 exploitation principale
+P06_HSAL5564;Salariés 55-64 ans Hommes;Nombre d'hommes salariés de 55 à 64 ans;2006;RP2006 exploitation principale
+P06_HSAL1564_TP;Salariés 15-64 ans Hommes TP;Nombre d'hommes salariés de 15 à 64 ans à temps partiel;2006;RP2006 exploitation principale
+P06_HSAL1524_TP;Salariés 15-24 ans Hommes TP;Nombre d'hommes salariés de 15 à 24 ans à temps partiel;2006;RP2006 exploitation principale
+P06_HSAL2554_TP;Salariés 25-54 ans Hommes TP;Nombre d'hommes salariés de 25 à 54 ans à temps partiel;2006;RP2006 exploitation principale
+P06_HSAL5564_TP;Salariés 55-64 ans Hommes TP;Nombre d'hommes salariés de 55 à 64 ans à temps partiel;2006;RP2006 exploitation principale
+P06_FSAL1564;Salariés 15-64 ans Femmes;Nombre de femmes salariées de 15 à 64 ans;2006;RP2006 exploitation principale
+P06_FSAL1524;Salariés 15-24 ans Femmes;Nombre de femmes salariées de 15 à 24 ans;2006;RP2006 exploitation principale
+P06_FSAL2554;Salariés 25-54 ans Femmes;Nombre de femmes salariées de 25 à 54 ans;2006;RP2006 exploitation principale
+P06_FSAL5564;Salariés 55-64 ans Femmes;Nombre de femmes salariées de 55 à 64 ans;2006;RP2006 exploitation principale
+P06_FSAL1564_TP;Salariés 15-64 ans Femmes TP;Nombre de femmes salariées de 15 à 64 ans à temps partiel;2006;RP2006 exploitation principale
+P06_FSAL1524_TP;Salariés 15-24 ans Femmes TP;Nombre de femmes salariées de 15 à 24 ans à temps partiel;2006;RP2006 exploitation principale
+P06_FSAL2554_TP;Salariés 25-54 ans Femmes TP;Nombre de femmes salariées de 25 à 54 ans à temps partiel;2006;RP2006 exploitation principale
+P06_FSAL5564_TP;Salariés 55-64 ans Femmes TP;Nombre de femmes salariées de 55 à 64 ans à temps partiel;2006;RP2006 exploitation principale
+P06_ACTOCC15P_ILT1;Actif occ 15 ans ou plus travaille commune résidence;Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence;2006;RP2006 exploitation principale
+P06_ACTOCC15P_ILT2P;Actif occ 15 ans ou plus travaille autre commune que commune résidence;Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence;2006;RP2006 exploitation principale
+P06_ACTOCC15P_ILT2;Actif occ 15 ans ou plus travaille autre commune même dépt résidence;Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence;2006;RP2006 exploitation principale
+P06_ACTOCC15P_ILT3;Actif occ 15 ans ou plus travaille autre dépt même région résidence;Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence;2006;RP2006 exploitation principale
+P06_ACTOCC15P_ILT4;Actif occ 15 ans ou plus travaille autre région en métropole;Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région en France métropolitaine;2006;RP2006 exploitation principale
+P06_ACTOCC15P_ILT5;Actif occ 15 ans ou plus travaille autre région hors métropole;Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger);2006;RP2006 exploitation principale
+

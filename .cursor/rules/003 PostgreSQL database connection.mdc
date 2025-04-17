@@ -1,0 +1,77 @@
+---
+description: PostgreSQL database connection and SQL usage standards
+globs: "*.sql"
+alwaysApply: true
+---
+
+## Context
+
+- We use **PostgreSQL** as the main database engine.
+- We use **DBeaver** to explore, query, and manage the database.
+- Migrations and direct queries are written in **PostgreSQL syntax**.
+- Python scripts use `psycopg2` or `SQLAlchemy` to connect to the database.
+
+## Read-Only Access Configuration
+For AI assistance and read-only operations, use these credentials:
+```python
+DB_HOST = "localhost"
+DB_PORT = "5432"
+DB_NAME = "opendata"
+DB_USER = "cursor_ai"
+DB_PASSWORD = "cursor_ai_is_quite_awesome"
+```
+
+This user has SELECT privileges only on all tables in the public schema.
+
+## General Rules
+
+- Always write valid **PostgreSQL** code in `.sql` files.
+- Always use **quoted identifiers** for table and column names:
+  - Table names → `"MyTable"`
+  - Column names → `"myColumn"`
+- Do **not** use `mysql`, `sqlite` or other dialect-specific syntax.
+- Use **read-only queries** in production unless a write is required.
+- Use **parameterized queries** in Python to prevent SQL injection.
+- Handle large result sets with **pagination** or **WHERE filters**.
+- Always **close database connections** properly in Python scripts.
+
+## SQL Examples
+
+### Inserting data with quoted identifiers:
+
+```sql
+INSERT INTO "OrganizationPlan" ("id", "name", "maximumMembers", "createdAt", "updatedAt")
+VALUES 
+  ('FREE', 'Free Plan', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+  ('PRO', 'Pro Plan', 10, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+ON CONFLICT ("id") DO NOTHING;
+
+
+
+## database-queries
+- Use `sqlalchemy` or `psycopg2` to establish connections to the PostgreSQL database.
+- Use environment variables (e.g., with `os.environ`) to store sensitive connection details.
+- Sanitize all inputs to prevent SQL injection.
+- Prefer parameterized queries over string interpolation.
+- Use read-only queries (`SELECT`) whenever possible, especially for public-facing apps.
+- Handle large datasets using pagination, `LIMIT/OFFSET`, or filtering in SQL.
+- Always close database connections properly using context managers (`with` statement) or explicit `conn.close()`.
+
+
+## Filtering and ordering
+SELECT "id", "name"
+FROM "Organization"
+WHERE "status" = 'active'
+ORDER BY "createdAt" DESC;
+
+
+## Pytohn examples
+import psycopg2
+import os
+
+conn = psycopg2.connect(...)
+cur = conn.cursor()
+cur.execute("SELECT * FROM \"MyTable\" WHERE \"id\" = %s", (my_id,))
+rows = cur.fetchall()
+cur.close()
+conn.close()

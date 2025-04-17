@@ -1,0 +1,179 @@
+-- Evolution du solde migratoire (pour 1 000 habitants)
+-- Exemple de Vitrolles (13711) comparé au département (Bouches-du-Rhône) et à la France
+
+WITH periodes AS (
+  SELECT 
+    'P21_POP' as pop_fin,
+    'P15_POP' as pop_deb,
+    'NAIS1520' as naiss,
+    'DECE1520' as deces,
+    2015 as annee_debut,
+    2020 as annee_fin
+  UNION ALL SELECT 'P15_POP', 'P10_POP', 'NAIS1014', 'DECE1014', 2010, 2014
+  UNION ALL SELECT 'P10_POP', 'D99_POP', 'NAIS9909', 'DECE9909', 1999, 2009
+  UNION ALL SELECT 'D99_POP', 'D90_POP', 'NAIS9099', 'DECE9099', 1990, 1999
+  UNION ALL SELECT 'D90_POP', 'D82_POP', 'NAIS8290', 'DECE8290', 1982, 1990
+  UNION ALL SELECT 'D82_POP', 'D75_POP', 'NAIS7582', 'DECE7582', 1975, 1982
+  UNION ALL SELECT 'D75_POP', 'D68_POP', 'NAIS6875', 'DECE6875', 1968, 1975
+)
+SELECT 
+  p.annee_debut || '-' || p.annee_fin as periode,
+  -- Vitrolles
+  ROUND(CAST(
+    (vitrolles.pop_fin - vitrolles.pop_deb) - (vitrolles.naissances - vitrolles.deces)
+    AS FLOAT) / (p.annee_fin - p.annee_debut + 1), 2) as vitrolles_solde_migratoire_annuel,
+  ROUND(CAST(
+    ((vitrolles.pop_fin - vitrolles.pop_deb) - (vitrolles.naissances - vitrolles.deces))
+    AS FLOAT) * 1000 / CAST(vitrolles.pop_deb AS FLOAT) / (p.annee_fin - p.annee_debut + 1), 2) as vitrolles_solde_migratoire_pour_1000_hab,
+  -- Bouches-du-Rhône
+  ROUND(CAST(
+    (bdr.pop_fin - bdr.pop_deb) - (bdr.naissances - bdr.deces)
+    AS FLOAT) / (p.annee_fin - p.annee_debut + 1), 2) as bdr_solde_migratoire_annuel,
+  ROUND(CAST(
+    ((bdr.pop_fin - bdr.pop_deb) - (bdr.naissances - bdr.deces))
+    AS FLOAT) * 1000 / CAST(bdr.pop_deb AS FLOAT) / (p.annee_fin - p.annee_debut + 1), 2) as bdr_solde_migratoire_pour_1000_hab,
+  -- France
+  ROUND(CAST(
+    (france.pop_fin - france.pop_deb) - (france.naissances - france.deces)
+    AS FLOAT) / (p.annee_fin - p.annee_debut + 1), 2) as france_solde_migratoire_annuel,
+  ROUND(CAST(
+    ((france.pop_fin - france.pop_deb) - (france.naissances - france.deces))
+    AS FLOAT) * 1000 / CAST(france.pop_deb AS FLOAT) / (p.annee_fin - p.annee_debut + 1), 2) as france_solde_migratoire_pour_1000_hab
+FROM periodes p,
+(
+  SELECT 
+    p.naiss as periode,
+    CASE p.pop_fin 
+      WHEN 'P21_POP' THEN m.P21_POP
+      WHEN 'P15_POP' THEN m.P15_POP
+      WHEN 'P10_POP' THEN m.P10_POP
+      WHEN 'D99_POP' THEN m.D99_POP
+      WHEN 'D90_POP' THEN m.D90_POP
+      WHEN 'D82_POP' THEN m.D82_POP
+      WHEN 'D75_POP' THEN m.D75_POP
+      WHEN 'D68_POP' THEN m.D68_POP
+    END as pop_fin,
+    CASE p.pop_deb
+      WHEN 'P21_POP' THEN m.P21_POP
+      WHEN 'P15_POP' THEN m.P15_POP
+      WHEN 'P10_POP' THEN m.P10_POP
+      WHEN 'D99_POP' THEN m.D99_POP
+      WHEN 'D90_POP' THEN m.D90_POP
+      WHEN 'D82_POP' THEN m.D82_POP
+      WHEN 'D75_POP' THEN m.D75_POP
+      WHEN 'D68_POP' THEN m.D68_POP
+    END as pop_deb,
+    CASE p.naiss
+      WHEN 'NAIS1520' THEN m.NAIS1520
+      WHEN 'NAIS1014' THEN m.NAIS1014
+      WHEN 'NAIS9909' THEN m.NAIS9909
+      WHEN 'NAIS9099' THEN m.NAIS9099
+      WHEN 'NAIS8290' THEN m.NAIS8290
+      WHEN 'NAIS7582' THEN m.NAIS7582
+      WHEN 'NAIS6875' THEN m.NAIS6875
+    END as naissances,
+    CASE p.deces
+      WHEN 'DECE1520' THEN m.DECE1520
+      WHEN 'DECE1014' THEN m.DECE1014
+      WHEN 'DECE9909' THEN m.DECE9909
+      WHEN 'DECE9099' THEN m.DECE9099
+      WHEN 'DECE8290' THEN m.DECE8290
+      WHEN 'DECE7582' THEN m.DECE7582
+      WHEN 'DECE6875' THEN m.DECE6875
+    END as deces
+  FROM periodes p, POP_LOG_séries_historiques_COM_2021 m
+  WHERE m.CODGEO = '13117'
+) vitrolles,
+(
+  SELECT 
+    p.naiss as periode,
+    SUM(CASE p.pop_fin
+      WHEN 'P21_POP' THEN m.P21_POP
+      WHEN 'P15_POP' THEN m.P15_POP
+      WHEN 'P10_POP' THEN m.P10_POP
+      WHEN 'D99_POP' THEN m.D99_POP
+      WHEN 'D90_POP' THEN m.D90_POP
+      WHEN 'D82_POP' THEN m.D82_POP
+      WHEN 'D75_POP' THEN m.D75_POP
+      WHEN 'D68_POP' THEN m.D68_POP
+    END) as pop_fin,
+    SUM(CASE p.pop_deb
+      WHEN 'P21_POP' THEN m.P21_POP
+      WHEN 'P15_POP' THEN m.P15_POP
+      WHEN 'P10_POP' THEN m.P10_POP
+      WHEN 'D99_POP' THEN m.D99_POP
+      WHEN 'D90_POP' THEN m.D90_POP
+      WHEN 'D82_POP' THEN m.D82_POP
+      WHEN 'D75_POP' THEN m.D75_POP
+      WHEN 'D68_POP' THEN m.D68_POP
+    END) as pop_deb,
+    SUM(CASE p.naiss
+      WHEN 'NAIS1520' THEN m.NAIS1520
+      WHEN 'NAIS1014' THEN m.NAIS1014
+      WHEN 'NAIS9909' THEN m.NAIS9909
+      WHEN 'NAIS9099' THEN m.NAIS9099
+      WHEN 'NAIS8290' THEN m.NAIS8290
+      WHEN 'NAIS7582' THEN m.NAIS7582
+      WHEN 'NAIS6875' THEN m.NAIS6875
+    END) as naissances,
+    SUM(CASE p.deces
+      WHEN 'DECE1520' THEN m.DECE1520
+      WHEN 'DECE1014' THEN m.DECE1014
+      WHEN 'DECE9909' THEN m.DECE9909
+      WHEN 'DECE9099' THEN m.DECE9099
+      WHEN 'DECE8290' THEN m.DECE8290
+      WHEN 'DECE7582' THEN m.DECE7582
+      WHEN 'DECE6875' THEN m.DECE6875
+    END) as deces
+  FROM periodes p, POP_LOG_séries_historiques_COM_2021 m
+  WHERE m.CODGEO LIKE '13%' AND LENGTH(m.CODGEO) = 5
+  GROUP BY p.naiss, p.pop_fin, p.pop_deb, p.deces
+) bdr,
+(
+  SELECT 
+    p.naiss as periode,
+    SUM(CASE p.pop_fin
+      WHEN 'P21_POP' THEN m.P21_POP
+      WHEN 'P15_POP' THEN m.P15_POP
+      WHEN 'P10_POP' THEN m.P10_POP
+      WHEN 'D99_POP' THEN m.D99_POP
+      WHEN 'D90_POP' THEN m.D90_POP
+      WHEN 'D82_POP' THEN m.D82_POP
+      WHEN 'D75_POP' THEN m.D75_POP
+      WHEN 'D68_POP' THEN m.D68_POP
+    END) as pop_fin,
+    SUM(CASE p.pop_deb
+      WHEN 'P21_POP' THEN m.P21_POP
+      WHEN 'P15_POP' THEN m.P15_POP
+      WHEN 'P10_POP' THEN m.P10_POP
+      WHEN 'D99_POP' THEN m.D99_POP
+      WHEN 'D90_POP' THEN m.D90_POP
+      WHEN 'D82_POP' THEN m.D82_POP
+      WHEN 'D75_POP' THEN m.D75_POP
+      WHEN 'D68_POP' THEN m.D68_POP
+    END) as pop_deb,
+    SUM(CASE p.naiss
+      WHEN 'NAIS1520' THEN m.NAIS1520
+      WHEN 'NAIS1014' THEN m.NAIS1014
+      WHEN 'NAIS9909' THEN m.NAIS9909
+      WHEN 'NAIS9099' THEN m.NAIS9099
+      WHEN 'NAIS8290' THEN m.NAIS8290
+      WHEN 'NAIS7582' THEN m.NAIS7582
+      WHEN 'NAIS6875' THEN m.NAIS6875
+    END) as naissances,
+    SUM(CASE p.deces
+      WHEN 'DECE1520' THEN m.DECE1520
+      WHEN 'DECE1014' THEN m.DECE1014
+      WHEN 'DECE9909' THEN m.DECE9909
+      WHEN 'DECE9099' THEN m.DECE9099
+      WHEN 'DECE8290' THEN m.DECE8290
+      WHEN 'DECE7582' THEN m.DECE7582
+      WHEN 'DECE6875' THEN m.DECE6875
+    END) as deces
+  FROM periodes p, POP_LOG_séries_historiques_COM_2021 m
+  GROUP BY p.naiss, p.pop_fin, p.pop_deb, p.deces
+) france
+WHERE p.naiss = vitrolles.periode
+AND p.naiss = bdr.periode
+AND p.naiss = france.periode
+ORDER BY p.annee_debut ASC;

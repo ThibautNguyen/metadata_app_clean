@@ -1,0 +1,1644 @@
+Description des emplois salariés en 2016
+Bases Tous salariés 2021 - Fichiers détail
+
+
+
+## Source : 
+https://www.insee.fr/fr/statistiques/7651654
+
+
+
+## Tableau SQL : 
+tous_salaries_postes_det_2016
+
+
+
+## 4 premières lignes :
+TRBRUTT;A6;A17;A38;AGE;CONV_COLL;CPFD;DATDEB;DATFIN;DEPR;DEPT;DOMEMPL;DOMEMPL_EM;DUREE;ETP;FILT;NBHEUR;REGR;REGT;SEXE;TYP_EMPLOI;PCS;POND;TREFF;CS;AT;CONT_TRAV;AGE_TR;AT_TR;DATDEB_TR;DATFIN_TR;DUREE_TR;ETP_TR
+04;GI;GZ;GZ;20;1483;P;159;241;04;04;9;9;83;0.10;1;202;93;93;2;O;554E;12;00;55;0.23;CDD;23;020;06;09;03;010
+18;BE;C5;CC;58;0707;C;1;360;44;44;9;9;360;0.95;1;1820;52;52;1;O;628G;12;03;62;1;CDI;59;100;01;12;12;095
+16;BE;C5;CC;56;0707;C;1;360;44;44;9;9;360;0.95;1;1806;52;52;1;O;628G;12;03;62;1;CDI;59;100;01;12;12;095
+
+
+
+## Dictionnaire des variables : 
+COD_VAR;LIB_VAR;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+TRBRUTT;Rémunération brute, en tranches;00;Moins de 200 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;01;200 à 499 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;02;500 à 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;03;1 000 à 1 499 euro;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;04;1 500 à 1 999 euro;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;05;2 000 à 2 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;06;3 000 à 3 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;07;4 000 à 5 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;08;6 000 à 7 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;09;8 000 à 9 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;10;10 000 à 11 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;11;12 000 à 13 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;12;14 000 à 15 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;13;16 000 à 17 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;14;18 000 à 19 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;15;20 000 à 21 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;16;22 000 à 23 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;17;24 000 à 25 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;18;26 000 à 27 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;19;28 000 à 29 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;20;30 000 à 34 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;21;35 000 à 39 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;22;40 000 à 49 999 euros;CHAR;2
+TRBRUTT;Rémunération brute, en tranches;23;50 000 euros et plus;CHAR;2
+A6;Nomenclature agrégée A6;;Non renseigné;CHAR;2
+A6;Nomenclature agrégée A6;AZ;Agriculture, sylviculture et pêche;CHAR;2
+A6;Nomenclature agrégée A6;BE;Industrie manufacturière, industries extractives  et autres;CHAR;2
+A6;Nomenclature agrégée A6;FZ;Construction;CHAR;2
+A6;Nomenclature agrégée A6;GI;Commerce de gros et de détail, transports, hébergement et restauration;CHAR;2
+A6;Nomenclature agrégée A6;JU;Services divers;CHAR;2
+A6;Nomenclature agrégée A6;OQ;Administration publique, enseignement, santé humaine et action sociale;CHAR;2
+A17;Nomenclature agrégée A17;;Non renseigné;CHAR;2
+A17;Nomenclature agrégée A17;AZ;Agriculture, sylviculture et pêche;CHAR;2
+A17;Nomenclature agrégée A17;C1;Fabrication de denrées alimentaires, de boissons et  de produits à base de tabac;CHAR;2
+A17;Nomenclature agrégée A17;C2;Cokéfaction et raffinage;CHAR;2
+A17;Nomenclature agrégée A17;C3;Fabrication d'équipements électriques, électroniques, informatiques , fabrication de machines;CHAR;2
+A17;Nomenclature agrégée A17;C4;Fabrication de matériels de transport;CHAR;2
+A17;Nomenclature agrégée A17;C5;Fabrication d'autres produits industriels;CHAR;2
+A17;Nomenclature agrégée A17;DE;Industries extractives,  énergie, eau, gestion des déchets et dépollution;CHAR;2
+A17;Nomenclature agrégée A17;FZ;Construction;CHAR;2
+A17;Nomenclature agrégée A17;GZ;Commerce , réparation d'automobiles et de motocycles;CHAR;2
+A17;Nomenclature agrégée A17;HZ;Transports et entreposage;CHAR;2
+A17;Nomenclature agrégée A17;IZ;Hébergement et restauration;CHAR;2
+A17;Nomenclature agrégée A17;JZ;Information et communication;CHAR;2
+A17;Nomenclature agrégée A17;KZ;Activités financières et d'assurance;CHAR;2
+A17;Nomenclature agrégée A17;LZ;Activités immobilières;CHAR;2
+A17;Nomenclature agrégée A17;MN;Activités scientifiques et techniques , services administratifs et de soutien;CHAR;2
+A17;Nomenclature agrégée A17;OQ;Administration publique, enseignement, santé humaine et action sociale;CHAR;2
+A17;Nomenclature agrégée A17;RU;Autres activités de services;CHAR;2
+A38;Nomenclature agrégée A38;;Non renseigné;CHAR;2
+A38;Nomenclature agrégée A38;AZ;Agriculture, sylviculture et pêche;CHAR;2
+A38;Nomenclature agrégée A38;BZ;Industries extractives;CHAR;2
+A38;Nomenclature agrégée A38;CA;Fabrication de denrées alimentaires, de boissons et de produits à base de tabac;CHAR;2
+A38;Nomenclature agrégée A38;CB;Fabrication de textiles, industries de l'habillement, industrie du cuir et de la chaussure;CHAR;2
+A38;Nomenclature agrégée A38;CC;Travail du bois, industries du papier et imprimerie;CHAR;2
+A38;Nomenclature agrégée A38;CD;Cokéfaction et raffinage;CHAR;2
+A38;Nomenclature agrégée A38;CE;Industrie chimique;CHAR;2
+A38;Nomenclature agrégée A38;CF;Industrie pharmaceutique;CHAR;2
+A38;Nomenclature agrégée A38;CG;Fabrication de produits en caoutchouc et en plastique ainsi que d'autres produits minéraux non métalliques;CHAR;2
+A38;Nomenclature agrégée A38;CH;Métallurgie et fabrication de produits métalliques à l'exception des machines et des équipements;CHAR;2
+A38;Nomenclature agrégée A38;CI;Fabrication de produits informatiques, électroniques et optiques;CHAR;2
+A38;Nomenclature agrégée A38;CJ;Fabrication d'équipements électriques;CHAR;2
+A38;Nomenclature agrégée A38;CK;Fabrication de machines et équipements n.c.a.;CHAR;2
+A38;Nomenclature agrégée A38;CL;Fabrication de matériels de transport;CHAR;2
+A38;Nomenclature agrégée A38;CM;Autres industries manufacturières , réparation et installation de machines et d'équipements;CHAR;2
+A38;Nomenclature agrégée A38;DZ;Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné;CHAR;2
+A38;Nomenclature agrégée A38;EZ;Production et distribution d'eau , assainissement, gestion des déchets et dépollution;CHAR;2
+A38;Nomenclature agrégée A38;FZ;Construction;CHAR;2
+A38;Nomenclature agrégée A38;GZ;Commerce , réparation d'automobiles et de motocycles;CHAR;2
+A38;Nomenclature agrégée A38;HZ;Transports et entreposage;CHAR;2
+A38;Nomenclature agrégée A38;IZ;Hébergement et restauration;CHAR;2
+A38;Nomenclature agrégée A38;JA;Edition, audiovisuel et diffusion;CHAR;2
+A38;Nomenclature agrégée A38;JB;Télécommunications;CHAR;2
+A38;Nomenclature agrégée A38;JC;Activités informatiques et services d'information;CHAR;2
+A38;Nomenclature agrégée A38;KZ;Activités financières et d'assurance;CHAR;2
+A38;Nomenclature agrégée A38;LZ;Activités immobilières;CHAR;2
+A38;Nomenclature agrégée A38;MA;Activités juridiques, comptables, de gestion, d'architecture, d'ingénierie, de contrôle et d'analyses techniques;CHAR;2
+A38;Nomenclature agrégée A38;MB;Recherche-développement scientifique;CHAR;2
+A38;Nomenclature agrégée A38;MC;Autres activités spécialisées, scientifiques et techniques;CHAR;2
+A38;Nomenclature agrégée A38;NZ;Activités de services administratifs et de soutien;CHAR;2
+A38;Nomenclature agrégée A38;OZ;Administration publique;CHAR;2
+A38;Nomenclature agrégée A38;PZ;Enseignement;CHAR;2
+A38;Nomenclature agrégée A38;QA;Activités pour la santé humaine;CHAR;2
+A38;Nomenclature agrégée A38;QB;Hébergement médico-social et social et action sociale sans hébergement;CHAR;2
+A38;Nomenclature agrégée A38;RZ;Arts, spectacles et activités récréatives;CHAR;2
+A38;Nomenclature agrégée A38;SZ;Autres activités de services;CHAR;2
+A38;Nomenclature agrégée A38;TZ;Activités des ménages en tant qu'employeurs , activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre;CHAR;2
+AGE;Age du salarié;;;NUM;3
+CONV_COLL;Convention collective redressée par la Dares;0002;INDUSTRIES TEXTILES DE L AUBE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0003;NAVIGATION INTERIEURE DE MARCHANDISES OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0004;COMMERCE SEINE MARITIME HAVRE DETAIL NON ALIM.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0005;COMMERCE INDRE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0007;BATIMENT TP RHONE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0016;TRANSPORTS ROUTIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0018;INDUSTRIES TEXTILES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0024;COMMERCE NIEVRE NEVERS DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0025;PEIGNE INDUSTRIE ARIEGE HERS TOUYRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0029;HOSPITALISATION A BUT NON LUCRATIF FEHAP 1951;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0035;SOIERIE SUD EST ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0039;COURTIERS VALEURS MOBILIERES PARIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0043;COMMISSION COURTAGE IMPORTATION EXPORTATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0044;INDUSTRIES CHIMIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0045;CAOUTCHOUC;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0050;COMMERCE AVEYRON RODEZ;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0052;BOULANGERIE GARONNE HAUTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0054;METALLURGIE DE LA REGION PARISIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0057;TISSEURS RUBAN REGION STEPHANOISE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0071;BATIMENT FINISTERE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0073;ENSEIGNEMENT SECONDAIRE LAIQUE PROF;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0076;BATIMENT CHARENTE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0080;BATIMENT TP MOSELLE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0083;MENUISERIES CHARPENTES CONSTR IND PORTES PLANES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0086;PUBLICITE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0087;INDUSTRIES DE CARRIERES ET MATERIAUX OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0112;INDUSTRIE LAITIERE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0120;COMMERCE CHER BOURGES DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0131;TAPISSERIE CREUSE AUBUSSON;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0132;BATIMENT MARNE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0134;BATIMENT PYRENEES HAUTES OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0135;INDUSTRIES DE CARRIERES ET MATERIAUX  ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0137;BATIMENT TP INDRE ET LOIRE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0140;BATIMENT PUY DE DOME OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0142;BATIMENT SAONE HAUTE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0146;BATIMENT TP NIEVRE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0149;BATIMENT VIENNE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0152;BATIMENT YONNE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0157;BATIMENT TP VOSGES OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0158;TRAVAIL MECANIQUE DU BOIS SCIERIES NEGOCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0161;VERRERIE TRAVAILLEE MECANIQUEMENT AU CHALUMEAU;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0162;COMMERCE GROS ALIMENTAIRE SOMME;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0171;BATIMENT TP SEINE ET MARNE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0172;INDUSTRIE DU BOIS PIN MARITIME FORET DE GASCOGNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0176;INDUSTRIE PHARMACEUTIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0179;COOPERATIVES DE CONSOMMATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0184;IMPRIMERIES DE LABEUR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0189;HOTELLERIE RHONE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0190;BATIMENT ILLE ET VILAINE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0192;BATIMENT TP DOUBS OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0193;VINS SPIRITUEUX LOIRE ATLANTIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0194;BATIMENT CANTAL OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0200;EXPLOITATIONS FRIGORIFIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0201;RENSEIGNEMENTS COMMERCE AGENCES CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0207;INDUSTRIE DES CUIRS ET PEAUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0208;BATIMENT TERRITOIRE DE BELFORT OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0210;COMMERCE ILLE & VILAINE ST MALO DETAIL NON ALIM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0211;INDUSTRIES DE CARRIERES ET MATERIAUX  CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0214;PRESSE REGION PARISIENNE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0218;ORGANISMES DE SECURITE SOCIALE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0231;MAGASINS POPULAIRES SEINE MARNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0232;COMMERCE SOMME DETAIL ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0233;TAILLEUR LOIRE ATLANTIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0239;COMMERCE SARTHE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0240;GREFFES DE TRIBUNAUX DE COMMERCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0246;NOTARIAT ALSACE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0247;INDUSTRIES DE L HABILLEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0249;CHARBON COMMERCE REGION PARISIENNE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0252;BATIMENT TP AIN OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0270;COUTURE BOUCHES DU RHONE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0271;COMMERCE SOMME NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0275;TRANSPORTS AERIENS PERSONNEL AU SOL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0276;COMMERCE VIENNE HAUTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0279;BATIMENT TP ALLIER OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0280;CHARBON COMMERCE REGION PARISIENNE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0285;ENSEIGNEMENT PRIMAIRE LAIQUE ENSEIGNANTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0292;PLASTURGIE (EX TRANSF MATIERES PLASTIQUES);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0295;NOTARIAT HAUTE NORMANDIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0296;COMMERCE NORD ROUBAIX TOURCOING;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0303;COUTURE REGION PARISIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0306;PRESSE QUOTIDIENNE REGION PARISIENNE CADRES TECH;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0311;COUTURE LOIRE ATLANTIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0349;VOYAGES AGENCES GUIDES INTERPRETES REGION PARIS.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0350;INDUSTRIE DE LA MODE ET DE LA CHAPELLERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0351;BATIMENT TP VENDEE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0354;GANTERIE DE PEAU;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0356;NOTARIAT NORD PAS DE CALAIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0357;BATIMENT TP GARONNE HAUTE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0361;BATIMENT INDRE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0362;BATIMENT TP TARN ET GARONNE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0363;INDUSTRIE DE FABRICATION DES CIMENTS CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0365;BATIMENT GERS OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0367;COMMERCE NORD LILLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0372;BATIMENT TP ARIEGE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0376;SALAISON MORUE INDUSTRIE SEINE MARITIME FECAMP;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0377;COMMERCE BOUCHES DU RHONE DETAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0379;COMMERCES MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0386;MAGASINS GRANDS MEURTHE ET MOSELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0390;ENSEIGNEMENT SECONDAIRE HORS CONTRAT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0392;INDUSTRIES TEXTILES DU NORD ROUBAIX TOURCOING;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0394;PRESSE QUOTIDIENNE REGION PARISIENNE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0398;La convention collective nationale des ouvriers du négoce des matériaux de construction;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0400;HABILLEMENT COMMERCE VIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0405;ETS MEDICOSOCIAUX UNISSS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0406;COMMERCE CALVADOS MAYEN DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0409;BATIMENT TP LIMOUSIN OETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0412;GUIDES ACCOMPAGNATEURS DES AGENCES DE VOYAGES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0413;PERSONNES INADAPTEES 1966;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0416;BATIMENT TP COTES DU NORD OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0418;CHEMISERIE SUR MESURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0426;AVOCATS LOIRE ATLANTIQUE NANTES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0427;INDUSTRIES TEXTILES SEINE MARITIME REGION ELBEUF;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0432;MANUTENT. PORT BOUCHES DU RHONE MARSEILLE CAD.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0434;NOUVEAUTE COMMERCE LOIRE ATLANTIQUE NANTES EMPL.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0435;PRODUCTION CINEMATOGRAPHIQUE ACTEURS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0436;BATIMENT TP CHARENTE MARITIME OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0438;SOCIETES D ASSURANCES ECHELONS INTERMEDIAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0440;SUCRERIE REUNION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0454;REMONTÉES MÉCANIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0455;COMMERCE MEUSE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0456;BATIMENT MORBIHAN OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0468;SUCCURSALES DU COMMERCE DE DETAIL EN CHAUSSURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0478;SOCIETES FINANCIERES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0483;VETEMENT COMMERCE NORD VALENCIENNES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0486;COMMERCE SAONE ET LOIRE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0489;INDUSTRIES DU CARTONNAGE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0490;COMMERCE VOSGES DETAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0493;VIN CIDRE JUS FRUITS SIROP SPIRITUEUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0500;COMMERCES DE GROS BONNETERIE LINGERIE CHAUSSURES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0504;INDUSTRIES ALIMENTAIRES DIVERSES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0508;CHAUFFAGE EXPLOITATIONS REGION LYON;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0509;PRESSE QUOTIDIENNE REGION PARISIENNE CADRES ADM.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0513;MAGASINS POPULAIRES NORD VALENCIENNES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0524;BIERES EAUX COMMERCE GROS REGION PARISIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0528;BLANCHISSERIE NORD PAS CALAIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0530;COMMERCE BOUCHES DU RHONE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0533;NEGOCE DES MATERIAUX DE CONSTRUCTION EAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0538;MANUTENTION FERROVIAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0547;HOTELLERIE VAUCLUSE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0548;COMMERCE AUBE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0550;TISF TRAVAILLEUSES FAMILIALES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0560;HABILLEMENT COMMERCE VIENNE HAUTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0562;AIDE A DOMICILE EN MILIEU RURAL ADMR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0564;HOTELLERIE ISERE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0567;BIJOUTERIE JOAILLERIE ORFEVRERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0568;HOTELLERIE PYRENEES ATLANTIQUE BAYONNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0572;COUTURE RHONE ALPES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0573;COMMERCES DE GROS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0575;RESTAURANTS PUBLICS (CHAINES);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0585;BATIMENT TP AUBE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0595;FRUITS CONFITS VAUCLUSE APT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0598;PRESSE QUOTIDIENNE REGIONALE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0599;BATIMENT TP MEURTHE ET MOSELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0601;HOTELLERIE ALPES DE HAUTE PROVENCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0607;HOTELLERIE LOIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0614;INDUSTRIE DE LA SERIGRAPHIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0625;CINEMATOGRAPHIQUE SALLES DE CADRES AGENTS DE MAITRISE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0627;BATIMENT TP LA REUNION ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0635;NEGOCE EN FOURNITURES DENTAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0637;INDUSTRIES ET COMMERCE DE LA RECUPERATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0641;FER TUBE COMMERCE LOIRE ATLANTIQUE NANTES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0642;SOIERIE SUDEST OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0650;METALLURGIE CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0652;NEGOCE DES MATERIAUX DE CONSTRUCTION CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0653;SOCIETES D ASSURANCES PRODUCTEURS SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0654;THERMIQUES SUD OUEST OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0655;THERMIQUES SUD OUEST ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0663;BOULANGERIE ILLE ET VILAINE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0667;HOTELLERIE COTE D OR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0669;INDUSTRIES DE FABRICATION MECANIQUE DU VERRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0671;COMMERCE ISERE GRENOBLE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0673;FOURRURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0675;SUCCURSALES DE VENTE AU DETAIL D HABILLEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0688;BOULANGERIE INDUSTRIE REGION PARISIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0693;PRESSE QUOTIDIENNE DEPARTEMENTALE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0698;PRESSE QUOTIDIENNE REGIONALE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0700;PRODUCTION DES PAPIERS CARTONS CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0704;COMMERCE VAR TOULON DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0706;REPROGRAPHIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0707;TRANSFORMATION DES PAPIERS CARTONS CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0711;COMMERCE RHONE LYON DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0712;COMMERCE CHARENTE MARITIME DETAIL ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0713;ENSEIGNEMENT LOIRE ST ETIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0714;METALLURGIE MOSELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0715;INSTRUMENTS A ECRIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0716;DISTRIBUTION CINEMATOGRAPHIQUE OUVRIER EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0731;COMMERCE DE QUINCAILLERIE INTERREGIONALE CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0733;DETAILLANTS EN CHAUSSURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0735;COMMERCE DES MACHINES A COUDRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0749;BATIMENT TP MARTINIQUE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0751;GRAIN COMMERCE REGION PARIS. CADRES MAITRISE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0752;TRESSES RIG ELAS ST CHAMOND REGION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0759;POMPES FUNEBRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0769;BOUCHERIE RHONE REGION LYONNAISE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0771;BATIMENT TP LA REUNION CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0779;VOIES FERRES D INTERET LOCAL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0780;TAILLEURS SUR MESURE REGION PARISIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0781;PRESSE QUOTIDIENNE DEPARTEMENTALE CADRES ADM.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0782;COMMERCE OISE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0783;CENTRES D HEBERGEMENT ET DE READAPTATION SOCIALE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0784;COMMERCE DOUBS BESANÇON DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0787;CABINETS D EXPERTS COMPTABLES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0797;BATIMENT LOIR ET CHER OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0800;HOTELS ET RESTAURANTS DE CHAINES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0802;DISTRIBUTION DES PAPIERS CARTONS OETDAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0814;COMMERCE MEURTHE ET MOSELLE DETAIL NON ALIM.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0822;METALLURGIE SAVOIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0824;ANIMATEURS EDUCATION POPULAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0827;METALLURGIE ARDENNES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0828;METALLURGIE MANCHE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0829;METALLURGIE VAUCLUSE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0832;INDUSTRIE DE FABRICATION DES CIMENTS OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0833;INDUSTRIE DE FABRICATION DES CIMENTS ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0836;METALLURGIE SAVOIE HAUTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0843;BOULANGERIES PATISSERIES ARTISANALES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0845;BOULANGERIE INDRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0860;METALLURGIE FINISTERE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0863;METALLURGIE MORBIHAN ILLE ET VILAINE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0871;HOTELLERIE RHIN HAUT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0878;METALLURGIE RHONE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0881;COMMERCE HAUTE NORMANDIE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0887;METALLURGIE EURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0889;CINEMATOGRAPHIQUE SALLES DE EMPLOYES TECHNICIENS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0891;PATISSERIE CONFISERIE GIRONDE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0892;DISTRIBUTION CINEMATOGRAPHIQUE CADRES AM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0894;COMMERCE ILLE ET VILAINE RENNES DETAIL NON ALIM.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0897;SERVICES INTERENTREPRISES DE MEDECINE DU TRAVAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0898;METALLURGIE ALLIER;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0899;METALLURGIE MARNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0901;BOULANGERIE MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0911;METALLURGIE SEINE ET MARNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0913;HABILLEMENT COMMERCE GARD;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0914;METALLURGIE DE L AIN;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0915;EXPERTISES EVALUATIONS INDUSTRIELLES COMMERCIALES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0919;AUTOMOBILE COM REUNION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0920;METALLURGIE VIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0923;METALLURGIE CHARENTE MARITIME;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0925;DISTRIBUTION DES PAPIERS CARTONS CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0930;METALLURGIE SARTHE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0931;HOTELLERIE RHIN BAS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0934;METALLURGIE INDRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0937;METALLURGIE CREUSE HAUTE VIENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0941;COMMERCE VAUCLUSE NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0943;METALLURGIE CALVADOS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0948;METALLURGIE ORNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0951;THEATRES PRIVES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0953;CHARCUTERIE DE DETAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0959;LABORATOIRES D ANALYSES MEDICALES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0964;TRANSPORTS AERIENS REGIONAUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0965;METALLURGIE VAR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0968;HOTELLERIE PYRENEES ORIENTALES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0972;PARFUMERIE DE DETAIL ET ESTHETIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0976;HABILLEMENT COMMERCE SAVOIE HAUTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0979;METALLURGIE SEINE MARITIME HAVRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0984;METALLURGIE EURE ET LOIR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0985;BOUCHERIE RHIN HAUT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0992;BOUCHERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0993;LABORATOIRES DE PROTHESES DENTAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;0998;EXPLOITATION D EQUIPEMENTS THERMIQUES OETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1000;CABINETS D AVOCATS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1001;PERSONNES INADAPTEES MEDECINS SPECIALISES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1007;METALLURGIE PUY DE DOME THIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1014;SOCIETES ECONOMIE MIXTE D AUTOROUTES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1016;EDITION DE MUSIQUE CADRES AGENTS DE MAITRISE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1017;HOTELLERIE BOUCHES DU RHONE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1018;PRESSE QUOTIDIENNE DEPARTEMENTALE CADRES TECH.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1030;HOTELLERIE SEINE MARITIME;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1031;ASSOCIATIONS FAMILLES RURALES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1042;COMMERCE LOIRET DETAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1043;GARDIENS CONCIERGES EMPLOYES D IMMEUBLES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1044;HORLOGERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1049;BATIMENT TP ST PIERRE MIQUELON OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1050;COMMERCES ST PIERRE MIQUELON;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1057;CONSIGNATAIRE DE NAVIRE MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1059;METALLURGIE MIDI PYRENEES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1060;METALLURGIE MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1062;BATIMENT TP GUADELOUPE ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1075;HOTELLERIE MEURTHE ET MOSELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1077;NEGOCE ET INDUSTRIE DES PRODUITS DU SOL ET ENGRAIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1083;PRESSE QUOTIDIENNE DEPARTEMENTALE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1088;COMMERCE HERAULT MONTPELLIER DETAIL NON ALIM.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1090;SERVICES DE L AUTOMOBILE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1113;PIPES FUME CIGARETTES JURA ST CLAUDE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1128;HOTELLERIE SAONE HAUTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1147;CABINETS MEDICAUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1159;METALLURGIE NIEVRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1164;METALLURGIE SOMME VIMEU;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1170;INDUSTRIE DES TUILES ET BRIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1182;PORTS DE PLAISANCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1194;EDITION DE MUSIQUE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1195;HOTELLERIE PUY DE DOME;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1202;COMMERCE MAINE ET LOIRE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1203;COMMERCES SERVICES GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1225;COMMERCES LA REUNION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1232;HOTELLERIE GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1233;BOULANGERIE REUNION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1235;HOTELLERIE VOSGES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1237;CENTRES DE GESTION AGREES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1240;COMMERCE AIN DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1247;AUTOMOBILE COM MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1256;EXPLOITATION D EQUIPEMENTS THERMIQUES CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1257;PHARMACIE D OFFICINE REUNION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1258;AIDE A DOMICILE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1260;HOTELLERIE VAR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1261;ACTEURS DU LIEN SOCIAL ET FAMILIAL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1266;RESTAURATION DE COLLECTIVITES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1267;PATISSERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1274;METALLURGIE CORREZE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1276;COMMERCE FINISTERE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1278;PROTECTION DE L HABITAT PACT ARIM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1281;PRESSE HEBDO REGIONALE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1284;HOTELLERIE GIRONDE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1285;ENTREPRISES ARTISTIQUES ET CULTURELLES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1286;DETAILLANTS EN CONFISERIE CHOCOLATERIE BISCUITERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1297;COMMUNICATION PRODUCTION AUDIOVISUEL PUBLIC;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1307;EXPLOITATIONS CINEMATOGRAPHIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1311;RESTAURATION FERROVIAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1314;SUCCURSALE D ALIMENTATION GERANTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1315;METALLURGIE HAUTE MARNE MEUSE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1316;ORGANISMES DE TOURISME SOCIAL ET FAMILIAL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1320;HOTELLERIE NORD;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1323;COMMERCE MOSELLE DETAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1325;COOPERATIVES DE CONSOMMATION GERANTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1326;ENSEIGNEMENT PRIMAIRE ENSEIGNANTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1334;ENSEIGNEMENT PSYCHOLOGUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1341;AGRO ALIMENTAIRES INDUSTRIE REUNION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1343;COMMERCE MORBIHAN DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1351;PREVENTION ET SECURITE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1353;METALLURGIE DORDOGNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1365;METALLURGIE MEURTHE ET MOSELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1369;METALLURGIE LOIRE ATLANTIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1370;HOTELLERIE REGION PARISIENNE 3 ET 4 ETOILES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1375;METALLURGIE DOUBS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1383;COMMERCE DE QUINCAILLERIE INTERREGIONALE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1384;VINS DE CHAMPAGNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1385;COMMERCE ARDENNES DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1387;METALLURGIE FLANDRES DOUAISIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1388;INDUSTRIE DU PETROLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1391;MANUTENTION NETTOYAGE AEROPORTUAIRE REGION PARIS.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1394;COMMERCE TARN DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1396;INDUSTRIES DES PRODUITS ALIMENTAIRES ELABORES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1402;BATIMENT TP SAVOIE HAUTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1404;COMMERCE REPAR TRACTEURS MAT AGRICOLE BAT TP;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1405;EXPEDITION EXPORTATION DES FRUITS ET LEGUMES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1406;COMMERCE GIRONDE BORDEAUX DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1408;NEGOCE COMBUSTIBLES SOLIDES LIQUIDES GAZEUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1411;FABRICATION DE L AMEUBLEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1412;INSTAL REPAR AERAULIQUE FRIGORIFIQUE ET THERMIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1413;TRAVAIL TEMPORAIRE PERMANENTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1415;COMMERCE LOIRE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1420;INSTITUTIONS ASSURANCE CHOMAGE UNEDIC ASSEDIC;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1423;NAVIGATION DE PLAISANCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1424;TRANSPORTS PUBLICS URBAINS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1431;OPTIQUE LUNETTERIE DE DETAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1446;ENSEIGNEMENT TECHNIQUE HORS CONTRAT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1465;PEINTRES EN LETTRES ET PUBLICITE PEINTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1468;CREDIT MUTUEL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1470;METALLURGIE INDRE ET LOIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1472;METALLURGIE PAS DE CALAIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1480;JOURNALISTES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1483;COMMERCE DE DETAIL DE L HABILLEMENT TEXTILES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1486;BUREAUX D ETUDES TECHNIQUES SYNTEC;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1487;COMMERCE DE DETAIL DE L HORLOGERIE BIJOUTERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1492;PRODUCTION DES PAPIERS CARTONS OETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1495;TRANSFORMATION DES PAPIERS CARTONS OETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1499;MIROITERIE TRANSFORMATION NEGOCE DU VERRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1501;RESTAURATION RAPIDE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1504;POISSONNERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1505;COMMERCE DE DETAIL FRUITS LEGUMES EPICERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1512;PROMOTION CONSTRUCTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1513;PRODUCTION EAUX BOISSONS SANS ALCOOL BIERE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1516;ORGANISMES DE FORMATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1517;COMMERCES DE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1518;ANIMATION (EX SOCIO CULTURELLE);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1525;METALLURGIE NORD DUNKERQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1527;IMMOBILIER;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1534;INDUSTRIE ET COMMERCE EN GROS DES VIANDES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1536;DISTRIBUTEURS CONSEILS HORS DOMICILE DE BOISSONS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1539;DETAIL PAPETERIE BUREAU BUREAUTIQUE INFORMATIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1543;BOYAUDERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1545;ENSEIGNEMENT PRIMAIRE CATHOLIQUE ENSEIGNANTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1547;CREDIT MUTUEL ALSACE LORRAINE PERSONNEL NETTOYAGE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1555;FABRICATION COMMERCE PRODUITS PHARMACEUTIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1557;COMMERCE ARTICLES DE SPORTS EQUIPEMENTS LOISIRS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1558;INDUSTRIES CERAMIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1560;METALLURGIE ALPES MARITIMES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1561;CORDONNERIE MULTISERVICE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1563;PRESSE HEBDO REGIONALE CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1564;METALLURGIE SAONE ET LOIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1565;SOINS INFIRMIERS A DOMICILE GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1572;METALLURGIE CHARENTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1576;METALLURGIE CHER;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1577;METALLURGIE HERAULT AUDE PO;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1578;METALLURGIE LOIRE YSSINGEAUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1580;INDUSTRIE DE LA CHAUSSURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1586;INDUSTRIES DE LA SALAISON CHARCUTERIE EN GROS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1588;SOCIETES COOPERATIVES D HLM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1589;MAREYEURS EXPEDITEURS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1592;METALLURGIE NORD VALENCIENNOIS CAMBRESIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1596;BATIMENT OUVRIERS JUSQU A 10 SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1597;BATIMENT OUVRIERS PLUS DE 10 SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1604;METALLURGIE SEINE MARITIME ROUEN DIEPPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1605;DESINFECTION DERATISATION DESINSECTISATION 3D;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1606;BRICOLAGE VENTE AU DETAIL EN LIBRE SERVICE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1607;INDUSTRIES DES JEUX ET JOUETS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1611;COMMUNICATION ECRITE DIRECTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1612;TRAVAIL AERIEN ESSAIS RECEPTIONS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1614;COMMERCE DE QUINCAILLERIE PICARDIE ARDENNES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1618;CAMPING;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1619;CABINETS DENTAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1621;REPARTITION PHARMACEUTIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1624;COMMERCE DE GROS CONFISERIE CHOCOLATERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1626;METALLURGIE PYRENEES HAUTES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1627;METALLURGIE PUY DE DOME CLERMONT FERRAND;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1628;METALLURGIE DEUX SEVRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1631;HOTELLERIE DE PLEIN AIR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1634;METALLURGIE COTES D ARMOR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1635;METALLURGIE GIRONDE LANDES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1638;BATIMENT CHER OUVRIERS JUSQU A 10 SALARIES.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1642;BATIMENT CHER OUVRIERS PLUS DE 10 SALARIES.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1659;ROUISSAGE TEILLAGE DE LIN;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1668;BATIMENT ALSACE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1671;MAISONS D ETUDIANTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1672;SOCIETES D ASSURANCES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1679;SOCIETES D ASSURANCES INSPECTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1686;COMMERCE AUDIOVISUEL ELECTRONIQUE EQUIP MENAG;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1689;FABRIQUES D ARTICLES DE PAPETERIE ET DE BUREAU;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1700;SUCRERIE DISTILLERIE GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1702;TRAVAUX PUBLICS OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1710;AGENCES DE VOYAGES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1722;BATIMENT NORMANDIE HAUTE OUVRIERS <10 & >10 SAL.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1726;ECONOMISTES CONSTRUCTION METREURS VERIFICATEURS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1732;METALLURGIE YONNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1734;ARTISTES INTERPRETES EMISSIONS DE TELEVISION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1740;BATIMENT REGION PARIS. OUVRIERS < 10 & > 10 SAL.;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1747;BOULANGERIE ET PATISSERIE INDUSTRIELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1751;MANUTENTION PORT. MARSEILLE SERV. AUXIL. CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1758;BATIMENT TARN OUVRIERS MOINS DE 10;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1759;BATIMENT TARN OUVRIERS PLUS DE 10;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1760;JARDINERIES GRAINETERIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1761;COMMERCE DE GROS DES TISSUS TAPIS LINGE DE MAISON;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1763;MANUTENTION PORTUAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1779;BATIMENT PACA OUVRIERS JUSQU A 10 SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1780;BATIMENT PACA OUVRIERS PLUS DE 10 SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1785;BATIMENT BASSE NORMANDIE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1790;ESPACES DE LOISIRS D ATTRACTIONS ET CULTURELS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1794;INSTITUTIONS DE RETRAITE COMPLEMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1800;CERAMIQUE D ART;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1801;ASSISTANCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1809;METALLURGIE JURA;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1810;ENTREPRISES DE PROPRETE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1813;METALLURGIE NORD MAUBEUGE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1821;FABRICATION DU VERRE A LA MAIN;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1843;BATIMENT REGION PARISIENNE CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1850;AVOCATS SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1867;METALLURGIE DROME ARDECHE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1871;PRESSE INFORMATION SPECIALISEE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1874;PRESSE INFORMATION SPECIALISEE TAM, CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1875;CABINETS ET CLINIQUES VETERINAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1880;NEGOCE DE L AMEUBLEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1885;METALLURGIE COTE D OR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1886;BATIMENT LOIRE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1888;TRAVAUX PUBLICS LOIRE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1895;PRESSE QUOTIDIENNE REGIONALE CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1902;METALLURGIE MAINE ET LOIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1903;AGENCES DE PRESSE CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1909;ORGANISMES DE TOURISME A BUT NON LUCRATIF;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1911;La convention collective de travail du groupement national interprofessionnel des semences graines et plants;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1912;METALLURGIE RHIN HAUT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1921;HUISSIERS DE JUSTICE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1922;RADIODIFFUSION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1923;MANUTENTION PORTUAIRE GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1930;MEUNERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1938;INDUSTRIE TRANSFORMATION VOLAILLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1942;TEXTILES ARTIFICIELS ET SYNTHETIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1944;HELICOPTERES PERSONNEL NAVIGANT TECHNIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1945;VITRAIL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1947;NEGOCE DE BOIS D OEUVRE ET PRODUITS DERIVES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1951;CABINETS D EXPERTISE EN AUTOMOBILES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1960;METALLURGIE LOT ET GARONNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1961;STATIONS SERVICE GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1966;METALLURGIE LOIRET;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1967;METALLURGIE DU BAS RHIN;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1970;COMMERCE ALSACE DETAIL NON ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1972;PRESSE MAGAZINE ET INFORMATION NON CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1974;NAVIGATION INTERIEURE DE PASSAGERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1978;FLEURISTES ET ANIMAUX FAMILIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1979;HOTELS CAFES RESTAURANTS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1980;COMMISSIONNAIRES EN DOUANE MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1982;NEGOCES ET SERVICES MEDICO TECHNIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1987;INDUSTRIE DES PATES ALIMENTAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;1996;PHARMACIE D OFFICINE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2002;BLANCHISSERIE INTERREGIONALE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2003;METALLURGIE VOSGES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2014;AGENCES DE PRESSE EMPLOYES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2018;PRESSE MAGAZINE ET D INFORMATION CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2021;GOLFS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2022;ENSEIGNEMENT MUSICAL CHOREGRAPHIQUE RHONE ALPES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2032;BATIMENT ISERE OUVRIER JUSQU A 10 SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2033;BATIMENT ISERE OUVRIERS PLUS DE 10 SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2034;TRAVAUX PUBLICS OUVRIERS ISERE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2046;CENTRES DE LUTTE CONTRE LE CANCER;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2060;CAFETERIAS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2070;ORGANISMES DE DEVELOPPEMENT ECONOMIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2075;TRANSFORMATION COMMERCE OEUFS PRODUITS D OEUFS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2089;INDUSTRIE DES PANNEAUX A BASE DE BOIS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2098;PRESTATAIRES DE SERVICES SECTEUR TERTIAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2101;ENSEIGNEMENT PRIVE A DISTANCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2104;THERMALISME;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2108;BOULANGERIE PATISSERIE SEINE MARITIME;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2111;PARTICULIER EMPLOYEUR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2120;BANQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2121;EDITION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2126;METALLURGIE NIMES (GARD LOZERE);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2128;MUTUALITE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2132;REGIES DE QUARTIER;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2145;BATIMENT OUVRIERS CORSE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2147;ENTREPRISES DES SERVICES D EAU ET D ASSAINISSEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2148;TELECOMMUNICATIONS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2149;ACTIVITES DU DECHET;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2150;SOCIETE ANONYMES ET FONDATIONS D HLM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2152;PERSONNEL ENSEIGNANT FORMATEUR CFA CFC;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2156;GRANDS MAGASINS ET MAGASINS POPULAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2162;PROFESSIONS DE LA PHOTOGRAPHIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2174;NAVIGATION INTERIEURE DE MARCHANDISES SEDENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2190;MISSIONS LOCALES ET PAIO;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2194;BATIMENT OUVRIERS AQUITAINE JUSQU A 10;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2195;BATIMENT OUVRIERS AQUITAINE PLUS DE 10;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2198;VENTE A DISTANCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2205;NOTARIAT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2216;COMMERCE DETAIL ET GROS PREDOMINANCE ALIMENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2219;TAXIS PARISIENS SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2221;METALLURGIE ISERE HAUTES ALPES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2230;SURVEILLANCE DE LA QUALITE DE L AIR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2247;ENTREPRISES DE COURTAGE ASSURANCES REASSURANCES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2250;BOULANGERIE PATISSERIE DE LA GUYANE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2257;CASINOS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2264;HOSPITALISATION PRIVEE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2266;METALLURGIE MAYENNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2267;BATIMENT OUVRIERS LANGUEDOC ROUSSILLON;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2270;UNIVERSITES ET INSTITUTS CATHOLIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2272;ASSAINISSEMENT ET MAINTENANCE INDUSTRIELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2281;ENSEIGNEMENT PRIMAIRE CATHOLIQUE DIRECTEURS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2294;METALLURGIE AUBE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2304;MANUTENTION PORTUAIRE DUNKERQUE OAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2306;METIERS DU VERRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2310;ENTREPRENEURS DE SPECTACLES ET ARTISTES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2316;CENTRES DE GESTION AGREES ET HABILITES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2322;CHANSON VARIETES JAZZ MUSIQUES ACTUELLES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2328;BATIMENT TP GUADELOUPE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2329;AVOCATS AU CONSEIL D ETAT ET COUR DE CASSATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2332;ENTREPRISES D'ARCHITECTURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2335;AGENCES GENERALES D ASSURANCES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2336;FOYERS ET SERVICES POUR JEUNES TRAVAILLEURS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2344;SIDERURGIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2345;TRANSPORT SANITAIRE EN MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2354;BATIMENT OUVRIERS SAVOIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2357;ASSURANCES SOCIETES CADRES DE DIRECTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2360;AUTOMOBILE SERVICES GUYANE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2364;ENSEIGNEMENT TECHNIQUE SOUS CONTRAT SIMPLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2372;ENTREPRISES DE DISTRIBUTION DIRECTE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2389;BATIMENT TP LA REUNION OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2395;ASSISTANTS MATERNELS DU PARTICULIER EMPLOYEUR;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2397;AGENCES DE MANNEQUINS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2405;HOSPITALISATION GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2408;ETS D ENSEIGNEMENT PRIVE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2409;TRAVAUX PUBLICS CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2410;BISCOTTERIES BISCUITERIES CHOCOLATERIES (ALLIANCE 7);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2411;CHAINES THEMATIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2412;PRODUCTION DE FILMS D'ANIMATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2420;BATIMENT CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2480;MANUTENTION PORTUAIRE FORT DE F;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2489;METALLURGIE VENDEE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2494;COOPERATIVES MARITIMES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2511;SPORT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2519;PROPRIETAIRES EXPLOITANTS DE CHAPITEAUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2526;ORGANISATIONS PROFESSIONNELLES HABITAT SOCIAL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2528;INDUSTRIES DE LA MAROQUINERIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2535;CANNE A SUCRE CULTURE MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2542;METALLURGIE DE L AISNE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2543;GEOMETRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2564;VETERINAIRES PRATICIENS SALARIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2579;METALLURGIE LOIR ET CHER;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2582;TRAVAUX PUBLICS OUVRIERS SAVOIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2583;STES CONCESSIONNAIRES EXPLOITANTES D AUTOROUTES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2584;BATIMENT OUVRIERS CHAMPAGNE ARDENNES PLUS DE 10;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2585;BATIMENT OUVRIERS CHAMPAGNE ARDENNES JUSQU A 10;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2594;INSTALLATEURS EN REMONTEES MECANIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2596;COIFFURE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2603;SÉCURITÉ SOCIALE PRATICIENS CONSEILS (GÉNÉRAL);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2609;BATIMENT ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2614;TRAVAUX PUBLICS ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2615;METALLURGIE PYRENEES ATLANTIQUES SEIGNANX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2622;CREDIT MARITIME MUTUEL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2625;BATIMENT OUVRIERS PAYS DE LA LOIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2630;METALLURGIE BOUCHES DU RHONE ALPES HAUTE PROVENCE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2631;TELEDIFFUSION (ACCORDS CDD);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2636;ENSEIGNEMENT ECOLES SUPERIEURES INGENIEURS CADRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2642;PRODUCTION AUDIOVISUELLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2666;CONSEILS D'ARCHITECTURE D URBANISME D ENVIRONNEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2667;BATIMENT DROME ARDECHE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2683;PORTAGE DE PRESSE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2691;ENSEIGNEMENT PRIVE HORS CONTRAT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2697;STRUCTURES ASSOCIATIVES CYNEGETIQUES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2700;METALLURGIE OISE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2701;BANQUES GUYANE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2702;BANQUES MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2704;BANQUES GUADELOUPE ST MARTIN;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2706;ADMINISTRATEURS MANDATAIRES JUDICIAIRES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2707;BATIMENT REGION PARISIENNE ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2717;ENTREPRISES TECHNIQUES SERVICES CRÉATION ÉVÉNEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2728;SUCRERIES DISTILLERIES RAFFINERIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2754;CUISINE MAGASINS PRESTATAIRES DE SERVICES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2755;METALLURGIE BELFORT MONTBELIARD;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2770;EDITION PHONOGRAPHIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2785;ENCHERES PUBLIQUES ET COMMISSAIRES PRISEURS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2793;DIRECTION DES ORGANISMES DE SECURITE SOCIALE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2796;RÉGIME SOCIAL INDÉPENDANTS PERS DIRECTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2797;RÉGIME SOCIAL INDÉPENDANTS PRATICIENS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2798;RÉGIME SOCIAL INDÉPENDANTS EMPL ET CAD;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2847;POLE EMPLOI;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2870;BATIMENT TP GUYANE OUVRIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2891;INDUSTRIE DE ROQUEFORT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2931;ACTIVITES DE MARCHES FINANCIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2941;AIDE ACCOMPAGNEMENT SOINS ET SERVICES À DOMICILE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2964;PRODUITS PÉTROLIERS TRANSPORT PROXIMITÉ MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2972;NAVIGATION PERSONNEL SEDENTAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2978;AGENCES DE RECHERCHES PRIVEES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2980;METALLURGIE SOMME (HORS VIMEU);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;2992;METALLURGIE INDRE ET LOIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3013;LIBRAIRIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3016;ATELIERS CHANTIERS D'INSERTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3017;PORTS ET MANUTENTION CCN UNIFIÉE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3028;TRANSPORTS ROUTIERS GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3032;ESTHETIQUE COSMETIQUE PARFUMERIE ET ENSEIGNEMENT;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3043;ENTREPRISES DE PROPRETE ET SERVICES ASSOCIES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3053;METALLURGIE HAUTE-SAONE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3090;SPECTACLE VIVANT ENTREPRISES DU SECTEUR PRIVÉ;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3097;PRODUCTION CINEMATOGRAPHIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3105;REGIES DE QUARTIER;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3107;BATIMENT TP MARTINIQUE ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3109;INDUSTRIES ALIMENTAIRES DIVERSES 5 BRANCHES;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3123;AMBULANCES GUYANE (OUVRIERS EMPLOYÉS TECHNICIENS);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3127;SERVICES À LA PERSONNE (ENTREPRISES);CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3128;BTP INDUSTRIE ACTIVITÉS CONNEXES GUYANE - ETAM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3144;ETAM BATIMENT ET TRAVAUX PUBLICS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3151;INDUSTRIES DE LA FABRICATION DE LA CHAUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3160;ASSOCIATIONS DE GESTION ET DE COMPTABILITÉ;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3168;PROFESSIONS DE LA PHOTOGRAPHIE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3201;CADRES DES ÉDITEURS DE LA PRESSE MAGAZINE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3202;EMPLOYÉS DES ÉDITEURS DE LA PRESSE MAGAZINE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3203;STRUCTURES ASSOCIATIVES DE PÊCHE DE LOISIR ET DE PROTECTION DU MILIEU AQUATIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3205;PERSONNEL DES COOPÉRATIVES DE CONSOMMATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3206;PERSONNEL DES CABINETS MÉDICAUX DE MARTINIQUE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3207;TRANSPORTS SANITAIRES DE GUADELOUPE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3210;BANQUE POPULAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3211;SALARIÉS DES ÉTABLISSEMENTS PRIVÉS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3212;CADRES DES TRAVAUX PUBLICS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3213;COLLABORATEURS SALARIÉS DES ENTREPRISES D'ÉCONOMISTES DE LA CONSTRUCTION ET DES MÉTREURS-VÉRIFICATEURS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3216;NÉGOCE DES MATÉRIAUX DE CONSTRUCTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;3217;CONVENTION COLLECTIVE NATIONALE FERROVIAIRE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5506;CONVENTION D ENTREPRISE CREDIT AGRICOLE SA;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5507;FOOT BALL ADMINISTRATIFS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5520;TRANSPORTS MARITIMES OFFICIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5521;TRANSPORTS MARITIMES PERSONNEL NAVIGANT D EXECUTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5526;CHARTE DU FOOT BALL PROFESSIONNEL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5541;RUGBY PROFESSIONNEL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5542;BASKET BALL PROFESSIONNEL;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5554;REMORQUAGE MARITIME OFFICIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5555;REMORQUAGE MARITIME PERSONNEL NAVIGANT D EXECUTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5556;PASSAGES D EAU OFFICIERS;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5557;PASSAGES D EAU PERSONNEL NAVIGANT D EXECUTION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5558;ACCORD MULTISERVICE IMMOBILIER FACILITIES MANAGEM;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5561;PRODUCTION CINEMATOGRAPHIQUE TITRES EN NEGOCIATION;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5597;PROPRIÉTAIRES EXPLOITANTS DE CHAPITEAUX;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;5619;PÊCHE PROFESSIONNELLE MARITIME;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;7501;CREDIT AGRICOLE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;9999;SANS CONVENTION COLLECTIVE;CHAR;4
+CONV_COLL;Convention collective redressée par la Dares;;Non renseigné;CHAR;4
+CPFD;Condition d'emploi;;Non renseigné;CHAR;1
+CPFD;Condition d'emploi;C;Temps complet;CHAR;1
+CPFD;Condition d'emploi;D;Travailleurs à domicile;CHAR;1
+CPFD;Condition d'emploi;I;Intermittents;CHAR;1
+CPFD;Condition d'emploi;J;Forfait jour;CHAR;1
+CPFD;Condition d'emploi;K;Mixte dominante temps complet;CHAR;1
+CPFD;Condition d'emploi;N;Non concerné;CHAR;1
+CPFD;Condition d'emploi;P;Temps partiel;CHAR;1
+CPFD;Condition d'emploi;Y;Mixte dominante temps non complet;CHAR;1
+DATDEB;Date de début;;;NUM;3
+DATFIN;Date de fin;;;NUM;3
+DEPR;Département de résidence;;Non renseigné;CHAR;3
+DEPR;Département de résidence;01;Ain;CHAR;3
+DEPR;Département de résidence;02;Aisne;CHAR;3
+DEPR;Département de résidence;03;Allier;CHAR;3
+DEPR;Département de résidence;04;Alpes-de-Haute-Provence;CHAR;3
+DEPR;Département de résidence;05;Hautes-Alpes;CHAR;3
+DEPR;Département de résidence;06;Alpes-Maritimes;CHAR;3
+DEPR;Département de résidence;07;Ardèche;CHAR;3
+DEPR;Département de résidence;08;Ardennes;CHAR;3
+DEPR;Département de résidence;09;Ariège;CHAR;3
+DEPR;Département de résidence;10;Aube;CHAR;3
+DEPR;Département de résidence;11;Aude;CHAR;3
+DEPR;Département de résidence;12;Aveyron;CHAR;3
+DEPR;Département de résidence;13;Bouches-du-Rhône;CHAR;3
+DEPR;Département de résidence;14;Calvados;CHAR;3
+DEPR;Département de résidence;15;Cantal;CHAR;3
+DEPR;Département de résidence;16;Charente;CHAR;3
+DEPR;Département de résidence;17;Charente-Maritime;CHAR;3
+DEPR;Département de résidence;18;Cher;CHAR;3
+DEPR;Département de résidence;19;Corrèze;CHAR;3
+DEPR;Département de résidence;21;Côte-d'Or;CHAR;3
+DEPR;Département de résidence;22;Côtes-d'Armor;CHAR;3
+DEPR;Département de résidence;23;Creuse;CHAR;3
+DEPR;Département de résidence;24;Dordogne;CHAR;3
+DEPR;Département de résidence;25;Doubs;CHAR;3
+DEPR;Département de résidence;26;Drôme;CHAR;3
+DEPR;Département de résidence;27;Eure;CHAR;3
+DEPR;Département de résidence;28;Eure-et-Loir;CHAR;3
+DEPR;Département de résidence;29;Finistère;CHAR;3
+DEPR;Département de résidence;2A;Corse-du-Sud;CHAR;3
+DEPR;Département de résidence;2B;Haute-Corse;CHAR;3
+DEPR;Département de résidence;30;Gard;CHAR;3
+DEPR;Département de résidence;31;Haute-Garonne;CHAR;3
+DEPR;Département de résidence;32;Gers;CHAR;3
+DEPR;Département de résidence;33;Gironde;CHAR;3
+DEPR;Département de résidence;34;Hérault;CHAR;3
+DEPR;Département de résidence;35;Ille-et-Vilaine;CHAR;3
+DEPR;Département de résidence;36;Indre;CHAR;3
+DEPR;Département de résidence;37;Indre-et-Loire;CHAR;3
+DEPR;Département de résidence;38;Isère;CHAR;3
+DEPR;Département de résidence;39;Jura;CHAR;3
+DEPR;Département de résidence;40;Landes;CHAR;3
+DEPR;Département de résidence;41;Loir-et-Cher;CHAR;3
+DEPR;Département de résidence;42;Loire;CHAR;3
+DEPR;Département de résidence;43;Haute-Loire;CHAR;3
+DEPR;Département de résidence;44;Loire-Atlantique;CHAR;3
+DEPR;Département de résidence;45;Loiret;CHAR;3
+DEPR;Département de résidence;46;Lot;CHAR;3
+DEPR;Département de résidence;47;Lot-et-Garonne;CHAR;3
+DEPR;Département de résidence;48;Lozère;CHAR;3
+DEPR;Département de résidence;49;Maine-et-Loire;CHAR;3
+DEPR;Département de résidence;50;Manche;CHAR;3
+DEPR;Département de résidence;51;Marne;CHAR;3
+DEPR;Département de résidence;52;Haute-Marne;CHAR;3
+DEPR;Département de résidence;53;Mayenne;CHAR;3
+DEPR;Département de résidence;54;Meurthe-et-Moselle;CHAR;3
+DEPR;Département de résidence;55;Meuse;CHAR;3
+DEPR;Département de résidence;56;Morbihan;CHAR;3
+DEPR;Département de résidence;57;Moselle;CHAR;3
+DEPR;Département de résidence;58;Nièvre;CHAR;3
+DEPR;Département de résidence;59;Nord;CHAR;3
+DEPR;Département de résidence;60;Oise;CHAR;3
+DEPR;Département de résidence;61;Orne;CHAR;3
+DEPR;Département de résidence;62;Pas-de-Calais;CHAR;3
+DEPR;Département de résidence;63;Puy-de-Dôme;CHAR;3
+DEPR;Département de résidence;64;Pyrénées-Atlantiques;CHAR;3
+DEPR;Département de résidence;65;Hautes-Pyrénées;CHAR;3
+DEPR;Département de résidence;66;Pyrénées-Orientales;CHAR;3
+DEPR;Département de résidence;67;Bas-Rhin;CHAR;3
+DEPR;Département de résidence;68;Haut-Rhin;CHAR;3
+DEPR;Département de résidence;69;Rhône;CHAR;3
+DEPR;Département de résidence;70;Haute-Saône;CHAR;3
+DEPR;Département de résidence;71;Saône-et-Loire;CHAR;3
+DEPR;Département de résidence;72;Sarthe;CHAR;3
+DEPR;Département de résidence;73;Savoie;CHAR;3
+DEPR;Département de résidence;74;Haute-Savoie;CHAR;3
+DEPR;Département de résidence;75;Paris;CHAR;3
+DEPR;Département de résidence;76;Seine-Maritime;CHAR;3
+DEPR;Département de résidence;77;Seine-et-Marne;CHAR;3
+DEPR;Département de résidence;78;Yvelines;CHAR;3
+DEPR;Département de résidence;79;Deux-Sèvres;CHAR;3
+DEPR;Département de résidence;80;Somme;CHAR;3
+DEPR;Département de résidence;81;Tarn;CHAR;3
+DEPR;Département de résidence;82;Tarn-et-Garonne;CHAR;3
+DEPR;Département de résidence;83;Var;CHAR;3
+DEPR;Département de résidence;84;Vaucluse;CHAR;3
+DEPR;Département de résidence;85;Vendée;CHAR;3
+DEPR;Département de résidence;86;Vienne;CHAR;3
+DEPR;Département de résidence;87;Haute-Vienne;CHAR;3
+DEPR;Département de résidence;88;Vosges;CHAR;3
+DEPR;Département de résidence;89;Yonne;CHAR;3
+DEPR;Département de résidence;90;Territoire de Belfort;CHAR;3
+DEPR;Département de résidence;91;Essonne;CHAR;3
+DEPR;Département de résidence;92;Hauts-de-Seine;CHAR;3
+DEPR;Département de résidence;93;Seine-Saint-Denis;CHAR;3
+DEPR;Département de résidence;94;Val-de-Marne;CHAR;3
+DEPR;Département de résidence;95;Val-d'Oise;CHAR;3
+DEPR;Département de résidence;971;Guadeloupe;CHAR;3
+DEPR;Département de résidence;972;Martinique;CHAR;3
+DEPR;Département de résidence;973;Guyane;CHAR;3
+DEPR;Département de résidence;974;La Réunion;CHAR;3
+DEPT;Département d'implantation de l'établissement;01;Ain;CHAR;3
+DEPT;Département d'implantation de l'établissement;02;Aisne;CHAR;3
+DEPT;Département d'implantation de l'établissement;03;Allier;CHAR;3
+DEPT;Département d'implantation de l'établissement;04;Alpes-de-Haute-Provence;CHAR;3
+DEPT;Département d'implantation de l'établissement;05;Hautes-Alpes;CHAR;3
+DEPT;Département d'implantation de l'établissement;06;Alpes-Maritimes;CHAR;3
+DEPT;Département d'implantation de l'établissement;07;Ardèche;CHAR;3
+DEPT;Département d'implantation de l'établissement;08;Ardennes;CHAR;3
+DEPT;Département d'implantation de l'établissement;09;Ariège;CHAR;3
+DEPT;Département d'implantation de l'établissement;10;Aube;CHAR;3
+DEPT;Département d'implantation de l'établissement;11;Aude;CHAR;3
+DEPT;Département d'implantation de l'établissement;12;Aveyron;CHAR;3
+DEPT;Département d'implantation de l'établissement;13;Bouches-du-Rhône;CHAR;3
+DEPT;Département d'implantation de l'établissement;14;Calvados;CHAR;3
+DEPT;Département d'implantation de l'établissement;15;Cantal;CHAR;3
+DEPT;Département d'implantation de l'établissement;16;Charente;CHAR;3
+DEPT;Département d'implantation de l'établissement;17;Charente-Maritime;CHAR;3
+DEPT;Département d'implantation de l'établissement;18;Cher;CHAR;3
+DEPT;Département d'implantation de l'établissement;19;Corrèze;CHAR;3
+DEPT;Département d'implantation de l'établissement;21;Côte-d'Or;CHAR;3
+DEPT;Département d'implantation de l'établissement;22;Côtes-d'Armor;CHAR;3
+DEPT;Département d'implantation de l'établissement;23;Creuse;CHAR;3
+DEPT;Département d'implantation de l'établissement;24;Dordogne;CHAR;3
+DEPT;Département d'implantation de l'établissement;25;Doubs;CHAR;3
+DEPT;Département d'implantation de l'établissement;26;Drôme;CHAR;3
+DEPT;Département d'implantation de l'établissement;27;Eure;CHAR;3
+DEPT;Département d'implantation de l'établissement;28;Eure-et-Loir;CHAR;3
+DEPT;Département d'implantation de l'établissement;29;Finistère;CHAR;3
+DEPT;Département d'implantation de l'établissement;2A;Corse-du-Sud;CHAR;3
+DEPT;Département d'implantation de l'établissement;2B;Haute-Corse;CHAR;3
+DEPT;Département d'implantation de l'établissement;30;Gard;CHAR;3
+DEPT;Département d'implantation de l'établissement;31;Haute-Garonne;CHAR;3
+DEPT;Département d'implantation de l'établissement;32;Gers;CHAR;3
+DEPT;Département d'implantation de l'établissement;33;Gironde;CHAR;3
+DEPT;Département d'implantation de l'établissement;34;Hérault;CHAR;3
+DEPT;Département d'implantation de l'établissement;35;Ille-et-Vilaine;CHAR;3
+DEPT;Département d'implantation de l'établissement;36;Indre;CHAR;3
+DEPT;Département d'implantation de l'établissement;37;Indre-et-Loire;CHAR;3
+DEPT;Département d'implantation de l'établissement;38;Isère;CHAR;3
+DEPT;Département d'implantation de l'établissement;39;Jura;CHAR;3
+DEPT;Département d'implantation de l'établissement;40;Landes;CHAR;3
+DEPT;Département d'implantation de l'établissement;41;Loir-et-Cher;CHAR;3
+DEPT;Département d'implantation de l'établissement;42;Loire;CHAR;3
+DEPT;Département d'implantation de l'établissement;43;Haute-Loire;CHAR;3
+DEPT;Département d'implantation de l'établissement;44;Loire-Atlantique;CHAR;3
+DEPT;Département d'implantation de l'établissement;45;Loiret;CHAR;3
+DEPT;Département d'implantation de l'établissement;46;Lot;CHAR;3
+DEPT;Département d'implantation de l'établissement;47;Lot-et-Garonne;CHAR;3
+DEPT;Département d'implantation de l'établissement;48;Lozère;CHAR;3
+DEPT;Département d'implantation de l'établissement;49;Maine-et-Loire;CHAR;3
+DEPT;Département d'implantation de l'établissement;50;Manche;CHAR;3
+DEPT;Département d'implantation de l'établissement;51;Marne;CHAR;3
+DEPT;Département d'implantation de l'établissement;52;Haute-Marne;CHAR;3
+DEPT;Département d'implantation de l'établissement;53;Mayenne;CHAR;3
+DEPT;Département d'implantation de l'établissement;54;Meurthe-et-Moselle;CHAR;3
+DEPT;Département d'implantation de l'établissement;55;Meuse;CHAR;3
+DEPT;Département d'implantation de l'établissement;56;Morbihan;CHAR;3
+DEPT;Département d'implantation de l'établissement;57;Moselle;CHAR;3
+DEPT;Département d'implantation de l'établissement;58;Nièvre;CHAR;3
+DEPT;Département d'implantation de l'établissement;59;Nord;CHAR;3
+DEPT;Département d'implantation de l'établissement;60;Oise;CHAR;3
+DEPT;Département d'implantation de l'établissement;61;Orne;CHAR;3
+DEPT;Département d'implantation de l'établissement;62;Pas-de-Calais;CHAR;3
+DEPT;Département d'implantation de l'établissement;63;Puy-de-Dôme;CHAR;3
+DEPT;Département d'implantation de l'établissement;64;Pyrénées-Atlantiques;CHAR;3
+DEPT;Département d'implantation de l'établissement;65;Hautes-Pyrénées;CHAR;3
+DEPT;Département d'implantation de l'établissement;66;Pyrénées-Orientales;CHAR;3
+DEPT;Département d'implantation de l'établissement;67;Bas-Rhin;CHAR;3
+DEPT;Département d'implantation de l'établissement;68;Haut-Rhin;CHAR;3
+DEPT;Département d'implantation de l'établissement;69;Rhône;CHAR;3
+DEPT;Département d'implantation de l'établissement;70;Haute-Saône;CHAR;3
+DEPT;Département d'implantation de l'établissement;71;Saône-et-Loire;CHAR;3
+DEPT;Département d'implantation de l'établissement;72;Sarthe;CHAR;3
+DEPT;Département d'implantation de l'établissement;73;Savoie;CHAR;3
+DEPT;Département d'implantation de l'établissement;74;Haute-Savoie;CHAR;3
+DEPT;Département d'implantation de l'établissement;75;Paris;CHAR;3
+DEPT;Département d'implantation de l'établissement;76;Seine-Maritime;CHAR;3
+DEPT;Département d'implantation de l'établissement;77;Seine-et-Marne;CHAR;3
+DEPT;Département d'implantation de l'établissement;78;Yvelines;CHAR;3
+DEPT;Département d'implantation de l'établissement;79;Deux-Sèvres;CHAR;3
+DEPT;Département d'implantation de l'établissement;80;Somme;CHAR;3
+DEPT;Département d'implantation de l'établissement;81;Tarn;CHAR;3
+DEPT;Département d'implantation de l'établissement;82;Tarn-et-Garonne;CHAR;3
+DEPT;Département d'implantation de l'établissement;83;Var;CHAR;3
+DEPT;Département d'implantation de l'établissement;84;Vaucluse;CHAR;3
+DEPT;Département d'implantation de l'établissement;85;Vendée;CHAR;3
+DEPT;Département d'implantation de l'établissement;86;Vienne;CHAR;3
+DEPT;Département d'implantation de l'établissement;87;Haute-Vienne;CHAR;3
+DEPT;Département d'implantation de l'établissement;88;Vosges;CHAR;3
+DEPT;Département d'implantation de l'établissement;89;Yonne;CHAR;3
+DEPT;Département d'implantation de l'établissement;90;Territoire de Belfort;CHAR;3
+DEPT;Département d'implantation de l'établissement;91;Essonne;CHAR;3
+DEPT;Département d'implantation de l'établissement;92;Hauts-de-Seine;CHAR;3
+DEPT;Département d'implantation de l'établissement;93;Seine-Saint-Denis;CHAR;3
+DEPT;Département d'implantation de l'établissement;94;Val-de-Marne;CHAR;3
+DEPT;Département d'implantation de l'établissement;95;Val-d'Oise;CHAR;3
+DEPT;Département d'implantation de l'établissement;971;Guadeloupe;CHAR;3
+DEPT;Département d'implantation de l'établissement;972;Martinique;CHAR;3
+DEPT;Département d'implantation de l'établissement;973;Guyane;CHAR;3
+DEPT;Département d'implantation de l'établissement;974;La Réunion;CHAR;3
+DEPT;Département d'implantation de l'établissement;99;Non renseigné;CHAR;3
+DOMEMPL;Domaine d'emploi du lieu de travail;1;Fonction Publique d?État;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;2;Fonction Publique Territoriale;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;3;Fonction Publique Hospitalière;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;4;Autres organismes publics administratifs;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;5;Personnes morales de droit public soumises au droit commercial;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;6;Entreprises individuelles;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;7;Données marquées comme issues de PE Particuliers Employeurs;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;8;Organismes privés spécialisés et groupements de droit privé;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;9;Autres sociétés privées;CHAR;1
+DOMEMPL;Domaine d'emploi du lieu de travail;;Non renseigné;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;1;Fonction Publique d?État;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;2;Fonction Publique Territoriale;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;3;Fonction Publique Hospitalière;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;4;Autres organismes publics administratifs;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;5;Personnes morales de droit public soumises au droit commercial;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;6;Entreprises individuelles;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;7;Données marquées comme issues de PE Particuliers Employeurs;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;8;Organismes privés spécialisés et groupements de droit privé;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;9;Autres sociétés privées;CHAR;1
+DOMEMPL_EM;Domaine d'emploi de l'employeur;;Non renseigné;CHAR;1
+DUREE;Durée (nombre de jours);;;NUM;3
+ETP;Nombre d'équivalent temps-plein;;;NUM;3.2
+FILT;Type de poste;1;poste non annexe de la validité N;CHAR;1
+FILT;Type de poste;2;poste annexe de la validité N;CHAR;1
+NBHEUR;Nombre d'heures salariées;;;NUM;4
+REGR;Région de résidence;01;Guadeloupe;CHAR;2
+REGR;Région de résidence;02;Martinique;CHAR;2
+REGR;Région de résidence;03;Guyane;CHAR;2
+REGR;Région de résidence;04;La Réunion;CHAR;2
+REGR;Région de résidence;11;Île-de-France;CHAR;2
+REGR;Région de résidence;24;Centre-Val de Loire;CHAR;2
+REGR;Région de résidence;27;Bourgogne-Franche-Comté;CHAR;2
+REGR;Région de résidence;28;Normandie;CHAR;2
+REGR;Région de résidence;32;Nord-Pas-de-Calais-Picardie;CHAR;2
+REGR;Région de résidence;44;Alsace-Champagne-Ardenne-Lorraine;CHAR;2
+REGR;Région de résidence;52;Pays de la Loire;CHAR;2
+REGR;Région de résidence;53;Bretagne;CHAR;2
+REGR;Région de résidence;75;Aquitaine-Limousin-Poitou-Charentes;CHAR;2
+REGR;Région de résidence;76;Languedoc-Roussillon-Midi-Pyrénées;CHAR;2
+REGR;Région de résidence;84;Auvergne-Rhône-Alpes;CHAR;2
+REGR;Région de résidence;93;Provence-Alpes-Côte d'Azur;CHAR;2
+REGR;Région de résidence;94;Corse;CHAR;2
+REGR;Région de résidence;;Non renseigné;CHAR;2
+REGT;Région d'implantation de l'établissement;01;Guadeloupe;CHAR;2
+REGT;Région d'implantation de l'établissement;02;Martinique;CHAR;2
+REGT;Région d'implantation de l'établissement;03;Guyane;CHAR;2
+REGT;Région d'implantation de l'établissement;04;La Réunion;CHAR;2
+REGT;Région d'implantation de l'établissement;11;Île-de-France;CHAR;2
+REGT;Région d'implantation de l'établissement;24;Centre-Val de Loire;CHAR;2
+REGT;Région d'implantation de l'établissement;27;Bourgogne-Franche-Comté;CHAR;2
+REGT;Région d'implantation de l'établissement;28;Normandie;CHAR;2
+REGT;Région d'implantation de l'établissement;32;Nord-Pas-de-Calais-Picardie;CHAR;2
+REGT;Région d'implantation de l'établissement;44;Alsace-Champagne-Ardenne-Lorraine;CHAR;2
+REGT;Région d'implantation de l'établissement;52;Pays de la Loire;CHAR;2
+REGT;Région d'implantation de l'établissement;53;Bretagne;CHAR;2
+REGT;Région d'implantation de l'établissement;75;Aquitaine-Limousin-Poitou-Charentes;CHAR;2
+REGT;Région d'implantation de l'établissement;76;Languedoc-Roussillon-Midi-Pyrénées;CHAR;2
+REGT;Région d'implantation de l'établissement;84;Auvergne-Rhône-Alpes;CHAR;2
+REGT;Région d'implantation de l'établissement;93;Provence-Alpes-Côte d'Azur;CHAR;2
+REGT;Région d'implantation de l'établissement;94;Corse;CHAR;2
+REGT;Région d'implantation de l'établissement;99;Non renseigné;CHAR;2
+SEXE;Sexe;1;Homme;CHAR;1
+SEXE;Sexe;2;Femme;CHAR;1
+TYP_EMPLOI;Type d'emploi;A;apprenti;CHAR;1
+TYP_EMPLOI;Type d'emploi;O;emploi ordinaire;CHAR;1
+TYP_EMPLOI;Type d'emploi;X;autre (emploi aidé, stagiaire, indemnité de chômage);CHAR;1
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);;Non renseigné;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);100X;Agriculteurs et éleveurs, salariés de leur exploitation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);210X;Artisans salariés de leur entreprise;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);220X;Commerçants et assimilés, salariés de leur entreprise;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);231A;Chefs de grande entreprise de 500 salariés et plus;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);232A;Chefs de moyenne entreprise, de 50 à 499 salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);233A;Chefs d'entreprise du bâtiment et des travaux publics, de 10 à 49 salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);233B;Chefs d'entreprise de l'industrie ou des transports, de 10 à 49 salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);233C;Chefs d'entreprise commerciale, de 10 à 49 salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);233D;Chefs d'entreprise de services, de 10 à 49 salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);311C;Chirurgiens dentistes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);311D;Psychologues, psychanalystes, psychothérapeutes (non médecins);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);311E;Vétérinaires;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);312A;Avocats;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);331A;Personnels de direction de la fonction publique (Etat, collectivités locales, hôpitaux);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);332A;Ingénieurs de l'Etat (y.c. ingénieurs militaires) et assimilés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);332B;Ingénieurs des collectivités locales et des hôpitaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);333A;Magistrats;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);333B;Inspecteurs et autres personnels de catégorie A des Impôts, du Trésor et des Douanes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);333C;Cadres de la Poste;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);333D;Cadres administratifs de France Télécom (statut public);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);333E;Autres personnels administratifs de catégorie A de l'Etat (hors Enseignement, Patrimoine, Impôts, Trésor, Douanes);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);333F;Personnels administratifs de catégorie A des collectivités locales et hôpitaux publics (hors Enseignement, Patrimoine);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);334A;Officiers des Armées et de la Gendarmerie (sauf officiers généraux);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);335A;Personnes exerçant un mandat politique ou syndical;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);341A;Professeurs agrégés et certifiés de l'enseignement secondaire;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);341B;Chefs d'établissement de l'enseignement secondaire et inspecteurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);342B;Professeurs et maîtres de conférences;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);342C;Professeurs agrégés et certifiés en fonction dans l'enseignement supérieur;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);342D;Personnel enseignant temporaire de l'enseignement supérieur;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);342F;Directeurs et chargés de recherche de la recherche publique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);342G;Ingénieurs d'étude et de recherche de la recherche publique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);342H;Allocataires de la recherche publique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);343A;Psychologues spécialistes de l'orientation scolaire et professionnelle;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);344A;Médecins hospitaliers sans activité libérale;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);344B;Médecins salariés non hospitaliers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);344C;Internes en médecine, odontologie et pharmacie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);344D;Pharmaciens salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);351A;Bibliothécaires, archivistes, conservateurs et autres cadres du patrimoine;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);352A;Journalistes (y c. rédacteurs en chef);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);352B;Auteurs littéraires, scénaristes, dialoguistes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);353A;Directeurs de journaux, administrateurs de presse, directeurs d'éditions (littéraire, musicale, audiovisuelle et multimédia);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);353B;Directeurs, responsables de programmation et de production de l'audiovisuel et des spectacles;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);353C;Cadres artistiques et technico-artistiques de la réalisation de l'audiovisuel et des spectacles;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);354A;Artistes plasticiens;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);354B;Artistes de la musique et du chant;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);354C;Artistes dramatiques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);354E;Artistes de la danse;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);354F;Artistes du cirque et des spectacles divers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);354G;Professeurs d'art (hors établissements scolaires);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);371A;Cadres d'état-major administratifs, financiers, commerciaux des grandes entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);372A;Cadres chargés d'études économiques, financières, commerciales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);372B;Cadres de l'organisation ou du contrôle des services administratifs et financiers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);372C;Cadres spécialistes des ressources humaines et du recrutement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);372D;Cadres spécialistes de la formation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);372E;Juristes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);372F;Cadres de la documentation, de l'archivage (hors fonction publique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);373A;Cadres des services financiers ou comptables des grandes entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);373B;Cadres des autres services administratifs des grandes entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);373C;Cadres des services financiers ou comptables des petites et moyennes entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);373D;Cadres des autres services administratifs des petites et moyennes entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);374A;Cadres de l'exploitation des magasins de vente du commerce de détail;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);374B;Chefs de produits, acheteurs du commerce et autres cadres de la mercatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);374C;Cadres commerciaux des grandes entreprises (hors commerce de détail);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);374D;Cadres commerciaux des petites et moyennes entreprises (hors commerce de détail);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);375A;Cadres de la publicité;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);375B;Cadres des relations publiques et de la communication;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);376A;Cadres des marchés financiers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);376B;Cadres des opérations bancaires;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);376C;Cadres commerciaux de la banque;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);376D;Chefs d'établissements et responsables de l'exploitation bancaire;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);376E;Cadres des services techniques des assurances;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);376F;Cadres des services techniques des organismes de sécurité sociale et assimilés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);376G;Cadres de l'immobilier;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);377A;Cadres de l'hôtellerie et de la restauration;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);380A;Directeurs techniques des grandes entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);381B;Ingénieurs et cadres d'étude et développement de l'agriculture, la pêche, les eaux et forêts;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);381C;Ingénieurs et cadres de production et d'exploitation de l'agriculture, la pêche, les eaux et forêts;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);382A;Ingénieurs et cadres d'étude du bâtiment et des travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);382B;Architectes salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);382C;Ingénieurs, cadres de chantier et conducteurs de travaux (cadres) du bâtiment et des travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);382D;Ingénieurs et cadres technico-commerciaux en bâtiment, travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);383A;Ingénieurs et cadres d'étude, recherche et développement en électricité, électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);383B;Ingénieurs et cadres de fabrication en matériel électrique, électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);383C;Ingénieurs et cadres technico-commerciaux en matériel électrique ou électronique professionnel;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);384A;Ingénieurs et cadres d'étude, recherche et développement en mécanique et travail des métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);384B;Ingénieurs et cadres de fabrication en mécanique et travail des métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);384C;Ingénieurs et cadres technico-commerciaux en matériel mécanique professionnel;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);385A;Ingénieurs et cadres d'étude, recherche et développement des industries de transformation (agroalimentaire, chimie, métallurgie, matériaux lourds);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);385B;Ingénieurs et cadres de fabrication des industries de transformation (agroalimentaire, chimie, métallurgie, matériaux lourds);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);385C;Ingénieurs et cadres technico-commerciaux des industries de transformations (biens intermédiaires);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);386B;Ingénieurs et cadres d'étude, recherche et développement de la distribution d'énergie, eau;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);386C;Ingénieurs et cadres d'étude, recherche et développement des autres industries (imprimerie, matériaux souples, ameublement et bois);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);386D;Ingénieurs et cadres de la production et de la distribution d'énergie, eau;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);386E;Ingénieurs et cadres de fabrication des autres industries (imprimerie, matériaux souples, ameublement et bois);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);387A;Ingénieurs et cadres des achats et approvisionnements industriels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);387B;Ingénieurs et cadres de la logistique, du planning et de l'ordonnancement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);387C;Ingénieurs et cadres des méthodes de production;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);387D;Ingénieurs et cadres du contrôle-qualité;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);387E;Ingénieurs et cadres de la maintenance, de l'entretien et des travaux neufs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);387F;Ingénieurs et cadres techniques de l'environnement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);388A;Ingénieurs et cadres d'étude, recherche et développement en informatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);388B;Ingénieurs et cadres d'administration, maintenance, support et services aux utilisateurs en informatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);388C;Chefs de projets informatiques, responsables informatiques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);388D;Ingénieurs et cadres technico-commerciaux en informatique et télécommunications;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);388E;Ingénieurs et cadres spécialistes des télécommunications;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);389A;Ingénieurs et cadres techniques de l'exploitation des transports;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);389B;Officiers et cadres navigants techniques et commerciaux de l'aviation civile;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);389C;Officiers et cadres navigants techniques de la marine marchande;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);421A;Instituteurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);421B;Professeurs des écoles;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);422A;Professeurs d'enseignement général des collèges;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);422B;Professeurs de lycée professionnel;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);422C;Maîtres auxiliaires et professeurs contractuels de l'enseignement secondaire;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);422D;Conseillers principaux d'éducation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);422E;Surveillants et aides-éducateurs des établissements d'enseignement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);423A;Moniteurs d'école de conduite;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);423B;Formateurs et animateurs de formation continue;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);424A;Moniteurs et éducateurs sportifs, sportifs professionnels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);425A;Sous-bibliothécaires, cadres intermédiaires du patrimoine;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);431A;Cadres infirmiers et assimilés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);431B;Infirmiers psychiatriques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);431C;Puéricultrices;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);431D;Infirmiers spécialisés (autres qu'infirmiers psychiatriques et puéricultrices);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);431E;Sages-femmes salariées;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);431F;Infirmiers en soins généraux, salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);432B;Masseurs-kinésithérapeutes rééducateurs, salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);432D;Autres spécialistes de la rééducation, salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);433A;Techniciens médicaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);433B;Opticiens lunetiers et audioprothésistes salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);433C;Autres spécialistes de l'appareillage médical salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);433D;Préparateurs en pharmacie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);434A;Cadres de l'intervention socio-éducative;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);434B;Assistants de service social;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);434C;Conseillers en économie sociale familiale;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);434D;Educateurs spécialisés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);434E;Moniteurs éducateurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);434F;Educateurs techniques spécialisés, moniteurs d'atelier;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);434G;Educateurs de jeunes enfants;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);435A;Directeurs de centres socioculturels et de loisirs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);435B;Animateurs socioculturels et de loisirs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);441A;Clergé séculier;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);441B;Clergé régulier;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);451A;Professions intermédiaires de la Poste;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);451B;Professions intermédiaires administratives de France Télécom (statut public);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);451C;Contrôleurs des Impôts, du Trésor, des Douanes et assimilés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);451D;Ingénieurs du contrôle de la navigation aérienne;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);451E;Autres personnels administratifs de catégorie B de l'Etat (hors Enseignement, Patrimoine, Impôts, Trésor, Douanes);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);451G;Professions intermédiaires administratives des collectivités locales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);451H;Professions intermédiaires administratives des hôpitaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);452A;Inspecteurs et officiers de police;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);452B;Adjudants-chefs, adjudants et sous-officiers de rang supérieur de l'Armée et de la Gendarmerie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);461B;Secrétaires de direction, assistants de direction (non cadres);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);461C;Secrétaires de niveau supérieur (non cadres, hors secrétaires de direction);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);461D;Maîtrise et techniciens des services financiers ou comptables;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);461E;Maîtrise et techniciens administratifs des services juridiques ou du personnel;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);461F;Maîtrise et techniciens administratifs des autres services administratifs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);462A;Chefs de petites surfaces de vente;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);462B;Maîtrise de l'exploitation des magasins de vente;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);462C;Acheteurs non classés cadres, aides-acheteurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);462D;Animateurs commerciaux des magasins de vente, marchandiseurs (non cadres);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);462E;Autres professions intermédiaires commerciales (sauf techniciens des forces de vente);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);463A;Techniciens commerciaux et technico-commerciaux, représentants en informatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);463B;Techniciens commerciaux et technico-commerciaux, représentants en biens d'équipement, en biens intermédiaires, commerce interindustriel (hors informatique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);463C;Techniciens commerciaux et technico-commerciaux, représentants en biens de consommation auprès d'entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);463D;Techniciens commerciaux et technico-commerciaux, représentants en services auprès d'entreprises ou de professionnels (hors banque, assurance, informatique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);463E;Techniciens commerciaux et technico-commerciaux, représentants auprès de particuliers (hors banque, assurance, informatique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);464A;Assistants de la publicité, des relations publiques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);464B;Interprètes, traducteurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);465A;Concepteurs et assistants techniques des arts graphiques, de la mode et de la décoration salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);465B;Assistants techniques de la réalisation des spectacles vivants et audiovisuels salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);465C;Photographes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);466A;Responsables commerciaux et administratifs des transports de voyageurs et du tourisme (non cadres);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);466B;Responsables commerciaux et administratifs des transports de marchandises (non cadres);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);466C;Responsables d'exploitation des transports de voyageurs et de marchandises (non cadres);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);467A;Chargés de clientèle bancaire;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);467B;Techniciens des opérations bancaires;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);467C;Professions intermédiaires techniques et commerciales des assurances;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);467D;Professions intermédiaires techniques des organismes de sécurité sociale;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);468A;Maîtrise de restauration : salle et service;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);468B;Maîtrise de l'hébergement : hall et étages;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);471A;Techniciens d'étude et de conseil en agriculture, eaux et forêt;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);471B;Techniciens d'exploitation et de contrôle de la production en agriculture, eaux et forêt;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);472A;Dessinateurs en bâtiment, travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);472B;Géomètres, topographes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);472C;Métreurs et techniciens divers du bâtiment et des travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);472D;Techniciens des travaux publics de l'Etat et des collectivités locales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);473A;Dessinateurs en électricité, électromécanique et électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);473B;Techniciens de recherche-développement et des méthodes de fabrication en électricité, électromécanique et électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);473C;Techniciens de fabrication et de contrôle-qualité en électricité, électromécanique et électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);474A;Dessinateurs en construction mécanique et travail des métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);474B;Techniciens de recherche-développement et des méthodes de fabrication en construction mécanique et travail des métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);474C;Techniciens de fabrication et de contrôle-qualité en construction mécanique et travail des métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);475A;Techniciens de recherche-développement et des méthodes de production des industries de transformation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);475B;Techniciens de production et de contrôle-qualité des industries de transformation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);476A;Assistants techniques, techniciens de l'imprimerie et de l'édition;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);476B;Techniciens de l'industrie des matériaux souples, de l'ameublement et du bois;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);477A;Techniciens de la logistique, du planning et de l'ordonnancement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);477B;Techniciens d'installation et de maintenance des équipements industriels (électriques, électromécaniques, mécaniques, hors informatique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);477C;Techniciens d'installation et de maintenance des équipements non industriels (hors informatique et télécommunications);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);477D;Techniciens de l'environnement et du traitement des pollutions;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);478A;Techniciens d'étude et de développement en informatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);478B;Techniciens de production, d'exploitation en informatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);478C;Techniciens d'installation, de maintenance, support et services aux utilisateurs en informatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);478D;Techniciens des télécommunications et de l'informatique des réseaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);479A;Techniciens des laboratoires de recherche publique ou de l'enseignement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);479B;Experts salariés de niveau technicien, techniciens divers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);480A;Contremaîtres et agents d'encadrement (non cadres) en agriculture, sylviculture;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);480B;Maîtres d'équipage de la marine marchande et de la pêche;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);481A;Conducteurs de travaux (non cadres);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);481B;Chefs de chantier (non cadres);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);482A;Agents de maîtrise en fabrication de matériel électrique, électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);483A;Agents de maîtrise en construction mécanique, travail des métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);484A;Agents de maîtrise en fabrication : agroalimentaire, chimie, plasturgie, pharmacie.;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);484B;Agents de maîtrise en fabrication : métallurgie, matériaux lourds et autres industries de transformation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);485A;Agents de maîtrise et techniciens en production et distribution d'énergie, eau, chauffage;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);485B;Agents de maîtrise en fabrication des autres industries (imprimerie, matériaux souples, ameublement et bois);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);486B;Agents de maîtrise en maintenance, installation en électricité et électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);486C;Agents de maîtrise en maintenance, installation en électromécanique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);486D;Agents de maîtrise en maintenance, installation en mécanique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);486E;Agents de maîtrise en entretien général, installation, travaux neufs (hors mécanique, électromécanique, électronique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);487A;Responsables d'entrepôt, de magasinage;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);487B;Responsables du tri, de l'emballage, de l'expédition et autres responsables de la manutention;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);488A;Maîtrise de restauration  : cuisine/production;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);488B;Maîtrise de restauration  : gestion d'établissement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);521A;Employés de la Poste;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);521B;Employés de France Télécom (statut public);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);522A;Agents de constatation ou de recouvrement des Impôts, du Trésor, des Douanes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);523B;Adjoints administratifs de l'Etat et assimilés (sauf Poste, France Télécom);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);523C;Adjoints administratifs des collectivités locales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);523D;Adjoints administratifs des hôpitaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);524B;Agents administratifs de l'Etat et assimilés (sauf Poste, France Télécom);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);524C;Agents administratifs des collectivités locales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);524D;Agents administratifs des hôpitaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);525A;Agents de service des établissements primaires;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);525B;Agents de service des autres établissements d'enseignement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);525C;Agents de service de la fonction publique (sauf écoles, hôpitaux);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);525D;Agents de service hospitaliers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);526A;Aides-soignants;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);526B;Assistants dentaires, médicaux et vétérinaires, aides de techniciens médicaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);526C;Auxiliaires de puériculture;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);526D;Aides médico-psychologiques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);526E;Ambulanciers salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);531A;Agents de police de l'Etat;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);531B;Agents des polices municipales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);531C;Surveillants de l'administration pénitentiaire;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);532A;Gendarmes (de grade inférieur à adjudant);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);532B;Sergents et sous-officiers de grade équivalent des Armées (sauf pompiers militaires);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);532C;Hommes du rang (sauf pompiers militaires);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);533A;Pompiers (y.c. pompiers militaires);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);533B;Agents techniques forestiers, gardes des espaces naturels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);533C;Agents de surveillance du patrimoine et des administrations;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);534A;Agents civils de sécurité et de surveillance;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);534B;Convoyeurs de fonds, gardes du corps, enquêteurs privés et métiers assimilés (salariés);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);541B;Agents d'accueil qualifiés, hôtesses d'accueil et d'information;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);541C;Agents d'accueil non qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);541D;Standardistes, téléphonistes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);542A;Secrétaires;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);542B;Dactylos, sténodactylos (sans secrétariat), opérateurs de traitement de texte;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);543B;Employés qualifiés des services comptables ou financiers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);543C;Employés non qualifiés des services comptables ou financiers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);543E;Employés qualifiés des services du personnel et des services juridiques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);543F;Employés qualifiés des services commerciaux des entreprises (hors vente);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);543G;Employés administratifs qualifiés des autres services des entreprises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);543H;Employés administratifs non qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);544A;Employés et opérateurs d'exploitation en informatique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);545A;Employés administratifs des services techniques de la banque;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);545B;Employés des services commerciaux de la banque;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);545C;Employés des services techniques des assurances;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);545D;Employés des services techniques des organismes de sécurité sociale et assimilés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);546A;Contrôleurs des transports (personnels roulants);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);546B;Agents des services commerciaux des transports de voyageurs et du tourisme;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);546C;Employés administratifs d'exploitation des transports de marchandises;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);546D;Hôtesses de l'air et stewards;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);546E;Autres agents et hôtesses d'accompagnement (transports, tourisme);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);551A;Employés de libre service du commerce et magasiniers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);552A;Caissiers de magasin;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);553B;Vendeurs polyvalents des grands magasins;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);553C;Autres vendeurs non spécialisés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554A;Vendeurs en alimentation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554B;Vendeurs en ameublement, décor, équipement du foyer;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554C;Vendeurs en droguerie, bazar, quincaillerie, bricolage;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554D;Vendeurs du commerce de fleurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554E;Vendeurs en habillement et articles de sport;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554F;Vendeurs en produits de beauté, de luxe (hors biens culturels) et optique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554G;Vendeurs de biens culturels (livres, disques, multimédia, objets d'art);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554H;Vendeurs de tabac, presse et articles divers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);554J;Pompistes et gérants de station-service (salariés ou mandataires);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);555A;Vendeurs par correspondance, télévendeurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);556A;Vendeurs en gros de biens d'équipement, biens intermédiaires;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);561B;Serveurs, commis de restaurant, garçons qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);561C;Serveurs, commis de restaurant, garçons non qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);561D;Aides de cuisine, apprentis de cuisine et employés polyvalents de la restauration;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);561E;Employés de l'hôtellerie : réception et hall;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);561F;Employés d'étage et employés polyvalents de l'hôtellerie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);562A;Manucures, esthéticiens;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);562B;Coiffeurs salariés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);563A;Assistantes maternelles, gardiennes d'enfants, familles d'accueil;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);563B;Aides à domicile, aides ménagères, travailleuses familiales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);563C;Employés de maison et personnels de ménage chez des particuliers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);564A;Concierges, gardiens d'immeubles;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);564B;Employés des services divers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);621A;Chefs d'équipe du gros oeuvre et des travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);621B;Ouvriers qualifiés du travail du béton;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);621C;Conducteurs qualifiés d'engins de chantiers du bâtiment et des travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);621D;Ouvriers des travaux publics en installations électriques et de télécommunications;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);621E;Autres ouvriers qualifiés des travaux publics;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);621F;Ouvriers qualifiés des travaux publics (salariés de l'Etat et des collectivités locales);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);621G;Mineurs de fond qualifiés et autres ouvriers qualifiés des industries d'extraction (carrières, pétrole, gaz...);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);622A;Opérateurs qualifiés sur machines automatiques en production électrique ou électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);622C;Monteurs câbleurs qualifiés en électricité;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);622D;Câbleurs qualifiés en électronique (prototype, unité, petite série);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);622E;Autres monteurs câbleurs en électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);622F;Bobiniers qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);622G;Plateformistes, contrôleurs qualifiés de matériel électrique ou électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);623A;Chaudronniers-tôliers industriels, opérateurs qualifiés du travail en forge, conducteurs qualifiés d'équipement de formage, traceurs qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);623B;Tuyauteurs industriels qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);623D;Opérateurs qualifiés sur machine de soudage;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);623E;Soudeurs manuels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);623F;Opérateurs qualifiés d'usinage des métaux travaillant à l'unité ou en petite série, moulistes qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);623G;Opérateurs qualifiés d'usinage des métaux sur autres machines (sauf moulistes);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);624B;Monteurs, metteurs au point très qualifiés d'ensembles mécaniques travaillant à l'unité ou en petite série;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);624C;Monteurs qualifiés d'ensembles mécaniques travaillant en moyenne ou en grande série;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);624D;Monteurs qualifiés en structures métalliques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);624E;Ouvriers qualifiés de contrôle et d'essais en mécanique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);624F;Ouvriers qualifiés des traitements thermiques et de surface sur métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);624G;Autres mécaniciens ou ajusteurs qualifiés (ou spécialité non reconnue);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);625A;Pilotes d'installation lourde des industries de transformation : agroalimentaire, chimie, plasturgie, énergie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);625B;Ouvriers qualifiés et agents qualifiés de laboratoire : agroalimentaire, chimie, biologie, pharmacie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);625C;Autres opérateurs et ouvriers qualifiés de la chimie (y.c. pharmacie) et de la plasturgie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);625D;Opérateurs de la transformation des viandes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);625F;Autres opérateurs travaillant sur installations ou machines : industrie agroalimentaire (hors transformation des viandes);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);625G;Autres ouvriers de production qualifiés ne travaillant pas sur machine : industrie agroalimentaire (hors transformation des viandes);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);625H;Ouvriers qualifiés des autres industries (eau, gaz, énergie, chauffage);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);626A;Pilotes d'installation lourde des industries de transformation : métallurgie, production verrière, matériaux de construction;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);626B;Autres opérateurs et ouvriers qualifiés : métallurgie, production verrière, matériaux de construction;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);626C;Opérateurs et ouvriers qualifiés des industries lourdes du bois et de la fabrication du papier-carton;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);627A;Opérateurs qualifiés du textile et de la mégisserie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);627B;Ouvriers qualifiés de la coupe des vêtements et de l'habillement, autres opérateurs de confection qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);627C;Ouvriers qualifiés du travail industriel du cuir;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);627D;Ouvriers qualifiés de scierie, de la menuiserie industrielle et de l'ameublement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);627E;Ouvriers de la photogravure et des laboratoires photographiques et cinématographiques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);627F;Ouvriers de la composition et de l'impression, ouvriers qualifiés de la brochure, de la reliure et du façonnage du papier-carton;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);628A;Mécaniciens qualifiés de maintenance, entretien : équipements industriels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);628B;Electromécaniciens, électriciens qualifiés d'entretien : équipements industriels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);628C;Régleurs qualifiés d'équipements de fabrication (travail des métaux, mécanique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);628D;Régleurs qualifiés d'équipements de fabrication (hors travail des métaux et mécanique);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);628E;Ouvriers qualifiés de l'assainissement et du traitement des déchets;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);628F;Agents qualifiés de laboratoire (sauf chimie, santé);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);628G;Ouvriers qualifiés divers de type industriel;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);631A;Jardiniers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632A;Maçons qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632B;Ouvriers qualifiés du travail de la pierre;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632C;Charpentiers en bois qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632D;Menuisiers qualifiés du bâtiment;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632E;Couvreurs qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632F;Plombiers et chauffagistes qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632G;Peintres et ouvriers qualifiés de pose de revêtements sur supports verticaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632H;Soliers moquetteurs et ouvriers qualifiés de pose de revêtements souples sur supports horizontaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632J;Monteurs qualifiés en agencement, isolation;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);632K;Ouvriers qualifiés d'entretien général des bâtiments;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);633A;Electriciens qualifiés de type artisanal (y.c. bâtiment);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);633B;Dépanneurs qualifiés en radiotélévision, électroménager, matériel électronique (salariés);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);633C;Electriciens, électroniciens qualifiés en maintenance entretien, réparation : automobile;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);633D;Electriciens, électroniciens qualifiés en maintenance, entretien : équipements non industriels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);634A;Carrossiers d'automobiles qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);634B;Métalliers, serruriers qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);634C;Mécaniciens qualifiés en maintenance, entretien, réparation : automobile;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);634D;Mécaniciens qualifiés de maintenance, entretien : équipements non industriels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);635A;Tailleurs et couturières qualifiés, ouvriers qualifiés du travail des étoffes (sauf fabrication de vêtements), ouvriers qualifiés de type artisanal du travail du cuir;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);636A;Bouchers (sauf industrie de la viande);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);636B;Charcutiers (sauf industrie de la viande);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);636C;Boulangers, pâtissiers (sauf activité industrielle);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);636D;Cuisiniers et commis de cuisine;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);637A;Modeleurs (sauf modeleurs de métal), mouleurs-noyauteurs à la main, ouvriers qualifiés du travail du verre ou de la céramique à la main;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);637B;Ouvriers d'art;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);637C;Ouvriers et techniciens des spectacles vivants et audiovisuels;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);637D;Ouvriers qualifiés divers de type artisanal;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);641A;Conducteurs routiers et grands routiers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);641B;Conducteurs de véhicule routier de transport en commun;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);642A;Conducteurs de taxi;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);642B;Conducteurs de voiture particulière;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);643A;Conducteurs livreurs, coursiers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);644A;Conducteurs de véhicule de ramassage des ordures ménagères;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);651A;Conducteurs d'engin lourd de levage;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);651B;Conducteurs d'engin lourd de manoeuvre;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);652A;Ouvriers qualifiés de la manutention, conducteurs de chariots élévateurs, caristes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);652B;Dockers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);653A;Magasiniers qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);654B;Conducteurs qualifiés d'engins de transport guidés (sauf remontées mécaniques);CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);654C;Conducteurs qualifiés de systèmes de remontées mécaniques;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);655A;Autres agents et ouvriers qualifiés (sédentaires) des services d'exploitation des transports;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);656B;Matelots de la marine marchande;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);656C;Capitaines et matelots timoniers de la navigation fluviale;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);671A;Ouvriers non qualifiés des travaux publics de l'Etat et des collectivités locales;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);671C;Ouvriers non qualifiés des travaux publics et du travail du béton;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);671D;Aides-mineurs, ouvriers non qualifiés de l'extraction;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);672A;Ouvriers non qualifiés de l'électricité et de l'électronique;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);673A;Ouvriers de production non qualifiés travaillant par enlèvement de métal;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);673B;Ouvriers de production non qualifiés travaillant par formage de métal;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);673C;Ouvriers non qualifiés de montage, contrôle en mécanique et travail des métaux;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);674A;Ouvriers de production non qualifiés : chimie, pharmacie, plasturgie;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);674B;Ouvriers de production non qualifiés de la transformation des viandes;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);674C;Autres ouvriers de production non qualifiés : industrie agroalimentaire;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);674D;Ouvriers de production non qualifiés : métallurgie, production verrière, céramique, matériaux de construction;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);674E;Ouvriers de production non qualifiés : industrie lourde du bois, fabrication des papiers et cartons;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);675A;Ouvriers de production non qualifiés du textile et de la confection, de la tannerie-mégisserie et du travail du cuir;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);675B;Ouvriers de production non qualifiés du travail du bois et de l'ameublement;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);675C;Ouvriers de production non qualifiés de l'imprimerie, presse, édition;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);676A;Manutentionnaires non qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);676B;Déménageurs (hors chauffeurs-déménageurs), non qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);676C;Ouvriers du tri, de l'emballage, de l'expédition, non qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);676D;Agents non qualifiés des services d'exploitation des transports;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);676E;Ouvriers non qualifiés divers de type industriel;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);681A;Ouvriers non qualifiés du gros oeuvre du bâtiment;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);681B;Ouvriers non qualifiés du second oeuvre du bâtiment;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);682A;Métalliers, serruriers, réparateurs en mécanique non qualifiés;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);683A;Apprentis boulangers, bouchers, charcutiers;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);684A;Nettoyeurs;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);684B;Ouvriers non qualifiés de l'assainissement et du traitement des déchets;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);685A;Ouvriers non qualifiés divers de type artisanal;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);691A;Conducteurs d'engin agricole ou forestier;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);691B;Ouvriers de l'élevage;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);691C;Ouvriers du maraîchage ou de l'horticulture;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);691D;Ouvriers de la viticulture ou de l'arboriculture fruitière;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);691E;Ouvriers agricoles sans spécialisation particulière;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);691F;Ouvriers de l'exploitation forestière ou de la sylviculture;CHAR;4
+PCS;Profession catégorie socio-professionnelle des emplois salariés (PCS-ES : code sur 4 positions);692A;Marins-pêcheurs et ouvriers de l'aquaculture;CHAR;4
+POND;Coefficient de pondération;12;12;NUM;2
+TREFF;Tranche d'effectifs;00;0 poste (salariés présents en cours d'année, mais pas au 31/12).;CHAR;2
+TREFF;Tranche d'effectifs;01;1 à 9 postes;CHAR;2
+TREFF;Tranche d'effectifs;02;10 à 19 postes;CHAR;2
+TREFF;Tranche d'effectifs;03;20 à 49 postes;CHAR;2
+TREFF;Tranche d'effectifs;04;50 à 99 postes;CHAR;2
+TREFF;Tranche d'effectifs;05;100 à 249 postes;CHAR;2
+TREFF;Tranche d'effectifs;06;250 postes et plus;CHAR;2
+CS;Catégorie socio-professionnelle (code sur 2 positions);10;Agriculteurs (salariés de leur exploitation);CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);21;Artisans (salariés de leur entreprise);CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);22;Commerçants et assimilés (salariés de leur entreprise);CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);23;Chefs d?entreprise de 10 salariés ou plus (salariés de leur entreprise);CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);31;Professions libérales (exercées sous statut de salarié);CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);33;Cadres de la fonction publique;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);34;Professeurs ,  professions scientifiques;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);35;Professions de l?information , des arts et des spectacles;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);37;Cadres administratifs et commerciaux d?entreprises;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);38;Ingénieurs et cadres techniques d?entreprises;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);42;Professeurs des écoles,  instituteurs et professions assimilées;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);43;Professions intermédiaires de la santé et du travail social;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);44;Clergé ,  religieux;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);45;Professions intermédiaires administratives de la fonction publique;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);46;Professions intermédiaires administratives et commerciales des entreprises;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);47;Techniciens (sauf techniciens tertiaires);CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);48;Contremaîtres,  agents de maîtrise (maîtrise administrative exclue);CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);52;Employés civils et agents de service de la fonction publique;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);53;Agents de surveillance;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);54;Employés administratifs d?entreprise;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);55;Employés de commerce;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);56;Personnels des services directs aux particuliers;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);62;Ouvriers qualifiés de type industriel;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);63;Ouvriers qualifiés de type artisanal;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);64;Chauffeurs;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);65;Ouvriers qualifiés de la manutention,  du magasinage et du transport;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);67;Ouvriers non qualifiés de type industriel;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);68;Ouvriers non qualifiés de type artisanal;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);69;Ouvriers agricoles et assimilés;CHAR;4
+CS;Catégorie socio-professionnelle (code sur 2 positions);;Non renseigné;CHAR;4
+AT;Nombre d'années-travail;;;NUM;3.2
+CONT_TRAV;Contrat de travail;;Non renseigné;CHAR;3
+CONT_TRAV;Contrat de travail;APP;Contrat d?apprentissage;CHAR;3
+CONT_TRAV;Contrat de travail;AUT;Autre type de contrat;CHAR;3
+CONT_TRAV;Contrat de travail;CDD;Contrat à durée déterminée;CHAR;3
+CONT_TRAV;Contrat de travail;CDI;Contrat à durée indéterminée;CHAR;3
+CONT_TRAV;Contrat de travail;TOA;Travail occasionnel;CHAR;3
+CONT_TRAV;Contrat de travail;TTP;Contrat de travail temporaire (mission);CHAR;3
+AGE_TR;Tranche d'âge quadriennale;00;[0,15[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;19;[15,19[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;23;[19,23[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;27;[23,27[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;31;[27,31[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;35;[31,35[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;39;[35,39[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;43;[39,43[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;47;[43,47[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;51;[47,51[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;55;[51,55[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;59;[55,59[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;63;[59,63[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;67;[63,67[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;71;[67,71[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;72;[71,+[ ans;CHAR;2
+AGE_TR;Tranche d'âge quadriennale;;Non renseigné;CHAR;2
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;000;[0.00,0.05[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;005;[0.05,0.10[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;010;[0.10,0.15[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;015;[0.15,0.20[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;020;[0.20,0.25[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;025;[0.25,0.30[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;030;[0.30,0.35[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;035;[0.35,0.40[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;040;[0.40,0.45[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;045;[0.45,0.50[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;050;[0.50,0.55[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;055;[0.55,0.60[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;060;[0.60,0.65[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;065;[0.65,0.70[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;070;[0.70,0.75[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;075;[0.75,0.80[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;080;[0.80,0.85[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;085;[0.85,0.90[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;090;[0.90,0.95[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;095;[0.95,1.00[ AT;CHAR;3
+AT_TR;NOMBRE D’ANNEES TRAVAIL EN TRANCHES;100;[1.00,1.00[ AT;CHAR;3
+DATDEB_TR;Mois de début de rémunération;-12;Décembre N-1;CHAR;3
+DATDEB_TR;Mois de début de rémunération;01;janvier;CHAR;3
+DATDEB_TR;Mois de début de rémunération;02;février;CHAR;3
+DATDEB_TR;Mois de début de rémunération;03;mars;CHAR;3
+DATDEB_TR;Mois de début de rémunération;04;avril;CHAR;3
+DATDEB_TR;Mois de début de rémunération;05;mai;CHAR;3
+DATDEB_TR;Mois de début de rémunération;06;juin;CHAR;3
+DATDEB_TR;Mois de début de rémunération;07;juillet;CHAR;3
+DATDEB_TR;Mois de début de rémunération;08;août;CHAR;3
+DATDEB_TR;Mois de début de rémunération;09;septembre;CHAR;3
+DATDEB_TR;Mois de début de rémunération;10;octobre;CHAR;3
+DATDEB_TR;Mois de début de rémunération;11;novembre;CHAR;3
+DATDEB_TR;Mois de début de rémunération;12;décembre;CHAR;3
+DATFIN_TR;Mois de fin de rémunération;01;janvier;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;02;février;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;03;mars;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;04;avril;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;05;mai;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;06;juin;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;07;juillet;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;08;août;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;09;septembre;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;10;octobre;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;11;novembre;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;12;décembre;CHAR;2
+DATFIN_TR;Mois de fin de rémunération;;Non renseigné;CHAR;2
+DUREE_TR;Durée de paie en mois;01;1;CHAR;2
+DUREE_TR;Durée de paie en mois;02;2;CHAR;2
+DUREE_TR;Durée de paie en mois;03;3;CHAR;2
+DUREE_TR;Durée de paie en mois;04;4;CHAR;2
+DUREE_TR;Durée de paie en mois;05;5;CHAR;2
+DUREE_TR;Durée de paie en mois;06;6;CHAR;2
+DUREE_TR;Durée de paie en mois;07;7;CHAR;2
+DUREE_TR;Durée de paie en mois;08;8;CHAR;2
+DUREE_TR;Durée de paie en mois;09;9;CHAR;2
+DUREE_TR;Durée de paie en mois;10;10;CHAR;2
+DUREE_TR;Durée de paie en mois;11;11;CHAR;2
+DUREE_TR;Durée de paie en mois;12;12;CHAR;2
+DUREE_TR;Durée de paie en mois;13;13;CHAR;2
+ETP_TR;Equivalent temps plein en tranches;000;[0.00,0.05[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;005;[0.05,0.10[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;010;[0.10,0.15[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;015;[0.15,0.20[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;020;[0.20,0.25[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;025;[0.25,0.30[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;030;[0.30,0.35[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;035;[0.35,0.40[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;040;[0.40,0.45[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;045;[0.45,0.50[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;050;[0.50,0.55[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;055;[0.55,0.60[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;060;[0.60,0.65[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;065;[0.65,0.70[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;070;[0.70,0.75[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;075;[0.75,0.80[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;080;[0.80,0.85[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;085;[0.85,0.90[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;090;[0.90,0.95[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;095;[0.95,1.00[ ETP;CHAR;3
+ETP_TR;Equivalent temps plein en tranches;100;[1.00,1.00[ ETP;CHAR;3
+

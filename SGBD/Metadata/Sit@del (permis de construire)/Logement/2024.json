@@ -1,0 +1,685 @@
+{
+  "table_info": {
+    "schema": "logement",
+    "name": "Logements_2024",
+    "description": "https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=datafile&datafileRid=8b35affb-55fc-4c1f-915b-7750f974446a C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Logement\\Sit@del\\2024-03",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "REG",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DEP",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "COMM",
+      "type": "\"Le code vient directement du numéro d'enregistrement de la DAU, donc dépend du code de la commune au moment où la DAU a été déposée ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "Type_DAU",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DP (Déclaration Préalable)\"",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "Num_DAU",
+      "type": "Numéro sur 13 caractères : les 6 premiers caractères correspondent au code commune, les 2 suivants à l'année de dépôt de la DAU, les 5 derniers à un numéro d'ordre",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "Etat_DAU",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "6 = Terminé\"",
+      "type": "VARCHAR",
+      "description": "\"Toutes les DAU du fichier ont été autorisées ",
+      "nullable": true
+    },
+    {
+      "name": "DATE_REELLE_AUTORISATION",
+      "type": "Date de décision relative à la demande initiale, sans prise en compte d'éventuels modificatifs.",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DATE_REELLE_DOC",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DATE_REELLE_DAACT",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "AN_DEPOT",
+      "type": "2 caractères issus du numéro d'enregistrement de la DAU",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "DPC_PREM",
+      "type": "Champ permettant le plus souvent de déterminer un proxy du mois réel de dépôt de la demande d'autorisation d'urbanisme, absent de Sitadel. En effet, dans 90% des cas, le premier évènement reçu dans Sitadel est le dépôt de la demande. Ce n'est évidemment pas le cas quand le mois correspondant à DPC_PREM est postérieur au mois de la date réelle d'autorisation ou quand l'année correspondante est postérieure à l'année de dépôt. Quand DPC_PREM=DPC_AUT, cela peut signifier soit que le dépôt n'a pas été transmis, soit qu'il a été transmis en retard, soit que le dépôt et l'autorisation ont été très proches dans le temps. Pour la notion de date de prise en compte, voir les explications fournies pour DPC_AUT.",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "DPC_AUT",
+      "type": "\"Une autorisation délivrée le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte \"\"202102\"\" et pour date réelle \"\"2020-12-06\"\" ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DPC_DOC",
+      "type": "\"Une ouverture de chantier ayant eu lieu le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte \"\"202102\"\" et pour date réelle \"\"2020-12-06\"\" ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DPC_DERN",
+      "type": "Les données sont mises à jour à l'occasion d'un événement de la vie du permis ou d'une correction de la base",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "CAT_DEM",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "90 - Non déterminé (valeur par défaut à la création du permis)\"",
+      "type": "VARCHAR",
+      "description": "A partir des données d'identification disponibles dans Sitadel et d'informations externes (dont Sirène)",
+      "nullable": true
+    },
+    {
+      "name": "APE_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "CJ_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DENOM_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SIREN_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SIRET_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "CODPOST_DEM",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "LOCALITE_DEM",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "REC_ARCHI",
+      "type": "Insuffisamment renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_NUM_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_TYPEVOIE_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_LIBVOIE_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_LIEUDIT_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_LOCALITE_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_CODPOST_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SEC_CADASTRE1",
+      "type": "Les préfixes sont en général absents de Sitadel",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NUM_CADASTRE1",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SEC_CADASTRE2",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NUM_CADASTRE2",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SEC_CADASTRE3",
+      "type": "Un maximum de 3 parcelles peut être renseigné dans Sitadel alors qu'un terrain peut en contenir bien davantage",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NUM_CADASTRE3",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SUPERFICIE_TERRAIN",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ZONE_OP",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "4 = Hors zones ou ne sais pas\"",
+      "type": "VARCHAR",
+      "description": "Très insuffisamment renseigné",
+      "nullable": true
+    },
+    {
+      "name": "NATURE_PROJET_DECLAREE",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "2 = travaux sur construction existante\"",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NATURE_PROJET_COMPLETEE",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "6 = diminution de surface sans transformation\"",
+      "type": "VARCHAR",
+      "description": "\"A partir du tableau des surfaces de plancher et de la nature de projet déclarée : une petite partie des \"\"nouvelles constructions\"\" déclarées sont recodifiées en travaux sur existant\"",
+      "nullable": true
+    },
+    {
+      "name": "DESTINATION_PRINCIPALE",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "2 = non résidentiel\"",
+      "type": "VARCHAR",
+      "description": "Non résidentiel si la surface créée en non résidentiel est supérieure à la surface créée en habitation",
+      "nullable": true
+    },
+    {
+      "name": "TYPE_PRINCIP_LOGTS_CREES",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "4 = résidence\"",
+      "type": "VARCHAR",
+      "description": "\"Type principal selon le nombre de logements créés : il peut donc y avoir des logements individuels dans un permis de type \"\"collectif hors résidences\"\"\"",
+      "nullable": true
+    },
+    {
+      "name": "TYPE_TRANSFO_PRINCIPAL",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "4 = transformation de locaux non résidentiels (changement de destination, réhabilitation, scission, regroupement ...)\"",
+      "type": "VARCHAR",
+      "description": "Selon que la surface transformée et la surface issue de la transformation sont majoritairement des surfaces de logements ou de locaux",
+      "nullable": true
+    },
+    {
+      "name": "TYPE_PRINCIP_LOCAUX_TRANSFORMES",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "9 = service public ou d'intérêt collectif\"",
+      "type": "VARCHAR",
+      "description": "Selon la première destination d'origine des surfaces transformées",
+      "nullable": true
+    },
+    {
+      "name": "I_EXTENSION",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "I_SURELEVATION",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "I_NIVSUPP",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_NIV_MAX",
+      "type": "Nombre de niveaux au-dessus du sol depuis le nouveau formulaire de 2020, très insuffisamment renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "UTILISATION",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "5 = non rempli\"",
+      "type": "VARCHAR",
+      "description": "Assez mal renseigné",
+      "nullable": true
+    },
+    {
+      "name": "RES_PRINCIP_OU_SECOND",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "3 = non rempli\"",
+      "type": "VARCHAR",
+      "description": "Seulement si occupation personnelle normalement",
+      "nullable": true
+    },
+    {
+      "name": "TYP_ANNEXE",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "7 = pas d’annexe\"",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "I_PISCINE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "I_GARAGE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "I_VERANDA",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "I_ABRI_JARDIN",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "I_AUTRE_ANNEXE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "RESIDENCE",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "9 = Non rempli\"",
+      "type": "VARCHAR",
+      "description": "Pour les projets mixtes (logements ordinaires / résidence), on fait en sorte que cette catégorie ne soit définie que si la résidence représente la majorité des logements du projet.",
+      "nullable": true
+    },
+    {
+      "name": "RES_PERS_AGEES",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "RES_ETUDIANTS",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "RES_TOURISME",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "RES_HOTEL_SOCIALE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "RES_SOCIALE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "RES_HANDICAPES",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "RES_AUTRE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_TOT_CREES",
+      "type": "Une transformation d'un 3 pièces en 2 studios est généralement considérée comme créant 2 logements",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_IND_CREES",
+      "type": "Une maison individuelle peut comporter 2 logements individuels (au maximum)",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_COL_CREES",
+      "type": "Les logements collectifs font partie d’un bâtiment dans lequel sont superposés plus de deux logements distincts dont l'accès nécessite d'emprunter des parties communes",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_INDIV_PURS",
+      "type": "Un logement individuel pur fait l’objet d’un permis de construire relatif à un seul logement individuel",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_INDIV_GROUPES",
+      "type": "Les logements individuels groupés font l’objet d’un permis de construire relatif à la construction de plusieurs logements individuels (par exemple en lotissement ou dans une maison individuelle de deux logements), ou d'un logement individuel associés à des logements collectifs ou des locaux non résidentiels",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_RES",
+      "type": "Les logements en résidence sont des logements (individuels ou collectifs) construits en vue d’une occupation par un public ciblé selon la nature de la résidence, avec généralement mise à disposition de services adaptés",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_COL_HORS_RES",
+      "type": "Les logements collectifs font partie d’un bâtiment dans lequel sont superposés plus de deux logements distincts dont l'accès nécessite d'emprunter des parties communes",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_DEMOLIS",
+      "type": "Insuffisamment renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_1P",
+      "type": "Moyennement renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_2P",
+      "type": "Moyennement renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_3P",
+      "type": "Moyennement renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_4P",
+      "type": "Moyennement renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_5P",
+      "type": "Moyennement renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_6P_PLUS",
+      "type": "Moyennement renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_PRET_LOC_SOCIAL",
+      "type": "\"Pas toujours connu au moment du dépôt du formulaire, et rarement corrigé ensuite ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_ACC_SOC_HORS_PTZ",
+      "type": "\"Pas toujours connu au moment du dépôt du formulaire, et rarement corrigé ensuite ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_LGT_PTZ",
+      "type": "\"Pas toujours connu au moment du dépôt du formulaire, et rarement corrigé ensuite ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_AVANT",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_CREEE",
+      "type": "\"Lorsque le projet crée des chambres (sans coin cuisine indépendant) et non des logements, on utilise plutôt la destination \"\"Hébergement hôtelier\"\" ou \"\"Service Public\"\" dans Sitadel plutôt que la destination \"\"Habitation\"\"\"",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_ISSUE_TRANSFO",
+      "type": "Surface issue d'un changement de destination ou d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …)",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_DEMOLIE",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_TRANSFORMEE",
+      "type": "Surface changée de destination ou faisant l'objet d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_AVANT",
+      "type": "Locaux=autres destinations qu'habitation",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_CREEE",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_ISSUE_TRANSFO",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_DEMOLIE",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_TRANSFORMEE",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HEB_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "SURF_BUR_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "SURF_COM_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ART_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "SURF_IND_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "SURF_AGR_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ENT_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "SURF_PUB_TRANSFORMEE",
+      "type": "",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    }
+  ]
+}

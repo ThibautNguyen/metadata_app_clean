@@ -1,0 +1,47 @@
+-- Comparaison des tranches d'âge (en %) entre 2 territoires (DSP et métropole)
+WITH pop_dsp AS (
+  SELECT 
+    SUM(P21_POP0014) as pop_0_14,
+    SUM(P21_POP1529) as pop_15_29,
+    SUM(P21_POP3044) as pop_30_44,
+    SUM(P21_POP4559) as pop_45_59,
+    SUM(P21_POP6074) as pop_60_74,
+    SUM(P21_POP75P) as pop_75_plus,
+    SUM(P21_POP0014 + P21_POP1529 + P21_POP3044 + P21_POP4559 + P21_POP6074 + P21_POP75P) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,5) IN ('45154','45169','45235','45302')
+),
+pop_metro AS (
+  SELECT 
+    SUM(P21_POP0014) as pop_0_14,
+    SUM(P21_POP1529) as pop_15_29,
+    SUM(P21_POP3044) as pop_30_44,
+    SUM(P21_POP4559) as pop_45_59,
+    SUM(P21_POP6074) as pop_60_74,
+    SUM(P21_POP75P) as pop_75_plus,
+    SUM(P21_POP0014 + P21_POP1529 + P21_POP3044 + P21_POP4559 + P21_POP6074 + P21_POP75P) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,5) IN ('45034','45043','45072','45075','45089','45100','45147','45169','45194','45197','45232','45234','45235','45272','45274','45282','45284','45285','45286','45298','45302','45308')
+)
+
+SELECT 
+  'DSP' as perimetre,
+  REPLACE(CAST(ROUND(CAST(pop_0_14 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "0-14 ans",
+  REPLACE(CAST(ROUND(CAST(pop_15_29 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "15-29 ans",
+  REPLACE(CAST(ROUND(CAST(pop_30_44 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "30-44 ans",
+  REPLACE(CAST(ROUND(CAST(pop_45_59 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "45-59 ans",
+  REPLACE(CAST(ROUND(CAST(pop_60_74 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "60-74 ans",
+  REPLACE(CAST(ROUND(CAST(pop_75_plus AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "75 ans et plus"
+FROM pop_dsp
+
+UNION ALL
+
+SELECT 
+  'Orléans Métropole' as perimetre,
+  REPLACE(CAST(ROUND(CAST(pop_0_14 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "0-14 ans",
+  REPLACE(CAST(ROUND(CAST(pop_15_29 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "15-29 ans",
+  REPLACE(CAST(ROUND(CAST(pop_30_44 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "30-44 ans",
+  REPLACE(CAST(ROUND(CAST(pop_45_59 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "45-59 ans",
+  REPLACE(CAST(ROUND(CAST(pop_60_74 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "60-74 ans",
+  REPLACE(CAST(ROUND(CAST(pop_75_plus AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "75 ans et plus"
+FROM pop_metro;

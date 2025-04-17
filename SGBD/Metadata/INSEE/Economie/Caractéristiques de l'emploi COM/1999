@@ -1,0 +1,42 @@
+Caractéristiques de l'emploi en 1999
+Sans page web dédiée
+
+
+
+## Source : 
+https://www.insee.fr/fr/statistiques/2044664
+
+
+
+##Tableau SQL : 
+caracterist_emploi_COM_1999
+
+
+
+## 4 premières lignes :
+CODGEO;REG;DEP;LIBGEO;P99_ACTOCC15P;P99_HSAL15P;P99_HSAL15P_TP;P99_FSAL15P;P99_FSAL15P_TP;P99_ACTOCC15P_ILT1;P99_ACTOCC15P_ILT2P;P99_ACTOCC15P_ILT2;P99_ACTOCC15P_ILT3;P99_ACTOCC15P_ILT4;P99_ACTOCC15P_ILT5;P99_ACTOCC15P_ILT45D
+01001;82;01;L'Abergement-Clémenciat;295;139;9;115;42;45;250;182;61;5;2;
+01002;82;01;L'Abergement-de-Varey;57;33;1;16;3;7;50;31;18;1;0;
+01004;82;01;Ambérieu-en-Bugey;4556;2450;105;1753;599;2180;2376;1797;528;46;5;
+
+
+
+## Dictionnaire des variables :
+VAR_ID;VAR_LIB;VAR_LIB_LONG
+CODGEO;Code géographique;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal
+REG;Région;Code de la région
+DEP;Département;Code du département
+LIBGEO;Libellé géographique;Libellé de la commune ou de l'arrondissement municipal
+P99_ACTOCC15P;Actifs occupés 15 ans ou plus en 1999 (princ);Nombre de personnes actives occupées de 15 ans ou plus 
+P99_HSAL15P;Salariés 15 ans ou plus Hommes en 1999 (princ);Nombre d'hommes salariés de 15 ans ou plus 
+P99_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes en 1999 (princ);Nombre d'hommes salariés de 15 ans ou plus à temps partiel 
+P99_FSAL15P;Salariés 15 ans ou plus Femmes en 1999 (princ);Nombre de femmes salariées de 15 ans ou plus 
+P99_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes en 1999 (princ);Nombre de femmes salariées de 15 ans ou plus à temps partiel 
+P99_ACTOCC15P_ILT1;Actif occ 15 ans ou plus travaille commune résidence en 1999 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence
+P99_ACTOCC15P_ILT2P;Actif occ 15 ans ou plus travaille autre commune que commune résidence en 1999 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence
+P99_ACTOCC15P_ILT2;Actif occ 15 ans ou plus travaille autre commune même dépt résidence en 1999 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence
+P99_ACTOCC15P_ILT3;Actif occ 15 ans ou plus travaille autre dépt même région résidence en 1999 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence
+P99_ACTOCC15P_ILT4;Actif occ 15 ans ou plus travaille autre région en métropole en 1999 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région en France métropolitaine
+P99_ACTOCC15P_ILT5;Actif occ 15 ans ou plus travaille autre région hors métropole en 1999 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger)
+P99_ACTOCC15P_ILT45D;Actif occ15 ans ou plus DOM travaille autre région en 1999 (princ);Nombre d'actifs occupés de 15 ans ou plus dans les DOM qui travaillent dans une autre région 
+

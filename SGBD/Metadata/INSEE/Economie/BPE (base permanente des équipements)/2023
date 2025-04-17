@@ -1,0 +1,294 @@
+Dénombrement et géolocalisation des équipements en 2023 (commerce, services, sport, santé...) 
+Base permanente des équipements (BPE)
+
+
+## Source : 
+https://www.insee.fr/fr/statistiques/8217525
+
+
+
+##Tableau SQL : 
+bpe_2023
+
+
+
+## 4 premières lignes du CSV :
+"AN";"NOMRS";"CNOMRS";"NUMVOIE";"INDREP";"TYPVOIE";"LIBVOIE";"CADR";"LIBCOM";"CODPOS";"DEPCOM";"DEP";"REG";"DOM";"SDOM";"TYPEQU";"SIRET";"STATUT_DIFFUSION";"CANTINE";"INTERNAT";"RPI";"EP";"CL_PGE";"SECT";"ACCES_AIRE_PRATIQUE";"ACCES_LIBRE";"ACCES_SANITAIRE";"ACCES_VESTIAIRE";"CAPACITE_D_ACCUEIL";"PRES_DOUCHE";"PRES_SANITAIRE";"SAISONNIER";"COUVERT";"ECLAIRE";"CATEGORIE";"MULTIPLEXE";"ACCUEIL";"ITINERANCE";"MODE_GESTION";"SSTYPHEB";"TYPE";"CAPACITE";"INDIC_CAPA";"NBEQUIDENT";"INDIC_NBEQUIDENT";"NBSALLES";"INDIC_NBSALLES";"NBLIEUX";"INDIC_NBLIEUX";"LAMBERT_X";"LAMBERT_Y";"LONGITUDE";"LATITUDE";"QUALITE_XY";"EPSG";"QUALITE_GEOLOC";"TR_DIST_PRECISION";"DCIRIS";"QUALI_IRIS";"IRISEE";"QP2015";"QUALI_QP2015";"QP";"QUALI_QP";"QVA";"QUALI_QVA";"ZUS";"QUALI_ZUS";"EPCI";"UU2020";"BV2022";"AAV2020";"DENS3";"DENS7"
+"2023";"COMMISSARIAT DE POLICE DE POINTE À PITRE";"";"";"";"";"QUARTIER LAFOND";"";"LES ABYMES";"97139";"97101";"971";"01";"A";"A1";"A101";"";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";;"0";;"0";;"0";;"0";657375.042365704;1795994.22888873;-61.5274599461587;16.2395069014763;"B";"5490";"11";"< 100";"97101_IND";"3";"1";"IND";"3";"IND";"3";"IND";"3";"IND";"3";"200018653";"9A701";"97101";"9A1";"2";"2"
+"2023";"DIR REG FINANCES PUBLIQUES GUADELOUPE";"SCE IMPOTS DES ENTREPRISES GRANDE TERRE NORD";"";"";"RUE";"DES FINANCES";"CTRE FINANCES PUBLIQUES";"LES ABYMES";"97139";"97101";"971";"01";"A";"A1";"A120";"13001146300069";"O";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";;"0";;"0";;"0";;"0";658650;1797850;-61.5154073134385;16.2561946192377;"M";"5490";"12";">= 500";"971010118";"1";"1";"HZ";"1";"IND";"3";"CSZ";"_Z";"HZ";"1";"200018653";"9A701";"97101";"9A1";"2";"2"
+"2023";"DIR REG FINANCES PUBLIQUES GUADELOUPE";"CFD DE ANTILLES-GUYANE";"";"";"";"BOISRIPEAUX";"RESIDENCE LES MOUFFIAS";"LES ABYMES";"97139";"97101";"971";"01";"A";"A1";"A120";"13001146300259";"O";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";"_Z";;"0";;"0";;"0";;"0";664350;1798750;-61.462019004221;16.2639474212167;"M";"5490";"33";"_U";"971010112";"3";"1";"HZ";"3";"IND";"3";"CSZ";"_Z";"HZ";"3";"200018653";"9A701";"97101";"9A1";"2";"2"
+
+
+
+## Dictionnaire des variables :
+
+Variable,Description,Modalité,Libellé
+AAV2020,Zonage en aire d’attraction des villes 2020,CSZ,Commune sans zonage. La commune n’est pas concernée par les AAV2020
+ACCES_AIRE_PRATIQUE,Accessibilité aire de pratique pour personnes handicapées,0,Absence
+ACCES_AIRE_PRATIQUE,Accessibilité aire de pratique pour personnes handicapées,1,Présence
+ACCES_AIRE_PRATIQUE,Accessibilité aire de pratique pour personnes handicapées,_U,Indéterminé
+ACCES_AIRE_PRATIQUE,Accessibilité aire de pratique pour personnes handicapées,_Z,Sans objet
+ACCES_LIBRE,Présence d’un équipement en accès libre permanent,0,Absence
+ACCES_LIBRE,Présence d’un équipement en accès libre permanent,1,Présence
+ACCES_LIBRE,Présence d’un équipement en accès libre permanent,_U,Indéterminé
+ACCES_LIBRE,Présence d’un équipement en accès libre permanent,_Z,Sans objet
+ACCES_SANITAIRE,Accessibilité sanitaire pour personnes handicapées,0,Absence
+ACCES_SANITAIRE,Accessibilité sanitaire pour personnes handicapées,1,Présence
+ACCES_SANITAIRE,Accessibilité sanitaire pour personnes handicapées,_U,Indéterminé
+ACCES_SANITAIRE,Accessibilité sanitaire pour personnes handicapées,_Z,Sans objet
+ACCES_VESTIAIRE,Accessibilité vestiaire et douche pour personnes handicapées,0,Absence
+ACCES_VESTIAIRE,Accessibilité vestiaire et douche pour personnes handicapées,1,Présence
+ACCES_VESTIAIRE,Accessibilité vestiaire et douche pour personnes handicapées,_U,Indéterminé
+ACCES_VESTIAIRE,Accessibilité vestiaire et douche pour personnes handicapées,_Z,Sans objet
+ACCUEIL,Type d’accueil de l’infrastructure,,
+AN,Millésime de la base,,
+BV2022,Zonage en bassins de vie 2022,,
+CADR,Complément d’adresse,,
+CANTINE,Présence ou absence d’une cantine,0,Absence
+CANTINE,Présence ou absence d’une cantine,1,Présence
+CANTINE,Présence ou absence d’une cantine,_U,Indéterminé
+CANTINE,Présence ou absence d’une cantine,_Z,Sans objet
+CAPACITE,Capacité de l’équipement,NA,Capacité indéterminée ou équipement non-concerné par la capacité
+CAPACITE,Capacité de l’équipement,0-N,Capacité
+CAPACITE_D_ACCUEIL,Catégorie d’établissement recevant du public (ERP),1,Au-dessus de 1500 personnes
+CAPACITE_D_ACCUEIL,Catégorie d’établissement recevant du public (ERP),2,De 701 à 1500 personnes
+CAPACITE_D_ACCUEIL,Catégorie d’établissement recevant du public (ERP),3,De 301 à 700 personnes
+CAPACITE_D_ACCUEIL,Catégorie d’établissement recevant du public (ERP),4,De 101 à 300 personnes
+CAPACITE_D_ACCUEIL,Catégorie d’établissement recevant du public (ERP),5,Inférieur ou égal à 100 personnes
+CAPACITE_D_ACCUEIL,Catégorie d’établissement recevant du public (ERP),_U,Indéterminé
+CAPACITE_D_ACCUEIL,Catégorie d’établissement recevant du public (ERP),_Z,Sans objet
+CATEGORIE,Catégorie d’équipement culturel,,
+CL_PGE,Présence classe préparatoire aux grandes écoles,0,Absence
+CL_PGE,Présence classe préparatoire aux grandes écoles,1,Présence
+CL_PGE,Présence classe préparatoire aux grandes écoles,_U,Indéterminé
+CL_PGE,Présence classe préparatoire aux grandes écoles,_Z,Sans objet
+CNOMRS,Complément du nom ou de la raison sociale,,
+CODPOS,Code postal d’implantation,,
+COUVERT,Présence d’une partie couverte,0,Absence
+COUVERT,Présence d’une partie couverte,1,Présence
+COUVERT,Présence d’une partie couverte,_U,Indéterminé
+COUVERT,Présence d’une partie couverte,_Z,Sans objet
+DCIRIS,Code IRIS d’implantation,,
+DENS3,Grille communale de densité à 3 niveaux,1,Communes densément peuplées
+DENS3,Grille communale de densité à 3 niveaux,2,Communes de densité intermédiaire
+DENS3,Grille communale de densité à 3 niveaux,3,Communes rurales
+DENS7,Grille communale de densité à 7 niveaux,1,Grands centres urbains
+DENS7,Grille communale de densité à 7 niveaux,2,Centres urbains intermédiaires
+DENS7,Grille communale de densité à 7 niveaux,3,Petites villes
+DENS7,Grille communale de densité à 7 niveaux,4,Ceintures urbaines
+DENS7,Grille communale de densité à 7 niveaux,5,Bourgs ruraux
+DENS7,Grille communale de densité à 7 niveaux,6,Rural à habitat dispersé
+DENS7,Grille communale de densité à 7 niveaux,7,Rural à habitat très dispersé
+DCIRIS,Code IRIS d’implantation de l’équipement,,le code est composé de 9 caractères : DEPCOM (5 positions) et numéro d’iris (4 positions). DEPCOM_IND : appartenance IRIS indéterminée. DEPCOM0000 : Commune non-irisée
+DEPCOM,Code département et commune d’implantation de l’équipement,,
+DOM,Domaine d’appartenance de l’équipement,A,Services pour les particuliers
+DOM,Domaine d’appartenance de l’équipement,B,Commerces
+DOM,Domaine d’appartenance de l’équipement,C,Enseignement
+DOM,Domaine d’appartenance de l’équipement,D,Santé et action sociale
+DOM,Domaine d’appartenance de l’équipement,E,Transports et déplacements
+DOM,Domaine d’appartenance de l’équipement,F,"Sports, loisirs et culture"
+DOM,Domaine d’appartenance de l’équipement,G,Tourisme
+ECLAIRE,Présence ou absence d’équipement(s) avec au moins une partie éclairée,0,Absence
+ECLAIRE,Présence ou absence d’équipement(s) avec au moins une partie éclairée,1,Présence
+ECLAIRE,Présence ou absence d’équipement(s) avec au moins une partie éclairée,_U,Indéterminé
+ECLAIRE,Présence ou absence d’équipement(s) avec au moins une partie éclairée,_Z,Sans objet
+EP,Présence ou absence d’un dispositif d’éducation prioritaire,0,Absence
+EP,Présence ou absence d’un dispositif d’éducation prioritaire,1,Présence
+EP,Présence ou absence d’un dispositif d’éducation prioritaire,_U,Indéterminé
+EP,Présence ou absence d’un dispositif d’éducation prioritaire,_Z,Sans objet
+EPCI,Etablissement public de coopération intercommunal d’implantation de l’équipement,,
+EPSG,Code EPSG du système de coordonnées,2154,Lambert 93
+EPSG,Code EPSG du système de coordonnées,2972,UTM 22 Nord
+EPSG,Code EPSG du système de coordonnées,2975,UTM 40 Sud
+EPSG,Code EPSG du système de coordonnées,4471,UTM 38 Sud
+EPSG,Code EPSG du système de coordonnées,5490,UTM 20 Nord
+INDIC_CAPA,Indicateur de concernement des valeurs de capacité,0,Le type d’équipement n’est pas concerné par cette variable
+INDIC_CAPA,Indicateur de concernement des valeurs de capacité,1,Le type d’équipement est concerné par cette variable
+INDIC_NBEQUIDENT,Indicateur de concernement des valeurs du nombre d’infrastructures au sein de l’équipement,0,Le type d’équipement n’est pas concerné par cette variable
+INDIC_NBEQUIDENT,Indicateur de concernement des valeurs du nombre d’infrastructures au sein de l’équipement,1,Le type d’équipement est concerné par cette variable
+INDIC_NBLIEUX,Indicateur de concernement des valeurs du nombre de lieux,0,Le type d’équipement n’est pas concerné par cette variable
+INDIC_NBLIEUX,Indicateur de concernement des valeurs du nombre de lieux,1,Le type d’équipement est concerné par cette variable
+INDIC_NBSALLES,Indicateur de concernement des valeurs du nombre de salles,0,Le type d’équipement n’est pas concerné par cette variable
+INDIC_NBSALLES,Indicateur de concernement des valeurs du nombre de salles,1,Le type d’équipement est concerné par cette variable
+INDREP,Indice de répétition du numéro de voie de l’adresse d’implantation de l’équipement,,
+INTERNAT,Présence ou absence d’un internat,0,Absence
+INTERNAT,Présence ou absence d’un internat,1,Présence
+INTERNAT,Présence ou absence d’un internat,_U,Indéterminé
+INTERNAT,Présence ou absence d’un internat,_Z,Sans objet
+IRISEE,Indicatrice d’irisation de la commune,0,Commune non-irisée
+IRISEE,Indicatrice d’irisation de la commune,1,Commune irisée
+ITINERANCE,Présence d’une structure itinérante,0,Absence
+ITINERANCE,Présence d’une structure itinérante,1,Présence
+ITINERANCE,Présence d’une structure itinérante,_U,Indéterminé
+ITINERANCE,Présence d’une structure itinérante,_Z,Sans objet
+LAMBERT_X,Coordonnée X de l’équipement,,
+LAMBERT_Y,Coordonnée Y de l’équipement,,
+LATITUDE,Latitude en coordonnées GPS de l’équipement (degrés décimaux),,
+LIBCOM,Libellé de la commune d’implantation de l’équipement,,
+LIBVOIE,Libellé de la voie d’implantation de l’équipement,,
+LONGITUDE,Longitude en coordonnées GPS de l’équipement (degrés décimaux),,
+MODE_GESTION,Mode de gestion de l’infrastructure,ENTRE,Marché de prestation de service
+MODE_GESTION,Mode de gestion de l’infrastructure,GESDE,Délégation de service public
+MODE_GESTION,Mode de gestion de l’infrastructure,PRIVE,Gestion privée
+MODE_GESTION,Mode de gestion de l’infrastructure,REGIE,Régie
+MODE_GESTION,Mode de gestion de l’infrastructure,_U,Indéterminé
+MODE_GESTION,Mode de gestion de l’infrastructure,_Z,Non concerné
+MULTIPLEXE,Présence d’un cinéma multiplexe,0,Absence
+MULTIPLEXE,Présence d’un cinéma multiplexe,1,Présence
+MULTIPLEXE,Présence d’un cinéma multiplexe,_U,Indéterminé
+MULTIPLEXE,Présence d’un cinéma multiplexe,_Z,Sans objet
+PRES_DOUCHE,Présence de douches,0,Absence
+PRES_DOUCHE,Présence de douches,1,Présence
+PRES_DOUCHE,Présence de douches,_U,Indéterminé
+PRES_DOUCHE,Présence de douches,_Z,Sans objet
+PRES_SANITAIRE,Présence de sanitaires,0,Absence
+PRES_SANITAIRE,Présence de sanitaires,1,Présence
+PRES_SANITAIRE,Présence de sanitaires,_U,Indéterminé
+PRES_SANITAIRE,Présence de sanitaires,_Z,Sans objet
+QP,Quartier prioritaire de la politique de la ville,IND,Appartenance indéterminée
+QP,Quartier prioritaire de la politique de la ville,HZ,Hors zonage
+QP,Quartier prioritaire de la politique de la ville,CSZ,Commune sans zonage
+QP2015,Quartier prioritaire de la politique de la ville 2015,IND,Appartenance indéterminée
+QP2015,Quartier prioritaire de la politique de la ville 2015,HZ,Hors zonage
+QP2015,Quartier prioritaire de la politique de la ville 2015,CSZ,Commune sans zonage
+QUALI_IRIS,Indicateur de qualité du géoréférencement dans l’iris,1,Appartenance sûre au zonage
+QUALI_IRIS,Indicateur de qualité du géoréférencement dans l’iris,2,Appartenance probable au zonage
+QUALI_IRIS,Indicateur de qualité du géoréférencement dans l’iris,3,Appartenance aléatoire ou indéterminée au zonage
+QUALI_IRIS,Indicateur de qualité du géoréférencement dans l’iris,_Z,Sans objet
+QUALI_QP,Indicateur de qualité du géoréférencement dans le quartier prioritaire,1,Appartenance sûre au zonage
+QUALI_QP,Indicateur de qualité du géoréférencement dans le quartier prioritaire,2,Appartenance probable au zonage
+QUALI_QP,Indicateur de qualité du géoréférencement dans le quartier prioritaire,3,Appartenance aléatoire ou indéterminée au zonage
+QUALI_QP,Indicateur de qualité du géoréférencement dans le quartier prioritaire,_Z,Sans objet
+QUALI_QP2015,Indicateur de qualité du géoréférencement dans le quartier prioritaire 2015,1,Appartenance sûre au zonage
+QUALI_QP2015,Indicateur de qualité du géoréférencement dans le quartier prioritaire 2015,2,Appartenance probable au zonage
+QUALI_QP2015,Indicateur de qualité du géoréférencement dans le quartier prioritaire 2015,3,Appartenance aléatoire ou indéterminée au zonage
+QUALI_QP2015,Indicateur de qualité du géoréférencement dans le quartier prioritaire 2015,_Z,Sans objet
+QUALI_QVA,Indicateur de qualité du géoréférencement dans le quartier de veille active,1,Appartenance sûre au zonage
+QUALI_QVA,Indicateur de qualité du géoréférencement dans le quartier de veille active,2,Appartenance probable au zonage
+QUALI_QVA,Indicateur de qualité du géoréférencement dans le quartier de veille active,3,Appartenance aléatoire ou indéterminée au zonage
+QUALI_QVA,Indicateur de qualité du géoréférencement dans le quartier de veille active,_Z,Sans objet
+QUALI_ZUS,Indicateur de qualité du géoréférencement dans la zone urbaine sensible,1,Appartenance sûre au zonage
+QUALI_ZUS,Indicateur de qualité du géoréférencement dans la zone urbaine sensible,2,Appartenance probable au zonage
+QUALI_ZUS,Indicateur de qualité du géoréférencement dans la zone urbaine sensible,3,Appartenance aléatoire ou indéterminée au zonage
+QUALI_ZUS,Indicateur de qualité du géoréférencement dans la zone urbaine sensible,_Z,Sans objet
+QUALITE_GEOLOC,Indicateur de précision du repérage par l’adresse,11,"Voie sûre, Numéro trouvé"
+QUALITE_GEOLOC,Indicateur de précision du repérage par l’adresse,12,"Voie sûre, Position aléatoire dans la voie"
+QUALITE_GEOLOC,Indicateur de précision du repérage par l’adresse,21,"Voie probable, Numéro trouvé"
+QUALITE_GEOLOC,Indicateur de précision du repérage par l’adresse,22,"Voie probable, Position aléatoire dans la voie"
+QUALITE_GEOLOC,Indicateur de précision du repérage par l’adresse,33,"Voie inconnue, Position aléatoire dans la commune"
+QUALITE_GEOLOC,Indicateur de précision du repérage par l’adresse,_U,Indéterminé
+QUALITE_GEOLOC,Indicateur de précision du repérage par l’adresse,_Z,Sans objet
+QUALITE_XY,Indicateur de qualité de géolocalisation,A,Acceptable
+QUALITE_XY,Indicateur de qualité de géolocalisation,B,Bonne
+QUALITE_XY,Indicateur de qualité de géolocalisation,M,Mauvaise
+QUALITE_XY,Indicateur de qualité de géolocalisation,_U,Indéterminée
+QUALITE_XY,Indicateur de qualité de géolocalisation,_Z,Non-géolocalisé
+QVA,Quartier de veille active d’appartenance de l’équipement,,le code est composé de 7 caractères
+REG,Région d’implantation de l’équipement,01,Guadeloupe
+REG,Région d’implantation de l’équipement,02,Martinique
+REG,Région d’implantation de l’équipement,03,Guyane
+REG,Région d’implantation de l’équipement,04,La Réunion
+REG,Région d’implantation de l’équipement,06,Mayotte
+REG,Région d’implantation de l’équipement,11,Ile-de-France
+REG,Région d’implantation de l’équipement,24,Centre-Val de Loire
+REG,Région d’implantation de l’équipement,27,Bourgogne-Franche-Comté
+REG,Région d’implantation de l’équipement,28,Normandie
+REG,Région d’implantation de l’équipement,32,Hauts-de-France
+REG,Région d’implantation de l’équipement,44,Grand Est
+REG,Région d’implantation de l’équipement,52,Pays de la Loire
+REG,Région d’implantation de l’équipement,53,Bretagne
+REG,Région d’implantation de l’équipement,75,Nouvelle-Aquitaine
+REG,Région d’implantation de l’équipement,76,Occitanie
+REG,Région d’implantation de l’équipement,84,Auvergne-Rhône-Alpes
+REG,Région d’implantation de l’équipement,93,Provence-Alpes-Côte d’Azur
+REG,Région d’implantation de l’équipement,94,Corse
+RPI,Type de regroupement pédagogique intercommunal,C,RPI concentré
+RPI,Type de regroupement pédagogique intercommunal,D,RPI dispersé
+RPI,Type de regroupement pédagogique intercommunal,_Z,Sans objet
+SAISONNIER,Présence d’un équipement à l’ouverture exclusivement saisonnière,0,Absence
+SAISONNIER,Présence d’un équipement à l’ouverture exclusivement saisonnière,1,Présence
+SAISONNIER,Présence d’un équipement à l’ouverture exclusivement saisonnière,_U,Indéterminé
+SAISONNIER,Présence d’un équipement à l’ouverture exclusivement saisonnière,_Z,Sans objet
+SDOM,Sous-domaine d’appartenance de l’équipement,A1,Services publics
+SDOM,Sous-domaine d’appartenance de l’équipement,A2,Services généraux
+SDOM,Sous-domaine d’appartenance de l’équipement,A3,Services automobiles
+SDOM,Sous-domaine d’appartenance de l’équipement,A4,Artisanat du bâtiment
+SDOM,Sous-domaine d’appartenance de l’équipement,A5,Autres services
+SDOM,Sous-domaine d’appartenance de l’équipement,B1,Grandes surfaces
+SDOM,Sous-domaine d’appartenance de l’équipement,B2,Commerces alimentaires
+SDOM,Sous-domaine d’appartenance de l’équipement,B3,Commerces spécialisés non-alimentaires
+SDOM,Sous-domaine d’appartenance de l’équipement,C1,Enseignement du premier degré
+SDOM,Sous-domaine d’appartenance de l’équipement,C2,Enseignement du second degré - premier cycle
+SDOM,Sous-domaine d’appartenance de l’équipement,C3,Enseignement du second degré - second cycle
+SDOM,Sous-domaine d’appartenance de l’équipement,C4,Enseignement supérieur non-universitaire
+SDOM,Sous-domaine d’appartenance de l’équipement,C5,Enseignement supérieur universitaire
+SDOM,Sous-domaine d’appartenance de l’équipement,C6,Formation continue
+SDOM,Sous-domaine d’appartenance de l’équipement,C7,Autres services de l’éducation
+SDOM,Sous-domaine d’appartenance de l’équipement,D1,Etablissements et services de santé
+SDOM,Sous-domaine d’appartenance de l’équipement,D2,Fonctions médicales et paramédicales (à titre libéral)
+SDOM,Sous-domaine d’appartenance de l’équipement,D3,Autres établissements et services à caractère sanitaire
+SDOM,Sous-domaine d’appartenance de l’équipement,D4,Action sociale pour personnes âgées
+SDOM,Sous-domaine d’appartenance de l’équipement,D5,Action sociale pour enfants en bas-âge
+SDOM,Sous-domaine d’appartenance de l’équipement,D6,Action sociale pour handicapés
+SDOM,Sous-domaine d’appartenance de l’équipement,D7,Autres services d’action sociale
+SDOM,Sous-domaine d’appartenance de l’équipement,E1,Infrastructures de transports
+SDOM,Sous-domaine d’appartenance de l’équipement,F1,Equipements sportifs
+SDOM,Sous-domaine d’appartenance de l’équipement,F2,Equipements de loisirs
+SDOM,Sous-domaine d’appartenance de l’équipement,F3,Equipements culturels et socioculturels
+SDOM,Sous-domaine d’appartenance de l’équipement,G1,Tourisme
+SECT,Appartenance au secteur public ou privé d’enseignement,PR,Secteur privé
+SECT,Appartenance au secteur public ou privé d’enseignement,PU,Secteur public
+SECT,Appartenance au secteur public ou privé d’enseignement,_U,Indéterminé
+SECT,Appartenance au secteur public ou privé d’enseignement,_Z,Sans objet
+SSTYPHEB,Sous-type d’hébergement,AH,Autres hébergements
+SSTYPHEB,Sous-type d’hébergement,RT,Résidence de tourisme
+SSTYPHEB,Sous-type d’hébergement,VV,Village vacances
+SSTYPHEB,Sous-type d’hébergement,_Z,Sans objet
+STATUT_DIFFUSION,Statut de diffusion Sirene,O,Diffusion totale
+STATUT_DIFFUSION,Statut de diffusion Sirene,P,Diffusion partielle
+STATUT_DIFFUSION,Statut de diffusion Sirene,_Z,Sans objet
+TR_DIST_PRECISION,Erreur maximum de positionnement,< 100,Moins de 100 mètres
+TR_DIST_PRECISION,Erreur maximum de positionnement,>= 500,500 mètres ou plus
+TR_DIST_PRECISION,Erreur maximum de positionnement,[100 - 500[,De 100 à moins de 500 mètres
+TR_DIST_PRECISION,Erreur maximum de positionnement,_U,Indéterminé
+TR_DIST_PRECISION,Erreur maximum de positionnement,_Z,Sans objet
+TYPE,Type de lieux,ANT,Antenne
+TYPE,Type de lieux,LF,Lieu fixe
+TYPE,Type de lieux,MO,Mobile
+TYPE,Type de lieux,MS,Multi-sites
+TYPE,Type de lieux,_U,Indéterminé
+TYPE,Type de lieux,_Z,Sans objet
+TYPEQU,Type d’équipement,A101,POLICE
+TYPEQU,Type d’équipement,A104,GENDARMERIE
+TYPEQU,Type d’équipement,A105,COUR D’APPEL (CA)
+TYPEQU,Type d’équipement,A108,CONSEIL DE PRUD’HOMMES (CPH)
+TYPEQU,Type d’équipement,A109,TRIBUNAL DE COMMERCE (TCO)
+TYPEQU,Type d’équipement,A120,DRFIP (DIRECTION RÉGIONALE DES FINANCES PUBLIQUES)
+TYPEQU,Type d’équipement,A121,DDFIP (DIRECTION DÉPARTEMENTALE DES FINANCES PUBLIQUES)
+TYPEQU,Type d’équipement,A122,RÉSEAU DE PROXIMITÉ PÔLE EMPLOI
+TYPEQU,Type d’équipement,A124,MAISON DE JUSTICE ET DU DROIT
+TYPEQU,Type d’équipement,A125,ANTENNE DE JUSTICE
+TYPEQU,Type d’équipement,A126,CONSEIL DÉPARTEMENTAL D’ACCÈS AU DROIT (CDAD)
+TYPEQU,Type d’équipement,A128,IMPLANTATIONS FRANCE SERVICES (IFS)
+TYPEQU,Type d’équipement,A129,MAIRIE
+TYPEQU,Type d’équipement,A130,BUREAU D’AIDE JURIDICTIONNELLE (BAJ)
+TYPEQU,Type d’équipement,A131,TRIBUNAL JUDICIAIRE (TJ)
+TYPEQU,Type d’équipement,A132,TRIBUNAL DE PROXIMITÉ (TPRX)
+TYPEQU,Type d’équipement,A133,DÉCHÈTERIE
+TYPEQU,Type d’équipement,A203,"BANQUE, CAISSE D’ÉPARGNE"
+TYPEQU,Type d’équipement,A205,SERVICES FUNÉRAIRES
+TYPEQU,Type d’équipement,A206,BUREAU DE POSTE
+TYPEQU,Type d’équipement,A207,RELAIS POSTE
+TYPEQU,Type d’équipement,A208,AGENCE POSTALE
+TYPEQU,Type d’équipement,A301,RÉPARATION AUTOMOBILE ET DE MATÉRIEL AGRICOLE
+TYPEQU,Type d’équipement,A302,CONTRÔLE TECHNIQUE AUTOMOBILE
+TYPEQU,Type d’équipement,A303,LOCATION AUTO-UTILITAIRES LÉGERS
+TYPEQU,Type d’équipement,A304,ÉCOLE DE CONDUITE
+TYPEQU,Type d’équipement,A401,MAÇON
+TYPEQU,Type d’équipement,A402,PLÂTRIER PEINTRE
+TYPVOIE,Type de voie de l’adresse d’implantation de l’équipement,,
+UU2020,Unité urbaine 2020 d’implantation de l’équipement,CSZ,Commune sans zonage. La commune n’est pas concernée par les UU2020.
+ZUS,Zone urbaine sensible d’appartenance de l’équipement,IND,Appartenance à une zone urbaine sensible indéterminée
+ZUS,Zone urbaine sensible d’appartenance de l’équipement,HZ,Localisation hors d’une zone urbaine sensible
+ZUS,Zone urbaine sensible d’appartenance de l’équipement,CSZ,Commune sans zonage. La commune n’est pas concernée par les ZUS.
+

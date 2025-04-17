@@ -1,0 +1,12 @@
+---
+description: python-usage
+globs: **/*
+alwaysApply: true
+---
+
+## python-usage
+- Always write modular code with functions and classes when necessary.
+- Avoid global variables.
+- Use descriptive variable and function names (e.g., `load_data`, `is_valid`, `has_permission`).
+- Use type annotations and type hints (`mypy` compatible).
+- Keep functions short and focused on a single responsibility.

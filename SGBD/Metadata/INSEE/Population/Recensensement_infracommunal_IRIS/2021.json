@@ -1,0 +1,463 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "POP_IRIS_2021",
+    "description": "Source :  https://www.insee.fr/fr/statistiques/8268806 Tableau SQL : POP_IRIS_2021 IRIS;COM;TYP_IRIS;LAB_IRIS;P21_POP;P21_POP0002;P21_POP0305;P21_POP0610;P21_POP1117;P21_POP1824;P21_POP2539;P21_POP4054;P21_POP5564;P21_POP6579;P21_POP80P;P21_POP0014;P21_POP1529;P21_POP3044;P21_POP4559;P21_POP6074;P21_POP75P;P21_POP0019;P21_POP2064;P21_POP65P;P21_POPH;P21_H0014;P21_H1529;P21_H3044;P21_H4559;P21_H6074;P21_H75P;P21_H0019;P21_H2064;P21_H65P;P21_POPF;P21_F0014;P21_F1529;P21_F3044;P21_F4559;P21_F6074;P21_F75P;P21_F0019;P21_F2064;P21_F65P;C21_POP15P;C21_POP15P_CS1;C21_POP15P_CS2;C21_POP15P_CS3;C21_POP15P_CS4;C21_POP15P_CS5;C21_POP15P_CS6;C21_POP15P_CS7;C21_POP15P_CS8;C21_H15P;C21_H15P_CS1;C21_H15P_CS2;C21_H15P_CS3;C21_H15P_CS4;C21_H15P_CS5;C21_H15P_CS6;C21_H15P_CS7;C21_H15P_CS8;C21_F15P;C21_F15P_CS1;C21_F15P_CS2;C21_F15P_CS3;C21_F15P_CS4;C21_F15P_CS5;C21_F15P_CS6;C21_F15P_CS7;C21_F15P_CS8;P21_POP_FR;P21_POP_ETR;P21_POP_IMM;P21_PMEN;P21_PHORMEN 010010000;01001;Z;5;832;32.2221772688278;27.4379832465365;54.8418453729531;79.1699499433284;29.1297982157669;146.720566187795;171.578985146351;125.962948087761;122.797688817853;42.138057712827;158.552045228214;100.025669125929;152.787222000046;198.071133518886;149.720217782771;72.8437123441543;206.333157490542;460.731095978778;164.93574653068;423.485016885463;92.9355275683221;47.6380185861432;74.8649592599333;99.5791105400233;72.9684366139067;35.4989643171345;117.365917200565;229.367683115532;76.7514165693656;408.514983114537;65.616517659892;52.3876505397854;77.922262740113;98.4920229788626;76.7517811688641;37.3447480270198;88.9672402899772;231.363412863245;88.1843299613141;681.164442942002;4.84353307255505;43.7201016831258;63.3486468714884;106.140417852504;101.67520816276;126.068241753175;191.732750126687;43.635543419707;357.558108132075;4.84353307255505;24.2610452691337;34.0326696776627;57.8723743520263;19.3744981505733;97.0467486248464;105.511346589898;14.61589239538;323.606334809927;0;19.4590564139921;29.3159771938257;48.2680435004782;82.3007100121866;29.0214931283286;86.221403536789;29.019651024327;822.287126066005;9.71287393399538;18.3810100778466;832;0 010020000;01002;Z;5;267;5.98777321691745;12.0677762450347;19.0664665554135;34.0503178683653;11.2438158191622;40.4502205046507;72.5969153733279;24.6148338569658;29.9979507954207;16.9239297647417;57.0462860507837;32.4390934255431;57.2722235904477;58.1015060435166;40.5047400920238;21.636150797685;77.2611590597397;142.816960380098;46.9218805601625;139.890359491632;27.0105124263677;22.3473585071835;24.7401578867594;32.7870782781525;21.7130930371851;11.2921593559836;40.0980279107553;73.558433904117;26.2338976767596;127.109640508368;30.0357736244161;10.0917349183597;32.5320657036883;25.314427765364;18.7916470548387;10.3439914417015;37.1631311489844;69.2585264759809;20.6879828834029;192.979797073951;25.0504804398396;5.04052369877297;19.1153577399804;29.2101853931387;19.4105884863416;19.8671455616524;65.6562905380668;9.62922521615814;105.685392295124;14.9694330422936;5.04052369877297;14.2269720952327;4.59774687907453;4.74083957141047;15.1263059902419;42.0951853733505;4.88838564474768;87.2944047788262;10.0810473975459;0;4.88838564474768;24.6124385140641;14.6697489149311;4.74083957141047;23.5611051647164;4.74083957141047;265.991895260245;1.00810473975459;2.87582202985159;267;0",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "COM",
+      "type": "CHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "TYP_IRIS",
+      "type": "CHAR",
+      "description": "Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z)",
+      "nullable": true
+    },
+    {
+      "name": "LAB_IRIS",
+      "type": "CHAR",
+      "description": "Label de qualité de l'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP",
+      "type": "NUM",
+      "description": "Population",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0002",
+      "type": "NUM",
+      "description": "Nombre de personnes de 0 à 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0305",
+      "type": "NUM",
+      "description": "Nombre de personnes de 3 à 5 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0610",
+      "type": "NUM",
+      "description": "Nombre de personnes de 6 à 10 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP1117",
+      "type": "NUM",
+      "description": "Nombre de personnes de 11 à 17 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP1824",
+      "type": "NUM",
+      "description": "Nombre de personnes de 18 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP2539",
+      "type": "NUM",
+      "description": "Nombre de personnes de 25 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP4054",
+      "type": "NUM",
+      "description": "Nombre de personnes de 40 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP5564",
+      "type": "NUM",
+      "description": "Nombre de personnes de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP6579",
+      "type": "NUM",
+      "description": "Nombre de personnes de 65 à 79 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP80P",
+      "type": "NUM",
+      "description": "Nombre de personnes de 80 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0014",
+      "type": "NUM",
+      "description": "Nombre de personnes de 0 à 14 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP1529",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 à 29 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP3044",
+      "type": "NUM",
+      "description": "Nombre de personnes de 30 à 44 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP4559",
+      "type": "NUM",
+      "description": "Nombre de personnes de 45 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP6074",
+      "type": "NUM",
+      "description": "Nombre de personnes de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP75P",
+      "type": "NUM",
+      "description": "Nombre de personnes de 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0019",
+      "type": "NUM",
+      "description": "Nombre de personnes de 0 à 19 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP2064",
+      "type": "NUM",
+      "description": "Nombre de personnes de 20 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP65P",
+      "type": "NUM",
+      "description": "Nombre de personnes de 65 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_POPH",
+      "type": "NUM",
+      "description": "Nombre d'hommes",
+      "nullable": true
+    },
+    {
+      "name": "P21_H0014",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 0 à 14 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_H1529",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 à 29 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_H3044",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 30 à 44 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_H4559",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 45 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_H6074",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_H75P",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_H0019",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 0 à 19 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_H2064",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 20 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_H65P",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 65 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_POPF",
+      "type": "NUM",
+      "description": "Nombre de femmes",
+      "nullable": true
+    },
+    {
+      "name": "P21_F0014",
+      "type": "NUM",
+      "description": "Nombre de femmes de 0 à 14 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_F1529",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 à 29 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_F3044",
+      "type": "NUM",
+      "description": "Nombre de femmes de 30 à 44 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_F4559",
+      "type": "NUM",
+      "description": "Nombre de femmes de 45 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_F6074",
+      "type": "NUM",
+      "description": "Nombre de femmes de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_F75P",
+      "type": "NUM",
+      "description": "Nombre de femmes de 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_F0019",
+      "type": "NUM",
+      "description": "Nombre de femmes de 0 à 19 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_F2064",
+      "type": "NUM",
+      "description": "Nombre de femmes de 20 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_F65P",
+      "type": "NUM",
+      "description": "Nombre de femmes de 65 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS1",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Agriculteurs exploitants",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS2",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS3",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS4",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Professions intermédiaires",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS5",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Employés",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS6",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Ouvriers",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS7",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Retraités",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS8",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS1",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS2",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS3",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS4",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Professions intermédiaires",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS5",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Employés",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS6",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Ouvriers",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS7",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Retraités",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS8",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS1",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Agriculteurs exploitants",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS2",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS3",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS4",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Professions intermédiaires",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS5",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Employés",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS6",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Ouvriers",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS7",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Retraités",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS8",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP_FR",
+      "type": "NUM",
+      "description": "Nombre de personnes de nationalité française",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP_ETR",
+      "type": "NUM",
+      "description": "Nombre de personnes étrangères",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP_IMM",
+      "type": "NUM",
+      "description": "Nombres de personnes immigrées",
+      "nullable": true
+    },
+    {
+      "name": "P21_PMEN",
+      "type": "NUM",
+      "description": "Population des ménages",
+      "nullable": true
+    },
+    {
+      "name": "P21_PHORMEN",
+      "type": "NUM",
+      "description": "Population hors ménages",
+      "nullable": true
+    }
+  ]
+}

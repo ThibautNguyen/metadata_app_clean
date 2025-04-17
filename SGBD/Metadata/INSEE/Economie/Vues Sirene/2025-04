@@ -1,0 +1,34 @@
+Vue de jointure entre les tables :
+- Stock Etablissements
+- Stock Unités légales
+- Nomenclature NAF
+
+## Tableau SQL : 
+vue_etablissements_complet  
+
+## Dictionnaire des variables :
+Variable;Contenu
+siren;Siren
+denominationUniteLegale;Dénomination de l'unité légale
+denominationUsuelle1UniteLegale;Dénomination usuelle 1 de l'unité légale
+trancheEffectifsEtablissement;Tranche d'effectifs de l'établissement    
+libelle_tranche_effectifs;Libellé de la tranche d'effectifs de l'établissement
+dateDernierTraitementEtablissement;Date du dernier traitement de l'établissement
+etablissementSiege;Etablissement siège
+complementAdresseEtablissement;Complément d'adresse de l'établissement
+numeroVoieEtablissement;Numéro de voie de l'établissement
+typeVoieEtablissement;Type de voie de l'établissement   
+libelleVoieEtablissement;Libellé de la voie de l'établissement
+libelleCommuneEtablissement;Libellé de la commune de l'établissement
+secteur_economique;Secteur économique de l'établissement
+codeCommuneEtablissement;Code de la commune de l'établissement
+caractereEmployeurEtablissement;Caractère employeur de l'établissement
+libelle_etat_administratif;Libellé de l'état administratif de l'établissement   
+longitude;Longitude de l'établissement  
+latitude;Latitude de l'établissement
+geo_score;Score géographique de l'établissement
+geo_type;Type de géographie de l'établissement
+geo_adresse;Adresse géographique de l'établissement
+geo_id;Identifiant géographique de l'établissement
+geo_ligne;Ligne géographique de l'établissement       
+

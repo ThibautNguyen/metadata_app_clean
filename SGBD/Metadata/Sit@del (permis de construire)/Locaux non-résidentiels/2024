@@ -1,0 +1,166 @@
+## Source : 
+https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=dataset&datasetId=6513f0189d7d312c80ec5b5b
+
+
+## Tableau SQL :
+Locaux_non_résidentiels_2024
+
+
+## Chemin disque dur :
+C:\Users\thiba\OneDrive\Documents\Données\Logement\Sit@del\2024-03
+
+
+### 4 premières lignes du CSV :
+"Code de la région du lieu des travaux - Code de la zone";"Code de la région du lieu des travaux - Libellé de la zone";"Code du département du lieu des travaux - Code de la zone";"Code du département du lieu des travaux - Libellé de la zone";"Code de la commune du lieu des travaux";"Type de DAU -- demande d'autorisation d'urbanisme (PC ou DP généralement, rarement PA)";"Numéro d'enregistrement de la DAU";"Etat d'avancement du projet";"Date réelle d'autorisation (PC) ou de non-opposition (DP) initiale";"Date réelle d'ouverture de chantier";"Date réelle d'achèvement des travaux";"Année de dépôt de la DAU";"Date (mois) de prise en compte (DPC) du premier évènement reçu dans Sitadel (dépôt de la demande ou autorisation)";"Date (mois) de prise en compte (DPC) de l'autorisation initiale";"Date (mois) de prise en compte (DPC) de l'ouverture du chantier";"Date (mois) (DPC) de dernière mise à jour des données";"Code d'activité principale de l'établissement d'un demandeur avéré en tant que personne morale";"Catégorie juridique d'un demandeur avéré en tant que personne morale";"Dénomination d'un demandeur avéré en tant que personne morale";"Numéro SIREN d'un demandeur avéré en tant que personne morale";"Numéro SIRET d'un demandeur avéré en tant que personne morale";"Code postal du demandeur";"Localité du demandeur";"Indicateur de recours à un architecte";"Numéro de voie du terrain";"Type de voie du terrain";"Libellé de la voie du terrain";"Lieu-dit du terrain";"Localité du terrain";"Code postal du terrain";"sec_cadastre1";"num_cadastre1";"sec_cadastre2";"num_cadastre2";"sec_cadastre3";"num_cadastre3";"Superficie du terrain";"Code zone opératoire";"Nature du projet déclarée par le demandeur";"Nature de projet détaillée";"Destination principale";"Type principal de transformation";"Type principal des locaux d'origine transformés";"Indicateur d'extension";"Indicateur de surélévation";"Indicateur de création de niveau(x) supplémentaire(s)";"Nombre de niveaux du bâtiment le plus élevé";"Nombre de chambres (hôtels et autres hébergements, notamment sociaux)";"Surface de plancher de la destination Habitation existante avant travaux";"Surface de plancher de la destination Habitation nouvelle construite";"Surface de plancher de la destination Habitation issue d'une transformation";"Surface de plancher de la destination Habitation supprimée (démolie)";"Surface de plancher de la destination Habitation transformée";"Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) existante avant travaux";"Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) nouvelle construite";"Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) issue d'une transformation";"Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) démolie";"Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) transformée";"Surface de plancher de la destination Hébergement hôtelier existante avant travaux";"Surface de plancher de la destination Hébergement hôtelier nouvelle construite";"Surface de plancher de la destination Hébergement hôtelier issue d'une transformation";"Surface de plancher de la destination Hébergement hôtelier démolie";"Surface de plancher de la destination Hébergement hôtelier transformée";"Surface de plancher de la destination Bureau existante avant travaux";"Surface de plancher de la destination Bureau nouvelle construite";"Surface de plancher de la destination Bureau issue d'une transformation";"Surface de plancher de la destination Bureau démolie";"Surface de plancher de la destination Bureau transformée";"Surface de plancher de la destination Commerce existante avant travaux";"Surface de plancher de la destination Commerce nouvelle construite";"Surface de plancher de la destination Commerce issue d'une transformation";"Surface de plancher de la destination Commerce démolie";"Surface de plancher de la destination Commerce transformée";"Surface de plancher de la destination Artisanat existante avant travaux";"Surface de plancher de la destination Artisanat nouvelle construite";"Surface de plancher de la destination Artisanat issue d'une transformation";"Surface de plancher de la destination Artisanat démolie";"Surface de plancher de la destination Artisanat transformée";"Surface de plancher de la destination Industrie existante avant travaux";"Surface de plancher de la destination Industrie nouvelle construite";"Surface de plancher de la destination Industrie issue d'une transformation";"Surface de plancher de la destination Industrie démolie";"Surface de plancher de la destination Industrie transformée";"Surface de plancher de la destination Exploitation agricole ou forestière existante avant travaux";"Surface de plancher de la destination Exploitation agricole ou forestière nouvelle construite";"Surface de plancher de la destination Exploitation agricole ou forestière issue d'une transformation";"Surface de plancher de la destination Exploitation agricole ou forestière démolie";"Surface de plancher de la destination Exploitation agricole ou forestière transformée";"Surface de plancher de la destination Entrepôt existante avant travaux";"Surface de plancher de la destination Entrepôt nouvelle construite";"Surface de plancher de la destination Entrepôt issue d'une transformation";"Surface de plancher de la destination Entrepôt démolie";"Surface de plancher de la destination Entrepôt transformée";"Surface de plancher de la destination Services publics ou d'intérêt collectif' existante avant travaux";"Surface de plancher de la destination Services publics ou d'intérêt collectif nouvelle construite";"Surface de plancher de la destination Services publics ou d'intérêt collectif issue d'une transformation";"Surface de plancher de la destination Services publics ou d'intérêt collectif démolie";"Surface de plancher de la destination Services publics ou d'intérêt collectif transformée";"Type de service public ou d'intérêt collectif"
+"REG_CODE";"REG_LIBELLE";"DEP_CODE";"DEP_LIBELLE";"COMM";"TYPE_DAU";"NUM_DAU";"ETAT_DAU";"DATE_REELLE_AUTORISATION";"DATE_REELLE_DOC";"DATE_REELLE_DAACT";"AN_DEPOT";"DPC_PREM";"DPC_AUT";"DPC_DOC";"DPC_DERN";"APE_DEM";"CJ_DEM";"DENOM_DEM";"SIREN_DEM";"SIRET_DEM";"CODPOST_DEM";"LOCALITE_DEM";"REC_ARCHI";"ADR_NUM_TER";"ADR_TYPEVOIE_TER";"ADR_LIBVOIE_TER";"ADR_LIEUDIT_TER";"ADR_LOCALITE_TER";"ADR_CODPOST_TER";"SEC_CADASTRE1";"NUM_CADASTRE1";"SEC_CADASTRE2";"NUM_CADASTRE2";"SEC_CADASTRE3";"NUM_CADASTRE3";"SUPERFICIE_TERRAIN";"ZONE_OP";"NATURE_PROJET_DECLAREE";"NATURE_PROJET_COMPLETEE";"DESTINATION_PRINCIPALE";"TYPE_TRANSFO_PRINCIPAL";"TYPE_PRINCIP_LOCAUX_TRANSFORMES";"I_EXTENSION";"I_SURELEVATION";"I_NIVSUPP";"NB_NIV_MAX";"NB_CHAMBRES";"SURF_HAB_AVANT";"SURF_HAB_CREEE";"SURF_HAB_ISSUE_TRANSFO";"SURF_HAB_DEMOLIE";"SURF_HAB_TRANSFORMEE";"SURF_LOC_AVANT";"SURF_LOC_CREEE";"SURF_LOC_ISSUE_TRANSFO";"SURF_LOC_DEMOLIE";"SURF_LOC_TRANSFORMEE";"SURF_HEB_AVANT";"SURF_HEB_CREEE";"SURF_HEB_ISSUE_TRANSFO";"SURF_HEB_DEMOLIE";"SURF_HEB_TRANSFORMEE";"SURF_BUR_AVANT";"SURF_BUR_CREEE";"SURF_BUR_ISSUE_TRANSFO";"SURF_BUR_DEMOLIE";"SURF_BUR_TRANSFORMEE";"SURF_COM_AVANT";"SURF_COM_CREEE";"SURF_COM_ISSUE_TRANSFO";"SURF_COM_DEMOLIE";"SURF_COM_TRANSFORMEE";"SURF_ART_AVANT";"SURF_ART_CREEE";"SURF_ART_ISSUE_TRANSFO";"SURF_ART_DEMOLIE";"SURF_ART_TRANSFORMEE";"SURF_IND_AVANT";"SURF_IND_CREEE";"SURF_IND_ISSUE_TRANSFO";"SURF_IND_DEMOLIE";"SURF_IND_TRANSFORMEE";"SURF_AGR_AVANT";"SURF_AGR_CREEE";"SURF_AGR_ISSUE_TRANSFO";"SURF_AGR_DEMOLIE";"SURF_AGR_TRANSFORMEE";"SURF_ENT_AVANT";"SURF_ENT_CREEE";"SURF_ENT_ISSUE_TRANSFO";"SURF_ENT_DEMOLIE";"SURF_ENT_TRANSFORMEE";"SURF_PUB_AVANT";"SURF_PUB_CREEE";"SURF_PUB_ISSUE_TRANSFO";"SURF_PUB_DEMOLIE";"SURF_PUB_TRANSFORMEE";"TYPE_SERVICE_PUBLIC"
+"82";"Rhône-Alpes";"01";"Ain";"01001";"PC";"00100117V0002";5;"2017-05-05";"2017-06-01";;2017;"2017-02";"2017-05";"2018-02";"2018-02";"01.50Z";6533;"GROUPEMENT AGRICOLE D'EXPLOITATION EN COMMUN RECONNU DU MOLESON";"434449088";"43444908800013";"01400";"L'ABERGEMENT CLEMENCIA";"true";;;;;"ABERGEMENT CLEMENCIAT";;"ZA";"88";"ZA";"86";"ZA";"81";5810;4;1;1;7;;;"false";"false";"false";0;0;0;0;0;0;0;2755;2513;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2755;2513;0;0;0;0;0;0;0;0;0;0;0;0;0;7
+"82";"Rhône-Alpes";"01";"Ain";"01001";"PC";"00100119V0005";2;"2019-08-29";;;2019;"2019-07";"2019-09";;"2019-09";"01.61Z";6316;"CUMA DE L'ABERGEMENT CLEMENCIAT";"779289941";"77928994100014";"01400";"ABERGEMENT CLEMENCIAT";"true";"203";;"Rue des cinq Chemins";;"ABERGEMENT CLEMENCIAT";"01400";"ZH";"44";"ZH";"43";"ZH";"42";6420;4;2;5;3;;;"false";"true";"false";0;0;0;0;0;0;0;409;86;0;0;0;0;0;0;0;0;88;44;0;0;0;0;0;0;0;0;321;42;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;7
+
+
+## Dictionnaire des variables :
+Nom de la variable;Description de la variable;Nouveau mai 2022?;Modalités;Format;Observations;Origine
+REG;Code de la région du lieu des travaux;;Nomenclature du Code Officiel Géographique (COG Insee);Alphanumérique, 2 caractères;;Numéro d'enregistrement de la DAU
+DEP;Code du département du lieu des travaux;;;Alphanumérique, 2 caractères;;Numéro d'enregistrement de la DAU
+COMM;Code de la commune du lieu des travaux;;Nomenclature du Code Officiel Géographique (COG Insee);Alphanumérique, 5 caractères;"Le code vient directement du numéro d'enregistrement de la DAU, donc dépend du code de la commune au moment où la DAU a été déposée ; il n'est pas recodifié dans un millésime particulier du COG";Numéro d'enregistrement de la DAU
+Type_DAU;Type de DAU -- demande d'autorisation d'urbanisme (PC ou DP généralement, rarement PA);;"PC (Permis de construire)
+DP (Déclaration Préalable)";Alphanumérique, 2 caractères;;Numéro d'enregistrement de la DAU
+Num_DAU;Numéro d'enregistrement de la DAU;;;Alphanumérique, 13 caractères;Numéro sur 13 caractères : les 6 premiers caractères correspondent au code commune, les 2 suivants à l'année de dépôt de la DAU, les 5 derniers à un numéro d'ordre;Numéro d'enregistrement de la DAU
+Etat_DAU;Etat d'avancement du projet;;"2 = Autorisé
+4 = annulé
+5 = Commencé
+6 = terminé";Alphanumérique, 1 caractère;"Toutes les DAU du fichier ont été autorisées ; les modalités 4 à 6 concernent des DAU pour lesquelles est connu l'état postérieur d'avancement du projet .";Décision / suivi des travaux
+DATE_REELLE_AUTORISATION;Date réelle d'autorisation (PC) ou de non-opposition (DP) initiale;;;Date, format AAAA-MM-JJ;Date de décision relative à la demande initiale, sans prise en compte d'éventuels modificatifs.;Décision
+DATE_REELLE_DOC;Date réelle d'ouverture de chantier;;;Date, format AAAA-MM-JJ;;Déclaration officielle (DOC) ou information obtenue par enquête
+DATE_REELLE_DAACT;Date réelle d'achèvement des travaux;;;Date, format AAAA-MM-JJ;;Déclaration officielle (DAACT) ou information obtenue par enquête
+AN_DEPOT;Année de dépôt de la DAU;Introduit en mai 2022;;Alphanumérique, 2 caractères;2 caractères issus du numéro d'enregistrement de la DAU;Numéro d'enregistrement de la DAU
+DPC_PREM;Date (mois) de prise en compte (DPC) du premier évènement reçu dans Sitadel (dépôt de la demande ou autorisation);Introduit en mai 2022;;Date, format AAAAMM;Champ permettant le plus souvent de déterminer un proxy du mois réel de dépôt de la demande d'autorisation d'urbanisme, absent de Sitadel. En effet, dans 90% des cas, le premier évènement reçu dans Sitadel est le dépôt de la demande. Ce n'est évidemment pas le cas quand le mois correspondant à DPC_PREM est postérieur au mois de la date réelle d'autorisation ou quand l'année correspondante est postérieure à l'année de dépôt. Quand DPC_PREM=DPC_AUT, cela peut signifier soit que le dépôt n'a pas été transmis, soit qu'il a été transmis en retard, soit que le dépôt et l'autorisation ont été très proches dans le temps. Pour la notion de date de prise en compte, voir les explications fournies pour DPC_AUT.;Gestion de la collecte
+DPC_AUT;Date (mois) de prise en compte (DPC) de l'autorisation initiale;;;Date, format AAAAMM;"Une autorisation délivrée le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte ""202102"" et pour date réelle ""2020-12-06"" ; elle est diffusée fin mars 2021.";Gestion de la collecte
+DPC_DOC;Date (mois) de prise en compte (DPC) de l'ouverture du chantier;;;Date, format AAAAMM;"Une ouverture de chantier ayant eu lieu le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte ""202102"" et pour date réelle ""2020-12-06"" ; elle est diffusée fin mars 2021.";Gestion de la collecte
+DPC_DERN;Date (mois) (DPC) de dernière mise à jour des données;;;Date, format AAAAMM;Les données sont mises à jour à l'occasion d'un événement de la vie du permis ou d'une correction de la base;Gestion de la collecte
+APE_DEM;Code d'activité principale de l'établissement d'un demandeur avéré en tant que personne morale;;Nomenclature NAF Rév2;Alphanumérique, 6 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Sirène
+CJ_DEM;Catégorie juridique d'un demandeur avéré en tant que personne morale;;Nomenclature du répertoire Sirène;Alphanumérique, 4 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Sirène
+DENOM_DEM;Dénomination d'un demandeur avéré en tant que personne morale;;;Alphanumérique, 120 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Sirène
+SIREN_DEM;Numéro SIREN d'un demandeur avéré en tant que personne morale;;;Alphanumérique, 9 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Formulaire ou recherche à partir de la dénomination
+SIRET_DEM;Numéro SIRET d'un demandeur avéré en tant que personne morale;;;Alphanumérique, 14 caractères;Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène;Formulaire ou recherche à partir de la dénomination
+CODPOST_DEM;Code postal du demandeur;;;Alphanumérique, 5 caractères;;Formulaire
+LOCALITE_DEM;Localité du demandeur;;;Alphanumérique, 32 caractères;;Formulaire
+REC_ARCHI;Indicateur de recours à un architecte;;1 si oui, 0 si non;Alphanumérique, 1 caractère;Insuffisamment renseigné;Formulaire
+ADR_NUM_TER;Numéro de voie du terrain;;;Alphanumérique, 5 caractères;;Formulaire
+ADR_TYPEVOIE_TER;Type de voie du terrain;;;Alphanumérique, 5 caractères;;Formulaire
+ADR_LIBVOIE_TER;Libellé de la voie du terrain;;;Alphanumérique, 26 caractères;;Formulaire
+ADR_LIEUDIT_TER;Lieu-dit du terrain;;;Alphanumérique, 38 caractères;;Formulaire
+ADR_LOCALITE_TER;Localité du terrain;;;Alphanumérique, 32 caractères;;Formulaire
+ADR_CODPOST_TER;Code postal du terrain;;;Alphanumérique, 5 caractères;;Formulaire
+SEC_CADASTRE1;Section cadastrale 1;;;Alphanumérique, 3 caractères;Les préfixes sont en général absents de Sitadel;Formulaire
+NUM_CADASTRE1;Numéro parcelle cadastrale 1;;;Alphanumérique, 5 caractères;;Formulaire
+SEC_CADASTRE2;Section cadastrale 2;;;Alphanumérique, 3 caractères;;Formulaire
+NUM_CADASTRE2;Numéro parcelle cadastrale 2;;;Alphanumérique, 5 caractères;;Formulaire
+SEC_CADASTRE3;Section cadastrale 3;;;Alphanumérique, 3 caractères;Un maximum de 3 parcelles peut être renseigné dans Sitadel alors qu'un terrain peut en contenir bien davantage;Formulaire
+NUM_CADASTRE3;Numéro parcelle cadastrale 3;;;Alphanumérique, 5 caractères;;Formulaire
+SUPERFICIE_TERRAIN;Superficie du terrain;;;Numérique, max. 8 chiffres;;Formulaire
+ZONE_OP;"Code ""zone opératoire""";;"1 = Lotissement
+2 = ZAC
+3 = AFU
+4 = Hors zones ou ne sais pas";Alphanumérique, 1 caractère;Très insuffisamment renseigné;Formulaire
+NATURE_PROJET_DECLAREE;Nature du projet déclarée par le demandeur;;"1 = nouvelle construction
+2 = travaux sur construction existante";Alphanumérique, 1 caractère;;Formulaire
+NATURE_PROJET_COMPLETEE;Nature de projet détaillée;Introduit en mai 2022;"1 = nouvelle construction
+2 = transformation sans extension ni diminution de surface (inclut les changements de destination, réhabilitations, scissions/regroupements de logements ...)
+3 = transformation avec extension de surface
+4 = transformation avec diminution de surface
+5 = extension de surface sans transformation
+6 = diminution de surface sans transformation";Alphanumérique, 1 caractère;"A partir du tableau des surfaces de plancher et de la nature de projet déclarée : une petite partie des ""nouvelles constructions"" déclarées sont recodifiées en travaux sur existant";Codification par le SDES 
+DESTINATION_PRINCIPALE;Destination principale;Introduit en mai 2022;"1 = habitation
+2 = hébergement hôtelier
+3 = bureaux
+4 = commerce
+5 = artisanat
+6 = industrie
+7 = agriculture
+8 = entrepôt
+9 = service public ou d'intérêt collectif";Alphanumérique, 1 caractère;Selon la première destination des surfaces créées (y compris pas changement de destination);Codification par le SDES
+TYPE_TRANSFO_PRINCIPAL;Type principal de transformation;Introduit en mai 2022;"1 = transformation de locaux en logements (changement de destination)
+2 = transformation de logements (réhabilitation, scission, regroupement ...)
+3 = transformation de logements en locaux non résidentiels (changement de destination)
+4 = transformation de locaux non résidentiels (changement de destination, réhabilitation, scission, regroupement ...)";Alphanumérique, 1 caractère;Selon que la surface transformée et la surface issue de la transformation sont majoritairement des surfaces de logements ou de locaux;Codification par le SDES 
+TYPE_PRINCIP_LOCAUX_TRANSFORMES;Type principal des locaux d'origine transformés;Introduit en mai 2022;"1 = habitation
+2 = hébergement hôtelier
+3 = bureaux
+4 = commerce
+5 = artisanat
+6 = industrie
+7 = agriculture
+8 = entrepôt
+9 = service public ou d'intérêt collectif";Alphanumérique, 1 caractère;Selon la première destination d'origine des surfaces transformées;Codification par le SDES 
+I_EXTENSION;Indicateur d'extension;;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_SURELEVATION;Indicateur de surélévation;;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+I_NIVSUPP;Indicateur de création de niveau(x) supplémentaire(s);;1 si oui, 0 si non;Alphanumérique, 1 caractère;;Formulaire
+NB_NIV_MAX;Nombre de niveaux du bâtiment le plus élevé;;;Numérique, max. 2 chiffres;Nombre de niveaux au-dessus du sol depuis le nouveau formulaire de 2020, très insuffisamment renseigné;Formulaire
+NB_CHAMBRES;Nombre de chambres (hôtels et autres hébergements, notamment sociaux);;;Numérique, max. 3 chiffres;;Formulaire
+SURF_HAB_AVANT;Surface de plancher de la destination ' Habitation ' existante avant travaux;;;Numérique, max. 7 chiffres;;Formulaire
+SURF_HAB_CREEE;Surface de plancher de la destination ' Habitation ' nouvelle construite;;;Numérique, max. 7 chiffres;"Lorsque le projet crée des chambres (sans coin cuisine indépendant) et non des logements, on utilise plutôt la destination ""Hébergement hôtelier"" ou ""Service Public"" dans Sitadel plutôt que la destination ""Habitation""";Formulaire
+SURF_HAB_ISSUE_TRANSFO;Surface de plancher de la destination ' Habitation ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Surface issue d'un changement de destination ou d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …);Formulaire
+SURF_HAB_DEMOLIE;Surface de plancher de la destination ' Habitation ' supprimée (démolie);;;Numérique, max. 7 chiffres;;Formulaire
+SURF_HAB_TRANSFORMEE;Surface de plancher de la destination ' Habitation ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Surface changée de destination ou faisant l'objet d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …;Formulaire
+SURF_LOC_AVANT;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) existante avant travaux;;;Numérique, max. 7 chiffres;Total des surfaces des destinations autres que d'habitation;Formulaire
+SURF_LOC_CREEE;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) nouvelle construite;;;Numérique, max. 7 chiffres;Total des surfaces des destinations autres que d'habitation;Formulaire
+SURF_LOC_ISSUE_TRANSFO;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Total des surfaces des destinations autres que d'habitation;Formulaire
+SURF_LOC_DEMOLIE;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) démolie;;;Numérique, max. 7 chiffres;Total des surfaces des destinations autres que d'habitation;Formulaire
+SURF_LOC_TRANSFORMEE;Surface de plancher de locaux non résidentiels (i.e. autres que d'habitation) transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Total des surfaces des destinations autres que d'habitation;Formulaire
+SURF_HEB_AVANT;Surface de plancher de la destination ' Hébergement hôtelier ' existante avant travaux;;;Numérique, max. 7 chiffres;Deuxième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_HEB_CREEE;Surface de plancher de la destination ' Hébergement hôtelier ' nouvelle construite;;;Numérique, max. 7 chiffres;Deuxième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_HEB_ISSUE_TRANSFO;Surface de plancher de la destination ' Hébergement hôtelier ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Deuxième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_HEB_DEMOLIE;Surface de plancher de la destination ' Hébergement hôtelier ' démolie;;;Numérique, max. 7 chiffres;Deuxième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_HEB_TRANSFORMEE;Surface de plancher de la destination ' Hébergement hôtelier ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Deuxième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_BUR_AVANT;Surface de plancher de la destination ' Bureau ' existante avant travaux;;;Numérique, max. 7 chiffres;Troisième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_BUR_CREEE;Surface de plancher de la destination ' Bureau ' nouvelle construite;;;Numérique, max. 7 chiffres;Troisième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_BUR_ISSUE_TRANSFO;Surface de plancher de la destination ' Bureau ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Troisième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_BUR_DEMOLIE;Surface de plancher de la destination ' Bureau ' démolie;;;Numérique, max. 7 chiffres;Troisième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_BUR_TRANSFORMEE;Surface de plancher de la destination ' Bureau ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Troisième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_COM_AVANT;Surface de plancher de la destination ' Commerce ' existante avant travaux;;;Numérique, max. 7 chiffres;Quatrième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_COM_CREEE;Surface de plancher de la destination ' Commerce ' nouvelle construite;;;Numérique, max. 7 chiffres;Quatrième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_COM_ISSUE_TRANSFO;Surface de plancher de la destination ' Commerce ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Quatrième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_COM_DEMOLIE;Surface de plancher de la destination ' Commerce ' démolie;;;Numérique, max. 7 chiffres;Quatrième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_COM_TRANSFORMEE;Surface de plancher de la destination ' Commerce ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Quatrième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ART_AVANT;Surface de plancher de la destination ' Artisanat ' existante avant travaux;;;Numérique, max. 7 chiffres;Cinquième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ART_CREEE;Surface de plancher de la destination ' Artisanat ' nouvelle construite;;;Numérique, max. 7 chiffres;Cinquième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ART_ISSUE_TRANSFO;Surface de plancher de la destination ' Artisanat ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Cinquième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ART_DEMOLIE;Surface de plancher de la destination ' Artisanat ' démolie;;;Numérique, max. 7 chiffres;Cinquième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ART_TRANSFORMEE;Surface de plancher de la destination ' Artisanat ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Cinquième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_IND_AVANT;Surface de plancher de la destination ' Industrie ' existante avant travaux;;;Numérique, max. 7 chiffres;Sixième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_IND_CREEE;Surface de plancher de la destination ' Industrie ' nouvelle construite;;;Numérique, max. 7 chiffres;Sixième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_IND_ISSUE_TRANSFO;Surface de plancher de la destination ' Industrie ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Sixième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_IND_DEMOLIE;Surface de plancher de la destination ' Industrie ' démolie;;;Numérique, max. 7 chiffres;Sixième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_IND_TRANSFORMEE;Surface de plancher de la destination ' Industrie ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Sixième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_AGR_AVANT;Surface de plancher de la destination ' Exploitation agricole ou forestière ' existante avant travaux;;;Numérique, max. 7 chiffres;Septième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_AGR_CREEE;Surface de plancher de la destination ' Exploitation agricole ou forestière ' nouvelle construite;;;Numérique, max. 7 chiffres;Septième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_AGR_ISSUE_TRANSFO;Surface de plancher de la destination ' Exploitation agricole ou forestière ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Septième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_AGR_DEMOLIE;Surface de plancher de la destination ' Exploitation agricole ou forestière ' démolie;;;Numérique, max. 7 chiffres;Septième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_AGR_TRANSFORMEE;Surface de plancher de la destination ' Exploitation agricole ou forestière ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Septième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ENT_AVANT;Surface de plancher de la destination ' Entrepôt ' existante avant travaux;;;Numérique, max. 7 chiffres;Huitième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ENT_CREEE;Surface de plancher de la destination ' Entrepôt ' nouvelle construite;;;Numérique, max. 7 chiffres;Huitième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ENT_ISSUE_TRANSFO;Surface de plancher de la destination ' Entrepôt ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Huitième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ENT_DEMOLIE;Surface de plancher de la destination ' Entrepôt ' démolie;;;Numérique, max. 7 chiffres;Huitième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_ENT_TRANSFORMEE;Surface de plancher de la destination ' Entrepôt ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Huitième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_PUB_AVANT;Surface de plancher de la destination ' Services publics ou d'intérêt collectif' existante avant travaux;;;Numérique, max. 7 chiffres;Neuvième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_PUB_CREEE;Surface de plancher de la destination ' Services publics ou d'intérêt collectif ' nouvelle construite;;;Numérique, max. 7 chiffres;Neuvième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_PUB_ISSUE_TRANSFO;Surface de plancher de la destination ' Services publics ou d'intérêt collectif ' issue d'une transformation (changement de destination, réhabilitation, scission, regroupement …);;;Numérique, max. 7 chiffres;Neuvième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_PUB_DEMOLIE;Surface de plancher de la destination ' Services publics ou d'intérêt collectif ' démolie;;;Numérique, max. 7 chiffres;Neuvième ligne du tableau de surface en 9 destinations;Formulaire
+SURF_PUB_TRANSFORMEE;Surface de plancher de la destination ' Services publics ou d'intérêt collectif ' transformée (changement de destination, réhabilitation, scission, regroupement ...);;;Numérique, max. 7 chiffres;Neuvième ligne du tableau de surface en 9 destinations;Formulaire
+TYPE_SERVICE_PUBLIC;Type de service public ou d'intérêt collectif;;"1 = Transport
+2 = Enseignement et recherche
+3 = Santé
+4 = Action sociale
+5 = Ouvrage spécial
+6 = Culture et loisir
+7 = Non rempli
+8 = Plusieurs types renseignés";Alphanumérique, 1 caractère;"Information du cadre ""Informations complémentaires""";Formulaire
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+

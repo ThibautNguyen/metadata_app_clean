@@ -1,0 +1,89 @@
+-- Comparaison des CSP (en %) entre 3 territoires (COM, DEP et REG)
+-- Vitrolles, Bouches-du-Rhône et PACA
+
+WITH pop_territories AS (
+  -- Vitrolles (niveau IRIS)
+  SELECT
+    'Vitrolles' as territoire,
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE IRIS IN ('131170101', '131170102', '131170103', '131170104', '131170105', 
+    '131170106', '131170107', '131170108', '131170109', '131170110', '131170111', 
+    '131170112', '131170202', '131170203', '131170204', '131170205', '131170206', 
+    '131170207', '131170208', '131170209')
+
+  UNION ALL
+
+  -- Bouches-du-Rhône (niveau communes)
+  SELECT
+    'Bouches-du-Rhône' as territoire,
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,5) IN ('13001', '13002', '13003', '13004', '13005', '13006', '13007', 
+    '13008', '13009', '13010', '13011', '13012', '13013', '13014', '13015', '13016', '13017', 
+    '13018', '13019', '13020', '13021', '13022', '13023', '13024', '13025', '13026', '13027', 
+    '13028', '13029', '13030', '13031', '13032', '13033', '13034', '13035', '13036', '13037', 
+    '13038', '13039', '13040', '13041', '13042', '13043', '13044', '13045', '13046', '13047', 
+    '13048', '13049', '13050', '13051', '13052', '13053', '13054', '13055', '13056', '13057', 
+    '13058', '13059', '13060', '13061', '13062', '13063', '13064', '13065', '13066', '13067', 
+    '13068', '13069', '13070', '13071', '13072', '13073', '13074', '13075', '13076', '13077', 
+    '13078', '13079', '13080', '13081', '13082', '13083', '13084', '13085', '13086', '13087', 
+    '13088', '13089', '13090', '13091', '13092', '13093', '13094', '13095', '13096', '13097', 
+    '13098', '13099', '13100', '13101', '13102', '13103', '13104', '13105', '13106', '13107', 
+    '13108', '13109', '13110', '13111', '13112', '13113', '13114', '13115', '13116', '13117', 
+    '13118', '13119')
+
+  UNION ALL
+
+  -- PACA (niveau région)
+  SELECT
+    'PACA' as territoire,
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,2) IN ('04','05','06','13','83','84')
+)
+
+SELECT 
+  territoire,
+  ROUND(CAST(cs1 AS FLOAT) / pop_totale, 3) as "Agriculteurs exploitants",
+  ROUND(CAST(cs2 AS FLOAT) / pop_totale, 3) as "Artisans, Comm., Chefs entr.",
+  ROUND(CAST(cs3 AS FLOAT) / pop_totale, 3) as "Cadres, Prof. intel. sup.",
+  ROUND(CAST(cs4 AS FLOAT) / pop_totale, 3) as "Prof. intermédiaires",
+  ROUND(CAST(cs5 AS FLOAT) / pop_totale, 3) as "Employés",
+  ROUND(CAST(cs6 AS FLOAT) / pop_totale, 3) as "Ouvriers",
+  ROUND(CAST(cs7 AS FLOAT) / pop_totale, 3) as "Retraités",
+  ROUND(CAST(cs8 AS FLOAT) / pop_totale, 3) as "Autres sans activité prof."
+FROM pop_territories
+ORDER BY 
+  CASE territoire
+    WHEN 'Vitrolles' THEN 1
+    WHEN 'Bouches-du-Rhône' THEN 2
+    WHEN 'PACA' THEN 3
+  END;

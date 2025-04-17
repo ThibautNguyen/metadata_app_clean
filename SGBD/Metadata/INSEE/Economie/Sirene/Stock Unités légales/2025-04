@@ -1,0 +1,60 @@
+## Source :
+https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/
+
+
+
+## Tableau SQL :
+economie.stockunitelegale_2025_04
+
+
+
+## 4 premières lignes :
+siren,statutDiffusionUniteLegale,unitePurgeeUniteLegale,dateCreationUniteLegale,sigleUniteLegale,sexeUniteLegale,prenom1UniteLegale,prenom2UniteLegale,prenom3UniteLegale,prenom4UniteLegale,prenomUsuelUniteLegale,pseudonymeUniteLegale,identifiantAssociationUniteLegale,trancheEffectifsUniteLegale,anneeEffectifsUniteLegale,dateDernierTraitementUniteLegale,nombrePeriodesUniteLegale,categorieEntreprise,anneeCategorieEntreprise,dateDebut,etatAdministratifUniteLegale,nomUniteLegale,nomUsageUniteLegale,denominationUniteLegale,denominationUsuelle1UniteLegale,denominationUsuelle2UniteLegale,denominationUsuelle3UniteLegale,categorieJuridiqueUniteLegale,activitePrincipaleUniteLegale,nomenclatureActivitePrincipaleUniteLegale,nicSiegeUniteLegale,economieSocialeSolidaireUniteLegale,societeMissionUniteLegale,caractereEmployeurUniteLegale
+000325175,O,,2000-09-26,,M,THIERRY,,,,THIERRY,,,,,2024-03-22T14:26:06,6,PME,2022,2018-02-07,A,JANOYER,,,,,,1000,32.12Z,NAFRev2,00065,,,
+001807254,O,,1972-05-01,,M,JACQUES-LUCIEN,,,,JACQUES-LUCIEN,,,,,2024-03-22T14:26:06,5,,,2014-12-31,C,BRETON,,,,,,1000,85.59A,NAFRev2,00022,,,
+005410220,O,true,1954-12-25,,M,GEORGES,,,,GEORGES,,,,,2024-03-22T14:26:06,1,,,1988-03-31,C,WATTEBLED,,,,,,1000,22.02,NAP,00015,,,
+
+
+
+## Chemin disque dur :
+"C:\Users\thiba\OneDrive\Documents\Données\Économie\Sirene\Stock Unités légales\2025-04-01\StockUniteLegale_utf8.csv"
+
+
+
+## Dictionnaire des variables :
+
+Nom;Libellé;Longueur;Type;Ordre
+siren;Numéro Siren;9;Texte;1
+statutDiffusionUniteLegale;Statut de diffusion de l’unité légale;1;Liste de codes;2
+unitePurgeeUniteLegale;Unité légale purgée;4;Texte:true ou vide;3
+dateCreationUniteLegale;Date de création de l'unité légale;10;Date;4
+sigleUniteLegale;Sigle de l’unité légale;20;Texte;5
+sexeUniteLegale;Caractère féminin ou masculin de la personne physique;4;Liste de codes;6
+prenom1UniteLegale;Premier prénom déclaré pour un personne physique;20;Texte;7
+prenom2UniteLegale;Deuxième prénom déclaré pour un personne physique;20;Texte;8
+prenom3UniteLegale;Troisième prénom déclaré pour un personne physique;20;Texte;9
+prenom4UniteLegale;Quatrième prénom déclaré pour un personne physique;20;Texte;10
+prenomUsuelUniteLegale;Prénom usuel de la personne physique;20;Texte;11
+pseudonymeUniteLegale;Pseudonyme de la personne physique;100;Texte;12
+identifiantAssociationUniteLegale;Numéro au Répertoire National des Associations;10;Texte;13
+trancheEffectifsUniteLegale;Tranche d’effectif salarié de l’unité légale;2;Liste de codes;14
+anneeEffectifsUniteLegale;Année de validité de la tranche d’effectif salarié de l’unité légale;4;Date;15
+dateDernierTraitementUniteLegale;Date du dernier traitement de l’unité légale dans le répertoire Sirene;23;Date;16
+nombrePeriodesUniteLegale;Nombre de périodes de l’unité légale;2;Numérique;17
+categorieEntreprise;Catégorie à laquelle appartient l’entreprise;3;Liste de codes;18
+anneeCategorieEntreprise;Année de validité de la catégorie d’entreprise;4;Date;19
+dateDebut;Date de début d'une période d'historique d'une unité légale;10;Date;20
+etatAdministratifUniteLegale;État administratif de l’unité légale;1;Liste de codes;21
+nomUniteLegale;Nom de naissance de la personnes physique;100;Texte;22
+nomUsageUniteLegale;Nom d’usage de la personne physique;100;Texte;23
+denominationUniteLegale;Dénomination de l’unité légale;130;Texte;24
+denominationUsuelle1UniteLegale;Dénomination usuelle de l’unité légale;70;Texte;25
+denominationUsuelle2UniteLegale;Dénomination usuelle de l’unité légale – deuxième champ;70;Texte;26
+denominationUsuelle3UniteLegale;Dénomination usuelle de l’unité légale – troisième champ;70;Texte;27
+categorieJuridiqueUniteLegale;Catégorie juridique de l’unité légale;4;Liste de codes;28
+activitePrincipaleUniteLegale;Activité principale de l’unité légale;6;Liste de codes;29
+nomenclatureActivitePrincipaleUniteLegale;Nomenclature d’activité de la variable activitePrincipaleUniteLegale;8;Liste de codes;30
+nicSiegeUniteLegale;Numéro interne de classement (Nic) de l’unité légale;5;Texte;31
+economieSocialeSolidaireUniteLegale;Appartenance au champ de l’économie sociale et solidaire;1;Liste de codes;32
+societeMissionUniteLegale;Appartenance au champ des sociétés à mission;1;Liste de codes;33
+caractereEmployeurUniteLegale;Caractère employeur de l’unité légale;;Texte;34

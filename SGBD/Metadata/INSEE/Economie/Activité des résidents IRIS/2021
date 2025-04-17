@@ -1,0 +1,202 @@
+Activité des résidents en 2021 
+Recensement de la population - Base infracommunale (IRIS)
+
+## Source : 
+https://www.insee.fr/fr/statistiques/8268843
+
+
+## Tableau SQL : activite_residents_2021
+
+
+## 4 premières lignes :
+IRIS;COM;TYP_IRIS;LAB_IRIS;P21_POP1564;P21_POP1524;P21_POP2554;P21_POP5564;P21_H1564;P21_H1524;P21_H2554;P21_H5564;P21_F1564;P21_F1524;P21_F2554;P21_F5564;P21_ACT1564;P21_ACT1524;P21_ACT2554;P21_ACT5564;P21_HACT1564;P21_HACT1524;P21_HACT2554;P21_HACT5564;P21_FACT1564;P21_FACT1524;P21_FACT2554;P21_FACT5564;P21_ACTOCC1564;P21_ACTOCC1524;P21_ACTOCC2554;P21_ACTOCC5564;P21_HACTOCC1564;P21_HACTOCC1524;P21_HACTOCC2554;P21_HACTOCC5564;P21_FACTOCC1564;P21_FACTOCC1524;P21_FACTOCC2554;P21_CHOM_CAPBEP;P21_FACTOCC5564;P21_CHOM_BAC;P21_CHOM1564;P21_CHOM_SUP2;P21_CHOM1524;P21_CHOM_SUP34;P21_CHOM2554;P21_CHOM_SUP5;P21_CHOM5564;P21_ACT_DIPLMIN;P21_CHOM_DIPLMIN;P21_ACT_BEPC;P21_CHOM_BEPC;P21_ACT_CAPBEP;P21_ACT_BAC;P21_ACT_SUP2;P21_ACT_SUP34;P21_ACT_SUP5;P21_INACT1564;P21_HINACT1564;P21_FINACT1564;P21_ETUD1564;P21_HETUD1564;P21_FETUD1564;P21_RETR1564;P21_HRETR1564;P21_FRETR1564;P21_AINACT1564;P21_HAINACT1564;P21_FAINACT1564;C21_ACT1564;C21_ACT1564_CS1;C21_ACT1564_CS2;C21_ACT1564_CS3;C21_ACT1564_CS4;C21_ACT1564_CS5;C21_ACT1564_CS6;C21_ACTOCC1564;C21_ACTOCC1564_CS1;C21_ACTOCC1564_CS2;C21_ACTOCC1564_CS3;C21_ACTOCC1564_CS4;C21_ACTOCC1564_CS5;C21_ACTOCC1564_CS6;P21_ACTOCC15P;P21_HACTOCC15P;P21_FACTOCC15P;P21_SAL15P;P21_HSAL15P;P21_FSAL15P;P21_NSAL15P;P21_HNSAL15P;P21_FNSAL15P;P21_ACTOCC15P_TP;P21_SAL15P_TP;P21_HSAL15P_TP;P21_FSAL15P_TP;P21_NSAL15P_TP;P21_SAL15P_CDI;P21_SAL15P_CDD;P21_SAL15P_INTERIM;P21_SAL15P_EMPAID;P21_SAL15P_APPR;P21_NSAL15P_INDEP;P21_NSAL15P_EMPLOY;P21_NSAL15P_AIDFAM;P21_ACTOCC15P_ILT1;P21_ACTOCC15P_ILT2P;P21_ACTOCC15P_ILT2;P21_ACTOCC15P_ILT3;P21_ACTOCC15P_ILT4;P21_ACTOCC15P_ILT5;C21_ACTOCC15P;C21_ACTOCC15P_PAS;C21_ACTOCC15P_MAR;C21_ACTOCC15P_VELO;C21_ACTOCC15P_2ROUESMOT;C21_ACTOCC15P_VOIT;C21_ACTOCC15P_TCOM
+010010000;01001;Z;5;508.512208241106;64.2497088191985;318.299551334147;125.962948087761;253.798072747775;31.2367034128456;159.078593742311;63.4827755926186;254.714135493331;33.0130054063529;159.220957591835;62.4801724951423;417.591741457043;29.1552395055811;310.50680797294;77.9296939785214;217.02707817397;17.5470876739495;158.1098871278;41.3701033722201;200.564663283073;11.6081518316316;152.39692084514;36.5595906063013;390.425165547721;25.2635013948533;292.050428456159;73.1112356967096;206.337408936911;14.6240561777327;151.303573347197;40.4097794119804;184.087756610811;10.6394452171205;140.746855108961;11.649993197299;32.7014562847292;8.72710741203258;27.1665759093211;1.93741322902202;3.89173811072781;1.92903057475075;18.4563795167815;0.977162440852893;4.81845828181186;33.9402441692074;0.977162440852893;15.5849655255916;0.96870661451101;105.323991833563;107.573250071656;72.7481372889805;50.3086154127768;32.1125371552673;90.9204667840635;36.7709945738056;54.1494722102579;34.1087772356341;13.6896157388961;20.419161496738;39.3819558128106;20.192024299919;19.1899315128916;17.4297337356188;2.88935453499049;14.5403792006283;445.796149395609;4.84353307255505;43.7201016831258;63.3486468714884;106.140417852504;101.67520816276;126.068241753175;436.150996521855;4.84353307255505;43.7201016831258;63.3486468714884;101.338798051306;101.67520816276;121.22470868062;395.22678534892;211.139028738109;184.087756610811;323.538168442315;166.559117263923;156.979051178392;71.6886169066049;44.5799114741865;27.1087054324185;61.1244640850129;52.3716933176094;14.5903779334951;37.7813153841143;8.75277076740342;291.543797149774;20.2509936685278;5.84620997529279;0;5.89716764872114;44.554759029051;27.1338578775539;0;48.411867008851;346.814918340069;238.356708026282;95.839363519118;12.6188467946692;0;436.150996521855;19.4590564139921;0;0;9.85729305524318;402.033027251421;4.80161980119871
+010020000;01002;Z;5;163.031833389054;25.3698636541094;113.047135877979;24.6148338569658;86.6459493885046;17.2943382152589;57.8966539623604;11.4549572108852;76.3858840005492;8.07552543885047;55.1504819156182;13.1598766460806;130.2251186101;4.86160389855572;110.201741458932;15.161773252612;69.5009940388581;3.91343598427363;56.9771045865455;8.61045346803892;60.7241245712418;0.948167914282093;53.2246368723866;6.55131978457309;128.077429562694;4.86160389855572;109.193636719177;14.0221889449611;68.3614097312071;3.91343598427363;56.9771045865455;7.470869160388;59.7160198314872;0.948167914282093;52.216532132632;1.00810473975459;6.55131978457309;1.13958430765093;2.14768904740552;0;0;0;1.00810473975459;0;1.13958430765093;4.96176517944674;0;1.83909875162981;0;21.2828145973146;33.5384096034914;26.6563195532559;24.5173954864479;17.4293154385135;32.8067147789539;17.1449553496465;15.6617594293075;18.4205075336207;11.2931500090523;7.12735752456837;8.50489269007165;2.84450374284628;5.66038894722537;5.88131455526165;3.00730159774792;2.87401295751372;117.694281319726;25.0504804398396;5.04052369877297;19.1153577399804;29.2101853931387;19.4105884863416;19.8671455616524;112.653757620953;25.0504804398396;5.04052369877297;19.1153577399804;29.2101853931387;14.3700647875686;19.8671455616524;130.864696228606;70.200508482837;60.6641877457693;93.7338812271841;48.9042788962332;44.8296023309509;37.1308150014221;21.2962295866038;15.8345854148183;20.4582510838219;12.6562669038974;3.82398994413369;8.83227695976373;7.80198417992451;85.9964552987768;3.82398994413369;1.9276541155695;0;1.98578186870413;24.2536224894884;10.9808566833695;1.89633582856419;22.7794532268802;108.085243001726;93.6194142808036;9.63284336083389;4.83298536008854;0;112.653757620953;4.74083957141047;0;0;0;103.315171170468;4.59774687907453
+010040101;01004;H;1;1184.6069329995;382.128228776327;657.726757526776;144.751946696402;611.436900737961;211.08015863094;345.875633599687;54.4811085073345;573.170032261544;171.048070145387;311.851123927089;90.2708381890674;909.149285346664;207.079075124462;611.997267934227;90.0729422879745;491.1683245124;129.916717336304;334.61328431371;26.638322862386;417.980960834264;77.1623577881587;277.383983620517;63.4346194255885;837.095026226653;184.796293015979;570.672552887182;81.6261803234919;467.223210648677;119.862462719214;320.722425067077;26.638322862386;369.871815577975;64.9338302967647;249.950127820105;12.2043542575288;54.9878574611058;22.5287028130375;72.0542591200114;14.5747286804978;22.2827821084833;2.79541832871286;41.3247150470455;3.47036018388014;8.44676196448263;149.462569813467;16.4806948563543;33.2075650905367;0;185.472863290525;230.488380476013;143.057178340052;90.7089889634236;76.7517393726457;275.457647652841;120.268576225562;155.189071427279;167.731474019772;76.6613489840378;91.070125035734;38.1693584401637;20.7017376199379;17.4676208202258;69.5568151929053;22.9054896215858;46.6513255713195;966.599685076351;0;30.6630108316093;113.530996094985;235.057375620693;361.887948754538;223.054918863693;906.178281810109;0;30.6630108316093;106.492027791249;231.563102709802;330.88859313206;206.571547345389;850.522021757038;470.038797970172;380.483223786866;810.896013155624;445.599492869171;365.296520286453;39.6260086014136;24.4393051010005;15.1867035004131;86.1293148616846;82.3137243973056;23.5699857229972;58.7437386743084;3.81559046437906;614.896105970777;103.609678416428;11.8795849281047;3.00000942865455;77.5106344116591;31.0906518796551;8.53535672175848;0;404.115211499302;446.406810257736;284.716114221666;146.826546886495;14.8641491495755;0;918.62407599324;64.6502266433966;71.4079106540409;22.5722252327864;10.0000314288485;640.952303047232;109.041378986936
+
+
+
+## Dictionnaire des variables :
+
+COD_VAR;LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille;;;CHAR;5
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z);;;CHAR;1
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS;;;CHAR;1
+P21_POP1564;Pop 15-64 ans en 2021 (princ);Nombre de personnes de 15 à 64 ans;;;NUM;17
+P21_POP1524;Pop 15-24 ans en 2021 (princ);Nombre de personnes de 15 à 24 ans;;;NUM;17
+P21_POP2554;Pop 25-54 ans en 2021 (princ);Nombre de personnes de 25 à 54 ans;;;NUM;17
+P21_POP5564;Pop 55-64 ans en 2021 (princ);Nombre de personnes de 55 à 64 ans;;;NUM;17
+P21_H1564;Pop 15-64 ans Hommes en 2021 (princ);Nombre d'hommes de 15 à 64 ans;;;NUM;17
+P21_H1524;Pop 15-24 ans Hommes en 2021 (princ);Nombre d'hommes de 15 à 24 ans;;;NUM;17
+P21_H2554;Pop 25-54 ans Hommes en 2021 (princ);Nombre d'hommes de 25 à 54 ans;;;NUM;17
+P21_H5564;Pop 55-64 ans Hommes en 2021 (princ);Nombre d'hommes de 55 à 64 ans;;;NUM;17
+P21_F1564;Pop 15-64 ans Femmes en 2021 (princ);Nombre de femmes de 15 à 64 ans;;;NUM;17
+P21_F1524;Pop 15-24 ans Femmes en 2021 (princ);Nombre de femmes de 15 à 24 ans;;;NUM;17
+P21_F2554;Pop 25-54 ans Femmes en 2021 (princ);Nombre de femmes de 25 à 54 ans;;;NUM;17
+P21_F5564;Pop 55-64 ans Femmes en 2021 (princ);Nombre de femmes de 55 à 64 ans;;;NUM;17
+P21_ACT1564;Actifs 15-64 ans en 2021 (princ);Nombre de personnes actives de 15 à 64 ans;;;NUM;17
+P21_ACT1524;Actifs 15-24 ans en 2021 (princ);Nombre de personnes actives de 15 à 24 ans;;;NUM;17
+P21_ACT2554;Actifs 25-54 ans en 2021 (princ);Nombre de personnes actives de 25 à 54 ans;;;NUM;17
+P21_ACT5564;Actifs 55-64 ans en 2021 (princ);Nombre de personnes actives de 55 à 64 ans;;;NUM;17
+P21_HACT1564;Actifs 15-64 ans Hommes en 2021 (princ);Nombre d'hommes actifs de 15 à 64 ans;;;NUM;17
+P21_HACT1524;Actifs 15-24 ans Hommes en 2021 (princ);Nombre d'hommes actifs de 15 à 24 ans;;;NUM;17
+P21_HACT2554;Actifs 25-54 ans Hommes en 2021 (princ);Nombre d'hommes actifs de 25 à 54 ans;;;NUM;17
+P21_HACT5564;Actifs 55-64 ans Hommes en 2021 (princ);Nombre d'hommes actifs de 55 à 64 ans;;;NUM;17
+P21_FACT1564;Actifs 15-64 ans Femmes en 2021 (princ);Nombre de femmes actives de 15 à 64 ans;;;NUM;17
+P21_FACT1524;Actifs 15-24 ans Femmes en 2021 (princ);Nombre de femmes actives de 15 à 24 ans;;;NUM;17
+P21_FACT2554;Actifs 25-54 ans Femmes en 2021 (princ);Nombre de femmes actives de 25 à 54 ans;;;NUM;17
+P21_FACT5564;Actifs 55-64 ans Femmes en 2021 (princ);Nombre de femmes actives de 55 à 64 ans;;;NUM;17
+P21_ACTOCC1564;Actifs occupés 15-64 ans en 2021 (princ);Nombre de personnes actives occupées de 15 à 64 ans;;;NUM;17
+P21_ACTOCC1524;Actifs occupés 15-24 ans en 2021 (princ);Nombre de personnes actives occupées de 15 à 24 ans;;;NUM;17
+P21_ACTOCC2554;Actifs occupés 25-54 ans en 2021 (princ);Nombre de personnes actives occupées de 25 à 54 ans;;;NUM;17
+P21_ACTOCC5564;Actifs occupés 55-64 ans en 2021 (princ);Nombre de personnes actives occupées de 55 à 64 ans;;;NUM;17
+P21_HACTOCC1564;Actifs occupés 15-64 ans Hommes en 2021 (princ);Nombre d'hommes actifs occupés de 15 à 64 ans;;;NUM;17
+P21_HACTOCC1524;Actifs occupés 15-24 ans Hommes en 2021 (princ);Nombre d'hommes actifs occupés de 15 à 24 ans;;;NUM;17
+P21_HACTOCC2554;Actifs occupés 25-54 ans Hommes en 2021 (princ);Nombre d'hommes actifs occupés de 25 à 54 ans;;;NUM;17
+P21_HACTOCC5564;Actifs occupés 55-64 ans Hommes en 2021 (princ);Nombre d'hommes actifs occupés de 55 à 64 ans;;;NUM;17
+P21_FACTOCC1564;Actifs occupés 15-64 ans Femmes en 2021 (princ);Nombre de femmes actives occupées de 15 à 64 ans;;;NUM;17
+P21_FACTOCC1524;Actifs occupés 15-24 ans Femmes en 2021 (princ);Nombre de femmes actives occupées de 15 à 24 ans;;;NUM;17
+P21_FACTOCC2554;Actifs occupés 25-54 ans Femmes en 2021 (princ);Nombre de femmes actives occupées de 25 à 54 ans;;;NUM;17
+P21_CHOM_CAPBEP;Chômeurs CAP-BEP ou équiv. en 2021 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un CAP, d'un BEP ou équivalent;;;NUM;17
+P21_FACTOCC5564;Actifs occupés 55-64 ans Femmes en 2021 (princ);Nombre de femmes actives occupées de 55 à 64 ans;;;NUM;17
+P21_CHOM_BAC;Chômeurs Bac, brevet pro. ou équiv.  en 2021 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un Baccalauréat, brevet professionnel ou équivalent;;;NUM;17
+P21_CHOM1564;Chômeurs 15-64 ans en 2021 (princ);Nombre de chômeurs de 15 à 64 ans;;;NUM;17
+P21_CHOM_SUP2;Chômeurs Enseignement sup de niveau bac + 2  en 2021 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 2;;;NUM;19
+P21_CHOM1524;Chômeurs 15-24 ans en 2021 (princ);Nombre de chômeurs de 15 à 24 ans;;;NUM;17
+P21_CHOM_SUP34;Chômeurs Enseignement sup de niveau bac + 3 ou 4  en 2021 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 3 ou Bac + 4;;;NUM;17
+P21_CHOM2554;Chômeurs 25-54 ans en 2021 (princ);Nombre de chômeurs de 25 à 54 ans;;;NUM;17
+P21_CHOM_SUP5;Chômeurs Enseignement sup de niveau bac + 5 ou plus  en 2021 (princ);Nombre de chômeurs de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement;;;NUM;17
+P21_CHOM5564;Chômeurs 55-64 ans en 2021 (princ);Nombre de chômeurs de 55 à 64 ans;;;NUM;17
+P21_ACT_DIPLMIN;Actifs Sans diplôme ou CEP en 2021 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'aucun diplôme ou au plus un CEP;;;NUM;17
+P21_CHOM_DIPLMIN;Chômeurs Sans diplôme ou CEP en 2021 (princ);Nombre de chômeurs de 15 ans à 64 ans titulaires d'aucun diplôme ou au plus un CEP;;;NUM;20
+P21_ACT_BEPC;Actifs BEPC, brevet des collèges, DNB en 2021 (princ);Nombre de personnes actives de 15 ans à 64 ans  titulaires d'un BEPC, brevet des collèges, DNB;;;NUM;17
+P21_CHOM_BEPC;Chômeurs BEPC, brevet des collèges, DNB en 2021 (princ);Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un BEPC, brevet des collèges, DNB;;;NUM;19
+P21_ACT_CAPBEP;Actifs CAP-BEP ou équiv. en 2021 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un CAP, d'un BEP ou équivalent;;;NUM;17
+P21_ACT_BAC;Actifs Bac, brevet pro. ou équiv.  en 2021 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un Baccalauréat, brevet professionnel ou équivalent;;;NUM;17
+P21_ACT_SUP2;Actifs Enseignement sup de niveau bac + 2  en 2021 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 2;;;NUM;17
+P21_ACT_SUP34;Actifs Enseignement sup de niveau bac + 3 ou 4  en 2021 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 3 ou Bac + 4;;;NUM;17
+P21_ACT_SUP5;Actifs Enseignement sup de niveau bac + 5 ou plus  en 2021 (princ);Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement;;;NUM;17
+P21_INACT1564;Inactifs 15-64 ans en 2021 (princ);Nombre de personnes inactives de 15 à 64 ans;;;NUM;17
+P21_HINACT1564;Inactifs 15-64 ans Hommes en 2021 (princ);Nombre d'hommes inactifs de 15 à 64 ans;;;NUM;17
+P21_FINACT1564;Inactifs 15-64 ans Femmes en 2021 (princ);Nombre de femmes inactives de 15 à 64 ans;;;NUM;17
+P21_ETUD1564;Elèv. Etud. Stag. non rémunérés 15-64 ans en 2021 (princ);Nombre d'élèves, étudiants et stagiaires non rémunérés de 15 à 64 ans;;;NUM;17
+P21_HETUD1564;Elèv. Etud. Stag. non rémunérés 15-64 ans Hommes en 2021 (princ);Nombre d'élèves, étudiants et stagiaires non rémunérés hommes de 15 à 64 ans;;;NUM;17
+P21_FETUD1564;Elèv. Etud. Stag. non rémunérés 15-64 ans Femmes en 2021 (princ);Nombre d'élèves, étudiants et stagiaires non rémunérés femmes de 15 à 64 ans;;;NUM;17
+P21_RETR1564;Retraités Préretraités 15-64 ans en 2021 (princ);Nombre de retraités ou préretraités de 15 à 64 ans;;;NUM;17
+P21_HRETR1564;Retraités Préretraités 15-64 ans Hommes en 2021 (princ);Nombre de retraités ou préretraités hommes de 15 à 64 ans;;;NUM;17
+P21_FRETR1564;Retraités Préretraités 15-64 ans Femmes en 2021 (princ);Nombre de retraités ou préretraités femmes de 15 à 64 ans;;;NUM;17
+P21_AINACT1564;Autres inactifs 15-64 ans en 2021 (princ);Nombre d'autres inactifs de 15 à 64 ans;;;NUM;17
+P21_HAINACT1564;Autres inactifs 15-64 ans Hommes en 2021 (princ);Nombre d'autres inactifs hommes de 15 à 64 ans;;;NUM;17
+P21_FAINACT1564;Autres inactifs 15-64 ans Femmes en 2021 (princ);Nombre d'autres inactifs femmes de 15 à 64 ans;;;NUM;17
+C21_ACT1564;Actifs 15-64 ans en 2021 (compl);Nombre de personnes actives de 15 à 64 ans;;;NUM;17
+C21_ACT1564_CS1;Actifs 15-64 ans Agriculteurs exploitants en 2021 (compl);Nombre d'agriculteurs exploitants actifs de 15 à 64 ans;;;NUM;17
+C21_ACT1564_CS2;Actifs 15-64 ans Artisans, Comm., Chefs entr. en 2021 (compl);Nombre d'artisans, commerçants, chefs d'entreprise actifs de 15 à 64 ans;;;NUM;17
+C21_ACT1564_CS3;Actifs 15-64 ans Cadres, Prof. intel. sup. en 2021 (compl);Nombre de cadres et professions intellectuelles supérieures actifs de 15 à 64 ans;;;NUM;17
+C21_ACT1564_CS4;Actifs 15-64 ans Prof. intermédiaires en 2021 (compl);Nombre de professions intermédiaires actifs de 15 à 64 ans;;;NUM;17
+C21_ACT1564_CS5;Actifs 15-64 ans Employés en 2021 (compl);Nombre d'employés actifs de 15 à 64 ans;;;NUM;17
+C21_ACT1564_CS6;Actifs 15-64 ans Ouvriers en 2021 (compl);Nombre d'ouvriers actifs de 15 à 64 ans;;;NUM;17
+C21_ACTOCC1564;Actifs occupés 15-64 ans en 2021 (compl);Nombre de personnes actives occupées de 15 à 64 ans;;;NUM;17
+C21_ACTOCC1564_CS1;Actifs occ 15-64 ans Agriculteurs exploitants en 2021 (compl);Nombre d'agriculteurs exploitants actifs occupés de 15 à 64 ans;;;NUM;17
+C21_ACTOCC1564_CS2;Actifs occ 15-64 ans Artisans, Comm., Chefs entr. en 2021 (compl);Nombre d'artisans, commerçants, chefs d'entreprise actifs occupés de 15 à 64 ans;;;NUM;17
+C21_ACTOCC1564_CS3;Actifs occ 15-64 ans Cadres Prof. intel. sup. en 2021 (compl);Nombre de cadres, professions intellectuelles supérieures actifs occupés de 15 à 64 ans;;;NUM;17
+C21_ACTOCC1564_CS4;Actifs occ 15-64 ans Prof. intermédiaires en 2021 (compl);Nombre de professions intermédiaires actifs occupés de 15 à 64 ans;;;NUM;17
+C21_ACTOCC1564_CS5;Actifs occupés 15-64 ans Employés en 2021 (compl);Nombre d'employés actifs occupés de 15 à 64 ans;;;NUM;17
+C21_ACTOCC1564_CS6;Actifs occupés 15-64 ans Ouvriers en 2021 (compl);Nombre d'ouvriers actifs occupés de 15 à 64 ans;;;NUM;17
+P21_ACTOCC15P;Actifs occupés 15 ans ou plus en 2021 (princ);Nombre de personnes actives occupées de 15 ans ou plus;;;NUM;17
+P21_HACTOCC15P;Actifs occupés 15 ans ou plus Hommes en 2021 (princ);Nombre d'hommes actifs occupés de 15 ans ou plus;;;NUM;17
+P21_FACTOCC15P;Actifs occupés 15 ans ou plus Femmes en 2021 (princ);Nombre de femmes actives occupées de 15 ans ou plus;;;NUM;17
+P21_SAL15P;Salariés 15 ans ou plus en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus;;;NUM;17
+P21_HSAL15P;Salariés 15 ans ou plus Hommes en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus;;;NUM;17
+P21_FSAL15P;Salariés 15 ans ou plus Femmes en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus;;;NUM;17
+P21_NSAL15P;Non-salariés 15 ans ou plus en 2021 (princ);Nombre de personnes non-salariées de 15 ans ou plus;;;NUM;17
+P21_HNSAL15P;Non-salariés 15 ans ou plus Hommes en 2021 (princ);Nombre d'hommes non-salariés de 15 ans ou plus;;;NUM;17
+P21_FNSAL15P;Non-salariés 15 ans ou plus Femmes en 2021 (princ);Nombre de femmes non-salariées de 15 ans ou plus;;;NUM;17
+P21_ACTOCC15P_TP;Actifs occ 15 ans ou plus TP en 2021 (princ);Nombre de personnes actives occupées de 15 ans ou plus à temps partiel;;;NUM;17
+P21_SAL15P_TP;Salariés 15 ans ou plus TP en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus à temps partiel;;;NUM;17
+P21_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes en 2021 (princ);Nombre d'hommes salariés de 15 ans ou plus à temps partiel;;;NUM;17
+P21_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes en 2021 (princ);Nombre de femmes salariées de 15 ans ou plus à temps partiel;;;NUM;17
+P21_NSAL15P_TP;Non-salariés 15 ans ou plus TP en 2021 (princ);Nombre de personnes non-salariées de 15 ans ou plus à temps partiel;;;NUM;17
+P21_SAL15P_CDI;Salariés 15 ans ou plus Fonct publ, CDI en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée;;;NUM;17
+P21_SAL15P_CDD;Salariés 15 ans ou plus CDD en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus ayant un contrat à durée déterminée;;;NUM;17
+P21_SAL15P_INTERIM;Salariés 15 ans ou plus Intérim en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus intérimaires;;;NUM;19
+P21_SAL15P_EMPAID;Salariés 15 ans ou plus Emplois aidés en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus Emplois aidés;;;NUM;19
+P21_SAL15P_APPR;Salariés 15 ans ou plus Apprentissage - Stage en 2021 (princ);Nombre de personnes salariées de 15 ans ou plus en apprentissage ou stagiaires;;;NUM;17
+P21_NSAL15P_INDEP;Non-salariés 15 ans ou plus Indépendants en 2021 (princ);Nombre de personnes non-salariées de 15 ans ou plus indépendants;;;NUM;17
+P21_NSAL15P_EMPLOY;Non-salariés 15 ans ou plus Employeurs en 2021 (princ);Nombre de personnes non-salariées de 15 ans ou plus employeurs;;;NUM;17
+P21_NSAL15P_AIDFAM;Non-salariés 15 ans ou plus Aides familiaux en 2021 (princ);Nombre de personnes non-salariées de 15 ans ou plus aides familiaux;;;NUM;17
+P21_ACTOCC15P_ILT1;Actif occ 15 ans ou plus travaille commune résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence;;;NUM;17
+P21_ACTOCC15P_ILT2P;Actif occ 15 ans ou plus travaille autre commune que commune résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence;;;NUM;17
+P21_ACTOCC15P_ILT2;Actif occ 15 ans ou plus travaille autre commune même dépt résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence;;;NUM;17
+P21_ACTOCC15P_ILT3;Actif occ 15 ans ou plus travaille autre dépt même région résidence en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence;;;NUM;17
+P21_ACTOCC15P_ILT4;Actif occ 15 ans ou plus travaille autre région en métropole en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une commune située dans une autre région en France métropolitaine;;;NUM;17
+P21_ACTOCC15P_ILT5;Actif occ 15 ans ou plus travaille autre région hors métropole en 2021 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent ailleurs, hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger);;;NUM;19
+C21_ACTOCC15P;Actif occ 15 ans ou plus en 2021 (compl);Nombre d'actifs occupés de 15 ans ou plus;;;NUM;17
+C21_ACTOCC15P_PAS;Actifs occ 15 ans ou plus pas de transport pour travail en 2021 (compl);Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler;;;NUM;17
+C21_ACTOCC15P_MAR;Actifs occ 15 ans ou plus marche à pied pour travail en 2021 (compl);Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied;;;NUM;17
+C21_ACTOCC15P_VELO;Actifs occ 15 ans ou plus vélo en 2021 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un vélo pour aller travailler;;;NUM;17
+C21_ACTOCC15P_2ROUESMOT;Actifs occ 15 ans ou plus deux-roues motorisé en 2021 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux-roues motorisé pour aller travailler;;;NUM;17
+C21_ACTOCC15P_VOIT;Actifs occ 15 ans ou plus voiture en 2021 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement la voiture pour aller travailler;;;NUM;17
+C21_ACTOCC15P_TCOM;Actifs occ 15 ans ou plus transport en commun en 2021 (compl);Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler;;;NUM;17
+
+COMMENT ON TABLE economie.activite_residents_2021 IS 'Voir métadonnées dans SGBD/Metadata/INSEE/Economie/Activité des résidents IRIS/2021';
+
+CREATE SCHEMA IF NOT EXISTS admin;
+
+CREATE TABLE IF NOT EXISTS admin.metadata_links (
+    id SERIAL PRIMARY KEY,
+    schema_name VARCHAR(100) NOT NULL,
+    table_name VARCHAR(100) NOT NULL,
+    metadata_path VARCHAR(255) NOT NULL,
+    last_sync TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(schema_name, table_name)
+);
+
+COMMENT ON TABLE admin.metadata_links IS 'Table de correspondance entre les tables PostgreSQL et leurs fichiers de métadonnées';
+
+CREATE OR REPLACE FUNCTION admin.sync_table_comments() 
+RETURNS INTEGER AS $$
+DECLARE
+    counter INTEGER := 0;
+    r RECORD;
+BEGIN
+    FOR r IN 
+        SELECT schema_name, table_name, metadata_path 
+        FROM admin.metadata_links
+    LOOP
+        EXECUTE format('COMMENT ON TABLE %I.%I IS %L', 
+                      r.schema_name, 
+                      r.table_name, 
+                      'Voir métadonnées dans ' || r.metadata_path);
+        counter := counter + 1;
+    END LOOP;
+    
+    UPDATE admin.metadata_links SET last_sync = CURRENT_TIMESTAMP;
+    
+    RETURN counter;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Fonction pour obtenir les informations sur une table et son fichier de métadonnées
+CREATE OR REPLACE FUNCTION admin.get_table_metadata_info(p_schema VARCHAR, p_table VARCHAR)
+RETURNS TABLE(
+    schema_name VARCHAR,
+    table_name VARCHAR,
+    metadata_path VARCHAR,
+    table_comment TEXT,
+    last_sync TIMESTAMP
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT 
+        ml.schema_name,
+        ml.table_name,
+        ml.metadata_path,
+        obj_description((p_schema || '.' || p_table)::regclass) as table_comment,
+        ml.last_sync
+    FROM 
+        admin.metadata_links ml
+    WHERE 
+        ml.schema_name = p_schema
+        AND ml.table_name = p_table;
+END;
+$$ LANGUAGE plpgsql;

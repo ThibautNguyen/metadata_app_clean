@@ -1,0 +1,74 @@
+---
+description: Naming conventions for consistent Python and SQL development
+globs: **/*
+alwaysApply: true
+---
+
+## Context
+
+- These conventions ensure that your codebase is readable, searchable, and consistent across all projects.
+- Applies to Python, SQL, and Streamlit files used in our data analysis and app development workflows.
+
+## General Naming Principles
+
+- Use **descriptive and meaningful names** that reveal the purpose of the element.
+- Avoid abbreviations unless widely understood (`id`, `url`, `sql`, etc.).
+- Keep names **short, searchable**, and ideally under **50 characters**.
+- Avoid vague names (`data`, `info`, `value`) unless necessary for disambiguation.
+- Boolean names should use `is_`, `has_`, `should_` prefixes (e.g., `is_ready`, `has_errors`).
+
+## Python Conventions
+
+- `snake_case` for:
+  - Variables (`user_id`, `load_data`)
+  - Functions and methods (`compute_average`, `update_dashboard`)
+  - Filenames and modules (`data_loader.py`, `streamlit_ui.py`)
+- `PascalCase` for class names only (`UserSession`, `DataManager`)
+- `SCREAMING_SNAKE_CASE` for constants (`MAX_ROWS`, `API_TIMEOUT`)
+- Private methods or variables start with `_` (e.g., `_fetch_internal_data()`)
+
+## SQL Conventions
+
+- Use **lowercase with underscores** for table and column names (`user_activity`, `created_at`)
+- Alias columns meaningfully (`AS created_date`)
+- Avoid cryptic names like `nb`, `dt`, `vl` unless standardized in your team
+- Prefix views and materialized views consistently:
+  - `view_` for views (e.g., `view_user_stats`)
+  - `mv_` for materialized views (e.g., `mv_quarterly_trends`)
+
+## Streamlit-Specific Conventions
+
+- Prefix sidebar widgets with `sb_` when useful (`sb_date_range`, `sb_filters`)
+- Group related components into clear containers (`user_input_form`, `map_controls`)
+- Avoid duplication or anonymous blocks (`st.write(…)` everywhere): use named widgets
+
+## File & Folder Naming
+
+- Use `snake_case` for folders and file names:
+  - ✅ `data_fetcher.py`, `dashboard_logic/`
+  - ❌ `DataFetcher.py`, `utilsNew.py`
+- Avoid meaningless names like `script1.py`, `temp.py`, `final_version2.py`
+
+## Examples
+
+```python
+# Python
+user_name = get_user_name_from_db()
+IS_ADMIN = True
+
+def has_access_rights(user: str) -> bool:
+    return user in allowed_users
+
+
+-- SQL
+SELECT user_id, created_at
+FROM user_activity
+WHERE is_active = true;
+
+CREATE VIEW view_active_users AS
+SELECT * FROM user_activity WHERE is_active = true;
+
+
+# Streamlit
+sb_date_range = st.sidebar.date_input("Select date range")
+filter_options = st.selectbox("Choose a category", options)

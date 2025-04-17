@@ -1,0 +1,391 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "POP_LOG_s",
+    "description": "https://www.insee.fr/fr/statistiques/8205247 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\Séries historiques COM (pop, log, superficie, naissances, décès, etc.)\\2021",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "P21_POP",
+      "type": "NUM",
+      "description": "Population",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP",
+      "type": "NUM",
+      "description": "Population",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP",
+      "type": "NUM",
+      "description": "Population",
+      "nullable": true
+    },
+    {
+      "name": "D99_POP",
+      "type": "NUM",
+      "description": "Population",
+      "nullable": true
+    },
+    {
+      "name": "D90_POP",
+      "type": "NUM",
+      "description": "Population sans les doubles comptes",
+      "nullable": true
+    },
+    {
+      "name": "D82_POP",
+      "type": "NUM",
+      "description": "Population sans les doubles comptes",
+      "nullable": true
+    },
+    {
+      "name": "D75_POP",
+      "type": "NUM",
+      "description": "Population sans les doubles comptes",
+      "nullable": true
+    },
+    {
+      "name": "D68_POP",
+      "type": "NUM",
+      "description": "Population sans les doubles comptes",
+      "nullable": true
+    },
+    {
+      "name": "SUPERF",
+      "type": "NUM",
+      "description": "Superficie (en km²)",
+      "nullable": true
+    },
+    {
+      "name": "NAIS1520",
+      "type": "NUM",
+      "description": "Nombre de naissances entre le 01/01/2015 et le 31/12/2020",
+      "nullable": true
+    },
+    {
+      "name": "NAIS1014",
+      "type": "NUM",
+      "description": "Nombre de naissances entre le 01/01/2010 et le 31/12/2014",
+      "nullable": true
+    },
+    {
+      "name": "NAIS9909",
+      "type": "NUM",
+      "description": "Nombre de naissances entre le RP1999 et le 31/12/2009",
+      "nullable": true
+    },
+    {
+      "name": "NAIS9099",
+      "type": "NUM",
+      "description": "Nombre de naissances entre RP1990 et RP1999",
+      "nullable": true
+    },
+    {
+      "name": "NAIS8290",
+      "type": "NUM",
+      "description": "Nombre de naissances entre RP1982 et RP1990",
+      "nullable": true
+    },
+    {
+      "name": "NAIS7582",
+      "type": "NUM",
+      "description": "Nombre de naissances entre RP1975 et RP1982",
+      "nullable": true
+    },
+    {
+      "name": "NAIS6875",
+      "type": "NUM",
+      "description": "Nombre de naissances entre RP1968 et RP1975",
+      "nullable": true
+    },
+    {
+      "name": "DECE1520",
+      "type": "NUM",
+      "description": "Nombre de décès entre le 01/01/2015 et le 31/12/2020",
+      "nullable": true
+    },
+    {
+      "name": "DECE1014",
+      "type": "NUM",
+      "description": "Nombre de décès entre le 01/01/2010 et le 31/12/2014",
+      "nullable": true
+    },
+    {
+      "name": "DECE9909",
+      "type": "NUM",
+      "description": "Nombre de décès entre le RP1999 et le 31/12/2009",
+      "nullable": true
+    },
+    {
+      "name": "DECE9099",
+      "type": "NUM",
+      "description": "Nombre de décès entre RP1990 et RP1999",
+      "nullable": true
+    },
+    {
+      "name": "DECE8290",
+      "type": "NUM",
+      "description": "Nombre de décès entre RP1982 et RP1990",
+      "nullable": true
+    },
+    {
+      "name": "DECE7582",
+      "type": "NUM",
+      "description": "Nombre de décès entre RP1975 et RP1982",
+      "nullable": true
+    },
+    {
+      "name": "DECE6875",
+      "type": "NUM",
+      "description": "Nombre de décès entre RP1968 et RP1975",
+      "nullable": true
+    },
+    {
+      "name": "P21_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "P15_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "P10_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "D99_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "D90_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "D82_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "D75_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "D68_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "P15_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "P10_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D99_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D90_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D82_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D75_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D68_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales ou de ménages (le nombre de ménages est égal au nombre de résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "P15_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "P10_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "D99_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "D90_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "D82_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "D75_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "D68_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "P21_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "P15_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "P10_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "D99_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "D90_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "D82_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "D75_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "D68_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "P21_PMEN",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages  ou nombre de personnes des résidences principales (le nombre de personne des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "P15_PMEN",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages  ou nombre de personnes des résidences principales (le nombre de personne des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "P10_PMEN",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages  ou nombre de personnes des résidences principales (le nombre de personne des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D99_PMEN",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages  ou nombre de personnes des résidences principales (le nombre de personnes des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D90_NPER_RP",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages ou nombre de personnes des résidences principales (le nombre de personnes des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D82_NPER_RP",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages ou nombre de personnes des résidences principales (le nombre de personnes des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D75_NPER_RP",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages ou nombre de personnes des résidences principales (le nombre de personnes des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    },
+    {
+      "name": "D68_NPER_RP",
+      "type": "NUM",
+      "description": "Nombre de personnes des ménages ou nombre de personnes des résidences principales (le nombre de personnes des ménages est égal au nombre de personnes des résidences principales)",
+      "nullable": true
+    }
+  ]
+}

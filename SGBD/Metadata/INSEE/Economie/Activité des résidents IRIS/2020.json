@@ -1,0 +1,721 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "activite_residents_2020",
+    "description": "https://www.insee.fr/fr/statistiques/7704089",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "COM",
+      "type": "CHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "TYP_IRIS",
+      "type": "CHAR",
+      "description": "Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z)",
+      "nullable": true
+    },
+    {
+      "name": "LAB_IRIS",
+      "type": "CHAR",
+      "description": "Label de qualité de l'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "P20_POP1564",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_POP1524",
+      "type": "NUM",
+      "description": "Nombre de personnes de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_POP2554",
+      "type": "NUM",
+      "description": "Nombre de personnes de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_POP5564",
+      "type": "NUM",
+      "description": "Nombre de personnes de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_H1564",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_H1524",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_H2554",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_H5564",
+      "type": "NUM",
+      "description": "Nombre d'hommes de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_F1564",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_F1524",
+      "type": "NUM",
+      "description": "Nombre de femmes de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_F2554",
+      "type": "NUM",
+      "description": "Nombre de femmes de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_F5564",
+      "type": "NUM",
+      "description": "Nombre de femmes de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT1564",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT1524",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT2554",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT5564",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACT1564",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACT1524",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACT2554",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACT5564",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACT1564",
+      "type": "NUM",
+      "description": "Nombre de femmes actives de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACT1524",
+      "type": "NUM",
+      "description": "Nombre de femmes actives de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACT2554",
+      "type": "NUM",
+      "description": "Nombre de femmes actives de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACT5564",
+      "type": "NUM",
+      "description": "Nombre de femmes actives de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC1564",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC1524",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC2554",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC5564",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACTOCC1564",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACTOCC1524",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACTOCC2554",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACTOCC5564",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACTOCC1564",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACTOCC1524",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACTOCC2554",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM_CAPBEP",
+      "type": "NUM",
+      "description": "Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un CAP, d'un BEP ou équivalent",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACTOCC5564",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM_BAC",
+      "type": "NUM",
+      "description": "Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un Baccalauréat, brevet professionnel ou équivalent",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM1564",
+      "type": "NUM",
+      "description": "Nombre de chômeurs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM_SUP2",
+      "type": "NUM",
+      "description": "Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 2",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM1524",
+      "type": "NUM",
+      "description": "Nombre de chômeurs de 15 à 24 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM_SUP34",
+      "type": "NUM",
+      "description": "Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 3 ou Bac + 4",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM2554",
+      "type": "NUM",
+      "description": "Nombre de chômeurs de 25 à 54 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM_SUP5",
+      "type": "NUM",
+      "description": "Nombre de chômeurs de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM5564",
+      "type": "NUM",
+      "description": "Nombre de chômeurs de 55 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT_DIPLMIN",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 ans à 64 ans titulaires d'aucun diplôme ou au plus un CEP",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM_DIPLMIN",
+      "type": "NUM",
+      "description": "Nombre de chômeurs de 15 ans à 64 ans titulaires d'aucun diplôme ou au plus un CEP",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT_BEPC",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 ans à 64 ans  titulaires d'un BEPC, brevet des collèges, DNB",
+      "nullable": true
+    },
+    {
+      "name": "P20_CHOM_BEPC",
+      "type": "NUM",
+      "description": "Nombre de chômeurs  de 15 ans à 64 ans titulaires d'un BEPC, brevet des collèges, DNB",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT_CAPBEP",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 ans à 64 ans titulaires d'un CAP, d'un BEP ou équivalent",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT_BAC",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 ans à 64 ans titulaires d'un Baccalauréat, brevet professionnel ou équivalent",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT_SUP2",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 2",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT_SUP34",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement supérieur de niveau Bac + 3 ou Bac + 4",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACT_SUP5",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 ans à 64 ans titulaires d'un diplôme de l'enseignement",
+      "nullable": true
+    },
+    {
+      "name": "P20_INACT1564",
+      "type": "NUM",
+      "description": "Nombre de personnes inactives de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HINACT1564",
+      "type": "NUM",
+      "description": "Nombre d'hommes inactifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FINACT1564",
+      "type": "NUM",
+      "description": "Nombre de femmes inactives de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ETUD1564",
+      "type": "NUM",
+      "description": "Nombre d'élèves, étudiants et stagiaires non rémunérés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HETUD1564",
+      "type": "NUM",
+      "description": "Nombre d'élèves, étudiants et stagiaires non rémunérés hommes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FETUD1564",
+      "type": "NUM",
+      "description": "Nombre d'élèves, étudiants et stagiaires non rémunérés femmes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_RETR1564",
+      "type": "NUM",
+      "description": "Nombre de retraités ou préretraités de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HRETR1564",
+      "type": "NUM",
+      "description": "Nombre de retraités ou préretraités hommes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FRETR1564",
+      "type": "NUM",
+      "description": "Nombre de retraités ou préretraités femmes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_AINACT1564",
+      "type": "NUM",
+      "description": "Nombre d'autres inactifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_HAINACT1564",
+      "type": "NUM",
+      "description": "Nombre d'autres inactifs hommes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_FAINACT1564",
+      "type": "NUM",
+      "description": "Nombre d'autres inactifs femmes de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACT1564",
+      "type": "NUM",
+      "description": "Nombre de personnes actives de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACT1564_CS1",
+      "type": "NUM",
+      "description": "Nombre d'agriculteurs exploitants actifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACT1564_CS2",
+      "type": "NUM",
+      "description": "Nombre d'artisans, commerçants, chefs d'entreprise actifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACT1564_CS3",
+      "type": "NUM",
+      "description": "Nombre de cadres et professions intellectuelles supérieures actifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACT1564_CS4",
+      "type": "NUM",
+      "description": "Nombre de professions intermédiaires actifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACT1564_CS5",
+      "type": "NUM",
+      "description": "Nombre d'employés actifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACT1564_CS6",
+      "type": "NUM",
+      "description": "Nombre d'ouvriers actifs de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC1564",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC1564_CS1",
+      "type": "NUM",
+      "description": "Nombre d'agriculteurs exploitants actifs occupés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC1564_CS2",
+      "type": "NUM",
+      "description": "Nombre d'artisans, commerçants, chefs d'entreprise actifs occupés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC1564_CS3",
+      "type": "NUM",
+      "description": "Nombre de cadres, professions intellectuelles supérieures actifs occupés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC1564_CS4",
+      "type": "NUM",
+      "description": "Nombre de professions intermédiaires actifs occupés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC1564_CS5",
+      "type": "NUM",
+      "description": "Nombre d'employés actifs occupés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC1564_CS6",
+      "type": "NUM",
+      "description": "Nombre d'ouvriers actifs occupés de 15 à 64 ans",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_HACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_FACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_SAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_HSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_FSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_NSAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_HNSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_FNSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P20_SAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P20_HSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P20_FSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P20_NSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus à temps partiel",
+      "nullable": true
+    },
+    {
+      "name": "P20_SAL15P_CDI",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée",
+      "nullable": true
+    },
+    {
+      "name": "P20_SAL15P_CDD",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus ayant un contrat à durée déterminée",
+      "nullable": true
+    },
+    {
+      "name": "P20_SAL15P_INTERIM",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus intérimaires",
+      "nullable": true
+    },
+    {
+      "name": "P20_SAL15P_EMPAID",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus Emplois aidés",
+      "nullable": true
+    },
+    {
+      "name": "P20_SAL15P_APPR",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus en apprentissage ou stagiaires",
+      "nullable": true
+    },
+    {
+      "name": "P20_NSAL15P_INDEP",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus indépendants",
+      "nullable": true
+    },
+    {
+      "name": "P20_NSAL15P_EMPLOY",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus employeurs",
+      "nullable": true
+    },
+    {
+      "name": "P20_NSAL15P_AIDFAM",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus aides familiaux",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P_ILT1",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P_ILT2P",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P_ILT2",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P_ILT3",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P_ILT4",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une commune située dans une autre région en France métropolitaine",
+      "nullable": true
+    },
+    {
+      "name": "P20_ACTOCC15P_ILT5",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent ailleurs, hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger)",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC15P_PAS",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC15P_MAR",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC15P_VELO",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un vélo pour aller travailler",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC15P_2ROUESMOT",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux-roues motorisé pour aller travailler",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC15P_VOIT",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement la voiture pour aller travailler",
+      "nullable": true
+    },
+    {
+      "name": "C20_ACTOCC15P_TCOM",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler",
+      "nullable": true
+    }
+  ]
+}

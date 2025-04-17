@@ -1,0 +1,85 @@
+Caractéristiques de l'emploi en 2011 
+Recensement de la population - Base indicateurs de la fiche synthétique
+
+
+## Source : 
+https://www.insee.fr/fr/statistiques/2044677
+
+
+
+##Tableau SQL : 
+caracterist_emploi_COM_2011
+
+
+
+## 4 premières lignes :
+CODGEO;REG;DEP;LIBGEO;P11_ACTOCC15P;P11_SAL15P;P11_NSAL15P;P11_ACTOCC15P_TP;P11_SAL15P_TP;P11_HSAL15P_TP;P11_FSAL15P_TP;P11_NSAL15P_TP;P11_HACTOCC15P;P11_HSAL15P;P11_HSAL15P_CDI;P11_HSAL15P_CDD;P11_HSAL15P_INTERIM;P11_HSAL15P_EMPAID;P11_HSAL15P_APPR;P11_HNSAL15P;P11_HNSAL15P_INDEP;P11_HNSAL15P_EMPLOY;P11_HNSAL15P_AIDFAM;P11_FACTOCC15P;P11_FSAL15P;P11_FSAL15P_CDI;P11_FSAL15P_CDD;P11_FSAL15P_INTERIM;P11_FSAL15P_EMPAID;P11_FSAL15P_APPR;P11_FNSAL15P;P11_FNSAL15P_INDEP;P11_FNSAL15P_EMPLOY;P11_FNSAL15P_AIDFAM;P11_HSAL1564;P11_HSAL1524;P11_HSAL2554;P11_HSAL5564;P11_HSAL1564_TP;P11_HSAL1524_TP;P11_HSAL2554_TP;P11_HSAL5564_TP;P11_FSAL1564;P11_FSAL1524;P11_FSAL2554;P11_FSAL5564;P11_FSAL1564_TP;P11_FSAL1524_TP;P11_FSAL2554_TP;P11_FSAL5564_TP;P11_ACTOCC15P_ILT1;P11_ACTOCC15P_ILT2P;P11_ACTOCC15P_ILT2;P11_ACTOCC15P_ILT3;P11_ACTOCC15P_ILT4;P11_ACTOCC15P_ILT5;P11_ACTOCC15P_PASTRANS;P11_ACTOCC15P_MARCHE;P11_ACTOCC15P_2ROUES;P11_ACTOCC15P_VOITURE;P11_ACTOCC15P_COMMUN
+01001;82;01;L'Abergement-Clémenciat;327;279;48;59;54;4;50;5;171;140;129;5;1;1;4;31;13;18;0;156;139;124;11;2;0;2;17;13;3;1;139;8;120;11;3;1;2;0;139;10;110;19;50;4;43;3;47;280;181;84;15;0;18;7;2;293;7
+01002;82;01;L'Abergement-de-Varey;108;90;18;24;21;6;15;3;55;44;39;4;0;1;0;11;4;7;0;53;46;40;4;1;0;1;7;6;1;0;44;3;37;4;6;0;6;0;46;4;38;4;15;0;13;2;12;96;66;28;2;0;2;0;0;96;10
+01004;82;01;Ambérieu-en-Bugey;5874;5434;440;869;795;183;612;74;3252;2968;2424;342;68;15;119;284;119;163;2;2622;2466;2052;291;60;14;49;156;88;63;5;2946;475;2256;215;169;51;94;24;2456;367;1883;206;608;70;489;48;2447;3427;2337;1006;71;13;205;490;172;4148;859
+
+
+
+## Dictionnaire des variables : 
+VAR_ID;VAR_LIB;VAR_LIB_LONG;ANNEE;SOURCE
+CODGEO;Code géographique;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal;2013;Code Officiel Géographique
+REG;Région;Code de la région;2013;Code officiel géographique
+DEP;Département;Code du département;2013;Code officiel géographique
+LIBGEO;Libellé géographique;Libellé de la commune ou de l'arrondissement municipal;2013;Code Officiel Géographique
+P11_ACTOCC15P;Actifs occupés 15 ans ou plus en 2011 (princ);Nombre de personnes actives occupées de 15 ans ou plus ;2011;RP2011 exploitation principale
+P11_SAL15P;Salariés 15 ans ou plus en 2011 (princ);Nombre de personnes salariées de 15 ans ou plus ;2011;RP2011 exploitation principale
+P11_NSAL15P;Non-salariés 15 ans ou plus en 2011 (princ);Nombre de personnes non-salariées de 15 ans ou plus ;2011;RP2011 exploitation principale
+P11_ACTOCC15P_TP;Actifs occ 15 ans ou plus TP en 2011 (princ);Nombre de personnes actives occupées de 15 ans ou plus à temps partiel ;2011;RP2011 exploitation principale
+P11_SAL15P_TP;Salariés 15 ans ou plus TP en 2011 (princ);Nombre de personnes salariées de 15 ans ou plus à temps partiel ;2011;RP2011 exploitation principale
+P11_HSAL15P_TP;Salariés 15 ans ou plus TP Hommes en 2011 (princ);Nombre d'hommes salariés de 15 ans ou plus à temps partiel ;2011;RP2011 exploitation principale
+P11_FSAL15P_TP;Salariés 15 ans ou plus TP Femmes en 2011 (princ);Nombre de femmes salariées de 15 ans ou plus à temps partiel ;2011;RP2011 exploitation principale
+P11_NSAL15P_TP;Non-salariés 15 ans ou plus TP en 2011 (princ);Nombre de personnes non-salariées de 15 ans ou plus à temps partiel ;2011;RP2011 exploitation principale
+P11_HACTOCC15P;Actifs occupés 15 ans ou plus Hommes en 2011 (princ);Nombre d'hommes actifs occupés de 15 ans ou plus ;2011;RP2011 exploitation principale
+P11_HSAL15P;Salariés 15 ans ou plus Hommes en 2011 (princ);Nombre d'hommes salariés de 15 ans ou plus ;2011;RP2011 exploitation principale
+P11_HSAL15P_CDI;Salariés 15 ans ou plus Hommes Fonct publ, CDI en 2011 (princ);Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée ;2011;RP2011 exploitation principale
+P11_HSAL15P_CDD;Salariés 15 ans ou plus Hommes CDD en 2011 (princ);Nombre d'hommes salariés de 15 ans ou plus ayant un  contrat à durée déterminée ;2011;RP2011 exploitation principale
+P11_HSAL15P_INTERIM;Salariés 15 ans ou plus Hommes Intérim en 2011 (princ);Nombre d'hommes salariés de 15 ans ou plus intérimaires;2011;RP2011 exploitation principale
+P11_HSAL15P_EMPAID;Salariés 15 ans ou plus Hommes Emplois aidés en 2011 (princ);Nombre d'hommes salariés de 15 ans ou plus Emplois aidés;2011;RP2011 exploitation principale
+P11_HSAL15P_APPR;Salariés 15 ans ou plus Hommes Apprentissage - Stage en 2011 (princ);Nombre d'hommes salariés de 15 ans ou plus en apprentissage ou stagiaire;2011;RP2011 exploitation principale
+P11_HNSAL15P;Non-salariés 15 ans ou plus Hommes en 2011 (princ);Nombre d'hommes non-salariés de 15 ans ou plus;2011;RP2011 exploitation principale
+P11_HNSAL15P_INDEP;Non-salariés 15 ans ou plus Hommes Indépendants en 2011 (princ);Nombre d'hommes non-salariés de 15 ans ou plus indépendants;2011;RP2011 exploitation principale
+P11_HNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Hommes Employeurs en 2011 (princ);Nombre d'hommes non-salariés de 15 ans ou plus employeurs;2011;RP2011 exploitation principale
+P11_HNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Hommes Aides familiaux en 2011 (princ);Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux;2011;RP2011 exploitation principale
+P11_FACTOCC15P;Actifs occupés 15 ans ou plus Femmes en 2011 (princ);Nombre de femmes actives occupées de 15 ans ou plus ;2011;RP2011 exploitation principale
+P11_FSAL15P;Salariés 15 ans ou plus Femmes en 2011 (princ);Nombre de femmes salariées de 15 ans ou plus ;2011;RP2011 exploitation principale
+P11_FSAL15P_CDI;Salariés 15 ans ou plus Femmes Fonct publ, CDI en 2011 (princ);Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée ;2011;RP2011 exploitation principale
+P11_FSAL15P_CDD;Salariés 15 ans ou plus Femmes CDD en 2011 (princ);Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée ;2011;RP2011 exploitation principale
+P11_FSAL15P_INTERIM;Salariés 15 ans ou plus Femmes Intérim en 2011 (princ);Nombre de femmes salariées de 15 ans ou plus intérimaires;2011;RP2011 exploitation principale
+P11_FSAL15P_EMPAID;Salariés 15 ans ou plus Femmes Emplois aidés en 2011 (princ);Nombre de femmes salariées de 15 ans ou plus Emplois aidés;2011;RP2011 exploitation principale
+P11_FSAL15P_APPR;Salariés 15 ans ou plus Femmes Apprentissage - Stage en 2011 (princ);Nombre de femmes salariées de 15 ans ou plus en apprentissage, stagiaire;2011;RP2011 exploitation principale
+P11_FNSAL15P;Non-salariés 15 ans ou plus Femmes en 2011 (princ);Nombre de femmes non-salariées de 15 ans ou plus;2011;RP2011 exploitation principale
+P11_FNSAL15P_INDEP;Non-salariés 15 ans ou plus Femmes Indépendantes en 2011 (princ);Nombre de femmes non-salariées de 15 ans ou plus indépendantes;2011;RP2011 exploitation principale
+P11_FNSAL15P_EMPLOY;Non-salariés 15 ans ou plus Femmes Employeurs en 2011 (princ);Nombre de femmes non-salariées de 15 ans ou plus employeurs;2011;RP2011 exploitation principale
+P11_FNSAL15P_AIDFAM;Non-salariés 15 ans ou plus Femmes Aides familiales en 2011 (princ);Nombre de femmes non-salariées de 15 ans ou plus aides familiales;2011;RP2011 exploitation principale
+P11_HSAL1564;Salariés 15-64 ans Hommes en 2011 (princ);Nombre d'hommes salariés de 15 à 64 ans;2011;RP2011 exploitation principale
+P11_HSAL1524;Salariés 15-24 ans Hommes en 2011 (princ);Nombre d'hommes salariés de 15 à 24 ans;2011;RP2011 exploitation principale
+P11_HSAL2554;Salariés 25-54 ans Hommes en 2011 (princ);Nombre d'hommes salariés de 25 à 54 ans;2011;RP2011 exploitation principale
+P11_HSAL5564;Salariés 55-64 ans Hommes en 2011 (princ);Nombre d'hommes salariés de 55 à 64 ans;2011;RP2011 exploitation principale
+P11_HSAL1564_TP;Salariés 15-64 ans Hommes TP en 2011 (princ);Nombre d'hommes salariés de 15 à 64 ans à temps partiel;2011;RP2011 exploitation principale
+P11_HSAL1524_TP;Salariés 15-24 ans Hommes TP en 2011 (princ);Nombre d'hommes salariés de 15 à 24 ans à temps partiel;2011;RP2011 exploitation principale
+P11_HSAL2554_TP;Salariés 25-54 ans Hommes TP en 2011 (princ);Nombre d'hommes salariés de 25 à 54 ans à temps partiel;2011;RP2011 exploitation principale
+P11_HSAL5564_TP;Salariés 55-64 ans Hommes TP en 2011 (princ);Nombre d'hommes salariés de 55 à 64 ans à temps partiel;2011;RP2011 exploitation principale
+P11_FSAL1564;Salariés 15-64 ans Femmes en 2011 (princ);Nombre de femmes salariées de 15 à 64 ans;2011;RP2011 exploitation principale
+P11_FSAL1524;Salariés 15-24 ans Femmes en 2011 (princ);Nombre de femmes salariées de 15 à 24 ans;2011;RP2011 exploitation principale
+P11_FSAL2554;Salariés 25-54 ans Femmes en 2011 (princ);Nombre de femmes salariées de 25 à 54 ans;2011;RP2011 exploitation principale
+P11_FSAL5564;Salariés 55-64 ans Femmes en 2011 (princ);Nombre de femmes salariées de 55 à 64 ans;2011;RP2011 exploitation principale
+P11_FSAL1564_TP;Salariés 15-64 ans Femmes TP en 2011 (princ);Nombre de femmes salariées de 15 à 64 ans à temps partiel;2011;RP2011 exploitation principale
+P11_FSAL1524_TP;Salariés 15-24 ans Femmes TP en 2011 (princ);Nombre de femmes salariées de 15 à 24 ans à temps partiel;2011;RP2011 exploitation principale
+P11_FSAL2554_TP;Salariés 25-54 ans Femmes TP en 2011 (princ);Nombre de femmes salariées de 25 à 54 ans à temps partiel;2011;RP2011 exploitation principale
+P11_FSAL5564_TP;Salariés 55-64 ans Femmes TP en 2011 (princ);Nombre de femmes salariées de 55 à 64 ans à temps partiel;2011;RP2011 exploitation principale
+P11_ACTOCC15P_ILT1;Actif occ 15 ans ou plus travaille commune résidence en 2011 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence;2011;RP2011 exploitation principale
+P11_ACTOCC15P_ILT2P;Actif occ 15 ans ou plus travaille autre commune que commune résidence en 2011 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence;2011;RP2011 exploitation principale
+P11_ACTOCC15P_ILT2;Actif occ 15 ans ou plus travaille autre commune même dépt résidence en 2011 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence;2011;RP2011 exploitation principale
+P11_ACTOCC15P_ILT3;Actif occ 15 ans ou plus travaille autre dépt même région résidence en 2011 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence;2011;RP2011 exploitation principale
+P11_ACTOCC15P_ILT4;Actif occ 15 ans ou plus travaille autre région en métropole en 2011 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région en France métropolitaine;2011;RP2011 exploitation principale
+P11_ACTOCC15P_ILT5;Actif occ 15 ans ou plus travaille autre région hors métropole en 2011 (princ);Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger);2011;RP2011 exploitation principale
+P11_ACTOCC15P_PASTRANS;Actif occ 15 ans ou plus sans transport pour travail en 2011 (princ);Nombre de personnes actives occupées de 15 ans ou plus n'utilisant pas de transport pour se rendre au travail;2011;RP2011 exploitation principale
+P11_ACTOCC15P_MARCHE;Actif occ 15 ans ou plus marche pour travail en 2011 (princ);Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement la marche pour se rendre au travail;2011;RP2011 exploitation principale
+P11_ACTOCC15P_2ROUES;Actif occ 15 ans ou plus en deux-roues pour travail en 2011 (princ);Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement un deux-roues pour se rendre au travail;2011;RP2011 exploitation principale
+P11_ACTOCC15P_VOITURE;Actif occ 15 ans ou plus en voiture pour travail en 2011 (princ);Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement une voiture, camion ou fourgonnette pour se rendre au travail;2011;RP2011 exploitation principale
+P11_ACTOCC15P_COMMUN;Actif occ 15 ans ou plus en tpt en commun pour travail en 2011 (princ);Nombre de personnes actives occupées de 15 ans ou plus utilisant principalement les transports en commun pour se rendre au travail;2011;RP2011 exploitation principale

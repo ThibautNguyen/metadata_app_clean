@@ -1,0 +1,34 @@
+## Source : 
+https://www.citepa.org/inventaires-spatialises/
+
+
+## Chemin Disque dur :  
+C:\Users\thiba\OneDrive\Documents\Données\Environnement\Gaz à effets de serre\2024-09
+
+
+## Tableau SQL : 
+GES_2024
+
+
+## 4 premières lignes du CSV :
+INSEE commune;Code département;Commune;Agriculture;Autres transports;Autres transports international;CO2 biomasse hors-total;Déchets;Energie;Industrie hors-énergie;Résidentiel;Routier;Tertiaire;Total
+01001;01;L'ABERGEMENT-CLEMENCIAT;3711,425991;;;432,7518347;101,4304764;2,354557741;6,911213351;309,3581952;793,1565008;367,0361723;5724,424941
+01002;01;L'ABERGEMENT-DE-VAREY;475,330205;;;140,7416597;140,675439;2,354557741;6,911213351;104,8664443;348,9978931;112,9342069;1332,811619
+01004;01;AMBERIEU-EN-BUGEY;499,0435264;212,5779085;;10313,44652;5314,314445;998,3324823;2930,354461;16616,82253;15642,42031;10732,37693;63259,68912
+
+
+## Dictionnaire des variables :
+INSEE commune	: Code INSEE de la commune
+Code département : Code INSEE du département
+Commune : Nom de la commune
+Agriculture : GES émis dans le secteur “Agriculture”
+Autres transports : GES émis dans le secteur “Autres transports”
+Autres transports international : GES émis dans le secteur “Autres transports international”
+CO2 biomasse hors-total : GES émis dans le secteur “CO2 biomasse hors-total”
+Déchets : GES émis dans le secteur “Déchets ”
+Energie : GES émis dans le secteur “Energie”
+Industrie hors-énergie : GES émis dans le secteur “Industrie hors-énergie”
+Résidentiel : GES émis dans le secteur “Résidentiel ”
+Routier : GES émis dans le secteur “Routier ”
+Tertiaire : GES émis dans le secteur “Tertiaire ”
+Total : GES émis dans tous les secteurs

@@ -1,0 +1,33 @@
+﻿# Environnements virtuels Python
+venv/
+env/
+.venv/
+.env/
+
+# Fichiers Python
+__pycache__/
+*.py[cod]
+*.class
+
+# Fichiers de log
+*.log
+
+# Fichiers de configuration Streamlit
+.streamlit/
+
+# Fichiers de donnÃ©es sensibles
+*.env
+*.env.local
+
+# Fichiers systÃ¨me
+.DS_Store
+Thumbs.db
+
+# Dossiers de build
+build/
+dist/
+*.egg-info/
+
+# Fichiers temporaires
+*.tmp
+*.temp

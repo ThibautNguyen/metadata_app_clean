@@ -1,0 +1,45 @@
+-- Exemple de Vitrolles
+-- Tableaux : StockEtablissement_2025-01 --> StockUniteLegale_2025-01
+
+WITH etablissements_vitrolles AS (
+  SELECT 
+    e.siren,
+    COALESCE(u.denominationUniteLegale, u.denominationUsuelle1UniteLegale) as raison_sociale,
+    e.trancheEffectifsEtablissement,
+    e.dateDernierTraitementEtablissement,
+    CASE WHEN e.etablissementSiege = 'true' THEN 'Oui' ELSE 'Non' END as siege_social,
+    COALESCE(e.complementAdresseEtablissement || ' ', '') || 
+    COALESCE(e.numeroVoieEtablissement || ' ', '') || 
+    COALESCE(e.typeVoieEtablissement || ' ', '') || 
+    COALESCE(e.libelleVoieEtablissement, '') as adresse,
+    e.libelleCommuneEtablissement as commune,
+    e.activitePrincipaleEtablissement as code_naf
+  FROM "StockEtablissement_2025-01" e
+  LEFT JOIN "StockUniteLegale_2025-01" u ON e.siren = u.siren
+  WHERE e.codeCommuneEtablissement = '13117'
+    AND e.caractereEmployeurEtablissement = 'O'
+    AND e.trancheEffectifsEtablissement IN ('12', '21', '22', '31', '32', '41', '42', '51', '52', '53')
+    AND e.etatAdministratifEtablissement = 'A'
+)
+SELECT 
+  siren,
+  raison_sociale,
+  CASE trancheEffectifsEtablissement
+    WHEN '12' THEN '20-49 salariés'
+    WHEN '21' THEN '50-99 salariés'
+    WHEN '22' THEN '100-199 salariés'
+    WHEN '31' THEN '200-249 salariés'
+    WHEN '32' THEN '250-499 salariés'
+    WHEN '41' THEN '500-999 salariés'
+    WHEN '42' THEN '1000-1999 salariés'
+    WHEN '51' THEN '2000-4999 salariés'
+    WHEN '52' THEN '5000-9999 salariés'
+    WHEN '53' THEN '10000 salariés et plus'
+  END as tranche_effectifs,
+  dateDernierTraitementEtablissement,
+  siege_social,
+  adresse,
+  commune,
+  code_naf
+FROM etablissements_vitrolles
+ORDER BY tranche_effectifs DESC, raison_sociale;

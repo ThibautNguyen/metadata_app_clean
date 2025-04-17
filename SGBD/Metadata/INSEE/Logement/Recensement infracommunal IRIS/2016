@@ -1,0 +1,123 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/4228432
+
+
+## Chemin disque dur : 
+C:\Users\thiba\OneDrive\Documents\Données\Logement\Logement_IRIS\2016
+
+## Tableau SQL : 
+LOG_IRIS_2011
+
+##4 premières lignes :
+IRIS;REG;DEP;UU2010;COM;LIBCOM;TRIRIS;GRD_QUART;LIBIRIS;TYP_IRIS;MODIF_IRIS;LAB_IRIS;P16_LOG;P16_RP;P16_RSECOCC;P16_LOGVAC;P16_MAISON;P16_APPART;P16_RP_1P;P16_RP_2P;P16_RP_3P;P16_RP_4P;P16_RP_5PP;P16_NBPI_RP;P16_RPMAISON;P16_NBPI_RPMAISON;P16_RPAPPART;P16_NBPI_RPAPPART;P16_RP_M30M2;P16_RP_3040M2;P16_RP_4060M2;P16_RP_6080M2;P16_RP_80100M2;P16_RP_100120M2;P16_RP_120M2P;P16_RP_ACHTOT;P16_RP_ACH19;P16_RP_ACH45;P16_RP_ACH70;P16_RP_ACH90;P16_RP_ACH05;P16_RP_ACH13;P16_RPMAISON_ACHTOT;P16_RPMAISON_ACH19;P16_RPMAISON_ACH45;P16_RPMAISON_ACH70;P16_RPMAISON_ACH90;P16_RPMAISON_ACH05;P16_RPMAISON_ACH13;P16_RPAPPART_ACHTOT;P16_RPAPPART_ACH19;P16_RPAPPART_ACH45;P16_RPAPPART_ACH70;P16_RPAPPART_ACH90;P16_RPAPPART_ACH05;P16_RPAPPART_ACH13;P16_MEN;P16_MEN_ANEM0002;P16_MEN_ANEM0204;P16_MEN_ANEM0509;P16_MEN_ANEM10P;P16_PMEN;P16_PMEN_ANEM0002;P16_PMEN_ANEM0204;P16_PMEN_ANEM0509;P16_PMEN_ANEM10P;P16_NBPI_RP_ANEM0002;P16_NBPI_RP_ANEM0204;P16_NBPI_RP_ANEM0509;P16_NBPI_RP_ANEM10P;P16_RP_PROP;P16_RP_LOC;P16_RP_LOCHLMV;P16_RP_GRAT;P16_NPER_RP;P16_NPER_RP_PROP;P16_NPER_RP_LOC;P16_NPER_RP_LOCHLMV;P16_NPER_RP_GRAT;P16_ANEM_RP;P16_ANEM_RP_PROP;P16_ANEM_RP_LOC;P16_ANEM_RP_LOCHLMV;P16_ANEM_RP_GRAT;P16_RP_SDB;P16_RP_CCCOLL;P16_RP_CCIND;P16_RP_CINDELEC;P16_RP_ELEC;P16_RP_EAUCH;P16_RP_BDWC;P16_RP_CHOS;P16_RP_CLIM;P16_RP_TTEGOU;P16_RP_GARL;P16_RP_VOIT1P;P16_RP_VOIT1;P16_RP_VOIT2P;P16_RP_HABFOR;P16_RP_CASE;P16_RP_MIBOIS;P16_RP_MIDUR
+010010000;84;01;01000;01001;L'Abergement-Clémenciat;ZZZZZZ;0100100;L'Abergement-Clémenciat (commune non irisée);Z;0;5;348;306;16;26;340;6;1;3;21;100;181;1521;301;1507;4;10;1;2;4;40;81;74;104;293;84;9;8;94;90;8;288;83;9;6;92;90;8;4;0;0;2;2;0;0;306;24;41;36;205;767;60;122;107;478;112;203;179;1027;260;41;8;5;767;669;86;19;12;5483;4972;376;60;135;301;7;150;67;;;;;;;261;292;100;192;;;;
+010020000;84;01;01000;01002;L'Abergement-de-Varey;ZZZZZZ;0100200;L'Abergement-de-Varey (commune non irisée);Z;0;5;169;101;52;16;169;0;2;2;14;30;53;479;101;479;0;0;0;1;6;8;25;20;41;98;54;10;7;8;12;7;98;54;10;7;8;12;7;0;0;0;0;0;0;0;101;12;15;27;47;243;30;36;71;106;57;69;120;233;86;12;0;3;243;213;27;0;3;1457;1378;59;0;20;98;1;51;18;;;;;;;76;98;29;69;;;;
+010040101;84;01;01302;01004;Ambérieu-en-Bugey;ZZZZZZ;0100401;Les Perouses-Triangle d'Activité;H;0;1;899;812;17;70;327;549;119;80;269;187;156;2725;306;1427;486;1274;125;6;164;221;174;76;46;781;27;56;150;320;134;93;299;23;38;81;104;13;40;461;4;18;69;209;108;53;812;162;230;133;286;1557;284;455;290;527;384;686;475;1180;317;447;231;47;1557;711;723;394;123;9529;6137;2862;1987;530;795;135;407;241;;;;;;;504;633;432;201;;;;
+
+
+
+## Dictionnaire des variables :
+
+VAR_ID;VAR_LIB;VAR_LIB_LONG
+IRIS;IRIS;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS
+REG;Région;Code de la région
+DEP;Département;Code du département
+UU2010;Unité urbaine;"Code du département ou ""00"" pour les unités urbaines qui s'étendent sur plusieurs départements voire au-delà de la frontière suivi d'un code sur une position indiquant la taille de la population puis d'un numéro d'ordre à l'intérieur de la taille"
+COM;Commune ou ARM;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille
+LIBCOM;Libellé commune ou ARM;Libellé de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille
+TRIRIS;TRIRIS;Code du département suivi d'un numéro d'ordre à l'intérieur du département sur trois positions puis d'un indicateur de TRIRIS
+GRD_QUART;Grand quartier;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille suivi du numéro de grand quartier
+LIBIRIS;Libellé de l'IRIS;Libellé de l'IRIS à l'intérieur de la commune ou de l'arrondissement municipal pour Paris Lyon et Marseille
+TYP_IRIS;Type d'IRIS;Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z)
+MODIF_IRIS;Modification de l'IRIS;Type de modification de l'IRIS
+LAB_IRIS;Label de l'IRIS;Label de qualité de l'IRIS
+P16_LOG;Logements en 2016 (princ);Nombre de logements
+P16_RP;Résidences principales en 2016 (princ);Nombre de résidences principales
+P16_RSECOCC;Rés secondaires et logts occasionnels en 2016 (princ);Nombre de résidences secondaires et logements occasionnels
+P16_LOGVAC;Logements vacants en 2016 (princ);Nombre de logements vacants
+P16_MAISON;Maisons en 2016 (princ);Nombre de maisons
+P16_APPART;Appartements en 2016 (princ);Nombre d'appartements
+P16_RP_1P;Rés princ 1 pièce en 2016 (princ);Nombre de résidences principales d'1 pièce
+P16_RP_2P;Rés princ 2 pièces en 2016 (princ);Nombre de résidences principales de 2 pièces
+P16_RP_3P;Rés princ 3 pièces en 2016 (princ);Nombre de résidences principales de 3 pièces
+P16_RP_4P;Rés princ 4 pièces en 2016 (princ);Nombre de résidences principales de 4 pièces
+P16_RP_5PP;Rés princ 5 pièces ou plus en 2016 (princ);Nombre de résidences principales de 5 pièces ou plus
+P16_NBPI_RP;Pièces rés princ en 2016 (princ);Nombre de pièces des résidences principales
+P16_RPMAISON;Rés princ type maison en 2016 (princ);Nombre de résidences principales de type maison
+P16_NBPI_RPMAISON;Pièces rés princ type maison en 2016 (princ);Nombre de pièces des résidences principales de type maison
+P16_RPAPPART;Rés princ type appartement en 2016 (princ);Nombre de résidences principales de type appartement
+P16_NBPI_RPAPPART;Pièces rés princ type appartement en 2016 (princ);Nombre de pièces des résidences principales de type appartement
+P16_RP_M30M2;Rés princ de moins de 30 m2 en 2016 (princ);Nombre de résidences principales de moins de 30 m2
+P16_RP_3040M2;Rés princ de 30 à moins de 40 m2 en 2016 (princ);Nombre de résidences principales de 30 à moins de 40 m2
+P16_RP_4060M2;Rés princ de 40 à moins de 60 m2 en 2016 (princ);Nombre de résidences principales de 40 à moins de 60 m2
+P16_RP_6080M2;Rés princ de 60 à moins de 80 m2 en 2016 (princ);Nombre de résidences principales de 60 à moins de 80 m2
+P16_RP_80100M2;Rés princ de 80 à moins de 100 m2 en 2016 (princ);Nombre de résidences principales de 80 à moins de 100 m2
+P16_RP_100120M2;Rés princ de 100 à moins de 120 m2 en 2016 (princ);Nombre de résidences principales de 100 à moins de 120 m2
+P16_RP_120M2P;Rés princ de 120 m2 ou plus en 2016 (princ);Nombre de résidences principales de 120 m2 ou plus
+P16_RP_ACHTOT;Rés princ avt 2014 en 2016 (princ) ;Nombre de résidences principales construites avant 2014
+P16_RP_ACH19;Rés princ avt 1919 en 2016 (princ) ;Nombre de résidences principales construites avant 1919
+P16_RP_ACH45;Rés princ 1919 à 1945 en 2016 (princ) ;Nombre de résidences principales construites de 1919 à 1945
+P16_RP_ACH70;Rés princ 1946 à 1970 en 2016 (princ) ;Nombre de résidences principales construites de 1946 à 1970
+P16_RP_ACH90;Rés princ 1971 à 1990 en 2016 (princ) ;Nombre de résidences principales construites de 1971 à 1990
+P16_RP_ACH05;Rés princ 1991 à 2005 en 2016 (princ) ;Nombre de résidences principales construites de 1991 à 2005
+P16_RP_ACH13;Rés princ 2006 à 2013 en 2016 (princ) ;Nombre de résidences principales construites de 2006 à 2013
+P16_RPMAISON_ACHTOT;Rés princ Type maison avt 2014 en 2016 (princ) ;Nombre de résidences principales de type maison construites avant 2014
+P16_RPMAISON_ACH19;Rés princ Type maison avt 1919 en 2016 (princ) ;Nombre de résidences principales de type maison construites avant 1919
+P16_RPMAISON_ACH45;Rés princ Type maison 1919 à 1945 en 2016 (princ) ;Nombre de résidences principales de type maison construites de 1919 à 1945
+P16_RPMAISON_ACH70;Rés princ Type maison 1946 à 1970 en 2016 (princ) ;Nombre de résidences principales de type maison construites de 1946 à 1970
+P16_RPMAISON_ACH90;Rés princ Type maison 1971 à 1990 en 2016 (princ) ;Nombre de résidences principales de type maison construites de 1971 à 1990
+P16_RPMAISON_ACH05;Rés princ Type maison 1991 à 2005 en 2016 (princ) ;Nombre de résidences principales de type maison construites de 1991 à 2005
+P16_RPMAISON_ACH13;Rés princ Type maison 2006 à 2013 en 2016 (princ) ;Nombre de résidences principales de type maison construites de 2006 à 2013
+P16_RPAPPART_ACHTOT;Rés princ Type appart avt 2014 en 2016 (princ) ;Nombre de résidences principales de type appartement construites avant 2014
+P16_RPAPPART_ACH19;Rés princ Type appart avt 1919 en 2016 (princ) ;Nombre de résidences principales de type appartement construites avant 1919
+P16_RPAPPART_ACH45;Rés princ Type appart 1919 à 1945 en 2016 (princ) ;Nombre de résidences principales de type appartement construites de 1919 à 1945
+P16_RPAPPART_ACH70;Rés princ Type appart 1946 à 1970 en 2016 (princ) ;Nombre de résidences principales de type appartement construites de 1946 à 1970
+P16_RPAPPART_ACH90;Rés princ Type appart 1971 à 1990 en 2016 (princ) ;Nombre de résidences principales de type appartement construites de 1971 à 1990
+P16_RPAPPART_ACH05;Rés princ Type appart 1991 à 2005 en 2016 (princ) ;Nombre de résidences principales de type appartement construites de 1991 à 2005
+P16_RPAPPART_ACH13;Rés princ Type appart 2006 à 2013 en 2016 (princ) ;Nombre de résidences principales de type appartement construites de 2006 à 2013
+P16_MEN;Ménages en 2016 (princ);Nombre de ménages
+P16_MEN_ANEM0002;Ménages emménagés moins 2 ans en 2016 (princ);Nombre de ménages ayant emménagé depuis moins de 2 ans
+P16_MEN_ANEM0204;Ménages emménagés entre 2-4 ans en 2016 (princ);Nombre de ménages ayant emménagé entre 2 et 4 ans
+P16_MEN_ANEM0509;Ménages emménagés entre 5-9 ans en 2016 (princ);Nombre de ménages ayant emménagé entre 5 et 9 ans
+P16_MEN_ANEM10P;Ménages emménagés depuis 10 ans ou plus en 2016 (princ);Nombre de ménages ayant emménagé depuis 10 ans ou plus
+P16_PMEN;Pop ménages en 2016 (princ);Population des ménages
+P16_PMEN_ANEM0002;Pop mén emménagés moins 2 ans en 2016 (princ);Population des ménages ayant emménagé depuis moins de 2 ans
+P16_PMEN_ANEM0204;Pop mén emménagés entre 2-4 ans en 2016 (princ);Population des ménages ayant emménagé entre 2 et 4 ans
+P16_PMEN_ANEM0509;Pop mén emménagés entre 5-9 ans en 2016 (princ);Population des ménages ayant emménagé entre 5 et 9 ans
+P16_PMEN_ANEM10P;Pop mén emménagés depuis 10 ans ou plus en 2016 (princ);Population des ménages ayant emménagé depuis 10 ans ou plus
+P16_NBPI_RP_ANEM0002;Pièces Rés princ Mén. emménagés moins 2 ans en 2016 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans
+P16_NBPI_RP_ANEM0204;Pièces Rés princ Mén. emménagés entre 2-4 ans en 2016 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans
+P16_NBPI_RP_ANEM0509;Pièces Rés princ Mén. emménagés entre 5-9 ans en 2016 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans
+P16_NBPI_RP_ANEM10P;Pièces Rés princ Mén. emménagés depuis 10 ans ou plus en 2016 (princ);Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus
+P16_RP_PROP;Rés princ occupées Propriétaires en 2016 (princ);Nombre de résidences principales occupées par des propriétaires
+P16_RP_LOC;Rés princ occupées Locataires en 2016 (princ);Nombre de résidences principales occupées par des locataires
+P16_RP_LOCHLMV;Rés princ HLM louée vide en 2016 (princ);Nombre de résidences principales HLM loué vide
+P16_RP_GRAT;Rés princ logé gratuit en 2016 (princ);Nombre de résidences principales occupées gratuitement
+P16_NPER_RP;Personnes Rés princ en 2016 (princ);Nombre de personnes des résidences principales
+P16_NPER_RP_PROP;Pers Rés princ occupées Propriétaires en 2016 (princ);Nombre de personnes des résidences principales occupées par des propriétaires
+P16_NPER_RP_LOC;Pers Rés princ occupées Locataires en 2016 (princ);Nombre de personnes des résidences principales occupées par des locataires
+P16_NPER_RP_LOCHLMV;Pers Rés princ HLM louées vides en 2016 (princ);Nombre de personnes des résidences principales HLM louées vides
+P16_NPER_RP_GRAT;Pers Rés princ occupées gratuit en 2016 (princ);Nombre de personnes des résidences principales occupées gratuitement
+P16_ANEM_RP;Anc tot Emméngt Rés princ (années) en 2016 (princ);Ancienneté totale d'emménagement dans les résidences principales en années
+P16_ANEM_RP_PROP;Anc tot Emméngt Rés princ occ par Propriétaires (années) en 2016 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années
+P16_ANEM_RP_LOC;Anc tot Emméngt Rés princ occ par Locataires (années) en 2016 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années
+P16_ANEM_RP_LOCHLMV;Anc tot Emméngt Rés princ HLM louées vides (années) en 2016 (princ);Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années
+P16_ANEM_RP_GRAT;Anc tot Emméngt Rés princ occ gratuit (années) en 2016 (princ);Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années
+P16_RP_SDB;Rés princ SDB baignoire douche (MET) en 2016 (princ);Nombre de résidences principales avec salle de bain dotée de baignoire ou douche (variable spécifique à la France métropolitaine)
+P16_RP_CCCOLL;Rés princ Chauffage Central Collectif (MET) en 2016 (princ);Nombre de résidences principales avec chauffage central collectif (variable spécifique à la France métropolitaine)
+P16_RP_CCIND;Rés princ Chauffage Central Individuel (MET) en 2016 (princ);Nombre de résidences principales avec chauffage central individuel (variable spécifique à la France métropolitaine)
+P16_RP_CINDELEC;Rés princ Chauffage Individuel Electrique (MET) en 2016 (princ);Nombre de résidences principales avec chauffage individuel électrique (variable spécifique à la France métropolitaine)
+P16_RP_ELEC;Rés princ avec électricité (DOM) en 2016 (princ);Nombre de résidences principales avec électricité dans le logement (variable spécifique aux Départements d'outre-mer)
+P16_RP_EAUCH;Rés princ avec eau chaude (DOM) en 2016 (princ);Nombre de résidences principales avec eau chaude dans le logement (variable spécifique aux Départements d'outre-mer)
+P16_RP_BDWC;Rés princ avec Bain/Douche WC (DOM) en 2016 (princ);Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement (variable spécifique aux Départements d'outre-mer)
+P16_RP_CHOS;Rés princ avec chauffe-eau solaire (DOM) en 2016 (princ);Nombre de résidences principales avec chauffe-eau solaire (variable spécifique aux Départements d'outre-mer)
+P16_RP_CLIM;Rés princ avec pièce climatisée (DOM) en 2016 (princ);Nombre de résidences principales avec pièce climatisée (variable spécifique aux Départements d'outre-mer)
+P16_RP_TTEGOU;Rés princ avec tout à l'égout (DOM) en 2016 (princ);Nombre de résidences principales avec tout à l'égout (variable spécifique aux Départements d'outre-mer)
+P16_RP_GARL;Ménages au moins un parking en 2016 (princ);Nombre de ménages disposant au moins d'un emplacement réservé au stationnement
+P16_RP_VOIT1P;Ménages au moins une voiture en 2016 (princ);Nombre de ménages disposant au moins d'une voiture
+P16_RP_VOIT1;Ménages une voiture en 2016 (princ);Nombre de ménages disposant d'une voiture
+P16_RP_VOIT2P;Ménages deux voitures ou plus en 2016 (princ);Nombre de ménages disposant de deux voitures ou plus
+P16_RP_HABFOR;Habitations de fortune (DOM) en 2016 (princ);Nombre de résidences principales habitations de fortune (variable spécifique aux Départements d'outre-mer)
+P16_RP_CASE;Cases traditionnelles (DOM) en 2016 (princ);Nombre de résidences principales cases traditionnelles (variable spécifique aux Départements d'outre-mer)
+P16_RP_MIBOIS;Maisons ou Immeubles en bois (DOM) en 2016 (princ);Nombre de résidences principales maisons ou immeubles en bois (variable spécifique aux Départements d'outre-mer)
+P16_RP_MIDUR;Maisons ou Immeubles en dur (DOM) en 2016 (princ);Nombre de résidences principales maisons ou immeubles en dur (variable spécifique aux Départements d'outre-mer)

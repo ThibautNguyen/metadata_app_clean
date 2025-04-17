@@ -1,0 +1,114 @@
+---
+description: Define structure and expectations for project README.md files
+globs: **/README.md
+---
+
+## Context
+
+- Applies to all **Python + Streamlit** projects connected to **PostgreSQL**.
+- Aimed at **non-technical stakeholders**, especially **French local governments**.
+- Designed for tools focused on **data analysis**, **statistics**, and **open data visualizations**.
+
+## README Structure Guidelines
+
+### 1. Title and Description
+- Clear project name and concise explanation of the purpose.
+- Optional badges: version, last update, data coverage.
+
+### 2. Table of Contents
+- Required for READMEs longer than 2 screens.
+- Use a **hierarchical and clickable** structure.
+
+### 3. Project Overview
+- Contextual problem statement (e.g., public policy use cases).
+- High-level summary of indicators, visualizations, or insights provided.
+- List of technologies used (e.g., Python 3.11, Streamlit, PostgreSQL 15, pandas).
+- Optional diagram: data pipeline or flowchart (data → processing → output).
+
+### 4. Getting Started
+- Prerequisites (e.g., Python version, PostgreSQL access).
+- Installation guide:
+  ```bash
+  python -m venv .venv
+  source .venv/bin/activate  # or .\.venv\Scripts\activate on Windows
+  pip install -r requirements.txt
+- Database setup: connection strings, .env file, initial SQL queries
+
+#### Usage
+- How to run the app: `streamlit run Catalogue.py`
+- Common SQL queries and visual outputs
+- Screenshots of the UI or example dashboards
+- Instructions for exploring open data (INSEE, etc.)
+
+#### Development
+- Guidelines to run in dev mode (Streamlit, Jupyter, etc.)
+- How to modify visualizations or connect new datasets
+- Linting and formatting (e.g., `black`, `ruff`)
+
+#### Project Structure
+- High-level overview of main folders and scripts:
+
+	-/data: static data files
+	-/db: SQL queries and models
+	- /pages: Streamlit multipage support
+	- /utils: helper functions
+- Description of each main file (Catalogue.py, dashboard.py, etc.)
+
+#### Deployment
+- Instructions for local run and (optional) cloud deployment
+- If used: deployment on Streamlit Community Cloud
+- Variables to set (.env file, credentials, dataset paths)
+
+#### Maintenance
+- How to update data (e.g., from data.gouv.fr)
+- Known issues (with links to workarounds if needed)
+- FAQ or support information if app is public-facing
+
+### 2. Formatting conventions
+- Use Markdown syntax and line length under 120 characters
+- Syntax highlighting for code blocks (bash, python, sql)
+- Use relative paths for assets/screenshots
+- Include alt text for accessibility
+
+### 3. Updates
+- Update the README when:
+	- Changing the data model or schema.
+	- Updating app features or visuals.
+	- Modifying setup or install steps.
+- Track changes in a CHANGELOG.md or section at the bottom.
+
+<Critical Practices>
+- NEVER commit .env or credentials (API keys, passwords).
+- ENSURE install and usage steps are accurate and up-to-date.
+- TEST the installation on a clean environment before publishing.
+- UPDATE the README consistently with each release or dataset update.
+
+EXAMPLE : 
+#### Commune Dashboard
+
+Visual dashboard for exploring INSEE open data at the commune level.
+
+#### Features
+- PostgreSQL backend with commune indicators
+- Streamlit UI for filters, charts, and maps
+- Downloadable data and visualizations
+
+#### Quick Start
+```bash
+python -m venv .venv
+source .venv/bin/activate  # or .\.venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run Catalogue.py
+
+
+#### Features
+- Connection to PostgreSQL database with commune-level statistics
+- Streamlit interface for filtering, mapping, and analyzing INSEE data
+- Exportable charts and data downloads
+
+#### Quick Start
+```bash
+python -m venv .venv
+source .venv/bin/activate  # or .\.venv\Scripts\activate on Windows
+pip install -r requirements.txt
+streamlit run Catalogue.py

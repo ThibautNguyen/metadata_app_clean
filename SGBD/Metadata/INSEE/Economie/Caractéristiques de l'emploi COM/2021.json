@@ -1,0 +1,1015 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "caracterist_emploi_COM_2021",
+    "description": "Emploi-Activité en 2021  Recensement de la population Caractéristiques de l'emploi en 2021  https://www.insee.fr/fr/statistiques/8200707",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "P21_ACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_SAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_NSAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_SAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_NSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL15P_CDI",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL15P_CDD",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus ayant un contrat à durée déterminée en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL15P_INTERIM",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus intérimaires en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL15P_EMPAID",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus Emplois aidés en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL15P_APPR",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus en apprentissage, en stage en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HNSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HNSAL15P_INDEP",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus indépendants en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HNSAL15P_EMPLOY",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus employeurs en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HNSAL15P_AIDFAM",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL15P_CDI",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL15P_CDD",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL15P_INTERIM",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus intérimaires en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL15P_EMPAID",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus Emplois aidés en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL15P_APPR",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus en apprentissage, en stage en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FNSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FNSAL15P_INDEP",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus indépendantes en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FNSAL15P_EMPLOY",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus employeurs en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FNSAL15P_AIDFAM",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus aides familiales en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL1564",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL1524",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL2554",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL5564",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL1564_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL1524_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL2554_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_HSAL5564_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL1564",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 64 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL1524",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 24 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL2554",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 25 à 54 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL5564",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 55 à 64 ans en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL1564_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 64 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL1524_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 24 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL2554_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 25 à 54 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_FSAL5564_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 55 à 64 ans à temps partiel en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_ILT1",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_ILT2P",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_ILT2",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_ILT3",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_ILT4",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région en France métropolitaine en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_ILT5",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger) en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_PASTRANS",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_MARCHE",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_VELO",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un vélo pour aller travailler en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_2ROUESMOT",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux-roues motorisé pour aller travailler en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_VOITURE",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement la voiture pour aller travailler en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P21_ACTOCC15P_COMMUN",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler en 2021",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_SAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_NSAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_SAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_NSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL15P_CDI",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL15P_CDD",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus ayant un contrat à durée déterminée en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL15P_INTERIM",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus intérimaires en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL15P_EMPAID",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus Emplois aidés en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL15P_APPR",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus en apprentissage, en stage en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HNSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HNSAL15P_INDEP",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus indépendants en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HNSAL15P_EMPLOY",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus employeurs en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HNSAL15P_AIDFAM",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL15P_CDI",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL15P_CDD",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL15P_INTERIM",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus intérimaires en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL15P_EMPAID",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus Emplois aidés en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL15P_APPR",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus en apprentissage, en stage en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FNSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FNSAL15P_INDEP",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus indépendantes en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FNSAL15P_EMPLOY",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus employeurs en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FNSAL15P_AIDFAM",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus aides familiales en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL1564",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL1524",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL2554",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL5564",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL1564_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL1524_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL2554_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_HSAL5564_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL1564",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 64 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL1524",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 24 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL2554",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 25 à 54 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL5564",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 55 à 64 ans en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL1564_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 64 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL1524_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 24 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL2554_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 25 à 54 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_FSAL5564_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 55 à 64 ans à temps partiel en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_ILT1",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_ILT2P",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_ILT2",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_ILT3",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_ILT4",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région en France métropolitaine en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_ILT5",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger) en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_PASTRANS",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui n'utilisent pas de moyen de transport pour aller travailler en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_MARCHE",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui vont travailler principalement à pied en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_2ROUES",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement un deux roues pour aller travailler en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_VOITURE",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement une voiture pour aller travailler en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P15_ACTOCC15P_COMMUN",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui utilisent principalement les transports en commun pour aller travailler en 2015",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_SAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_NSAL15P",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes actives occupées de 15 ans ou plus à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_SAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes salariées de 15 ans ou plus à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_NSAL15P_TP",
+      "type": "NUM",
+      "description": "Nombre de personnes non-salariées de 15 ans ou plus à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes actifs occupés de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL15P_CDI",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL15P_CDD",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus ayant un  contrat à durée déterminée en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL15P_INTERIM",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus intérimaires en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL15P_EMPAID",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus Emplois aidés en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL15P_APPR",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 ans ou plus en apprentissage ou stagiaire en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HNSAL15P",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HNSAL15P_INDEP",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus indépendants en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HNSAL15P_EMPLOY",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus employeurs en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HNSAL15P_AIDFAM",
+      "type": "NUM",
+      "description": "Nombre d'hommes non-salariés de 15 ans ou plus aides familiaux en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FACTOCC15P",
+      "type": "NUM",
+      "description": "Nombre de femmes actives occupées de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL15P_CDI",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus titulaires de la fonction publique ou d'un contrat à durée indéterminée en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL15P_CDD",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus ayant un  contrat à durée déterminée en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL15P_INTERIM",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus intérimaires en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL15P_EMPAID",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus Emplois aidés en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL15P_APPR",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 ans ou plus en apprentissage, stagiaire en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FNSAL15P",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FNSAL15P_INDEP",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus indépendantes en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FNSAL15P_EMPLOY",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus employeurs en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FNSAL15P_AIDFAM",
+      "type": "NUM",
+      "description": "Nombre de femmes non-salariées de 15 ans ou plus aides familiales en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL1564",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL1524",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL2554",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL5564",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL1564_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 64 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL1524_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 15 à 24 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL2554_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 25 à 54 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_HSAL5564_TP",
+      "type": "NUM",
+      "description": "Nombre d'hommes salariés de 55 à 64 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL1564",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 64 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL1524",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 24 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL2554",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 25 à 54 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL5564",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 55 à 64 ans en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL1564_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 64 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL1524_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 15 à 24 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL2554_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 25 à 54 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_FSAL5564_TP",
+      "type": "NUM",
+      "description": "Nombre de femmes salariées de 55 à 64 ans à temps partiel en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P_ILT1",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans la commune de résidence en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P_ILT2P",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune que la commune de résidence en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P_ILT2",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans le département de résidence en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P_ILT3",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans une autre commune située dans un autre département de la région de résidence en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P_ILT4",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région en France métropolitaine en 2010",
+      "nullable": true
+    },
+    {
+      "name": "P10_ACTOCC15P_ILT5",
+      "type": "NUM",
+      "description": "Nombre d'actifs occupés de 15 ans ou plus qui travaillent dans dans une autre commune située dans une autre région hors de France métropolitaine (Département d'outre-mer, Collectivité d'outre-mer ou à l'étranger) en 2010",
+      "nullable": true
+    }
+  ]
+}

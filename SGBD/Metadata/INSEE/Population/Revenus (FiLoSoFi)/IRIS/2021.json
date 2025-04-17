@@ -1,0 +1,211 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "FiLoSoFi_IRIS_2021",
+    "description": "https://www.insee.fr/fr/statistiques/8229323 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\FiLoSoFi\\2021\\IRIS",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "IRIS",
+      "type": "CHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal suivi du numéro d'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "DISP_TP6021",
+      "type": "CHAR",
+      "description": "Taux de pauvreté au seuil de 60 % du revenu disponible par unité de consommation médian métropolitain (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_INCERT21",
+      "type": "CHAR",
+      "description": "Incertitude sur le taux de bas revenus",
+      "nullable": true
+    },
+    {
+      "name": "DISP_INCERT21",
+      "type": "CHAR",
+      "description": "Incertitude sur le taux de bas revenus",
+      "nullable": true
+    },
+    {
+      "name": "DISP_Q121",
+      "type": "CHAR",
+      "description": "1ᵉʳ quartile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_MED21",
+      "type": "CHAR",
+      "description": "Médiane du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_Q321",
+      "type": "CHAR",
+      "description": "3ᵉ quartile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_EQ21",
+      "type": "CHAR",
+      "description": "Écart inter-quartile rapporté à la médiane",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D121",
+      "type": "CHAR",
+      "description": "1ᵉʳ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D221",
+      "type": "CHAR",
+      "description": "2ᵉ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D321",
+      "type": "CHAR",
+      "description": "3ᵉ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D421",
+      "type": "CHAR",
+      "description": "4ᵉ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D621",
+      "type": "CHAR",
+      "description": "6ᵉ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D721",
+      "type": "CHAR",
+      "description": "7ᵉ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D821",
+      "type": "CHAR",
+      "description": "8ᵉ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_D921",
+      "type": "CHAR",
+      "description": "9ᵉ décile du revenu disponible par unité de consommation (en euros)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_RD21",
+      "type": "CHAR",
+      "description": "Rapport interdécile D9/D1 du revenu disponible par unité de consommation",
+      "nullable": true
+    },
+    {
+      "name": "DISP_S80S2021",
+      "type": "CHAR",
+      "description": "S80/S20 du revenu disponible par unité de consommation",
+      "nullable": true
+    },
+    {
+      "name": "DISP_GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini du revenu disponible par unité de consommation",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités chômage (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%)",
+      "nullable": true
+    },
+    {
+      "name": "DISP_PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%)",
+      "nullable": true
+    },
+    {
+      "name": "DEC_NOTE21",
+      "type": "CHAR",
+      "description": "Note de précaution",
+      "nullable": true
+    },
+    {
+      "name": "DEC_NOTE21",
+      "type": "CHAR",
+      "description": "Note de précaution",
+      "nullable": true
+    },
+    {
+      "name": "DEC_NOTE21",
+      "type": "CHAR",
+      "description": "Note de précaution",
+      "nullable": true
+    }
+  ]
+}

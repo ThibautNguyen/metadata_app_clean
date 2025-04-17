@@ -1,0 +1,64 @@
+## Recensements de la population 1876-2022
+
+## Source : 
+https://www.insee.fr/fr/statistiques/3698339#consulter)
+
+
+## Chemin disque dur : 
+C:\Users\thiba\OneDrive\Documents\Données\Population\Historique des populations communales  COM
+
+
+## Tableau SQL :
+POP_COM_EVOL_1876-2022
+
+
+# 4 premières lignes :
+CODGEO;REG;DEP;LIBGEO;PMUN2022;PMUN2021;PMUN2020;PMUN2019;PMUN2018;PMUN2017;PMUN2016;PMUN2015;PMUN2014;PMUN2013;PMUN2012;PMUN2011;PMUN2010;PMUN2009;PMUN2008;PMUN2007;PMUN2006;PSDC1999;PSDC1990;PSDC1982;PSDC1975;PSDC1968;PSDC1962;PTOT1954;PTOT1936;PTOT1931;PTOT1926;PTOT1921;PTOT1911;PTOT1906;PTOT1901;PTOT1896;PTOT1891;PTOT1886;PTOT1881;PTOT1876
+01001;84;01;L'Abergement-Clémenciat; 859; 832; 806; 779; 771; 776; 767; 767; 767; 767; 777; 780; 784; 787; 791; 804; 811; 728; 579; 477; 368; 347; 407; 424; 506; 540; 543; 566; 560; 629; 637; 572; 594; 622; 605; 604
+01002;84;01;L'Abergement-de-Varey; 273; 267; 262; 256; 253; 248; 243; 241; 239; 236; 235; 234; 221; 207; 194; 195; 198; 168; 159; 136; 106; 88; 103; 157; 203; 219; 253; 256; 291; 323; 357; 391; 421; 486; 490; 484
+01004;84;01;Ambérieu-en-Bugey;15 554;14 854;14 288;14 134;14 204;14 035;14 081;14 127;14 022;14 359;14 233;13 839;13 835;13 350;12 792;12 696;12 709;11 436;10 455;9 737;9 550;8 949;7 748;7 159;6 846;6 794;5 705;4 796;4 334;4 100;4 023;3 548;3 635;3 618;3 396;3 427
+
+
+
+# Dictionnaire des variables :
+VARIABLE;LIB_VAR;LIB_VAR_LONG
+CODGEO;Code géographique;Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal
+REG;Région;Code de la région
+DEP;Département;Code du département
+LIBGEO;Libellé géographique;Libellé géographique
+PMUN2022;Population en 2022;Population municipale en 2022
+PMUN2021;Population en 2021;Population municipale en 2021
+PMUN2020;Population en 2020;Population municipale en 2020
+PMUN2019;Population en 2019;Population municipale en 2019
+PMUN2018;Population en 2018;Population municipale en 2018
+PMUN2017;Population en 2017;Population municipale en 2017
+PMUN2016;Population en 2016;Population municipale en 2016
+PMUN2015;Population en 2015;Population municipale en 2015
+PMUN2014;Population en 2014;Population municipale en 2014
+PMUN2013;Population en 2013;Population municipale en 2013
+PMUN2012;Population en 2012;Population municipale en 2012
+PMUN2011;Population en 2011;Population municipale en 2011
+PMUN2010;Population en 2010;Population municipale en 2010
+PMUN2009;Population en 2009;Population municipale en 2009
+PMUN2008;Population en 2008;Population municipale en 2008
+PMUN2007;Population en 2007;Population municipale en 2007
+PMUN2006;Population en 2006;Population municipale en 2006
+PSDC1999;Population en 1999;Population sans double compte en 1999
+PSDC1990;Population en 1990;Population sans double compte en 1990
+PSDC1982;Population en 1982;Population sans double compte en 1982
+PSDC1975;Population en 1975;Population sans double compte en 1975
+PSDC1968;Population en 1968;Population sans double compte en 1968
+PSDC1962;Population en 1962;Population sans double compte en 1962
+PTOT1954;Population en 1954;Population totale en 1954
+PTOT1936;Population en 1936;Population totale en 1936
+PTOT1931;Population en 1931;Population totale en 1931
+PTOT1926;Population en 1926;Population totale en 1926
+PTOT1921;Population en 1921;Population totale en 1921
+PTOT1911;Population en 1911;Population totale en 1911
+PTOT1906;Population en 1906;Population totale en 1906
+PTOT1901;Population en 1901;Population totale en 1901
+PTOT1896;Population en 1896;Population totale en 1896
+PTOT1891;Population en 1891;Population totale en 1891
+PTOT1886;Population en 1886;Population totale en 1886
+PTOT1881;Population en 1881;Population totale en 1881
+PTOT1876;Population en 1876;Population totale en 1876

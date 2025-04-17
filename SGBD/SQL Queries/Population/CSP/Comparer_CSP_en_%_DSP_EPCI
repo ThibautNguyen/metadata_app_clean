@@ -1,0 +1,58 @@
+-- Comparaison des CSP (en %) entre 2 territoires (DSP et métropole)
+
+WITH pop_dsp AS (
+  SELECT 
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,5) IN ('45154','45169','45235','45302')
+),
+pop_metro AS (
+  SELECT 
+    SUM(C21_POP15P_CS1) as cs1,
+    SUM(C21_POP15P_CS2) as cs2,
+    SUM(C21_POP15P_CS3) as cs3,
+    SUM(C21_POP15P_CS4) as cs4,
+    SUM(C21_POP15P_CS5) as cs5,
+    SUM(C21_POP15P_CS6) as cs6,
+    SUM(C21_POP15P_CS7) as cs7,
+    SUM(C21_POP15P_CS8) as cs8,
+    SUM(C21_POP15P_CS1 + C21_POP15P_CS2 + C21_POP15P_CS3 + C21_POP15P_CS4 + 
+        C21_POP15P_CS5 + C21_POP15P_CS6 + C21_POP15P_CS7 + C21_POP15P_CS8) as pop_totale
+  FROM POP_IRIS_2021
+  WHERE SUBSTR(IRIS,1,5) IN ('45034','45043','45072','45075','45089','45100','45147','45169','45194','45197','45232','45234','45235','45272','45274','45282','45284','45285','45286','45298','45302','45308')
+)
+
+SELECT 
+  'DSP' as perimetre,
+  ROUND(CAST(cs1 AS FLOAT) / pop_totale * 100, 1) as "Agriculteurs exploitants",
+  ROUND(CAST(cs2 AS FLOAT) / pop_totale * 100, 1) as "Artisans, Comm., Chefs entr.",
+  ROUND(CAST(cs3 AS FLOAT) / pop_totale * 100, 1) as "Cadres, Prof. intel. sup.",
+  ROUND(CAST(cs4 AS FLOAT) / pop_totale * 100, 1) as "Prof. intermédiaires",
+  ROUND(CAST(cs5 AS FLOAT) / pop_totale * 100, 1) as "Employés",
+  ROUND(CAST(cs6 AS FLOAT) / pop_totale * 100, 1) as "Ouvriers",
+  ROUND(CAST(cs7 AS FLOAT) / pop_totale * 100, 1) as "Retraités",
+  ROUND(CAST(cs8 AS FLOAT) / pop_totale * 100, 1) as "Autres sans activité prof."
+FROM pop_dsp
+
+UNION ALL
+
+SELECT 
+  'Orléans Métropole' as perimetre,
+  ROUND(CAST(cs1 AS FLOAT) / pop_totale * 100, 1) as "Agriculteurs exploitants",
+  ROUND(CAST(cs2 AS FLOAT) / pop_totale * 100, 1) as "Artisans, Comm., Chefs entr.",
+  ROUND(CAST(cs3 AS FLOAT) / pop_totale * 100, 1) as "Cadres, Prof. intel. sup.",
+  ROUND(CAST(cs4 AS FLOAT) / pop_totale * 100, 1) as "Prof. intermédiaires",
+  ROUND(CAST(cs5 AS FLOAT) / pop_totale * 100, 1) as "Employés",
+  ROUND(CAST(cs6 AS FLOAT) / pop_totale * 100, 1) as "Ouvriers",
+  ROUND(CAST(cs7 AS FLOAT) / pop_totale * 100, 1) as "Retraités",
+  ROUND(CAST(cs8 AS FLOAT) / pop_totale * 100, 1) as "Autres sans activité prof."
+FROM pop_metro;

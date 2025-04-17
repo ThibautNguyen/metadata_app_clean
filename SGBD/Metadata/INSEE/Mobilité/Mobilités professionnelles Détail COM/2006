@@ -1,0 +1,50 @@
+## Source : 
+https://www.insee.fr/fr/statistiques/2407634
+
+
+## Nom du tableau : 
+MOB_PRO_DET_2006
+
+## 4 premières lignes : 
+COMMUNE;ARM;DCFLT;DCLT;AGEREVQ;CS1;DEROU;DIPL;EMPL;ILT;ILTUU;IMMI;INATC;INEEM;INPOM;INPSM;IPONDI;LPRM;METRODOM;MOCO;NES5;NPERR;SEXE;STAT;STOCD;TP;TRANS;TYPL;TYPMR;VOIT
+01001;01001;99999;01001;045;4;Z;18;16;1;1;2;1;0;1;0;4;1;M;32;ET;1;1;10;10;1;4;1;11;1
+01001;01001;99999;01001;045;5;Z;11;16;1;1;2;1;1;3;1;4;2;M;22;EX;4;2;10;10;1;4;1;41;2
+01001;01001;99999;01001;050;5;Z;11;16;1;1;2;1;0;1;0;4;2;M;21;EX;2;2;10;10;2;2;1;43;2
+
+## Variable la plus importante pour les calculs : 
+IPONDI
+
+
+
+## Dictionnaire des variables :
+
+Nom de la variable;Libellé;Modalités
+AGEREVQ;Age quinquennal en années révolues;000 : 0 à 4 ans;005 : 5 à 9 ans;010 : 10 à 14 ans;015 : 15 à 19 ans;020 : 20 à 24 ans;025 : 25 à 29 ans;030 : 30 à 34 ans;035 : 35 à 39 ans;040 : 40 à 44 ans;045 : 45 à 49 ans;050 : 50 à 54 ans;055 : 55 à 59 ans;060 : 60 à 64 ans;065 : 65 à 69 ans;070 : 70 à 74 ans;075 : 75 à 79 ans;080 : 80 à 84 ans;085 : 85 à 89 ans;090 : 90 à 94 ans;095 : 95 à 99 ans;100 : 100 à 104 ans;105 : 105 à 109 ans;110 : 110 à 114 ans;115 : 115 à 119 ans;120 : 120 ans ou plus
+ARM;Arrondissement municipal (Paris, Lyon et Marseille);Voir la documentation sur la géographie RP à la rubrique "... Voir aussi" >> "La table d'appartenance géographique..."
+COMMUNE;Département et commune du lieu de résidence;Voir la documentation sur la géographie RP à la rubrique "... Voir aussi" >> "La table d'appartenance géographique..."
+CS1;Catégorie socioprofessionnelle en 8 postes;1 : Agriculteurs exploitants;2 : Artisans, commerçants et chefs d'entreprise;3 : Cadres et professions intellectuelles supérieures;4 : Professions Intermédiaires;5 : Employés;6 : Ouvriers;7 : Retraités;8 : Autres personnes sans activité professionnelle
+DEROU;Nombre de deux-roues à moteur du ménage (Dom);0 : Aucun deux-roues à moteur;1 : Un seul deux-roues à moteur;2 : Deux deux-roues à moteur;3 : Trois deux-roues à moteur ou plus;U : Hors logement ordinaire (Dom et France métropolitaine);Y : Hors résidence principale;Z : Logement ordinaire France métropolitaine
+DIPL;Diplôme le plus élevé;01 : Pas de scolarité;02 : Aucun diplôme mais scolarité jusqu'en école primaire ou au collège;03 : Aucun diplôme mais scolarité au delà du collège;11 : Certificat d'études primaires;12 : BEPC, brevet élémentaire, brevet des collèges;13 : Certificat d'aptitude professionnelle, brevet de compagnon;14 : Brevet d'études professionnelles;15 : Baccalauréat général, brevet supérieur;16 : Bac technologique ou professionnel, brevet professionnel ou de technicien, BEC, BEI, BEH, capacité en droit;17 : Diplôme universitaire de 1er cycle, BTS, DUT, diplôme des professions sociales ou de santé, d'infirmier(ère);18 : Diplôme universitaire de 2ème ou 3ème cycle (y compris médecine, pharmacie, dentaire), diplôme d'ingénieur, d'une grande école, doctorat, etc.;ZZ : Personne âgée de moins de 14 ans
+EMPL;Condition d'emploi;11 : En contrat d'apprentissage;12 : Placés par une agence d'intérim;13 : Emplois-jeunes, CES, contrats de qualification;14 : Stagiaires rémunérés en entreprise;15 : Autres emplois à durée limitée, CDD, contrat court, vacataire...;16 : Emplois sans limite de durée, CDI, titulaire de la fonction publique;21 : Non salariés : Indépendants;22 : Non salariés : Employeurs;23 : Non salariés : Aides familiaux;ZZ : Sans objet
+ILT;Indicateur de lieu de travail;1 : Dans la commune de résidence actuelle;2 : Dans une autre commune du département de résidence;3 : Dans un autre département de la région de résidence;4 : Hors de la région de résidence actuelle : en métropole;5 : Hors de la région de résidence actuelle : dans un Dom;6 : Hors de la région de résidence actuelle : dans un Tom;7 : A l'étranger;Z : Sans objet
+ILTUU;Indicateur urbain du lieu de travail;1 : Réside dans une commune rurale et travaille dans la même commune;2 : Réside dans une commune rurale et travaille hors de la commune;3 : Réside dans une commune urbaine et travaille dans la même commune;4 : Réside dans une commune urbaine et travaille dans une autre commune de la même unité urbaine;5 : Réside dans une commune urbaine et travaille en dehors de l'unité urbaine;Z : Sans objet
+IMMI;Situation quant à l'immigration;1 : Immigrés;2 : Non immigrés
+INATC;Indicateur de nationalité (Français/Étranger);1 : Français;2 : Étrangers
+INEEM;Nombre d'élèves, étudiants ou stagiaires âgés de 14 ans ou plus du ménage;Z : Hors logement ordinaire
+INPOM;Nombre de personnes actives ayant un emploi du ménage;Z : Hors logement ordinaire
+INPSM;Nombre de personnes scolarisées du ménage;Z : Hors logement ordinaire
+IPONDI;Poids de l'individu
+LPRM;Lien à la personne de référence du ménage;1 : Personne de référence du ménage;2 : Conjoint de la personne de référence du ménage;3 : Enfant de la personne de référence du ménage ou de son conjoint;4 : Petit-enfant;5 : Ascendant;6 : Autre parent;7 : Ami;8 : Pensionnaire ou sous-locataire;9 : Domestique ou salarié logé;Z : Hors logement ordinaire
+METRODOM;Indicateur Métropole ou Dom du lieu de résidence;M : France métropolitaine;D : Dom
+MOCO;Mode de cohabitation;11 : Enfants d'un couple;12 : Enfants d'une famille monoparentale;21 : Adultes d'un couple sans enfant;22 : Adultes d'un couple avec enfant(s);23 : Adultes d'une famille monoparentale;31 : Hors famille dans ménage de plusieurs personnes;32 : Personnes vivant seules;40 : Personnes vivant hors ménage
+NESS;Activité économique selon la NES en 5 postes (nomenclature économique de synthèse);ES : Agriculture, sylviculture, pêche;ET : Industrie;EU : Construction;EW : Commerce;EX : Services;ZZ : Sans objet
+NPERR;Nombre de personnes du logement (regroupé);1 : Une personne;2 : 2 personnes;3 : 3 personnes;4 : 4 personnes;5 : 5 personnes;6 : 6 personnes ou plus;Z : Hors logement ordinaire
+SEXE;Sexe;1 : Hommes;2 : Femmes
+STAT;Statut professionnel;10 : Salariés;21 : Non salariés : Indépendants;22 : Non salariés : Employeurs;23 : Non salariés : Aides familiaux;ZZ : Sans objet
+STOCD;Statut d'occupation du logement;00 : Logement ordinaire inoccupé;10 : Propriétaire;21 : Locataire ou sous-locataire d'un logement loué vide non HLM;22 : Locataire ou sous-locataire d'un logement loué vide HLM;23 : Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel;30 : Logé gratuitement;ZZ : Hors logement ordinaire
+TP;Temps de travail;1 : Temps complet;2 : Temps partiel;Z : Sans objet
+TRANS;Mode de transport;1 : Pas de transport;2 : Marche à pied;3 : Deux roues;4 : Voiture, camion, fourgonnette;5 : Transports en commun;Z : Sans objet
+TYPL;Type de logement;1 : Maison;2 : Appartement;3 : Logement-foyer;4 : Chambre d'hôtel;5 : Habitation de fortune;6 : Pièce indépendante (ayant sa propre entrée);Z : Hors logement ordinaire
+TYPMR;Type de ménage regroupé (en 9 postes);11 : Homme vivant seul;12 : Femme vivant seule;20 : Plusieurs personnes sans famille;31 : Famille principale monoparentale composée d'un homme avec enfant(s);32 : Famille principale monoparentale composée d'une femme avec enfant(s);41 : Famille principale composée d'un couple où l'homme et la femme ont tous les deux le statut d'"actif ayant un emploi";42 : Famille principale composée d'un couple où seul l'homme a le statut d'"actif ayant un emploi";43 : Famille principale composée d'un couple où seule la femme a le statut d'"actif ayant un emploi";44 : Famille principale composée d'un couple où ni l'homme ni la femme n'ont le statut d'"actif ayant un emploi";ZZ : Hors logement ordinaire
+VOIT;Nombre de voitures du ménage;0 : Aucune voiture;1 : Une seule voiture;2 : Deux voitures;3 : Trois voitures ou plus;X : Logement ordinaire inoccupé;Z : Hors logement ordinaire
+

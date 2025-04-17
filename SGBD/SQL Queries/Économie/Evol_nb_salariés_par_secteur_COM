@@ -1,0 +1,63 @@
+-- Évolution emplois salariés au lieu de travail par secteur (2010-2021)
+-- Requête permettant d'analyser l'évolution des emplois salariés au lieu de travail par secteur d'activité entre 2010 et 2021.
+-- Source : Table PROFIL_complet_COM_2021 (INSEE)
+
+WITH emplois_2021 AS (
+  SELECT 
+    CODGEO,
+    C21_EMPLT_AGRI as agriculture,
+    C21_EMPLT_INDUS as industrie,
+    C21_EMPLT_CONST as construction,
+    C21_EMPLT_CTS as commerce_services,
+    C21_EMPLT_APESAS as admin_publique
+  FROM PROFIL_complet_COM_2021
+  WHERE CODGEO = '13117'
+),
+emplois_2015 AS (
+  SELECT 
+    CODGEO,
+    C15_EMPLT_AGRI as agriculture,
+    C15_EMPLT_INDUS as industrie,
+    C15_EMPLT_CONST as construction,
+    C15_EMPLT_CTS as commerce_services,
+    C15_EMPLT_APESAS as admin_publique
+  FROM PROFIL_complet_COM_2021
+  WHERE CODGEO = '13117'
+),
+emplois_2010 AS (
+  SELECT 
+    CODGEO,
+    C10_EMPLT_AGRI as agriculture,
+    C10_EMPLT_INDUS as industrie,
+    C10_EMPLT_CONST as construction,
+    C10_EMPLT_CTS as commerce_services,
+    C10_EMPLT_APESAS as admin_publique
+  FROM PROFIL_complet_COM_2021
+  WHERE CODGEO = '13117'
+)
+SELECT 
+  '2021' as annee,
+  agriculture,
+  industrie,
+  construction,
+  commerce_services,
+  admin_publique
+FROM emplois_2021
+UNION ALL
+SELECT 
+  '2015' as annee,
+  agriculture,
+  industrie,
+  construction,
+  commerce_services,
+  admin_publique
+FROM emplois_2015
+UNION ALL
+SELECT 
+  '2010' as annee,
+  agriculture,
+  industrie,
+  construction,
+  commerce_services,
+  admin_publique
+FROM emplois_2010;

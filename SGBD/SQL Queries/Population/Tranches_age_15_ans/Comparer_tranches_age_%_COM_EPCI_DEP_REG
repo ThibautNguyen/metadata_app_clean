@@ -1,0 +1,86 @@
+-- Comparaison des tranches d'âge (en %) entre 4 territoires (2 communes, EPT, département et région)
+
+WITH pop_territories AS (
+    -- Choisy-Vitry (niveau IRIS)
+    SELECT 
+        'Choisy-Vitry' as territoire,
+        SUM(P21_POP0014) as pop_0_14,
+        SUM(P21_POP1529) as pop_15_29,
+        SUM(P21_POP3044) as pop_30_44,
+        SUM(P21_POP4559) as pop_45_59,
+        SUM(P21_POP6074) as pop_60_74,
+        SUM(P21_POP75P) as pop_75_plus,
+        SUM(P21_POP) as pop_totale
+    FROM POP_IRIS_2021
+    WHERE IRIS IN ('940220102','940220105','940220106','940220107','940220108','940220109','940220110',
+        '940220111','940220112','940220113','940220114','940220201','940220202','940220203','940220204',
+        '940220205','940220206','940810101','940810102','940810103','940810104','940810105','940810106',
+        '940810107','940810108','940810109','940810110','940810111','940810112','940810113','940810201',
+        '940810202','940810203','940810204','940810205','940810206','940810207','940810208','940810209',
+        '940810210','940810211','940810212','940810301','940810302','940810303','940810304','940810305',
+        '940810306','940810307','940810308','940810309','940810310','940810311','940810312')
+
+    UNION ALL
+
+    -- EPT GOSB (niveau communes)
+    SELECT 
+        'EPT GOSB' as territoire,
+        SUM(P21_POP0014) as pop_0_14,
+        SUM(P21_POP1529) as pop_15_29,
+        SUM(P21_POP3044) as pop_30_44,
+        SUM(P21_POP4559) as pop_45_59,
+        SUM(P21_POP6074) as pop_60_74,
+        SUM(P21_POP75P) as pop_75_plus,
+        SUM(P21_POP) as pop_totale
+    FROM POP_IRIS_2021
+    WHERE SUBSTR(IRIS,1,5) IN ('94081','94001','94003','91027','94016','94021','94022','94034','94037',
+        '94041','91326','94043','94038','91432','94054','91479','94065','91589','94073','94074','94076',
+        '94077','94078','91687')
+
+    UNION ALL
+
+    -- Val-de-Marne (niveau département)
+    SELECT 
+        'Val-de-Marne' as territoire,
+        SUM(P21_POP0014) as pop_0_14,
+        SUM(P21_POP1529) as pop_15_29,
+        SUM(P21_POP3044) as pop_30_44,
+        SUM(P21_POP4559) as pop_45_59,
+        SUM(P21_POP6074) as pop_60_74,
+        SUM(P21_POP75P) as pop_75_plus,
+        SUM(P21_POP) as pop_totale
+    FROM POP_IRIS_2021
+    WHERE SUBSTR(IRIS,1,2) = '94' AND LENGTH(IRIS) = 9
+
+    UNION ALL
+
+    -- IDF (niveau région)
+    SELECT 
+        'IDF' as territoire,
+        SUM(P21_POP0014) as pop_0_14,
+        SUM(P21_POP1529) as pop_15_29,
+        SUM(P21_POP3044) as pop_30_44,
+        SUM(P21_POP4559) as pop_45_59,
+        SUM(P21_POP6074) as pop_60_74,
+        SUM(P21_POP75P) as pop_75_plus,
+        SUM(P21_POP) as pop_totale
+    FROM POP_IRIS_2021
+    WHERE SUBSTR(IRIS,1,2) IN ('75','77','78','91','92','93','94','95')
+)
+
+SELECT 
+    territoire,
+    REPLACE(CAST(ROUND(CAST(pop_0_14 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "0-14 ans",
+    REPLACE(CAST(ROUND(CAST(pop_15_29 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "15-29 ans",
+    REPLACE(CAST(ROUND(CAST(pop_30_44 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "30-44 ans",
+    REPLACE(CAST(ROUND(CAST(pop_45_59 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "45-59 ans",
+    REPLACE(CAST(ROUND(CAST(pop_60_74 AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "60-74 ans",
+    REPLACE(CAST(ROUND(CAST(pop_75_plus AS FLOAT) / pop_totale, 3) AS VARCHAR), '.', ',') as "75 ans et plus"
+FROM pop_territories
+ORDER BY 
+    CASE territoire 
+        WHEN 'Choisy-Vitry' THEN 1
+        WHEN 'EPT GOSB' THEN 2
+        WHEN 'Val-de-Marne' THEN 3
+        WHEN 'IDF' THEN 4
+    END;

@@ -1,0 +1,697 @@
+{
+  "table_info": {
+    "schema": "public",
+    "name": "Locaux_non_r",
+    "description": "https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=dataset&datasetId=6513f0189d7d312c80ec5b5b Locaux_non_résidentiels_2024 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Logement\\Sit@del\\2024-03",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "REG",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DEP",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "COMM",
+      "type": "\"Le code vient directement du numéro d'enregistrement de la DAU, donc dépend du code de la commune au moment où la DAU a été déposée ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "Type_DAU",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DP (Déclaration Préalable)\"",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "Num_DAU",
+      "type": "Numéro sur 13 caractères : les 6 premiers caractères correspondent au code commune, les 2 suivants à l'année de dépôt de la DAU, les 5 derniers à un numéro d'ordre",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "Etat_DAU",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "6 = terminé\"",
+      "type": "VARCHAR",
+      "description": "\"Toutes les DAU du fichier ont été autorisées ",
+      "nullable": true
+    },
+    {
+      "name": "DATE_REELLE_AUTORISATION",
+      "type": "Date de décision relative à la demande initiale, sans prise en compte d'éventuels modificatifs.",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DATE_REELLE_DOC",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DATE_REELLE_DAACT",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "AN_DEPOT",
+      "type": "2 caractères issus du numéro d'enregistrement de la DAU",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "DPC_PREM",
+      "type": "Champ permettant le plus souvent de déterminer un proxy du mois réel de dépôt de la demande d'autorisation d'urbanisme, absent de Sitadel. En effet, dans 90% des cas, le premier évènement reçu dans Sitadel est le dépôt de la demande. Ce n'est évidemment pas le cas quand le mois correspondant à DPC_PREM est postérieur au mois de la date réelle d'autorisation ou quand l'année correspondante est postérieure à l'année de dépôt. Quand DPC_PREM=DPC_AUT, cela peut signifier soit que le dépôt n'a pas été transmis, soit qu'il a été transmis en retard, soit que le dépôt et l'autorisation ont été très proches dans le temps. Pour la notion de date de prise en compte, voir les explications fournies pour DPC_AUT.",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "DPC_AUT",
+      "type": "\"Une autorisation délivrée le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte \"\"202102\"\" et pour date réelle \"\"2020-12-06\"\" ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DPC_DOC",
+      "type": "\"Une ouverture de chantier ayant eu lieu le 6 décembre 2020 enregistrée dans Sitadel en mars 2021 (du fait d'un retard de collecte) a pour date de prise en compte \"\"202102\"\" et pour date réelle \"\"2020-12-06\"\" ",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DPC_DERN",
+      "type": "Les données sont mises à jour à l'occasion d'un événement de la vie du permis ou d'une correction de la base",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "APE_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "CJ_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "DENOM_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SIREN_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SIRET_DEM",
+      "type": "Indisponible pour les personnes physiques, les personnes morales assimilées à des personnes physiques, et les demandeurs non retrouvés dans Sirène",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "CODPOST_DEM",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "LOCALITE_DEM",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "REC_ARCHI",
+      "type": "Insuffisamment renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_NUM_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_TYPEVOIE_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_LIBVOIE_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_LIEUDIT_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_LOCALITE_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ADR_CODPOST_TER",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SEC_CADASTRE1",
+      "type": "Les préfixes sont en général absents de Sitadel",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NUM_CADASTRE1",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SEC_CADASTRE2",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NUM_CADASTRE2",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SEC_CADASTRE3",
+      "type": "Un maximum de 3 parcelles peut être renseigné dans Sitadel alors qu'un terrain peut en contenir bien davantage",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NUM_CADASTRE3",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SUPERFICIE_TERRAIN",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "ZONE_OP",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "4 = Hors zones ou ne sais pas\"",
+      "type": "VARCHAR",
+      "description": "Très insuffisamment renseigné",
+      "nullable": true
+    },
+    {
+      "name": "NATURE_PROJET_DECLAREE",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "2 = travaux sur construction existante\"",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NATURE_PROJET_COMPLETEE",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "6 = diminution de surface sans transformation\"",
+      "type": "VARCHAR",
+      "description": "\"A partir du tableau des surfaces de plancher et de la nature de projet déclarée : une petite partie des \"\"nouvelles constructions\"\" déclarées sont recodifiées en travaux sur existant\"",
+      "nullable": true
+    },
+    {
+      "name": "DESTINATION_PRINCIPALE",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "9 = service public ou d'intérêt collectif\"",
+      "type": "VARCHAR",
+      "description": "Selon la première destination des surfaces créées (y compris pas changement de destination)",
+      "nullable": true
+    },
+    {
+      "name": "TYPE_TRANSFO_PRINCIPAL",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "4 = transformation de locaux non résidentiels (changement de destination, réhabilitation, scission, regroupement ...)\"",
+      "type": "VARCHAR",
+      "description": "Selon que la surface transformée et la surface issue de la transformation sont majoritairement des surfaces de logements ou de locaux",
+      "nullable": true
+    },
+    {
+      "name": "TYPE_PRINCIP_LOCAUX_TRANSFORMES",
+      "type": "VARCHAR",
+      "description": "Introduit en mai 2022",
+      "nullable": true
+    },
+    {
+      "name": "9 = service public ou d'intérêt collectif\"",
+      "type": "VARCHAR",
+      "description": "Selon la première destination d'origine des surfaces transformées",
+      "nullable": true
+    },
+    {
+      "name": "I_EXTENSION",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "I_SURELEVATION",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "I_NIVSUPP",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_NIV_MAX",
+      "type": "Nombre de niveaux au-dessus du sol depuis le nouveau formulaire de 2020, très insuffisamment renseigné",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "NB_CHAMBRES",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_AVANT",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_CREEE",
+      "type": "\"Lorsque le projet crée des chambres (sans coin cuisine indépendant) et non des logements, on utilise plutôt la destination \"\"Hébergement hôtelier\"\" ou \"\"Service Public\"\" dans Sitadel plutôt que la destination \"\"Habitation\"\"\"",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_ISSUE_TRANSFO",
+      "type": "Surface issue d'un changement de destination ou d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …)",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_DEMOLIE",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HAB_TRANSFORMEE",
+      "type": "Surface changée de destination ou faisant l'objet d'un mouvement interne (cas où les surfaces supprimée et créée sont identiques sur une même ligne, qui correspondent le plus souvent à des réhabilitations, scissions, regroupements …",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_AVANT",
+      "type": "Total des surfaces des destinations autres que d'habitation",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_CREEE",
+      "type": "Total des surfaces des destinations autres que d'habitation",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_ISSUE_TRANSFO",
+      "type": "Total des surfaces des destinations autres que d'habitation",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_DEMOLIE",
+      "type": "Total des surfaces des destinations autres que d'habitation",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_LOC_TRANSFORMEE",
+      "type": "Total des surfaces des destinations autres que d'habitation",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HEB_AVANT",
+      "type": "Deuxième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HEB_CREEE",
+      "type": "Deuxième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HEB_ISSUE_TRANSFO",
+      "type": "Deuxième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HEB_DEMOLIE",
+      "type": "Deuxième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_HEB_TRANSFORMEE",
+      "type": "Deuxième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_BUR_AVANT",
+      "type": "Troisième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_BUR_CREEE",
+      "type": "Troisième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_BUR_ISSUE_TRANSFO",
+      "type": "Troisième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_BUR_DEMOLIE",
+      "type": "Troisième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_BUR_TRANSFORMEE",
+      "type": "Troisième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_COM_AVANT",
+      "type": "Quatrième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_COM_CREEE",
+      "type": "Quatrième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_COM_ISSUE_TRANSFO",
+      "type": "Quatrième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_COM_DEMOLIE",
+      "type": "Quatrième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_COM_TRANSFORMEE",
+      "type": "Quatrième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ART_AVANT",
+      "type": "Cinquième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ART_CREEE",
+      "type": "Cinquième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ART_ISSUE_TRANSFO",
+      "type": "Cinquième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ART_DEMOLIE",
+      "type": "Cinquième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ART_TRANSFORMEE",
+      "type": "Cinquième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_IND_AVANT",
+      "type": "Sixième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_IND_CREEE",
+      "type": "Sixième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_IND_ISSUE_TRANSFO",
+      "type": "Sixième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_IND_DEMOLIE",
+      "type": "Sixième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_IND_TRANSFORMEE",
+      "type": "Sixième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_AGR_AVANT",
+      "type": "Septième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_AGR_CREEE",
+      "type": "Septième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_AGR_ISSUE_TRANSFO",
+      "type": "Septième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_AGR_DEMOLIE",
+      "type": "Septième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_AGR_TRANSFORMEE",
+      "type": "Septième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ENT_AVANT",
+      "type": "Huitième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ENT_CREEE",
+      "type": "Huitième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ENT_ISSUE_TRANSFO",
+      "type": "Huitième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ENT_DEMOLIE",
+      "type": "Huitième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_ENT_TRANSFORMEE",
+      "type": "Huitième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_PUB_AVANT",
+      "type": "Neuvième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_PUB_CREEE",
+      "type": "Neuvième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_PUB_ISSUE_TRANSFO",
+      "type": "Neuvième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_PUB_DEMOLIE",
+      "type": "Neuvième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "SURF_PUB_TRANSFORMEE",
+      "type": "Neuvième ligne du tableau de surface en 9 destinations",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "TYPE_SERVICE_PUBLIC",
+      "type": "VARCHAR",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "8 = Plusieurs types renseignés\"",
+      "type": "VARCHAR",
+      "description": "\"Information du cadre \"\"Informations complémentaires\"\"\"",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    },
+    {
+      "name": "",
+      "type": "",
+      "description": "",
+      "nullable": true
+    }
+  ]
+}

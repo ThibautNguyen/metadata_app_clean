@@ -1,0 +1,42 @@
+---
+description: performance-and-stability
+globs: **/*
+alwaysApply: true
+---
+
+## Context
+
+- These rules apply to all Python and Streamlit applications using large datasets or interacting with external resources.
+- The goal is to improve execution speed, reduce unnecessary computations, and enhance user experience.
+
+## performance-and-stability
+
+- Use `@st.cache_data` or `@st.cache_resource` to cache heavy computations or large datasets.
+  - Prefer `@st.cache_data` for dataframes and immutable data.
+  - Prefer `@st.cache_resource` for objects like database connections or models.
+- Avoid reloading large files or external resources unless a refresh is explicitly requested.
+- Never call expensive operations (e.g. SQL queries, file loading, API requests) inside frequently re-rendered blocks.
+- If using session state or multistep workflows, ensure state updates are controlled and minimal.
+
+## Logging and Error Handling
+
+- Log errors clearly using `st.error()` or a logging utility.
+- Provide meaningful messages for users without exposing stack traces.
+- Use try/except blocks around all external requests (APIs, DBs, files).
+- In case of failure, suggest actionable next steps (e.g. "Please check your connection").
+
+### Example: Cached data loading
+```python
+@st.cache_data
+def load_large_csv(path: str) -> pd.DataFrame:
+    return pd.read_csv(path)
+	
+### Example: Safe query with error logging
+try:
+    df = query_database()
+except Exception as e:
+    st.error("An error occurred while querying the database.")
+    logging.exception(e)
+	
+	
+	

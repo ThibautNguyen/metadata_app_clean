@@ -1,0 +1,15 @@
+# Interface web
+streamlit>=1.32.0
+
+# Traitement des données
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Visualisation
+plotly>=5.18.0
+
+# Base de données
+psycopg2-binary>=2.9.9
+
+# Utilitaires
+python-dotenv>=1.0.0 

@@ -1,0 +1,1801 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "POP_STRUCT_COM_EVOL_2021",
+    "description": "https://www.insee.fr/fr/statistiques/8201904 POP_STRUCT_COM_EVOL_2021 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\Evolution et structure de la population COM",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "8201904",
+      "type": "VARCHAR",
+      "description": "## Tableau SQL :",
+      "nullable": true
+    },
+    {
+      "name": "POP_STRUCT_COM_EVOL_2021",
+      "type": "VARCHAR",
+      "description": "## Chemin du tableau : \nC:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\Evolution et structure de la population COM\n\n\n\n# 4 premières lignes :",
+      "nullable": true
+    },
+    {
+      "name": "CODGEO",
+      "type": "VARCHAR",
+      "description": "P21_POP;P21_POP0014;P21_POP1529;P21_POP3044;P21_POP4559;P21_POP6074;P21_POP7589;P21_POP90P;P21_POPH;P21_H0014;P21_H1529;P21_H3044;P21_H4559;P21_H6074;P21_H7589;P21_H90P;P21_H0019;P21_H2064;P21_H65P;P21_POPF;P21_F0014;P21_F1529;P21_F3044;P21_F4559;P21_F6074;P21_F7589;P21_F90P;P21_F0019;P21_F2064;P21_F65P;P21_POP01P;P21_POP01P_IRAN1;P21_POP01P_IRAN2;P21_POP01P_IRAN3;P21_POP01P_IRAN4;P21_POP01P_IRAN5;P21_POP01P_IRAN6;P21_POP01P_IRAN7;P21_POP0114_IRAN2P;P21_POP0114_IRAN2;P21_POP0114_IRAN3P;P21_POP1524_IRAN2P;P21_POP1524_IRAN2;P21_POP1524_IRAN3P;P21_POP2554_IRAN2P;P21_POP2554_IRAN2;P21_POP2554_IRAN3P;P21_POP55P_IRAN2P;P21_POP55P_IRAN2;P21_POP55P_IRAN3P;C21_POP15P;C21_POP15P_CS1;C21_POP15P_CS2;C21_POP15P_CS3;C21_POP15P_CS4;C21_POP15P_CS5;C21_POP15P_CS6;C21_POP15P_CS7;C21_POP15P_CS8;C21_H15P;C21_H15P_CS1;C21_H15P_CS2;C21_H15P_CS3;C21_H15P_CS4;C21_H15P_CS5;C21_H15P_CS6;C21_H15P_CS7;C21_H15P_CS8;C21_F15P;C21_F15P_CS1;C21_F15P_CS2;C21_F15P_CS3;C21_F15P_CS4;C21_F15P_CS5;C21_F15P_CS6;C21_F15P_CS7;C21_F15P_CS8;C21_POP1524;C21_POP1524_CS1;C21_POP1524_CS2;C21_POP1524_CS3;C21_POP1524_CS4;C21_POP1524_CS5;C21_POP1524_CS6;C21_POP1524_CS7;C21_POP1524_CS8;C21_POP2554;C21_POP2554_CS1;C21_POP2554_CS2;C21_POP2554_CS3;C21_POP2554_CS4;C21_POP2554_CS5;C21_POP2554_CS6;C21_POP2554_CS7;C21_POP2554_CS8;C21_POP55P;C21_POP55P_CS1;C21_POP55P_CS2;C21_POP55P_CS3;C21_POP55P_CS4;C21_POP55P_CS5;C21_POP55P_CS6;C21_POP55P_CS7;C21_POP55P_CS8;P15_POP;P15_POP0014;P15_POP1529;P15_POP3044;P15_POP4559;P15_POP6074;P15_POP7589;P15_POP90P;P15_POPH;P15_H0014;P15_H1529;P15_H3044;P15_H4559;P15_H6074;P15_H7589;P15_H90P;P15_H0019;P15_H2064;P15_H65P;P15_POPF;P15_F0014;P15_F1529;P15_F3044;P15_F4559;P15_F6074;P15_F7589;P15_F90P;P15_F0019;P15_F2064;P15_F65P;P15_POP01P;P15_POP01P_IRAN1;P15_POP01P_IRAN2;P15_POP01P_IRAN3;P15_POP01P_IRAN4;P15_POP01P_IRAN5;P15_POP01P_IRAN6;P15_POP01P_IRAN7;P15_POP0114_IRAN2P;P15_POP0114_IRAN2;P15_POP0114_IRAN3P;P15_POP1524_IRAN2P;P15_POP1524_IRAN2;P15_POP1524_IRAN3P;P15_POP2554_IRAN2P;P15_POP2554_IRAN2;P15_POP2554_IRAN3P;P15_POP55P_IRAN2P;P15_POP55P_IRAN2;P15_POP55P_IRAN3P;C15_POP15P;C15_POP15P_CS1;C15_POP15P_CS2;C15_POP15P_CS3;C15_POP15P_CS4;C15_POP15P_CS5;C15_POP15P_CS6;C15_POP15P_CS7;C15_POP15P_CS8;C15_H15P;C15_H15P_CS1;C15_H15P_CS2;C15_H15P_CS3;C15_H15P_CS4;C15_H15P_CS5;C15_H15P_CS6;C15_H15P_CS7;C15_H15P_CS8;C15_F15P;C15_F15P_CS1;C15_F15P_CS2;C15_F15P_CS3;C15_F15P_CS4;C15_F15P_CS5;C15_F15P_CS6;C15_F15P_CS7;C15_F15P_CS8;C15_POP1524;C15_POP1524_CS1;C15_POP1524_CS2;C15_POP1524_CS3;C15_POP1524_CS4;C15_POP1524_CS5;C15_POP1524_CS6;C15_POP1524_CS7;C15_POP1524_CS8;C15_POP2554;C15_POP2554_CS1;C15_POP2554_CS2;C15_POP2554_CS3;C15_POP2554_CS4;C15_POP2554_CS5;C15_POP2554_CS6;C15_POP2554_CS7;C15_POP2554_CS8;C15_POP55P;C15_POP55P_CS1;C15_POP55P_CS2;C15_POP55P_CS3;C15_POP55P_CS4;C15_POP55P_CS5;C15_POP55P_CS6;C15_POP55P_CS7;C15_POP55P_CS8;P10_POP;P10_POP0014;P10_POP1529;P10_POP3044;P10_POP4559;P10_POP6074;P10_POP75P;P10_POPH;P10_H0014;P10_H1529;P10_H3044;P10_H4559;P10_H6074;P10_H7589;P10_H90P;P10_H0019;P10_H2064;P10_H65P;P10_POPF;P10_F0014;P10_F1529;P10_F3044;P10_F4559;P10_F6074;P10_F7589;P10_F90P;P10_F0019;P10_F2064;P10_F65P;C10_POP15P;C10_POP15P_CS1;C10_POP15P_CS2;C10_POP15P_CS3;C10_POP15P_CS4;C10_POP15P_CS5;C10_POP15P_CS6;C10_POP15P_CS7;C10_POP15P_CS8;C10_H15P;C10_H15P_CS1;C10_H15P_CS2;C10_H15P_CS3;C10_H15P_CS4;C10_H15P_CS5;C10_H15P_CS6;C10_H15P_CS7;C10_H15P_CS8;C10_F15P;C10_F15P_CS1;C10_F15P_CS2;C10_F15P_CS3;C10_F15P_CS4;C10_F15P_CS5;C10_F15P_CS6;C10_F15P_CS7;C10_F15P_CS8;C10_POP1524;C10_POP1524_CS1;C10_POP1524_CS2;C10_POP1524_CS3;C10_POP1524_CS4;C10_POP1524_CS5;C10_POP1524_CS6;C10_POP1524_CS7;C10_POP1524_CS8;C10_POP2554;C10_POP2554_CS1;C10_POP2554_CS2;C10_POP2554_CS3;C10_POP2554_CS4;C10_POP2554_CS5;C10_POP2554_CS6;C10_POP2554_CS7;C10_POP2554_CS8;C10_POP55P;C10_POP55P_CS1;C10_POP55P_CS2;C10_POP55P_CS3;C10_POP55P_CS4;C10_POP55P_CS5;C10_POP55P_CS6;C10_POP55P_CS7;C10_POP55P_CS8",
+      "nullable": true
+    },
+    {
+      "name": "01001",
+      "type": "VARCHAR",
+      "description": "832;158.552045228214;100.025669125929;152.787222000046;198.071133518886;149.720217782771;67.0983888134989;5.74532353065543;423.485016885463;92.9355275683221;47.6380185861432;74.8649592599333;99.5791105400233;72.9684366139067;32.6179924364153;2.88097188071922;117.365917200565;229.367683115532;76.7514165693656;408.514983114537;65.616517659892;52.3876505397854;77.922262740113;98.4920229788626;76.7517811688641;34.4803963770836;2.8643516499362;88.9672402899772;231.363412863245;88.1843299613141;819.279087659675;737.78524450504;6.7141026840462;49.4990321965268;19.4514105901707;5.82929768389106;0;0;17.6148819006864;0;17.6148819006864;6.83190205327615;0;6.83190205327615;43.568772985301;6.7141026840462;36.8546703012548;13.4782862153713;0;13.4782862153713;681.164442942002;4.84353307255505;43.7201016831258;63.3486468714884;106.140417852504;101.67520816276;126.068241753175;191.732750126687;43.635543419707;357.558108132075;4.84353307255505;24.2610452691337;34.0326696776627;57.8723743520263;19.3744981505733;97.0467486248464;105.511346589898;14.61589239538;323.606334809927;0;19.4590564139921;29.3159771938257;48.2680435004782;82.3007100121866;29.0214931283286;86.221403536789;29.019651024327;68.1076280956811;0;4.88581220426447;0;0;9.64515287375376;29.2737044771728;0;24.3029585404901;320.237474851219;0;19.5436178710008;44.0579752636278;91.7355584489083;82.3849024152523;72.8279888469663;0;9.68743200546317;292.819339995103;4.84353307255505;19.2906716078606;19.2906716078606;14.4048594035961;9.64515287375376;23.966548429036;191.732750126687;9.64515287375376;767;161;102;132;189;125;53;5;392;84;55;65;99;61;26;2;113;206;73;375;77;47;67;90;64;27;3;99;206;70;750;684;8;36;12;7;0;3;17;2;15;9;3;6;31;2;29;9;1;8;605;15;20;75;95;100;125;145;30;320;10;15;50;45;15;95;75;15;285;5;5;25;50;85;30;70;15;55;0;0;0;5;10;20;0;20;310;5;20;50;50;85;95;5;0;240;10;0;25;40;5;10;140;10;784.000000000004;179.91794871795;97.4974358974364;166.851282051283;152.779487179488;128.656410256411;58.2974358974362;398.030769230771;93.4769230769235;53.2717948717951;86.4410256410261;75.3846153846158;66.3384615384619;23.1179487179488;0;115.589743589744;223.138461538463;59.3025641025644;385.969230769233;86.4410256410261;44.2256410256412;80.4102564102568;77.3948717948722;62.317948717949;32.1641025641027;3.01538461538463;107.548717948718;210.071794871796;68.3487179487183;623.179487179487;16.0820512820513;4.02051282051282;80.4102564102564;88.451282051282;116.594871794872;72.3692307692308;168.861538461538;76.3897435897436;317.620512820513;8.04102564102564;4.02051282051282;64.3282051282051;28.1435897435897;20.1025641025641;64.3282051282051;92.4717948717949;36.1846153846154;305.558974358974;8.04102564102564;0;16.0820512820513;60.3076923076923;96.4923076923077;8.04102564102564;76.3897435897436;40.2051282051282;92.4717948717949;0;0;0;4.02051282051282;12.0615384615385;8.04102564102564;0;68.3487179487179;305.558974358974;16.0820512820513;4.02051282051282;64.3282051282051;80.4102564102564;84.4307692307692;52.2666666666667;4.02051282051282;0;225.148717948718;0;0;16.0820512820513;4.02051282051282;20.1025641025641;12.0615384615385;164.841025641026;8.04102564102564",
+      "nullable": true
+    },
+    {
+      "name": "01002",
+      "type": "VARCHAR",
+      "description": "267;57.0462860507837;32.4390934255431;57.2722235904477;58.1015060435166;40.5047400920238;19.768433507588;1.867717290097;139.890359491632;27.0105124263677;22.3473585071835;24.7401578867594;32.7870782781525;21.7130930371851;10.3439914417015;0.948167914282093;40.0980279107553;73.558433904117;26.2338976767596;127.109640508368;30.0357736244161;10.0917349183597;32.5320657036883;25.314427765364;18.7916470548387;9.42444206588656;0.919549375814906;37.1631311489844;69.2585264759809;20.6879828834029;262.998008651787;255.201536574107;0.919549375814906;4.03241895901838;0;2.84450374284628;0;0;1.00810473975459;0;1.00810473975459;1.00810473975459;0;1.00810473975459;3.88392676960619;0.919549375814906;2.96437739379128;1.89633582856419;0;1.89633582856419;192.979797073951;25.0504804398396;5.04052369877297;19.1153577399804;29.2101853931387;19.4105884863416;19.8671455616524;65.6562905380668;9.62922521615814;105.685392295124;14.9694330422936;5.04052369877297;14.2269720952327;4.59774687907453;4.74083957141047;15.1263059902419;42.0951853733505;4.88838564474768;87.2944047788262;10.0810473975459;0;4.88838564474768;24.6124385140641;14.6697489149311;4.74083957141047;23.5611051647164;4.74083957141047;4.88838564474768;0;0;0;0;0;0;0;4.88838564474768;94.419361539681;25.0504804398396;5.04052369877297;9.77677128949535;20.0146916349896;19.4105884863416;15.1263059902419;0;0;93.6720498895218;0;0;9.338586450485;9.19549375814906;0;4.74083957141047;65.6562905380668;4.74083957141047;241;54.5473251028807;27.7695473251029;69.4238683127572;36.6954732510288;33.7201646090535;16.8600823045268;1.98353909465021;121.987654320988;25.7860082304527;9.91769547325103;37.6872427983539;16.8600823045268;21.8189300411523;8.92592592592593;0.991769547325103;29.7530864197531;65.4567901234568;26.7777777777778;119.012345679012;28.761316872428;17.8518518518519;31.7366255144033;19.8353909465021;11.9012345679012;7.93415637860082;0.991769547325103;35.7037037037037;66.4485596707819;16.8600823045268;236.041152263375;216.205761316872;7.93415637860082;5.95061728395062;1.98353909465021;3.96707818930041;0;0;1.98353909465021;1.98353909465021;0;1.98353909465021;0.991769547325103;0.991769547325103;13.8847736625514;4.95884773662551;8.92592592592593;1.98353909465021;0;1.98353909465021;193.395061728395;0;19.835390946502;14.8765432098765;24.7942386831275;39.6707818930041;9.91769547325102;64.4650205761316;19.835390946502;114.053497942387;0;14.8765432098765;4.95884773662551;4.95884773662551;14.8765432098765;9.91769547325102;44.6296296296296;19.835390946502;79.3415637860082;0;4.95884773662551;9.91769547325102;19.835390946502;24.7942386831275;0;19.835390946502;0;19.835390946502;0;0;0;0;0;0;0;19.835390946502;94.2181069958847;0;19.835390946502;14.8765432098765;19.835390946502;29.7530864197531;9.91769547325102;0;0;79.3415637860082;0;0;0;4.95884773662551;9.91769547325102;0;64.4650205761316;0;221;41.5555555555555;33.0555555555555;56.6666666666666;35.8888888888889;34;19.8333333333333;117.111111111111;23.6111111111111;16.0555555555555;32.1111111111111;15.1111111111111;20.7777777777778;8.5;0.944444444444444;26.4444444444444;68.9444444444444;21.7222222222222;103.888888888889;17.9444444444444;17;24.5555555555555;20.7777777777778;13.2222222222222;9.44444444444444;0.944444444444444;22.6666666666667;64.2222222222222;17;177.555555555556;0;3.77777777777778;18.8888888888889;49.1111111111111;7.55555555555556;30.2222222222222;60.4444444444445;7.55555555555556;94.4444444444445;0;3.77777777777778;7.55555555555556;26.4444444444445;0;30.2222222222222;26.4444444444445;0;83.1111111111112;0;0;11.3333333333333;22.6666666666667;7.55555555555556;0;34;7.55555555555556;11.3333333333333;0;0;0;0;7.55555555555556;3.77777777777778;0;0;98.2222222222223;0;3.77777777777778;18.8888888888889;49.1111111111111;0;18.8888888888889;0;7.55555555555556;68;0;0;0;0;0;7.55555555555556;60.4444444444445;0",
+      "nullable": true
+    },
+    {
+      "name": "01004",
+      "type": "VARCHAR",
+      "description": "14854;2789.75819358206;3081.37526584419;2740.19262511001;2632.56587609418;2269.03322839783;1152.13770206965;188.937108902086;7125.78010352671;1437.83407401559;1546.0948157482;1386.7882735311;1261.03800390197;1000.31179996331;451.303694393293;42.409441973249;2005.81529621262;4062.69026936215;1057.27453795194;7728.21989647329;1351.92411956647;1535.28045009598;1353.40435157891;1371.52787219222;1268.72142843452;700.834007676362;146.527666928837;1834.03176829307;4242.01239720769;1652.17573097253;14666.7126170845;12871.2685990156;635.676323007423;624.713990425072;226.047603519787;209.655391125414;23.1465848443817;76.2041251468338;282.774367741863;112.329898305901;170.444469435962;439.609503856452;119.216546357798;320.392957498654;853.503863965954;314.466728484288;539.037135481666;219.556282504642;89.6631498594366;129.893132645206;12118.26622767;11.8915869428125;377.643124936387;847.783813293873;1857.58277967108;2106.32550190671;2012.1844341977;3078.23628322711;1826.61870349437;5696.54228407757;11.8915869428125;286.137312870762;509.781218723045;923.155831713268;494.739234622626;1501.26428211771;1340.44242308388;629.130394003467;6421.72394359247;0;91.5058120656255;338.002594570828;934.426947957815;1611.58626728408;510.920152079992;1737.79386014323;1197.4883094909;1839.83770275891;0;14.4239434100789;35.2564930273586;179.258785022167;371.779140135774;359.347684693188;0;879.771656470347;5660.07661360931;6.33323626620661;274.008345467727;646.81173803587;1378.55288344704;1362.42609114201;1384.33701966435;6.73717187794375;600.87012770816;4618.35191130182;5.55835067660592;89.2108360585811;165.715582230644;299.771111201877;372.120270628928;268.49972984016;3071.49911134916;345.97691931586;14127;2782.05572247854;2947.05416011122;2645.83033356182;2638.8487664187;1904.57068898822;1059.00727174569;149.633056695827;6829.13065699469;1423.56333291999;1476.37381098338;1301.58431721216;1329.98485057352;850.851583866909;392.18831454961;54.584446889111;1891.97898567033;3990.74375722253;946.407914101831;7297.86934300532;1358.49238955855;1470.68034912784;1344.24601634965;1308.86391584517;1053.71910512131;666.818957196076;95.0486098067165;1858.79003071738;4000.45975014155;1438.61956214639;13915.7790420408;11707.2588132333;699.255993970339;824.104111732819;286.144646793505;318.408084858862;17.9826948965991;62.6246965553845;418.724960257608;131.238898927753;287.486061329855;550.159497915983;147.885968990569;402.273528925415;1025.94282080993;359.349844717147;666.592976092784;213.692949823986;60.7812813348696;152.911668489116;11328.9442449116;3.02063993676126;294.609498732317;769.528471533191;1850.23730089342;1923.29972491804;1800.54383914306;2878.41063807534;1809.2941316795;5390.56729350298;2.01375995784084;211.017651170581;448.021935260046;905.000795153597;566.37374640249;1365.5380147191;1268.08065737876;624.52073346056;5938.37695140866;1.00687997892042;83.591847561736;321.506536273145;945.236505739819;1356.92597851555;435.005824423959;1610.32998069659;1184.77339821894;1840.63122858729;1.00687997892042;15.4377333676429;25.1595828525755;184.177160355786;330.12547504397;314.037045850395;0;970.687351138002;5498.21070925865;2.01375995784084;213.770175023416;623.934474295806;1430.97628852903;1359.2316343949;1260.07678639904;14.1849450675718;594.022645591042;3990.10230706569;0;65.4015903412583;120.434414384809;235.083852008603;233.942615479169;226.430006893619;2864.22569300777;244.584134950458;13835;2898.94339448268;2953.21975732449;2687.51446388904;2536.97432485494;1657.71352203566;1100.6345374132;6741.24542832221;1377.03662771516;1497.99830033026;1409.84074246264;1273.58266522611;794.441042975382;353.306444090775;35.0396055218837;1916.60093792483;3983.51527899444;841.129211402931;7093.75457167779;1521.90676676753;1455.22145699423;1277.6737214264;1263.39165962883;863.272479060276;652.118539002135;60.1699487984022;1934.55862499622;3915.22687953212;1243.96906714946;10949.0103800507;0;331.596522047741;669.356148704635;1682.83222547144;1904.7494621737;1940.21055655647;2722.41423093945;1697.85123415724;5408.20920339171;0;218.07650754506;470.231509650505;820.382790579657;594.053031430681;1470.67528312447;1260.66300147469;574.127079586654;5540.80117665895;0;113.520014502681;199.124639054131;862.449434891781;1310.69643074302;469.535273431998;1461.75122946475;1123.72415457058;1891.73936899044;0;23.8321617560344;21.5248873506547;189.799159353238;364.29780587167;390.304622508753;0;901.980732150094;5580.12944966076;0;242.203811814597;578.414036553575;1355.06013571468;1403.75923894071;1413.35190015976;49.2734223191458;538.066904158293;3477.14156139946;0;65.5605484771097;69.4172248004055;137.972930403519;136.692417361324;136.554033887953;2673.1408086203;257.803597848848\n\n\n\n## Dictionnaire des variables",
+      "nullable": true
+    },
+    {
+      "name": "COD_VAR",
+      "type": "VARCHAR",
+      "description": "LIB_VAR;LIB_VAR_LONG;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP",
+      "type": "VARCHAR",
+      "description": "Population en 2021 (princ);Population en 2021;;;NUM;7",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0014",
+      "type": "VARCHAR",
+      "description": "Pop 0-14 ans en 2021 (princ);Nombre de personnes de 0 à 14 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP1529",
+      "type": "VARCHAR",
+      "description": "Pop 15-29 ans en 2021 (princ);Nombre de personnes de 15 à 29 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP3044",
+      "type": "VARCHAR",
+      "description": "Pop 30-44 ans en 2021 (princ);Nombre de personnes de 30 à 44 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP4559",
+      "type": "VARCHAR",
+      "description": "Pop 45-59 ans en 2021 (princ);Nombre de personnes de 45 à 59 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP6074",
+      "type": "VARCHAR",
+      "description": "Pop 60-74 ans en 2021 (princ);Nombre de personnes de 60 à 74 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP7589",
+      "type": "VARCHAR",
+      "description": "Pop 75-89 ans en 2021 (princ);Nombre de personnes de 75 à 89 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP90P",
+      "type": "VARCHAR",
+      "description": "Pop 90 ans ou plus en 2021 (princ);Nombre de personnes de 90 ans ou plus en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POPH",
+      "type": "VARCHAR",
+      "description": "Pop Hommes en 2021 (princ);Nombre total d'hommes en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H0014",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-14 ans en 2021 (princ);Nombre d'hommes de 0 à 14 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H1529",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 15-29 ans en 2021 (princ);Nombre d'hommes de 15 à 29 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H3044",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 30-44 ans en 2021 (princ);Nombre d'hommes de 30 à 44 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H4559",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 45-59 ans en 2021 (princ);Nombre d'hommes de 45 à 59 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H6074",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 60-74 ans en 2021 (princ);Nombre d'hommes de 60 à 74 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H7589",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 75-89 ans en 2021 (princ);Nombre d'hommes de 75 à 89 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H90P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 90 ans ou plus en 2021 (princ);Nombre d'hommes de 90 ans ou plus en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H0019",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-19 ans en 2021  (princ);Nombre d'hommes de 0 à 19 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H2064",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 20-64 ans en 2021 (princ);Nombre d'hommes de 20 à 64 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_H65P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 65 ans ou plus en 2021 (princ);Nombre d'hommes de 65 ans ou plus en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POPF",
+      "type": "VARCHAR",
+      "description": "Pop Femmes en 2021 (princ);Nombre total de femmes en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F0014",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-14 ans en 2021 (princ);Nombre de femmes de 0 à 14 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F1529",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 15-29 ans en 2021 (princ);Nombre de femmes de 15 à 29 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F3044",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 30-44 ans en 2021 (princ);Nombre de femmes de 30 à 44 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F4559",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 45-59 ans en 2021 (princ);Nombre de femmes de 45 à 59 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F6074",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 60-74 ans en 2021 (princ);Nombre de femmes de 60 à 74 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F7589",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 75-89 ans en 2021 (princ);Nombre de femmes de 75 à 89 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F90P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 90 ans ou plus en 2021 (princ);Nombre de femmes de 90 ans ou plus en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F0019",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-19 ans en 2021 (princ);Nombre de femmes de 0 à 19 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F2064",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 20-64 ans en 2021 (princ);Nombre de femmes de 20 à 64 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_F65P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 65 ans ou plus en 2021 (princ);Nombre de femmes de 65 ans ou plus en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus en 2021 localisée 1 an auparavant (princ);Nombre de personnes de 1 an ou plus localisé 1 an auparavant en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P_IRAN1",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt même logt en 2021 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant le même logement en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre logt même commune en 2021 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant un autre logement de la même commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P_IRAN3",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre commune même dépt en 2021 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant une autre commune du même département en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P_IRAN4",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre dépt même région en 2021 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant un autre département de la même région en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P_IRAN5",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre région métropole en 2021 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant une autre région de France métropolitaine en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P_IRAN6",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt un Dom en 2021 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant dans un département d'outre-mer en 2021;;;NUM;18",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP01P_IRAN7",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt hors métro ou Dom en 2021 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant hors de France métropolitaine ou d'un Département d'outre-mer en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0114_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 1-14 ans habitant 1 an avt autre logt en 2021 (princ);Nombre de personnes de 1 à 14 ans habitant 1 an auparavant un autre logement en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0114_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 1-14 ans habitant 1 an avt autre logt même commune en 2021 (princ);Nombre de personnes de 1 à 14 ans habitant 1 an auparavant un autre logement de la même commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP0114_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 1-14 ans habitant 1 an avt autre commune en 2021 (princ);Nombre de personnes de 1 à 14 ans habitant 1 an auparavant une autre commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP1524_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans habitant 1 an avt autre logt en 2021 (princ);Nombre de personnes de 15 à 24 ans habitant 1 an auparavant un autre logement en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP1524_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans habitant 1 an avt autre logt même commune en 2021 (princ);Nombre de personnes de 15 à 24 ans habitant 1 an auparavant un autre logement de la même commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP1524_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans habitant 1 an avt autre commune en 2021 (princ);Nombre de personnes de 15 à 24 ans habitant 1 an auparavant une autre commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP2554_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans habitant 1 an avt autre logt en 2021 (princ);Nombre de personnes de 25 à 54 ans habitant 1 an auparavant un autre logement en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP2554_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans habitant 1 an avt autre logt même commune en 2021 (princ);Nombre de personnes de 25 à 54 ans habitant 1 an auparavant un autre logement de la même commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP2554_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans habitant 1 an avt autre commune en 2021 (princ);Nombre de personnes de 25 à 54 ans habitant 1 an auparavant une autre commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP55P_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus habitant 1 an avt autre logt en 2021 (princ);Nombre de personnes de 55 ans ou plus habitant 1 an auparavant un autre logement en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP55P_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus habitant 1 an avt autre logt même commune en 2021 (princ);Nombre de personnes de 55 ans ou plus habitant 1 an auparavant un autre logement de la même commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P21_POP55P_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus habitant 1 an avt autre commune en 2021 (princ);Nombre de personnes de 55 ans ou plus habitant 1 an auparavant une autre commune en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus en 2021 (compl);Nombre de personnes de 15 ans ou plus en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Agriculteurs exploitants en 2021 (compl);Nombre de personnes de 15 ans ou plus Agriculteurs exploitants en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2021 (compl);Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2021 (compl);Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Prof. intermédiaires  en 2021 (compl);Nombre de personnes de 15 ans ou plus Professions intermédiaires en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Employés en 2021 (compl);Nombre de personnes de 15 ans ou plus Employés en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Ouvriers en 2021 (compl);Nombre de personnes de 15 ans ou plus Ouvriers en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Retraités en 2021 (compl);Nombre de personnes de 15 ans ou plus Retraités en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Autres en 2021 (compl);Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes en 2021 (compl);Nombre d'hommes de 15 ans ou plus en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2021 (compl);Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2021 (compl);Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2021 (compl);Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Prof. intermédiaires en 2021 (compl);Nombre d'hommes de 15 ans ou plus Professions intermédiaires en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Employés en 2021 (compl);Nombre d'hommes de 15 ans ou plus Employés en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Ouvriers en 2021 (compl);Nombre d'hommes de 15 ans ou plus Ouvriers en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Retraités en 2021 (compl);Nombre d'hommes de 15 ans ou plus Retraités en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_H15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Autres en 2021 (compl);Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes en 2021 (compl);Nombre de femmes de 15 ans ou plus en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2021 (compl);Nombre de femmes de 15 ans ou plus Agriculteurs exploitants en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2021 (compl);Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2021 (compl);Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Prof. intermédiaires en 2021 (compl);Nombre de femmes de 15 ans ou plus Professions intermédiaires en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Employés en 2021 (compl);Nombre de femmes de 15 ans ou plus Employés en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Ouvriers en 2021 (compl);Nombre de femmes de 15 ans ou plus Ouvriers en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Retraités en 2021 (compl);Nombre de femmes de 15 ans ou plus Retraités en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_F15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Autres en 2021 (compl);Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans en 2021 (compl);Nombre de personnes de 15 à 24 ans en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Agriculteurs exploitants en 2021 (compl);Nombre de personnes de 15 à 24 ans Agriculteurs exploitants en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Artisans, Comm., Chefs entr. en 2021 (compl);Nombre de personnes de 15 à 24 ans Artisans, commerçants, chefs d'entreprise en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Cadres, Prof. intel. sup. en 2021 (compl);Nombre de personnes de 15-24 ans Cadres et Professions intellectuelles supérieures en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Prof. intermédiaires en 2021 (compl);Nombre de personnes de 15 à 24 ans Professions intermédiaires en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Employés en 2021 (compl);Nombre de personnes de 15 à 24 ans Employés en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Ouvriers en 2021 (compl);Nombre de personnes de 15 à 24 ans Ouvriers en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Retraités en 2021 (compl);Nombre de personnes de 15 à 24 ans Retraités en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP1524_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Autres en 2021 (compl);Nombre de personnes de 15 à 24 ans Autres sans activité professionnelle en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans en 2021 (compl);Nombre de personnes de 25 à 54 ans en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Agriculteurs exploitants en 2021 (compl);Nombre de personnes de 25 à 54 ans Agriculteurs exploitants en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Artisans, Comm., Chefs entr. en 2021 (compl);Nombre de personnes de 25 à 54 ans Artisans, commerçants, chefs d'entreprise en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Cadres, Prof. intel. sup. en 2021 (compl);Nombre de personnes de 25 à 54 ans Cadres et Professions intellectuelles supérieures en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Prof. intermédiaires en 2021 (compl);Nombre de personnes de 25 à 54 ans Professions intermédiaires en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Employés en 2021 (compl);Nombre de personnes de 25 à 54 ans Employés en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Ouvriers en 2021 (compl);Nombre de personnes de 25 à 54 ans Ouvriers en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Retraités en 2021 (compl);Nombre de personnes de 25 à 54 ans Retraités en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP2554_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Autres en 2021 (compl);Nombre de personnes de 25 à 54 ans Autres sans activité professionnelle en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus en 2021 (compl);Nombre de personnes de 55 ans ou plus en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Agriculteurs exploitants en 2021 (compl);Nombre de personnes de 55 ans ou plus Agriculteurs exploitants en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Artisans, Comm., Chefs entr. en 2021 (compl);Nombre de personnes de 55 ans ou plus Artisans, commerçants, chefs d'entreprise en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Cadres, Prof. intel. sup. en 2021 (compl);Nombre de personnes de 55 ans ou plus Cadres et Professions intellectuelles supérieures en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Prof. intermédiaires en 2021 (compl);Nombre de personnes de 55 ans ou plus Professions intermédiaires en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Employés en 2021 (compl);Nombre de personnes de 55 ans ou plus Employés en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Ouvriers en 2021 (compl);Nombre de personnes de 55 ans ou plus Ouvriers en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Retraités en 2021 (compl);Nombre de personnes de 55 ans ou plus Retraités en 2021;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C21_POP55P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Autres en 2021 (compl);Nombre de personnes de 55 ans ou plus Autres sans activité professionnelle en 2021;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP",
+      "type": "VARCHAR",
+      "description": "Population en 2015 (princ);Population en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0014",
+      "type": "VARCHAR",
+      "description": "Pop 0-14 ans en 2015 (princ);Nombre de personnes de 0 à 14 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP1529",
+      "type": "VARCHAR",
+      "description": "Pop 15-29 ans en 2015 (princ);Nombre de personnes de 15 à 29 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP3044",
+      "type": "VARCHAR",
+      "description": "Pop 30-44 ans en 2015 (princ);Nombre de personnes de 30 à 44 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP4559",
+      "type": "VARCHAR",
+      "description": "Pop 45-59 ans en 2015 (princ);Nombre de personnes de 45 à 59 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP6074",
+      "type": "VARCHAR",
+      "description": "Pop 60-74 ans en 2015 (princ);Nombre de personnes de 60 à 74 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP7589",
+      "type": "VARCHAR",
+      "description": "Pop 75-89 ans en 2015 (princ);Nombre de personnes de 75 à 89 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP90P",
+      "type": "VARCHAR",
+      "description": "Pop 90 ans ou plus en 2015 (princ);Nombre de personnes de 90 ans ou plus en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POPH",
+      "type": "VARCHAR",
+      "description": "Pop Hommes en 2015 (princ);Nombre total d'hommes en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P15_H0014",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-14 ans en 2015 (princ);Nombre d'hommes de 0 à 14 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H1529",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 15-29 ans en 2015 (princ);Nombre d'hommes de 15 à 29 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H3044",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 30-44 ans en 2015 (princ);Nombre d'hommes de 30 à 44 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H4559",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 45-59 ans en 2015 (princ);Nombre d'hommes de 45 à 59 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H6074",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 60-74 ans en 2015 (princ);Nombre d'hommes de 60 à 74 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H7589",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 75-89 ans en 2015 (princ);Nombre d'hommes de 75 à 89 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H90P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 90 ans ou plus en 2015 (princ);Nombre d'hommes de 90 ans ou plus en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H0019",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-19 ans en 2015  (princ);Nombre d'hommes de 0 à 19 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H2064",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 20-64 ans en 2015 (princ);Nombre d'hommes de 20 à 64 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_H65P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 65 ans ou plus en 2015 (princ);Nombre d'hommes de 65 ans ou plus en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POPF",
+      "type": "VARCHAR",
+      "description": "Pop Femmes en 2015 (princ);Nombre total de femmes en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P15_F0014",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-14 ans en 2015 (princ);Nombre de femmes de 0 à 14 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F1529",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 15-29 ans en 2015 (princ);Nombre de femmes de 15 à 29 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F3044",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 30-44 ans en 2015 (princ);Nombre de femmes de 30 à 44 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F4559",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 45-59 ans en 2015 (princ);Nombre de femmes de 45 à 59 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F6074",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 60-74 ans en 2015 (princ);Nombre de femmes de 60 à 74 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F7589",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 75-89 ans en 2015 (princ);Nombre de femmes de 75 à 89 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F90P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 90 ans ou plus en 2015 (princ);Nombre de femmes de 90 ans ou plus en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F0019",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-19 ans en 2015 (princ);Nombre de femmes de 0 à 19 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F2064",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 20-64 ans en 2015 (princ);Nombre de femmes de 20 à 64 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_F65P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 65 ans ou plus en 2015 (princ);Nombre de femmes de 65 ans ou plus en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus en 2015 localisée 1 an auparavant (princ);Nombre de personnes de 1 an ou plus localisé 1 an auparavant en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P_IRAN1",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt même logt en 2015 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant le même logement en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre logt même commune en 2015 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant un autre logement de la même commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P_IRAN3",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre commune même dépt en 2015 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant une autre commune du même département en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P_IRAN4",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre dépt même région en 2015 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant un autre département de la même région en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P_IRAN5",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt autre région métropole en 2015 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant une autre région de France métropolitaine en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P_IRAN6",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt un Dom en 2015 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant dans un département d'outre-mer en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP01P_IRAN7",
+      "type": "VARCHAR",
+      "description": "Pop 1 an ou plus habitant 1 an avt hors métro ou Dom en 2015 (princ);Nombre de personnes de 1 an ou plus habitant 1 an auparavant hors de France métropolitaine ou d'un Département d'outre-mer en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0114_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 1-14 ans habitant 1 an avt autre logt en 2015 (princ);Nombre de personnes de 1 à 14 ans habitant 1 an auparavant un autre logement en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0114_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 1-14 ans habitant 1 an avt autre logt même commune en 2015 (princ);Nombre de personnes de 1 à 14 ans habitant 1 an auparavant un autre logement de la même commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP0114_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 1-14 ans habitant 1 an avt autre commune en 2015 (princ);Nombre de personnes de 1 à 14 ans habitant 1 an auparavant une autre commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP1524_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans habitant 1 an avt autre logt en 2015 (princ);Nombre de personnes de 15 à 24 ans habitant 1 an auparavant un autre logement en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP1524_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans habitant 1 an avt autre logt même commune en 2015 (princ);Nombre de personnes de 15 à 24 ans habitant 1 an auparavant un autre logement de la même commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP1524_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans habitant 1 an avt autre commune en 2015 (princ);Nombre de personnes de 15 à 24 ans habitant 1 an auparavant une autre commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP2554_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans habitant 1 an avt autre logt en 2015 (princ);Nombre de personnes de 25 à 54 ans habitant 1 an auparavant un autre logement en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP2554_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans habitant 1 an avt autre logt même commune en 2015 (princ);Nombre de personnes de 25 à 54 ans habitant 1 an auparavant un autre logement de la même commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP2554_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans habitant 1 an avt autre commune en 2015 (princ);Nombre de personnes de 25 à 54 ans habitant 1 an auparavant une autre commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP55P_IRAN2P",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus habitant 1 an avt autre logt en 2015 (princ);Nombre de personnes de 55 ans ou plus habitant 1 an auparavant un autre logement en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP55P_IRAN2",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus habitant 1 an avt autre logt même commune en 2015 (princ);Nombre de personnes de 55 ans ou plus habitant 1 an auparavant un autre logement de la même commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P15_POP55P_IRAN3P",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus habitant 1 an avt autre commune en 2015 (princ);Nombre de personnes de 55 ans ou plus habitant 1 an auparavant une autre commune en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus en 2015 (compl);Nombre de personnes de 15 ans ou plus en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Agriculteurs exploitants en 2015 (compl);Nombre de personnes de 15 ans ou plus Agriculteurs exploitants en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2015 (compl);Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2015 (compl);Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Prof. intermédiaires  en 2015 (compl);Nombre de personnes de 15 ans ou plus Professions intermédiaires en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Employés en 2015 (compl);Nombre de personnes de 15 ans ou plus Employés en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Ouvriers en 2015 (compl);Nombre de personnes de 15 ans ou plus Ouvriers en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Retraités en 2015 (compl);Nombre de personnes de 15 ans ou plus Retraités en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Autres en 2015 (compl);Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes en 2015 (compl);Nombre d'hommes de 15 ans ou plus en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2015 (compl);Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2015 (compl);Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2015 (compl);Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Prof. intermédiaires en 2015 (compl);Nombre d'hommes de 15 ans ou plus Professions intermédiaires en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Employés en 2015 (compl);Nombre d'hommes de 15 ans ou plus Employés en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Ouvriers en 2015 (compl);Nombre d'hommes de 15 ans ou plus Ouvriers en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Retraités en 2015 (compl);Nombre d'hommes de 15 ans ou plus Retraités en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_H15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Autres en 2015 (compl);Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes en 2015 (compl);Nombre de femmes de 15 ans ou plus en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2015 (compl);Nombre de femmes de 15 ans ou plus Agriculteurs exploitants en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2015 (compl);Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2015 (compl);Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Prof. intermédiaires en 2015 (compl);Nombre de femmes de 15 ans ou plus Professions intermédiaires en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Employés en 2015 (compl);Nombre de femmes de 15 ans ou plus Employés en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Ouvriers en 2015 (compl);Nombre de femmes de 15 ans ou plus Ouvriers en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Retraités en 2015 (compl);Nombre de femmes de 15 ans ou plus Retraités en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_F15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Autres en 2015 (compl);Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans en 2015 (compl);Nombre de personnes de 15 à 24 ans en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Agriculteurs exploitants en 2015 (compl);Nombre de personnes de 15 à 24 ans Agriculteurs exploitants en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Artisans, Comm., Chefs entr. en 2015 (compl);Nombre de personnes de 15 à 24 ans Artisans, commerçants, chefs d'entreprise en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Cadres, Prof. intel. sup. en 2015 (compl);Nombre de personnes de 15-24 ans Cadres et Professions intellectuelles supérieures en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Prof. intermédiaires en 2015 (compl);Nombre de personnes de 15 à 24 ans Professions intermédiaires en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Employés en 2015 (compl);Nombre de personnes de 15 à 24 ans Employés en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Ouvriers en 2015 (compl);Nombre de personnes de 15 à 24 ans Ouvriers en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Retraités en 2015 (compl);Nombre de personnes de 15 à 24 ans Retraités en 2015;;;NUM;1",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP1524_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Autres en 2015 (compl);Nombre de personnes de 15 à 24 ans Autres sans activité professionnelle en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans en 2015 (compl);Nombre de personnes de 25 à 54 ans en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Agriculteurs exploitants en 2015 (compl);Nombre de personnes de 25 à 54 ans Agriculteurs exploitants en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Artisans, Comm., Chefs entr. en 2015 (compl);Nombre de personnes de 25 à 54 ans Artisans, commerçants, chefs d'entreprise en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Cadres, Prof. intel. sup. en 2015 (compl);Nombre de personnes de 25 à 54 ans Cadres et Professions intellectuelles supérieures en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Prof. intermédiaires en 2015 (compl);Nombre de personnes de 25 à 54 ans Professions intermédiaires en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Employés en 2015 (compl);Nombre de personnes de 25 à 54 ans Employés en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Ouvriers en 2015 (compl);Nombre de personnes de 25 à 54 ans Ouvriers en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Retraités en 2015 (compl);Nombre de personnes de 25 à 54 ans Retraités en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP2554_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Autres en 2015 (compl);Nombre de personnes de 25 à 54 ans Autres sans activité professionnelle en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus en 2015 (compl);Nombre de personnes de 55 ans ou plus en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Agriculteurs exploitants en 2015 (compl);Nombre de personnes de 55 ans ou plus Agriculteurs exploitants en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Artisans, Comm., Chefs entr. en 2015 (compl);Nombre de personnes de 55 ans ou plus Artisans, commerçants, chefs d'entreprise en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Cadres, Prof. intel. sup. en 2015 (compl);Nombre de personnes de 55 ans ou plus Cadres et Professions intellectuelles supérieures en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Prof. intermédiaires en 2015 (compl);Nombre de personnes de 55 ans ou plus Professions intermédiaires en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Employés en 2015 (compl);Nombre de personnes de 55 ans ou plus Employés en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Ouvriers en 2015 (compl);Nombre de personnes de 55 ans ou plus Ouvriers en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Retraités en 2015 (compl);Nombre de personnes de 55 ans ou plus Retraités en 2015;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C15_POP55P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Autres en 2015 (compl);Nombre de personnes de 55 ans ou plus Autres sans activité professionnelle en 2015;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP",
+      "type": "VARCHAR",
+      "description": "Population en 2010 (princ);Population en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP0014",
+      "type": "VARCHAR",
+      "description": "Pop 0-14 ans en 2010 (princ);Nombre de personnes de 0 à 14 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP1529",
+      "type": "VARCHAR",
+      "description": "Pop 15-29 ans en 2010 (princ);Nombre de personnes de 15 à 29 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP3044",
+      "type": "VARCHAR",
+      "description": "Pop 30-44 ans en 2010 (princ);Nombre de personnes de 30 à 44 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP4559",
+      "type": "VARCHAR",
+      "description": "Pop 45-59 ans en 2010 (princ);Nombre de personnes de 45 à 59 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP6074",
+      "type": "VARCHAR",
+      "description": "Pop 60-74 ans en 2010 (princ);Nombre de personnes de 60 à 74 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POP75P",
+      "type": "VARCHAR",
+      "description": "Pop 75 ans ou plus en 2010 (princ);Nombre de personnes de 75 ans ou plus en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POPH",
+      "type": "VARCHAR",
+      "description": "Pop Hommes en 2010 (princ);Nombre total d'hommes en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P10_H0014",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-14 ans en 2010 (princ);Nombre d'hommes de 0 à 14 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H1529",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 15-29 ans en 2010 (princ);Nombre d'hommes de 15 à 29 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H3044",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 30-44 ans en 2010 (princ);Nombre d'hommes de 30 à 44 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H4559",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 45-59 ans en 2010 (princ);Nombre d'hommes de 45 à 59 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H6074",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 60-74 ans en 2010 (princ);Nombre d'hommes de 60 à 74 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H7589",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 75-89 ans en 2010 (princ);Nombre d'hommes de 75 à 89 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H90P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 90 ans ou plus en 2010 (princ);Nombre d'hommes de 90 ans ou plus en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H0019",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 0-19 ans en 2010  (princ);Nombre d'hommes de 0 à 19 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H2064",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 20-64 ans en 2010 (princ);Nombre d'hommes de 20 à 64 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_H65P",
+      "type": "VARCHAR",
+      "description": "Pop Hommes 65 ans ou plus en 2010 (princ);Nombre d'hommes de 65 ans ou plus en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_POPF",
+      "type": "VARCHAR",
+      "description": "Pop Femmes en 2010 (princ);Nombre total de femmes en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "P10_F0014",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-14 ans en 2010 (princ);Nombre de femmes de 0 à 14 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F1529",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 15-29 ans en 2010 (princ);Nombre de femmes de 15 à 29 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F3044",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 30-44 ans en 2010 (princ);Nombre de femmes de 30 à 44 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F4559",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 45-59 ans en 2010 (princ);Nombre de femmes de 45 à 59 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F6074",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 60-74 ans en 2010 (princ);Nombre de femmes de 60 à 74 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F7589",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 75-89 ans en 2010 (princ);Nombre de femmes de 75 à 89 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F90P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 90 ans ou plus en 2010 (princ);Nombre de femmes de 90 ans ou plus en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F0019",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 0-19 ans en 2010 (princ);Nombre de femmes de 0 à 19 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F2064",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 20-64 ans en 2010 (princ);Nombre de femmes de 20 à 64 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "P10_F65P",
+      "type": "VARCHAR",
+      "description": "Pop Femmes 65 ans ou plus en 2010 (princ);Nombre de femmes de 65 ans ou plus en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus en 2010 (compl);Nombre de personnes de 15 ans ou plus en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Agriculteurs exploitants en 2010 (compl);Nombre de personnes de 15 ans ou plus Agriculteurs exploitants en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2010 (compl);Nombre de personnes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2010 (compl);Nombre de personnes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Prof. intermédiaires  en 2010 (compl);Nombre de personnes de 15 ans ou plus Professions intermédiaires en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Employés en 2010 (compl);Nombre de personnes de 15 ans ou plus Employés en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Ouvriers en 2010 (compl);Nombre de personnes de 15 ans ou plus Ouvriers en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Retraités  en 2010 (compl);Nombre de personnes de 15 ans ou plus Retraités en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Autres en 2010 (compl);Nombre de personnes de 15 ans ou plus Autres sans activité professionnelle en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes en 2010 (compl);Nombre d'hommes de 15 ans ou plus en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Agriculteurs exploitants en 2010 (compl);Nombre d'hommes de 15 ans ou plus Agriculteurs exploitants en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Artisans, Comm., Chefs entr. en 2010 (compl);Nombre d'hommes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Cadres, Prof. intel. sup. en 2010 (compl);Nombre d'hommes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Prof. intermédiaires en 2010 (compl);Nombre d'hommes de 15 ans ou plus Professions intermédiaires en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Employés en 2010 (compl);Nombre d'hommes de 15 ans ou plus Employés en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Ouvriers en 2010 (compl);Nombre d'hommes de 15 ans ou plus Ouvriers en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Retraités en 2010 (compl);Nombre d'hommes de 15 ans ou plus Retraités en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_H15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Hommes Autres en 2010 (compl);Nombre d'hommes de 15 ans ou plus Autres sans activité professionnelle en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes en 2010 (compl);Nombre de femmes de 15 ans ou plus en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Agriculteurs exploitants en 2010 (compl);Nombre de femmes de 15 ans ou plus Agriculteurs exploitants en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Artisans, Comm., Chefs entr. en 2010 (compl);Nombre de femmes de 15 ans ou plus Artisans, Commerçants, Chefs d'entreprise en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Cadres, Prof. intel. sup. en 2010 (compl);Nombre de femmes de 15 ans ou plus Cadres et Professions intellectuelles supérieures en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Prof. intermédiaires en 2010 (compl);Nombre de femmes de 15 ans ou plus Professions intermédiaires en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Employés en 2010 (compl);Nombre de femmes de 15 ans ou plus Employés en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Ouvriers en 2010 (compl);Nombre de femmes de 15 ans ou plus Ouvriers en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Retraités en 2010 (compl);Nombre de femmes de 15 ans ou plus Retraités en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_F15P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15 ans ou plus Femmes Autres en 2010 (compl);Nombre de femmes de 15 ans ou plus Autres sans activité professionnelle en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans en 2010 (compl);Nombre de personnes de 15 à 24 ans en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Agriculteurs exploitants en 2010 (compl);Nombre de personnes de 15 à 24 ans Agriculteurs exploitants en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Artisans, Comm., Chefs entr. en 2010 (compl);Nombre de personnes de 15 à 24 ans Artisans, commerçants, chefs d'entreprise en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Cadres, Prof. intel. sup. en 2010 (compl);Nombre de personnes de 15-24 ans Cadres et Professions intellectuelles supérieures en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Prof. intermédiaires en 2010 (compl);Nombre de personnes de 15 à 24 ans Professions intermédiaires en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Employés en 2010 (compl);Nombre de personnes de 15 à 24 ans Employés en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Ouvriers en 2010 (compl);Nombre de personnes de 15 à 24 ans Ouvriers en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Retraités en 2010 (compl);Nombre de personnes de 15 à 24 ans Retraités en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP1524_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 15-24 ans Autres en 2010 (compl);Nombre de personnes de 15 à 24 ans Autres sans activité professionnelle en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans en 2010 (compl);Nombre de personnes de 25 à 54 ans en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Agriculteurs exploitants en 2010 (compl);Nombre de personnes de 25 à 54 ans Agriculteurs exploitants en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Artisans, Comm., Chefs entr. en 2010 (compl);Nombre de personnes de 25 à 54 ans Artisans, commerçants, chefs d'entreprise en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Cadres, Prof. intel. sup. en 2010 (compl);Nombre de personnes de 25 à 54 ans Cadres et Professions intellectuelles supérieures en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Prof. intermédiaires en 2010 (compl);Nombre de personnes de 25 à 54 ans Professions intermédiaires en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Employés en 2010 (compl);Nombre de personnes de 25 à 54 ans Employés en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Ouvriers en 2010 (compl);Nombre de personnes de 25 à 54 ans Ouvriers en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Retraités en 2010 (compl);Nombre de personnes de 25 à 54 ans Retraités en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP2554_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 25-54 ans Autres en 2010 (compl);Nombre de personnes de 25 à 54 ans Autres sans activité professionnelle en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus en 2010 (compl);Nombre de personnes de 55 ans ou plus en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS1",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Agriculteurs exploitants en 2010 (compl);Nombre de personnes de 55 ans ou plus Agriculteurs exploitants en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS2",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Artisans, Comm., Chefs entr. en 2010 (compl);Nombre de personnes de 55 ans ou plus Artisans, commerçants, chefs d'entreprise en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS3",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Cadres, Prof. intel. sup. en 2010 (compl);Nombre de personnes de 55 ans ou plus Cadres et Professions intellectuelles supérieures en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS4",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Prof. intermédiaires en 2010 (compl);Nombre de personnes de 55 ans ou plus Professions intermédiaires en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS5",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Employés en 2010 (compl);Nombre de personnes de 55 ans ou plus Employés en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS6",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Ouvriers en 2010 (compl);Nombre de personnes de 55 ans ou plus Ouvriers en 2010;;;NUM;17",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS7",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Retraités en 2010 (compl);Nombre de personnes de 55 ans ou plus Retraités en 2010;;;NUM;16",
+      "nullable": true
+    },
+    {
+      "name": "C10_POP55P_CS8",
+      "type": "VARCHAR",
+      "description": "Pop 55 ans ou plus Autres en 2010 (compl);Nombre de personnes de 55 ans ou plus Autres sans activité professionnelle en 2010;;;NUM;17",
+      "nullable": true
+    }
+  ]
+}

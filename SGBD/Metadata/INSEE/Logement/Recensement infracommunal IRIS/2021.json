@@ -1,0 +1,583 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "LOG_IRIS_2021",
+    "description": "https://www.insee.fr/fr/statistiques/8268838 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Logement\\Logement_IRIS\\2021 LOG_IRIS_2021",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "COM",
+      "type": "CHAR",
+      "description": "Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal pour Paris Lyon et Marseille",
+      "nullable": true
+    },
+    {
+      "name": "TYP_IRIS",
+      "type": "CHAR",
+      "description": "Type d'IRIS : habitat (H), activité (A), divers (D), Autre (Z)",
+      "nullable": true
+    },
+    {
+      "name": "LAB_IRIS",
+      "type": "CHAR",
+      "description": "Label de qualité de l'IRIS",
+      "nullable": true
+    },
+    {
+      "name": "P21_LOG",
+      "type": "NUM",
+      "description": "Nombre de logements",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales",
+      "nullable": true
+    },
+    {
+      "name": "P21_RSECOCC",
+      "type": "NUM",
+      "description": "Nombre de résidences secondaires et logements occasionnels",
+      "nullable": true
+    },
+    {
+      "name": "P21_LOGVAC",
+      "type": "NUM",
+      "description": "Nombre de logements vacants",
+      "nullable": true
+    },
+    {
+      "name": "P21_MAISON",
+      "type": "NUM",
+      "description": "Nombre de maisons",
+      "nullable": true
+    },
+    {
+      "name": "P21_APPART",
+      "type": "NUM",
+      "description": "Nombre d'appartements",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_1P",
+      "type": "NUM",
+      "description": "Nombre de résidences principales d'1 pièce",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_2P",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 2 pièces",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_3P",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 3 pièces",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_4P",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 4 pièces",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_5PP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 5 pièces ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_NBPI_RP",
+      "type": "NUM",
+      "description": "Nombre de pièces des résidences principales",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison",
+      "nullable": true
+    },
+    {
+      "name": "P21_NBPI_RPMAISON",
+      "type": "NUM",
+      "description": "Nombre de pièces des résidences principales de type maison",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement",
+      "nullable": true
+    },
+    {
+      "name": "P21_NBPI_RPAPPART",
+      "type": "NUM",
+      "description": "Nombre de pièces des résidences principales de type appartement",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_M30M2",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de moins de 30 m2",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_3040M2",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 30 à moins de 40 m2",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_4060M2",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 40 à moins de 60 m2",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_6080M2",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 60 à moins de 80 m2",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_80100M2",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 80 à moins de 100 m2",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_100120M2",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 100 à moins de 120 m2",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_120M2P",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de 120 m2 ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ACHTOT",
+      "type": "NUM",
+      "description": "Nombre de résidences principales construites avant 2019",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ACH19",
+      "type": "NUM",
+      "description": "Nombre de résidences principales construites avant 1919",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ACH45",
+      "type": "NUM",
+      "description": "Nombre de résidences principales construites de 1919 à 1945",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ACH70",
+      "type": "NUM",
+      "description": "Nombre de résidences principales construites de 1946 à 1970",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ACH90",
+      "type": "NUM",
+      "description": "Nombre de résidences principales construites de 1971 à 1990",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ACH05",
+      "type": "NUM",
+      "description": "Nombre de résidences principales construites de 1991 à 2005",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ACH18",
+      "type": "NUM",
+      "description": "Nombre de résidences principales construites de 2006 à 2018",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON_ACHTOT",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison construites avant 2019",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON_ACH19",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison construites avant 1919",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON_ACH45",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison construites de 1919 à 1945",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON_ACH70",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison construites de 1946 à 1970",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON_ACH90",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison construites de 1971 à 1990",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON_ACH05",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison construites de 1991 à 2005",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPMAISON_ACH18",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type maison construites de 2006 à 2018",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART_ACHTOT",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement construites avant 2019",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART_ACH19",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement construites avant 1919",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART_ACH45",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement construites de 1919 à 1945",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART_ACH70",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement construites de 1946 à 1970",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART_ACH90",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement construites de 1971 à 1990",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART_ACH05",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement construites de 1991 à 2005",
+      "nullable": true
+    },
+    {
+      "name": "P21_RPAPPART_ACH18",
+      "type": "NUM",
+      "description": "Nombre de résidences principales de type appartement construites de 2006 à 2018",
+      "nullable": true
+    },
+    {
+      "name": "P21_MEN",
+      "type": "NUM",
+      "description": "Nombre de ménages",
+      "nullable": true
+    },
+    {
+      "name": "P21_MEN_ANEM0002",
+      "type": "NUM",
+      "description": "Nombre de ménages ayant emménagé depuis moins de 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_MEN_ANEM0204",
+      "type": "NUM",
+      "description": "Nombre de ménages ayant emménagé entre 2 et 4 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_MEN_ANEM0509",
+      "type": "NUM",
+      "description": "Nombre de ménages ayant emménagé entre 5 et 9 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_MEN_ANEM10P",
+      "type": "NUM",
+      "description": "Nombre de ménages ayant emménagé depuis 10 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_PMEN",
+      "type": "NUM",
+      "description": "Population des ménages",
+      "nullable": true
+    },
+    {
+      "name": "P21_PMEN_ANEM0002",
+      "type": "NUM",
+      "description": "Population des ménages ayant emménagé depuis moins de 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_PMEN_ANEM0204",
+      "type": "NUM",
+      "description": "Population des ménages ayant emménagé entre 2 et 4 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_PMEN_ANEM0509",
+      "type": "NUM",
+      "description": "Population des ménages ayant emménagé entre 5 et 9 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_PMEN_ANEM10P",
+      "type": "NUM",
+      "description": "Population des ménages ayant emménagé depuis 10 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_NBPI_RP_ANEM0002",
+      "type": "NUM",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis moins de 2 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_NBPI_RP_ANEM0204",
+      "type": "NUM",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 2 et 4 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_NBPI_RP_ANEM0509",
+      "type": "NUM",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé entre 5 et 9 ans",
+      "nullable": true
+    },
+    {
+      "name": "P21_NBPI_RP_ANEM10P",
+      "type": "NUM",
+      "description": "Nombre de pièces des résidences principales dans lesquelles le ménage a emménagé depuis 10 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_PROP",
+      "type": "NUM",
+      "description": "Nombre de résidences principales occupées par des propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_LOC",
+      "type": "NUM",
+      "description": "Nombre de résidences principales occupées par des locataires",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_LOCHLMV",
+      "type": "NUM",
+      "description": "Nombre de résidences principales HLM loué vide",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_GRAT",
+      "type": "NUM",
+      "description": "Nombre de résidences principales occupées gratuitement",
+      "nullable": true
+    },
+    {
+      "name": "P21_NPER_RP",
+      "type": "NUM",
+      "description": "Nombre de personnes des résidences principales",
+      "nullable": true
+    },
+    {
+      "name": "P21_NPER_RP_PROP",
+      "type": "NUM",
+      "description": "Nombre de personnes des résidences principales occupées par des propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "P21_NPER_RP_LOC",
+      "type": "NUM",
+      "description": "Nombre de personnes des résidences principales occupées par des locataires",
+      "nullable": true
+    },
+    {
+      "name": "P21_NPER_RP_LOCHLMV",
+      "type": "NUM",
+      "description": "Nombre de personnes des résidences principales HLM louées vides",
+      "nullable": true
+    },
+    {
+      "name": "P21_NPER_RP_GRAT",
+      "type": "NUM",
+      "description": "Nombre de personnes des résidences principales occupées gratuitement",
+      "nullable": true
+    },
+    {
+      "name": "P21_ANEM_RP",
+      "type": "NUM",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales en années",
+      "nullable": true
+    },
+    {
+      "name": "P21_ANEM_RP_PROP",
+      "type": "NUM",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales occupées par des propriétaires en années",
+      "nullable": true
+    },
+    {
+      "name": "P21_ANEM_RP_LOC",
+      "type": "NUM",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales occupées par des locataires en années",
+      "nullable": true
+    },
+    {
+      "name": "P21_ANEM_RP_LOCHLMV",
+      "type": "NUM",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales HLM louées vides en années",
+      "nullable": true
+    },
+    {
+      "name": "P21_ANEM_RP_GRAT",
+      "type": "NUM",
+      "description": "Ancienneté totale d'emménagement dans les résidences principales occupées gratuitement en années",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_SDB",
+      "type": "NUM",
+      "description": "Nombre de résidences principales avec salle de bain dotée de baignoire ou douche (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_CCCOLL",
+      "type": "NUM",
+      "description": "Nombre de résidences principales avec chauffage central collectif (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_CCIND",
+      "type": "NUM",
+      "description": "Nombre de résidences principales avec chauffage central individuel (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_CINDELEC",
+      "type": "NUM",
+      "description": "Nombre de résidences principales avec chauffage individuel électrique (variable spécifique à la France métropolitaine)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_ELEC",
+      "type": "logical",
+      "description": "Nombre de résidences principales avec électricité dans le logement (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_EAUCH",
+      "type": "logical",
+      "description": "Nombre de résidences principales avec eau chaude dans le logement (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_BDWC",
+      "type": "logical",
+      "description": "Nombre de résidences principales avec baignoire ou douche et WC à l'intérieur du logement (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_CHOS",
+      "type": "logical",
+      "description": "Nombre de résidences principales avec chauffe-eau solaire (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_CLIM",
+      "type": "logical",
+      "description": "Nombre de résidences principales avec pièce climatisée (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_TTEGOU",
+      "type": "logical",
+      "description": "Nombre de résidences principales avec tout à l'égout (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_GARL",
+      "type": "NUM",
+      "description": "Nombre de ménages disposant au moins d'un emplacement réservé au stationnement",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_VOIT1P",
+      "type": "NUM",
+      "description": "Nombre de ménages disposant au moins d'une voiture",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_VOIT1",
+      "type": "NUM",
+      "description": "Nombre de ménages disposant d'une voiture",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_VOIT2P",
+      "type": "NUM",
+      "description": "Nombre de ménages disposant de deux voitures ou plus",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_HABFOR",
+      "type": "logical",
+      "description": "Nombre de résidences principales habitations de fortune (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_CASE",
+      "type": "logical",
+      "description": "Nombre de résidences principales cases traditionnelles (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_MIBOIS",
+      "type": "logical",
+      "description": "Nombre de résidences principales maisons ou immeubles en bois (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "P21_RP_MIDUR",
+      "type": "logical",
+      "description": "Nombre de résidences principales maisons ou immeubles en dur (variable spécifique aux Départements d'outre-mer)",
+      "nullable": true
+    },
+    {
+      "name": "C21_RP_HSTU1P",
+      "type": "NUM",
+      "description": "Nombre de résidences principales hors studio de 1 personne",
+      "nullable": true
+    },
+    {
+      "name": "C21_RP_HSTU1P_SUROCC",
+      "type": "NUM",
+      "description": "Nombre de résidences principales hors studio de 1 personne en suroccupation",
+      "nullable": true
+    }
+  ]
+}

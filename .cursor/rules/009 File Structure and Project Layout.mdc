@@ -1,0 +1,72 @@
+---
+description: Best practices for organizing Python + Streamlit projects
+globs: **/*
+alwaysApply: true
+---
+
+## Context
+
+This file defines the standard folder and file structure for Python projects using Streamlit and PostgreSQL.  
+A clean structure improves readability, onboarding, and compatibility with AI agents.
+
+## Root Structure
+
+Your project should be organized as follows:
+
+```plaintext
+project-name/
+├── .venv/                  # Local virtual environment (not committed)
+├── .env                    # Environment variables (excluded from version control)
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+├── Catalogue.py            # Main entry point for Streamlit
+├── data/                   # Static data files, open data CSVs, etc.
+├── db/                     # SQL files or database helpers
+├── utils/                  # Python utility functions
+├── pages/                  # Additional Streamlit pages
+├── assets/                 # Images, logos, icons, or downloads
+└── scripts/                # Data import/export scripts
+```
+
+## Folder Roles
+
+- `data/` — Contains CSVs or Excel files used by the app. Never store processed files here.
+- `db/` — Contains `.sql` files or database logic helpers (e.g., `connection.py`).
+- `pages/` — Optional folder for Streamlit multipage apps.
+- `utils/` — Reusable Python functions (e.g., formatting, database helpers).
+- `scripts/` — One-off ETL scripts, data preprocessing, or update tasks.
+
+## File Naming Guidelines
+
+- Use `snake_case` for all file and folder names (e.g., `load_indicators.py`).
+- Avoid unclear names like `test.py` or `final_script.py`.
+- Use meaningful prefixes when relevant (e.g., `dashboard_main.py`, `dashboard_charts.py`).
+
+## Recommended Main Entry Point
+
+```python
+# Catalogue.py
+import streamlit as st
+
+st.set_page_config(page_title="Territorial Dashboard", layout="wide")
+st.title("Welcome to the Dashboard")
+```
+
+## Versioning and .gitignore
+
+Exclude the following from Git version control:
+
+```gitignore
+.venv/
+__pycache__/
+.env
+*.db
+.DS_Store
+```
+
+## Critical Notes
+
+- DO NOT put code inside `data/` or `assets/`
+- DO NOT commit `.venv` or `.env`
+- DO maintain naming consistency between scripts, pages, and functions
+- DO add a `README.md` and `requirements.txt` to the root of each project

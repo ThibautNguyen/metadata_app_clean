@@ -1,0 +1,93 @@
+---
+description: Logging and error handling standards for Python + Streamlit applications
+globs: "**/*.py"
+alwaysApply: true
+---
+
+## Context
+
+These rules apply to all Python scripts, especially those used in data workflows, dashboards, or backend logic.  
+They aim to ensure robust, transparent error tracking — both during development and in production deployments (e.g., Streamlit apps used by non-technical users).
+
+---
+
+## 1. Logging Rules
+
+- ✅ Use the built-in `logging` module instead of `print()` for non-debug information.
+- ✅ Configure logging at the start of your script or in a `utils/logging.py` module.
+- ✅ Include the logging level, timestamp, and module name in your format.
+
+```python
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(module)s: %(message)s",
+)
+```
+
+- ✅ Use different log levels appropriately:
+  - `logging.debug()`: internal debugging information
+  - `logging.info()`: general workflow updates (e.g., "File loaded", "Query executed")
+  - `logging.warning()`: something unexpected, but not an error
+  - `logging.error()`: actual errors, e.g., exception caught
+  - `logging.critical()`: severe failures (rare)
+
+---
+
+## 2. Streamlit-Specific Logging
+
+- Prefer `st.toast()`, `st.error()`, or `st.warning()` for **UI-visible feedback**.
+- Use `st.exception()` only for debugging or admin versions.
+- Keep `st.write()` for data display only — **do not log errors this way**.
+
+Example:
+```python
+try:
+    df = pd.read_csv("data.csv")
+    logging.info("Data loaded successfully.")
+except FileNotFoundError as e:
+    logging.error(f"Missing file: {e}")
+    st.error("Le fichier de données est introuvable. Veuillez vérifier le chemin.")
+```
+
+---
+
+## 3. Exception Handling
+
+- ✅ Use `try/except` blocks only around risky operations (e.g., I/O, database queries).
+- ✅ Always log the exception message (`str(e)`) or use `logging.exception()` for full trace.
+- ✅ Avoid overly broad `except:` clauses — prefer catching specific exceptions.
+- ✅ Provide fallback behavior or user feedback when appropriate.
+
+---
+
+## 4. Debugging Practices
+
+- For one-time debugging, you can use `print()` or `pprint()` — but **remove them before committing**.
+- Use `if __debug__:` blocks or conditional flags for development-only logs.
+- Use `assert` for internal checks — not for user-facing validation.
+
+---
+
+## 5. Output Clarity
+
+- ❌ Do NOT print raw traceback in production.
+- ✅ Format logs to be readable and searchable.
+- ✅ Translate technical errors into **actionable messages** for end-users when possible.
+
+---
+
+## 6. Production Tips
+
+- Store logs in a `logs/` folder with daily rotation (`logging.handlers.TimedRotatingFileHandler`).
+- Redact sensitive values (API keys, DB passwords) from all logs.
+- If deployed on Streamlit Community Cloud or Docker, use stdout logging only.
+
+---
+
+## Critical Notes
+
+- ALWAYS test exception handling before deploying new features.
+- NEVER let an error crash the app without displaying a user-friendly message.
+- CONSISTENT logging improves collaboration, debugging, and maintenance across your team.

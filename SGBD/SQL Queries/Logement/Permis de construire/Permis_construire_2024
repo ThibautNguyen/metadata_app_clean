@@ -1,0 +1,74 @@
+-- Exemple de Choisy-le-Roi et Vitry-sur-Seine
+
+SELECT 
+    COMM as "Code commune",
+    CASE 
+        WHEN COMM = '94022' THEN 'Choisy-le-Roi'
+        WHEN COMM = '94081' THEN 'Vitry-sur-Seine'
+    END as "Commune",
+    DATE_REELLE_AUTORISATION as "Date d'autorisation",
+    DATE_REELLE_DOC as "Date d'ouverture du chantier",
+    DATE_REELLE_DAACT as "Date d'achèvement",
+    CASE NATURE_PROJET_DECLAREE
+        WHEN '1' THEN 'Nouvelle construction'
+        WHEN '2' THEN 'Travaux sur construction existante'
+    END as "Nature du projet",
+    CASE NATURE_PROJET_COMPLETEE
+        WHEN '1' THEN 'Nouvelle construction'
+        WHEN '2' THEN 'Transformation sans modification de surface'
+        WHEN '3' THEN 'Transformation avec extension'
+        WHEN '4' THEN 'Transformation avec diminution'
+        WHEN '5' THEN 'Extension sans transformation'
+        WHEN '6' THEN 'Diminution sans transformation'
+    END as "Nature détaillée",
+    CASE CAT_DEM
+        WHEN '10' THEN 'Particuliers sans autre indication'
+        WHEN '11' THEN 'Particuliers purs'
+        WHEN '12' THEN 'SCI de particuliers'
+        WHEN '20' THEN 'Bailleurs sociaux SAI'
+        WHEN '21' THEN 'Organismes HLM'
+        WHEN '22' THEN 'EPL (ex SEM)'
+        WHEN '23' THEN 'Autres organismes'
+        WHEN '30' THEN 'Promoteurs'
+        WHEN '31' THEN 'Promoteurs reconnus'
+        WHEN '32' THEN 'SCI ou autres supports de programmes'
+        WHEN '33' THEN 'Autres professionnels'
+        WHEN '40' THEN 'Administrations publiques'
+        WHEN '50' THEN 'Autres sociétés'
+    END as "Catégorie du demandeur",
+    ADR_NUM_TER || ' ' || ADR_TYPEVOIE_TER || ' ' || ADR_LIBVOIE_TER as "Adresse",
+    SUPERFICIE_TERRAIN as "Superficie du terrain (m²)",
+    NB_NIV_MAX as "Nombre de niveaux",
+    NB_LGT_TOT_CREES as "Nombre total de logements créés",
+    NB_LGT_IND_CREES as "Nombre de logements individuels",
+    NB_LGT_COL_CREES as "Nombre de logements collectifs",
+    NB_LGT_INDIV_PURS as "Nombre de logements individuels purs",
+    NB_LGT_INDIV_GROUPES as "Nombre de logements individuels groupés",
+    NB_LGT_RES as "Nombre de logements en résidence",
+    NB_LGT_DEMOLIS as "Nombre de logements démolis",
+    NB_LGT_1P as "Nombre de T1",
+    NB_LGT_2P as "Nombre de T2",
+    NB_LGT_3P as "Nombre de T3",
+    NB_LGT_4P as "Nombre de T4",
+    NB_LGT_5P as "Nombre de T5",
+    NB_LGT_6P_PLUS as "Nombre de T6+",
+    NB_LGT_PRET_LOC_SOCIAL as "Nombre de logements locatifs sociaux",
+    SURF_HAB_AVANT as "Surface habitable avant travaux",
+    SURF_HAB_CREEE as "Surface habitable créée",
+    SURF_HAB_DEMOLIE as "Surface habitable démolie",
+    CASE 
+        WHEN I_PISCINE = 'true' THEN 'Oui'
+        ELSE 'Non'
+    END as "Piscine",
+    CASE 
+        WHEN I_GARAGE = 'true' THEN 'Oui'
+        ELSE 'Non'
+    END as "Garage",
+    CASE REC_ARCHI 
+        WHEN 'true' THEN 'Oui'
+        WHEN 'false' THEN 'Non'
+    END as "Recours à un architecte"
+FROM Logements_2024
+WHERE COMM IN ('94022', '94081')
+AND DATE_REELLE_DOC IS NOT NULL  -- Projets démarrés
+ORDER BY DATE_REELLE_DOC DESC;

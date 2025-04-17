@@ -1,0 +1,25 @@
+## Source :
+Données anonymisées par Marie Tyl 
+
+
+## Nom du tableau SQL :
+2025-03
+
+## 4 premières lignes du fichier CSV :
+date;domain;domaine de l'utilisateur;session;key;value;group
+21/03/2025 17:02;city.spallian.com;alsei.com;bb6d5b5d-ba29-441e-99f2-af64d7c79003;dashboard_load;statco/logement/analyse/parc/com;low
+21/03/2025 17:02;city.spallian.com;alsei.com;bb6d5b5d-ba29-441e-99f2-af64d7c79003;dashboard_load;statco/logement/analyse/occupation/com;low
+21/03/2025 17:02;city.spallian.com;alsei.com;bb6d5b5d-ba29-441e-99f2-af64d7c79003;dashboard_load;statco/logement/analyse/social/com;low
+
+
+
+## Dictionnaire des variables
+
+Libellé_Colonne;Description;Format;Type
+date;date et heure;DD/MM/YYY HH:MM:SS;DATETIME
+domain;URL de connexion;URL web;TEXT
+domaine de l'utilisateur;domaine de l'e-mail de connexion;URL web; TEXT
+session;identifiant unique;UUID version 4;UUID  
+key;type d'action;"auth" pour connexion et "dashboard_load" pour accès à une page;TEXT
+value;informations sur la page ouverte;positionnement de la page dans l'arborescence de l'outil;TEXT
+group;Priorité d'accès; Privilège administrateur; TEXT

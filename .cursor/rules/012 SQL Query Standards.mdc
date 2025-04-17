@@ -1,0 +1,112 @@
+---
+description: Best practices for writing clean and efficient SQL queries in PostgreSQL
+globs: "*.sql"
+alwaysApply: true
+---
+
+## Context
+These standards apply to all `.sql` files used for querying, creating views, or writing analysis logic in PostgreSQL.  
+They aim to improve readability, reusability, and prevent performance or logic bugs — especially important in data-driven applications for public sector clients.
+
+---
+
+## 1. General Rules
+
+- ✅ Use **lower_snake_case** for table and column names.
+- ✅ Always **quote** table and column names using double quotes in PostgreSQL: `"commune_stats"`, `"population_total"`.
+- ✅ Write **capitalized SQL keywords**: `SELECT`, `FROM`, `WHERE`, `GROUP BY`, etc.
+- ✅ End all statements with `;`.
+- ✅ Keep lines under 120 characters when possible.
+
+---
+
+## 2. Formatting & Style
+
+- Indent nested queries or sub-selects clearly.
+- Align SQL clauses vertically for readability.
+- Write multi-line SELECT clauses with one field per line.
+
+Example:
+```sql
+SELECT
+  "commune_code",
+  "year",
+  "population_total",
+  "median_income"
+FROM "commune_stats"
+WHERE "year" = 2021
+ORDER BY "median_income" DESC;
+```
+
+---
+
+## 3. Filters and Conditions
+
+- Prefer `=` over `IN (...)` when matching one value.
+- Use `IS NOT NULL` and avoid logic like `!= ''` on text fields.
+- Prefer `ILIKE` for case-insensitive searches.
+
+---
+
+## 4. Joins
+
+- Always specify the join type: `INNER JOIN`, `LEFT JOIN`, etc.
+- Use aliases consistently, and prefix columns with their alias for clarity.
+
+Example:
+```sql
+SELECT
+  c."commune_name",
+  p."population_total"
+FROM "communes" c
+LEFT JOIN "population_2021" p ON c."commune_code" = p."commune_code";
+```
+
+---
+
+## 5. Aggregations
+
+- Always include a `GROUP BY` clause when using aggregation functions (`SUM`, `AVG`, etc.).
+- Avoid `SELECT *` in grouped queries.
+- Alias your aggregated columns with descriptive names.
+
+Example:
+```sql
+SELECT
+  "commune_code",
+  AVG("population_total") AS "avg_population"
+FROM "population_yearly"
+GROUP BY "commune_code";
+```
+
+---
+
+## 6. Performance & Optimization
+
+- Add filters with `WHERE` clauses before `GROUP BY` or `ORDER BY`.
+- Use `LIMIT` when previewing results in large datasets.
+- Avoid subqueries in `SELECT` when a `JOIN` is more efficient.
+
+---
+
+## 7. Comments
+
+- Use `--` for inline comments.
+- Comment any complex logic or temporary filter (e.g., for debugging).
+- Prefer documenting purpose over repeating what the code already says.
+
+---
+
+## 8. Safety in Production
+
+- NEVER run `DELETE` or `UPDATE` without a `WHERE` clause.
+- DO NOT use `DROP TABLE` without versioning or backup.
+
+---
+
+## Critical Notes
+
+- ALWAYS test your SQL queries in DBeaver or psql before integrating them in code.
+- AVOID writing business logic in SQL unless necessary — use Python for post-processing if needed.
+- MAINTAIN query templates for reuse across projects when analyzing INSEE or open data sources.
+

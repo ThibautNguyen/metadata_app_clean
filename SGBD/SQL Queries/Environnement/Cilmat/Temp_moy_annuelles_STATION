@@ -1,0 +1,26 @@
+-- Températures moyennes annuelles
+-- Station : 51266001
+
+WITH moyennes_mensuelles AS (
+    SELECT 
+        substr(AAAAMM, 1, 4) as ANNEE,
+        substr(AAAAMM, 5, 2) as MOIS,
+        ROUND(AVG(CASE 
+            WHEN TX IS NOT NULL AND TN IS NOT NULL 
+            AND TX != 0 AND TN != 0  -- Exclusion des valeurs 0
+            AND NBTX >= 15 AND NBTN >= 15  -- Au moins 15 jours de mesure
+            THEN (TX + TN)/2.0 
+        END), 1) as TEMP_MOYENNE_MOIS
+    FROM Climato_51
+    WHERE NUM_POSTE = '51266001'  -- Nouvelle station météo
+    GROUP BY substr(AAAAMM, 1, 4), substr(AAAAMM, 5, 2)
+)
+SELECT 
+    ANNEE,
+    ROUND(AVG(TEMP_MOYENNE_MOIS), 2) as TEMP_MOY_ANNUELLE,
+    COUNT(TEMP_MOYENNE_MOIS) as MOIS_UTILISES
+FROM moyennes_mensuelles
+WHERE TEMP_MOYENNE_MOIS IS NOT NULL
+GROUP BY ANNEE
+HAVING COUNT(TEMP_MOYENNE_MOIS) >= 8  -- Au moins 8 mois de données valides
+ORDER BY ANNEE;

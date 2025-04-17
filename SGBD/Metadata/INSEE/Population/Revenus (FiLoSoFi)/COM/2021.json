@@ -1,0 +1,4399 @@
+{
+  "table_info": {
+    "schema": "insee",
+    "name": "FiLo_revenus_disp_COM_2021",
+    "description": "https://www.insee.fr/fr/statistiques/7756855 FiLo_revenus_disp_COM_2021 C:\\Users\\thiba\\OneDrive\\Documents\\Données\\Population\\FiLoSoFi\\2021\\COM et +",
+    "date_creation": "",
+    "source": "",
+    "frequence_maj": "",
+    "contact": ""
+  },
+  "columns": [
+    {
+      "name": "NBMEN21",
+      "type": "CHAR",
+      "description": "Nbre de ménages fiscaux",
+      "nullable": true
+    },
+    {
+      "name": "NBPERS21",
+      "type": "CHAR",
+      "description": "Nbre de personnes dans les ménages fiscaux",
+      "nullable": true
+    },
+    {
+      "name": "NBUC21",
+      "type": "CHAR",
+      "description": "Nombre d'unités de consommation dans les ménages fiscaux",
+      "nullable": true
+    },
+    {
+      "name": "Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€)",
+      "nullable": true
+    },
+    {
+      "name": "Q221",
+      "type": "CHAR",
+      "description": "Médiane (€)",
+      "nullable": true
+    },
+    {
+      "name": "Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€)",
+      "nullable": true
+    },
+    {
+      "name": "Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D121",
+      "type": "CHAR",
+      "description": "1er décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D221",
+      "type": "CHAR",
+      "description": "2e décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D321",
+      "type": "CHAR",
+      "description": "3e décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D421",
+      "type": "CHAR",
+      "description": "4e décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D621",
+      "type": "CHAR",
+      "description": "6e décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D721",
+      "type": "CHAR",
+      "description": "7e décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D821",
+      "type": "CHAR",
+      "description": "8e décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "D921",
+      "type": "CHAR",
+      "description": "9e décile (€)",
+      "nullable": true
+    },
+    {
+      "name": "RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile",
+      "nullable": true
+    },
+    {
+      "name": "S80S2021",
+      "type": "CHAR",
+      "description": "S80/20",
+      "nullable": true
+    },
+    {
+      "name": "GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini",
+      "nullable": true
+    },
+    {
+      "name": "PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%)",
+      "nullable": true
+    },
+    {
+      "name": "PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%)",
+      "nullable": true
+    },
+    {
+      "name": "PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%)",
+      "nullable": true
+    },
+    {
+      "name": "PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%)",
+      "nullable": true
+    },
+    {
+      "name": "PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%)",
+      "nullable": true
+    },
+    {
+      "name": "PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%)",
+      "nullable": true
+    },
+    {
+      "name": "PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%)",
+      "nullable": true
+    },
+    {
+      "name": "PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%)",
+      "nullable": true
+    },
+    {
+      "name": "PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%)",
+      "nullable": true
+    },
+    {
+      "name": "PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%)",
+      "nullable": true
+    },
+    {
+      "name": "PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%)",
+      "nullable": true
+    },
+    {
+      "name": "AGE1Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE1PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages dont le référent fiscal a moins de 30 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE2PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages dont le référent fiscal a de 30 à 39 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE3PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages dont le référent fiscal a de 40 à 49 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE4PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages dont le référent fiscal a de 50 à 59 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE5PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages dont le référent fiscal a de 60 à 74 ans",
+      "nullable": true
+    },
+    {
+      "name": "AGE6Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "AGE6PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages dont le référent fiscal a 75 ans ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME1Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME1PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages d'une personne",
+      "nullable": true
+    },
+    {
+      "name": "TME2Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME2PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages de deux personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME3PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages de trois personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME4PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages de quatre personnes",
+      "nullable": true
+    },
+    {
+      "name": "TME5Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TME5PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages de cinq personnes ou plus",
+      "nullable": true
+    },
+    {
+      "name": "TOL1Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL1PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages propriétaires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TOL2PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages locataires",
+      "nullable": true
+    },
+    {
+      "name": "TLD2Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD2PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages locataires du parc social",
+      "nullable": true
+    },
+    {
+      "name": "TLD3Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TLD3PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages locataires du parc privé",
+      "nullable": true
+    },
+    {
+      "name": "TYM1Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM1PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Hommes seuls",
+      "nullable": true
+    },
+    {
+      "name": "TYM2Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM2PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Femmes seules",
+      "nullable": true
+    },
+    {
+      "name": "TYM3Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM3PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Couples sans enfant",
+      "nullable": true
+    },
+    {
+      "name": "TYM4Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM4PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Couples avec enfant(s)",
+      "nullable": true
+    },
+    {
+      "name": "TYM5Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM5PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Familles monoparentales",
+      "nullable": true
+    },
+    {
+      "name": "TYM6Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "TYM6PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages complexes",
+      "nullable": true
+    },
+    {
+      "name": "OPR1Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR1PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des salaires et traitements",
+      "nullable": true
+    },
+    {
+      "name": "OPR2Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR2PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des indemnités de chômage",
+      "nullable": true
+    },
+    {
+      "name": "OPR3Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR3PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des revenus des activités non salariées",
+      "nullable": true
+    },
+    {
+      "name": "OPR4Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR4PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des pensions, retraites et rentes",
+      "nullable": true
+    },
+    {
+      "name": "OPR5Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR5PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages ayant pour source principale de revenus déclarés des revenus du patrimoine",
+      "nullable": true
+    },
+    {
+      "name": "OPR6Q121",
+      "type": "CHAR",
+      "description": "1er quartile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6Q221",
+      "type": "CHAR",
+      "description": "Médiane (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6Q321",
+      "type": "CHAR",
+      "description": "3e quartile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6Q3_Q1",
+      "type": "CHAR",
+      "description": "Écart interquartile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D121",
+      "type": "CHAR",
+      "description": "1er décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D221",
+      "type": "CHAR",
+      "description": "2e décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D321",
+      "type": "CHAR",
+      "description": "3e décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D421",
+      "type": "CHAR",
+      "description": "4e décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D621",
+      "type": "CHAR",
+      "description": "6e décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D721",
+      "type": "CHAR",
+      "description": "7e décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D821",
+      "type": "CHAR",
+      "description": "8e décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6D921",
+      "type": "CHAR",
+      "description": "9e décile (€) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6RD",
+      "type": "CHAR",
+      "description": "Rapport interdécile 9e décile/1er decile - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6S80S2021",
+      "type": "CHAR",
+      "description": "S80/20 - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6GI21",
+      "type": "CHAR",
+      "description": "Indice de Gini - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PACT21",
+      "type": "CHAR",
+      "description": "Part des revenus d’activité (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PTSA21",
+      "type": "CHAR",
+      "description": "dont part des salaires et traitements(%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PCHO21",
+      "type": "CHAR",
+      "description": "dont part des indemnités de chômage (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PBEN21",
+      "type": "CHAR",
+      "description": "dont part des revenus des activités non salariées (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PPEN21",
+      "type": "CHAR",
+      "description": "Part des pensions, retraites et rentes (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PPAT21",
+      "type": "CHAR",
+      "description": "Part des revenus du patrimoine et autres revenus (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PPSOC21",
+      "type": "CHAR",
+      "description": "Part de l'ensemble des prestations sociales (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PPFAM21",
+      "type": "CHAR",
+      "description": "dont part des prestations familiales (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PPMINI21",
+      "type": "CHAR",
+      "description": "dont part des minima sociaux (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PPLOGT21",
+      "type": "CHAR",
+      "description": "dont part des prestations logement (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    },
+    {
+      "name": "OPR6PIMPOT21",
+      "type": "CHAR",
+      "description": "Part des impôts (%) - Ménages dont le revenu déclaré est négatif ou nul",
+      "nullable": true
+    }
+  ]
+}

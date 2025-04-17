@@ -1,0 +1,87 @@
+-- Indicateurs de 5 territoires - IRIS et COM :
+
+--- Nombre de logements
+--- Nombre de résidences principales
+--- Part des logements collectifs
+--- Part de propriétaires
+--- Part des locataires privés
+--- Part des locataires HLM
+
+
+WITH territoires AS (
+  SELECT
+    'Tours nord' as territoire,
+    SUM(P21_LOG) as total_logements,
+    SUM(P21_RP) as total_residences_principales,
+    ROUND(CAST(SUM(P21_RPAPPART) AS FLOAT) / SUM(P21_RP) * 100, 2) as part_logements_collectifs,
+    SUM(P21_RP_PROP) as proprietaires,
+    SUM(P21_RP_LOC) - SUM(P21_RP_LOCHLMV) as locataires_prive,
+    SUM(P21_RP_LOCHLMV) as locataires_social
+  FROM LOG_IRIS_2021
+  WHERE IRIS IN ('372611801', '372611802', '372611803', '372611701', '372611702',
+    '372611703', '372611704', '372611705', '372611706', '372611401', '372611402',
+    '372611403', '372611404', '372611405', '372611503', '372611504', '372611601')
+
+  UNION ALL
+
+  SELECT
+    'Saint-Cyr-sur-Loire' as territoire,
+    SUM(P21_LOG) as total_logements,
+    SUM(P21_RP) as total_residences_principales,
+    ROUND(CAST(SUM(P21_RPAPPART) AS FLOAT) / SUM(P21_RP) * 100, 2) as part_logements_collectifs,
+    SUM(P21_RP_PROP) as proprietaires,
+    SUM(P21_RP_LOC) - SUM(P21_RP_LOCHLMV) as locataires_prive,
+    SUM(P21_RP_LOCHLMV) as locataires_social
+  FROM LOG_IRIS_2021
+  WHERE IRIS IN ('372140101', '372140102', '372140103', '372140104', '372140105', '372140106')
+
+  UNION ALL
+
+  SELECT
+    'Ballan-Miré' as territoire,
+    SUM(P21_LOG) as total_logements,
+    SUM(P21_RP) as total_residences_principales,
+    ROUND(CAST(SUM(P21_RPAPPART) AS FLOAT) / SUM(P21_RP) * 100, 2) as part_logements_collectifs,
+    SUM(P21_RP_PROP) as proprietaires,
+    SUM(P21_RP_LOC) - SUM(P21_RP_LOCHLMV) as locataires_prive,
+    SUM(P21_RP_LOCHLMV) as locataires_social
+  FROM LOG_IRIS_2021
+  WHERE IRIS IN ('370180101', '370180102', '370180103')
+
+  UNION ALL
+
+  SELECT
+    'Mettray' as territoire,
+    SUM(P21_LOG) as total_logements,
+    SUM(P21_RP) as total_residences_principales,
+    ROUND(CAST(SUM(P21_RPAPPART) AS FLOAT) / SUM(P21_RP) * 100, 2) as part_logements_collectifs,
+    SUM(P21_RP_PROP) as proprietaires,
+    SUM(P21_RP_LOC) - SUM(P21_RP_LOCHLMV) as locataires_prive,
+    SUM(P21_RP_LOCHLMV) as locataires_social
+  FROM LOG_IRIS_2021
+  WHERE IRIS = '371520000'
+
+  UNION ALL
+
+  SELECT
+    'Luynes' as territoire,
+    SUM(P21_LOG) as total_logements,
+    SUM(P21_RP) as total_residences_principales,
+    ROUND(CAST(SUM(P21_RPAPPART) AS FLOAT) / SUM(P21_RP) * 100, 2) as part_logements_collectifs,
+    SUM(P21_RP_PROP) as proprietaires,
+    SUM(P21_RP_LOC) - SUM(P21_RP_LOCHLMV) as locataires_prive,
+    SUM(P21_RP_LOCHLMV) as locataires_social
+  FROM LOG_IRIS_2021
+  WHERE IRIS = '371390000'
+)
+
+SELECT
+  territoire,
+  total_logements as "Nombre de logements",
+  total_residences_principales as "Nombre de résidences principales",
+  part_logements_collectifs as "Part des logements collectifs (%)",
+  ROUND(CAST(proprietaires AS FLOAT) / total_residences_principales * 100, 2) as "Part des propriétaires (%)",
+  ROUND(CAST(locataires_prive AS FLOAT) / total_residences_principales * 100, 2) as "Part des locataires privés (%)",
+  ROUND(CAST(locataires_social AS FLOAT) / total_residences_principales * 100, 2) as "Part des locataires HLM (%)"
+FROM territoires
+ORDER BY territoire;
