@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 import sys
 from pathlib import Path
@@ -93,61 +93,121 @@ st.markdown("""
 st.title("Saisie des métadonnées")
 st.write("Remplissez le formulaire ci-dessous pour ajouter de nouvelles métadonnées.")
 
-# Section Informations de base
-st.subheader("Informations de base")
+# --- NOUVELLE ORGANISATION DU FORMULAIRE AVEC LOGIQUE DYNAMIQUE ---
 
-# Organisation en colonnes
+# Simulations de récupération dynamique depuis la base (à remplacer par des requêtes réelles)
+def get_producteurs_by_type(type_donnees: str) -> list[str]:
+    # À remplacer par une requête SQL sur la table metadata
+    mapping = {
+        "donnée ouverte": ["INSEE", "Ministère du Logement"],
+        "donnée client": [],
+        "donnée restreinte": [],
+        "donnée payante": [],
+        "autre": []
+    }
+    return mapping.get(type_donnees, [])
+
+def get_jeux_donnees_by_type_and_producteur(type_donnees: str, producteur: str) -> list[str]:
+    # À remplacer par une requête SQL sur la table metadata
+    if type_donnees == "donnée ouverte" and producteur == "INSEE":
+        return ["Population", "Logements"]
+    elif type_donnees == "donnée ouverte" and producteur == "Ministère du Logement":
+        return ["Permis de construire"]
+    else:
+        return []
+
+# --- Affichage du formulaire restructuré ---
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    schema = st.selectbox("Schéma thématique*", 
-        ["economie", "education", "energie", "environnement", 
-         "geo", "logement", "mobilite", "population", "securite"],
-         help="Schéma du SGBD dans lequel la table est importée")
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    nom_table = st.text_input("Nom de la table*", help="Nom de la table dans la base de données")
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    millesime = st.number_input("Millésime/année*", 
-        min_value=1900, 
-        max_value=datetime.now().year, 
-        value=datetime.now().year,
-        help="Année de référence des données")
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    granularite_geo = st.selectbox("Granularité géographique*", 
-        ["", "commune", "IRIS", "carreau", "adresse", "EPCI", "département", "région", "autre"],
-        index=1,  # Index 1 correspond à "commune"
-        help="Niveau géographique le plus fin des données")
+    # Type de données
+    types_donnees = ["donnée ouverte", "donnée client", "donnée restreinte", "donnée payante", "autre"]
+    type_sel = st.selectbox("Type de données*", types_donnees)
+    if type_sel == "autre":
+        type_donnees = st.text_input("Préciser le type de données*")
+    else:
+        type_donnees = type_sel
 
 with col2:
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    nom_base = st.selectbox("Nom de la base de données*", 
-        ["opendata"], 
-        help="Nom de la base de données dans le SGBD")
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    producteur = st.text_input("Producteur de la donnée*", help="Organisme producteur de la donnée")
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    st.markdown('<div class="required">', unsafe_allow_html=True)
-    date_maj = st.date_input("Dernière mise à jour*", 
-        datetime.now().date(),
-        format="DD/MM/YYYY",
-        help="Date de la dernière mise à jour des données")
-    st.markdown('</div>', unsafe_allow_html=True)
+    # Producteur de la donnée
+    producteurs_dyn = get_producteurs_by_type(type_donnees)
+    producteurs_options = producteurs_dyn + ["Autre"] if producteurs_dyn else ["Autre"]
+    producteur_sel = st.selectbox("Producteur de la donnée*", producteurs_options)
+    if producteur_sel == "Autre":
+        producteur = st.text_input("Saisir un nouveau producteur*")
+    else:
+        producteur = producteur_sel
 
-# Section Description (pleine largeur)
+col3, col4 = st.columns(2)
+with col3:
+    # Nom du jeu de données
+    jeux_dyn = get_jeux_donnees_by_type_and_producteur(type_donnees, producteur)
+    jeux_options = jeux_dyn + ["Autre"] if jeux_dyn else ["Autre"]
+    jeu_sel = st.selectbox("Nom du jeu de données*", jeux_options)
+    if jeu_sel == "Autre":
+        nom_jeu_donnees = st.text_input("Saisir un nouveau nom de jeu de données*")
+    else:
+        nom_jeu_donnees = jeu_sel
+
+with col4:
+    granularite_geo = st.selectbox("Granularité géographique*", [
+        "", "commune", "IRIS", "carreau", "adresse", "EPCI", "département", "région", "autre"
+    ], index=1, help="Niveau géographique le plus fin des données")
+
+col5, col6 = st.columns(2)
+with col5:
+    date_publication = st.date_input("Date de publication*", value=datetime.now().date(), format="DD/MM/YYYY")
+with col6:
+    millesime = st.number_input("Millésime/année*", min_value=1900, max_value=datetime.now().year, value=datetime.now().year, help="Année de référence des données")
+
+col7, col8 = st.columns(2)
+with col7:
+    frequence_maj = st.selectbox("Fréquence de mise à jour des données*", [
+        "", "Annuelle", "Semestrielle", "Trimestrielle", "Mensuelle", "Quotidienne", "Ponctuelle"
+    ], help="Fréquence à laquelle les données sont mises à jour")
+    def calculer_prochaine_publication(date_pub, freq):
+        if not date_pub or not freq:
+            return None
+        if freq == "Annuelle":
+            return date_pub + timedelta(days=365)
+        elif freq == "Semestrielle":
+            return date_pub + timedelta(days=182)
+        elif freq == "Trimestrielle":
+            return date_pub + timedelta(days=91)
+        elif freq == "Mensuelle":
+            return date_pub + timedelta(days=30)
+        elif freq == "Quotidienne":
+            return date_pub + timedelta(days=1)
+        else:
+            return None
+    date_prochaine_publication_auto = calculer_prochaine_publication(date_publication, frequence_maj)
+with col8:
+    date_prochaine_publication = st.date_input(
+        "Date estimative de la prochaine publication*",
+        value=date_prochaine_publication_auto if date_prochaine_publication_auto else datetime.now().date(),
+        format="DD/MM/YYYY",
+        help="Cette date est calculée automatiquement selon la fréquence, mais peut être modifiée."
+    )
+
+# Description (pleine largeur)
 st.markdown('<div class="required">', unsafe_allow_html=True)
-description = st.text_area("Description*", 
-    height=150,
-    help="Description détaillée des données, leur collecte, leur utilité, etc.")
+description = st.text_area("Description*", height=150, help="Description détaillée des données, leur collecte, leur utilité, etc.", key="description")
 st.markdown('</div>', unsafe_allow_html=True)
+
+# --- Informations d'import ---
+col9, col10 = st.columns(2)
+with col9:
+    nom_base = st.selectbox("Nom de la base de données*", ["opendata"], help="Nom de la base de données dans le SGBD")
+with col10:
+    schema = st.selectbox("Schéma thématique*", [
+        "economie", "education", "energie", "environnement", 
+        "geo", "logement", "mobilite", "population", "securite"
+    ], help="Schéma du SGBD dans lequel la table est importée")
+
+# Nom de la table (moitié de ligne)
+col11, _ = st.columns([1,1])
+with col11:
+    nom_table = st.text_input("Nom de la table*", help="Nom de la table dans la base de données")
 
 # Note sur les champs obligatoires
 st.markdown('<p style="color: #666;">Les champs marqués d\'un * sont obligatoires.</p>', unsafe_allow_html=True)
@@ -167,20 +227,16 @@ with col1:
         help="Licence sous laquelle les données sont publiées")
 
 with col2:
-    frequence_maj = st.selectbox("Fréquence de mises à jour des données",
-        ["", "Annuelle", "Semestrielle", "Trimestrielle", "Mensuelle", "Quotidienne", "Ponctuelle"],
-        help="Fréquence à laquelle les données sont mises à jour")
-        
     envoi_par = st.text_input("Personne remplissant le formulaire", help="Nom de la personne remplissant ce formulaire")
 
 # Sections dépliables
-with st.expander("Contenu CSV", expanded=False):
+with st.expander("Extrait CSV", expanded=False):
     separateur = st.radio("Séparateur", [";", ","], horizontal=True)
-    contenu_csv = st.text_area("Coller ici les 4 premières lignes du fichier CSV", height=150)
+    contenu_csv = st.text_area("Coller ici les 4 premières lignes du fichier CSV", height=150, key="extrait_csv")
 
 with st.expander("Dictionnaire des variables", expanded=False):
     dict_separateur = st.radio("Séparateur du dictionnaire", [";", ","], horizontal=True)
-    dictionnaire = st.text_area("Coller ici le dictionnaire des variables depuis le fichier CSV", height=150)
+    dictionnaire = st.text_area("Coller ici le dictionnaire des variables depuis le fichier CSV", height=150, key="dictionnaire")
 
 # Bouton de sauvegarde
 submitted = st.button("Sauvegarder les métadonnées")
@@ -191,9 +247,13 @@ if submitted:
         st.error("Veuillez saisir un nom de table")
     else:
         try:
-            # Préparation du dictionnaire de métadonnées
+            # Préparation du dictionnaire de métadonnées avec les nouveaux champs à la racine
             metadata = {
-                "contenu_csv": {}, 
+                "type_donnees": type_donnees,
+                "nom_jeu_donnees": nom_jeu_donnees,
+                "date_publication": date_publication.strftime("%Y-%m-%d") if date_publication else None,
+                "date_prochaine_publication": date_prochaine_publication.strftime("%Y-%m-%d") if date_prochaine_publication else None,
+                "contenu_csv": {},
                 "dictionnaire": {},
                 "nom_fichier": nom_base,  # correspond à nom_base dans la BD
                 "nom_table": nom_table,
@@ -334,7 +394,7 @@ if submitted:
             st.error("Veuillez vérifier les logs pour plus de détails.")
 
 # Section d'aide
-with st.expander("Aide pour la saisie"):
+with st.expander("Aide pour la saisie ❓"):
     st.markdown("""
     ### Champs obligatoires
     Les champs marqués d'un astérisque (*) sont obligatoires.

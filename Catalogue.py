@@ -7,6 +7,7 @@ import io
 import csv
 import unicodedata
 import logging
+import psycopg2.extras
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent))
@@ -240,21 +241,34 @@ if not metadata_results:
 else:
     # Création du DataFrame avec les colonnes principales
     if metadata_results:
-        # Création d'une liste de dictionnaires pour le DataFrame
-        data_list = []
-        for meta in metadata_results:
-            data_dict = {
-                'Nom de la table': meta[17] if meta[17] else '',
-                'Producteur de la donnée': meta[2] if meta[2] else '',
-                'Schéma du SGBD': meta[3] if meta[3] else '',
-                'Granularité géographique': meta[18] if meta[18] else '',
-                'Millésime/année': meta[5].strftime('%Y') if meta[5] else '',
-                'Dernière mise à jour': meta[6].strftime('%d-%m-%Y') if meta[6] else ''
-            }
-            data_list.append(data_dict)
-        
-        # Création du DataFrame
-        df = pd.DataFrame(data_list)
+        # Si les résultats sont des tuples, transformer en dicts
+        if isinstance(metadata_results[0], dict):
+            data_list = []
+            for meta in metadata_results:
+                data_dict = {
+                    'Nom de la table': meta.get('nom_table', ''),
+                    'Producteur de la donnée': meta.get('producteur', ''),
+                    'Schéma du SGBD': meta.get('schema', ''),
+                    'Granularité géographique': meta.get('granularite_geo', ''),
+                    'Millésime/année': meta.get('millesime', '').strftime('%Y') if meta.get('millesime') else '',
+                    'Dernière mise à jour': meta.get('date_maj', '').strftime('%d-%m-%Y') if meta.get('date_maj') else ''
+                }
+                data_list.append(data_dict)
+            df = pd.DataFrame(data_list)
+        else:
+            # fallback: ancienne logique (index)
+            data_list = []
+            for meta in metadata_results:
+                data_dict = {
+                    'Nom de la table': meta[17] if len(meta) > 17 and meta[17] else '',
+                    'Producteur de la donnée': meta[2] if len(meta) > 2 and meta[2] else '',
+                    'Schéma du SGBD': meta[3] if len(meta) > 3 and meta[3] else '',
+                    'Granularité géographique': meta[18] if len(meta) > 18 and meta[18] else '',
+                    'Millésime/année': meta[5].strftime('%Y') if len(meta) > 5 and meta[5] else '',
+                    'Dernière mise à jour': meta[6].strftime('%d-%m-%Y') if len(meta) > 6 and meta[6] else ''
+                }
+                data_list.append(data_dict)
+            df = pd.DataFrame(data_list)
         
         # Affichage du nombre de résultats
         st.write(f"**{len(metadata_results)} résultat(s) trouvé(s)**")
@@ -290,53 +304,53 @@ else:
 
         # Affichage détaillé des métadonnées
         for i, meta in enumerate(metadata_results):
-            with st.expander(f"📄 {meta[17] if meta[17] else 'Métadonnée ' + str(i+1)}", expanded=False):
+            with st.expander(f"📄 {meta['nom_table'] if meta['nom_table'] else 'Métadonnée ' + str(i+1)}", expanded=False):
                 st.markdown('<div class="metadata-result">', unsafe_allow_html=True)
                 col1, col2 = st.columns(2)
                 
                 with col1:
                     st.markdown("**Informations de base**")
-                    st.write(f"**Producteur :** {meta[2] if meta[2] else 'Non spécifié'}")
-                    st.write(f"**Schéma :** {meta[3] if meta[3] else 'Non spécifié'}")
-                    st.write(f"**Millésime :** {meta[5].strftime('%Y') if meta[5] else 'Non spécifié'}")
-                    st.write(f"**Dernière mise à jour :** {meta[6].strftime('%d-%m-%Y') if meta[6] else 'Non spécifié'}")
-                    st.write(f"**Fréquence de mise à jour :** {meta[8] if meta[8] else 'Non spécifié'}")
-                    st.write(f"**Licence :** {meta[9] if meta[9] else 'Non spécifié'}")
+                    st.write(f"**Producteur :** {meta['producteur'] if meta['producteur'] else 'Non spécifié'}")
+                    st.write(f"**Schéma :** {meta['schema'] if meta['schema'] else 'Non spécifié'}")
+                    st.write(f"**Millésime :** {meta['millesime'].strftime('%Y') if meta['millesime'] else 'Non spécifié'}")
+                    st.write(f"**Dernière mise à jour :** {meta['date_maj'].strftime('%d-%m-%Y') if meta['date_maj'] else 'Non spécifié'}")
+                    st.write(f"**Fréquence de mise à jour :** {meta['frequence_maj'] if meta['frequence_maj'] else 'Non spécifié'}")
+                    st.write(f"**Licence :** {meta['licence'] if meta['licence'] else 'Non spécifié'}")
                     
                 with col2:
                     st.markdown("**Description**")
-                    st.write(meta[4] if meta[4] else "Aucune description disponible")
+                    st.write(meta['description'] if meta['description'] else "Aucune description disponible")
                     
-                    if meta[7]:  # URL source
+                    if meta['source']:  # URL source
                         st.markdown("**Source des données**")
-                        st.write(f"[Lien vers les données]({meta[7]})")
+                        st.write(f"[Lien vers les données]({meta['source']})")
                 
                 # Affichage des données et du dictionnaire des variables dans des onglets
-                if meta[15] and meta[16]:  # Vérification de l'existence des données et du dictionnaire
+                if meta['contenu_csv'] and meta['dictionnaire']:  # Vérification de l'existence des données et du dictionnaire
                     tab1, tab2 = st.tabs(["Aperçu des données", "Dictionnaire des variables"])
                     
                     with tab1:
                         try:
                             # Conversion des données en DataFrame
-                            if isinstance(meta[15], str):
+                            if isinstance(meta['contenu_csv'], str):
                                 # Si c'est une chaîne, on essaie de la parser comme du CSV
                                 try:
                                     # Essayer d'abord avec le séparateur spécifié dans les métadonnées
-                                    if meta[10]:
-                                        csv_data = pd.read_csv(io.StringIO(meta[15]), sep=meta[10], nrows=4)
+                                    if meta['separateur']:
+                                        csv_data = pd.read_csv(io.StringIO(meta['contenu_csv']), sep=meta['separateur'], nrows=4)
                                     else:
                                         # Essayer avec le séparateur par défaut (;)
-                                        csv_data = pd.read_csv(io.StringIO(meta[15]), sep=';', nrows=4)
+                                        csv_data = pd.read_csv(io.StringIO(meta['contenu_csv']), sep=';', nrows=4)
                                 except:
                                     try:
                                         # Si ça échoue, essayer avec la virgule
-                                        csv_data = pd.read_csv(io.StringIO(meta[15]), sep=',', nrows=4)
+                                        csv_data = pd.read_csv(io.StringIO(meta['contenu_csv']), sep=',', nrows=4)
                                     except:
                                         csv_data = None
-                            elif isinstance(meta[15], dict) and 'data' in meta[15]:
+                            elif isinstance(meta['contenu_csv'], dict) and 'data' in meta['contenu_csv']:
                                 # Si c'est un dictionnaire avec une clé 'data'
-                                headers = meta[15].get('header', [])
-                                data = meta[15].get('data', [])
+                                headers = meta['contenu_csv'].get('header', [])
+                                data = meta['contenu_csv'].get('data', [])
                                 csv_data = pd.DataFrame(data, columns=headers)
                                 csv_data = csv_data.head(4)  # Limiter à 4 lignes
                             else:
@@ -353,24 +367,24 @@ else:
                     with tab2:
                         try:
                             # Conversion du dictionnaire en DataFrame
-                            if isinstance(meta[16], str):
+                            if isinstance(meta['dictionnaire'], str):
                                 try:
                                     # Essayer d'abord avec le séparateur spécifié dans les métadonnées
-                                    if meta[10]:
-                                        dict_data = pd.read_csv(io.StringIO(meta[16]), sep=meta[10])
+                                    if meta['separateur']:
+                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=meta['separateur'])
                                     else:
                                         # Essayer avec le point-virgule par défaut
-                                        dict_data = pd.read_csv(io.StringIO(meta[16]), sep=';')
+                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=';')
                                 except:
                                     try:
                                         # Si ça échoue, essayer avec la virgule
-                                        dict_data = pd.read_csv(io.StringIO(meta[16]), sep=',')
+                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=',')
                                     except:
                                         dict_data = None
-                            elif isinstance(meta[16], dict) and 'data' in meta[16]:
+                            elif isinstance(meta['dictionnaire'], dict) and 'data' in meta['dictionnaire']:
                                 # Si c'est un dictionnaire avec une clé 'data'
-                                headers = meta[16].get('header', [])
-                                data = meta[16].get('data', [])
+                                headers = meta['dictionnaire'].get('header', [])
+                                data = meta['dictionnaire'].get('data', [])
                                 dict_data = pd.DataFrame(data, columns=headers)
                             else:
                                 dict_data = None

@@ -5,6 +5,7 @@ import psycopg2
 from datetime import datetime
 import os
 import unicodedata
+import psycopg2.extras
 
 # Configuration du logging
 logging.basicConfig(
@@ -227,9 +228,8 @@ def get_metadata(search_term=None, schema_filter=None):
     """Récupère les métadonnées depuis la base de données avec possibilité de recherche et filtre par schéma"""
     conn = get_db_connection()
     try:
-        with conn.cursor() as cur:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             if search_term and schema_filter:
-                # Recherche avec filtre par schéma et calcul du score de pertinence
                 query = """
                 SELECT *, 
                     (CASE 
@@ -260,7 +260,6 @@ def get_metadata(search_term=None, schema_filter=None):
                     schema_filter
                 ))
             elif search_term:
-                # Recherche sans filtre par schéma avec calcul du score de pertinence
                 query = """
                 SELECT *, 
                     (CASE 
@@ -289,7 +288,6 @@ def get_metadata(search_term=None, schema_filter=None):
                     search_pattern, search_pattern, search_pattern, search_pattern  # Pour le WHERE
                 ))
             elif schema_filter:
-                # Filtre par schéma uniquement
                 query = """
                 SELECT * FROM metadata 
                 WHERE LOWER(schema) = LOWER(%s)
@@ -297,10 +295,8 @@ def get_metadata(search_term=None, schema_filter=None):
                 """
                 cur.execute(query, (schema_filter,))
             else:
-                # Récupération de toutes les métadonnées
                 query = "SELECT * FROM metadata ORDER BY nom_table"
                 cur.execute(query)
-            
             results = cur.fetchall()
             logging.info(f"Nombre de résultats trouvés : {len(results)}")
             return results
@@ -453,17 +449,34 @@ def save_metadata(metadata):
                 
                 # Construire les colonnes et valeurs pour l'insertion en fonction de la présence de millesime
                 if use_millesime:
-                    columns = ["nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
-                             "schema", "description", "description_normalized", "millesime", "date_maj", 
-                             "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
-                             "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"]
+                    columns = [
+                        "type_donnees", "nom_jeu_donnees", "date_publication", "date_prochaine_publication",
+                        "nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
+                        "schema", "description", "description_normalized", "millesime", "date_maj", 
+                        "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
+                        "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"
+                    ]
                 else:
-                    columns = ["nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
-                             "schema", "description", "description_normalized", "date_creation", "date_maj", 
-                             "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
-                             "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"]
+                    columns = [
+                        "type_donnees", "nom_jeu_donnees", "date_publication", "date_prochaine_publication",
+                        "nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
+                        "schema", "description", "description_normalized", "date_creation", "date_maj", 
+                        "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
+                        "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"
+                    ]
                 
+                # Ajout de la gestion des nouveaux champs
+                type_donnees = metadata.get("type_donnees", "")
+                nom_jeu_donnees = metadata.get("nom_jeu_donnees", "")
+                date_publication = metadata.get("date_publication", None)
+                date_prochaine_publication = metadata.get("date_prochaine_publication", None)
+                
+                # Ajout des nouveaux champs dans la liste des colonnes et des valeurs
                 values = [
+                    type_donnees,
+                    nom_jeu_donnees,
+                    date_publication,
+                    date_prochaine_publication,
                     nom_table,
                     nom_table_normalized,
                     nom_base,
@@ -520,7 +533,7 @@ def save_metadata(metadata):
                            (nom_base, nom_table))
                 inserted_row = cur.fetchone()
                 if inserted_row:
-                    logging.info(f"Vérification : ligne insérée avec succès - ID: {inserted_row[0]}")
+                    logging.info(f"Vérification : ligne insérée avec succès - ID: {inserted_row['id']}")
                 else:
                     warning_msg = "Vérification : aucune ligne trouvée après l'insertion"
                     logging.warning(warning_msg)
