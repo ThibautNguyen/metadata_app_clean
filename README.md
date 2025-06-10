@@ -113,6 +113,48 @@ streamlit run Catalogue.py
 
 - Dépôt GitHub : https://github.com/ThibautNguyen/DOCS
 
+## Authentification
+
+L'application utilise `streamlit-authenticator` version 0.3.2 pour gérer l'authentification.
+
+### Configuration requise
+- Python 3.x
+- streamlit-authenticator==0.3.2
+- bcrypt
+
+### Structure du fichier de configuration
+Le fichier `config.yaml` doit suivre cette structure :
+```yaml
+credentials:
+  usernames:
+    username:
+      email: email@example.com
+      name: Nom Utilisateur
+      password: $2b$12$...  # Hash bcrypt
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+preauthorized:
+  emails:
+    - email@example.com
+```
+
+### Génération de hash de mot de passe
+Pour générer un hash de mot de passe compatible :
+```python
+import bcrypt
+password = b'votre_mot_de_passe'
+hash = bcrypt.hashpw(password, bcrypt.gensalt(rounds=12))
+print(hash.decode())
+```
+
+### Environnement virtuel
+L'application utilise l'environnement virtuel `.venv_new`. Assurez-vous de l'activer :
+```powershell
+.\.venv_new\Scripts\Activate.ps1
+```
+
 ---
 
 **Remarque** :  

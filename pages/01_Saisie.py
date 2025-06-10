@@ -8,7 +8,7 @@ from pathlib import Path
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent.parent))
-from db_utils import init_db, save_metadata
+from db_utils import init_db, save_metadata, get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur
 
 # Configuration de la page
 st.set_page_config(
@@ -93,38 +93,24 @@ st.markdown("""
 st.title("Saisie des métadonnées")
 st.write("Remplissez le formulaire ci-dessous pour ajouter de nouvelles métadonnées.")
 
+# Bouton de rechargement
+if st.button("Recharger les options", key="reload_button"):
+    st.rerun()
+
 # --- NOUVELLE ORGANISATION DU FORMULAIRE AVEC LOGIQUE DYNAMIQUE ---
 
-# Simulations de récupération dynamique depuis la base (à remplacer par des requêtes réelles)
-def get_producteurs_by_type(type_donnees: str) -> list[str]:
-    # À remplacer par une requête SQL sur la table metadata
-    mapping = {
-        "donnée ouverte": ["INSEE", "Ministère du Logement"],
-        "donnée client": [],
-        "donnée restreinte": [],
-        "donnée payante": [],
-        "autre": []
-    }
-    return mapping.get(type_donnees, [])
-
-def get_jeux_donnees_by_type_and_producteur(type_donnees: str, producteur: str) -> list[str]:
-    # À remplacer par une requête SQL sur la table metadata
-    if type_donnees == "donnée ouverte" and producteur == "INSEE":
-        return ["Population", "Logements"]
-    elif type_donnees == "donnée ouverte" and producteur == "Ministère du Logement":
-        return ["Permis de construire"]
-    else:
-        return []
+# Récupération des options depuis la base de données
+from db_utils import get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur
 
 # --- Affichage du formulaire restructuré ---
 col1, col2 = st.columns(2)
 
 with col1:
     # Type de données
-    types_donnees = ["donnée ouverte", "donnée client", "donnée restreinte", "donnée payante", "autre"]
-    type_sel = st.selectbox("Type de données*", types_donnees)
+    types_donnees = get_types_donnees()
+    type_sel = st.selectbox("Type de données*", types_donnees, key="type_donnees_select")
     if type_sel == "autre":
-        type_donnees = st.text_input("Préciser le type de données*")
+        type_donnees = st.text_input("Préciser le type de données*", key="type_donnees_input")
     else:
         type_donnees = type_sel
 
@@ -132,20 +118,20 @@ with col2:
     # Producteur de la donnée
     producteurs_dyn = get_producteurs_by_type(type_donnees)
     producteurs_options = producteurs_dyn + ["Autre"] if producteurs_dyn else ["Autre"]
-    producteur_sel = st.selectbox("Producteur de la donnée*", producteurs_options)
+    producteur_sel = st.selectbox("Producteur de la donnée*", producteurs_options, key="producteur_select")
     if producteur_sel == "Autre":
-        producteur = st.text_input("Saisir un nouveau producteur*")
+        producteur = st.text_input("Saisir un nouveau producteur*", key="producteur_input")
     else:
         producteur = producteur_sel
 
 col3, col4 = st.columns(2)
 with col3:
     # Nom du jeu de données
-    jeux_dyn = get_jeux_donnees_by_type_and_producteur(type_donnees, producteur)
+    jeux_dyn = get_jeux_donnees_by_producteur(producteur)
     jeux_options = jeux_dyn + ["Autre"] if jeux_dyn else ["Autre"]
-    jeu_sel = st.selectbox("Nom du jeu de données*", jeux_options)
+    jeu_sel = st.selectbox("Nom du jeu de données*", jeux_options, key="jeu_donnees_select")
     if jeu_sel == "Autre":
-        nom_jeu_donnees = st.text_input("Saisir un nouveau nom de jeu de données*")
+        nom_jeu_donnees = st.text_input("Saisir un nouveau nom de jeu de données*", key="jeu_donnees_input")
     else:
         nom_jeu_donnees = jeu_sel
 
@@ -158,10 +144,15 @@ col5, col6 = st.columns(2)
 with col5:
     date_publication = st.date_input("Date de publication*", value=datetime.now().date(), format="DD/MM/YYYY")
 with col6:
-    millesime = st.number_input("Millésime/année*", min_value=1900, max_value=datetime.now().year, value=datetime.now().year, help="Année de référence des données")
+    date_maj = st.date_input("Date de dernière mise à jour*", value=datetime.now().date(), format="DD/MM/YYYY")
+# S'assurer que date_maj est bien accessible partout
+if 'date_maj' not in locals():
+    date_maj = datetime.now().date()
 
 col7, col8 = st.columns(2)
 with col7:
+    millesime = st.number_input("Millésime/année*", min_value=1900, max_value=datetime.now().year, value=datetime.now().year, help="Année de référence des données")
+with col8:
     frequence_maj = st.selectbox("Fréquence de mise à jour des données*", [
         "", "Annuelle", "Semestrielle", "Trimestrielle", "Mensuelle", "Quotidienne", "Ponctuelle"
     ], help="Fréquence à laquelle les données sont mises à jour")
@@ -259,16 +250,19 @@ if submitted:
                 "nom_table": nom_table,
                 "informations_base": {
                     "nom_table": nom_table,
-                    "nom_base": producteur,  # nom_base dans le formulaire correspond à producteur dans la BD
+                    "nom_base": nom_base,
+                    "type_donnees": type_donnees,
+                    "producteur": producteur,
+                    "nom_jeu_donnees": nom_jeu_donnees,
                     "schema": schema,
                     "description": description,
-                    "granularite_geo": granularite_geo,
                     "date_creation": str(millesime),
-                    "date_maj": date_maj.strftime("%Y-%m-%d") if date_maj else None,
                     "source": source,
                     "frequence_maj": frequence_maj,
                     "licence": licence,
-                    "envoi_par": envoi_par
+                    "envoi_par": envoi_par,
+                    "separateur_csv": separateur,
+                    "granularite_geo": granularite_geo
                 }
             }
             
@@ -372,8 +366,6 @@ if submitted:
                     f.write(f"Granularité géographique : {granularite_geo}\n")
                     f.write(f"Description : {description}\n")
                     f.write(f"Millésime/année : {millesime}\n")
-                    if date_maj:
-                        f.write(f"Dernière mise à jour : {date_maj.strftime('%Y-%m-%d')}\n")
                     f.write(f"Source : {source}\n")
                     f.write(f"Fréquence de mises à jour des données : {frequence_maj}\n")
                     f.write(f"Licence d'utilisation des données : {licence}\n")

@@ -98,7 +98,9 @@ def init_db():
                             id SERIAL PRIMARY KEY,
                             nom_table VARCHAR(255),
                             nom_base VARCHAR(255) NOT NULL,
+                            type_donnees VARCHAR(255),
                             producteur VARCHAR(255),
+                            nom_jeu_donnees VARCHAR(255),
                             schema VARCHAR(255),
                             description TEXT,
                             millesime DATE,
@@ -308,251 +310,103 @@ def get_metadata(search_term=None, schema_filter=None):
 
 def save_metadata(metadata):
     """Sauvegarde les métadonnées dans la base de données"""
-    logging.info("Début de la sauvegarde des métadonnées")
-    logging.debug(f"Données reçues : {metadata}")
-    
-    # Vérification de la structure des données
-    if not isinstance(metadata, dict):
-        error_msg = f"Format de métadonnées incorrect : {type(metadata)}, attendu : dict"
-        st.error(error_msg)
-        logging.error(error_msg)
-        return False, error_msg
-    
     conn = get_db_connection()
     if not conn:
-        error_msg = "Impossible de se connecter à la base de données"
-        st.error(error_msg)
-        logging.error(error_msg)
-        return False, error_msg
-        
+        return False, "Erreur de connexion à la base de données"
+    
     try:
-        logging.info("Connexion à la base de données établie")
         with conn.cursor() as cur:
-            # Vérification des champs requis avec une structure plus flexible
-            if "informations_base" not in metadata:
-                # Ancienne structure (plat)
-                required_fields = {
-                    "nom_base": metadata.get("nom_base"),
-                    "producteur": metadata.get("producteur"),
-                    "schema": metadata.get("schema"),
-                    "description": metadata.get("description")
-                }
-            else:
-                # Nouvelle structure (avec informations_base)
-                required_fields = {
-                    "nom_base": metadata.get("nom_fichier"),  # nom_fichier dans le dictionnaire correspond à nom_base dans la BD
-                    "producteur": metadata.get("informations_base", {}).get("nom_base"),  # nom_base dans le dictionnaire correspond à producteur dans la BD
-                    "schema": metadata.get("informations_base", {}).get("schema"),
-                    "description": metadata.get("informations_base", {}).get("description")
-                }
+            # Préparation des données pour l'insertion
+            data = {
+                'nom_table': metadata.get('informations_base', {}).get('nom_table'),
+                'nom_base': metadata.get('informations_base', {}).get('nom_base'),
+                'type_donnees': metadata.get('informations_base', {}).get('type_donnees'),
+                'producteur': metadata.get('informations_base', {}).get('producteur'),
+                'nom_jeu_donnees': metadata.get('informations_base', {}).get('nom_jeu_donnees'),
+                'schema': metadata.get('informations_base', {}).get('schema'),
+                'description': metadata.get('informations_base', {}).get('description'),
+                'millesime': metadata.get('informations_base', {}).get('date_creation'),
+                'date_maj': metadata.get('informations_base', {}).get('date_maj'),
+                'source': metadata.get('informations_base', {}).get('source'),
+                'frequence_maj': metadata.get('informations_base', {}).get('frequence_maj'),
+                'licence': metadata.get('informations_base', {}).get('licence'),
+                'envoi_par': metadata.get('informations_base', {}).get('envoi_par'),
+                'granularite_geo': metadata.get('informations_base', {}).get('granularite_geo'),
+                'contenu_csv': json.dumps(metadata.get('contenu_csv', {})),
+                'dictionnaire': json.dumps(metadata.get('dictionnaire', {}))
+            }
             
-            logging.debug(f"Champs requis vérifiés : {required_fields}")
+            # Construction de la requête SQL
+            columns = ', '.join(data.keys())
+            values = ', '.join(['%s'] * len(data))
+            query = f"""
+                INSERT INTO metadata ({columns})
+                VALUES ({values})
+                RETURNING id
+            """
             
-            missing_fields = [field for field, value in required_fields.items() if not value]
-            if missing_fields:
-                error_msg = f"Champs requis manquants : {', '.join(missing_fields)}"
-                st.error(error_msg)
-                logging.error(error_msg)
-                return False, error_msg
+            # Exécution de la requête
+            cur.execute(query, list(data.values()))
+            new_id = cur.fetchone()[0]
+            conn.commit()
             
-            # Préparation des valeurs pour l'insertion
-            try:
-                # Conversion des données CSV et dictionnaire en JSON
-                contenu_csv_json = None
-                if "contenu_csv" in metadata:
-                    logging.debug("Conversion du contenu CSV en JSON")
-                    # Assurer que c'est un dictionnaire et pas déjà une chaîne JSON
-                    if isinstance(metadata["contenu_csv"], dict):
-                        contenu_csv_json = json.dumps(metadata["contenu_csv"])
-                    else:
-                        contenu_csv_json = metadata["contenu_csv"]
-                
-                dictionnaire_json = None
-                if "dictionnaire" in metadata:
-                    logging.debug("Conversion du dictionnaire en JSON")
-                    # Assurer que c'est un dictionnaire et pas déjà une chaîne JSON
-                    if isinstance(metadata["dictionnaire"], dict):
-                        dictionnaire_json = json.dumps(metadata["dictionnaire"])
-                    else:
-                        dictionnaire_json = metadata["dictionnaire"]
-                
-                # Récupération des données selon la structure
-                if "informations_base" in metadata:
-                    # Nouvelle structure
-                    info_base = metadata["informations_base"]
-                    nom_table = info_base.get("nom_table", "")
-                    nom_table_normalized = remove_accents(nom_table.lower())
-                    granularite_geo = info_base.get("granularite_geo", "")
-                    date_creation = info_base.get("date_creation", datetime.now().strftime("%Y-%m-%d"))
-                    date_maj = info_base.get("date_maj", datetime.now().strftime("%Y-%m-%d"))
-                    producteur = info_base.get("nom_base", "")  # nom_base dans le dictionnaire correspond à producteur dans la BD
-                    producteur_normalized = remove_accents(producteur.lower())
-                    schema = info_base.get("schema", "")
-                    description = info_base.get("description", "")
-                    description_normalized = remove_accents(description.lower())
-                    source = info_base.get("source", "")
-                    frequence_maj = info_base.get("frequence_maj", "")
-                    licence = info_base.get("licence", "")
-                    envoi_par = info_base.get("envoi_par", "")
-                    nom_base = metadata.get("nom_fichier", "")  # nom_fichier correspond à nom_base dans la BD
-                    dictionnaire_normalized = remove_accents(str(dictionnaire_json).lower()) if dictionnaire_json else ""
-                else:
-                    # Ancienne structure
-                    nom_table = metadata.get("nom_table", "")
-                    nom_table_normalized = remove_accents(nom_table.lower())
-                    nom_base = metadata.get("nom_base", "")
-                    producteur = metadata.get("producteur", "")
-                    producteur_normalized = remove_accents(producteur.lower())
-                    schema = metadata.get("schema", "")
-                    description = metadata.get("description", "")
-                    description_normalized = remove_accents(description.lower())
-                    date_creation = metadata.get("millesime", metadata.get("date_creation", datetime.now().strftime("%Y-%m-%d")))
-                    date_maj = metadata.get("date_maj", datetime.now().strftime("%Y-%m-%d"))
-                    source = metadata.get("source", "")
-                    frequence_maj = metadata.get("frequence_maj", "")
-                    licence = metadata.get("licence", "")
-                    envoi_par = metadata.get("envoi_par", "")
-                    granularite_geo = metadata.get("granularite_geo", "")
-                    dictionnaire_normalized = remove_accents(str(dictionnaire_json).lower()) if dictionnaire_json else ""
-                
-                # Conversion des chaînes de date en objets date si nécessaire
-                if isinstance(date_creation, str):
-                    try:
-                        # Si la date de création est juste une année (ex: "2020")
-                        if date_creation.isdigit() and len(date_creation) == 4:
-                            date_creation = f"{date_creation}-01-01"
-                        
-                        date_creation = datetime.strptime(date_creation, "%Y-%m-%d").date()
-                        logging.debug(f"Date de création convertie : {date_creation}")
-                    except ValueError as e:
-                        logging.warning(f"Erreur de conversion de la date de création : {str(e)}")
-                        # Utiliser la date actuelle comme fallback
-                        date_creation = datetime.now().date()
-                
-                if isinstance(date_maj, str):
-                    try:
-                        date_maj = datetime.strptime(date_maj, "%Y-%m-%d").date()
-                        logging.debug(f"Date de mise à jour convertie : {date_maj}")
-                    except ValueError as e:
-                        logging.warning(f"Erreur de conversion de la date de mise à jour : {str(e)}")
-                        # Utiliser la date actuelle comme fallback
-                        date_maj = datetime.now().date()
-                
-                # Vérifier si la colonne date_creation a été renommée en millesime
-                cur.execute("""
-                    SELECT column_name 
-                    FROM information_schema.columns 
-                    WHERE table_name = 'metadata' AND column_name = 'millesime'
-                """)
-                
-                use_millesime = cur.fetchone() is not None
-                
-                # Construire les colonnes et valeurs pour l'insertion en fonction de la présence de millesime
-                if use_millesime:
-                    columns = [
-                        "type_donnees", "nom_jeu_donnees", "date_publication", "date_prochaine_publication",
-                        "nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
-                        "schema", "description", "description_normalized", "millesime", "date_maj", 
-                        "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
-                        "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"
-                    ]
-                else:
-                    columns = [
-                        "type_donnees", "nom_jeu_donnees", "date_publication", "date_prochaine_publication",
-                        "nom_table", "nom_table_normalized", "nom_base", "producteur", "producteur_normalized", 
-                        "schema", "description", "description_normalized", "date_creation", "date_maj", 
-                        "source", "frequence_maj", "licence", "envoi_par", "contact", "mots_cles", 
-                        "notes", "contenu_csv", "dictionnaire", "dictionnaire_normalized", "granularite_geo"
-                    ]
-                
-                # Ajout de la gestion des nouveaux champs
-                type_donnees = metadata.get("type_donnees", "")
-                nom_jeu_donnees = metadata.get("nom_jeu_donnees", "")
-                date_publication = metadata.get("date_publication", None)
-                date_prochaine_publication = metadata.get("date_prochaine_publication", None)
-                
-                # Ajout des nouveaux champs dans la liste des colonnes et des valeurs
-                values = [
-                    type_donnees,
-                    nom_jeu_donnees,
-                    date_publication,
-                    date_prochaine_publication,
-                    nom_table,
-                    nom_table_normalized,
-                    nom_base,
-                    producteur,
-                    producteur_normalized,
-                    schema,
-                    description,
-                    description_normalized,
-                    date_creation,
-                    date_maj,
-                    source,
-                    frequence_maj,
-                    licence,
-                    envoi_par,
-                    "",  # champ contact vide
-                    "",  # champ mots_cles vide
-                    "",  # champ notes vide
-                    contenu_csv_json,
-                    dictionnaire_json,
-                    dictionnaire_normalized,
-                    granularite_geo
-                ]
-                
-                # Construire la requête SQL dynamiquement
-                placeholders = ", ".join(["%s"] * len(values))
-                columns_str = ", ".join(columns)
-                
-                query = f"""
-                    INSERT INTO metadata (
-                        {columns_str}
-                    ) VALUES (
-                        {placeholders}
-                    )
-                """
-                
-                logging.debug(f"Requête SQL: {query}")
-                logging.debug(f"Valeurs préparées pour l'insertion : {values}")
-            except KeyError as e:
-                error_msg = f"Champ manquant dans la structure des métadonnées : {str(e)}"
-                st.error(error_msg)
-                logging.error(f"{error_msg} - Structure complète : {metadata}")
-                return False, error_msg
-            
-            # Insertion dans la base de données
-            try:
-                cur.execute(query, values)
-                logging.info("Requête d'insertion exécutée avec succès")
-                
-                conn.commit()
-                logging.info("Transaction validée")
-                
-                # Vérification de l'insertion
-                cur.execute("SELECT * FROM metadata WHERE nom_base = %s AND nom_table = %s", 
-                           (nom_base, nom_table))
-                inserted_row = cur.fetchone()
-                if inserted_row:
-                    logging.info(f"Vérification : ligne insérée avec succès - ID: {inserted_row['id']}")
-                else:
-                    warning_msg = "Vérification : aucune ligne trouvée après l'insertion"
-                    logging.warning(warning_msg)
-                
-                return True, "Métadonnées sauvegardées avec succès dans la base de données"
-                
-            except Exception as e:
-                error_msg = f"Erreur lors de l'exécution de la requête : {str(e)}"
-                st.error(error_msg)
-                logging.error(error_msg)
-                conn.rollback()
-                logging.info("Transaction annulée")
-                return False, error_msg
-                
+            return True, f"Métadonnées sauvegardées avec succès (ID: {new_id})"
     except Exception as e:
-        error_msg = f"Erreur inattendue : {str(e)}"
-        st.error(error_msg)
-        logging.error(error_msg)
-        return False, error_msg
+        conn.rollback()
+        logging.error(f"Erreur lors de la sauvegarde des métadonnées : {str(e)}")
+        return False, f"Erreur lors de la sauvegarde : {str(e)}"
     finally:
         conn.close()
-        logging.info("Connexion à la base de données fermée")
+
+def get_producteurs_by_type(type_donnees: str) -> list[str]:
+    """Récupère la liste des producteurs pour un type de données donné"""
+    logging.info(f"Récupération des producteurs pour le type de données : {type_donnees}")
+    conn = get_db_connection()
+    if not conn:
+        logging.error("Impossible de se connecter à la base de données")
+        return []
+    
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT DISTINCT producteur 
+                FROM metadata 
+                WHERE type_donnees = %s 
+                AND producteur IS NOT NULL 
+                ORDER BY producteur
+            """, (type_donnees,))
+            producteurs = [row[0] for row in cur.fetchall()]
+            logging.info(f"Producteurs trouvés : {producteurs}")
+            return producteurs if producteurs else []
+    except Exception as e:
+        logging.error(f"Erreur lors de la récupération des producteurs : {str(e)}")
+        return []
+    finally:
+        conn.close()
+
+def get_jeux_donnees_by_producteur(producteur: str) -> list[str]:
+    """Récupère la liste des jeux de données pour un producteur donné"""
+    conn = get_db_connection()
+    if not conn:
+        return []
+    
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT DISTINCT nom_jeu_donnees 
+                FROM metadata 
+                WHERE producteur = %s 
+                AND nom_jeu_donnees IS NOT NULL 
+                ORDER BY nom_jeu_donnees
+            """, (producteur,))
+            jeux = [row[0] for row in cur.fetchall()]
+            return jeux if jeux else []
+    except Exception as e:
+        logging.error(f"Erreur lors de la récupération des jeux de données : {str(e)}")
+        return []
+    finally:
+        conn.close()
+
+def get_types_donnees() -> list[str]:
+    """Récupère la liste des types de données existants"""
+    return ["donnée ouverte", "donnée client", "donnée restreinte", "donnée payante", "autre"]

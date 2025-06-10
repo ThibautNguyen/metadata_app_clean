@@ -1,4 +1,8 @@
 import streamlit as st
+import streamlit_authenticator as stauth
+import yaml
+from yaml.loader import SafeLoader
+import os
 import pandas as pd
 import sys
 from pathlib import Path
@@ -8,10 +12,44 @@ import csv
 import unicodedata
 import logging
 import psycopg2.extras
+from db_utils import test_connection, init_db, get_metadata, get_metadata_columns
+import importlib
+
+# Configuration de la page
+st.set_page_config(
+    page_title="Catalogue de données",
+    page_icon="📊",
+    layout="wide"
+)
+
+# Chargement de la configuration
+with open('config.yaml') as file:
+    config = yaml.load(file, Loader=SafeLoader)
+
+# Configuration de l'authentification
+authenticator = stauth.Authenticate(
+    config['credentials'],
+    'metadata_cookie',
+    'metadata_key',
+    cookie_expiry_days=30
+)
+
+# Interface de connexion
+name, authentication_status, username = authenticator.login('main', 'Connexion')
+if authentication_status is False:
+    st.error("Nom d'utilisateur/mot de passe incorrect")
+    st.stop()
+elif authentication_status is None:
+    st.warning("Veuillez entrer votre nom d'utilisateur et votre mot de passe")
+    st.stop()
+elif authentication_status:
+    st.sidebar.success(f"Bienvenue *{name}*")
+    if st.sidebar.button('Déconnexion'):
+        authenticator.logout('sidebar')
+        st.rerun()
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent))
-from db_utils import test_connection, init_db, get_metadata, get_metadata_columns
 
 def remove_accents(input_str):
     """Supprime les accents d'une chaîne de caractères"""
@@ -42,13 +80,6 @@ def highlight_text(text, search_term):
     except Exception as e:
         logging.error(f"Erreur lors de la mise en surbrillance : {str(e)}")
         return text
-
-# Configuration de la page
-st.set_page_config(
-    page_title="Catalogue des métadonnées",
-    page_icon="📚",
-    layout="wide"
-)
 
 # CSS pour le style de l'interface
 st.markdown("""

@@ -1,0 +1,18 @@
+credentials:
+  usernames:
+    admin:
+      email: admin@example.com
+      name: Administrateur
+      password: $2b$12$YIZCHPnrJVN5AAjNXtfgLuOKYgDtmUI8JQQFTv0LDpUnYWnCtElX2  # 'password123'
+    thibault:
+      email: thibault@example.com
+      name: Thibault
+      password: $2b$12$YIZCHPnrJVN5AAjNXtfgLuOKYgDtmUI8JQQFTv0LDpUnYWnCtElX2  # 'password123'
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+preauthorized:
+  emails:
+    - admin@example.com
+    - thibault@example.com 
