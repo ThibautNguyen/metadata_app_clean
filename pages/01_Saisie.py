@@ -8,7 +8,7 @@ from pathlib import Path
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent.parent))
-from db_utils import init_db, save_metadata, get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur
+from utils.db_utils import init_db, save_metadata, get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur
 
 # Configuration de la page
 st.set_page_config(
@@ -100,7 +100,7 @@ if st.button("Recharger les options", key="reload_button"):
 # --- NOUVELLE ORGANISATION DU FORMULAIRE AVEC LOGIQUE DYNAMIQUE ---
 
 # Récupération des options depuis la base de données
-from db_utils import get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur
+from utils.db_utils import get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur
 
 # --- Affichage du formulaire restructuré ---
 col1, col2 = st.columns(2)

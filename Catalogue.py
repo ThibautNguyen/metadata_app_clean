@@ -12,7 +12,7 @@ import csv
 import unicodedata
 import logging
 import psycopg2.extras
-from db_utils import test_connection, init_db, get_metadata, get_metadata_columns
+from utils.db_utils import test_connection, init_db, get_metadata, get_metadata_columns
 import importlib
 
 # Configuration de la page
