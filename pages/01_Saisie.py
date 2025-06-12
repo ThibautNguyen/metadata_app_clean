@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 import os
 import sys
 from pathlib import Path
+from utils.auth import authenticate_and_logout
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent.parent))
@@ -16,6 +17,9 @@ st.set_page_config(
     page_icon="📝",
     layout="wide"
 )
+
+# Authentification centralisée (présente sur toutes les pages)
+name, authentication_status, username, authenticator = authenticate_and_logout()
 
 # Initialisation de la base de données
 init_db()

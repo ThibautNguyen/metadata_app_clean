@@ -14,6 +14,7 @@ import logging
 import psycopg2.extras
 from utils.db_utils import test_connection, init_db, get_metadata, get_metadata_columns
 import importlib
+from utils.auth import authenticate_and_logout
 
 # Configuration de la page
 st.set_page_config(
@@ -22,31 +23,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# Chargement de la configuration
-with open('config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-
-# Configuration de l'authentification
-authenticator = stauth.Authenticate(
-    config['credentials'],
-    'metadata_cookie',
-    'metadata_key',
-    cookie_expiry_days=30
-)
-
-# Interface de connexion
-name, authentication_status, username = authenticator.login('main', 'Connexion')
-if authentication_status is False:
-    st.error("Nom d'utilisateur/mot de passe incorrect")
-    st.stop()
-elif authentication_status is None:
-    st.warning("Veuillez entrer votre nom d'utilisateur et votre mot de passe")
-    st.stop()
-elif authentication_status:
-    st.sidebar.success(f"Bienvenue *{name}*")
-    if st.sidebar.button('Déconnexion'):
-        authenticator.logout('sidebar')
-        st.rerun()
+# Authentification centralisée (présente sur toutes les pages)
+name, authentication_status, username, authenticator = authenticate_and_logout()
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent))

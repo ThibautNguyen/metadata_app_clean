@@ -4,12 +4,16 @@ from datetime import datetime, timedelta, date
 import plotly.express as px
 from utils.db_utils import get_db_connection
 import io
+from utils.auth import authenticate_and_logout
 
 st.set_page_config(
     page_title="Suivi des mises à jour",
     page_icon="📊",
     layout="wide"
 )
+
+# Authentification centralisée (présente sur toutes les pages)
+name, authentication_status, username, authenticator = authenticate_and_logout()
 
 st.title("Suivi des mises à jour des données")
 
