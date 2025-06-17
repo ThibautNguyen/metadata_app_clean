@@ -247,6 +247,7 @@ if submitted:
                 "type_donnees": type_donnees,
                 "nom_jeu_donnees": nom_jeu_donnees,
                 "date_publication": date_publication.strftime("%Y-%m-%d") if date_publication else None,
+                "date_maj": date_maj.strftime("%Y-%m-%d") if date_maj else None,
                 "date_prochaine_publication": date_prochaine_publication.strftime("%Y-%m-%d") if date_prochaine_publication else None,
                 "contenu_csv": {},
                 "dictionnaire": {},
@@ -336,15 +337,13 @@ if submitted:
             # Sauvegarde dans la base de données
             succes, message = save_metadata(metadata)
             if succes:
-                st.success(message)
-                # Création d'un encadré de succès bien visible
                 st.balloons()
                 st.success("""
-                ### ✅ Métadonnées sauvegardées avec succès!
-                
-                Vos métadonnées sont maintenant disponibles dans le catalogue.
-                Vous pouvez les consulter dans l'onglet "Catalogue".
-                """)
+### ✅ Métadonnées sauvegardées avec succès!
+
+Vos métadonnées sont maintenant disponibles dans le catalogue.
+Vous pouvez les consulter dans l'onglet "Catalogue".
+""")
             else:
                 st.error(f"Erreur lors de la sauvegarde : {message}")
                 st.error("Veuillez vérifier les logs pour plus de détails.")
