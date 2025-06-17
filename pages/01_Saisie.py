@@ -354,7 +354,6 @@ Vous pouvez les consulter dans l'onglet "Catalogue".
                 os.makedirs("metadata", exist_ok=True)
                 with open(json_path, "w", encoding="utf-8") as f:
                     json.dump(metadata, f, ensure_ascii=False, indent=4)
-                st.success(f"Métadonnées sauvegardées localement dans {json_path}")
             except Exception as e:
                 st.error(f"Erreur lors de la sauvegarde locale en JSON : {str(e)}")
 
@@ -380,7 +379,6 @@ Vous pouvez les consulter dans l'onglet "Catalogue".
                     if dictionnaire:
                         f.write("\nDictionnaire des variables :\n")
                         f.write(dictionnaire)
-                st.success(f"Métadonnées sauvegardées localement dans {txt_path}")
             except Exception as e:
                 st.error(f"Erreur lors de la sauvegarde locale en TXT : {str(e)}")
                 
