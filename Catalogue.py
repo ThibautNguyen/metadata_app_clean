@@ -259,7 +259,7 @@ else:
                     'Producteur de la donnée': meta.get('producteur', ''),
                     'Schéma du SGBD': meta.get('schema', ''),
                     'Granularité géographique': meta.get('granularite_geo', ''),
-                    'Millésime/année': meta.get('millesime', '').strftime('%Y') if meta.get('millesime') else '',
+                    'Millésime/année': meta.get('millesime', '') if meta.get('millesime') else '',
                     'Dernière mise à jour': meta.get('date_maj', '').strftime('%d-%m-%Y') if meta.get('date_maj') else ''
                 }
                 data_list.append(data_dict)
@@ -273,7 +273,7 @@ else:
                     'Producteur de la donnée': meta[2] if len(meta) > 2 and meta[2] else '',
                     'Schéma du SGBD': meta[3] if len(meta) > 3 and meta[3] else '',
                     'Granularité géographique': meta[18] if len(meta) > 18 and meta[18] else '',
-                    'Millésime/année': meta[5].strftime('%Y') if len(meta) > 5 and meta[5] else '',
+                    'Millésime/année': meta[5] if len(meta) > 5 and meta[5] else '',
                     'Dernière mise à jour': meta[6].strftime('%d-%m-%Y') if len(meta) > 6 and meta[6] else ''
                 }
                 data_list.append(data_dict)
@@ -321,7 +321,7 @@ else:
                     st.markdown("**Informations de base**")
                     st.write(f"**Producteur :** {meta['producteur'] if meta['producteur'] else 'Non spécifié'}")
                     st.write(f"**Schéma :** {meta['schema'] if meta['schema'] else 'Non spécifié'}")
-                    st.write(f"**Millésime :** {meta['millesime'].strftime('%Y') if meta['millesime'] else 'Non spécifié'}")
+                    st.write(f"**Millésime :** {meta['millesime'] if meta['millesime'] else 'Non spécifié'}")
                     st.write(f"**Dernière mise à jour :** {meta['date_maj'].strftime('%d-%m-%Y') if meta['date_maj'] else 'Non spécifié'}")
                     st.write(f"**Fréquence de mise à jour :** {meta['frequence_maj'] if meta['frequence_maj'] else 'Non spécifié'}")
                     st.write(f"**Licence :** {meta['licence'] if meta['licence'] else 'Non spécifié'}")
