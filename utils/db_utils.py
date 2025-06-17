@@ -326,7 +326,9 @@ def save_metadata(metadata):
                 'schema': metadata.get('informations_base', {}).get('schema'),
                 'description': metadata.get('informations_base', {}).get('description'),
                 'millesime': metadata.get('informations_base', {}).get('date_creation'),
-                'date_maj': metadata.get('informations_base', {}).get('date_maj'),
+                'date_publication': metadata.get('date_publication', None),
+                'date_maj': metadata.get('date_maj', None),
+                'date_prochaine_publication': metadata.get('date_prochaine_publication', None),
                 'source': metadata.get('informations_base', {}).get('source'),
                 'frequence_maj': metadata.get('informations_base', {}).get('frequence_maj'),
                 'licence': metadata.get('informations_base', {}).get('licence'),
@@ -344,7 +346,10 @@ def save_metadata(metadata):
                 VALUES ({values})
                 RETURNING id
             """
-            
+
+            # LOG pour debug
+            print("REQUETE SQL :", query)
+            print("VALEURS :", list(data.values()))
             # Exécution de la requête
             cur.execute(query, list(data.values()))
             new_id = cur.fetchone()[0]
