@@ -22,22 +22,17 @@ st.title("Suivi des mises à jour des données")
 def get_update_data():
     try:
         conn = get_db_connection()
-        query = """
-        SELECT m1.nom_jeu_donnees,
-               m1.producteur,
-               m1.date_publication,
-               m1.millesime,
-               m1.date_prochaine_publication,
-               m1.frequence_maj
-        FROM metadata m1
-        INNER JOIN (
-            SELECT nom_jeu_donnees, MAX(date_publication) AS max_date_pub
-            FROM metadata
-            GROUP BY nom_jeu_donnees
-        ) m2
-        ON m1.nom_jeu_donnees = m2.nom_jeu_donnees AND m1.date_publication = m2.max_date_pub
-        ORDER BY m1.date_prochaine_publication DESC
-        """
+        query = '''
+        SELECT DISTINCT ON (nom_jeu_donnees)
+            nom_jeu_donnees,
+            producteur,
+            date_publication,
+            millesime,
+            date_prochaine_publication,
+            frequence_maj
+        FROM metadata
+        ORDER BY nom_jeu_donnees, date_publication DESC, millesime DESC, id DESC
+        '''
         df = pd.read_sql(query, conn)
         conn.close()
         return df
