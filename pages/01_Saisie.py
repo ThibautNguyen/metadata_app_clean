@@ -146,9 +146,15 @@ with col4:
 
 col5, col6 = st.columns(2)
 with col5:
-    date_publication = st.date_input("Date de publication*", value=datetime.now().date(), format="DD/MM/YYYY")
+    date_publication = st.date_input("Date de publication*", 
+        value=datetime.now().date(), 
+        format="DD/MM/YYYY",
+        min_value=datetime(1949, 1, 1).date())
 with col6:
-    date_maj = st.date_input("Date de dernière mise à jour*", value=datetime.now().date(), format="DD/MM/YYYY")
+    date_maj = st.date_input("Date de dernière mise à jour*", 
+        value=datetime.now().date(), 
+        format="DD/MM/YYYY",
+        min_value=datetime(1949, 1, 1).date())
 # S'assurer que date_maj est bien accessible partout
 if 'date_maj' not in locals():
     date_maj = datetime.now().date()
@@ -181,6 +187,7 @@ with col8:
         "Date estimative de la prochaine publication*",
         value=date_prochaine_publication_auto if date_prochaine_publication_auto else datetime.now().date(),
         format="DD/MM/YYYY",
+        min_value=datetime(1949, 1, 1).date(),
         help="Cette date est calculée automatiquement selon la fréquence, mais peut être modifiée."
     )
 
