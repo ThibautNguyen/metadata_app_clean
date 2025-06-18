@@ -217,9 +217,9 @@ except Exception as e:
 
 # Interface de recherche
 st.subheader("Recherche")
-st.write("La recherche s'effectue dans les champs suivants : nom de la table, description, producteur de la donnée et dictionnaire des variables.")
+st.write("La recherche s'effectue dans les champs suivants : nom du jeu de données, producteur de la donnée, description et dictionnaire des variables.")
 
-col1, col2 = st.columns([3, 1])
+col1, col2, col3 = st.columns([3, 1, 2])
 
 with col1:
     search_text = st.text_input("Rechercher", placeholder="Entrez un terme à rechercher...")
@@ -229,17 +229,29 @@ with col2:
                                 ["Tous", "economie", "education", "energie", "environnement", 
                                  "geo", "logement", "mobilite", "population", "securite"])
 
-# Récupération des métadonnées depuis la base de données
+# Récupération des métadonnées depuis la base de données (avant filtre producteur)
 if search_text:
-    # Utiliser la fonction de recherche avec le filtre de schéma si nécessaire
     schema_filter = selected_schema if selected_schema != "Tous" else None
     metadata_results = get_metadata(search_text, schema_filter)
 elif selected_schema and selected_schema != "Tous":
-    # Filtrer par schéma uniquement
     metadata_results = get_metadata(None, selected_schema)
 else:
-    # Récupérer toutes les métadonnées
     metadata_results = get_metadata()
+
+# --- Ajout du filtre producteur ---
+# Extraire la liste des producteurs uniques
+if metadata_results:
+    producteurs_uniques = sorted(list({meta.get('producteur', '') for meta in metadata_results if meta.get('producteur', '')}))
+    producteurs_options = ["Tous"] + producteurs_uniques
+else:
+    producteurs_options = ["Tous"]
+
+with col3:
+    selected_producteur = st.selectbox("Filtrer par producteur", producteurs_options)
+
+# Appliquer le filtre producteur si sélectionné
+if selected_producteur != "Tous":
+    metadata_results = [meta for meta in metadata_results if meta.get('producteur', '') == selected_producteur]
 
 # Affichage du nombre total de résultats
 st.info(f"Nombre total de métadonnées disponibles : {len(metadata_results)}")
@@ -250,17 +262,18 @@ if not metadata_results:
 else:
     # Création du DataFrame avec les colonnes principales
     if metadata_results:
-        # Si les résultats sont des tuples, transformer en dicts
+        # Si les résultats sont des dicts
         if isinstance(metadata_results[0], dict):
             data_list = []
             for meta in metadata_results:
                 data_dict = {
+                    'Nom du jeu de données': meta.get('nom_jeu_donnees', ''),
                     'Nom de la table': meta.get('nom_table', ''),
                     'Producteur de la donnée': meta.get('producteur', ''),
                     'Schéma du SGBD': meta.get('schema', ''),
                     'Granularité géographique': meta.get('granularite_geo', ''),
                     'Millésime/année': meta.get('millesime', '') if meta.get('millesime') else '',
-                    'Dernière mise à jour': meta.get('date_maj', '').strftime('%d-%m-%Y') if meta.get('date_maj') else ''
+                    'Date de publication': meta.get('date_publication', '').strftime('%d-%m-%Y') if meta.get('date_publication') else '',
                 }
                 data_list.append(data_dict)
             df = pd.DataFrame(data_list)
@@ -269,33 +282,33 @@ else:
             data_list = []
             for meta in metadata_results:
                 data_dict = {
+                    'Nom du jeu de données': meta[5] if len(meta) > 5 and meta[5] else '',
                     'Nom de la table': meta[17] if len(meta) > 17 and meta[17] else '',
                     'Producteur de la donnée': meta[2] if len(meta) > 2 and meta[2] else '',
                     'Schéma du SGBD': meta[3] if len(meta) > 3 and meta[3] else '',
                     'Granularité géographique': meta[18] if len(meta) > 18 and meta[18] else '',
-                    'Millésime/année': meta[5] if len(meta) > 5 and meta[5] else '',
-                    'Dernière mise à jour': meta[6].strftime('%d-%m-%Y') if len(meta) > 6 and meta[6] else ''
+                    'Millésime/année': meta[8] if len(meta) > 8 and meta[8] else '',
+                    'Date de publication': meta[9].strftime('%d-%m-%Y') if len(meta) > 9 and meta[9] else '',
                 }
                 data_list.append(data_dict)
             df = pd.DataFrame(data_list)
-        
         # Affichage du nombre de résultats
         st.write(f"**{len(metadata_results)} résultat(s) trouvé(s)**")
-        
-        # Configuration de la mise en forme conditionnelle
+        # Mise en forme conditionnelle
         def highlight_search_term(val):
             if search_text and isinstance(val, str):
                 if search_text.lower() in val.lower():
                     return 'background-color: yellow'
             return ''
-        
-        # Application de la mise en forme conditionnelle
-        styled_df = df.style.map(highlight_search_term, subset=['Nom de la table', 'Producteur de la donnée'])
-        
-        # Affichage du DataFrame avec mise en forme
+        styled_df = df.style.map(highlight_search_term, subset=['Nom du jeu de données', 'Nom de la table', 'Producteur de la donnée'])
         st.dataframe(
             styled_df,
             column_config={
+                "Nom du jeu de données": st.column_config.TextColumn(
+                    "Nom du jeu de données",
+                    help="Nom du jeu de données (regroupement logique)",
+                    width="medium"
+                ),
                 "Nom de la table": st.column_config.TextColumn(
                     "Nom de la table",
                     help="Nom de la table dans la base de données",
@@ -304,6 +317,11 @@ else:
                 "Producteur de la donnée": st.column_config.TextColumn(
                     "Producteur de la donnée",
                     help="Organisme producteur des données",
+                    width="medium"
+                ),
+                "Date de publication": st.column_config.TextColumn(
+                    "Date de publication",
+                    help="Date de publication de la table",
                     width="medium"
                 )
             },
@@ -319,12 +337,13 @@ else:
                 
                 with col1:
                     st.markdown("**Informations de base**")
+                    st.write(f"**Nom du jeu de données :** {meta['nom_jeu_donnees'] if meta['nom_jeu_donnees'] else 'Non spécifié'}")
                     st.write(f"**Producteur :** {meta['producteur'] if meta['producteur'] else 'Non spécifié'}")
                     st.write(f"**Schéma :** {meta['schema'] if meta['schema'] else 'Non spécifié'}")
                     st.write(f"**Millésime :** {meta['millesime'] if meta['millesime'] else 'Non spécifié'}")
-                    st.write(f"**Dernière mise à jour :** {meta['date_maj'].strftime('%d-%m-%Y') if meta['date_maj'] else 'Non spécifié'}")
+                    st.write(f"**Date de publication :** {meta['date_publication'].strftime('%d-%m-%Y') if meta['date_publication'] else 'Non spécifié'}")
                     st.write(f"**Fréquence de mise à jour :** {meta['frequence_maj'] if meta['frequence_maj'] else 'Non spécifié'}")
-                    st.write(f"**Licence :** {meta['licence'] if meta['licence'] else 'Non spécifié'}")
+                    st.write(f"**Type de données :** {meta['type_donnees'] if meta['type_donnees'] else 'Non spécifié'}")
                     
                 with col2:
                     st.markdown("**Description**")
@@ -334,37 +353,61 @@ else:
                         st.markdown("**Source des données**")
                         st.write(f"[Lien vers les données]({meta['source']})")
                 
-                # Affichage des données et du dictionnaire des variables dans des onglets
-                if meta['contenu_csv'] and meta['dictionnaire']:  # Vérification de l'existence des données et du dictionnaire
-                    tab1, tab2 = st.tabs(["Aperçu des données", "Dictionnaire des variables"])
-                    
+                # Affichage des données et du dictionnaire des variables dans des onglets (dictionnaire en premier)
+                if meta['contenu_csv'] and meta['dictionnaire']:
+                    tab1, tab2 = st.tabs(["Dictionnaire des variables", "Aperçu des données"])
                     with tab1:
                         try:
-                            # Conversion des données en DataFrame
-                            if isinstance(meta['contenu_csv'], str):
-                                # Si c'est une chaîne, on essaie de la parser comme du CSV
+                            # Conversion du dictionnaire en DataFrame
+                            if isinstance(meta['dictionnaire'], str):
                                 try:
-                                    # Essayer d'abord avec le séparateur spécifié dans les métadonnées
+                                    if meta['separateur']:
+                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=meta['separateur'])
+                                    else:
+                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=';')
+                                except:
+                                    try:
+                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=',')
+                                    except:
+                                        dict_data = None
+                            elif isinstance(meta['dictionnaire'], dict) and 'data' in meta['dictionnaire']:
+                                headers = meta['dictionnaire'].get('header', [])
+                                data = meta['dictionnaire'].get('data', [])
+                                dict_data = pd.DataFrame(data, columns=headers)
+                            else:
+                                dict_data = None
+                            if dict_data is not None and not dict_data.empty:
+                                def highlight_search_term_dict(val):
+                                    if search_text and isinstance(val, str):
+                                        if search_text.lower() in val.lower():
+                                            return 'background-color: yellow'
+                                    return ''
+                                styled_dict_data = dict_data.style.map(highlight_search_term_dict)
+                                st.dataframe(styled_dict_data, use_container_width=True)
+                            else:
+                                st.info("Aucune information sur les variables disponible")
+                        except Exception as e:
+                            st.error(f"Erreur lors du chargement du dictionnaire des variables : {str(e)}")
+                    with tab2:
+                        try:
+                            if isinstance(meta['contenu_csv'], str):
+                                try:
                                     if meta['separateur']:
                                         csv_data = pd.read_csv(io.StringIO(meta['contenu_csv']), sep=meta['separateur'], nrows=4)
                                     else:
-                                        # Essayer avec le séparateur par défaut (;)
                                         csv_data = pd.read_csv(io.StringIO(meta['contenu_csv']), sep=';', nrows=4)
                                 except:
                                     try:
-                                        # Si ça échoue, essayer avec la virgule
                                         csv_data = pd.read_csv(io.StringIO(meta['contenu_csv']), sep=',', nrows=4)
                                     except:
                                         csv_data = None
                             elif isinstance(meta['contenu_csv'], dict) and 'data' in meta['contenu_csv']:
-                                # Si c'est un dictionnaire avec une clé 'data'
                                 headers = meta['contenu_csv'].get('header', [])
                                 data = meta['contenu_csv'].get('data', [])
                                 csv_data = pd.DataFrame(data, columns=headers)
-                                csv_data = csv_data.head(4)  # Limiter à 4 lignes
+                                csv_data = csv_data.head(4)
                             else:
                                 csv_data = None
-
                             if csv_data is not None and not csv_data.empty:
                                 st.dataframe(csv_data, use_container_width=True)
                             else:
@@ -372,52 +415,6 @@ else:
                         except Exception as e:
                             st.info("Erreur lors du chargement des données")
                             st.error(str(e))
-                            
-                    with tab2:
-                        try:
-                            # Conversion du dictionnaire en DataFrame
-                            if isinstance(meta['dictionnaire'], str):
-                                try:
-                                    # Essayer d'abord avec le séparateur spécifié dans les métadonnées
-                                    if meta['separateur']:
-                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=meta['separateur'])
-                                    else:
-                                        # Essayer avec le point-virgule par défaut
-                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=';')
-                                except:
-                                    try:
-                                        # Si ça échoue, essayer avec la virgule
-                                        dict_data = pd.read_csv(io.StringIO(meta['dictionnaire']), sep=',')
-                                    except:
-                                        dict_data = None
-                            elif isinstance(meta['dictionnaire'], dict) and 'data' in meta['dictionnaire']:
-                                # Si c'est un dictionnaire avec une clé 'data'
-                                headers = meta['dictionnaire'].get('header', [])
-                                data = meta['dictionnaire'].get('data', [])
-                                dict_data = pd.DataFrame(data, columns=headers)
-                            else:
-                                dict_data = None
-
-                            if dict_data is not None and not dict_data.empty:
-                                # Configuration de la mise en forme conditionnelle pour le dictionnaire
-                                def highlight_search_term_dict(val):
-                                    if search_text and isinstance(val, str):
-                                        if search_text.lower() in val.lower():
-                                            return 'background-color: yellow'
-                                    return ''
-                                
-                                # Application de la mise en forme conditionnelle au dictionnaire
-                                styled_dict_data = dict_data.style.map(highlight_search_term_dict)
-                                
-                                # Affichage du DataFrame avec mise en forme
-                                st.dataframe(
-                                    styled_dict_data,
-                                    use_container_width=True
-                                )
-                            else:
-                                st.info("Aucune information sur les variables disponible")
-                        except Exception as e:
-                            st.error(f"Erreur lors du chargement du dictionnaire des variables : {str(e)}")
                 st.markdown('</div>', unsafe_allow_html=True)
 
 # Section d'aide et informations

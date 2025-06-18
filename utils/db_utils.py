@@ -235,24 +235,24 @@ def get_metadata(search_term=None, schema_filter=None):
                 query = """
                 SELECT *, 
                     (CASE 
-                        WHEN LOWER(nom_table) LIKE LOWER(%s) THEN 4
+                        WHEN LOWER(nom_jeu_donnees) LIKE LOWER(%s) THEN 4
                         WHEN LOWER(producteur) LIKE LOWER(%s) THEN 3
                         WHEN LOWER(description) LIKE LOWER(%s) THEN 2
                         WHEN LOWER(dictionnaire::text) LIKE LOWER(%s) THEN 1
                         ELSE 0
                     END) +
                     (CASE 
-                        WHEN position(LOWER(%s) in LOWER(nom_table)) = 1 THEN 2
+                        WHEN position(LOWER(%s) in LOWER(nom_jeu_donnees)) = 1 THEN 2
                         WHEN position(LOWER(%s) in LOWER(producteur)) = 1 THEN 1.5
                         ELSE 1
                     END) as score
                 FROM metadata 
-                WHERE (LOWER(nom_table) LIKE LOWER(%s)
+                WHERE (LOWER(nom_jeu_donnees) LIKE LOWER(%s)
                 OR LOWER(producteur) LIKE LOWER(%s)
                 OR LOWER(description) LIKE LOWER(%s)
                 OR LOWER(dictionnaire::text) LIKE LOWER(%s))
                 AND LOWER(schema) = LOWER(%s)
-                ORDER BY score DESC, nom_table
+                ORDER BY score DESC, nom_jeu_donnees
                 """
                 search_pattern = f'%{search_term}%'
                 cur.execute(query, (
@@ -265,23 +265,23 @@ def get_metadata(search_term=None, schema_filter=None):
                 query = """
                 SELECT *, 
                     (CASE 
-                        WHEN LOWER(nom_table) LIKE LOWER(%s) THEN 4
+                        WHEN LOWER(nom_jeu_donnees) LIKE LOWER(%s) THEN 4
                         WHEN LOWER(producteur) LIKE LOWER(%s) THEN 3
                         WHEN LOWER(description) LIKE LOWER(%s) THEN 2
                         WHEN LOWER(dictionnaire::text) LIKE LOWER(%s) THEN 1
                         ELSE 0
                     END) +
                     (CASE 
-                        WHEN position(LOWER(%s) in LOWER(nom_table)) = 1 THEN 2
+                        WHEN position(LOWER(%s) in LOWER(nom_jeu_donnees)) = 1 THEN 2
                         WHEN position(LOWER(%s) in LOWER(producteur)) = 1 THEN 1.5
                         ELSE 1
                     END) as score
                 FROM metadata 
-                WHERE LOWER(nom_table) LIKE LOWER(%s)
+                WHERE LOWER(nom_jeu_donnees) LIKE LOWER(%s)
                 OR LOWER(producteur) LIKE LOWER(%s)
                 OR LOWER(description) LIKE LOWER(%s)
                 OR LOWER(dictionnaire::text) LIKE LOWER(%s)
-                ORDER BY score DESC, nom_table
+                ORDER BY score DESC, nom_jeu_donnees
                 """
                 search_pattern = f'%{search_term}%'
                 cur.execute(query, (
@@ -293,11 +293,11 @@ def get_metadata(search_term=None, schema_filter=None):
                 query = """
                 SELECT * FROM metadata 
                 WHERE LOWER(schema) = LOWER(%s)
-                ORDER BY nom_table
+                ORDER BY nom_jeu_donnees
                 """
                 cur.execute(query, (schema_filter,))
             else:
-                query = "SELECT * FROM metadata ORDER BY nom_table"
+                query = "SELECT * FROM metadata ORDER BY nom_jeu_donnees"
                 cur.execute(query)
             results = cur.fetchall()
             logging.info(f"Nombre de résultats trouvés : {len(results)}")
