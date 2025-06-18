@@ -23,16 +23,28 @@ def get_update_data():
     try:
         conn = get_db_connection()
         query = """
-        SELECT 
-            nom_jeu_donnees,
-            producteur,
-            date_publication,
-            date_maj,
-            date_prochaine_publication,
-            frequence_maj,
-            nom_table
-        FROM metadata
-        ORDER BY date_prochaine_publication DESC
+        WITH latest_publications AS (
+            SELECT 
+                nom_jeu_donnees,
+                MAX(date_publication) as date_publication
+            FROM metadata
+            GROUP BY nom_jeu_donnees
+        )
+        SELECT DISTINCT
+            m.nom_jeu_donnees,
+            m.producteur,
+            lp.date_publication,
+            m.date_prochaine_publication,
+            m.frequence_maj
+        FROM metadata m
+        JOIN latest_publications lp ON m.nom_jeu_donnees = lp.nom_jeu_donnees
+        GROUP BY 
+            m.nom_jeu_donnees,
+            m.producteur,
+            lp.date_publication,
+            m.date_prochaine_publication,
+            m.frequence_maj
+        ORDER BY m.date_prochaine_publication DESC
         """
         df = pd.read_sql(query, conn)
         conn.close()
@@ -83,14 +95,14 @@ try:
         st.info("Aucune donnée à afficher (base vide ou erreur de connexion).")
     else:
         # Conversion des dates
-        for col in ["date_publication", "date_maj", "date_prochaine_publication"]:
+        for col in ["date_publication", "date_prochaine_publication"]:
             df[col] = pd.to_datetime(df[col]).dt.date
         # Calcul du statut
         df['statut'] = df.apply(compute_status, axis=1)
         # Badge HTML
         df['statut_badge'] = df['statut'].apply(status_badge)
-        # Lien vers la fiche (supposé que Catalogue.py accepte ?table=nom_table)
-        df['Fiche'] = df['nom_table'].apply(lambda t: f'<a href="/Catalogue?table={t}" target="_blank">Voir fiche</a>' if pd.notnull(t) else "")
+        # Lien vers la fiche
+        df['Fiche'] = df['nom_jeu_donnees'].apply(lambda t: f'<a href="/Catalogue?jeu={t}" target="_blank">Voir fiche</a>' if pd.notnull(t) else "")
 
         # Statistiques
         total = len(df)
@@ -131,12 +143,11 @@ try:
         st.subheader("Tableau de suivi")
         st.write("<style>th, td {text-align: left !important;}</style>", unsafe_allow_html=True)
         st.write(
-            df_filtered[['nom_jeu_donnees', 'producteur', 'date_publication', 'date_maj', 'date_prochaine_publication', 'frequence_maj']]
+            df_filtered[['nom_jeu_donnees', 'producteur', 'date_publication', 'date_prochaine_publication', 'frequence_maj']]
             .rename(columns={
                 'nom_jeu_donnees': 'Jeu de données',
                 'producteur': 'Producteur',
-                'date_publication': 'Date publication',
-                'date_maj': 'Dernière MàJ',
+                'date_publication': 'Date dernière publication',
                 'date_prochaine_publication': 'Prochaine publication',
                 'frequence_maj': 'Fréquence',
             })
