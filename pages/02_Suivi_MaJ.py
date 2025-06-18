@@ -87,85 +87,57 @@ try:
         # Calcul du statut
         df['statut'] = df.apply(compute_status, axis=1)
         # Badge HTML
-        df['statut_badge'] = df['statut'].apply(status_badge)
-        # Lien vers la fiche
-        df['Fiche'] = df['nom_jeu_donnees'].apply(lambda t: f'<a href="/Catalogue?jeu={t}" target="_blank">Voir fiche</a>' if pd.notnull(t) else "")
+        df['Statut'] = df['statut'].apply(status_badge)
+        # Colonne Fiche (texte cliquable)
+        df['Fiche'] = 'Voir fiche'
 
-        # Statistiques
-        total = len(df)
-        n_retard = (df['statut'] == "En retard").sum()
-        n_maj = (df['statut'] == "À mettre à jour").sum()
-        n_ok = (df['statut'] == "À jour").sum()
-        n_nonprevue = (df['statut'] == "MaJ non prévue").sum()
-        st.markdown(f"**{total} jeux suivis** | <span style='color:#ff4b4b'>🟥 {n_retard} en retard</span> | <span style='color:#ffa500'>🟧 {n_maj} à mettre à jour</span> | <span style='color:#4caf50'>🟩 {n_ok} à jour</span> | <span style='color:#2196f3'>🔵 {n_nonprevue} MaJ non prévue</span>", unsafe_allow_html=True)
+        # Réorganisation des colonnes pour le tableau principal
+        display_cols = [
+            'nom_jeu_donnees', 'producteur', 'date_publication', 'millesime', 'date_prochaine_publication', 'frequence_maj', 'Statut', 'Fiche'
+        ]
+        df_display = df[display_cols].rename(columns={
+            'nom_jeu_donnees': 'Jeu de données',
+            'producteur': 'Producteur',
+            'date_publication': 'Date dernière publication',
+            'millesime': 'Année du dernier millésime',
+            'date_prochaine_publication': 'Prochaine publication',
+            'frequence_maj': 'Fréquence',
+        })
 
-        # Filtres
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            producteurs = ["Tous"] + sorted(df['producteur'].dropna().unique().tolist())
-            selected_producteur = st.selectbox(
-                "Filtrer par producteur",
-                producteurs
-            )
-        with col2:
-            status_options = ["Tous", "À mettre à jour", "À jour", "En retard", "MaJ non prévue"]
-            selected_status = st.selectbox(
-                "Filtrer par statut",
-                status_options
-            )
-        with col3:
-            st.write("")
-            st.write("")
-            export_format = st.radio("Exporter le tableau :", ["CSV", "Excel"], horizontal=True)
-            export_btn = st.button("Exporter", use_container_width=True)
-
-        # Application des filtres
-        df_filtered = df.copy()
-        if selected_producteur != "Tous":
-            df_filtered = df_filtered[df_filtered['producteur'] == selected_producteur]
-        if selected_status != "Tous":
-            df_filtered = df_filtered[df_filtered['statut'] == selected_status]
-
-        # Affichage du tableau
+        # Affichage du tableau fusionné avec st.data_editor
         st.subheader("Tableau de suivi")
         st.write("<style>th, td {text-align: left !important;}</style>", unsafe_allow_html=True)
-        st.write(
-            df_filtered[['nom_jeu_donnees', 'producteur', 'date_publication', 'millesime', 'date_prochaine_publication', 'frequence_maj']]
-            .rename(columns={
-                'nom_jeu_donnees': 'Jeu de données',
-                'producteur': 'Producteur',
-                'date_publication': 'Date dernière publication',
-                'millesime': 'Année du dernier millésime',
-                'date_prochaine_publication': 'Prochaine publication',
-                'frequence_maj': 'Fréquence',
-            })
-        )
-        # Tableau enrichi avec badge et lien
-        st.markdown(
-            df_filtered[['statut_badge', 'Fiche']]
-            .to_html(escape=False, index=False, header=["Statut", "Fiche de métadonnées"]),
-            unsafe_allow_html=True
+        selected = st.data_editor(
+            df_display,
+            column_config={
+                "Statut": st.column_config.TextColumn("Statut", help="Statut du jeu de données", width="small"),
+                "Fiche": st.column_config.TextColumn("Fiche", help="Voir la fiche détaillée", width="small")
+            },
+            hide_index=True,
+            use_container_width=True,
+            disabled=[col for col in df_display.columns if col != 'Fiche'],
+            key="data_editor_suivi"
         )
 
-        # Graphique de suivi
-        st.subheader("Vue d'ensemble des mises à jour")
-        if not df_filtered.empty:
-            fig = px.timeline(
-                df_filtered,
-                x_start="date_publication",
-                x_end="date_prochaine_publication",
-                y="nom_jeu_donnees",
-                color="statut",
-                title="Planning des mises à jour"
-            )
-            st.plotly_chart(fig, use_container_width=True)
-        else:
-            st.info("Aucune donnée à afficher pour les filtres sélectionnés.")
+        # Affichage des détails du jeu de données sélectionné
+        if selected is not None and len(selected) > 0:
+            selected_row = selected.iloc[0] if hasattr(selected, 'iloc') else selected[0]
+            st.markdown("---")
+            st.markdown(f"### Détail du jeu de données : {selected_row['Jeu de données']}")
+            st.write(f"**Producteur :** {selected_row['Producteur']}")
+            st.write(f"**Date de dernière publication :** {selected_row['Date dernière publication']}")
+            st.write(f"**Année du dernier millésime :** {selected_row['Année du dernier millésime']}")
+            st.write(f"**Prochaine publication :** {selected_row['Prochaine publication']}")
+            st.write(f"**Fréquence :** {selected_row['Fréquence']}")
+
+        # Bouton Exporter plus petit
+        st.markdown("<style>.stButton button {padding: 0.2rem 0.7rem; font-size: 0.9rem;}</style>", unsafe_allow_html=True)
+        export_format = st.radio("Exporter le tableau :", ["CSV", "Excel"], horizontal=True, key="export_radio")
+        export_btn = st.button("Exporter", key="export_btn")
 
         # Export
         if export_btn:
-            to_export = df_filtered.copy()
-            to_export = to_export.drop(columns=["statut_badge", "Fiche"])
+            to_export = df_display.copy()
             if export_format == "CSV":
                 csv = to_export.to_csv(index=False).encode('utf-8')
                 st.download_button(
@@ -184,6 +156,23 @@ try:
                     file_name="suivi_maj.xlsx",
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                 )
+
+        # Graphique de suivi avec trait vertical rouge pour la date actuelle
+        st.subheader("Vue d'ensemble des mises à jour")
+        if not df.empty:
+            fig = px.timeline(
+                df,
+                x_start="date_publication",
+                x_end="date_prochaine_publication",
+                y="nom_jeu_donnees",
+                color="statut",
+                title="Planning des mises à jour"
+            )
+            # Ajout du trait vertical rouge pour la date actuelle
+            fig.add_vline(x=datetime.now(), line_width=2, line_dash="dash", line_color="red")
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("Aucune donnée à afficher pour les filtres sélectionnés.")
 
 except Exception as e:
     st.error(f"Une erreur est survenue : {str(e)}")
