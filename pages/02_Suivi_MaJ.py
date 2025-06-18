@@ -45,10 +45,20 @@ def compute_status(row):
     freq = str(row.get('frequence_maj', '') or '').strip().lower()
     if freq == "ponctuelle" or freq == "" or pd.isnull(freq):
         return "MaJ non prévue"
+    
     if pd.isnull(row['date_prochaine_publication']):
         return "Inconnu"
+    
     dpp = row['date_prochaine_publication']
+    date_publication = row['date_publication']
     today = date.today()
+    
+    # Si la date de publication est postérieure à la date de prochaine publication
+    # alors le jeu de données est considéré comme à jour
+    if not pd.isnull(date_publication) and date_publication >= dpp:
+        return "À jour"
+    
+    # Sinon, on applique la logique habituelle
     if dpp < today:
         return "En retard"
     elif (dpp - today).days < 7:
