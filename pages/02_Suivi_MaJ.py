@@ -23,28 +23,20 @@ def get_update_data():
     try:
         conn = get_db_connection()
         query = """
-        WITH latest_publications AS (
-            SELECT 
-                nom_jeu_donnees,
-                MAX(date_publication) as date_publication
+        SELECT m1.nom_jeu_donnees,
+               m1.producteur,
+               m1.date_publication,
+               m1.millesime,
+               m1.date_prochaine_publication,
+               m1.frequence_maj
+        FROM metadata m1
+        INNER JOIN (
+            SELECT nom_jeu_donnees, MAX(date_publication) AS max_date_pub
             FROM metadata
             GROUP BY nom_jeu_donnees
-        )
-        SELECT DISTINCT
-            m.nom_jeu_donnees,
-            m.producteur,
-            lp.date_publication,
-            m.date_prochaine_publication,
-            m.frequence_maj
-        FROM metadata m
-        JOIN latest_publications lp ON m.nom_jeu_donnees = lp.nom_jeu_donnees
-        GROUP BY 
-            m.nom_jeu_donnees,
-            m.producteur,
-            lp.date_publication,
-            m.date_prochaine_publication,
-            m.frequence_maj
-        ORDER BY m.date_prochaine_publication DESC
+        ) m2
+        ON m1.nom_jeu_donnees = m2.nom_jeu_donnees AND m1.date_publication = m2.max_date_pub
+        ORDER BY m1.date_prochaine_publication DESC
         """
         df = pd.read_sql(query, conn)
         conn.close()
@@ -143,11 +135,12 @@ try:
         st.subheader("Tableau de suivi")
         st.write("<style>th, td {text-align: left !important;}</style>", unsafe_allow_html=True)
         st.write(
-            df_filtered[['nom_jeu_donnees', 'producteur', 'date_publication', 'date_prochaine_publication', 'frequence_maj']]
+            df_filtered[['nom_jeu_donnees', 'producteur', 'date_publication', 'millesime', 'date_prochaine_publication', 'frequence_maj']]
             .rename(columns={
                 'nom_jeu_donnees': 'Jeu de données',
                 'producteur': 'Producteur',
                 'date_publication': 'Date dernière publication',
+                'millesime': 'Année du dernier millésime',
                 'date_prochaine_publication': 'Prochaine publication',
                 'frequence_maj': 'Fréquence',
             })
