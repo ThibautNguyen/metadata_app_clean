@@ -3,16 +3,11 @@ credentials:
     admin:
       email: admin@example.com
       name: Administrateur
-      password: $2b$12$YIZCHPnrJVN5AAjNXtfgLuOKYgDtmUI8JQQFTv0LDpUnYWnCtElX2  # 'password123'
-    thibault:
-      email: thibault@example.com
-      name: Thibault
-      password: $2b$12$YIZCHPnrJVN5AAjNXtfgLuOKYgDtmUI8JQQFTv0LDpUnYWnCtElX2  # 'password123'
+      password: "$2b$12$5vQnnesAYGkYOYEfhgTZ6uo67cH06AhegQtMUFmX8oYaaeqFo8iGu"
 cookie:
   expiry_days: 30
-  key: some_signature_key
-  name: some_cookie_name
+  key: "some_random_key" # Changez cette clé
+  name: auth_cookie
 preauthorized:
   emails:
-    - admin@example.com
-    - thibault@example.com 
+    - admin@example.com 

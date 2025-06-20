@@ -23,6 +23,6 @@ sys.stdout.flush()
 
 password = b'password123'
 hash = bcrypt.hashpw(password, bcrypt.gensalt(rounds=12))
-print('Hash bcrypt pour password123 :', hash.decode())
+print(f"Bcrypt hash for password123: {hash.decode()}")
 
-input("Appuyez sur Entrée pour quitter...") 
+# input("Appuyez sur Entrée pour quitter...") 

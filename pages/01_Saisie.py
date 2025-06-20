@@ -97,10 +97,6 @@ st.markdown("""
 st.title("Saisie des métadonnées")
 st.write("Remplissez le formulaire ci-dessous pour ajouter de nouvelles métadonnées.")
 
-# Bouton de rechargement
-if st.button("Recharger les options", key="reload_button"):
-    st.rerun()
-
 # --- NOUVELLE ORGANISATION DU FORMULAIRE AVEC LOGIQUE DYNAMIQUE ---
 
 # Récupération des options depuis la base de données
