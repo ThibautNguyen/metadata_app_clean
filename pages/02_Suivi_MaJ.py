@@ -179,47 +179,58 @@ try:
         # Graphique de suivi avec trait vertical rouge pour la date actuelle
         st.subheader("📈 Vue d'ensemble des mises à jour")
         if not df.empty:
-            # Configuration des couleurs personnalisées pour le graphique
-            color_map = {
-                "En retard": "#ff4b4b",
-                "À mettre à jour": "#ffa500", 
-                "À jour": "#4caf50",
-                "MaJ non prévue": "#2196f3",
-                "Inconnu": "#bdbdbd"
-            }
+            # Préparation des données pour le graphique (garder les datetime pour Plotly)
+            df_graph = df.copy()
+            df_graph['date_publication'] = pd.to_datetime(df_graph['date_publication'])
+            df_graph['date_prochaine_publication'] = pd.to_datetime(df_graph['date_prochaine_publication'])
             
-            fig = px.timeline(
-                df,
-                x_start="date_publication",
-                x_end="date_prochaine_publication",
-                y="nom_jeu_donnees",
-                color="statut",
-                color_discrete_map=color_map,
-                title="Planning des mises à jour des jeux de données",
-                labels={
-                    "nom_jeu_donnees": "Jeu de données",
-                    "statut": "Statut"
+            # Filtrer les lignes avec des dates valides pour le graphique
+            df_graph_valid = df_graph.dropna(subset=['date_publication', 'date_prochaine_publication'])
+            
+            if not df_graph_valid.empty:
+                # Configuration des couleurs personnalisées pour le graphique
+                color_map = {
+                    "En retard": "#ff4b4b",
+                    "À mettre à jour": "#ffa500", 
+                    "À jour": "#4caf50",
+                    "MaJ non prévue": "#2196f3",
+                    "Inconnu": "#bdbdbd"
                 }
-            )
-            
-            # Amélioration de l'apparence du graphique
-            fig.update_layout(
-                height=max(400, len(df) * 30),  # Hauteur dynamique selon le nombre de lignes
-                showlegend=True,
-                xaxis_title="Période",
-                yaxis_title="Jeu de données"
-            )
-            
-            # Ajout du trait vertical rouge pour la date actuelle
-            fig.add_vline(
-                x=datetime.now(), 
-                line_width=3, 
-                line_color="red",
-                annotation_text="Aujourd'hui",
-                annotation_position="top"
-            )
-            
-            st.plotly_chart(fig, use_container_width=True)
+                
+                fig = px.timeline(
+                    df_graph_valid,
+                    x_start="date_publication",
+                    x_end="date_prochaine_publication",
+                    y="nom_jeu_donnees",
+                    color="statut",
+                    color_discrete_map=color_map,
+                    title="Planning des mises à jour des jeux de données",
+                    labels={
+                        "nom_jeu_donnees": "Jeu de données",
+                        "statut": "Statut"
+                    }
+                )
+                
+                # Amélioration de l'apparence du graphique
+                fig.update_layout(
+                    height=max(400, len(df_graph_valid) * 30),  # Hauteur dynamique selon le nombre de lignes
+                    showlegend=True,
+                    xaxis_title="Période",
+                    yaxis_title="Jeu de données"
+                )
+                
+                # Ajout du trait vertical rouge pour la date actuelle
+                fig.add_vline(
+                    x=datetime.now(), 
+                    line_width=3, 
+                    line_color="red",
+                    annotation_text="Aujourd'hui",
+                    annotation_position="top"
+                )
+                
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.warning("Aucun jeu de données avec des dates valides pour afficher le graphique timeline.")
             
             # Légende des statuts
             st.markdown("#### 🎨 Légende des statuts")
