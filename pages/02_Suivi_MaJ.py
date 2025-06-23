@@ -254,30 +254,54 @@ try:
                             )
                         ))
                     
-                    # Configuration du layout
+                    # Configuration du layout avec extension future
+                    # Calculer les bornes temporelles étendues
+                    min_date = df_timeline_valid['date_publication'].min()
+                    max_date = df_timeline_valid['date_prochaine_publication'].max()
+                    
+                    # Étendre la timeline : 6 mois avant et 1 an après
+                    extended_min = min_date - pd.DateOffset(months=6)
+                    extended_max = max_date + pd.DateOffset(years=1)
+                    
                     fig.update_layout(
                         title="Timeline de couverture temporelle (publication → fin de validité)",
                         xaxis_title="Période",
                         yaxis_title="Jeu de données",
                         height=max(400, len(df_timeline_valid['nom_jeu_donnees'].unique()) * 40),
                         showlegend=False,
-                        hovermode='closest'
+                        hovermode='closest',
+                        xaxis=dict(
+                            range=[extended_min, extended_max],
+                            showgrid=True,
+                            gridwidth=1,
+                            gridcolor='lightgray'
+                        ),
+                        yaxis=dict(
+                            showgrid=True,
+                            gridwidth=1,
+                            gridcolor='lightgray'
+                        )
                     )
                     
-                    # Ligne verticale "Aujourd'hui" (méthode compatible)
+                    # Ligne verticale "Aujourd'hui" (forcée visible)
                     try:
-                        today = pd.Timestamp.now().normalize()
+                        today = pd.Timestamp.now()
                         fig.add_vline(
                             x=today,
-                            line_width=2,
+                            line_width=3,
                             line_color="red",
                             line_dash="dash",
                             annotation_text="Aujourd'hui",
-                            annotation_position="top"
+                            annotation_position="top",
+                            annotation=dict(
+                                bgcolor="rgba(255,255,255,0.8)",
+                                bordercolor="red",
+                                borderwidth=1
+                            )
                         )
+                        print(f"Debug: Ligne Aujourd'hui ajoutée pour {today}")  # Debug temporaire
                     except Exception as e:
-                        # Si problème avec la ligne verticale, on continue sans
-                        pass
+                        st.warning(f"Problème ligne Aujourd'hui: {e}")  # Debug temporaire
                     
                     st.plotly_chart(fig, use_container_width=True)
                     
