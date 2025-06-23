@@ -134,22 +134,6 @@ st.markdown("""
     .stDataFrame {
         border: 1px solid #e0e0e0;
         border-radius: 5px;
-        max-width: 100%;
-        overflow-x: auto;
-        width: 100%;
-    }
-    
-    /* Force le conteneur du dataframe à s'adapter */
-    div[data-testid="stDataFrame"] {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto;
-    }
-    
-    /* Style spécifique pour les tableaux dans le conteneur principal */
-    .main .stDataFrame > div {
-        width: 100% !important;
-        max-width: 100% !important;
     }
     
     /* Style des cases à cocher */
@@ -317,33 +301,33 @@ else:
                     return 'background-color: yellow'
             return ''
         styled_df = df.style.map(highlight_search_term, subset=['Nom du jeu de données', 'Nom de la table', 'Producteur de la donnée'])
-        st.dataframe(
-            styled_df,
-            column_config={
-                "Nom du jeu de données": st.column_config.TextColumn(
-                    "Nom du jeu de données",
-                    help="Nom du jeu de données (regroupement logique)",
-                    width=None
-                ),
-                "Nom de la table": st.column_config.TextColumn(
-                    "Nom de la table",
-                    help="Nom de la table dans la base de données",
-                    width=None
-                ),
-                "Producteur de la donnée": st.column_config.TextColumn(
-                    "Producteur de la donnée",
-                    help="Organisme producteur des données",
-                    width=None
-                ),
-                "Date de publication": st.column_config.TextColumn(
-                    "Date de publication",
-                    help="Date de publication de la table",
-                    width=None
-                )
-            },
-            hide_index=True,
-            use_container_width=True
-        )
+        # Création d'un conteneur pour le tableau (comme dans la page de suivi)
+        table_container = st.container()
+        
+        with table_container:
+            st.dataframe(
+                styled_df,
+                column_config={
+                    "Nom du jeu de données": st.column_config.TextColumn(
+                        "Nom du jeu de données",
+                        help="Nom du jeu de données (regroupement logique)"
+                    ),
+                    "Nom de la table": st.column_config.TextColumn(
+                        "Nom de la table",
+                        help="Nom de la table dans la base de données"
+                    ),
+                    "Producteur de la donnée": st.column_config.TextColumn(
+                        "Producteur de la donnée",
+                        help="Organisme producteur des données"
+                    ),
+                    "Date de publication": st.column_config.TextColumn(
+                        "Date de publication",
+                        help="Date de publication de la table"
+                    )
+                },
+                hide_index=True,
+                use_container_width=True
+            )
 
         # Affichage détaillé des métadonnées
         for i, meta in enumerate(metadata_results):
