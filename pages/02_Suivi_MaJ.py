@@ -205,17 +205,21 @@ try:
                     # Créer le graphique timeline avec périodes de validité
                     fig = go.Figure()
                     
-                    # Grouper par jeu de données pour calculer la couverture globale
-                    timeline_summary = df_timeline_valid.groupby('nom_jeu_donnees').agg({
-                        'date_publication': ['min', 'max', 'count'],
-                        'date_prochaine_publication': 'max',
-                        'producteur': 'first',
-                        'statut': lambda x: x.mode()[0] if not x.empty else 'Inconnu'  # Statut le plus fréquent
-                    }).reset_index()
+                    # Version simplifiée du groupby pour éviter les erreurs Pandas
+                    timeline_data = []
+                    for jeu_donnees in df_timeline_valid['nom_jeu_donnees'].unique():
+                        subset = df_timeline_valid[df_timeline_valid['nom_jeu_donnees'] == jeu_donnees]
+                        timeline_data.append({
+                            'nom_jeu_donnees': jeu_donnees,
+                            'premiere_publication': subset['date_publication'].min(),
+                            'derniere_publication': subset['date_publication'].max(),
+                            'nb_publications': len(subset),
+                            'fin_validite': subset['date_prochaine_publication'].max(),
+                            'producteur': subset['producteur'].iloc[0],
+                            'statut_principal': subset['statut'].mode().iloc[0] if not subset['statut'].mode().empty else 'Inconnu'
+                        })
                     
-                    # Aplatir les colonnes multi-niveaux
-                    timeline_summary.columns = ['nom_jeu_donnees', 'premiere_publication', 'derniere_publication', 
-                                              'nb_publications', 'fin_validite', 'producteur', 'statut_principal']
+                    timeline_summary = pd.DataFrame(timeline_data)
                     
                     # Ajouter les barres de couverture temporelle pour chaque jeu de données
                     for idx, row in timeline_summary.iterrows():
