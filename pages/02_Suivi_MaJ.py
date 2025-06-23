@@ -286,21 +286,27 @@ try:
                         )
                     )
                     
-                    # Marqueur "Aujourd'hui" - méthode alternative sans add_vline
+                    # Ligne verticale rouge continue "Aujourd'hui" - méthode scatter
                     try:
                         today = pd.Timestamp.now()
                         
-                        # Ajouter un marqueur vertical avec une trace scatter
-                        y_positions = df_timeline_valid['nom_jeu_donnees'].unique()
+                        # Créer une ligne verticale continue en utilisant scatter
+                        # On va du bas au haut du graphique
+                        y_min = 0  # Position la plus basse
+                        y_max = len(df_timeline_valid['nom_jeu_donnees'].unique()) - 1  # Position la plus haute
+                        
+                        # Créer plusieurs points pour former une ligne continue
+                        n_points = 100  # Nombre de points pour une ligne lisse
+                        y_line = [y_min + i * (y_max - y_min) / (n_points - 1) for i in range(n_points)]
+                        
                         fig.add_trace(go.Scatter(
-                            x=[today] * len(y_positions),
-                            y=y_positions,
-                            mode='markers',
-                            marker=dict(
-                                symbol='line-ns-open',
-                                size=15,
+                            x=[today] * n_points,
+                            y=y_line,
+                            mode='lines',
+                            line=dict(
                                 color='red',
-                                line=dict(width=3, color='red')
+                                width=3,
+                                dash='dash'  # Ligne en pointillés pour la distinguer
                             ),
                             name="Aujourd'hui",
                             showlegend=True,
@@ -308,7 +314,7 @@ try:
                         ))
                         
                     except Exception as e:
-                        # Si toujours des problèmes, on affiche juste la date d'aujourd'hui en titre
+                        # Si toujours des problèmes, on continue sans la ligne
                         pass
                     
                     st.plotly_chart(fig, use_container_width=True)
