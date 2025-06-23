@@ -201,28 +201,66 @@ try:
                     "Inconnu": "#bdbdbd"
                 }
                 
-                # Version entièrement simplifiée pour éviter toute erreur
+                # Timeline avancée avec barres de couverture temporelle
                 try:
-                    # Graphique scatter simple et robuste
-                    fig = px.scatter(
-                        df_timeline_valid,
-                        x="date_publication",
-                        y="nom_jeu_donnees",
-                        color="statut",
-                        color_discrete_map=color_map,
-                        title="Timeline des publications par jeu de données",
-                        labels={
-                            "date_publication": "Date de publication",
-                            "nom_jeu_donnees": "Jeu de données",
-                            "statut": "Statut"
-                        },
-                        hover_data=["producteur", "frequence_maj", "date_prochaine_publication"]
-                    )
+                    # Créer un graphique plotly vide
+                    fig = go.Figure()
                     
-                    # Configuration simple du layout
+                    # Étape 1: Ajouter les barres de couverture temporelle (publication → fin de validité)
+                    for idx, row in df_timeline_valid.iterrows():
+                        # Barre horizontale : de la date de publication à la fin de validité
+                        fig.add_trace(go.Scatter(
+                            x=[row['date_publication'], row['date_prochaine_publication']],
+                            y=[row['nom_jeu_donnees'], row['nom_jeu_donnees']],
+                            mode='lines',
+                            line=dict(
+                                color=color_map.get(row['statut'], '#bdbdbd'),
+                                width=6
+                            ),
+                            name=f"Période validité",
+                            showlegend=False,
+                            hovertemplate=(
+                                f"<b>Période de validité</b><br>"
+                                f"Jeu: {row['nom_jeu_donnees']}<br>"
+                                f"De: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
+                                f"À: {row['date_prochaine_publication'].strftime('%Y-%m-%d')}<br>"
+                                f"Statut: {row['statut']}<br>"
+                                "<extra></extra>"
+                            )
+                        ))
+                    
+                    # Étape 2: Ajouter les points de publication (par-dessus les barres)
+                    for idx, row in df_timeline_valid.iterrows():
+                        fig.add_trace(go.Scatter(
+                            x=[row['date_publication']],
+                            y=[row['nom_jeu_donnees']],
+                            mode='markers',
+                            marker=dict(
+                                color=color_map.get(row['statut'], '#bdbdbd'),
+                                size=10,
+                                symbol='circle',
+                                line=dict(width=1, color='white')
+                            ),
+                            name=f"Publication",
+                            showlegend=False,
+                            hovertemplate=(
+                                f"<b>Publication</b><br>"
+                                f"Jeu: {row['nom_jeu_donnees']}<br>"
+                                f"Date: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
+                                f"Producteur: {row['producteur']}<br>"
+                                f"Fréquence: {row['frequence_maj']}<br>"
+                                f"Statut: {row['statut']}<br>"
+                                "<extra></extra>"
+                            )
+                        ))
+                    
+                    # Configuration du layout
                     fig.update_layout(
+                        title="Timeline de couverture temporelle (publication → fin de validité)",
+                        xaxis_title="Période",
+                        yaxis_title="Jeu de données",
                         height=max(400, len(df_timeline_valid['nom_jeu_donnees'].unique()) * 40),
-                        showlegend=True,
+                        showlegend=False,
                         hovermode='closest'
                     )
                     
@@ -243,10 +281,12 @@ try:
                     
                     st.plotly_chart(fig, use_container_width=True)
                     
-                    # Informations sur la timeline
+                    # Informations sur la timeline améliorée
                     st.info(
-                        "📊 **Timeline actuelle :** Ce graphique montre les dates de publication de chaque jeu de données. "
-                        "La version complète avec périodes de validité sera disponible prochainement."
+                        "📊 **Timeline de couverture temporelle :** "
+                        "Les barres horizontales colorées montrent la période de validité de chaque jeu de données "
+                        "(de la publication jusqu'à la prochaine mise à jour prévue). "
+                        "Les points circulaires marquent les dates de publication spécifiques."
                     )
                     
                 except Exception as e:
