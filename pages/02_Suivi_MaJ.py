@@ -205,30 +205,20 @@ try:
                     # Préparation des données pour le graphique scatter
                     df_scatter = df_graph_valid.copy()
                     
-                    # Créer un graphique scatter avec les dates de publication
+                    # Créer un graphique scatter simple avec seulement les dates de publication
                     fig = px.scatter(
                         df_scatter,
                         x="date_publication",
                         y="nom_jeu_donnees",
                         color="statut",
                         color_discrete_map=color_map,
-                        title="Dates de publication et prochaines mises à jour des jeux de données",
+                        title="Dates de dernière publication des jeux de données",
                         labels={
                             "date_publication": "Date de publication",
                             "nom_jeu_donnees": "Jeu de données",
                             "statut": "Statut"
                         },
-                        hover_data=["producteur", "frequence_maj"]
-                    )
-                    
-                    # Ajouter les points pour les prochaines publications
-                    fig.add_scatter(
-                        x=df_scatter["date_prochaine_publication"],
-                        y=df_scatter["nom_jeu_donnees"],
-                        mode='markers',
-                        marker=dict(symbol='diamond', size=8),
-                        name="Prochaine publication",
-                        text=df_scatter["nom_jeu_donnees"]
+                        hover_data=["producteur", "frequence_maj", "date_prochaine_publication"]
                     )
                     
                 except Exception as e:
@@ -244,15 +234,15 @@ try:
                         yaxis_title="Jeu de données"
                     )
                     
-                    # Ajout du trait vertical rouge pour la date actuelle (compatible avec les données)
-                    today_timestamp = pd.Timestamp.now()
-                    fig.add_vline(
-                        x=today_timestamp, 
-                        line_width=3, 
-                        line_color="red",
-                        annotation_text="Aujourd'hui",
-                        annotation_position="top"
-                    )
+                    # Ligne verticale temporairement désactivée pour debug
+                    # today_timestamp = pd.Timestamp.now()
+                    # fig.add_vline(
+                    #     x=today_timestamp, 
+                    #     line_width=3, 
+                    #     line_color="red",
+                    #     annotation_text="Aujourd'hui",
+                    #     annotation_position="top"
+                    # )
                     
                     st.plotly_chart(fig, use_container_width=True)
                 else:
