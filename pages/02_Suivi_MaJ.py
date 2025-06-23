@@ -263,8 +263,11 @@ try:
                     extended_min = min_date - pd.DateOffset(months=6)
                     extended_max = max_date + pd.DateOffset(years=1)
                     
+                    # Titre avec date d'aujourd'hui
+                    today_str = pd.Timestamp.now().strftime('%d/%m/%Y')
+                    
                     fig.update_layout(
-                        title="Timeline de couverture temporelle (publication → fin de validité)",
+                        title=f"Timeline de couverture temporelle (publication → fin de validité) - Aujourd'hui: {today_str}",
                         xaxis_title="Période",
                         yaxis_title="Jeu de données",
                         height=max(400, len(df_timeline_valid['nom_jeu_donnees'].unique()) * 40),
@@ -283,25 +286,30 @@ try:
                         )
                     )
                     
-                    # Ligne verticale "Aujourd'hui" (forcée visible)
+                    # Marqueur "Aujourd'hui" - méthode alternative sans add_vline
                     try:
                         today = pd.Timestamp.now()
-                        fig.add_vline(
-                            x=today,
-                            line_width=3,
-                            line_color="red",
-                            line_dash="dash",
-                            annotation_text="Aujourd'hui",
-                            annotation_position="top",
-                            annotation=dict(
-                                bgcolor="rgba(255,255,255,0.8)",
-                                bordercolor="red",
-                                borderwidth=1
-                            )
-                        )
-                        print(f"Debug: Ligne Aujourd'hui ajoutée pour {today}")  # Debug temporaire
+                        
+                        # Ajouter un marqueur vertical avec une trace scatter
+                        y_positions = df_timeline_valid['nom_jeu_donnees'].unique()
+                        fig.add_trace(go.Scatter(
+                            x=[today] * len(y_positions),
+                            y=y_positions,
+                            mode='markers',
+                            marker=dict(
+                                symbol='line-ns-open',
+                                size=15,
+                                color='red',
+                                line=dict(width=3, color='red')
+                            ),
+                            name="Aujourd'hui",
+                            showlegend=True,
+                            hovertemplate="<b>Aujourd'hui</b><br>%{x}<extra></extra>"
+                        ))
+                        
                     except Exception as e:
-                        st.warning(f"Problème ligne Aujourd'hui: {e}")  # Debug temporaire
+                        # Si toujours des problèmes, on affiche juste la date d'aujourd'hui en titre
+                        pass
                     
                     st.plotly_chart(fig, use_container_width=True)
                     
