@@ -194,11 +194,18 @@ try:
             st.write("Debug - Valeurs nulles:", df.isnull().sum().to_dict())
             
             # Filtrer les lignes avec des dates valides pour le graphique
-            df_graph_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication'])
+            df_graph_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication']).copy()
+            
+            # Correction pour Plotly timeline : s'assurer que date_fin > date_debut
+            # Si les dates sont identiques, ajouter 1 jour à la date de fin
+            mask_identical = df_graph_valid['date_publication'] >= df_graph_valid['date_prochaine_publication']
+            df_graph_valid.loc[mask_identical, 'date_prochaine_publication'] = (
+                df_graph_valid.loc[mask_identical, 'date_publication'] + pd.Timedelta(days=30)
+            )
             
             st.write("Debug - Nombre de lignes valides pour graphique:", len(df_graph_valid))
             if not df_graph_valid.empty:
-                st.write("Debug - Échantillon df_graph_valid:", df_graph_valid.head(2))
+                st.write("Debug - Échantillon df_graph_valid après correction:", df_graph_valid[['date_publication', 'date_prochaine_publication']].head(2))
             
             if not df_graph_valid.empty:
                 # Configuration des couleurs personnalisées pour le graphique
