@@ -135,6 +135,21 @@ st.markdown("""
         border: 1px solid #e0e0e0;
         border-radius: 5px;
         max-width: 100%;
+        overflow-x: auto;
+        width: 100%;
+    }
+    
+    /* Force le conteneur du dataframe à s'adapter */
+    div[data-testid="stDataFrame"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto;
+    }
+    
+    /* Style spécifique pour les tableaux dans le conteneur principal */
+    .main .stDataFrame > div {
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     /* Style des cases à cocher */
@@ -308,22 +323,22 @@ else:
                 "Nom du jeu de données": st.column_config.TextColumn(
                     "Nom du jeu de données",
                     help="Nom du jeu de données (regroupement logique)",
-                    width="medium"
+                    width=None
                 ),
                 "Nom de la table": st.column_config.TextColumn(
                     "Nom de la table",
                     help="Nom de la table dans la base de données",
-                    width="medium"
+                    width=None
                 ),
                 "Producteur de la donnée": st.column_config.TextColumn(
                     "Producteur de la donnée",
                     help="Organisme producteur des données",
-                    width="medium"
+                    width=None
                 ),
                 "Date de publication": st.column_config.TextColumn(
                     "Date de publication",
                     help="Date de publication de la table",
-                    width="medium"
+                    width=None
                 )
             },
             hide_index=True,
