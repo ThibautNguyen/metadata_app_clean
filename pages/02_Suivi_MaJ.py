@@ -17,7 +17,7 @@ name, authentication_status, username, authenticator = authenticate_and_logout()
 st.title("Suivi des mises à jour des données")
 
 # Fonction pour récupérer les données de suivi
-@st.cache_data(ttl=3600)  # Cache pour 1 heure
+# @st.cache_data(ttl=3600)  # Cache temporairement désactivé pour debug
 def get_update_data():
     try:
         conn = get_db_connection()
@@ -34,6 +34,11 @@ def get_update_data():
         '''
         df = pd.read_sql(query, conn)
         conn.close()
+        
+        # Debug des types de données
+        st.write("Debug - Types de colonnes récupérées:", df.dtypes.to_dict())
+        st.write("Debug - Échantillon de données:", df.head(2))
+        
         return df
     except Exception as e:
         st.error(f"Erreur lors de la récupération des données : {e}")
@@ -184,8 +189,16 @@ try:
         # Graphique de suivi avec trait vertical rouge pour la date actuelle
         st.subheader("📈 Vue d'ensemble des mises à jour")
         if not df.empty:
+            # Debug avant le graphique
+            st.write("Debug - Types df avant graphique:", df.dtypes.to_dict())
+            st.write("Debug - Valeurs nulles:", df.isnull().sum().to_dict())
+            
             # Filtrer les lignes avec des dates valides pour le graphique
             df_graph_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication'])
+            
+            st.write("Debug - Nombre de lignes valides pour graphique:", len(df_graph_valid))
+            if not df_graph_valid.empty:
+                st.write("Debug - Échantillon df_graph_valid:", df_graph_valid.head(2))
             
             if not df_graph_valid.empty:
                 # Configuration des couleurs personnalisées pour le graphique
@@ -197,38 +210,48 @@ try:
                     "Inconnu": "#bdbdbd"
                 }
                 
-                fig = px.timeline(
-                    df_graph_valid,
-                    x_start="date_publication",
-                    x_end="date_prochaine_publication",
-                    y="nom_jeu_donnees",
-                    color="statut",
-                    color_discrete_map=color_map,
-                    title="Planning des mises à jour des jeux de données",
-                    labels={
-                        "nom_jeu_donnees": "Jeu de données",
-                        "statut": "Statut"
-                    }
-                )
+                try:
+                    fig = px.timeline(
+                        df_graph_valid,
+                        x_start="date_publication",
+                        x_end="date_prochaine_publication",
+                        y="nom_jeu_donnees",
+                        color="statut",
+                        color_discrete_map=color_map,
+                        title="Planning des mises à jour des jeux de données",
+                        labels={
+                            "nom_jeu_donnees": "Jeu de données",
+                            "statut": "Statut"
+                        }
+                    )
+                except Exception as e:
+                    st.error(f"Erreur lors de la création du graphique timeline : {e}")
+                    st.write("Types des colonnes utilisées:")
+                    st.write("- date_publication:", type(df_graph_valid['date_publication'].iloc[0]))
+                    st.write("- date_prochaine_publication:", type(df_graph_valid['date_prochaine_publication'].iloc[0]))
+                    fig = None
                 
                 # Amélioration de l'apparence du graphique
-                fig.update_layout(
-                    height=max(400, len(df_graph_valid) * 30),  # Hauteur dynamique selon le nombre de lignes
-                    showlegend=True,
-                    xaxis_title="Période",
-                    yaxis_title="Jeu de données"
-                )
-                
-                # Ajout du trait vertical rouge pour la date actuelle
-                fig.add_vline(
-                    x=datetime.now(), 
-                    line_width=3, 
-                    line_color="red",
-                    annotation_text="Aujourd'hui",
-                    annotation_position="top"
-                )
-                
-                st.plotly_chart(fig, use_container_width=True)
+                if fig is not None:
+                    fig.update_layout(
+                        height=max(400, len(df_graph_valid) * 30),  # Hauteur dynamique selon le nombre de lignes
+                        showlegend=True,
+                        xaxis_title="Période",
+                        yaxis_title="Jeu de données"
+                    )
+                    
+                    # Ajout du trait vertical rouge pour la date actuelle
+                    fig.add_vline(
+                        x=datetime.now(), 
+                        line_width=3, 
+                        line_color="red",
+                        annotation_text="Aujourd'hui",
+                        annotation_position="top"
+                    )
+                    
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.warning("Impossible d'afficher le graphique à cause d'une erreur de format de données.")
             else:
                 st.warning("Aucun jeu de données avec des dates valides pour afficher le graphique timeline.")
             
