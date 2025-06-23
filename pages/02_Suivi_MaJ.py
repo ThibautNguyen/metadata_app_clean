@@ -244,9 +244,10 @@ try:
                         yaxis_title="Jeu de données"
                     )
                     
-                    # Ajout du trait vertical rouge pour la date actuelle
+                    # Ajout du trait vertical rouge pour la date actuelle (compatible avec les données)
+                    today_timestamp = pd.Timestamp.now()
                     fig.add_vline(
-                        x=datetime.now(), 
+                        x=today_timestamp, 
                         line_width=3, 
                         line_color="red",
                         annotation_text="Aujourd'hui",
