@@ -17,7 +17,7 @@ name, authentication_status, username, authenticator = authenticate_and_logout()
 st.title("Suivi des mises à jour des données")
 
 # Fonction pour récupérer les données de suivi
-# @st.cache_data(ttl=3600)  # Cache temporairement désactivé pour debug
+@st.cache_data(ttl=3600)  # Cache pour 1 heure
 def get_update_data():
     try:
         conn = get_db_connection()
@@ -35,9 +35,7 @@ def get_update_data():
         df = pd.read_sql(query, conn)
         conn.close()
         
-        # Debug des types de données
-        st.write("Debug - Types de colonnes récupérées:", df.dtypes.to_dict())
-        st.write("Debug - Échantillon de données:", df.head(2))
+
         
         return df
     except Exception as e:
@@ -189,23 +187,8 @@ try:
         # Graphique de suivi avec trait vertical rouge pour la date actuelle
         st.subheader("📈 Vue d'ensemble des mises à jour")
         if not df.empty:
-            # Debug avant le graphique
-            st.write("Debug - Types df avant graphique:", df.dtypes.to_dict())
-            st.write("Debug - Valeurs nulles:", df.isnull().sum().to_dict())
-            
             # Filtrer les lignes avec des dates valides pour le graphique
             df_graph_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication']).copy()
-            
-            # Correction pour Plotly timeline : s'assurer que date_fin > date_debut
-            # Si les dates sont identiques, ajouter 1 jour à la date de fin
-            mask_identical = df_graph_valid['date_publication'] >= df_graph_valid['date_prochaine_publication']
-            df_graph_valid.loc[mask_identical, 'date_prochaine_publication'] = (
-                df_graph_valid.loc[mask_identical, 'date_publication'] + pd.Timedelta(days=30)
-            )
-            
-            st.write("Debug - Nombre de lignes valides pour graphique:", len(df_graph_valid))
-            if not df_graph_valid.empty:
-                st.write("Debug - Échantillon df_graph_valid après correction:", df_graph_valid[['date_publication', 'date_prochaine_publication']].head(2))
             
             if not df_graph_valid.empty:
                 # Configuration des couleurs personnalisées pour le graphique
@@ -217,25 +200,39 @@ try:
                     "Inconnu": "#bdbdbd"
                 }
                 
+                # Remplacer le timeline par un graphique scatter plus robuste
                 try:
-                    fig = px.timeline(
-                        df_graph_valid,
-                        x_start="date_publication",
-                        x_end="date_prochaine_publication",
+                    # Préparation des données pour le graphique scatter
+                    df_scatter = df_graph_valid.copy()
+                    
+                    # Créer un graphique scatter avec les dates de publication
+                    fig = px.scatter(
+                        df_scatter,
+                        x="date_publication",
                         y="nom_jeu_donnees",
                         color="statut",
                         color_discrete_map=color_map,
-                        title="Planning des mises à jour des jeux de données",
+                        title="Dates de publication et prochaines mises à jour des jeux de données",
                         labels={
+                            "date_publication": "Date de publication",
                             "nom_jeu_donnees": "Jeu de données",
                             "statut": "Statut"
-                        }
+                        },
+                        hover_data=["producteur", "frequence_maj"]
                     )
+                    
+                    # Ajouter les points pour les prochaines publications
+                    fig.add_scatter(
+                        x=df_scatter["date_prochaine_publication"],
+                        y=df_scatter["nom_jeu_donnees"],
+                        mode='markers',
+                        marker=dict(symbol='diamond', size=8),
+                        name="Prochaine publication",
+                        text=df_scatter["nom_jeu_donnees"]
+                    )
+                    
                 except Exception as e:
-                    st.error(f"Erreur lors de la création du graphique timeline : {e}")
-                    st.write("Types des colonnes utilisées:")
-                    st.write("- date_publication:", type(df_graph_valid['date_publication'].iloc[0]))
-                    st.write("- date_prochaine_publication:", type(df_graph_valid['date_prochaine_publication'].iloc[0]))
+                    st.error(f"Erreur lors de la création du graphique : {e}")
                     fig = None
                 
                 # Amélioration de l'apparence du graphique
