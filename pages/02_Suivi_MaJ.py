@@ -286,32 +286,34 @@ try:
                         )
                     )
                     
-                    # Ligne verticale rouge continue "Aujourd'hui" - méthode scatter
+                    # Ligne verticale rouge "Aujourd'hui" avec shapes (plus simple)
                     try:
                         today = pd.Timestamp.now()
                         
-                        # Créer une ligne verticale continue en utilisant scatter
-                        # On va du bas au haut du graphique
-                        y_min = 0  # Position la plus basse
-                        y_max = len(df_timeline_valid['nom_jeu_donnees'].unique()) - 1  # Position la plus haute
-                        
-                        # Créer plusieurs points pour former une ligne continue
-                        n_points = 100  # Nombre de points pour une ligne lisse
-                        y_line = [y_min + i * (y_max - y_min) / (n_points - 1) for i in range(n_points)]
-                        
-                        fig.add_trace(go.Scatter(
-                            x=[today] * n_points,
-                            y=y_line,
-                            mode='lines',
+                        # Ajouter une ligne verticale avec add_shape
+                        fig.add_shape(
+                            type="line",
+                            x0=today, x1=today,
+                            y0=-0.5, y1=len(df_timeline_valid['nom_jeu_donnees'].unique()) - 0.5,
                             line=dict(
-                                color='red',
+                                color="red",
                                 width=3,
-                                dash='dash'  # Ligne en pointillés pour la distinguer
-                            ),
-                            name="Aujourd'hui",
-                            showlegend=True,
-                            hovertemplate="<b>Aujourd'hui</b><br>%{x}<extra></extra>"
-                        ))
+                                dash="dash"
+                            )
+                        )
+                        
+                        # Ajouter annotation pour "Aujourd'hui"
+                        fig.add_annotation(
+                            x=today,
+                            y=len(df_timeline_valid['nom_jeu_donnees'].unique()) - 0.5,
+                            text="Aujourd'hui",
+                            showarrow=True,
+                            arrowhead=2,
+                            arrowcolor="red",
+                            bgcolor="rgba(255,255,255,0.8)",
+                            bordercolor="red",
+                            borderwidth=1
+                        )
                         
                     except Exception as e:
                         # Si toujours des problèmes, on continue sans la ligne
