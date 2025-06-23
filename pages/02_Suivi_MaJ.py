@@ -226,16 +226,16 @@ try:
                         hovermode='closest'
                     )
                     
-                    # Ligne verticale "Aujourd'hui" (version compatible)
-                    today = pd.Timestamp.now()
-                    fig.add_vline(
-                        x=today,
-                        line_width=2,
-                        line_color="red",
-                        line_dash="dash",
-                        annotation_text="Aujourd'hui",
-                        annotation_position="top"
-                    )
+                    # Ligne verticale "Aujourd'hui" temporairement désactivée pour debug
+                    # today = pd.Timestamp.now()
+                    # fig.add_vline(
+                    #     x=today,
+                    #     line_width=2,
+                    #     line_color="red",
+                    #     line_dash="dash",
+                    #     annotation_text="Aujourd'hui",
+                    #     annotation_position="top"
+                    # )
                     
                     st.plotly_chart(fig, use_container_width=True)
                     
