@@ -49,7 +49,7 @@ def compute_status(row):
     
     dpp = row['date_prochaine_publication']
     date_publication = row['date_publication']
-    today = date.today()
+    today = pd.Timestamp.now().normalize()  # Utiliser Timestamp pour la compatibilité
     
     if not pd.isnull(date_publication) and date_publication >= dpp:
         return "À jour"
@@ -76,15 +76,20 @@ try:
     if df.empty:
         st.info("Aucune donnée à afficher (base vide ou erreur de connexion).")
     else:
-        # Conversion des dates
+        # Conversion des dates (garder en datetime pour Plotly)
         for col in ["date_publication", "date_prochaine_publication"]:
-            df[col] = pd.to_datetime(df[col]).dt.date
+            df[col] = pd.to_datetime(df[col])
         
         # Calcul du statut
         df['statut'] = df.apply(compute_status, axis=1)
         
-        # Réorganisation des colonnes pour le tableau principal
-        df_display = df.rename(columns={
+        # Réorganisation des colonnes pour le tableau principal et formatage des dates
+        df_display = df.copy()
+        # Formater les dates pour l'affichage
+        df_display['date_publication'] = df_display['date_publication'].dt.strftime('%Y-%m-%d')
+        df_display['date_prochaine_publication'] = df_display['date_prochaine_publication'].dt.strftime('%Y-%m-%d')
+        
+        df_display = df_display.rename(columns={
             'nom_jeu_donnees': 'Jeu de données',
             'producteur': 'Producteur',
             'date_publication': 'Dernière publication',
@@ -154,8 +159,8 @@ try:
                     # Calcul du délai jusqu'à la prochaine publication
                     if selected_row['Prochaine publication'] and selected_row['Prochaine publication'] != 'NaT':
                         try:
-                            prochaine_date = pd.to_datetime(selected_row['Prochaine publication']).date()
-                            today = date.today()
+                            prochaine_date = pd.to_datetime(selected_row['Prochaine publication'])
+                            today = pd.Timestamp.now().normalize()
                             delta = (prochaine_date - today).days
                             if delta > 0:
                                 st.write(f"**Dans {delta} jour(s)**")
@@ -179,13 +184,8 @@ try:
         # Graphique de suivi avec trait vertical rouge pour la date actuelle
         st.subheader("📈 Vue d'ensemble des mises à jour")
         if not df.empty:
-            # Préparation des données pour le graphique (garder les datetime pour Plotly)
-            df_graph = df.copy()
-            df_graph['date_publication'] = pd.to_datetime(df_graph['date_publication'])
-            df_graph['date_prochaine_publication'] = pd.to_datetime(df_graph['date_prochaine_publication'])
-            
             # Filtrer les lignes avec des dates valides pour le graphique
-            df_graph_valid = df_graph.dropna(subset=['date_publication', 'date_prochaine_publication'])
+            df_graph_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication'])
             
             if not df_graph_valid.empty:
                 # Configuration des couleurs personnalisées pour le graphique
