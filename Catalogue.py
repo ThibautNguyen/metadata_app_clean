@@ -134,6 +134,7 @@ st.markdown("""
     .stDataFrame {
         border: 1px solid #e0e0e0;
         border-radius: 5px;
+        max-width: 100%;
     }
     
     /* Style des cases à cocher */
