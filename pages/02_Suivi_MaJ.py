@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta, date
 import plotly.express as px
+import plotly.graph_objects as go
 from utils.db_utils import get_db_connection
 from utils.auth import authenticate_and_logout
 
@@ -184,13 +185,13 @@ try:
                 if len(df_display) > 0:
                     st.write(f"**{len(df_display)} jeu(x) de données** disponible(s) dans le tableau.")
 
-        # Graphique de suivi avec trait vertical rouge pour la date actuelle
-        st.subheader("📈 Vue d'ensemble des mises à jour")
+        # Timeline de couverture temporelle basée sur les périodes de validité
+        st.subheader("📈 Timeline de couverture temporelle des jeux de données")
         if not df.empty:
             # Filtrer les lignes avec des dates valides pour le graphique
-            df_graph_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication']).copy()
+            df_timeline_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication']).copy()
             
-            if not df_graph_valid.empty:
+            if not df_timeline_valid.empty:
                 # Configuration des couleurs personnalisées pour le graphique
                 color_map = {
                     "En retard": "#ff4b4b",
@@ -200,55 +201,117 @@ try:
                     "Inconnu": "#bdbdbd"
                 }
                 
-                # Remplacer le timeline par un graphique scatter plus robuste
                 try:
-                    # Préparation des données pour le graphique scatter
-                    df_scatter = df_graph_valid.copy()
+                    # Créer le graphique timeline avec périodes de validité
+                    fig = go.Figure()
                     
-                    # Créer un graphique scatter simple avec seulement les dates de publication
-                    fig = px.scatter(
-                        df_scatter,
+                    # Grouper par jeu de données pour calculer la couverture globale
+                    timeline_summary = df_timeline_valid.groupby('nom_jeu_donnees').agg({
+                        'date_publication': ['min', 'max', 'count'],
+                        'date_prochaine_publication': 'max',
+                        'producteur': 'first',
+                        'statut': lambda x: x.mode()[0] if not x.empty else 'Inconnu'  # Statut le plus fréquent
+                    }).reset_index()
+                    
+                    # Aplatir les colonnes multi-niveaux
+                    timeline_summary.columns = ['nom_jeu_donnees', 'premiere_publication', 'derniere_publication', 
+                                              'nb_publications', 'fin_validite', 'producteur', 'statut_principal']
+                    
+                    # Ajouter les barres de couverture temporelle pour chaque jeu de données
+                    for idx, row in timeline_summary.iterrows():
+                        # Barre principale : de la première publication à la fin de validité
+                        fig.add_trace(go.Scatter(
+                            x=[row['premiere_publication'], row['fin_validite']],
+                            y=[row['nom_jeu_donnees'], row['nom_jeu_donnees']],
+                            mode='lines',
+                            line=dict(
+                                color=color_map.get(row['statut_principal'], '#bdbdbd'),
+                                width=8
+                            ),
+                            name=f"Couverture {row['nom_jeu_donnees']}",
+                            showlegend=False,
+                            hovertemplate=(
+                                f"<b>{row['nom_jeu_donnees']}</b><br>"
+                                f"Producteur: {row['producteur']}<br>"
+                                f"Période: {row['premiere_publication'].strftime('%Y-%m-%d')} → {row['fin_validite'].strftime('%Y-%m-%d')}<br>"
+                                f"Nombre de publications: {row['nb_publications']}<br>"
+                                f"Statut: {row['statut_principal']}<br>"
+                                "<extra></extra>"
+                            )
+                        ))
+                    
+                    # Ajouter tous les points de publication individuels
+                    for idx, row in df_timeline_valid.iterrows():
+                        fig.add_trace(go.Scatter(
+                            x=[row['date_publication']],
+                            y=[row['nom_jeu_donnees']],
+                            mode='markers',
+                            marker=dict(
+                                color=color_map.get(row['statut'], '#bdbdbd'),
+                                size=10,
+                                symbol='circle'
+                            ),
+                            name=f"Publication {row['nom_jeu_donnees']}",
+                            showlegend=False,
+                            hovertemplate=(
+                                f"<b>Publication</b><br>"
+                                f"Jeu: {row['nom_jeu_donnees']}<br>"
+                                f"Date: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
+                                f"Statut: {row['statut']}<br>"
+                                f"Prochaine MàJ: {row['date_prochaine_publication'].strftime('%Y-%m-%d')}<br>"
+                                "<extra></extra>"
+                            )
+                        ))
+                    
+                    # Ajouter la ligne verticale "Aujourd'hui"
+                    today = pd.Timestamp.now()
+                    fig.add_vline(
+                        x=today,
+                        line_width=3,
+                        line_color="red",
+                        line_dash="dash",
+                        annotation_text="Aujourd'hui",
+                        annotation_position="top"
+                    )
+                    
+                    # Configuration du layout
+                    fig.update_layout(
+                        title="Couverture temporelle des jeux de données (publication → fin de validité)",
+                        xaxis_title="Période",
+                        yaxis_title="Jeu de données",
+                        height=max(400, len(timeline_summary) * 40),
+                        showlegend=False,
+                        hovermode='closest'
+                    )
+                    
+                    # Améliorer l'affichage des axes
+                    fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+                    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+                    
+                    st.plotly_chart(fig, use_container_width=True)
+                    
+                    # Informations complémentaires
+                    st.info(
+                        "💡 **Lecture du graphique :** "
+                        "Les barres horizontales montrent la période de validité complète de chaque jeu de données "
+                        "(de la première publication à la fin de validité). "
+                        "Les points circulaires indiquent les dates de publication spécifiques."
+                    )
+                    
+                except Exception as e:
+                    st.error(f"Erreur lors de la création de la timeline : {e}")
+                    # Fallback vers l'ancien graphique simple
+                    fig_simple = px.scatter(
+                        df_timeline_valid,
                         x="date_publication",
                         y="nom_jeu_donnees",
                         color="statut",
                         color_discrete_map=color_map,
-                        title="Dates de dernière publication des jeux de données",
-                        labels={
-                            "date_publication": "Date de publication",
-                            "nom_jeu_donnees": "Jeu de données",
-                            "statut": "Statut"
-                        },
-                        hover_data=["producteur", "frequence_maj", "date_prochaine_publication"]
+                        title="Dates de dernière publication des jeux de données (version simplifiée)"
                     )
-                    
-                except Exception as e:
-                    st.error(f"Erreur lors de la création du graphique : {e}")
-                    fig = None
-                
-                # Amélioration de l'apparence du graphique
-                if fig is not None:
-                    fig.update_layout(
-                        height=max(400, len(df_graph_valid) * 30),  # Hauteur dynamique selon le nombre de lignes
-                        showlegend=True,
-                        xaxis_title="Période",
-                        yaxis_title="Jeu de données"
-                    )
-                    
-                    # Ligne verticale temporairement désactivée pour debug
-                    # today_timestamp = pd.Timestamp.now()
-                    # fig.add_vline(
-                    #     x=today_timestamp, 
-                    #     line_width=3, 
-                    #     line_color="red",
-                    #     annotation_text="Aujourd'hui",
-                    #     annotation_position="top"
-                    # )
-                    
-                    st.plotly_chart(fig, use_container_width=True)
-                else:
-                    st.warning("Impossible d'afficher le graphique à cause d'une erreur de format de données.")
+                    st.plotly_chart(fig_simple, use_container_width=True)
             else:
-                st.warning("Aucun jeu de données avec des dates valides pour afficher le graphique timeline.")
+                st.warning("Aucun jeu de données avec des dates valides pour afficher la timeline.")
             
             # Légende des statuts
             st.markdown("#### 🎨 Légende des statuts")
