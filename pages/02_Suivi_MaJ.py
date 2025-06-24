@@ -26,10 +26,12 @@ def get_update_data():
         SELECT DISTINCT ON (nom_jeu_donnees)
             nom_jeu_donnees,
             producteur,
+            schema,
             date_publication,
             millesime,
             date_prochaine_publication,
-            frequence_maj
+            frequence_maj,
+            source
         FROM metadata
         ORDER BY nom_jeu_donnees, date_publication DESC, millesime DESC, id DESC
         '''
@@ -87,8 +89,41 @@ try:
         # Calcul du statut
         df['statut'] = df.apply(compute_status, axis=1)
         
-        # Réorganisation des colonnes pour le tableau principal et formatage des dates
-        df_display = df.copy()
+        # Affichage du tableau de suivi
+        st.subheader("Tableau de suivi")
+        
+        # Filtres
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            # Filtre par producteur
+            producteurs = ["Tous"] + sorted(df['producteur'].dropna().unique().tolist())
+            selected_producteur = st.selectbox("Filtrer par producteur :", producteurs, key="filter_producteur")
+        
+        with col2:
+            # Filtre par schéma
+            schemas = ["Tous"] + sorted(df['schema'].dropna().unique().tolist()) if 'schema' in df.columns else ["Tous"]
+            selected_schema = st.selectbox("Filtrer par schéma :", schemas, key="filter_schema")
+        
+        with col3:
+            # Filtre par statut
+            statuts = ["Tous"] + sorted(df['statut'].dropna().unique().tolist())
+            selected_statut = st.selectbox("Filtrer par statut :", statuts, key="filter_statut")
+        
+        # Application des filtres
+        df_filtered = df.copy()
+        
+        if selected_producteur != "Tous":
+            df_filtered = df_filtered[df_filtered['producteur'] == selected_producteur]
+        
+        if selected_schema != "Tous" and 'schema' in df_filtered.columns:
+            df_filtered = df_filtered[df_filtered['schema'] == selected_schema]
+        
+        if selected_statut != "Tous":
+            df_filtered = df_filtered[df_filtered['statut'] == selected_statut]
+        
+        # Mise à jour de df_display avec les données filtrées
+        df_display = df_filtered.copy().reset_index(drop=True)
         # Formater les dates pour l'affichage
         df_display['date_publication'] = df_display['date_publication'].dt.strftime('%Y-%m-%d')
         df_display['date_prochaine_publication'] = df_display['date_prochaine_publication'].dt.strftime('%Y-%m-%d')
@@ -96,46 +131,47 @@ try:
         df_display = df_display.rename(columns={
             'nom_jeu_donnees': 'Jeu de données',
             'producteur': 'Producteur',
+            'schema': 'Schéma',
             'date_publication': 'Dernière publication',
             'millesime': 'Millésime',
             'date_prochaine_publication': 'Prochaine publication',
             'frequence_maj': 'Fréquence',
+            'source': 'Source',
             'statut': 'Statut'
         })
-
-        # Affichage du tableau avec st.dataframe pour permettre la sélection
-        st.subheader("Tableau de suivi")
-        st.info("💡 Cliquez sur une ligne du tableau pour afficher les détails détaillés ci-dessous.")
         
-        # Création d'un conteneur pour le tableau
-        table_container = st.container()
+        st.info("☑️ Cochez une ligne du tableau pour afficher les détails.")
         
-        with table_container:
-            selection_state = st.dataframe(
-                df_display,
-                on_select="rerun",
-                selection_mode="single-row",
-                key="selection_suivi",
-                hide_index=True,
-                column_order=["Jeu de données", "Producteur", "Dernière publication", 
-                             "Millésime", "Prochaine publication", 
-                             "Fréquence", "Statut"],
-                use_container_width=True
-            )
+        selected_index = None
+        
+        if len(df_display) > 0:
+            # Création d'un conteneur pour le tableau
+            table_container = st.container()
+            
+            with table_container:
+                selection_state = st.dataframe(
+                    df_display,
+                    on_select="rerun",
+                    selection_mode="single-row",
+                    key="selection_suivi",
+                    hide_index=True,
+                    column_order=["Jeu de données", "Producteur", "Schéma", "Dernière publication", 
+                                 "Millésime", "Prochaine publication", 
+                                 "Fréquence", "Statut"],
+                    use_container_width=True
+                )
 
-        # Debug de la sélection (à supprimer en production)
-        # st.write("Debug - Selection state:", selection_state)
-        # st.write("Debug - Session state:", st.session_state.get("selection_suivi", {}))
-
-        # Gestion de la sélection et affichage des détails
-        selection = st.session_state.get("selection_suivi", {"rows": []})
+            # Gestion de la sélection
+            if selection_state.selection.rows and len(selection_state.selection.rows) > 0:
+                selected_index = selection_state.selection.rows[0]
+        else:
+            st.warning("Aucun jeu de données ne correspond aux filtres sélectionnés.")
 
         # Création d'un conteneur pour les détails
         details_container = st.container()
 
-        if selection.get("rows") and len(selection["rows"]) > 0:
+        if selected_index is not None:
             with details_container:
-                selected_index = selection["rows"][0]
                 selected_row = df_display.iloc[selected_index]
                 
                 st.markdown("---")
@@ -148,6 +184,12 @@ try:
                     st.markdown("#### 📊 Informations générales")
                     st.write(f"**Producteur :** {selected_row['Producteur']}")
                     st.write(f"**Fréquence de mise à jour :** {selected_row['Fréquence']}")
+                    
+                    # Affichage de la source avec lien cliquable
+                    if 'Source' in selected_row and selected_row['Source'] and selected_row['Source'].strip():
+                        st.write(f"**Source :** [Accéder aux données]({selected_row['Source']})")
+                    else:
+                        st.write("**Source :** Non spécifiée")
                 
                 with col2:
                     st.markdown("#### 📅 Dates")
@@ -177,16 +219,17 @@ try:
                 
                 # Bouton pour désélectionner
                 if st.button("🔄 Désélectionner", help="Cliquez pour masquer les détails"):
-                    st.session_state["selection_suivi"] = {"rows": []}
+                    # Nettoyer la sélection
+                    if "selection_suivi" in st.session_state:
+                        st.session_state["selection_suivi"] = {"rows": []}
                     st.rerun()
         else:
             with details_container:
-                st.info("👆 Cliquez sur une ligne du tableau ci-dessus pour afficher les détails.")
                 if len(df_display) > 0:
                     st.write(f"**{len(df_display)} jeu(x) de données** disponible(s) dans le tableau.")
 
         # Timeline de couverture temporelle basée sur les périodes de validité
-        st.subheader("📈 Timeline de couverture temporelle des jeux de données")
+        st.subheader("📈 Couverture temporelle des jeux de données")
         if not df.empty:
             # Filtrer les lignes avec des dates valides pour le graphique
             df_timeline_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication']).copy()
@@ -206,8 +249,16 @@ try:
                     # Créer un graphique plotly vide
                     fig = go.Figure()
                     
+                    # Nettoyer les données pour éviter les valeurs 'undefined'
+                    df_clean = df_timeline_valid.copy()
+                    df_clean = df_clean.fillna('Non spécifié')
+                    
                     # Étape 1: Ajouter les barres de couverture temporelle (publication → fin de validité)
-                    for idx, row in df_timeline_valid.iterrows():
+                    for idx, row in df_clean.iterrows():
+                        # Vérifier que les données sont valides
+                        if pd.isna(row['date_publication']) or pd.isna(row['date_prochaine_publication']):
+                            continue
+                            
                         # Barre horizontale : de la date de publication à la fin de validité
                         fig.add_trace(go.Scatter(
                             x=[row['date_publication'], row['date_prochaine_publication']],
@@ -217,20 +268,25 @@ try:
                                 color=color_map.get(row['statut'], '#bdbdbd'),
                                 width=6
                             ),
-                            name=f"Période validité",
                             showlegend=False,
-                            hovertemplate=(
-                                f"<b>Période de validité</b><br>"
-                                f"Jeu: {row['nom_jeu_donnees']}<br>"
-                                f"De: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
-                                f"À: {row['date_prochaine_publication'].strftime('%Y-%m-%d')}<br>"
-                                f"Statut: {row['statut']}<br>"
-                                "<extra></extra>"
-                            )
+                            hoverinfo='skip'  # Désactiver complètement le hover pour les barres
                         ))
                     
                     # Étape 2: Ajouter les points de publication (par-dessus les barres)
-                    for idx, row in df_timeline_valid.iterrows():
+                    for idx, row in df_clean.iterrows():
+                        if pd.isna(row['date_publication']):
+                            continue
+                            
+                        # Créer un hovertemplate propre
+                        hover_text = (
+                            f"<b>Publication</b><br>"
+                            f"Jeu: {str(row['nom_jeu_donnees'])}<br>"
+                            f"Date: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
+                            f"Producteur: {str(row['producteur'])}<br>"
+                            f"Fréquence: {str(row['frequence_maj'])}<br>"
+                            f"Statut: {str(row['statut'])}"
+                        )
+                        
                         fig.add_trace(go.Scatter(
                             x=[row['date_publication']],
                             y=[row['nom_jeu_donnees']],
@@ -241,49 +297,43 @@ try:
                                 symbol='circle',
                                 line=dict(width=1, color='white')
                             ),
-                            name=f"Publication",
                             showlegend=False,
-                            hovertemplate=(
-                                f"<b>Publication</b><br>"
-                                f"Jeu: {row['nom_jeu_donnees']}<br>"
-                                f"Date: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
-                                f"Producteur: {row['producteur']}<br>"
-                                f"Fréquence: {row['frequence_maj']}<br>"
-                                f"Statut: {row['statut']}<br>"
-                                "<extra></extra>"
-                            )
+                            hovertemplate=hover_text + "<extra></extra>"
                         ))
                     
                     # Configuration du layout avec extension future
                     # Calculer les bornes temporelles étendues
-                    min_date = df_timeline_valid['date_publication'].min()
-                    max_date = df_timeline_valid['date_prochaine_publication'].max()
+                    min_date = df_clean['date_publication'].min()
+                    max_date = df_clean['date_prochaine_publication'].max()
                     
                     # Étendre la timeline : 6 mois avant et 1 an après
                     extended_min = min_date - pd.DateOffset(months=6)
                     extended_max = max_date + pd.DateOffset(years=1)
                     
-                    # Titre avec date d'aujourd'hui
-                    today_str = pd.Timestamp.now().strftime('%d/%m/%Y')
-                    
                     fig.update_layout(
-                        title=f"Timeline de couverture temporelle (publication → fin de validité) - Aujourd'hui: {today_str}",
-                        xaxis_title="Période",
-                        yaxis_title="Jeu de données",
-                        height=max(400, len(df_timeline_valid['nom_jeu_donnees'].unique()) * 40),
+                        title="",
+                        xaxis_title="",
+                        yaxis_title="",
+                        height=max(400, len(df_clean['nom_jeu_donnees'].unique()) * 40),
                         showlegend=False,
                         hovermode='closest',
+                        font=dict(size=14),  # Agrandissement de la police
                         xaxis=dict(
                             range=[extended_min, extended_max],
                             showgrid=True,
                             gridwidth=1,
-                            gridcolor='lightgray'
+                            gridcolor='lightgray',
+                            tickfont=dict(size=12),  # Taille de police pour les dates
+                            title=""
                         ),
                         yaxis=dict(
                             showgrid=True,
                             gridwidth=1,
-                            gridcolor='lightgray'
-                        )
+                            gridcolor='lightgray',
+                            tickfont=dict(size=12),  # Taille de police pour les noms des jeux de données
+                            title=""
+                        ),
+                        margin=dict(l=10, r=10, t=10, b=10)  # Réduire les marges
                     )
                     
                     # Ligne verticale rouge "Aujourd'hui" avec shapes (plus simple)
@@ -321,14 +371,6 @@ try:
                     
                     st.plotly_chart(fig, use_container_width=True)
                     
-                    # Informations sur la timeline améliorée
-                    st.info(
-                        "📊 **Timeline de couverture temporelle :** "
-                        "Les barres horizontales colorées montrent la période de validité de chaque jeu de données "
-                        "(de la publication jusqu'à la prochaine mise à jour prévue). "
-                        "Les points circulaires marquent les dates de publication spécifiques."
-                    )
-                    
                 except Exception as e:
                     st.error(f"Erreur lors de la création du graphique : {e}")
                     st.warning("Problème temporaire avec l'affichage des graphiques.")
@@ -345,7 +387,6 @@ try:
                 st.warning("Aucun jeu de données avec des dates valides pour afficher la timeline.")
             
             # Légende des statuts
-            st.markdown("#### 🎨 Légende des statuts")
             col1, col2, col3, col4, col5 = st.columns(5)
             with col1:
                 st.markdown(f"🔴 **En retard** ({len(df[df['statut'] == 'En retard'])})")
