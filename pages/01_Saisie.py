@@ -66,126 +66,93 @@ CREATE TABLE "{schema}"."{nom_table}" (
             # Récupération des valeurs d'exemple pour cette colonne
             sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
             
-            # Type basique selon le nom de colonne + analyse des valeurs
+            # NOUVELLE LOGIQUE ROBUSTE : Par défaut VARCHAR, sauf si clairement numérique
+            
+            # 1. Cas spéciaux par nom de colonne (codes géographiques seulement)
             if any(x in col.lower() for x in ['code_insee', 'codgeo']):
                 sql_type = 'VARCHAR(5)'
             elif any(x in col.lower() for x in ['code_dep', 'dep']):
                 sql_type = 'VARCHAR(3)'
             elif any(x in col.lower() for x in ['code_reg', 'reg']):
-                # Vérifier la longueur max dans les échantillons
-                max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 2
-                sql_type = f'VARCHAR({max(max_len + 1, 3)})'  # Au minimum 3, +1 de sécurité
+                sql_type = 'VARCHAR(5)'  # Sécurité pour tous les codes région
             elif any(x in col.lower() for x in ['code_postal', 'postal']):
-                sql_type = 'VARCHAR(10)'  # Codes postaux peuvent être complexes
+                sql_type = 'VARCHAR(10)'
             elif any(x in col.lower() for x in ['date']):
                 sql_type = 'DATE'
-            elif any(x in col.lower() for x in ['nom', 'libelle', 'designation']):
-                # Calculer la longueur max des noms depuis les échantillons
-                max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
-                sql_type = f'VARCHAR({min(max(max_len + 50, 100), 500)})'  # Entre 100 et 500 caractères
             elif any(x in col.lower() for x in ['url', 'http', 'www']):
-                sql_type = 'TEXT'  # URLs peuvent être très longues
-            elif any(x in col.lower() for x in ['superficie', 'densite', 'altitude', 'latitude', 'longitude']):
-                sql_type = 'DECIMAL(10,3)'  # Coordonnées et mesures
-            elif any(x in col.lower() for x in ['population', 'nb_', 'nombre']):
-                sql_type = 'INTEGER'
-            elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile', 'texte', 'taille', 'unite_urbaine']):
-                # Colonnes contenant des catégories/classifications = toujours texte
-                max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
-                sql_type = f'VARCHAR({min(max(max_len + 20, 50), 255)})'
+                sql_type = 'TEXT'
             else:
-                # Analyser les valeurs pour déterminer le type
+                # 2. Analyse des valeurs : STRICTEMENT numérique ou VARCHAR par défaut
                 if sample_values:
-                    # Nettoyer les valeurs et retirer les None
                     clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
                     
                     if not clean_values:
-                        sql_type = 'TEXT'
+                        sql_type = 'VARCHAR(255)'  # Par défaut
                     else:
-                        # Vérifier si c'est numérique de manière plus stricte
-                        numeric_count = 0
-                        text_count = 0
+                        # Test ultra-strict : TOUTES les valeurs doivent être des nombres purs
+                        all_numeric = True
+                        has_decimals = False
+                        max_int = 0
                         
                         for val in clean_values:
-                            # Test plus strict pour les nombres
-                            try:
-                                # Remplacer la virgule par un point pour les décimales françaises
-                                val_normalized = val.replace(',', '.')
-                                
-                                # Vérifier que c'est bien un nombre (pas de lettres)
-                                if re.match(r'^-?\d+\.?\d*$', val_normalized):
-                                    float(val_normalized)
-                                    numeric_count += 1
-                                else:
-                                    text_count += 1
-                                    # Si on trouve du texte, on arrête l'analyse
-                                    if len(val) > 10:  # Texte long = clairement pas numérique
-                                        break
-                            except (ValueError, TypeError):
-                                text_count += 1
-                                # Si on trouve du texte, on arrête l'analyse
-                                if len(val) > 10:
+                            # Si on trouve une seule lettre, espace ou caractère spécial → VARCHAR
+                            if not val.replace(',', '.').replace('-', '').replace('.', '').isdigit():
+                                all_numeric = False
+                                break
+                            else:
+                                # C'est un nombre, analyser le type
+                                try:
+                                    val_normalized = val.replace(',', '.')
+                                    num_val = float(val_normalized)
+                                    if '.' in val_normalized:
+                                        has_decimals = True
+                                    else:
+                                        max_int = max(max_int, abs(int(num_val)))
+                                except:
+                                    all_numeric = False
                                     break
                         
-                        # Décision du type basée sur l'analyse
-                        if text_count > 0 or numeric_count == 0:
-                            # C'est du texte
-                            max_len = max(len(val) for val in clean_values)
-                            if max_len <= 50:
-                                sql_type = 'VARCHAR(100)'
-                            elif max_len <= 255:
-                                sql_type = 'VARCHAR(300)'
-                            else:
-                                sql_type = 'TEXT'
-                        else:
-                            # Tout semble numérique
-                            has_decimals = any('.' in str(v).replace(',', '.') for v in clean_values)
+                        if all_numeric and clean_values:
+                            # Toutes les valeurs sont numériques
                             if has_decimals:
                                 sql_type = 'DECIMAL(10,3)'
                             else:
-                                # Vérifier la taille des entiers
-                                max_int = max(abs(int(float(str(v).replace(',', '.')))) for v in clean_values)
+                                # Entiers
                                 if max_int < 32767:
                                     sql_type = 'SMALLINT'
                                 elif max_int < 2147483647:
                                     sql_type = 'INTEGER'
                                 else:
                                     sql_type = 'BIGINT'
+                        else:
+                            # Au moins une valeur non-numérique → VARCHAR
+                            max_len = max(len(str(v)) for v in clean_values) if clean_values else 50
+                            if max_len <= 50:
+                                sql_type = 'VARCHAR(100)'
+                            elif max_len <= 255:
+                                sql_type = 'VARCHAR(300)'
+                            else:
+                                sql_type = 'TEXT'
                 else:
-                    sql_type = 'TEXT'
+                    sql_type = 'VARCHAR(255)'  # Par défaut si pas de données
             
             cols.append(f'    "{col_clean}" {sql_type}')
         
         sql += ",\n".join(cols)
         sql += f"""
 );
-
--- 3. Import des donnees
--- ATTENTION: Modifier le chemin vers votre fichier CSV
--- Si erreur de taille de champ, ajustez les VARCHAR() selon vos donnees reelles
-COPY "{schema}"."{nom_table}" FROM '/chemin/vers/votre/{nom_table}.csv'
-WITH (FORMAT csv, HEADER true, DELIMITER '{separateur}', ENCODING 'UTF8');
-
--- 4. Verification de l'import
-SELECT COUNT(*) as nb_lignes_importees FROM "{schema}"."{nom_table}";
-SELECT * FROM "{schema}"."{nom_table}" LIMIT 5;
-
--- 5. En cas d'erreur de taille de champ, utilisez cette requete pour diagnostiquer :
--- SELECT column_name, max(length(column_name::text)) as max_length 
--- FROM "{schema}"."{nom_table}" GROUP BY column_name;
-
--- =====================================================================================
--- DESCRIPTION DES DONNEES
--- ====================================================================================="""
+"""
         
         # Ajouter la description de façon sécurisée
         if description:
             # Nettoyer la description et la formatter ligne par ligne
             desc_lines = description.replace('\r\n', '\n').replace('\r', '\n').split('\n')
+            sql += "\n-- ====================================================================================="
+            sql += "\n-- DESCRIPTION DES DONNEES"
+            sql += "\n-- ====================================================================================="
             for line in desc_lines:
                 sql += f"\n-- {line}"
-        
-        sql += "\n-- ====================================================================================="
+            sql += "\n-- ====================================================================================="
         
         conn.close()
         return sql
@@ -592,82 +559,6 @@ if generate_sql:
                 st.subheader("📄 Script SQL d'import généré")
                 st.code(sql_script, language="sql")
                 
-                # DIAGNOSTIC : Afficher l'analyse des types
-                st.subheader("🔍 Diagnostic de l'analyse des types")
-                try:
-                    conn = get_db_connection()
-                    cursor = conn.cursor()
-                    cursor.execute("SELECT * FROM metadata WHERE nom_table = %s", (nom_table,))
-                    result = cursor.fetchone()
-                    
-                    if result:
-                        columns = [desc[0] for desc in cursor.description]
-                        metadata = dict(zip(columns, result))
-                        contenu_csv = metadata.get('contenu_csv', {})
-                        
-                        if 'header' in contenu_csv and 'data' in contenu_csv:
-                            colonnes = contenu_csv['header']
-                            donnees_exemple = contenu_csv.get('data', [])
-                            
-                            st.write("**Analyse colonne par colonne :**")
-                            
-                            for i, col in enumerate(colonnes):
-                                sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
-                                clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
-                                
-                                # Déterminer le type comme dans l'algorithme
-                                if any(x in col.lower() for x in ['code_insee', 'codgeo']):
-                                    detected_type = 'VARCHAR(5)'
-                                elif any(x in col.lower() for x in ['code_dep', 'dep']):
-                                    detected_type = 'VARCHAR(3)'
-                                elif any(x in col.lower() for x in ['code_reg', 'reg']):
-                                    max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 2
-                                    detected_type = f'VARCHAR({max(max_len + 1, 3)})'
-                                elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile', 'texte', 'taille', 'unite_urbaine']):
-                                    max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
-                                    detected_type = f'VARCHAR({min(max(max_len + 20, 50), 255)})'
-                                else:
-                                    # Analyse numérique
-                                    if clean_values:
-                                        numeric_count = 0
-                                        text_count = 0
-                                        
-                                        for val in clean_values[:5]:  # Limiter à 5 valeurs pour l'affichage
-                                            try:
-                                                val_normalized = val.replace(',', '.')
-                                                if re.match(r'^-?\d+\.?\d*$', val_normalized):
-                                                    float(val_normalized)
-                                                    numeric_count += 1
-                                                else:
-                                                    text_count += 1
-                                            except:
-                                                text_count += 1
-                                        
-                                        if text_count > 0:
-                                            max_len = max(len(val) for val in clean_values)
-                                            if max_len <= 50:
-                                                detected_type = 'VARCHAR(100)'
-                                            elif max_len <= 255:
-                                                detected_type = 'VARCHAR(300)'
-                                            else:
-                                                detected_type = 'TEXT'
-                                        else:
-                                            detected_type = 'INTEGER/DECIMAL'
-                                    else:
-                                        detected_type = 'TEXT'
-                                
-                                # Affichage
-                                with st.expander(f"📋 {col} → {detected_type}"):
-                                    st.write(f"**Échantillon de valeurs:** {clean_values[:3] if clean_values else 'Aucune'}")
-                                    if len(clean_values) > 3:
-                                        st.write(f"**Total de valeurs:** {len(clean_values)}")
-                                    if clean_values:
-                                        st.write(f"**Longueur max:** {max(len(str(v)) for v in clean_values)}")
-                    
-                    conn.close()
-                except Exception as e:
-                    st.error(f"Erreur lors du diagnostic: {e}")
-                
                 # Bouton de téléchargement
                 st.download_button(
                     label="💾 Télécharger le script SQL",
@@ -681,7 +572,6 @@ if generate_sql:
                 1. **Téléchargez** le script SQL ci-dessus
                 2. **Modifiez** le chemin du fichier CSV dans la section COPY
                 3. **Exécutez** le script dans votre outil de gestion PostgreSQL (DBeaver, pgAdmin, etc.)
-                4. **Vérifiez** l'import avec les requêtes de contrôle à la fin du script
                 """)
 
 # Section d'aide
