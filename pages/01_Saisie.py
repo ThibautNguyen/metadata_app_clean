@@ -93,36 +93,68 @@ CREATE TABLE "{schema}"."{nom_table}" (
                 sql_type = 'DECIMAL(10,3)'  # Coordonnées et mesures
             elif any(x in col.lower() for x in ['population', 'nb_', 'nombre']):
                 sql_type = 'INTEGER'
+            elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile']):
+                # Colonnes contenant des catégories/classifications = toujours texte
+                max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
+                sql_type = f'VARCHAR({min(max(max_len + 20, 50), 255)})'
             else:
                 # Analyser les valeurs pour déterminer le type
                 if sample_values:
-                    # Vérifier si c'est numérique
-                    try:
-                        numeric_values = [float(str(v)) for v in sample_values if v is not None and str(v).replace('.','').replace(',','').replace('-','').isdigit()]
-                        if len(numeric_values) == len([v for v in sample_values if v is not None]):
-                            # Tout est numérique
-                            if all(float(v) == int(float(v)) for v in numeric_values):
-                                sql_type = 'INTEGER'
-                            else:
-                                sql_type = 'DECIMAL(10,3)'
-                        else:
-                            # Texte - calculer la longueur max
-                            max_len = max(len(str(v)) for v in sample_values if v is not None)
+                    # Nettoyer les valeurs et retirer les None
+                    clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
+                    
+                    if not clean_values:
+                        sql_type = 'TEXT'
+                    else:
+                        # Vérifier si c'est numérique de manière plus stricte
+                        numeric_count = 0
+                        text_count = 0
+                        
+                        for val in clean_values:
+                            # Test plus strict pour les nombres
+                            try:
+                                # Remplacer la virgule par un point pour les décimales françaises
+                                val_normalized = val.replace(',', '.')
+                                
+                                # Vérifier que c'est bien un nombre (pas de lettres)
+                                if re.match(r'^-?\d+\.?\d*$', val_normalized):
+                                    float(val_normalized)
+                                    numeric_count += 1
+                                else:
+                                    text_count += 1
+                                    # Si on trouve du texte, on arrête l'analyse
+                                    if len(val) > 10:  # Texte long = clairement pas numérique
+                                        break
+                            except (ValueError, TypeError):
+                                text_count += 1
+                                # Si on trouve du texte, on arrête l'analyse
+                                if len(val) > 10:
+                                    break
+                        
+                        # Décision du type basée sur l'analyse
+                        if text_count > 0 or numeric_count == 0:
+                            # C'est du texte
+                            max_len = max(len(val) for val in clean_values)
                             if max_len <= 50:
                                 sql_type = 'VARCHAR(100)'
                             elif max_len <= 255:
                                 sql_type = 'VARCHAR(300)'
                             else:
                                 sql_type = 'TEXT'
-                    except:
-                        # Fallback - analyser la longueur
-                        max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
-                        if max_len <= 50:
-                            sql_type = 'VARCHAR(100)'
-                        elif max_len <= 255:
-                            sql_type = 'VARCHAR(300)'
                         else:
-                            sql_type = 'TEXT'
+                            # Tout semble numérique
+                            has_decimals = any('.' in str(v).replace(',', '.') for v in clean_values)
+                            if has_decimals:
+                                sql_type = 'DECIMAL(10,3)'
+                            else:
+                                # Vérifier la taille des entiers
+                                max_int = max(abs(int(float(str(v).replace(',', '.')))) for v in clean_values)
+                                if max_int < 32767:
+                                    sql_type = 'SMALLINT'
+                                elif max_int < 2147483647:
+                                    sql_type = 'INTEGER'
+                                else:
+                                    sql_type = 'BIGINT'
                 else:
                     sql_type = 'TEXT'
             
