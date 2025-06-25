@@ -49,7 +49,6 @@ def generate_sql_from_metadata(table_name: str) -> str:
 -- =====================================================================================
 -- Producteur: {producteur}
 -- Schema: {schema}
--- Description: {description}
 -- Genere automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 -- =====================================================================================
 
@@ -174,7 +173,19 @@ SELECT * FROM "{schema}"."{nom_table}" LIMIT 5;
 -- 5. En cas d'erreur de taille de champ, utilisez cette requete pour diagnostiquer :
 -- SELECT column_name, max(length(column_name::text)) as max_length 
 -- FROM "{schema}"."{nom_table}" GROUP BY column_name;
-"""
+
+-- =====================================================================================
+-- DESCRIPTION DES DONNEES
+-- ====================================================================================="""
+        
+        # Ajouter la description de façon sécurisée
+        if description:
+            # Nettoyer la description et la formatter ligne par ligne
+            desc_lines = description.replace('\r\n', '\n').replace('\r', '\n').split('\n')
+            for line in desc_lines:
+                sql += f"\n-- {line}"
+        
+        sql += "\n-- ====================================================================================="
         
         conn.close()
         return sql
