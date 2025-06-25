@@ -66,19 +66,64 @@ CREATE TABLE "{schema}"."{nom_table}" (
         cols = []
         for col in colonnes:
             col_clean = col.strip()
-            # Type basique selon le nom de colonne
+            # Récupération des valeurs d'exemple pour cette colonne
+            sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
+            
+            # Type basique selon le nom de colonne + analyse des valeurs
             if any(x in col.lower() for x in ['code_insee', 'codgeo']):
                 sql_type = 'VARCHAR(5)'
             elif any(x in col.lower() for x in ['code_dep', 'dep']):
                 sql_type = 'VARCHAR(3)'
             elif any(x in col.lower() for x in ['code_reg', 'reg']):
-                sql_type = 'VARCHAR(2)'
+                # Vérifier la longueur max dans les échantillons
+                max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 2
+                sql_type = f'VARCHAR({max(max_len + 1, 3)})'  # Au minimum 3, +1 de sécurité
+            elif any(x in col.lower() for x in ['code_postal', 'postal']):
+                sql_type = 'VARCHAR(10)'  # Codes postaux peuvent être complexes
             elif any(x in col.lower() for x in ['date']):
                 sql_type = 'DATE'
-            elif any(x in col.lower() for x in ['nom', 'libelle']):
-                sql_type = 'VARCHAR(255)'
+            elif any(x in col.lower() for x in ['nom', 'libelle', 'designation']):
+                # Calculer la longueur max des noms depuis les échantillons
+                max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
+                sql_type = f'VARCHAR({min(max(max_len + 50, 100), 500)})'  # Entre 100 et 500 caractères
+            elif any(x in col.lower() for x in ['url', 'http', 'www']):
+                sql_type = 'TEXT'  # URLs peuvent être très longues
+            elif any(x in col.lower() for x in ['superficie', 'densite', 'altitude', 'latitude', 'longitude']):
+                sql_type = 'DECIMAL(10,3)'  # Coordonnées et mesures
+            elif any(x in col.lower() for x in ['population', 'nb_', 'nombre']):
+                sql_type = 'INTEGER'
             else:
-                sql_type = 'TEXT'
+                # Analyser les valeurs pour déterminer le type
+                if sample_values:
+                    # Vérifier si c'est numérique
+                    try:
+                        numeric_values = [float(str(v)) for v in sample_values if v is not None and str(v).replace('.','').replace(',','').replace('-','').isdigit()]
+                        if len(numeric_values) == len([v for v in sample_values if v is not None]):
+                            # Tout est numérique
+                            if all(float(v) == int(float(v)) for v in numeric_values):
+                                sql_type = 'INTEGER'
+                            else:
+                                sql_type = 'DECIMAL(10,3)'
+                        else:
+                            # Texte - calculer la longueur max
+                            max_len = max(len(str(v)) for v in sample_values if v is not None)
+                            if max_len <= 50:
+                                sql_type = 'VARCHAR(100)'
+                            elif max_len <= 255:
+                                sql_type = 'VARCHAR(300)'
+                            else:
+                                sql_type = 'TEXT'
+                    except:
+                        # Fallback - analyser la longueur
+                        max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
+                        if max_len <= 50:
+                            sql_type = 'VARCHAR(100)'
+                        elif max_len <= 255:
+                            sql_type = 'VARCHAR(300)'
+                        else:
+                            sql_type = 'TEXT'
+                else:
+                    sql_type = 'TEXT'
             
             cols.append(f'    "{col_clean}" {sql_type}')
         
@@ -86,14 +131,22 @@ CREATE TABLE "{schema}"."{nom_table}" (
         sql += f"""
 );
 
--- 4. Import des données
+-- 4. Commentaires sur les colonnes (ajout automatique)
+{'; '.join([f"COMMENT ON COLUMN \"{schema}\".\"{nom_table}\".\"{col.strip()}\" IS 'Colonne générée automatiquement'" for col in colonnes[:3]])}...;
+
+-- 5. Import des données
 -- ATTENTION: Modifier le chemin vers votre fichier CSV
+-- Si erreur de taille de champ, ajustez les VARCHAR() selon vos données réelles
 COPY "{schema}"."{nom_table}" FROM '/chemin/vers/votre/{nom_table}.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER '{separateur}', ENCODING 'UTF8');
 
--- 5. Vérification de l'import
+-- 6. Vérification de l'import
 SELECT COUNT(*) as nb_lignes_importees FROM "{schema}"."{nom_table}";
 SELECT * FROM "{schema}"."{nom_table}" LIMIT 5;
+
+-- 7. En cas d'erreur de taille de champ, utilisez cette requête pour diagnostiquer :
+-- SELECT column_name, max(length(column_name::text)) as max_length 
+-- FROM "{schema}"."{nom_table}" GROUP BY column_name;
 """
         
         conn.close()
