@@ -41,6 +41,7 @@ def generate_sql_from_metadata(table_name: str) -> str:
         
         colonnes = contenu_csv['header']
         separateur = contenu_csv.get('separator', ';')
+        donnees_exemple = contenu_csv.get('data', [])
         
         # Génération du SQL basique
         sql = f"""-- =====================================================================================
@@ -64,7 +65,7 @@ CREATE TABLE "{schema}"."{nom_table}" (
         
         # Colonnes avec types basiques
         cols = []
-        for col in colonnes:
+        for i, col in enumerate(colonnes):
             col_clean = col.strip()
             # Récupération des valeurs d'exemple pour cette colonne
             sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
