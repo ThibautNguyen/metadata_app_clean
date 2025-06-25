@@ -48,18 +48,15 @@ def generate_sql_from_metadata(table_name: str) -> str:
 -- SCRIPT D'IMPORT POUR LA TABLE {nom_table}
 -- =====================================================================================
 -- Producteur: {producteur}
--- Schéma: {schema}
+-- Schema: {schema}
 -- Description: {description}
--- Généré automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+-- Genere automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 -- =====================================================================================
 
--- 1. Création du schéma (si nécessaire)
-CREATE SCHEMA IF NOT EXISTS "{schema}";
-
--- 2. Suppression de la table existante (si elle existe)
+-- 1. Suppression de la table existante (si elle existe)
 DROP TABLE IF EXISTS "{schema}"."{nom_table}";
 
--- 3. Création de la table
+-- 2. Creation de la table
 CREATE TABLE "{schema}"."{nom_table}" (
 """
         
@@ -93,7 +90,7 @@ CREATE TABLE "{schema}"."{nom_table}" (
                 sql_type = 'DECIMAL(10,3)'  # Coordonnées et mesures
             elif any(x in col.lower() for x in ['population', 'nb_', 'nombre']):
                 sql_type = 'INTEGER'
-            elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile']):
+            elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile', 'texte', 'taille', 'unite_urbaine']):
                 # Colonnes contenant des catégories/classifications = toujours texte
                 max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
                 sql_type = f'VARCHAR({min(max(max_len + 20, 50), 255)})'
@@ -164,20 +161,17 @@ CREATE TABLE "{schema}"."{nom_table}" (
         sql += f"""
 );
 
--- 4. Commentaires sur les colonnes (ajout automatique)
-{'; '.join([f"COMMENT ON COLUMN \"{schema}\".\"{nom_table}\".\"{col.strip()}\" IS 'Colonne générée automatiquement'" for col in colonnes[:3]])}...;
-
--- 5. Import des données
+-- 3. Import des donnees
 -- ATTENTION: Modifier le chemin vers votre fichier CSV
--- Si erreur de taille de champ, ajustez les VARCHAR() selon vos données réelles
+-- Si erreur de taille de champ, ajustez les VARCHAR() selon vos donnees reelles
 COPY "{schema}"."{nom_table}" FROM '/chemin/vers/votre/{nom_table}.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER '{separateur}', ENCODING 'UTF8');
 
--- 6. Vérification de l'import
+-- 4. Verification de l'import
 SELECT COUNT(*) as nb_lignes_importees FROM "{schema}"."{nom_table}";
 SELECT * FROM "{schema}"."{nom_table}" LIMIT 5;
 
--- 7. En cas d'erreur de taille de champ, utilisez cette requête pour diagnostiquer :
+-- 5. En cas d'erreur de taille de champ, utilisez cette requete pour diagnostiquer :
 -- SELECT column_name, max(length(column_name::text)) as max_length 
 -- FROM "{schema}"."{nom_table}" GROUP BY column_name;
 """
@@ -618,7 +612,7 @@ if generate_sql:
                                 elif any(x in col.lower() for x in ['code_reg', 'reg']):
                                     max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 2
                                     detected_type = f'VARCHAR({max(max_len + 1, 3)})'
-                                elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile']):
+                                elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile', 'texte', 'taille', 'unite_urbaine']):
                                     max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
                                     detected_type = f'VARCHAR({min(max(max_len + 20, 50), 255)})'
                                 else:
