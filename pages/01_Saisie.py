@@ -43,6 +43,10 @@ def generate_sql_from_metadata(table_name: str) -> str:
         separateur = contenu_csv.get('separator', ';')
         donnees_exemple = contenu_csv.get('data', [])
         
+        # Récupération du dictionnaire des variables s'il existe
+        dictionnaire = metadata.get('dictionnaire', {})
+        dict_data = dictionnaire.get('data', []) if dictionnaire else []
+        
         # Génération du SQL basique
         sql = f"""-- =====================================================================================
 -- SCRIPT D'IMPORT POUR LA TABLE {nom_table}
@@ -65,76 +69,88 @@ CREATE TABLE "{schema}"."{nom_table}" (
             col_clean = col.strip()
             # Récupération des valeurs d'exemple pour cette colonne
             sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
+            clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
             
-            # NOUVELLE LOGIQUE ROBUSTE : Par défaut VARCHAR, sauf si clairement numérique
+            # ALGORITHME UNIVERSEL ET ROBUSTE
+            # Ignore les noms de colonnes - analyse uniquement les données réelles
             
-            # 1. Cas spéciaux par nom de colonne (codes géographiques seulement)
-            if any(x in col.lower() for x in ['code_insee', 'codgeo']):
-                sql_type = 'VARCHAR(5)'
-            elif any(x in col.lower() for x in ['code_dep', 'dep']):
-                sql_type = 'VARCHAR(3)'
-            elif any(x in col.lower() for x in ['code_reg', 'reg']):
-                sql_type = 'VARCHAR(5)'  # Sécurité pour tous les codes région
-            elif any(x in col.lower() for x in ['code_postal', 'postal']):
-                sql_type = 'VARCHAR(10)'
-            elif any(x in col.lower() for x in ['date']):
-                sql_type = 'DATE'
-            elif any(x in col.lower() for x in ['url', 'http', 'www']):
+            # Vérification dans le dictionnaire des variables pour types spéciaux
+            dict_type_hint = None
+            if dict_data:
+                # Chercher la colonne dans le dictionnaire
+                for dict_row in dict_data:
+                    if len(dict_row) >= 2 and dict_row[0].strip().lower() == col.lower():
+                        description = dict_row[1].lower() if len(dict_row) > 1 else ""
+                        if any(x in description for x in ['date', 'timestamp', 'temps']):
+                            dict_type_hint = 'DATE'
+                        elif any(x in description for x in ['url', 'lien', 'http', 'www']):
+                            dict_type_hint = 'TEXT'
+                        break
+            
+            # Si le dictionnaire suggère un type spécial, l'utiliser
+            if dict_type_hint:
+                sql_type = dict_type_hint
+            elif clean_values and all(v.startswith('http') for v in clean_values if v):
+                # URLs détectées dans les données
                 sql_type = 'TEXT'
-            else:
-                # 2. Analyse des valeurs : STRICTEMENT numérique ou VARCHAR par défaut
-                if sample_values:
-                    clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
+            elif clean_values:
+                # Analyse des valeurs disponibles
+                # Calcul de la longueur max nécessaire
+                max_len = max(len(str(v)) for v in clean_values)
+                
+                # Test ultra-strict : TOUTES les valeurs sont-elles des nombres purs ?
+                all_numeric = True
+                has_decimals = False
+                max_int = 0
+                
+                for val in clean_values:
+                    # Nettoyage pour test numérique
+                    val_clean = val.replace(',', '.').replace(' ', '').strip()
                     
-                    if not clean_values:
-                        sql_type = 'VARCHAR(255)'  # Par défaut
-                    else:
-                        # Test ultra-strict : TOUTES les valeurs doivent être des nombres purs
-                        all_numeric = True
-                        has_decimals = False
-                        max_int = 0
-                        
-                        for val in clean_values:
-                            # Si on trouve une seule lettre, espace ou caractère spécial → VARCHAR
-                            if not val.replace(',', '.').replace('-', '').replace('.', '').isdigit():
-                                all_numeric = False
-                                break
-                            else:
-                                # C'est un nombre, analyser le type
-                                try:
-                                    val_normalized = val.replace(',', '.')
-                                    num_val = float(val_normalized)
-                                    if '.' in val_normalized:
-                                        has_decimals = True
-                                    else:
-                                        max_int = max(max_int, abs(int(num_val)))
-                                except:
-                                    all_numeric = False
-                                    break
-                        
-                        if all_numeric and clean_values:
-                            # Toutes les valeurs sont numériques
-                            if has_decimals:
-                                sql_type = 'DECIMAL(10,3)'
-                            else:
-                                # Entiers
-                                if max_int < 32767:
-                                    sql_type = 'SMALLINT'
-                                elif max_int < 2147483647:
-                                    sql_type = 'INTEGER'
-                                else:
-                                    sql_type = 'BIGINT'
+                    # Si contient des lettres, des tirets (autres que négatif), ou caractères spéciaux → VARCHAR
+                    if not re.match(r'^-?\d+\.?\d*$', val_clean):
+                        all_numeric = False
+                        break
+                    
+                    # Test de conversion
+                    try:
+                        num_val = float(val_clean)
+                        if '.' in val_clean:
+                            has_decimals = True
                         else:
-                            # Au moins une valeur non-numérique → VARCHAR
-                            max_len = max(len(str(v)) for v in clean_values) if clean_values else 50
-                            if max_len <= 50:
-                                sql_type = 'VARCHAR(100)'
-                            elif max_len <= 255:
-                                sql_type = 'VARCHAR(300)'
-                            else:
-                                sql_type = 'TEXT'
+                            max_int = max(max_int, abs(int(num_val)))
+                    except (ValueError, OverflowError):
+                        all_numeric = False
+                        break
+                
+                # Décision finale
+                if all_numeric and len(clean_values) > 0:
+                    # Toutes les valeurs sont strictement numériques
+                    if has_decimals:
+                        sql_type = 'DECIMAL(15,6)'  # Plus de précision
+                    else:
+                        # Entiers - choix conservateur
+                        if max_int <= 32767:
+                            sql_type = 'INTEGER'  # Pas SMALLINT pour éviter les débordements
+                        elif max_int <= 2147483647:
+                            sql_type = 'INTEGER'
+                        else:
+                            sql_type = 'BIGINT'
                 else:
-                    sql_type = 'VARCHAR(255)'  # Par défaut si pas de données
+                    # Au moins une valeur non-numérique → VARCHAR adaptatif
+                    if max_len <= 10:
+                        sql_type = 'VARCHAR(50)'
+                    elif max_len <= 50:
+                        sql_type = 'VARCHAR(100)'
+                    elif max_len <= 100:
+                        sql_type = 'VARCHAR(200)'
+                    elif max_len <= 255:
+                        sql_type = 'VARCHAR(400)'
+                    else:
+                        sql_type = 'TEXT'
+            else:
+                # Pas de données d'exemple - défaut sécurisé
+                sql_type = 'VARCHAR(255)'
             
             cols.append(f'    "{col_clean}" {sql_type}')
         
