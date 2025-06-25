@@ -587,6 +587,82 @@ if generate_sql:
                 st.subheader("📄 Script SQL d'import généré")
                 st.code(sql_script, language="sql")
                 
+                # DIAGNOSTIC : Afficher l'analyse des types
+                st.subheader("🔍 Diagnostic de l'analyse des types")
+                try:
+                    conn = get_db_connection()
+                    cursor = conn.cursor()
+                    cursor.execute("SELECT * FROM metadata WHERE nom_table = %s", (nom_table,))
+                    result = cursor.fetchone()
+                    
+                    if result:
+                        columns = [desc[0] for desc in cursor.description]
+                        metadata = dict(zip(columns, result))
+                        contenu_csv = metadata.get('contenu_csv', {})
+                        
+                        if 'header' in contenu_csv and 'data' in contenu_csv:
+                            colonnes = contenu_csv['header']
+                            donnees_exemple = contenu_csv.get('data', [])
+                            
+                            st.write("**Analyse colonne par colonne :**")
+                            
+                            for i, col in enumerate(colonnes):
+                                sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
+                                clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
+                                
+                                # Déterminer le type comme dans l'algorithme
+                                if any(x in col.lower() for x in ['code_insee', 'codgeo']):
+                                    detected_type = 'VARCHAR(5)'
+                                elif any(x in col.lower() for x in ['code_dep', 'dep']):
+                                    detected_type = 'VARCHAR(3)'
+                                elif any(x in col.lower() for x in ['code_reg', 'reg']):
+                                    max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 2
+                                    detected_type = f'VARCHAR({max(max_len + 1, 3)})'
+                                elif any(x in col.lower() for x in ['type', 'statut', 'categorie', 'classe', 'niveau', 'grille', 'gentile']):
+                                    max_len = max(len(str(v)) for v in sample_values if v is not None) if sample_values else 100
+                                    detected_type = f'VARCHAR({min(max(max_len + 20, 50), 255)})'
+                                else:
+                                    # Analyse numérique
+                                    if clean_values:
+                                        numeric_count = 0
+                                        text_count = 0
+                                        
+                                        for val in clean_values[:5]:  # Limiter à 5 valeurs pour l'affichage
+                                            try:
+                                                val_normalized = val.replace(',', '.')
+                                                if re.match(r'^-?\d+\.?\d*$', val_normalized):
+                                                    float(val_normalized)
+                                                    numeric_count += 1
+                                                else:
+                                                    text_count += 1
+                                            except:
+                                                text_count += 1
+                                        
+                                        if text_count > 0:
+                                            max_len = max(len(val) for val in clean_values)
+                                            if max_len <= 50:
+                                                detected_type = 'VARCHAR(100)'
+                                            elif max_len <= 255:
+                                                detected_type = 'VARCHAR(300)'
+                                            else:
+                                                detected_type = 'TEXT'
+                                        else:
+                                            detected_type = 'INTEGER/DECIMAL'
+                                    else:
+                                        detected_type = 'TEXT'
+                                
+                                # Affichage
+                                with st.expander(f"📋 {col} → {detected_type}"):
+                                    st.write(f"**Échantillon de valeurs:** {clean_values[:3] if clean_values else 'Aucune'}")
+                                    if len(clean_values) > 3:
+                                        st.write(f"**Total de valeurs:** {len(clean_values)}")
+                                    if clean_values:
+                                        st.write(f"**Longueur max:** {max(len(str(v)) for v in clean_values)}")
+                    
+                    conn.close()
+                except Exception as e:
+                    st.error(f"Erreur lors du diagnostic: {e}")
+                
                 # Bouton de téléchargement
                 st.download_button(
                     label="💾 Télécharger le script SQL",
