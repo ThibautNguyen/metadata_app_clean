@@ -199,7 +199,7 @@ with col9:
 with col10:
     schema = st.selectbox("Schéma thématique*", [
         "economie", "education", "energie", "environnement", 
-        "geo", "logement", "mobilite", "population", "securite"
+        "geo", "logement", "mobilite", "population", "reseau", "securite"
     ], help="Schéma du SGBD dans lequel la table est importée")
 
 # Nom de la table (moitié de ligne)
