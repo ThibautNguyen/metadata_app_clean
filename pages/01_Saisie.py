@@ -6,10 +6,101 @@ import os
 import sys
 from pathlib import Path
 from utils.auth import authenticate_and_logout
+import re
 
 # Ajout du répertoire parent au PYTHONPATH
 sys.path.append(str(Path(__file__).parent.parent))
-from utils.db_utils import init_db, save_metadata, get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur
+from utils.db_utils import init_db, save_metadata, get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur, get_db_connection
+
+# Fonction de génération SQL simplifiée
+def generate_sql_from_metadata(table_name: str) -> str:
+    """Génère le script SQL d'import basé sur les métadonnées."""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute("SELECT * FROM metadata WHERE nom_table = %s", (table_name,))
+        result = cursor.fetchone()
+        
+        if not result:
+            return f"❌ Table '{table_name}' non trouvée dans les métadonnées"
+        
+        columns = [desc[0] for desc in cursor.description]
+        metadata = dict(zip(columns, result))
+        
+        # Extraction des infos principales
+        nom_table = metadata.get('nom_table', 'unknown_table')
+        schema = metadata.get('schema', 'public')
+        description = metadata.get('description', '')
+        producteur = metadata.get('producteur', '')
+        
+        # Récupération de la structure CSV
+        contenu_csv = metadata.get('contenu_csv', {})
+        if not contenu_csv or 'header' not in contenu_csv:
+            return f"❌ Structure CSV non disponible pour '{table_name}'"
+        
+        colonnes = contenu_csv['header']
+        separateur = contenu_csv.get('separator', ';')
+        
+        # Génération du SQL basique
+        sql = f"""-- =====================================================================================
+-- SCRIPT D'IMPORT POUR LA TABLE {nom_table}
+-- =====================================================================================
+-- Producteur: {producteur}
+-- Schéma: {schema}
+-- Description: {description}
+-- Généré automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+-- =====================================================================================
+
+-- 1. Création du schéma (si nécessaire)
+CREATE SCHEMA IF NOT EXISTS "{schema}";
+
+-- 2. Suppression de la table existante (si elle existe)
+DROP TABLE IF EXISTS "{schema}"."{nom_table}";
+
+-- 3. Création de la table
+CREATE TABLE "{schema}"."{nom_table}" (
+"""
+        
+        # Colonnes avec types basiques
+        cols = []
+        for col in colonnes:
+            col_clean = col.strip()
+            # Type basique selon le nom de colonne
+            if any(x in col.lower() for x in ['code_insee', 'codgeo']):
+                sql_type = 'VARCHAR(5)'
+            elif any(x in col.lower() for x in ['code_dep', 'dep']):
+                sql_type = 'VARCHAR(3)'
+            elif any(x in col.lower() for x in ['code_reg', 'reg']):
+                sql_type = 'VARCHAR(2)'
+            elif any(x in col.lower() for x in ['date']):
+                sql_type = 'DATE'
+            elif any(x in col.lower() for x in ['nom', 'libelle']):
+                sql_type = 'VARCHAR(255)'
+            else:
+                sql_type = 'TEXT'
+            
+            cols.append(f'    "{col_clean}" {sql_type}')
+        
+        sql += ",\n".join(cols)
+        sql += f"""
+);
+
+-- 4. Import des données
+-- ATTENTION: Modifier le chemin vers votre fichier CSV
+COPY "{schema}"."{nom_table}" FROM '/chemin/vers/votre/{nom_table}.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER '{separateur}', ENCODING 'UTF8');
+
+-- 5. Vérification de l'import
+SELECT COUNT(*) as nb_lignes_importees FROM "{schema}"."{nom_table}";
+SELECT * FROM "{schema}"."{nom_table}" LIMIT 5;
+"""
+        
+        conn.close()
+        return sql
+        
+    except Exception as e:
+        return f"❌ Erreur lors de la génération : {str(e)}"
 
 # Configuration de la page
 st.set_page_config(
@@ -236,8 +327,12 @@ with st.expander("Dictionnaire des variables", expanded=False):
     dict_separateur = st.radio("Séparateur du dictionnaire", [";", ","], horizontal=True)
     dictionnaire = st.text_area("Coller ici le dictionnaire des variables depuis le fichier CSV", height=150, key="dictionnaire")
 
-# Bouton de sauvegarde
-submitted = st.button("Sauvegarder les métadonnées")
+# Boutons d'action
+col_btn1, col_btn2 = st.columns(2)
+with col_btn1:
+    submitted = st.button("Sauvegarder les métadonnées")
+with col_btn2:
+    generate_sql = st.button("Générer le script SQL d'import", help="Génère automatiquement le script SQL d'import basé sur les métadonnées")
 
 # Traitement de la soumission
 if submitted:
@@ -388,6 +483,39 @@ Vous pouvez les consulter dans l'onglet "Catalogue".
         except Exception as e:
             st.error(f"Erreur inattendue : {str(e)}")
             st.error("Veuillez vérifier les logs pour plus de détails.")
+
+# Traitement du bouton de génération SQL
+if generate_sql:
+    if not nom_table:
+        st.error("Veuillez d'abord saisir un nom de table pour générer le script SQL")
+    else:
+        with st.spinner("Génération du script SQL en cours..."):
+            sql_script = generate_sql_from_metadata(nom_table)
+            
+            if sql_script.startswith("❌"):
+                st.error(sql_script)
+            else:
+                st.success("🎉 Script SQL généré avec succès !")
+                
+                # Affichage du script avec possibilité de copier
+                st.subheader("📄 Script SQL d'import généré")
+                st.code(sql_script, language="sql")
+                
+                # Bouton de téléchargement
+                st.download_button(
+                    label="💾 Télécharger le script SQL",
+                    data=sql_script,
+                    file_name=f"import_{nom_table}.sql",
+                    mime="text/plain"
+                )
+                
+                st.info("""
+                ### 📋 Instructions d'utilisation :
+                1. **Téléchargez** le script SQL ci-dessus
+                2. **Modifiez** le chemin du fichier CSV dans la section COPY
+                3. **Exécutez** le script dans votre outil de gestion PostgreSQL (DBeaver, pgAdmin, etc.)
+                4. **Vérifiez** l'import avec les requêtes de contrôle à la fin du script
+                """)
 
 # Section d'aide
 with st.expander("Aide pour la saisie ❓"):
