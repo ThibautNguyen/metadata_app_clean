@@ -327,21 +327,21 @@ try:
                     df_clean = df_clean.sort_values(['nom_jeu_donnees', 'date_publication'], ascending=[True, True])
                     
                     # Créer une liste unique des jeux de données pour l'affichage Y
-                    jeux_uniques = df_clean['nom_jeu_donnees'].unique()
+                    jeux_uniques = sorted(df_clean['nom_jeu_donnees'].unique())
                     
                     # Étape 1: Ajouter les barres de couverture temporelle (publication → fin de validité)
                     for idx, row in df_clean.iterrows():
                         # Vérifier que les données sont valides
                         if pd.isna(row['date_publication']) or pd.isna(row['date_prochaine_publication']):
                             continue
-                            
-                        # Créer un nom unique pour chaque version
-                        version_name = f"{row['nom_jeu_donnees']} ({row['millesime']})" if pd.notna(row['millesime']) else f"{row['nom_jeu_donnees']} ({row['date_publication'].strftime('%Y')})"
+                        
+                        # Utiliser le nom du jeu de données (toutes les versions sur la même ligne)
+                        dataset_name = row['nom_jeu_donnees']
                         
                         # Barre horizontale : de la date de publication à la fin de validité
                         fig.add_trace(go.Scatter(
                             x=[row['date_publication'], row['date_prochaine_publication']],
-                            y=[version_name, version_name],
+                            y=[dataset_name, dataset_name],
                             mode='lines',
                             line=dict(
                                 color=color_map.get(row['statut'], '#bdbdbd'),
@@ -355,16 +355,17 @@ try:
                     for idx, row in df_clean.iterrows():
                         if pd.isna(row['date_publication']):
                             continue
-                            
-                        # Créer un nom unique pour chaque version
-                        version_name = f"{row['nom_jeu_donnees']} ({row['millesime']})" if pd.notna(row['millesime']) else f"{row['nom_jeu_donnees']} ({row['date_publication'].strftime('%Y')})"
                         
-                        # Créer un hovertemplate propre
+                        # Utiliser le nom du jeu de données (toutes les versions sur la même ligne)
+                        dataset_name = row['nom_jeu_donnees']
+                        
+                        # Créer un hovertemplate propre avec info de la version
                         hover_text = (
                             f"<b>Publication</b><br>"
                             f"Jeu: {str(row['nom_jeu_donnees'])}<br>"
                             f"Millésime: {str(row['millesime'])}<br>"
                             f"Date: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
+                            f"Fin validité: {row['date_prochaine_publication'].strftime('%Y-%m-%d')}<br>"
                             f"Producteur: {str(row['producteur'])}<br>"
                             f"Fréquence: {str(row['frequence_maj'])}<br>"
                             f"Statut: {str(row['statut'])}"
@@ -372,7 +373,7 @@ try:
                         
                         fig.add_trace(go.Scatter(
                             x=[row['date_publication']],
-                            y=[version_name],
+                            y=[dataset_name],
                             mode='markers',
                             marker=dict(
                                 color=color_map.get(row['statut'], '#bdbdbd'),
@@ -393,14 +394,14 @@ try:
                     extended_min = min_date - pd.DateOffset(months=6)
                     extended_max = max_date + pd.DateOffset(years=1)
                     
-                    # Calculer la hauteur basée sur le nombre de versions (pas seulement les jeux uniques)
-                    nb_versions = len(df_clean)
+                    # Calculer la hauteur basée sur le nombre de jeux de données uniques
+                    nb_jeux = len(jeux_uniques)
                     
                     fig.update_layout(
                         title="",
                         xaxis_title="",
                         yaxis_title="",
-                        height=max(400, nb_versions * 30),  # Ajustement de la hauteur pour toutes les versions
+                        height=max(400, nb_jeux * 40),  # Hauteur basée sur le nombre de jeux de données
                         showlegend=False,
                         hovermode='closest',
                         font=dict(size=14),  # Agrandissement de la police
@@ -413,10 +414,12 @@ try:
                             title=""
                         ),
                         yaxis=dict(
+                            categoryorder='array',
+                            categoryarray=jeux_uniques[::-1],  # Inverser pour avoir le premier en haut
                             showgrid=True,
                             gridwidth=1,
                             gridcolor='lightgray',
-                            tickfont=dict(size=11),  # Taille de police légèrement réduite pour plus de versions
+                            tickfont=dict(size=11),  # Taille de police pour les noms des jeux de données
                             title=""
                         ),
                         margin=dict(l=10, r=10, t=10, b=10)  # Réduire les marges
@@ -430,7 +433,7 @@ try:
                         fig.add_shape(
                             type="line",
                             x0=today, x1=today,
-                            y0=-0.5, y1=nb_versions - 0.5,
+                            y0=-0.5, y1=nb_jeux - 0.5,
                             line=dict(
                                 color="red",
                                 width=3,
@@ -441,7 +444,7 @@ try:
                         # Ajouter annotation pour "Aujourd'hui"
                         fig.add_annotation(
                             x=today,
-                            y=nb_versions - 0.5,
+                            y=nb_jeux - 0.5,
                             text="Aujourd'hui",
                             showarrow=True,
                             arrowhead=2,
