@@ -181,10 +181,31 @@ def detect_column_type_with_column_name(clean_values: list, csv_separator: str, 
     Returns:
         Type SQL approprié avec règles intelligentes basées sur le nom
     """
-    # RÈGLE SPÉCIALE : Colonnes contenant 'code' → toujours VARCHAR(50)
-    # Car elles peuvent contenir des valeurs comme 'ZZZZZZZZZ', 'N/A', etc.
-    if 'code' in column_name.lower():
+    col_lower = column_name.lower()
+    
+    # RÈGLE SPÉCIALE 1 : Colonnes de codes individuels → VARCHAR(50)
+    if ('code' in col_lower and 
+        not col_lower.startswith('codes_') and  # Exclure codes_postaux
+        not 'liste' in col_lower and           # Exclure autres listes
+        not 'multiple' in col_lower):          # Exclure codes multiples
         return 'VARCHAR(50)'
+    
+    # RÈGLE SPÉCIALE 2 : Listes de codes → VARCHAR(200) minimum
+    if (col_lower.startswith('codes_') or 
+        ('code' in col_lower and ('liste' in col_lower or 'multiple' in col_lower))):
+        # Analyser les données pour voir si VARCHAR(200) suffit
+        base_type = detect_column_type(clean_values, csv_separator)
+        if base_type.startswith('VARCHAR'):
+            try:
+                detected_size = int(base_type.split('(')[1].split(')')[0])
+                # Prendre le maximum entre 200 et la taille détectée
+                return f'VARCHAR({max(200, detected_size)})'
+            except:
+                return 'VARCHAR(200)'
+        elif base_type == 'TEXT':
+            return 'TEXT'
+        else:
+            return 'VARCHAR(200)'  # Sécurité par défaut
     
     # Sinon, utiliser la détection normale basée sur les données
     return detect_column_type(clean_values, csv_separator)
@@ -245,8 +266,9 @@ def generate_sql_from_metadata(table_name: str) -> str:
 -- 
 -- RÈGLES DE DÉTECTION DES TYPES :
 -- 1. Priorité aux types définis dans le dictionnaire des variables
--- 2. Colonnes contenant 'code' → VARCHAR(50) (gestion des valeurs comme 'ZZZZZZZZZ')
--- 3. Analyse des données avec marges de sécurité x8
+-- 2. Codes individuels (code_insee, dep_code...) → VARCHAR(50) (gestion ZZZZZZZZZ)
+-- 3. Listes de codes (codes_postaux...) → VARCHAR(200) minimum selon données
+-- 4. Analyse des données avec marges de sécurité x8
 -- =====================================================================================
 
 -- 1. Suppression de la table existante (si elle existe)
@@ -356,9 +378,16 @@ CREATE TABLE "{schema}"."{nom_table}" (
                 # ÉTAPE 2: Analyse CSV avec règles intelligentes (nom de colonne + données)
                 sql_type = detect_column_type_with_column_name(clean_values, separateur, col_clean)
                 
-                # Debug pour toutes les colonnes contenant 'code'
-                if 'code' in col_clean.lower():
-                    st.write(f"🔍 DEBUG {col_clean} - Colonne 'code' détectée → VARCHAR(50)")
+                # Debug pour les colonnes de codes
+                col_lower = col_clean.lower()
+                if ('code' in col_lower and 
+                    not col_lower.startswith('codes_') and 
+                    not 'liste' in col_lower and 
+                    not 'multiple' in col_lower):
+                    st.write(f"🔍 DEBUG {col_clean} - Code individuel détecté → VARCHAR(50)")
+                elif (col_lower.startswith('codes_') or 
+                      ('code' in col_lower and ('liste' in col_lower or 'multiple' in col_lower))):
+                    st.write(f"🔍 DEBUG {col_clean} - Liste de codes détectée → VARCHAR(200) minimum")
                 
                 if col_clean.lower() == 'dep_nom':
                     st.write(f"🔍 DEBUG dep_nom - Type détecté final: {sql_type}")
