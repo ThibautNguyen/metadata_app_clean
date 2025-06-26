@@ -540,7 +540,7 @@ with col3:
 
 with col4:
     granularite_geo = st.selectbox("Granularité géographique*", [
-        "", "commune", "IRIS", "carreau", "adresse", "EPCI", "département", "région", "Bassin de vie", "autre"
+        "", "commune", "IRIS", "carreau", "adresse", "EPCI", "département", "région", "bassin de vie", "autre"
     ], index=1, help="Niveau géographique le plus fin des données")
 
 col5, col6 = st.columns(2)
