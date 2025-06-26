@@ -305,29 +305,29 @@ else:
         table_container = st.container()
         
         with table_container:
-            st.dataframe(
-                styled_df,
-                column_config={
-                    "Nom du jeu de données": st.column_config.TextColumn(
-                        "Nom du jeu de données",
+        st.dataframe(
+            styled_df,
+            column_config={
+                "Nom du jeu de données": st.column_config.TextColumn(
+                    "Nom du jeu de données",
                         help="Nom du jeu de données (regroupement logique)"
-                    ),
-                    "Nom de la table": st.column_config.TextColumn(
-                        "Nom de la table",
+                ),
+                "Nom de la table": st.column_config.TextColumn(
+                    "Nom de la table",
                         help="Nom de la table dans la base de données"
-                    ),
-                    "Producteur de la donnée": st.column_config.TextColumn(
-                        "Producteur de la donnée",
+                ),
+                "Producteur de la donnée": st.column_config.TextColumn(
+                    "Producteur de la donnée",
                         help="Organisme producteur des données"
-                    ),
-                    "Date de publication": st.column_config.TextColumn(
-                        "Date de publication",
+                ),
+                "Date de publication": st.column_config.TextColumn(
+                    "Date de publication",
                         help="Date de publication de la table"
-                    )
-                },
-                hide_index=True,
-                use_container_width=True
-            )
+                )
+            },
+            hide_index=True,
+            use_container_width=True
+        )
 
         # Affichage détaillé des métadonnées
         for i, meta in enumerate(metadata_results):

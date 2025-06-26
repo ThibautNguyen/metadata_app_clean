@@ -643,7 +643,7 @@ with st.expander("Dictionnaire des variables", expanded=False):
 # Boutons d'action
 col_btn1, col_btn2 = st.columns(2)
 with col_btn1:
-    submitted = st.button("Sauvegarder les métadonnées")
+submitted = st.button("Sauvegarder les métadonnées")
 with col_btn2:
     generate_sql = st.button("Générer le script SQL d'import", help="Génère automatiquement le script SQL d'import basé sur les métadonnées")
 

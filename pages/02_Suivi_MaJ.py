@@ -139,27 +139,27 @@ try:
             'source': 'Source',
             'statut': 'Statut'
         })
-        
+
         st.info("☑️ Cochez une ligne du tableau pour afficher les détails.")
         
         selected_index = None
         
         if len(df_display) > 0:
-            # Création d'un conteneur pour le tableau
-            table_container = st.container()
-            
-            with table_container:
+        # Création d'un conteneur pour le tableau
+        table_container = st.container()
+        
+        with table_container:
                 selection_state = st.dataframe(
-                    df_display,
-                    on_select="rerun",
-                    selection_mode="single-row",
-                    key="selection_suivi",
-                    hide_index=True,
+                df_display,
+                on_select="rerun",
+                selection_mode="single-row",
+                key="selection_suivi",
+                hide_index=True,
                     column_order=["Jeu de données", "Producteur", "Schéma", "Dernière publication", 
-                                 "Millésime", "Prochaine publication", 
-                                 "Fréquence", "Statut"],
-                    use_container_width=True
-                )
+                             "Millésime", "Prochaine publication", 
+                             "Fréquence", "Statut"],
+                use_container_width=True
+            )
 
             # Gestion de la sélection
             if selection_state.selection.rows and len(selection_state.selection.rows) > 0:
@@ -369,7 +369,7 @@ try:
                         # Si toujours des problèmes, on continue sans la ligne
                         pass
                     
-                    st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True)
                     
                 except Exception as e:
                     st.error(f"Erreur lors de la création du graphique : {e}")
