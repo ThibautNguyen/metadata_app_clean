@@ -345,7 +345,7 @@ try:
                             mode='lines',
                             line=dict(
                                 color=color_map.get(row['statut'], '#bdbdbd'),
-                                width=6
+                                width=8  # Épaisseur des barres augmentée pour plus de visibilité
                             ),
                             showlegend=False,
                             hoverinfo='skip'  # Désactiver complètement le hover pour les barres
@@ -377,9 +377,9 @@ try:
                             mode='markers',
                             marker=dict(
                                 color=color_map.get(row['statut'], '#bdbdbd'),
-                                size=10,
+                                size=12,  # Taille des marqueurs augmentée
                                 symbol='circle',
-                                line=dict(width=1, color='white')
+                                line=dict(width=2, color='white')  # Bordure plus épaisse pour plus de contraste
                             ),
                             showlegend=False,
                             hovertemplate=hover_text + "<extra></extra>"
@@ -396,22 +396,26 @@ try:
                     
                     # Calculer la hauteur basée sur le nombre de jeux de données uniques
                     nb_jeux = len(jeux_uniques)
+                    # Augmenter significativement la hauteur pour une meilleure lisibilité
+                    hauteur_par_jeu = max(50, 80 - min(nb_jeux * 2, 30))  # Plus d'espace par ligne, dégressif
+                    hauteur_totale = max(600, nb_jeux * hauteur_par_jeu)  # Hauteur minimale augmentée
                     
                     fig.update_layout(
                         title="",
                         xaxis_title="",
                         yaxis_title="",
-                        height=max(400, nb_jeux * 40),  # Hauteur basée sur le nombre de jeux de données
+                        height=hauteur_totale,  # Hauteur significativement augmentée
                         showlegend=False,
                         hovermode='closest',
-                        font=dict(size=14),  # Agrandissement de la police
+                        font=dict(size=16),  # Police globale augmentée
                         xaxis=dict(
                             range=[extended_min, extended_max],
                             showgrid=True,
                             gridwidth=1,
                             gridcolor='lightgray',
-                            tickfont=dict(size=12),  # Taille de police pour les dates
-                            title=""
+                            tickfont=dict(size=14),  # Police des dates augmentée
+                            title="",
+                            tickangle=0  # Dates horizontales pour plus de clarté
                         ),
                         yaxis=dict(
                             categoryorder='array',
@@ -419,10 +423,16 @@ try:
                             showgrid=True,
                             gridwidth=1,
                             gridcolor='lightgray',
-                            tickfont=dict(size=11),  # Taille de police pour les noms des jeux de données
-                            title=""
+                            tickfont=dict(size=14),  # Police des noms significativement augmentée
+                            title="",
+                            side='left',  # S'assurer que les labels sont à gauche
+                            tickmode='array',
+                            tickvals=jeux_uniques[::-1],
+                            ticktext=jeux_uniques[::-1]
                         ),
-                        margin=dict(l=10, r=10, t=10, b=10)  # Réduire les marges
+                        margin=dict(l=300, r=20, t=20, b=60),  # Marge gauche très augmentée pour les longs noms
+                        plot_bgcolor='white',  # Fond blanc pour plus de clarté
+                        paper_bgcolor='white'
                     )
                     
                     # Ligne verticale rouge "Aujourd'hui" avec shapes (plus simple)
