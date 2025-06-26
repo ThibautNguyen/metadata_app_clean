@@ -169,6 +169,26 @@ def detect_column_type(clean_values: list, csv_separator: str = ';') -> str:
         else:
             return 'TEXT'
 
+def detect_column_type_with_column_name(clean_values: list, csv_separator: str, column_name: str) -> str:
+    """
+    Détection universelle et intelligente du type SQL avec prise en compte du nom de colonne.
+    
+    Args:
+        clean_values: Liste des valeurs nettoyées de la colonne
+        csv_separator: Séparateur CSV utilisé (';' ou ',')
+        column_name: Nom de la colonne pour appliquer des règles spécifiques
+    
+    Returns:
+        Type SQL approprié avec règles intelligentes basées sur le nom
+    """
+    # RÈGLE SPÉCIALE : Colonnes contenant 'code' → toujours VARCHAR(50)
+    # Car elles peuvent contenir des valeurs comme 'ZZZZZZZZZ', 'N/A', etc.
+    if 'code' in column_name.lower():
+        return 'VARCHAR(50)'
+    
+    # Sinon, utiliser la détection normale basée sur les données
+    return detect_column_type(clean_values, csv_separator)
+
 def parse_csv_line(line: str, separator: str) -> list:
     """Parse intelligente d'une ligne CSV avec gestion des guillemets."""
     import csv
@@ -222,6 +242,11 @@ def generate_sql_from_metadata(table_name: str) -> str:
 -- Producteur: {producteur}
 -- Schema: {schema}
 -- Genere automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+-- 
+-- RÈGLES DE DÉTECTION DES TYPES :
+-- 1. Priorité aux types définis dans le dictionnaire des variables
+-- 2. Colonnes contenant 'code' → VARCHAR(50) (gestion des valeurs comme 'ZZZZZZZZZ')
+-- 3. Analyse des données avec marges de sécurité x8
 -- =====================================================================================
 
 -- 1. Suppression de la table existante (si elle existe)
@@ -328,8 +353,12 @@ CREATE TABLE "{schema}"."{nom_table}" (
                 if col_clean.lower() == 'dep_nom':
                     st.write(f"🔍 DEBUG dep_nom - UTILISATION TYPE PRODUCTEUR: {sql_type}")
             else:
-                # ÉTAPE 2: Analyse CSV pure avec marges x8 sécurisées
-                sql_type = detect_column_type(clean_values, separateur)
+                # ÉTAPE 2: Analyse CSV avec règles intelligentes (nom de colonne + données)
+                sql_type = detect_column_type_with_column_name(clean_values, separateur, col_clean)
+                
+                # Debug pour toutes les colonnes contenant 'code'
+                if 'code' in col_clean.lower():
+                    st.write(f"🔍 DEBUG {col_clean} - Colonne 'code' détectée → VARCHAR(50)")
                 
                 if col_clean.lower() == 'dep_nom':
                     st.write(f"🔍 DEBUG dep_nom - Type détecté final: {sql_type}")
