@@ -23,7 +23,7 @@ def get_update_data():
     try:
         conn = get_db_connection()
         query = '''
-        SELECT DISTINCT ON (nom_jeu_donnees)
+        SELECT 
             nom_jeu_donnees,
             producteur,
             schema,
@@ -33,6 +33,8 @@ def get_update_data():
             frequence_maj,
             source
         FROM metadata
+        WHERE nom_jeu_donnees IS NOT NULL 
+        AND date_publication IS NOT NULL
         ORDER BY nom_jeu_donnees, date_publication DESC, millesime DESC, id DESC
         '''
         df = pd.read_sql(query, conn)
@@ -43,7 +45,58 @@ def get_update_data():
         st.error(f"Erreur lors de la récupération des données : {e}")
         return pd.DataFrame()
 
+def compute_status_by_dataset(df):
+    """
+    Calcule le statut pour chaque jeu de données basé sur sa version la plus récente,
+    puis applique ce statut à toutes les versions du même jeu de données.
+    """
+    # Créer une copie pour éviter les modifications
+    df = df.copy()
+    
+    # Fonction pour calculer le statut d'une ligne
+    def compute_single_status(row):
+        freq = str(row.get('frequence_maj', '') or '').strip().lower()
+        if freq == "ponctuelle" or freq == "" or pd.isnull(freq):
+            return "MaJ non prévue"
+        
+        if pd.isnull(row['date_prochaine_publication']):
+            return "Inconnu"
+        
+        dpp = row['date_prochaine_publication']
+        date_publication = row['date_publication']
+        today = pd.Timestamp.now().normalize()
+        
+        if not pd.isnull(date_publication) and date_publication >= dpp:
+            return "À jour"
+        
+        if dpp < today:
+            return "En retard"
+        elif (dpp - today).days < 7:
+            return "À mettre à jour"
+        else:
+            return "À jour"
+    
+    # Grouper par jeu de données et trouver la version la plus récente
+    dataset_status = {}
+    
+    for dataset_name in df['nom_jeu_donnees'].unique():
+        dataset_rows = df[df['nom_jeu_donnees'] == dataset_name].copy()
+        # Trier par date de publication décroissante pour avoir la plus récente en premier
+        dataset_rows = dataset_rows.sort_values(['date_publication', 'millesime'], ascending=[False, False])
+        
+        if not dataset_rows.empty:
+            # Prendre la première ligne (la plus récente)
+            latest_row = dataset_rows.iloc[0]
+            status = compute_single_status(latest_row)
+            dataset_status[dataset_name] = status
+    
+    # Appliquer le statut du jeu de données à toutes ses versions
+    df['statut'] = df['nom_jeu_donnees'].map(dataset_status)
+    
+    return df
+
 def compute_status(row):
+    """Fonction de compatibilité - ne devrait plus être utilisée directement"""
     freq = str(row.get('frequence_maj', '') or '').strip().lower()
     if freq == "ponctuelle" or freq == "" or pd.isnull(freq):
         return "MaJ non prévue"
@@ -53,7 +106,7 @@ def compute_status(row):
     
     dpp = row['date_prochaine_publication']
     date_publication = row['date_publication']
-    today = pd.Timestamp.now().normalize()  # Utiliser Timestamp pour la compatibilité
+    today = pd.Timestamp.now().normalize()
     
     if not pd.isnull(date_publication) and date_publication >= dpp:
         return "À jour"
@@ -84,31 +137,48 @@ try:
         for col in ["date_publication", "date_prochaine_publication"]:
             df[col] = pd.to_datetime(df[col])
         
-        # Calcul du statut
-        df['statut'] = df.apply(compute_status, axis=1)
+        # Calcul du statut pour toutes les données
+        df = compute_status_by_dataset(df)
+        
+        # Pour le tableau de suivi, on ne garde que la version la plus récente de chaque jeu de données
+        df_table = df.groupby('nom_jeu_donnees').apply(
+            lambda x: x.sort_values(['date_publication', 'millesime'], ascending=[False, False]).iloc[0]
+        ).reset_index(drop=True)
         
         # Affichage du tableau de suivi
         st.subheader("Tableau de suivi")
         
-        # Filtres
+        # Filtres basés sur le tableau (version la plus récente)
         col1, col2, col3 = st.columns(3)
         
         with col1:
             # Filtre par producteur
-            producteurs = ["Tous"] + sorted(df['producteur'].dropna().unique().tolist())
+            producteurs = ["Tous"] + sorted(df_table['producteur'].dropna().unique().tolist())
             selected_producteur = st.selectbox("Filtrer par producteur :", producteurs, key="filter_producteur")
         
         with col2:
             # Filtre par schéma
-            schemas = ["Tous"] + sorted(df['schema'].dropna().unique().tolist()) if 'schema' in df.columns else ["Tous"]
+            schemas = ["Tous"] + sorted(df_table['schema'].dropna().unique().tolist()) if 'schema' in df_table.columns else ["Tous"]
             selected_schema = st.selectbox("Filtrer par schéma :", schemas, key="filter_schema")
         
         with col3:
             # Filtre par statut
-            statuts = ["Tous"] + sorted(df['statut'].dropna().unique().tolist())
+            statuts = ["Tous"] + sorted(df_table['statut'].dropna().unique().tolist())
             selected_statut = st.selectbox("Filtrer par statut :", statuts, key="filter_statut")
         
-        # Application des filtres
+        # Application des filtres sur le tableau
+        df_table_filtered = df_table.copy()
+        
+        if selected_producteur != "Tous":
+            df_table_filtered = df_table_filtered[df_table_filtered['producteur'] == selected_producteur]
+        
+        if selected_schema != "Tous" and 'schema' in df_table_filtered.columns:
+            df_table_filtered = df_table_filtered[df_table_filtered['schema'] == selected_schema]
+        
+        if selected_statut != "Tous":
+            df_table_filtered = df_table_filtered[df_table_filtered['statut'] == selected_statut]
+        
+        # Application des mêmes filtres sur le dataset complet pour le graphique
         df_filtered = df.copy()
         
         if selected_producteur != "Tous":
@@ -120,8 +190,8 @@ try:
         if selected_statut != "Tous":
             df_filtered = df_filtered[df_filtered['statut'] == selected_statut]
         
-        # Mise à jour de df_display avec les données filtrées
-        df_display = df_filtered.copy().reset_index(drop=True)
+        # Mise à jour de df_display avec les données filtrées du tableau
+        df_display = df_table_filtered.copy().reset_index(drop=True)
         # Formater les dates pour l'affichage
         df_display['date_publication'] = df_display['date_publication'].dt.strftime('%Y-%m-%d')
         df_display['date_prochaine_publication'] = df_display['date_prochaine_publication'].dt.strftime('%Y-%m-%d')
@@ -228,9 +298,11 @@ try:
 
         # Timeline de couverture temporelle basée sur les périodes de validité
         st.subheader("📈 Couverture temporelle des jeux de données")
-        if not df.empty:
+        st.info("💡 Toutes les versions de chaque jeu de données sont affichées. La couleur est basée sur le statut de la version la plus récente.")
+        
+        if not df_filtered.empty:
             # Filtrer les lignes avec des dates valides pour le graphique
-            df_timeline_valid = df.dropna(subset=['date_publication', 'date_prochaine_publication']).copy()
+            df_timeline_valid = df_filtered.dropna(subset=['date_publication', 'date_prochaine_publication']).copy()
             
             if not df_timeline_valid.empty:
                 # Configuration des couleurs personnalisées pour le graphique
@@ -251,16 +323,25 @@ try:
                     df_clean = df_timeline_valid.copy()
                     df_clean = df_clean.fillna('Non spécifié')
                     
+                    # Trier les données par jeu de données et date de publication pour un affichage cohérent
+                    df_clean = df_clean.sort_values(['nom_jeu_donnees', 'date_publication'], ascending=[True, True])
+                    
+                    # Créer une liste unique des jeux de données pour l'affichage Y
+                    jeux_uniques = df_clean['nom_jeu_donnees'].unique()
+                    
                     # Étape 1: Ajouter les barres de couverture temporelle (publication → fin de validité)
                     for idx, row in df_clean.iterrows():
                         # Vérifier que les données sont valides
                         if pd.isna(row['date_publication']) or pd.isna(row['date_prochaine_publication']):
                             continue
                             
+                        # Créer un nom unique pour chaque version
+                        version_name = f"{row['nom_jeu_donnees']} ({row['millesime']})" if pd.notna(row['millesime']) else f"{row['nom_jeu_donnees']} ({row['date_publication'].strftime('%Y')})"
+                        
                         # Barre horizontale : de la date de publication à la fin de validité
                         fig.add_trace(go.Scatter(
                             x=[row['date_publication'], row['date_prochaine_publication']],
-                            y=[row['nom_jeu_donnees'], row['nom_jeu_donnees']],
+                            y=[version_name, version_name],
                             mode='lines',
                             line=dict(
                                 color=color_map.get(row['statut'], '#bdbdbd'),
@@ -275,10 +356,14 @@ try:
                         if pd.isna(row['date_publication']):
                             continue
                             
+                        # Créer un nom unique pour chaque version
+                        version_name = f"{row['nom_jeu_donnees']} ({row['millesime']})" if pd.notna(row['millesime']) else f"{row['nom_jeu_donnees']} ({row['date_publication'].strftime('%Y')})"
+                        
                         # Créer un hovertemplate propre
                         hover_text = (
                             f"<b>Publication</b><br>"
                             f"Jeu: {str(row['nom_jeu_donnees'])}<br>"
+                            f"Millésime: {str(row['millesime'])}<br>"
                             f"Date: {row['date_publication'].strftime('%Y-%m-%d')}<br>"
                             f"Producteur: {str(row['producteur'])}<br>"
                             f"Fréquence: {str(row['frequence_maj'])}<br>"
@@ -287,7 +372,7 @@ try:
                         
                         fig.add_trace(go.Scatter(
                             x=[row['date_publication']],
-                            y=[row['nom_jeu_donnees']],
+                            y=[version_name],
                             mode='markers',
                             marker=dict(
                                 color=color_map.get(row['statut'], '#bdbdbd'),
@@ -308,11 +393,14 @@ try:
                     extended_min = min_date - pd.DateOffset(months=6)
                     extended_max = max_date + pd.DateOffset(years=1)
                     
+                    # Calculer la hauteur basée sur le nombre de versions (pas seulement les jeux uniques)
+                    nb_versions = len(df_clean)
+                    
                     fig.update_layout(
                         title="",
                         xaxis_title="",
                         yaxis_title="",
-                        height=max(400, len(df_clean['nom_jeu_donnees'].unique()) * 40),
+                        height=max(400, nb_versions * 30),  # Ajustement de la hauteur pour toutes les versions
                         showlegend=False,
                         hovermode='closest',
                         font=dict(size=14),  # Agrandissement de la police
@@ -328,7 +416,7 @@ try:
                             showgrid=True,
                             gridwidth=1,
                             gridcolor='lightgray',
-                            tickfont=dict(size=12),  # Taille de police pour les noms des jeux de données
+                            tickfont=dict(size=11),  # Taille de police légèrement réduite pour plus de versions
                             title=""
                         ),
                         margin=dict(l=10, r=10, t=10, b=10)  # Réduire les marges
@@ -342,7 +430,7 @@ try:
                         fig.add_shape(
                             type="line",
                             x0=today, x1=today,
-                            y0=-0.5, y1=len(df_timeline_valid['nom_jeu_donnees'].unique()) - 0.5,
+                            y0=-0.5, y1=nb_versions - 0.5,
                             line=dict(
                                 color="red",
                                 width=3,
@@ -353,7 +441,7 @@ try:
                         # Ajouter annotation pour "Aujourd'hui"
                         fig.add_annotation(
                             x=today,
-                            y=len(df_timeline_valid['nom_jeu_donnees'].unique()) - 0.5,
+                            y=nb_versions - 0.5,
                             text="Aujourd'hui",
                             showarrow=True,
                             arrowhead=2,
