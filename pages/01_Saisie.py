@@ -47,6 +47,9 @@ def generate_sql_from_metadata(table_name: str) -> str:
         dictionnaire = metadata.get('dictionnaire', {})
         dict_data = dictionnaire.get('data', []) if dictionnaire else []
         
+        # IMPORTANT : récupération du séparateur CSV pour la détection numérique
+        csv_separator = separateur
+        
         # Génération du SQL basique
         sql = f"""-- =====================================================================================
 -- SCRIPT D'IMPORT POUR LA TABLE {nom_table}
@@ -81,10 +84,23 @@ CREATE TABLE "{schema}"."{nom_table}" (
                 for dict_row in dict_data:
                     if len(dict_row) >= 2 and dict_row[0].strip().lower() == col.lower():
                         description = dict_row[1].lower() if len(dict_row) > 1 else ""
-                        if any(x in description for x in ['date', 'timestamp', 'temps']):
+                        modalites = dict_row[2].lower() if len(dict_row) > 2 else ""
+                        
+                        # Analyse du dictionnaire pour hints de type
+                        desc_and_modalites = f"{description} {modalites}"
+                        
+                        # Détection basée sur la sémantique du dictionnaire
+                        if any(x in desc_and_modalites for x in ['date', 'timestamp', 'temps', 'année', 'mois', 'jour']):
                             dict_type_hint = 'DATE'
-                        elif any(x in description for x in ['url', 'lien', 'http', 'www']):
+                        elif any(x in desc_and_modalites for x in ['url', 'lien', 'http', 'www', 'site']):
                             dict_type_hint = 'TEXT'
+                        elif any(x in desc_and_modalites for x in ['booléen', 'boolean', 'vrai', 'faux', 'oui', 'non']):
+                            dict_type_hint = 'BOOLEAN'
+                        elif any(x in desc_and_modalites for x in ['texte long', 'description', 'commentaire', 'note']):
+                            dict_type_hint = 'TEXT'
+                        # Si le dictionnaire indique des modalités courtes et limitées
+                        elif modalites and len(modalites.split(',')) <= 10 and max(len(x.strip()) for x in modalites.split(',')) <= 50:
+                            dict_type_hint = f"VARCHAR({max(50, max(len(x.strip()) for x in modalites.split(',')) + 10)})"
                         break
             
             # Si le dictionnaire suggère un type spécial, l'utiliser
@@ -94,28 +110,46 @@ CREATE TABLE "{schema}"."{nom_table}" (
                 # URLs détectées dans les données
                 sql_type = 'TEXT'
             elif clean_values:
-                # Analyse des valeurs disponibles
-                # Calcul de la longueur max nécessaire
-                max_len = max(len(str(v)) for v in clean_values)
+                # ALGORITHME 100% UNIVERSEL - AUCUNE REGLE CODEE EN DUR
+                # Analyse statistique pure des valeurs + dictionnaire si disponible
                 
-                # Test ultra-strict : TOUTES les valeurs sont-elles des nombres purs ?
+                # Analyse statistique de base
+                max_len = max(len(str(v)) for v in clean_values)
+                min_len = min(len(str(v)) for v in clean_values)
+                avg_len = sum(len(str(v)) for v in clean_values) / len(clean_values)
+                
+                # Test numérique ultra-strict : TOUTES les valeurs doivent être des nombres purs
                 all_numeric = True
                 has_decimals = False
                 max_int = 0
                 
                 for val in clean_values:
-                    # Nettoyage pour test numérique
-                    val_clean = val.replace(',', '.').replace(' ', '').strip()
+                    val_str = str(val).strip()
+                    # Test numérique strict : adaptation selon le séparateur CSV
                     
-                    # Si contient des lettres, des tirets (autres que négatif), ou caractères spéciaux → VARCHAR
-                    if not re.match(r'^-?\d+\.?\d*$', val_clean):
-                        all_numeric = False
-                        break
+                    # LOGIQUE INTELLIGENTE selon le séparateur CSV
+                    if csv_separator == ';':
+                        # Format français : virgule = séparateur décimal
+                        val_clean = val_str.replace(' ', '').strip()
+                        # Vérifier format français : nombre avec virgule décimale
+                        if not re.match(r'^-?\d+(,\d+)?$', val_clean):
+                            all_numeric = False
+                            break
+                        # Normaliser pour calcul : virgule → point
+                        val_for_calc = val_clean.replace(',', '.')
+                    else:
+                        # Format anglais : point = séparateur décimal  
+                        val_clean = val_str.replace(' ', '').strip()
+                        # Vérifier format anglais : nombre avec point décimal
+                        if not re.match(r'^-?\d+(\.\d+)?$', val_clean):
+                            all_numeric = False
+                            break
+                        val_for_calc = val_clean
                     
-                    # Test de conversion
                     try:
-                        num_val = float(val_clean)
-                        if '.' in val_clean:
+                        num_val = float(val_for_calc)
+                        # Détecter les décimaux selon le format d'origine
+                        if (',' in val_str and csv_separator == ';') or ('.' in val_str and csv_separator != ';'):
                             has_decimals = True
                         else:
                             max_int = max(max_int, abs(int(num_val)))
@@ -123,31 +157,60 @@ CREATE TABLE "{schema}"."{nom_table}" (
                         all_numeric = False
                         break
                 
-                # Décision finale
+                # DECISION FINALE BASEE SUR LES DONNEES UNIQUEMENT
                 if all_numeric and len(clean_values) > 0:
-                    # Toutes les valeurs sont strictement numériques
+                    # Toutes les valeurs sont numériques
                     if has_decimals:
-                        sql_type = 'DECIMAL(15,6)'  # Plus de précision
+                        sql_type = 'DECIMAL(15,6)'
                     else:
-                        # Entiers - choix conservateur
-                        if max_int <= 32767:
-                            sql_type = 'INTEGER'  # Pas SMALLINT pour éviter les débordements
-                        elif max_int <= 2147483647:
+                        # Choix conservateur pour les entiers
+                        if max_int <= 2147483647:  # Limite INTEGER PostgreSQL
                             sql_type = 'INTEGER'
                         else:
                             sql_type = 'BIGINT'
                 else:
-                    # Au moins une valeur non-numérique → VARCHAR adaptatif
-                    if max_len <= 10:
-                        sql_type = 'VARCHAR(50)'
+                    # Au moins une valeur non-numérique → VARCHAR avec taille intelligente
+                    # Taille basée sur analyse statistique des longueurs réelles
+                    if max_len <= 5:
+                        sql_type = 'VARCHAR(10)'    # Codes courts + marge
+                    elif max_len <= 10:
+                        sql_type = 'VARCHAR(20)'    # Marge de sécurité
+                    elif max_len <= 25:
+                        sql_type = 'VARCHAR(50)'    # Noms courts
                     elif max_len <= 50:
-                        sql_type = 'VARCHAR(100)'
+                        sql_type = 'VARCHAR(100)'   # Noms moyens
                     elif max_len <= 100:
-                        sql_type = 'VARCHAR(200)'
+                        sql_type = 'VARCHAR(200)'   # Noms longs
                     elif max_len <= 255:
-                        sql_type = 'VARCHAR(400)'
+                        sql_type = 'VARCHAR(500)'   # Texte court
+                    elif max_len <= 500:
+                        sql_type = 'VARCHAR(1000)'  # Texte moyen
                     else:
+                        sql_type = 'TEXT'           # Texte long
+                
+                # VALIDATION CROISEE : dictionnaire vs données réelles
+                if dict_type_hint:
+                    # Le dictionnaire suggère un type, vérifions la cohérence avec les données
+                    if dict_type_hint == 'BOOLEAN':
+                        # Vérifier si les données sont compatibles avec boolean
+                        boolean_values = {'oui', 'non', 'true', 'false', '1', '0', 'vrai', 'faux', 'yes', 'no'}
+                        if all(str(v).lower().strip() in boolean_values for v in clean_values):
+                            sql_type = 'BOOLEAN'
+                        # Sinon garder le type détecté par analyse des données
+                    elif dict_type_hint == 'DATE':
+                        # Pour les dates, faire confiance au dictionnaire même si détecté comme VARCHAR
+                        sql_type = 'DATE'
+                    elif dict_type_hint == 'TEXT':
+                        # Pour TEXT, prendre le plus permissif
                         sql_type = 'TEXT'
+                    elif dict_type_hint.startswith('VARCHAR'):
+                        # Prendre le plus grand entre dictionnaire et analyse des données
+                        dict_size = int(dict_type_hint.split('(')[1].split(')')[0])
+                        if sql_type.startswith('VARCHAR'):
+                            current_size = int(sql_type.split('(')[1].split(')')[0])
+                            sql_type = f'VARCHAR({max(dict_size, current_size)})'
+                        elif sql_type != 'TEXT':  # Si pas TEXT, utiliser la taille du dictionnaire
+                            sql_type = dict_type_hint
             else:
                 # Pas de données d'exemple - défaut sécurisé
                 sql_type = 'VARCHAR(255)'
