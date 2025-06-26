@@ -1,6 +1,54 @@
-# Metadata App
+# Application de Gestion des Métadonnées
 
-Application de gestion des métadonnées pour bases de données PostgreSQL.
+Application Streamlit pour la saisie et le suivi des métadonnées des jeux de données.
+
+## Setup et Installation
+
+### Prérequis
+- Python 3.x
+- PostgreSQL (accès à la base Neon.tech)
+
+### Installation
+
+1. **Utiliser l'environnement virtuel centralisé** (à la racine de DOCS) :
+```powershell
+# Depuis le répertoire DOCS
+.\.venv\Scripts\Activate.ps1
+```
+
+2. **Vérifier les dépendances** (déjà installées dans l'environnement central) :
+```powershell
+pip list | findstr -i "streamlit"
+```
+
+3. **Lancer l'application** :
+```powershell
+cd metadata_app_clean
+streamlit run Catalogue.py
+```
+
+## Structure du Projet
+
+```
+metadata_app_clean/
+├── Catalogue.py           # Page d'accueil
+├── pages/
+│   ├── 01_Saisie.py      # Formulaire de saisie
+│   └── 02_Suivi_MaJ.py   # Suivi des mises à jour
+├── utils/
+│   ├── auth.py           # Authentification
+│   └── db_utils.py       # Utilitaires base de données
+├── scripts/              # Scripts de maintenance
+└── config.yaml          # Configuration
+
+```
+
+## Notes importantes
+
+- **Environnement virtuel** : Utilise l'environnement centralisé `../..venv/`
+- **Base de données** : PostgreSQL sur Neon.tech
+- **Authentification** : Via streamlit-authenticator
+- **Génération SQL** : Script d'import automatique depuis les métadonnées
 
 ## Fonctionnalités principales
 
@@ -56,107 +104,7 @@ CREATE TABLE metadata (
 );
 ```
 
-## Exécution locale
-
-```bash
-# 1. Créer/activer l'environnement virtuel
-python -m venv .venv
-# Sous Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-# ou utiliser .venv_new si déjà présent
-
-# 2. Installer les dépendances
-pip install -r requirements.txt
-
-# 3. Lancer l'application
-streamlit run Catalogue.py
-```
-
-## Déploiement sur Streamlit Cloud
-
-1. Connectez-vous à [Streamlit Cloud](https://streamlit.io/cloud)
-2. Créez une nouvelle application pointant vers ce dépôt
-3. Utilisez la branche `main`
-4. Spécifiez `Catalogue.py` comme fichier principal
-5. Configurez les variables d'environnement (voir plus haut)
-
 ## Scripts utiles
 
 - `check_db.py` : Teste la connexion et la structure de la base
-- `db_utils.py` : Fonctions d'accès à la base de données
-- `test_db_connection.py` : Test de connexion basique
-- `pages/01_Saisie.py` : Interface de saisie des métadonnées
-- `pages/03_Database_Inspector.py` : Inspection de la base
-
-## Problèmes connus
-
-- Les données saisies dans le formulaire n'apparaissent pas toujours dans le catalogue (vérifier la fonction `save_metadata`)
-- Vérifier la transaction SQL et le commit
-- Ajouter plus de messages d'erreur explicites et un système de logging détaillé
-
-## À faire / TODO
-
-- Déboguer la fonction `save_metadata`
-- Améliorer la gestion des erreurs
-- Vérifier la structure de la base et les contraintes
-
-## Structure du projet
-
-- `Catalogue.py` : Point d'entrée principal
-- `db_utils.py` : Accès base de données
-- `pages/` : Pages Streamlit additionnelles
-- `data/` : Fichiers de données statiques
-- `scripts/` : Scripts d'import/export
-- `README.md` : Documentation principale
-
-## Liens utiles
-
-- Dépôt GitHub : https://github.com/ThibautNguyen/DOCS
-
-## Authentification
-
-L'application utilise `streamlit-authenticator` version 0.3.2 pour gérer l'authentification.
-
-### Configuration requise
-- Python 3.x
-- streamlit-authenticator==0.3.2
-- bcrypt
-
-### Structure du fichier de configuration
-Le fichier `config.yaml` doit suivre cette structure :
-```yaml
-credentials:
-  usernames:
-    username:
-      email: email@example.com
-      name: Nom Utilisateur
-      password: $2b$12$...  # Hash bcrypt
-cookie:
-  expiry_days: 30
-  key: some_signature_key
-  name: some_cookie_name
-preauthorized:
-  emails:
-    - email@example.com
-```
-
-### Génération de hash de mot de passe
-Pour générer un hash de mot de passe compatible :
-```python
-import bcrypt
-password = b'votre_mot_de_passe'
-hash = bcrypt.hashpw(password, bcrypt.gensalt(rounds=12))
-print(hash.decode())
-```
-
-### Environnement virtuel
-L'application utilise l'environnement virtuel `.venv_new`. Assurez-vous de l'activer :
-```powershell
-.\.venv_new\Scripts\Activate.ps1
-```
-
----
-
-**Remarque** :  
-- Supprime le fichier `README-Thibaut.md` après fusion pour éviter toute confusion.
-- Mets à jour ce README à chaque évolution majeure du projet ou de la structure de la base. 
+- `
