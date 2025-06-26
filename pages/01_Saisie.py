@@ -12,6 +12,166 @@ import re
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.db_utils import init_db, save_metadata, get_types_donnees, get_producteurs_by_type, get_jeux_donnees_by_producteur, get_db_connection
 
+def detect_column_type(clean_values: list, csv_separator: str, dict_type_hint: str = None) -> str:
+    """
+    Détection universelle et robuste du type SQL pour une colonne.
+    
+    Args:
+        clean_values: Liste des valeurs nettoyées de la colonne
+        csv_separator: Séparateur CSV utilisé (';' ou ',')
+        dict_type_hint: Suggestion du dictionnaire des variables (optionnel)
+    
+    Returns:
+        Type SQL approprié (VARCHAR(x), INTEGER, DECIMAL, TEXT, etc.)
+    """
+    if not clean_values:
+        return 'VARCHAR(255)'  # Défaut sécurisé
+    
+    # ÉTAPE 1: Analyse statistique des données
+    max_len = max(len(str(v)) for v in clean_values)
+    min_len = min(len(str(v)) for v in clean_values)
+    avg_len = sum(len(str(v)) for v in clean_values) / len(clean_values)
+    variance_len = sum((len(str(v)) - avg_len) ** 2 for v in clean_values) / len(clean_values)
+    
+    # ÉTAPE 2: Détection des patterns à haut risque
+    list_pattern_count = 0
+    long_text_count = 0
+    high_risk_patterns = []
+    
+    for val in clean_values:
+        val_str = str(val)
+        # Listes (multiples virgules)
+        if val_str.count(',') >= 2:
+            list_pattern_count += 1
+        # Texte libre long
+        if val_str.count(' ') >= 3 and len(val_str) > 30:
+            long_text_count += 1
+        # Texte très long
+        if len(val_str) > 100:
+            high_risk_patterns.append('texte_tres_long')
+    
+    # Seuils de détection des patterns à risque
+    if list_pattern_count > len(clean_values) * 0.2:
+        high_risk_patterns.append('liste_frequente')
+    if long_text_count > len(clean_values) * 0.3:
+        high_risk_patterns.append('texte_libre_frequent')
+    if variance_len > (avg_len * 2) and avg_len > 20:
+        high_risk_patterns.append('longueurs_tres_variables')
+    
+    # Si patterns à risque détectés → TEXT immédiatement
+    if high_risk_patterns:
+        return 'TEXT'
+    
+    # ÉTAPE 3: Test numérique intelligent selon le séparateur CSV
+    all_numeric = True
+    has_decimals = False
+    max_int = 0
+    
+    for val in clean_values:
+        val_str = str(val).strip()
+        
+        # Logique adaptée au séparateur CSV
+        if csv_separator == ';':
+            # Format français : virgule = décimal
+            val_clean = val_str.replace(' ', '').strip()
+            if not re.match(r'^-?\d+(,\d*)?$', val_clean):  # Accepte entiers ET décimaux
+                all_numeric = False
+                break
+            val_for_calc = val_clean.replace(',', '.')
+        else:
+            # Format anglais : point = décimal
+            val_clean = val_str.replace(' ', '').strip()
+            if not re.match(r'^-?\d+(\.\d*)?$', val_clean):  # Accepte entiers ET décimaux
+                all_numeric = False
+                break
+            val_for_calc = val_clean
+        
+        try:
+            num_val = float(val_for_calc)
+            # Détection des décimaux selon le format d'origine
+            if (',' in val_str and csv_separator == ';') or ('.' in val_str and csv_separator != ';'):
+                has_decimals = True
+            else:
+                max_int = max(max_int, abs(int(num_val)))
+        except (ValueError, OverflowError):
+            all_numeric = False
+            break
+    
+    # ÉTAPE 4: Décision basée sur l'analyse numérique
+    if all_numeric and len(clean_values) > 0:
+        if has_decimals:
+            base_type = 'DECIMAL(15,6)'
+        else:
+            # Choix conservateur pour les entiers
+            if max_int <= 2147483647:
+                base_type = 'INTEGER'
+            else:
+                base_type = 'BIGINT'
+    else:
+        # VARCHAR adaptatif avec marges de sécurité importantes
+        if max_len <= 5:
+            base_type = 'VARCHAR(20)'       # Marge x4
+        elif max_len <= 10:
+            base_type = 'VARCHAR(50)'       # Marge x5
+        elif max_len <= 25:
+            base_type = 'VARCHAR(100)'      # Marge x4
+        elif max_len <= 50:
+            base_type = 'VARCHAR(200)'      # Marge x4
+        elif max_len <= 100:
+            base_type = 'VARCHAR(500)'      # Marge x5
+        elif max_len <= 200:
+            base_type = 'VARCHAR(1000)'     # Marge x5
+        else:
+            base_type = 'TEXT'
+    
+    # ÉTAPE 5: Application intelligente du hint du dictionnaire
+    if dict_type_hint:
+        if dict_type_hint == 'DATE':
+            return 'DATE'  # Toujours faire confiance pour les dates
+        elif dict_type_hint == 'TEXT':
+            return 'TEXT'  # Toujours prendre le plus permissif
+        elif dict_type_hint == 'BOOLEAN':
+            # Vérifier la cohérence avec les données
+            boolean_values = {'oui', 'non', 'true', 'false', '1', '0', 'vrai', 'faux', 'yes', 'no'}
+            if all(str(v).lower().strip() in boolean_values for v in clean_values):
+                return 'BOOLEAN'
+        elif dict_type_hint.startswith('VARCHAR'):
+            # Prendre la taille la plus grande entre dictionnaire et analyse
+            try:
+                dict_size = int(dict_type_hint.split('(')[1].split(')')[0])
+                if base_type.startswith('VARCHAR'):
+                    current_size = int(base_type.split('(')[1].split(')')[0])
+                    return f'VARCHAR({max(dict_size, current_size)})'
+                elif base_type not in ['TEXT', 'DECIMAL(15,6)', 'INTEGER', 'BIGINT']:
+                    return dict_type_hint
+            except:
+                pass  # Si erreur de parsing, ignorer le hint
+    
+    return base_type
+
+def parse_csv_line(line: str, separator: str) -> list:
+    """
+    Parse intelligente d'une ligne CSV avec gestion des guillemets.
+    Utilisée pour CSV ET dictionnaire des variables.
+    
+    Args:
+        line: Ligne CSV à parser
+        separator: Séparateur utilisé (';' ou ',')
+    
+    Returns:
+        Liste des valeurs parsées
+    """
+    import csv
+    import io
+    
+    try:
+        # Utiliser le module csv standard pour un parsing correct
+        reader = csv.reader(io.StringIO(line), delimiter=separator, quotechar='"')
+        return next(reader)
+    except:
+        # Fallback : split simple si le parsing CSV échoue
+        return line.split(separator)
+
 # Fonction de génération SQL simplifiée
 def generate_sql_from_metadata(table_name: str) -> str:
     """Génère le script SQL d'import basé sur les métadonnées."""
@@ -75,9 +235,7 @@ CREATE TABLE "{schema}"."{nom_table}" (
             clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
             
             # ALGORITHME UNIVERSEL ET ROBUSTE
-            # Ignore les noms de colonnes - analyse uniquement les données réelles
-            
-            # Vérification dans le dictionnaire des variables pour types spéciaux
+            # Analyse du dictionnaire pour hints de type
             dict_type_hint = None
             if dict_data:
                 # Chercher la colonne dans le dictionnaire
@@ -103,117 +261,13 @@ CREATE TABLE "{schema}"."{nom_table}" (
                             dict_type_hint = f"VARCHAR({max(50, max(len(x.strip()) for x in modalites.split(',')) + 10)})"
                         break
             
-            # Si le dictionnaire suggère un type spécial, l'utiliser
-            if dict_type_hint:
-                sql_type = dict_type_hint
-            elif clean_values and all(v.startswith('http') for v in clean_values if v):
-                # URLs détectées dans les données
+            # Détection intelligente du type avec la fonction unifiée
+            if clean_values and all(v.startswith('http') for v in clean_values if v):
+                # URLs détectées directement dans les données
                 sql_type = 'TEXT'
-            elif clean_values:
-                # ALGORITHME 100% UNIVERSEL - AUCUNE REGLE CODEE EN DUR
-                # Analyse statistique pure des valeurs + dictionnaire si disponible
-                
-                # Analyse statistique de base
-                max_len = max(len(str(v)) for v in clean_values)
-                min_len = min(len(str(v)) for v in clean_values)
-                avg_len = sum(len(str(v)) for v in clean_values) / len(clean_values)
-                
-                # Test numérique ultra-strict : TOUTES les valeurs doivent être des nombres purs
-                all_numeric = True
-                has_decimals = False
-                max_int = 0
-                
-                for val in clean_values:
-                    val_str = str(val).strip()
-                    # Test numérique strict : adaptation selon le séparateur CSV
-                    
-                    # LOGIQUE INTELLIGENTE selon le séparateur CSV
-                    if csv_separator == ';':
-                        # Format français : virgule = séparateur décimal
-                        val_clean = val_str.replace(' ', '').strip()
-                        # Vérifier format français : nombre avec virgule décimale
-                        if not re.match(r'^-?\d+(,\d+)?$', val_clean):
-                            all_numeric = False
-                            break
-                        # Normaliser pour calcul : virgule → point
-                        val_for_calc = val_clean.replace(',', '.')
-                    else:
-                        # Format anglais : point = séparateur décimal  
-                        val_clean = val_str.replace(' ', '').strip()
-                        # Vérifier format anglais : nombre avec point décimal
-                        if not re.match(r'^-?\d+(\.\d+)?$', val_clean):
-                            all_numeric = False
-                            break
-                        val_for_calc = val_clean
-                    
-                    try:
-                        num_val = float(val_for_calc)
-                        # Détecter les décimaux selon le format d'origine
-                        if (',' in val_str and csv_separator == ';') or ('.' in val_str and csv_separator != ';'):
-                            has_decimals = True
-                        else:
-                            max_int = max(max_int, abs(int(num_val)))
-                    except (ValueError, OverflowError):
-                        all_numeric = False
-                        break
-                
-                # DECISION FINALE BASEE SUR LES DONNEES UNIQUEMENT
-                if all_numeric and len(clean_values) > 0:
-                    # Toutes les valeurs sont numériques
-                    if has_decimals:
-                        sql_type = 'DECIMAL(15,6)'
-                    else:
-                        # Choix conservateur pour les entiers
-                        if max_int <= 2147483647:  # Limite INTEGER PostgreSQL
-                            sql_type = 'INTEGER'
-                        else:
-                            sql_type = 'BIGINT'
-                else:
-                    # Au moins une valeur non-numérique → VARCHAR avec taille intelligente
-                    # Taille basée sur analyse statistique des longueurs réelles
-                    if max_len <= 5:
-                        sql_type = 'VARCHAR(10)'    # Codes courts + marge
-                    elif max_len <= 10:
-                        sql_type = 'VARCHAR(20)'    # Marge de sécurité
-                    elif max_len <= 25:
-                        sql_type = 'VARCHAR(50)'    # Noms courts
-                    elif max_len <= 50:
-                        sql_type = 'VARCHAR(100)'   # Noms moyens
-                    elif max_len <= 100:
-                        sql_type = 'VARCHAR(200)'   # Noms longs
-                    elif max_len <= 255:
-                        sql_type = 'VARCHAR(500)'   # Texte court
-                    elif max_len <= 500:
-                        sql_type = 'VARCHAR(1000)'  # Texte moyen
-                    else:
-                        sql_type = 'TEXT'           # Texte long
-                
-                # VALIDATION CROISEE : dictionnaire vs données réelles
-                if dict_type_hint:
-                    # Le dictionnaire suggère un type, vérifions la cohérence avec les données
-                    if dict_type_hint == 'BOOLEAN':
-                        # Vérifier si les données sont compatibles avec boolean
-                        boolean_values = {'oui', 'non', 'true', 'false', '1', '0', 'vrai', 'faux', 'yes', 'no'}
-                        if all(str(v).lower().strip() in boolean_values for v in clean_values):
-                            sql_type = 'BOOLEAN'
-                        # Sinon garder le type détecté par analyse des données
-                    elif dict_type_hint == 'DATE':
-                        # Pour les dates, faire confiance au dictionnaire même si détecté comme VARCHAR
-                        sql_type = 'DATE'
-                    elif dict_type_hint == 'TEXT':
-                        # Pour TEXT, prendre le plus permissif
-                        sql_type = 'TEXT'
-                    elif dict_type_hint.startswith('VARCHAR'):
-                        # Prendre le plus grand entre dictionnaire et analyse des données
-                        dict_size = int(dict_type_hint.split('(')[1].split(')')[0])
-                        if sql_type.startswith('VARCHAR'):
-                            current_size = int(sql_type.split('(')[1].split(')')[0])
-                            sql_type = f'VARCHAR({max(dict_size, current_size)})'
-                        elif sql_type != 'TEXT':  # Si pas TEXT, utiliser la taille du dictionnaire
-                            sql_type = dict_type_hint
             else:
-                # Pas de données d'exemple - défaut sécurisé
-                sql_type = 'VARCHAR(255)'
+                # Utilisation de la fonction unifiée de détection
+                sql_type = detect_column_type(clean_values, csv_separator, dict_type_hint)
             
             cols.append(f'    "{col_clean}" {sql_type}')
         
@@ -458,7 +512,8 @@ with col2:
 # Sections dépliables
 with st.expander("Extrait CSV", expanded=False):
     separateur = st.radio("Séparateur", [";", ","], horizontal=True)
-    contenu_csv = st.text_area("Coller ici les 4 premières lignes du fichier CSV", height=150, key="extrait_csv")
+    contenu_csv = st.text_area("Coller ici les 50 premières lignes du fichier CSV (incluant l'en-tête)", height=200, key="extrait_csv", 
+                              help="Pour une meilleure détection des types de données, copiez les 50 premières lignes de votre fichier CSV. Plus d'exemples = meilleure précision du script SQL généré.")
 
 with st.expander("Dictionnaire des variables", expanded=False):
     dict_separateur = st.radio("Séparateur du dictionnaire", [";", ","], horizontal=True)
@@ -510,21 +565,25 @@ if submitted:
             if contenu_csv:
                 try:
                     lines = contenu_csv.strip().split('\n')
-                    header = lines[0].split(separateur)
                     
-                    # Transformation des lignes en liste pour garantir la cohérence
+                    # Parser l'en-tête avec la fonction unifiée
+                    header = parse_csv_line(lines[0], separateur)
+                    
+                    # Parser les données (maximum 50 lignes pour performance)
                     data_rows = []
-                    for line in lines[1:]:
+                    for line in lines[1:51]:  # Limiter à 50 lignes de données
                         if line.strip():  # Ignorer les lignes vides
-                            data_rows.append(line.split(separateur))
+                            parsed_row = parse_csv_line(line, separateur)
+                            data_rows.append(parsed_row)
                     
                     metadata["contenu_csv"] = {
                         "header": header,
-                        "data": data_rows,  # Stockage sous forme de liste de listes
+                        "data": data_rows,
                         "separator": separateur
                     }
                 except Exception as e:
                     st.warning(f"Erreur lors de l'analyse du CSV : {str(e)}")
+                    st.warning("Vérifiez le format CSV et le séparateur choisi.")
             
             # Traitement du dictionnaire des variables
             if dictionnaire:
@@ -535,14 +594,15 @@ if submitted:
                     if not lines:
                         st.warning("Le dictionnaire est vide, il sera ignoré.")
                     else:
-                        # Utiliser le séparateur choisi pour le dictionnaire
-                        header = lines[0].split(dict_separateur)
+                        # Parser l'en-tête avec la fonction unifiée
+                        header = parse_csv_line(lines[0], dict_separateur)
                         
-                        # Transformation des lignes en liste pour garantir la cohérence
+                        # Parser les données avec la fonction unifiée
                         data_rows = []
                         for line in lines[1:]:
                             if line.strip():  # Ignorer les lignes vides
-                                data_rows.append(line.split(dict_separateur))
+                                parsed_row = parse_csv_line(line, dict_separateur)
+                                data_rows.append(parsed_row)
                         
                         # Vérifier si nous avons des données
                         if not data_rows:
@@ -684,9 +744,10 @@ with st.expander("Aide pour la saisie ❓"):
        - Choisissez la licence qui correspond aux conditions d'utilisation
     
     4. **Données CSV**
-       - Copiez-collez les premières lignes du fichier CSV
-       - Indiquez le séparateur utilisé (par défaut, point-virgule)
-       - Ajoutez le dictionnaire des variables si le fichier CSV est disponible
+       - Copiez-collez les 50 premières lignes de votre fichier CSV (en-tête inclus)
+       - Plus d'exemples = meilleure précision du script SQL généré automatiquement
+       - Indiquez le séparateur utilisé (point-virgule par défaut pour les fichiers français)
+       - Ajoutez le dictionnaire des variables si disponible pour optimiser la détection des types
     """)
 
 # Pied de page
