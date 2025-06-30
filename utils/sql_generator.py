@@ -65,7 +65,8 @@ def normalize_data_type(raw_type: str) -> str:
         'datetime': 'TIMESTAMP',
         'timestamp': 'TIMESTAMP',
         'time': 'TIME',
-        'temps': 'TIMESTAMP',
+        # CORRECTION : Retirer 'temps' générique pour éviter "temps partiel" → DATE
+        # 'temps': 'TIMESTAMP',  # Trop générique, commenté
         
         # Types booléens
         'boolean': 'BOOLEAN',
@@ -97,14 +98,16 @@ def normalize_data_type(raw_type: str) -> str:
         scale = int(decimal_match.group(2))
         return f'DECIMAL({precision},{scale})'
     
-    # Types contenant certains mots-clés
+    # Types contenant certains mots-clés (patterns PRÉCIS pour éviter les faux positifs)
     if any(keyword in type_clean for keyword in ['text', 'texte', 'long']):
         return 'TEXT'
     elif any(keyword in type_clean for keyword in ['int', 'entier', 'number']):
         return 'INTEGER'
     elif any(keyword in type_clean for keyword in ['float', 'decimal', 'double']):
         return 'DECIMAL(15,6)'
-    elif any(keyword in type_clean for keyword in ['date', 'temps']):
+    elif any(keyword in type_clean for keyword in ['date', 'datetime', 'timestamp']):
+        # CORRECTION : Retirer 'temps' générique qui capture "temps partiel"
+        # Être plus spécifique pour éviter les faux positifs
         return 'DATE'
     elif any(keyword in type_clean for keyword in ['bool', 'vrai', 'faux']):
         return 'BOOLEAN'
@@ -192,9 +195,66 @@ def detect_column_type(clean_values: list, csv_separator: str = ';') -> str:
             return 'TEXT'
 
 
+def detect_type_from_description(description: str) -> str:
+    """
+    Détection universelle du type SQL basée sur l'analyse sémantique des descriptions.
+    Cette fonction exploite les descriptions pour identifier les codes/identifiants (protection anti-ZZZZZZ).
+    
+    Args:
+        description: Description de la variable (libellé + description longue)
+        
+    Returns:
+        Type SQL suggéré ou None si aucune détection claire
+    """
+    if not description:
+        return None
+        
+    desc_lower = description.lower()
+    
+    # RÈGLE 1 PRIORITAIRE: Comptages → INTEGER (plus spécifique, doit venir AVANT les codes)
+    counting_keywords = [
+        'nombre de', 'count', 'total', 'effectif', 'population', 
+        'nb de', 'quantité', 'quantite', 'effectifs'
+    ]
+    if any(keyword in desc_lower for keyword in counting_keywords):
+        return 'INTEGER'
+    
+    # RÈGLE 2: Taux/Pourcentages/Ratios → DECIMAL (avant les codes aussi)
+    ratio_keywords = [
+        'taux', 'pourcentage', 'ratio', 'rate', 'part de', 'proportion',
+        'indice', 'moyenne', 'median', 'percentile'
+    ]
+    if any(keyword in desc_lower for keyword in ratio_keywords):
+        return 'DECIMAL(15,6)'
+    
+    # RÈGLE 3: Codes/Identifiants → VARCHAR (protection universelle anti-ZZZZZZ)
+    # Attention : exclure "aide"/"aidé" qui ne sont pas des codes mais des catégories
+    code_keywords = [
+        'code', 'codes', 'identifiant', 'identifier', 'numéro', 'numero', 
+        'référence', 'reference', 'clé', 'cle', 'key', 'id', 'siren', 'siret'
+    ]
+    # Vérification plus stricte : ne pas confondre "aide" avec "code"
+    if any(keyword in desc_lower for keyword in code_keywords):
+        # Exclure les faux positifs comme "emplois aidés", "aides familiaux"
+        false_positives = ['emplois aidés', 'aides familiaux', 'emploi aidé', 'aide familial']
+        if not any(fp in desc_lower for fp in false_positives):
+            return 'VARCHAR(50)'
+    
+    # RÈGLE 4: Libellés/Noms → TEXT ou VARCHAR
+    text_keywords = [
+        'libellé', 'libelle', 'nom de', 'intitulé', 'intitule', 
+        'designation', 'désignation', 'appellation'
+    ]
+    if any(keyword in desc_lower for keyword in text_keywords):
+        return 'VARCHAR(255)'  # Pour les libellés courts/moyens
+    
+    return None  # Aucune détection sémantique claire
+
+
 def detect_column_type_with_column_name(clean_values: list, csv_separator: str, column_name: str) -> str:
     """
     Détection universelle et intelligente du type SQL avec prise en compte du nom de colonne.
+    Utilise des patterns PRÉCIS pour éviter les faux positifs.
     
     Args:
         clean_values: Liste des valeurs nettoyées de la colonne
@@ -206,21 +266,26 @@ def detect_column_type_with_column_name(clean_values: list, csv_separator: str, 
     """
     col_lower = column_name.lower()
     
-    # RÈGLE UNIVERSELLE 1 : Détection intelligente des identifiants et codes
-    # Patterns universels pour tous types d'identifiants (pas seulement "code")
+    # RÈGLE UNIVERSELLE 1 : Détection PRÉCISE des identifiants et codes
+    # Utilisation de regex pour des patterns exacts et éviter les faux positifs
     identifier_patterns = [
-        # Codes explicites
-        'code', 'cod', 'id', 'identifier', 'identifiant',
-        # Codes géographiques INSEE
-        'iris', 'triris', 'codgeo', 'geocode', 'commune', 'com', 'dep', 'reg', 'uu',
-        # Codes d'entreprises
-        'siren', 'siret', 'nic', 'ape', 'naf', 'tva',
-        # Autres identifiants
-        'reference', 'ref', 'numero', 'num', 'n°', 'matricule', 'cle', 'key'
+        # Codes explicites (patterns exacts ou délimités)
+        r'^code$', r'^cod$', r'^id$', r'_id$', r'^id_', r'_code$', r'^code_',
+        r'^identifier$', r'^identifiant$',
+        # Codes géographiques INSEE (patterns précis uniquement)
+        r'^iris$', r'^triris$', r'^codgeo$', r'^geocode$', 
+        r'^commune$', r'^com$', r'^dep$', r'^reg$', r'^uu\d*$',
+        # Codes d'entreprises (patterns précis)
+        r'^siren$', r'^siret$', r'^nic$', r'^ape$', r'^naf$', r'^tva$',
+        # Autres identifiants (patterns délimités)
+        r'^reference$', r'^ref$', r'^numero$', r'^num$', r'^matricule$', 
+        r'^cle$', r'^key$', r'_ref$', r'_key$',
+        # Libellés géographiques (aussi à protéger)
+        r'^libcom$', r'^libiris$', r'^typ_iris$', r'^modif_iris$', r'^lab_iris$',
     ]
     
-    # Si le nom de colonne contient un pattern d'identifiant → VARCHAR(50)
-    if any(pattern in col_lower for pattern in identifier_patterns):
+    # Si le nom de colonne matche un pattern d'identifiant PRÉCIS → VARCHAR(50)
+    if any(re.search(pattern, col_lower) for pattern in identifier_patterns):
         return 'VARCHAR(50)'
     
     # RÈGLE UNIVERSELLE 2 : Listes de codes → VARCHAR(200) minimum
@@ -242,6 +307,71 @@ def detect_column_type_with_column_name(clean_values: list, csv_separator: str, 
     
     # Sinon, utiliser la détection normale basée sur les données
     return detect_column_type(clean_values, csv_separator)
+
+
+def detect_column_type_intelligent_universal(clean_values: list, csv_separator: str, column_name: str, dict_row: list = None) -> str:
+    """
+    Détection universelle et intelligente selon la hiérarchie de priorités définie.
+    
+    HIÉRARCHIE DES PRIORITÉS :
+    1. Type explicite dans le dictionnaire des variables
+    2. Analyse sémantique des descriptions (protection anti-ZZZZZZ universelle)
+    3. Analyse des données réelles
+    4. Patterns de noms de colonnes (fallback uniquement)
+    
+    Args:
+        clean_values: Liste des valeurs nettoyées de la colonne
+        csv_separator: Séparateur CSV utilisé
+        column_name: Nom de la colonne
+        dict_row: Ligne du dictionnaire des variables [nom, libelle, description, ...]
+        
+    Returns:
+        Type SQL approprié selon la hiérarchie
+    """
+    
+    # PROTECTION GÉOGRAPHIQUE ABSOLUE : Identifiants géographiques critiques
+    # Ces colonnes DOIVENT être VARCHAR même si les données semblent numériques (protection anti-ZZZZZZ)
+    geographic_critical_patterns = [
+        r'^iris$', r'^triris$', r'^codgeo$', r'^geocode$', 
+        r'^commune$', r'^com$', r'^dep$', r'^reg$', r'^uu\d*$',
+        r'^libcom$', r'^libiris$', r'^typ_iris$', r'^modif_iris$', r'^lab_iris$'
+    ]
+    col_lower = column_name.lower()
+    if any(re.search(pattern, col_lower) for pattern in geographic_critical_patterns):
+        return 'VARCHAR(50)'  # Protection absolue
+    
+    # PRIORITÉ 1 : Type explicite dans le dictionnaire des variables
+    if dict_row and len(dict_row) > 0:
+        # Rechercher un type explicite dans les colonnes du dictionnaire
+        for field in dict_row[1:]:  # À partir de la 2ème colonne
+            field_str = str(field).strip()
+            if field_str:
+                explicit_type = normalize_data_type(field_str)
+                if explicit_type:
+                    return explicit_type
+    
+    # PRIORITÉ 2 : Analyse sémantique des descriptions (protection universelle anti-ZZZZZZ)
+    if dict_row and len(dict_row) > 1:
+        # Concaténer libellé + description pour l'analyse sémantique
+        description_complete = ' '.join(str(field) for field in dict_row[1:])
+        semantic_type = detect_type_from_description(description_complete)
+        if semantic_type:
+            return semantic_type
+    
+    # PRIORITÉ 3 : Analyse des données réelles
+    data_based_type = detect_column_type(clean_values, csv_separator)
+    
+    # PRIORITÉ 4 : Affiner avec patterns de noms seulement si nécessaire
+    # (uniquement pour les cas ambigus de VARCHAR)
+    if data_based_type.startswith('VARCHAR') and len(clean_values) > 0:
+        # Vérifier si les patterns de noms peuvent affiner le type
+        name_based_type = detect_column_type_with_column_name(clean_values, csv_separator, column_name)
+        
+        # Si le pattern de nom suggère un type plus précis, l'utiliser
+        if name_based_type != data_based_type and name_based_type in ['VARCHAR(50)', 'VARCHAR(200)']:
+            return name_based_type
+    
+    return data_based_type
 
 
 def parse_csv_line(line: str, separator: str) -> list:
@@ -305,12 +435,11 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
 -- Schema: {schema}
 -- Genere automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 -- 
--- RÈGLES DE DÉTECTION UNIVERSELLES ET INTELLIGENTES :
--- 1. Priorité aux types définis dans le dictionnaire des variables
--- 2. Identifiants universels (code, iris, triris, siren, siret, com, dep...) → VARCHAR(50)
--- 3. Listes de codes (codes_postaux...) → VARCHAR(200) minimum selon données
--- 4. Détection explicite masquage (ZZZZZZ, s, SECRET...) → VARCHAR forcé
--- 5. Analyse des données avec marges de sécurité x8
+-- NOUVELLE HIÉRARCHIE DE DÉTECTION UNIVERSELLE ET INTELLIGENTE :
+-- 1. Type explicite dans le dictionnaire des variables (si disponible)
+-- 2. Analyse sémantique des descriptions (protection anti-ZZZZZZ universelle)
+-- 3. Analyse des données réelles (avec détection masquage)
+-- 4. Patterns de noms de colonnes (fallback précis uniquement)
 -- =====================================================================================
 
 -- 1. Suppression de la table existante (si elle existe)
@@ -320,7 +449,11 @@ DROP TABLE IF EXISTS "{schema}"."{nom_table}";
 CREATE TABLE "{schema}"."{nom_table}" (
 """
         
-        # Traitement des colonnes avec debug
+        # Récupération du dictionnaire des variables s'il existe
+        dictionnaire = metadata.get('dictionnaire', {})
+        dict_data = dictionnaire.get('data', []) if dictionnaire else []
+        
+        # Traitement des colonnes avec la nouvelle logique intelligente
         cols = []
         for i, col in enumerate(colonnes):
             col_clean = col.strip()
@@ -329,96 +462,27 @@ CREATE TABLE "{schema}"."{nom_table}" (
             sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
             clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
             
-            # Récupération du dictionnaire des variables s'il existe
-            dictionnaire = metadata.get('dictionnaire', {})
-            dict_data = dictionnaire.get('data', []) if dictionnaire else []
-            
-            # ==================================================================================
-            # PRIORITÉ 1 : TYPES DÉFINIS PAR LE PRODUCTEUR DANS LE DICTIONNAIRE DES VARIABLES
-            # ==================================================================================
-            
-            # PROTECTION SPÉCIALE : Identifiants géographiques critiques
-            # Ces colonnes DOIVENT être VARCHAR même si le dictionnaire dit NUM (pour éviter ZZZZZZ)
-            geographic_identifiers = ['iris', 'triris', 'codgeo', 'com', 'dep', 'reg', 'uu2010']
-            is_geographic_identifier = any(pattern in col_clean.lower() for pattern in geographic_identifiers)
-            
-            producteur_type = None
-            if dict_data and len(dict_data) > 0 and not is_geographic_identifier:
-                # Liste complète des libellés possibles pour identifier une colonne de type
-                type_column_labels = [
-                    'type', 'data type', 'datatype', 'data_type', 
-                    'field type', 'fieldtype', 'field_type',
-                    'column type', 'column_type', 'columndatatype', 'column_data_type',
-                    'valuetype', 'variable datatype', 'value_type', 'value_data_type', 
-                    'variable_data_type', 'type de donnée', 'type de données', 'type_donnee'
-                ]
-                
-                # MÉTHODE 1: Recherche par header du dictionnaire (si présent)
-                dict_headers = dict_data[0] if len(dict_data) > 0 else []
-                type_column_index = None
-                data_start_index = 0  # Par défaut, pas de header
-                
-                # Vérifier si la première ligne semble être un header
-                if dict_headers and len(dict_headers) >= 2:
-                    first_row_seems_header = any(
-                        str(header).strip().lower() in type_column_labels 
-                        for header in dict_headers
-                    )
-                    
-                    if first_row_seems_header:
-                        data_start_index = 1  # Ignorer la première ligne (header)
-                        # Chercher l'index de la colonne de type
-                        for i, header in enumerate(dict_headers):
-                            header_clean = str(header).strip().lower()
-                            if header_clean in type_column_labels:
-                                type_column_index = i
-                                break
-                
-                # MÉTHODE 2: Recherche de la ligne correspondant à notre colonne
-                for dict_row in dict_data[data_start_index:]:  # Utiliser l'index approprié
-                    if len(dict_row) >= 1 and dict_row[0].strip().lower() == col.lower():
-                        # DEBUG: Afficher la ligne du dictionnaire pour cette colonne
-                        if debug_mode and col_clean.lower() == 'dep_nom':
-                            st.write(f"🔍 DEBUG dep_nom - Ligne dictionnaire: {dict_row}")
-                            st.write(f"🔍 DEBUG dep_nom - Headers dictionnaire: {dict_headers}")
-                            st.write(f"🔍 DEBUG dep_nom - Index colonne type: {type_column_index}")
-                        
-                        # Si on a trouvé une colonne de type définie
-                        if type_column_index is not None and len(dict_row) > type_column_index:
-                            type_value = str(dict_row[type_column_index]).strip()
-                            if type_value and type_value.lower() not in ['', 'nan', 'null', 'none']:
-                                # Normalisation et validation du type
-                                producteur_type = normalize_data_type(type_value)
-                                if debug_mode and col_clean.lower() == 'dep_nom':
-                                    st.write(f"🔍 DEBUG dep_nom - Type brut trouvé: '{type_value}' → normalisé: '{producteur_type}'")
-                        
-                        # MÉTHODE 3: Recherche dans toutes les colonnes si pas trouvé via header
-                        if not producteur_type:
-                            for type_field in dict_row[1:]:  # À partir de la 2ème colonne
-                                type_str = str(type_field).strip()
-                                if type_str:
-                                    normalized_type = normalize_data_type(type_str)
-                                    if normalized_type:
-                                        producteur_type = normalized_type
-                                        if debug_mode and col_clean.lower() == 'dep_nom':
-                                            st.write(f"🔍 DEBUG dep_nom - Type trouvé par scan: '{type_str}' → '{producteur_type}'")
-                                        break
+            # Recherche de la ligne correspondante dans le dictionnaire des variables
+            dict_row = None
+            if dict_data:
+                for row in dict_data:
+                    if len(row) >= 1 and row[0].strip().lower() == col.lower():
+                        dict_row = row
                         break
             
-            # ==================================================================================
-            # ÉTAPE 1: Si le producteur a défini un type, l'utiliser en priorité absolue
-            if producteur_type:
-                sql_type = producteur_type
-                if debug_mode and col_clean.lower() == 'dep_nom':
-                    st.write(f"🔍 DEBUG dep_nom - UTILISATION TYPE PRODUCTEUR: {sql_type}")
-            elif is_geographic_identifier:
-                # FORÇAGE : Identifiants géographiques → toujours VARCHAR(50) (gestion ZZZZZZ)
-                sql_type = 'VARCHAR(50)'
-                if debug_mode:
-                    st.write(f"🔍 DEBUG {col_clean} - IDENTIFIANT GÉOGRAPHIQUE FORCÉ → VARCHAR(50)")
-            else:
-                # ÉTAPE 2: Analyse CSV avec règles intelligentes (nom de colonne + données)
-                sql_type = detect_column_type_with_column_name(clean_values, separateur, col_clean)
+            # NOUVELLE LOGIQUE UNIVERSELLE : Utilisation de la hiérarchie de priorités
+            sql_type = detect_column_type_intelligent_universal(
+                clean_values=clean_values,
+                csv_separator=separateur,
+                column_name=col_clean,
+                dict_row=dict_row
+            )
+            
+            # Debug optionnel
+            if debug_mode:
+                if dict_row:
+                    st.write(f"🔍 DEBUG {col_clean} - Dictionnaire: {dict_row}")
+                st.write(f"🔍 DEBUG {col_clean} - Type détecté: {sql_type}")
             
             cols.append(f'    "{col_clean}" {sql_type}')
         
