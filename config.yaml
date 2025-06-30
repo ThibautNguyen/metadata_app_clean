@@ -1,13 +1,13 @@
+cookie:
+  expiry_days: 7
+  key: 5RkjSzB6w0edJLxUZlwQTXljuPwOvh8ncIkjLsIHY1tKr_KokmdjAVXg4iLqhhZAu7zz75V6pnXC23IoUGIAPg
+  name: streamlit_auth_cookie
 credentials:
   usernames:
     admin:
-      email: admin@example.com
+      email: thibaut.nguyen@spallian.com
       name: Administrateur
-      password: "$2b$12$5vQnnesAYGkYOYEfhgTZ6uo67cH06AhegQtMUFmX8oYaaeqFo8iGu"
-cookie:
-  expiry_days: 30
-  key: "some_random_key" # Changez cette clé
-  name: auth_cookie
+      password: $2b$14$JkDHb1vtxRFPgqRUbSoudeIJYDGbva8rB38BnIrhJMThAYT4cOe2C
 preauthorized:
   emails:
-    - admin@example.com 
+  - thibaut.nguyen@spallian.com
