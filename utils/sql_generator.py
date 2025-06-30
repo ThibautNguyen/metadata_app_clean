@@ -116,6 +116,7 @@ def detect_column_type(clean_values: list, csv_separator: str = ';') -> str:
     """
     Détection universelle et intelligente du type SQL pour une colonne.
     Basée uniquement sur l'analyse des données avec marges x8.
+    NOUVELLE RÈGLE : Protection INSEE anti-ZZZZZZ automatique.
     
     Args:
         clean_values: Liste des valeurs nettoyées de la colonne
@@ -130,7 +131,26 @@ def detect_column_type(clean_values: list, csv_separator: str = ';') -> str:
     # Analyse de base
     max_len = max(len(str(v)) for v in clean_values)
     
-    # Test numérique ultra-strict
+    # NOUVELLE RÈGLE PRIORITAIRE : Détection explicite des valeurs de masquage INSEE
+    has_insee_masking = False
+    insee_masking_patterns = ['ZZZZZZ', 'ZZZZZ', 'ZZZZ', 'ZZZ', 'XX', 'XXX', 'XXXX', 's', 'SECRET']
+    
+    for val in clean_values:
+        val_str = str(val).strip().upper()
+        if val_str in insee_masking_patterns:
+            has_insee_masking = True
+            break
+    
+    # Si masquage INSEE détecté, forcer VARCHAR même si les autres valeurs sont numériques
+    if has_insee_masking:
+        if max_len <= 10:
+            return 'VARCHAR(50)'    # Sécurité pour codes + masquage
+        elif max_len <= 25:
+            return 'VARCHAR(200)'   
+        else:
+            return 'TEXT'
+    
+    # Test numérique ultra-strict (seulement si pas de masquage INSEE)
     all_numeric = True
     has_decimals = False
     
@@ -186,14 +206,24 @@ def detect_column_type_with_column_name(clean_values: list, csv_separator: str, 
     """
     col_lower = column_name.lower()
     
-    # RÈGLE SPÉCIALE 1 : Colonnes de codes individuels → VARCHAR(50)
-    if ('code' in col_lower and 
-        not col_lower.startswith('codes_') and  # Exclure codes_postaux
-        not 'liste' in col_lower and           # Exclure autres listes
-        not 'multiple' in col_lower):          # Exclure codes multiples
+    # RÈGLE UNIVERSELLE 1 : Détection intelligente des identifiants et codes
+    # Patterns universels pour tous types d'identifiants (pas seulement "code")
+    identifier_patterns = [
+        # Codes explicites
+        'code', 'cod', 'id', 'identifier', 'identifiant',
+        # Codes géographiques INSEE
+        'iris', 'triris', 'codgeo', 'geocode', 'commune', 'com', 'dep', 'reg', 'uu',
+        # Codes d'entreprises
+        'siren', 'siret', 'nic', 'ape', 'naf', 'tva',
+        # Autres identifiants
+        'reference', 'ref', 'numero', 'num', 'n°', 'matricule', 'cle', 'key'
+    ]
+    
+    # Si le nom de colonne contient un pattern d'identifiant → VARCHAR(50)
+    if any(pattern in col_lower for pattern in identifier_patterns):
         return 'VARCHAR(50)'
     
-    # RÈGLE SPÉCIALE 2 : Listes de codes → VARCHAR(200) minimum
+    # RÈGLE UNIVERSELLE 2 : Listes de codes → VARCHAR(200) minimum
     if (col_lower.startswith('codes_') or 
         ('code' in col_lower and ('liste' in col_lower or 'multiple' in col_lower))):
         # Analyser les données pour voir si VARCHAR(200) suffit
@@ -275,11 +305,12 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
 -- Schema: {schema}
 -- Genere automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 -- 
--- RÈGLES DE DÉTECTION DES TYPES :
+-- RÈGLES DE DÉTECTION UNIVERSELLES ET INTELLIGENTES :
 -- 1. Priorité aux types définis dans le dictionnaire des variables
--- 2. Codes individuels (code_insee, dep_code...) → VARCHAR(50) (gestion ZZZZZZZZZ)
+-- 2. Identifiants universels (code, iris, triris, siren, siret, com, dep...) → VARCHAR(50)
 -- 3. Listes de codes (codes_postaux...) → VARCHAR(200) minimum selon données
--- 4. Analyse des données avec marges de sécurité x8
+-- 4. Détection explicite masquage (ZZZZZZ, s, SECRET...) → VARCHAR forcé
+-- 5. Analyse des données avec marges de sécurité x8
 -- =====================================================================================
 
 -- 1. Suppression de la table existante (si elle existe)
