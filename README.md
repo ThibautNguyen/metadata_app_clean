@@ -68,10 +68,10 @@ pip list | findstr -i "streamlit"
 
 3. **Configurer les variables d'environnement** (fichier `.env`) :
 ```env
-NEON_HOST=ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech
-NEON_DATABASE=neondb
-NEON_USER=neondb_owner
-NEON_PASSWORD=npg_XsA4wfvHy2Rn
+NEON_HOST=your_neon_host
+NEON_DATABASE=your_database_name
+NEON_USER=your_username
+NEON_PASSWORD=your_secure_password
 ```
 
 4. **Lancer l'application** :
@@ -187,15 +187,15 @@ PyYAML==6.0.1
 2. Sélectionner `Catalogue.py` comme point d'entrée
 3. Configurer les secrets dans l'interface Streamlit Cloud :
 ```toml
-# Configuration de la base de données Neon.tech
-NEON_HOST = "ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech"
-NEON_DATABASE = "neondb"
-NEON_USER = "neondb_owner"
-NEON_PASSWORD = "npg_XsA4wfvHy2Rn"
+# Configuration de la base de données (à adapter à votre configuration)
+NEON_HOST = "your_neon_host"
+NEON_DATABASE = "your_database_name"
+NEON_USER = "your_username"
+NEON_PASSWORD = "your_secure_password"
 
-# Clé API pour neon.tech
-NEON_API_KEY = "napi_40g81dc3l11a08wos2rt63q2im3qnz9cnykro6wc3mohivxf3jtzz0o4wfbbnnqu"
-NEON_API_URL = "https://console.neon.tech/api/v2/"
+# Clé API pour votre provider de base de données (si nécessaire)
+NEON_API_KEY = "your_api_key"
+NEON_API_URL = "your_api_url"
 ```
 
 #### 3. Vérifications post-déploiement
@@ -208,6 +208,7 @@ NEON_API_URL = "https://console.neon.tech/api/v2/"
 - ✅ **ModuleNotFoundError** : Résolu avec `requirements.txt` complet
 - ✅ **Configuration Streamlit** : Ajout de `.streamlit/config.toml`
 - ✅ **Imports relatifs** : Structure de modules optimisée
+- ✅ **Sécurité** : Suppression des identifiants hardcodés
 
 ## Maintenance
 

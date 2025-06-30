@@ -1,6 +1,7 @@
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import logging
+import os
 
 # Configuration du logging
 logging.basicConfig(
@@ -8,18 +9,30 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
+def get_db_params():
+    """Récupère les paramètres de connexion de manière sécurisée"""
+    required_vars = ['NEON_HOST', 'NEON_DATABASE', 'NEON_USER', 'NEON_PASSWORD']
+    db_params = {'sslmode': 'require'}
+    
+    missing_vars = []
+    for var in required_vars:
+        value = os.getenv(var)
+        if not value:
+            missing_vars.append(var)
+        else:
+            db_params[var.lower().replace('neon_', '')] = value
+    
+    if missing_vars:
+        raise Exception(f"Variables d'environnement manquantes : {', '.join(missing_vars)}")
+    
+    return db_params
+
 def delete_insee_records():
     try:
         logging.info("Démarrage de la fonction delete_insee_records")
         
-        # Paramètres de connexion
-        db_params = {
-            'host': 'ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
-            'database': 'neondb',
-            'user': 'neondb_owner',
-            'password': 'npg_XsA4wfvHy2Rn',
-            'sslmode': 'require'
-        }
+        # Paramètres de connexion sécurisés
+        db_params = get_db_params()
         
         logging.info("Tentative de connexion à la base de données")
         # Connexion à la base de données

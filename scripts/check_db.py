@@ -3,20 +3,33 @@ import json
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
-# Paramètres de connexion à la base de données
-DB_PARAMS = {
-    "host": os.getenv("NEON_HOST", "ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech"),
-    "database": os.getenv("NEON_DATABASE", "neondb"),
-    "user": os.getenv("NEON_USER", "neondb_owner"),
-    "password": os.getenv("NEON_PASSWORD", "npg_XsA4wfvHy2Rn"),
-    "sslmode": "require"
-}
+# Paramètres de connexion à la base de données - SÉCURISÉS
+def get_db_params():
+    """Récupère les paramètres de connexion de manière sécurisée"""
+    required_vars = ['NEON_HOST', 'NEON_DATABASE', 'NEON_USER', 'NEON_PASSWORD']
+    db_params = {'sslmode': 'require'}
+    
+    missing_vars = []
+    for var in required_vars:
+        value = os.getenv(var)
+        if not value:
+            missing_vars.append(var)
+        else:
+            db_params[var.lower().replace('neon_', '')] = value
+    
+    if missing_vars:
+        raise Exception(f"Variables d'environnement manquantes : {', '.join(missing_vars)}")
+    
+    return db_params
 
 def check_db_connection():
     """Vérifie la connexion à la base de données"""
     try:
+        # Récupération sécurisée des paramètres
+        db_params = get_db_params()
+        
         # Établir une connexion à la base de données
-        conn = psycopg2.connect(**DB_PARAMS)
+        conn = psycopg2.connect(**db_params)
         
         # Créer un curseur
         with conn.cursor() as cur:
@@ -32,13 +45,17 @@ def check_db_connection():
         return False
     except Exception as e:
         print(f"Erreur de connexion à la base de données : {str(e)}")
+        print("Vérifiez que les variables d'environnement NEON_* sont définies")
         return False
 
 def check_metadata_table():
     """Vérifie si la table metadata existe et récupère sa structure"""
     try:
+        # Récupération sécurisée des paramètres
+        db_params = get_db_params()
+        
         # Établir une connexion à la base de données
-        conn = psycopg2.connect(**DB_PARAMS)
+        conn = psycopg2.connect(**db_params)
         
         # Créer un curseur
         with conn.cursor() as cur:

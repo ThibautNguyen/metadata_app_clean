@@ -16,81 +16,57 @@ logging.basicConfig(
 def get_db_connection():
     """Établit une connexion à la base de données Neon.tech"""
     try:
-        # Paramètres par défaut pour la connexion locale
+        # Récupération sécurisée des paramètres de connexion
         db_params = {
-            'host': 'ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
-            'database': 'neondb',
-            'user': 'neondb_owner',
-            'password': 'npg_XsA4wfvHy2Rn',
             'sslmode': 'require'
         }
         
-        # Essayer d'abord les secrets Streamlit (pour le déploiement cloud)
-        try:
-            if hasattr(st, 'secrets') and st.secrets:
-                if 'NEON_HOST' in st.secrets:
-                    db_params['host'] = st.secrets['NEON_HOST']
-                if 'NEON_DATABASE' in st.secrets:
-                    db_params['database'] = st.secrets['NEON_DATABASE']
-                if 'NEON_USER' in st.secrets:
-                    db_params['user'] = st.secrets['NEON_USER']
-                if 'NEON_PASSWORD' in st.secrets:
-                    db_params['password'] = st.secrets['NEON_PASSWORD']
-        except Exception:
-            # Si les secrets Streamlit ne sont pas disponibles, essayer les variables d'environnement
-            if os.environ.get('NEON_HOST'):
-                db_params['host'] = os.environ.get('NEON_HOST')
-            if os.environ.get('NEON_DATABASE'):
-                db_params['database'] = os.environ.get('NEON_DATABASE')
-            if os.environ.get('NEON_USER'):
-                db_params['user'] = os.environ.get('NEON_USER')
-            if os.environ.get('NEON_PASSWORD'):
-                db_params['password'] = os.environ.get('NEON_PASSWORD')
+        # Priorité 1: Secrets Streamlit (pour le déploiement cloud)
+        if hasattr(st, 'secrets') and st.secrets:
+            try:
+                db_params['host'] = st.secrets['NEON_HOST']
+                db_params['database'] = st.secrets['NEON_DATABASE']
+                db_params['user'] = st.secrets['NEON_USER']
+                db_params['password'] = st.secrets['NEON_PASSWORD']
+                logging.info("Utilisation des secrets Streamlit")
+            except KeyError as e:
+                logging.error(f"Secret Streamlit manquant : {e}")
+                raise Exception(f"Configuration manquante dans les secrets Streamlit : {e}")
+        else:
+            # Priorité 2: Variables d'environnement (pour le développement local)
+            required_vars = ['NEON_HOST', 'NEON_DATABASE', 'NEON_USER', 'NEON_PASSWORD']
+            missing_vars = []
             
+            for var in required_vars:
+                value = os.environ.get(var)
+                if not value:
+                    missing_vars.append(var)
+                else:
+                    db_params[var.lower().replace('neon_', '')] = value
+            
+            if missing_vars:
+                raise Exception(f"Variables d'environnement manquantes : {', '.join(missing_vars)}")
+            
+            logging.info("Utilisation des variables d'environnement")
+        
         logging.info("Tentative de connexion à la base de données")
         conn = psycopg2.connect(**db_params)
         logging.info("Connexion à la base de données réussie")
         return conn
+        
     except Exception as e:
         logging.error(f"Erreur de connexion à la base de données : {str(e)}")
-        st.error(f"Erreur de connexion à la base de données : {str(e)}")
+        if hasattr(st, 'error'):
+            st.error(f"Erreur de connexion à la base de données. Vérifiez la configuration.")
         return None
 
 def test_connection():
     """Teste la connexion à la base de données et affiche le résultat"""
     try:
-        # Utiliser les mêmes paramètres que get_db_connection
-        db_params = {
-            'host': 'ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
-            'database': 'neondb',
-            'user': 'neondb_owner',
-            'password': 'npg_XsA4wfvHy2Rn',
-            'sslmode': 'require'
-        }
+        conn = get_db_connection()
+        if not conn:
+            return False, "Erreur de connexion - vérifiez la configuration"
         
-        # Essayer d'abord les secrets Streamlit (pour le déploiement cloud)
-        try:
-            if hasattr(st, 'secrets') and st.secrets:
-                if 'NEON_HOST' in st.secrets:
-                    db_params['host'] = st.secrets['NEON_HOST']
-                if 'NEON_DATABASE' in st.secrets:
-                    db_params['database'] = st.secrets['NEON_DATABASE']
-                if 'NEON_USER' in st.secrets:
-                    db_params['user'] = st.secrets['NEON_USER']
-                if 'NEON_PASSWORD' in st.secrets:
-                    db_params['password'] = st.secrets['NEON_PASSWORD']
-        except Exception:
-            # Si les secrets Streamlit ne sont pas disponibles, essayer les variables d'environnement
-            if os.environ.get('NEON_HOST'):
-                db_params['host'] = os.environ.get('NEON_HOST')
-            if os.environ.get('NEON_DATABASE'):
-                db_params['database'] = os.environ.get('NEON_DATABASE')
-            if os.environ.get('NEON_USER'):
-                db_params['user'] = os.environ.get('NEON_USER')
-            if os.environ.get('NEON_PASSWORD'):
-                db_params['password'] = os.environ.get('NEON_PASSWORD')
-            
-        conn = psycopg2.connect(**db_params)
         with conn.cursor() as cur:
             cur.execute("SELECT version();")
             version = cur.fetchone()

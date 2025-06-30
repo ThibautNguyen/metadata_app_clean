@@ -1,6 +1,7 @@
 import psycopg2
 from psycopg2 import Error
 import logging
+import os
 
 # Configuration du logging
 logging.basicConfig(
@@ -8,17 +9,29 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(module)s: %(message)s",
 )
 
+def get_db_params():
+    """Récupère les paramètres de connexion de manière sécurisée"""
+    required_vars = ['NEON_HOST', 'NEON_DATABASE', 'NEON_USER', 'NEON_PASSWORD']
+    db_params = {'sslmode': 'require'}
+    
+    missing_vars = []
+    for var in required_vars:
+        value = os.getenv(var)
+        if not value:
+            missing_vars.append(var)
+        else:
+            db_params[var.lower().replace('neon_', '')] = value
+    
+    if missing_vars:
+        raise Exception(f"Variables d'environnement manquantes : {', '.join(missing_vars)}")
+    
+    return db_params
+
 def test_connection():
     """Teste la connexion à la base de données Neon.tech"""
     try:
-        # Paramètres de connexion
-        db_params = {
-            'host': 'ep-wispy-queen-abzi1lne-pooler.eu-west-2.aws.neon.tech',
-            'database': 'neondb',
-            'user': 'neondb_owner',
-            'password': 'npg_XsA4wfvHy2Rn',
-            'sslmode': 'require'
-        }
+        # Paramètres de connexion sécurisés
+        db_params = get_db_params()
         
         # Connexion à la base de données
         connection = psycopg2.connect(**db_params)
