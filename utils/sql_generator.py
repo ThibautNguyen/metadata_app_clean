@@ -337,8 +337,13 @@ CREATE TABLE "{schema}"."{nom_table}" (
             # PRIORITÉ 1 : TYPES DÉFINIS PAR LE PRODUCTEUR DANS LE DICTIONNAIRE DES VARIABLES
             # ==================================================================================
             
+            # PROTECTION SPÉCIALE : Identifiants géographiques critiques
+            # Ces colonnes DOIVENT être VARCHAR même si le dictionnaire dit NUM (pour éviter ZZZZZZ)
+            geographic_identifiers = ['iris', 'triris', 'codgeo', 'com', 'dep', 'reg', 'uu2010']
+            is_geographic_identifier = any(pattern in col_clean.lower() for pattern in geographic_identifiers)
+            
             producteur_type = None
-            if dict_data and len(dict_data) > 0:
+            if dict_data and len(dict_data) > 0 and not is_geographic_identifier:
                 # Liste complète des libellés possibles pour identifier une colonne de type
                 type_column_labels = [
                     'type', 'data type', 'datatype', 'data_type', 
@@ -401,39 +406,19 @@ CREATE TABLE "{schema}"."{nom_table}" (
                         break
             
             # ==================================================================================
-            # PRIORITÉ 2 : ANALYSE CSV ULTRA-SÉCURISÉE SI PAS DE TYPE DU PRODUCTEUR
-            # ==================================================================================
-            
-            # DEBUG spécial pour dep_nom
-            if debug_mode and col_clean.lower() == 'dep_nom':
-                st.write(f"🔍 DEBUG dep_nom - Échantillon CSV: {clean_values[:5]}")
-                if clean_values:
-                    max_len_found = max(len(str(v)) for v in clean_values)
-                    st.write(f"🔍 DEBUG dep_nom - Longueur max trouvée: {max_len_found}")
-            
             # ÉTAPE 1: Si le producteur a défini un type, l'utiliser en priorité absolue
             if producteur_type:
                 sql_type = producteur_type
                 if debug_mode and col_clean.lower() == 'dep_nom':
                     st.write(f"🔍 DEBUG dep_nom - UTILISATION TYPE PRODUCTEUR: {sql_type}")
+            elif is_geographic_identifier:
+                # FORÇAGE : Identifiants géographiques → toujours VARCHAR(50) (gestion ZZZZZZ)
+                sql_type = 'VARCHAR(50)'
+                if debug_mode:
+                    st.write(f"🔍 DEBUG {col_clean} - IDENTIFIANT GÉOGRAPHIQUE FORCÉ → VARCHAR(50)")
             else:
                 # ÉTAPE 2: Analyse CSV avec règles intelligentes (nom de colonne + données)
                 sql_type = detect_column_type_with_column_name(clean_values, separateur, col_clean)
-                
-                # Debug pour les colonnes de codes
-                if debug_mode:
-                    col_lower = col_clean.lower()
-                    if ('code' in col_lower and 
-                        not col_lower.startswith('codes_') and 
-                        not 'liste' in col_lower and 
-                        not 'multiple' in col_lower):
-                        st.write(f"🔍 DEBUG {col_clean} - Code individuel détecté → VARCHAR(50)")
-                    elif (col_lower.startswith('codes_') or 
-                          ('code' in col_lower and ('liste' in col_lower or 'multiple' in col_lower))):
-                        st.write(f"🔍 DEBUG {col_clean} - Liste de codes détectée → VARCHAR(200) minimum")
-                
-                if debug_mode and col_clean.lower() == 'dep_nom':
-                    st.write(f"🔍 DEBUG dep_nom - Type détecté final: {sql_type}")
             
             cols.append(f'    "{col_clean}" {sql_type}')
         
