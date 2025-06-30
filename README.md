@@ -5,12 +5,14 @@ Application Streamlit pour la saisie, consultation et suivi des métadonnées de
 ![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32.0-red?logo=streamlit)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue?logo=postgresql)
+![Sécurité](https://img.shields.io/badge/Sécurité-Renforcée-green?logo=shield)
 
 ## Table des matières
 
 - [Aperçu du projet](#aperçu-du-projet)
 - [Fonctionnalités](#fonctionnalités)
 - [Démarrage rapide](#démarrage-rapide)
+- [Sécurité](#sécurité)
 - [Utilisation](#utilisation)
 - [Développement](#développement)
 - [Structure du projet](#structure-du-projet)
@@ -51,7 +53,7 @@ Cette application répond aux besoins de gestion et de catalogage des métadonn�
 ### Prérequis
 - Python 3.11+
 - Accès à une base PostgreSQL
-- Variables d'environnement configurées
+- Variables d'environnement configurées (**voir section [Sécurité](#sécurité)**)
 
 ### Installation locale
 
@@ -66,8 +68,9 @@ Cette application répond aux besoins de gestion et de catalogage des métadonn�
 pip list | findstr -i "streamlit"
 ```
 
-3. **Configurer les variables d'environnement** (fichier `.env`) :
+3. **⚠️ CONFIGURATION SÉCURISÉE OBLIGATOIRE** - Créer un fichier `.env` :
 ```env
+# Variables d'environnement OBLIGATOIRES (à adapter à votre configuration)
 NEON_HOST=your_neon_host
 NEON_DATABASE=your_database_name
 NEON_USER=your_username
@@ -81,6 +84,109 @@ streamlit run Catalogue.py
 ```
 
 L'application sera accessible sur : http://localhost:8501
+
+## Sécurité
+
+### 🚨 Alertes de Sécurité Critiques
+
+> **⚠️ IMPORTANT** : Si vous avez cloné ce repository avant juin 2025, **changez immédiatement** vos identifiants de base de données car ils étaient exposés publiquement sur GitHub.
+
+### Configuration sécurisée obligatoire
+
+#### Variables d'environnement requises (OBLIGATOIRES)
+
+L'application **refuse de démarrer** sans ces variables :
+
+```bash
+# Base de données (OBLIGATOIRE)
+NEON_HOST=your_neon_host
+NEON_DATABASE=your_database_name  
+NEON_USER=your_username
+NEON_PASSWORD=your_secure_password
+
+# Optionnel : API Keys
+NEON_API_KEY=your_api_key
+NEON_API_URL=your_api_url
+```
+
+#### Configuration locale (.env)
+
+Créez un fichier `.env` à la racine du projet :
+
+```env
+# Base de données Neon.tech - ADAPTEZ À VOTRE CONFIGURATION
+NEON_HOST=your_neon_host
+NEON_DATABASE=your_database_name
+NEON_USER=your_username
+NEON_PASSWORD=your_secure_password
+```
+
+**🔐 CRITIQUE** : Le fichier `.env` est automatiquement exclu de Git - **ne jamais le committer !**
+
+#### Configuration Streamlit Cloud
+
+Dans l'interface Streamlit Cloud, configurez ces secrets :
+
+```toml
+# À adapter à votre configuration
+NEON_HOST = "your_neon_host"
+NEON_DATABASE = "your_database_name"
+NEON_USER = "your_username"
+NEON_PASSWORD = "your_secure_password"
+```
+
+### Bonnes pratiques de sécurité
+
+#### Mots de passe
+- ✅ Utilisez des mots de passe forts (20+ caractères)
+- ✅ Incluez majuscules, minuscules, chiffres, symboles
+- ❌ Ne réutilisez jamais de mots de passe
+- 🔄 Changez régulièrement les identifiants
+
+#### Accès base de données
+- ✅ Utilisez des comptes avec privilèges minimaux nécessaires
+- ✅ SSL/TLS activé automatiquement (`sslmode=require`)
+- 📊 Surveillez les connexions suspectes
+- 🌐 Limitez les adresses IP autorisées quand possible
+
+#### Code et développement
+- ❌ **JAMAIS** d'identifiants hardcodés dans le code
+- ✅ Toujours utiliser des variables d'environnement
+- ✅ Vérifier `.gitignore` avant chaque commit
+- 🔍 Scanner le code pour détecter les secrets
+
+### Vérification de sécurité
+
+#### Avant chaque commit
+```bash
+# Vérifier qu'aucun secret n'est présent
+git diff --cached | grep -i "password\\|secret\\|key\\|token"
+
+# Scanner les fichiers pour détecter les fuites
+grep -r "napi_\\|npg_" . --exclude-dir=.git
+```
+
+#### Outils recommandés
+- **git-secrets** : Prévention des commits de secrets
+- **gitleaks** : Scanner pour détecter les fuites d'identifiants  
+- **truffleHog** : Recherche de secrets dans l'historique Git
+
+### 🚨 En cas de compromission
+
+#### Actions immédiates
+1. **Changer TOUS les mots de passe** exposés
+2. **Révoquer les clés API** compromises  
+3. **Auditer les logs** de la base de données
+4. **Nettoyer l'historique Git** si nécessaire
+
+#### Checklist de sécurité
+- [ ] Variables d'environnement configurées
+- [ ] Aucun identifiant hardcodé dans le code
+- [ ] `.gitignore` à jour et respecté
+- [ ] Secrets Streamlit Cloud configurés
+- [ ] Mots de passe forts utilisés
+- [ ] SSL/TLS activé pour la base de données
+- [ ] Logs de sécurité surveillés
 
 ## Utilisation
 
@@ -146,6 +252,7 @@ metadata_app_clean/
 ├── Catalogue.py              # 🏠 Page principale - Consultation des métadonnées
 ├── requirements.txt          # 📦 Dépendances Python
 ├── config.yaml              # ⚙️ Configuration authenticator
+├── .env                     # 🔐 Variables d'environnement (local uniquement)
 ├── .streamlit/
 │   ├── config.toml          # 🔧 Configuration Streamlit
 │   └── secrets.toml         # 🔐 Secrets (local uniquement)
@@ -165,12 +272,13 @@ metadata_app_clean/
 ## Déploiement
 
 ### Déploiement local
-Voir section [Démarrage rapide](#démarrage-rapide)
+Voir section [Démarrage rapide](#démarrage-rapide) et **impérativement** la section [Sécurité](#sécurité).
 
 ### Déploiement sur Streamlit Cloud
 
 #### 1. Prérequis
 - Repository GitHub connecté
+- **Variables de sécurité configurées** (voir section Sécurité)
 - Fichier `requirements.txt` présent :
 ```
 streamlit==1.32.0
@@ -184,16 +292,16 @@ PyYAML==6.0.1
 
 #### 2. Configuration Streamlit Cloud
 1. Connecter le repository GitHub à Streamlit Cloud
-2. Sélectionner `Catalogue.py` comme point d'entrée
-3. Configurer les secrets dans l'interface Streamlit Cloud :
+2. Sélectionner `Catalogue.py` comme point d'entrée  
+3. **🔐 OBLIGATOIRE** : Configurer les secrets dans l'interface Streamlit Cloud :
 ```toml
-# Configuration de la base de données (à adapter à votre configuration)
+# Configuration sécurisée - À adapter à votre configuration
 NEON_HOST = "your_neon_host"
 NEON_DATABASE = "your_database_name"
 NEON_USER = "your_username"
 NEON_PASSWORD = "your_secure_password"
 
-# Clé API pour votre provider de base de données (si nécessaire)
+# Optionnel : API Keys
 NEON_API_KEY = "your_api_key"
 NEON_API_URL = "your_api_url"
 ```
@@ -203,38 +311,56 @@ NEON_API_URL = "your_api_url"
 - [ ] La connexion à la base de données est active
 - [ ] Les graphiques s'affichent correctement
 - [ ] Toutes les pages sont accessibles
+- [ ] **Aucun identifiant visible** dans les logs
 
 #### 4. Problèmes résolus
 - ✅ **ModuleNotFoundError** : Résolu avec `requirements.txt` complet
 - ✅ **Configuration Streamlit** : Ajout de `.streamlit/config.toml`
 - ✅ **Imports relatifs** : Structure de modules optimisée
 - ✅ **Sécurité** : Suppression des identifiants hardcodés
+- ✅ **Secrets exposés** : Migration vers variables d'environnement
 
 ## Maintenance
 
 ### Mise à jour des données
 ```powershell
-# Sauvegarder la base avant mise à jour
+# 1. Sauvegarder la base avant mise à jour
 pg_dump -h $NEON_HOST -U $NEON_USER -d $NEON_DATABASE > backup.sql
 
-# Mettre à jour via l'interface de saisie
+# 2. Mettre à jour via l'interface de saisie
 streamlit run Catalogue.py
 ```
 
-### Problèmes connus
-- **Performance** : Grandes tables CSV (>1000 lignes) peuvent ralentir l'interface
-  - **Solution** : Limiter à 50 lignes dans l'extrait CSV
-- **Encodage** : Caractères spéciaux dans les CSV
-  - **Solution** : Utiliser UTF-8 pour tous les fichiers
+### Problèmes connus et solutions
 
-### Support
+#### Performance
+- **Problème** : Grandes tables CSV (>1000 lignes) peuvent ralentir l'interface
+- **Solution** : Limiter à 50 lignes dans l'extrait CSV pour optimiser la génération SQL
+
+#### Encodage
+- **Problème** : Caractères spéciaux dans les CSV
+- **Solution** : Utiliser UTF-8 pour tous les fichiers
+
+#### Sécurité (CRITIQUE)
+- **Problème** : Identifiants exposés dans l'historique Git
+- **Solution** : Changement obligatoire des identifiants + utilisation variables d'environnement
+
+### Support et contact
 - **Documentation** : README.md (ce fichier)
+- **Sécurité** : En cas de problème de sécurité, **NE PAS** créer d'issue publique
 - **Base de données** : Configuration Neon.tech
 - **Authentification** : config.yaml
 
 ### Changelog
 
-#### Version actuelle
+#### Version 1.1 (2025-06-30) - **SÉCURISATION MAJEURE**
+- 🔐 **CRITIQUE** : Suppression complète des identifiants hardcodés
+- 🛡️ Migration vers variables d'environnement obligatoires
+- 📋 Fusion documentation sécurisée
+- 🔍 Renforcement .gitignore contre fuites futures
+- ⚠️ Guide de compromission et récupération
+
+#### Version 1.0
 - ✅ Interface multipage complète
 - ✅ Authentification sécurisée
 - ✅ Génération automatique de SQL
@@ -243,4 +369,4 @@ streamlit run Catalogue.py
 
 ---
 
-© 2025 - Système de Gestion des Métadonnées v1.0
+© 2025 - Système de Gestion des Métadonnées v1.1 - **Sécurisé**
