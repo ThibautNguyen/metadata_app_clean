@@ -23,6 +23,12 @@ auth.json
 **/config/*password*
 **/config/*key*
 
+# Configuration d'authentification générée
+config_secure_*.yaml
+CREDENTIALS_ADMIN_*.txt
+**/backup_config_*.yaml
+**/old_config*.yaml
+
 # ========================
 # PYTHON
 # ========================
