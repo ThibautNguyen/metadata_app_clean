@@ -1,0 +1,13 @@
+credentials:
+  usernames:
+    admin:
+      email: admin@example.com
+      name: Administrateur
+      password: "$2b$12$5vQnnesAYGkYOYEfhgTZ6uo67cH06AhegQtMUFmX8oYaaeqFo8iGu"
+cookie:
+  expiry_days: 30
+  key: "some_random_key" # Changez cette clé
+  name: auth_cookie
+preauthorized:
+  emails:
+    - admin@example.com 

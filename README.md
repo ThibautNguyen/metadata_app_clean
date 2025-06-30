@@ -351,6 +351,23 @@ streamlit run Catalogue.py
 - **Base de données** : Configuration Neon.tech
 - **Authentification** : config.yaml
 
+### Audit de sécurité
+
+#### 🛡️ Statut : SÉCURISÉ ✅ (30 juin 2025)
+
+**Vulnérabilités critiques corrigées :**
+- ✅ Configuration d'authentification renforcée (identifiants forts)
+- ✅ Branches compromises supprimées de GitHub
+- ✅ Scripts d'exposition sécurisés
+- ✅ Email administrateur mis à jour : `thibaut.nguyen@spallian.com`
+
+**Outils de maintenance disponibles :**
+- 🔐 `scripts/generate_secure_config.py` - Génération d'identifiants forts
+- 🔍 `scripts/test_auth.py` - Test sécurisé de configuration  
+- 🧹 `scripts/security_cleanup.py` - Nettoyage automatisé
+
+> **Note :** En cas de besoin de nouveaux identifiants, utilisez `python scripts/generate_secure_config.py`
+
 ### Changelog
 
 #### Version 1.1 (2025-06-30) - **SÉCURISATION MAJEURE**
@@ -359,6 +376,8 @@ streamlit run Catalogue.py
 - 📋 Fusion documentation sécurisée
 - 🔍 Renforcement .gitignore contre fuites futures
 - ⚠️ Guide de compromission et récupération
+- 🧹 **AUDIT SÉCURITÉ** : Branches compromises nettoyées
+- 🛠️ Scripts de maintenance de sécurité créés
 
 #### Version 1.0
 - ✅ Interface multipage complète
