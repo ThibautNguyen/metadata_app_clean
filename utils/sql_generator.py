@@ -213,7 +213,7 @@ def detect_type_from_description(description: str) -> str:
     
     # RÈGLE 1 PRIORITAIRE: Comptages → INTEGER (plus spécifique, doit venir AVANT les codes)
     counting_keywords = [
-        'nombre de', 'count', 'total', 'effectif', 'population', 
+        'nombre de', "nombre d'", 'count', 'total', 'effectif', 'population', 
         'nb de', 'quantité', 'quantite', 'effectifs'
     ]
     if any(keyword in desc_lower for keyword in counting_keywords):
@@ -240,13 +240,24 @@ def detect_type_from_description(description: str) -> str:
         if not any(fp in desc_lower for fp in false_positives):
             return 'VARCHAR(50)'
     
-    # RÈGLE 4: Libellés/Noms → TEXT ou VARCHAR
+    # RÈGLE 4: Libellés/Noms → différentes tailles selon le type
+    
+    # RÈGLE 4a: Libellés géographiques spécifiques → VARCHAR(200)
+    geo_label_keywords = [
+        'libellé de la commune', 'libellé commune', 'libellé de l\'iris', 'libellé iris',
+        'label de l\'iris', 'label iris',  # Ajout pour LAB_IRIS
+        'libcom', 'libiris', 'lab_iris'
+    ]
+    if any(keyword in desc_lower for keyword in geo_label_keywords):
+        return 'VARCHAR(200)'  # Pour les libellés géographiques (peuvent être longs)
+    
+    # RÈGLE 4b: Autres libellés → VARCHAR(255)
     text_keywords = [
         'libellé', 'libelle', 'nom de', 'intitulé', 'intitule', 
         'designation', 'désignation', 'appellation'
     ]
     if any(keyword in desc_lower for keyword in text_keywords):
-        return 'VARCHAR(255)'  # Pour les libellés courts/moyens
+        return 'VARCHAR(255)'  # Pour les libellés courts/moyens standards
     
     return None  # Aucune détection sémantique claire
 
@@ -266,6 +277,15 @@ def detect_column_type_with_column_name(clean_values: list, csv_separator: str, 
     """
     col_lower = column_name.lower()
     
+    # RÈGLE PRIORITAIRE NOUVELLE : Libellés géographiques → VARCHAR(200)
+    label_patterns = [
+        r'^libcom$', r'^libiris$', r'^lab_iris$'  # Vrais libellés descriptifs
+    ]
+    
+    # Si le nom de colonne matche un pattern de libellé → VARCHAR(200)
+    if any(re.search(pattern, col_lower) for pattern in label_patterns):
+        return 'VARCHAR(200)'
+    
     # RÈGLE UNIVERSELLE 1 : Détection PRÉCISE des identifiants et codes
     # Utilisation de regex pour des patterns exacts et éviter les faux positifs
     identifier_patterns = [
@@ -280,8 +300,8 @@ def detect_column_type_with_column_name(clean_values: list, csv_separator: str, 
         # Autres identifiants (patterns délimités)
         r'^reference$', r'^ref$', r'^numero$', r'^num$', r'^matricule$', 
         r'^cle$', r'^key$', r'_ref$', r'_key$',
-        # Libellés géographiques (aussi à protéger)
-        r'^libcom$', r'^libiris$', r'^typ_iris$', r'^modif_iris$', r'^lab_iris$',
+        # Indicateurs techniques géographiques (SANS les vrais libellés)
+        r'^typ_iris$', r'^modif_iris$',
     ]
     
     # Si le nom de colonne matche un pattern d'identifiant PRÉCIS → VARCHAR(50)
@@ -331,14 +351,21 @@ def detect_column_type_intelligent_universal(clean_values: list, csv_separator: 
     
     # PROTECTION GÉOGRAPHIQUE ABSOLUE : Identifiants géographiques critiques
     # Ces colonnes DOIVENT être VARCHAR même si les données semblent numériques (protection anti-ZZZZZZ)
+    col_lower = column_name.lower()
+    
+    # Protection spéciale pour les libellés géographiques → VARCHAR(200)
+    geo_label_patterns = [r'^libcom$', r'^libiris$', r'^lab_iris$']
+    if any(re.search(pattern, col_lower) for pattern in geo_label_patterns):
+        return 'VARCHAR(200)'  # Protection absolue pour les libellés géographiques
+    
+    # Protection pour les identifiants techniques → VARCHAR(50)
     geographic_critical_patterns = [
         r'^iris$', r'^triris$', r'^codgeo$', r'^geocode$', 
         r'^commune$', r'^com$', r'^dep$', r'^reg$', r'^uu\d*$',
-        r'^libcom$', r'^libiris$', r'^typ_iris$', r'^modif_iris$', r'^lab_iris$'
+        r'^typ_iris$', r'^modif_iris$'  # Seulement les identifiants techniques
     ]
-    col_lower = column_name.lower()
     if any(re.search(pattern, col_lower) for pattern in geographic_critical_patterns):
-        return 'VARCHAR(50)'  # Protection absolue
+        return 'VARCHAR(50)'  # Protection absolue pour les codes seulement
     
     # PRIORITÉ 1 : Type explicite dans le dictionnaire des variables
     if dict_row and len(dict_row) > 0:
@@ -356,6 +383,10 @@ def detect_column_type_intelligent_universal(clean_values: list, csv_separator: 
         description_complete = ' '.join(str(field) for field in dict_row[1:])
         semantic_type = detect_type_from_description(description_complete)
         if semantic_type:
+            # Protection spéciale : Si l'analyse sémantique détecte VARCHAR(200) pour un libellé géographique,
+            # forcer ce type (priorité absolue sur l'analyse des données)
+            if semantic_type == 'VARCHAR(200)':
+                return semantic_type
             return semantic_type
     
     # PRIORITÉ 3 : Analyse des données réelles

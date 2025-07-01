@@ -227,7 +227,7 @@ with col1:
 with col2:
     selected_schema = st.selectbox("Filtrer par schéma", 
                                 ["Tous", "economie", "education", "energie", "environnement", 
-                                 "geo", "logement", "mobilite", "population", "securite"])
+                                 "geo", "logement", "mobilite", "population", "reseau", "securite"])
 
 # Récupération des métadonnées depuis la base de données (avant filtre producteur)
 if search_text:
@@ -336,7 +336,7 @@ else:
                 col1, col2 = st.columns(2)
                 
                 with col1:
-                    st.markdown("**Informations de base**")
+                    st.markdown("### 📋 Informations de base")
                     st.write(f"**Nom du jeu de données :** {meta['nom_jeu_donnees'] if meta['nom_jeu_donnees'] else 'Non spécifié'}")
                     st.write(f"**Producteur :** {meta['producteur'] if meta['producteur'] else 'Non spécifié'}")
                     st.write(f"**Schéma :** {meta['schema'] if meta['schema'] else 'Non spécifié'}")
@@ -346,11 +346,11 @@ else:
                     st.write(f"**Type de données :** {meta['type_donnees'] if meta['type_donnees'] else 'Non spécifié'}")
                     
                 with col2:
-                    st.markdown("**Description**")
+                    st.markdown("### 📝 Description")
                     st.write(meta['description'] if meta['description'] else "Aucune description disponible")
                     
                     if meta['source']:  # URL source
-                        st.markdown("**Source des données**")
+                        st.markdown("#### 🔗 Source des données")
                         st.write(f"[Lien vers les données]({meta['source']})")
                 
                 # Affichage des données et du dictionnaire des variables dans des onglets (dictionnaire en premier)
