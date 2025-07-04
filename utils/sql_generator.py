@@ -12,6 +12,7 @@ import csv
 from datetime import datetime
 from typing import List, Optional, Tuple, Dict
 from .db_utils import get_db_connection
+import textwrap
 
 
 def normalize_data_type(raw_type: str) -> str:
@@ -534,6 +535,64 @@ def parse_csv_line(line: str, separator: str) -> list:
         return next(reader)
     except:
         return line.split(separator)
+
+
+def generate_sql_script(table_name: str, schema: str, columns: List[Dict], description: str = "", 
+                   producteur: str = "", type_donnees: str = "", millesime: str = "",
+                   derniere_maj: str = "", frequence_maj: str = "") -> str:
+    """
+    Génère un script SQL pour créer une table avec les colonnes spécifiées.
+    """
+    # Formatage de la description en lignes de 80 caractères max, chacune précédée de --
+    wrapped_description = []
+    for line in description.split('\n'):
+        if line.strip():  # Si la ligne n'est pas vide
+            wrapped = textwrap.wrap(line, width=77)  # 77 pour tenir compte du "-- "
+            wrapped_description.extend([f"-- {wrapped_line}" for wrapped_line in wrapped])
+        else:
+            wrapped_description.append("--")  # Ligne vide devient juste "--"
+
+    description_formatted = '\n'.join(wrapped_description)
+
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    header = f"""-- =====================================================================================
+-- SCRIPT D'IMPORT POUR LA TABLE {table_name}
+-- =====================================================================================
+-- Producteur: {producteur}
+-- Type de données: {type_donnees}
+-- Schéma: {schema}
+-- Base de données: opendata
+-- Description:
+{description_formatted}
+-- Millésime: {millesime}
+-- Dernière mise à jour: {derniere_maj}
+-- Fréquence de mise à jour: {frequence_maj}
+-- Généré le {current_time}
+-- =====================================================================================
+
+"""
+
+    # Suppression de la table
+    drop_table = f'-- Suppression de la table existante (si elle existe)\nDROP TABLE IF EXISTS "{schema}"."{table_name}";\n\n'
+
+    # Création de la table
+    create_table = f'-- Création de la table avec types optimisés\nCREATE TABLE "{schema}"."{table_name}" (\n'
+    
+    # Ajout des colonnes
+    columns_sql = []
+    for col in columns:
+        col_name = col['name']
+        col_type = col['type']
+        columns_sql.append(f'    "{col_name}" {col_type}')
+    
+    create_table += ',\n'.join(columns_sql)
+    create_table += '\n);\n'
+
+    # Assemblage du script final
+    sql_script = header + drop_table + create_table
+    
+    return sql_script
 
 
 def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str:
