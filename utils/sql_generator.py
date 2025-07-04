@@ -607,7 +607,6 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
     Returns:
         Script SQL complet pour l'import des données
     """
-    # Génération SQL avec commentaires correctement formatés
     try:
         # Connexion à la base de métadonnées
         conn = get_db_connection()
@@ -627,7 +626,6 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
         # Extraction des informations principales
         nom_table = metadata.get('nom_table', 'unknown_table')
         schema = metadata.get('schema', 'public')
-        nom_base = metadata.get('nom_base', 'database')
         description = metadata.get('description', '')
         producteur = metadata.get('producteur', '')
         type_donnees = metadata.get('type_donnees', '')
@@ -660,60 +658,9 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
                     if dict_headers and row:
                         var_name = row[0]
                         dict_mapping[var_name] = var_info
-        
-        # Génération du SQL simplifié (UNIQUEMENT en-tête, DROP et CREATE)
-        sql_lines = []
-        
-        # En-tête informatif simplifié - VERSION SIMPLIFIÉE
-        # Échappement des guillemets pour éviter les erreurs SQL
-        description_safe = description.replace('"', "'") if description else ""
-        producteur_safe = producteur.replace('"', "'") if producteur else ""
-        
-        # Diviser la description en lignes et préfixer chaque ligne avec "--"
-        if description_safe:
-            description_lines = []
-            # Découper la description en lignes de 80 caractères max
-            words = description_safe.split()
-            current_line = ""
-            for word in words:
-                if len(current_line + " " + word) <= 80:
-                    current_line += (" " + word) if current_line else word
-                else:
-                    if current_line:
-                        description_lines.append(f"-- {current_line}")
-                    current_line = word
-            if current_line:
-                description_lines.append(f"-- {current_line}")
-        else:
-            description_lines = ["-- Aucune description disponible"]
-        
-        sql_lines.extend([
-            "-- =====================================================================================",
-            f"-- SCRIPT D'IMPORT POUR LA TABLE {nom_table}",
-            "-- =====================================================================================",
-            f"-- Producteur: {producteur_safe}",
-            "-- Description:"
-        ])
-        sql_lines.extend(description_lines)
-        sql_lines.extend([
-            f"-- Généré le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-            "-- =====================================================================================",
-            ""
-        ])
-        
-        # Suppression de la table existante
-        sql_lines.extend([
-            f'DROP TABLE IF EXISTS "{schema}"."{nom_table}";',
-            ""
-        ])
-        
-        # Création de la table
-        sql_lines.extend([
-            f'CREATE TABLE "{schema}"."{nom_table}" ('
-        ])
-        
+
         # Génération des définitions de colonnes
-        column_definitions = []
+        columns_info = []
         for i, col in enumerate(colonnes):
             # Nettoyage du nom de colonne
             col_clean = col.strip()
@@ -732,29 +679,32 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
                 dict_info=dict_info
             )
             
-            # Ajout de contraintes spéciales
-            constraints = []
-            if col_clean.lower() in ['code_insee', 'codgeo', 'id']:
-                constraints.append("NOT NULL")
-            
-            constraint_str = " " + " ".join(constraints) if constraints else ""
-            
-            # Ajout de la définition de colonne
-            column_definitions.append(f'    "{col_clean}" {sql_type}{constraint_str}')
-            
             # Debug mode : afficher les détails de l'inférence
             if debug_mode:
                 st.write(f"Colonne: {col_clean}")
                 st.write(f"Type inféré: {sql_type}")
-                st.write(f"Contraintes: {constraints}")
                 st.write("---")
-        
-        sql_lines.append(",\n".join(column_definitions))
-        sql_lines.append(");")
-        sql_lines.append("")
+            
+            columns_info.append({
+                "name": col_clean,
+                "type": sql_type
+            })
+
+        # Utilisation de generate_sql_script pour la génération finale
+        sql_script = generate_sql_script(
+            table_name=nom_table,
+            schema=schema,
+            columns=columns_info,
+            description=description,
+            producteur=producteur,
+            type_donnees=type_donnees,
+            millesime=millesime,
+            derniere_maj=date_maj,
+            frequence_maj=frequence_maj
+        )
         
         conn.close()
-        return "\n".join(sql_lines)
+        return sql_script
         
     except Exception as e:
         if debug_mode:
