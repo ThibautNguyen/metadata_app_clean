@@ -204,7 +204,7 @@ def detect_column_type(clean_values: list, csv_separator: str = ';', column_name
         csv_separator: Séparateur CSV utilisé (';' ou ',')
         column_name: Nom de la colonne pour une meilleure détection
         dict_info: Informations du dictionnaire pour cette colonne
-        
+    
     Returns:
         Type SQL approprié avec marges de sécurité
     """
@@ -258,7 +258,7 @@ def detect_column_type(clean_values: list, csv_separator: str = ';', column_name
         if max_len <= 10:
             return 'VARCHAR(50)'
         elif max_len <= 25:
-            return 'VARCHAR(200)'
+            return 'VARCHAR(200)'   
         else:
             return 'TEXT'
     
@@ -544,7 +544,7 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
     Args:
         table_name: Nom de la table dans la base de métadonnées
         debug_mode: Si True, affiche des informations de débogage
-        
+    
     Returns:
         Script SQL complet pour l'import des données
     """
@@ -686,7 +686,7 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
         # 4. Commentaires sur la table
         sql_lines.extend([
             "-- 4. Commentaires sur la table et les colonnes",
-            f"COMMENT ON TABLE \"{schema}\".\"{nom_table}\" IS '{description.replace(\"'\", \"''\")} (Producteur: {producteur})';",
+            f"COMMENT ON TABLE \"{schema}\".\"{nom_table}\" IS '{description.replace(chr(39), chr(39)+chr(39))} (Producteur: {producteur})';",
             ""
         ])
         
@@ -696,7 +696,7 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
                 if col in dict_mapping:
                     dict_info = dict_mapping[col]
                     if 'Description' in dict_info:
-                        comment = dict_info['Description'].replace("'", "''")
+                        comment = dict_info['Description'].replace(chr(39), chr(39)+chr(39))
                         sql_lines.append(f"COMMENT ON COLUMN \"{schema}\".\"{nom_table}\".\"{col}\" IS '{comment}';")
             sql_lines.append("")
         
