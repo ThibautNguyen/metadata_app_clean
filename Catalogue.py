@@ -420,7 +420,7 @@ else:
                 # Séparateur visuel
                 st.markdown("---")
                 
-                # Section de génération SQL (maintenant visible pour toutes les tables)
+                # Section de génération SQL (visible pour toutes les tables)
                 st.markdown("### 🔧 Génération du script SQL d'import")
                 col_sql1, col_sql2 = st.columns([3, 1])
                 with col_sql1:
