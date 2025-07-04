@@ -251,13 +251,14 @@ with st.expander("Dictionnaire des variables", expanded=False):
     dictionnaire = st.text_area("Coller ici le dictionnaire des variables depuis le fichier CSV", height=150, key="dictionnaire")
 
 # Boutons d'action
-col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 1])
+col_btn1, col_btn2 = st.columns([1, 1])
 with col_btn1:
     submitted = st.button("Sauvegarder les métadonnées")
 with col_btn2:
     generate_sql = st.button("Générer le script SQL d'import", help="Génère automatiquement le script SQL d'import basé sur les métadonnées")
-with col_btn3:
-    debug_mode = st.checkbox("Mode debug", value=False, help="Affiche des informations supplémentaires pour le débogage")
+
+# Option debug en dessous des boutons
+debug_mode = st.checkbox("Mode debug", value=False, help="Affiche des informations supplémentaires pour le débogage")
 
 # Traitement de la soumission
 if submitted:
