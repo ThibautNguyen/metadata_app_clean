@@ -548,6 +548,7 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
     Returns:
         Script SQL complet pour l'import des données
     """
+    # Génération SQL avec commentaires correctement formatés
     try:
         # Connexion à la base de métadonnées
         conn = get_db_connection()
@@ -601,22 +602,41 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
                         var_name = row[0]
                         dict_mapping[var_name] = var_info
         
-        # Génération du SQL
+        # Génération du SQL simplifié (UNIQUEMENT en-tête, DROP et CREATE)
         sql_lines = []
         
-        # En-tête avec informations détaillées
+        # En-tête informatif simplifié - VERSION SIMPLIFIÉE
+        # Échappement des guillemets pour éviter les erreurs SQL
+        description_safe = description.replace('"', "'") if description else ""
+        producteur_safe = producteur.replace('"', "'") if producteur else ""
+        
+        # Diviser la description en lignes et préfixer chaque ligne avec "--"
+        if description_safe:
+            description_lines = []
+            # Découper la description en lignes de 80 caractères max
+            words = description_safe.split()
+            current_line = ""
+            for word in words:
+                if len(current_line + " " + word) <= 80:
+                    current_line += (" " + word) if current_line else word
+                else:
+                    if current_line:
+                        description_lines.append(f"-- {current_line}")
+                    current_line = word
+            if current_line:
+                description_lines.append(f"-- {current_line}")
+        else:
+            description_lines = ["-- Aucune description disponible"]
+        
         sql_lines.extend([
             "-- =====================================================================================",
             f"-- SCRIPT D'IMPORT POUR LA TABLE {nom_table}",
             "-- =====================================================================================",
-            f"-- Producteur: {producteur}",
-            f"-- Type de données: {type_donnees}",
-            f"-- Schéma: {schema}",
-            f"-- Base de données: {nom_base}",
-            f"-- Description: {description}",
-            f"-- Millésime: {millesime}",
-            f"-- Dernière mise à jour: {date_maj}",
-            f"-- Fréquence de mise à jour: {frequence_maj}",
+            f"-- Producteur: {producteur_safe}",
+            "-- Description:"
+        ])
+        sql_lines.extend(description_lines)
+        sql_lines.extend([
             f"-- Généré le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             "-- =====================================================================================",
             ""
@@ -624,14 +644,12 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
         
         # Suppression de la table existante
         sql_lines.extend([
-            "-- Suppression de la table existante (si elle existe)",
             f'DROP TABLE IF EXISTS "{schema}"."{nom_table}";',
             ""
         ])
         
-        # Création de la table avec inférence de types
+        # Création de la table
         sql_lines.extend([
-            "-- Création de la table avec types optimisés",
             f'CREATE TABLE "{schema}"."{nom_table}" ('
         ])
         
@@ -706,7 +724,7 @@ def generate_sql_download_button(table_name: str, button_label: str = "💾 Tél
         )
 
 
-def display_sql_generation_interface(table_name: str, debug_mode: bool = True) -> None:
+def display_sql_generation_interface_new(table_name: str, debug_mode: bool = True) -> None:
     """
     Affiche l'interface complète de génération SQL avec le script et les boutons.
     
@@ -714,8 +732,11 @@ def display_sql_generation_interface(table_name: str, debug_mode: bool = True) -
         table_name: Nom de la table pour laquelle générer le script
         debug_mode: Si True, affiche les informations de debug
     """
-    with st.spinner("Génération du script SQL en cours..."):
-        sql_script = generate_sql_from_metadata(table_name, debug_mode=debug_mode)
+    # Interface de génération SQL avec commentaires corrigés
+    
+    try:
+        with st.spinner("Génération du script SQL en cours..."):
+            sql_script = generate_sql_from_metadata(table_name, debug_mode=debug_mode)
         
         if sql_script.startswith("❌"):
             st.error(sql_script)
@@ -740,4 +761,6 @@ def display_sql_generation_interface(table_name: str, debug_mode: bool = True) -
             2. **Créez le schéma** si nécessaire : `CREATE SCHEMA IF NOT EXISTS "nom_schema";`
             3. **Importez vos données** avec une commande COPY adaptée à votre fichier
             4. **Exécutez** le script dans votre outil de gestion PostgreSQL (DBeaver, pgAdmin, etc.)
-            """) 
+            """)
+    except Exception as e:
+        st.error(f"🔥 ERREUR DANS NOTRE NOUVELLE FONCTION : {str(e)}") 

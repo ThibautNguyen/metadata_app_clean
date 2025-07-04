@@ -6,7 +6,7 @@ import os
 import sys
 from pathlib import Path
 from utils.auth import authenticate_and_logout
-from utils.sql_generator import display_sql_generation_interface
+from utils.sql_generator import display_sql_generation_interface_new
 import re
 
 # Ajout du répertoire parent au PYTHONPATH
@@ -426,7 +426,7 @@ if generate_sql:
         st.error("Veuillez d'abord saisir un nom de table pour générer le script SQL")
     else:
         # Utilisation de la fonction du module sql_generator qui gère tout l'affichage
-        display_sql_generation_interface(nom_table, debug_mode=debug_mode)
+        display_sql_generation_interface_new(nom_table, debug_mode=debug_mode)
 
 # Section d'aide
 with st.expander("Aide pour la saisie ❓"):

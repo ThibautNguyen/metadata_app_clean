@@ -15,7 +15,7 @@ import psycopg2.extras
 from utils.db_utils import test_connection, init_db, get_metadata, get_metadata_columns
 import importlib
 from utils.auth import authenticate_and_logout
-from utils.sql_generator import display_sql_generation_interface
+from utils.sql_generator import display_sql_generation_interface_new
 
 # Configuration de la page
 st.set_page_config(
@@ -429,7 +429,7 @@ else:
                     debug_mode = st.checkbox("Mode debug", key=f"debug_{meta['nom_table']}", help="Affiche des informations supplémentaires pour le débogage")
                 
                 if st.button("Générer le script SQL d'import", key=f"sql_btn_{meta['nom_table']}", type="primary"):
-                    display_sql_generation_interface(meta['nom_table'], debug_mode=debug_mode)
+                    display_sql_generation_interface_new(meta['nom_table'], debug_mode=debug_mode)
                 
                 st.markdown('</div>', unsafe_allow_html=True)
 
