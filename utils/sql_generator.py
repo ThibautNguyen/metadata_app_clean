@@ -622,23 +622,16 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
             ""
         ])
         
-        # 1. Création du schéma
+        # Suppression de la table existante
         sql_lines.extend([
-            "-- 1. Création du schéma (si nécessaire)",
-            f'CREATE SCHEMA IF NOT EXISTS "{schema}";',
-            ""
-        ])
-        
-        # 2. Suppression de la table existante
-        sql_lines.extend([
-            "-- 2. Suppression de la table existante (si elle existe)",
+            "-- Suppression de la table existante (si elle existe)",
             f'DROP TABLE IF EXISTS "{schema}"."{nom_table}";',
             ""
         ])
         
-        # 3. Création de la table avec inférence de types
+        # Création de la table avec inférence de types
         sql_lines.extend([
-            "-- 3. Création de la table avec types optimisés",
+            "-- Création de la table avec types optimisés",
             f'CREATE TABLE "{schema}"."{nom_table}" ('
         ])
         
@@ -682,62 +675,6 @@ def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str
         sql_lines.append(",\n".join(column_definitions))
         sql_lines.append(");")
         sql_lines.append("")
-        
-        # 4. Commentaires sur la table
-        sql_lines.extend([
-            "-- 4. Commentaires sur la table et les colonnes",
-            f"COMMENT ON TABLE \"{schema}\".\"{nom_table}\" IS '{description.replace(chr(39), chr(39)+chr(39))} (Producteur: {producteur})';",
-            ""
-        ])
-        
-        # Ajout des commentaires sur les colonnes si disponibles dans le dictionnaire
-        if dict_mapping:
-            for col in colonnes:
-                if col in dict_mapping:
-                    dict_info = dict_mapping[col]
-                    if 'Description' in dict_info:
-                        comment = dict_info['Description'].replace(chr(39), chr(39)+chr(39))
-                        sql_lines.append(f"COMMENT ON COLUMN \"{schema}\".\"{nom_table}\".\"{col}\" IS '{comment}';")
-            sql_lines.append("")
-        
-        # 5. Import des données
-        sql_lines.extend([
-            "-- 5. Import des données",
-            "-- ATTENTION: Modifier le chemin vers votre fichier CSV",
-            f"COPY \"{schema}\".\"{nom_table}\" FROM '/chemin/vers/votre/{nom_table}.csv'",
-            f"WITH (FORMAT csv, HEADER true, DELIMITER '{separateur}', ENCODING 'UTF8');",
-            ""
-        ])
-        
-        # 6. Index recommandés
-        sql_lines.append("-- 6. Index recommandés")
-        for col in colonnes:
-            col_clean = col.strip()
-            if any(pattern in col_clean.lower() for pattern in ['code', 'id', 'insee', 'commune', 'geo', 'date']):
-                index_name = f"idx_{nom_table}_{re.sub(r'[^a-zA-Z0-9_]', '_', col_clean.lower())}"
-                sql_lines.append(f"CREATE INDEX IF NOT EXISTS {index_name} ON \"{schema}\".\"{nom_table}\" (\"{col_clean}\");")
-        sql_lines.append("")
-        
-        # 7. Vérifications post-import
-        sql_lines.extend([
-            "-- 7. Vérifications post-import",
-            f"SELECT COUNT(*) as nb_lignes FROM \"{schema}\".\"{nom_table}\";",
-            "",
-            "-- Aperçu des données",
-            f"SELECT * FROM \"{schema}\".\"{nom_table}\" LIMIT 5;",
-            "",
-            "-- Vérification des valeurs NULL par colonne",
-            "SELECT",
-            "    column_name,",
-            "    COUNT(*) as total_rows,",
-            "    COUNT(*) FILTER (WHERE column_value IS NULL) as null_count,",
-            "    ROUND(COUNT(*) FILTER (WHERE column_value IS NULL)::float / COUNT(*) * 100, 2) as null_percentage",
-            f"FROM \"{schema}\".\"{nom_table}\" t",
-            "CROSS JOIN LATERAL jsonb_each_text(to_jsonb(t)) AS j(column_name, column_value)",
-            "GROUP BY column_name",
-            "ORDER BY null_percentage DESC;",
-            ""
-        ])
         
         conn.close()
         return "\n".join(sql_lines)
@@ -800,6 +737,7 @@ def display_sql_generation_interface(table_name: str, debug_mode: bool = True) -
             st.info("""
             ### 📋 Instructions d'utilisation :
             1. **Téléchargez** le script SQL ci-dessus
-            2. **Modifiez** le chemin du fichier CSV dans la section COPY
-            3. **Exécutez** le script dans votre outil de gestion PostgreSQL (DBeaver, pgAdmin, etc.)
+            2. **Créez le schéma** si nécessaire : `CREATE SCHEMA IF NOT EXISTS "nom_schema";`
+            3. **Importez vos données** avec une commande COPY adaptée à votre fichier
+            4. **Exécutez** le script dans votre outil de gestion PostgreSQL (DBeaver, pgAdmin, etc.)
             """) 
