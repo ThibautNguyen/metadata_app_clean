@@ -251,11 +251,13 @@ with st.expander("Dictionnaire des variables", expanded=False):
     dictionnaire = st.text_area("Coller ici le dictionnaire des variables depuis le fichier CSV", height=150, key="dictionnaire")
 
 # Boutons d'action
-col_btn1, col_btn2 = st.columns(2)
+col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 1])
 with col_btn1:
     submitted = st.button("Sauvegarder les métadonnées")
 with col_btn2:
     generate_sql = st.button("Générer le script SQL d'import", help="Génère automatiquement le script SQL d'import basé sur les métadonnées")
+with col_btn3:
+    debug_mode = st.checkbox("Mode debug", value=False, help="Affiche des informations supplémentaires pour le débogage")
 
 # Traitement de la soumission
 if submitted:
@@ -418,7 +420,7 @@ if generate_sql:
         st.error("Veuillez d'abord saisir un nom de table pour générer le script SQL")
     else:
         # Utilisation de la fonction du module sql_generator qui gère tout l'affichage
-        display_sql_generation_interface(nom_table, debug_mode=True)
+        display_sql_generation_interface(nom_table, debug_mode=debug_mode)
 
 # Section d'aide
 with st.expander("Aide pour la saisie ❓"):
