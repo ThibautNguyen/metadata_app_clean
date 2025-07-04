@@ -377,18 +377,19 @@ Vous pouvez les consulter dans l'onglet "Catalogue".
                 st.error(f"Erreur lors de la sauvegarde : {message}")
                 st.error("Veuillez vérifier les logs pour plus de détails.")
 
-            # Sauvegarde locale en JSON
+            # Sauvegarde locale (optionnelle - ne pas afficher d'erreur si échec)
             try:
-                json_path = os.path.join("metadata", f"{nom_table}.json")
-                os.makedirs("metadata", exist_ok=True)
+                # Créer le répertoire metadata dans le répertoire courant de l'application
+                metadata_dir = os.path.join(os.path.dirname(__file__), "..", "metadata")
+                os.makedirs(metadata_dir, exist_ok=True)
+                
+                # Sauvegarde en JSON
+                json_path = os.path.join(metadata_dir, f"{nom_table}.json")
                 with open(json_path, "w", encoding="utf-8") as f:
                     json.dump(metadata, f, ensure_ascii=False, indent=4)
-            except Exception as e:
-                st.error(f"Erreur lors de la sauvegarde locale en JSON : {str(e)}")
-
-            # Sauvegarde locale en TXT
-            try:
-                txt_path = os.path.join("metadata", f"{nom_table}.txt")
+                
+                # Sauvegarde en TXT  
+                txt_path = os.path.join(metadata_dir, f"{nom_table}.txt")
                 with open(txt_path, "w", encoding="utf-8") as f:
                     f.write(f"Nom de la table : {nom_table}\n")
                     f.write(f"Nom de la base de données : {nom_base}\n")
@@ -408,8 +409,12 @@ Vous pouvez les consulter dans l'onglet "Catalogue".
                     if dictionnaire:
                         f.write("\nDictionnaire des variables :\n")
                         f.write(dictionnaire)
+                
+                st.info(f"📁 Sauvegarde locale effectuée dans le répertoire metadata/")
+                
             except Exception as e:
-                st.error(f"Erreur lors de la sauvegarde locale en TXT : {str(e)}")
+                # Sauvegarde locale échouée - ce n'est pas critique
+                st.warning(f"⚠️ Sauvegarde locale non disponible (non critique) : {str(e)}")
                 
         except Exception as e:
             st.error(f"Erreur inattendue : {str(e)}")
