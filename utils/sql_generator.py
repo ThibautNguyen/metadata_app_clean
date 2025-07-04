@@ -10,7 +10,7 @@ import re
 import io
 import csv
 from datetime import datetime
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Dict
 from .db_utils import get_db_connection
 
 
@@ -115,82 +115,204 @@ def normalize_data_type(raw_type: str) -> str:
     return None
 
 
-def detect_column_type(clean_values: list, csv_separator: str = ';') -> str:
+def _detect_column_type_from_dictionary(dict_info: Dict) -> Optional[str]:
+    """
+    Analyse intelligente du dictionnaire pour détecter le type de données.
+    Recherche des patterns dans toutes les colonnes du dictionnaire.
+    """
+    # Patterns pour la détection des types
+    type_patterns = {
+        'codes': [
+            r'code[s]?\s*(?:possible|autorisé|valide|détaillé)',
+            r'modalité[s]?\s*(?:possible|autorisée)',
+            r'correspondance[s]?[\s_](?:code|valeur)',
+            r'valeur[s]?\s*(?:possible|autorisée)',
+            r'liste\s*(?:des\s*)?(?:code|valeur)',
+            r'nomenclature',
+            r'codification',
+        ],
+        'text_type': [
+            r'type[s]?[\s_](?:donnée|variable|champ)',
+            r'format[\s_](?:donnée|variable|champ)',
+            r'nature[\s_](?:donnée|variable|champ)',
+            r'caractéristique[\s_](?:donnée|variable)',
+            r'description[\s_]type',
+        ]
+    }
+
+    # Fonction pour détecter les patterns dans une chaîne
+    def has_pattern(text: str, patterns: List[str]) -> bool:
+        if not isinstance(text, str):
+            return False
+        text = text.lower()
+        return any(re.search(pattern.lower(), text) for pattern in patterns)
+
+    # Parcourir toutes les clés du dictionnaire
+    for key, value in dict_info.items():
+        key_lower = key.lower()
+
+        # 1. Recherche de colonnes contenant des codes/modalités
+        if has_pattern(key_lower, type_patterns['codes']):
+            if isinstance(value, str):
+                # Extraction des codes numériques (en gérant les négatifs)
+                numeric_codes = re.findall(r'[-]?\d+', value)
+                if numeric_codes:
+                    # Si tous les codes sont numériques
+                    if all(c.strip('-').isdigit() for c in numeric_codes):
+                        max_val = max(abs(int(c)) for c in numeric_codes)
+                        if max_val < 128:
+                            return 'SMALLINT'
+                        return 'INTEGER'
+                    
+                # Si les codes sont alphanumériques, déterminer la longueur max
+                all_codes = re.findall(r'[A-Za-z0-9]+', value)
+                if all_codes:
+                    max_length = max(len(code) for code in all_codes)
+                    return f'VARCHAR({max(max_length * 2, 20)})'  # Marge de sécurité
+
+        # 2. Recherche de colonnes décrivant le type
+        if has_pattern(key_lower, type_patterns['text_type']):
+            if isinstance(value, str):
+                value_lower = value.lower()
+                
+                # Détection du type à partir de la description
+                if any(x in value_lower for x in ['entier', 'integer', 'nombre entier']):
+                    return 'INTEGER'
+                elif any(x in value_lower for x in ['decimal', 'réel', 'float', 'nombre décimal']):
+                    return 'DECIMAL(10,3)'
+                elif any(x in value_lower for x in ['booléen', 'boolean', 'vrai/faux', 'oui/non']):
+                    return 'BOOLEAN'
+                elif any(x in value_lower for x in ['date', 'datetime']):
+                    return 'DATE'
+                elif 'texte' in value_lower or 'caractère' in value_lower:
+                    # Recherche d'une longueur spécifiée
+                    length_match = re.search(r'(\d+)[\s]*(?:caractère|char)', value_lower)
+                    if length_match:
+                        return f'VARCHAR({length_match.group(1)})'
+                    return 'VARCHAR(255)'
+
+    return None
+
+
+def detect_column_type(clean_values: list, csv_separator: str = ';', column_name: str = '', dict_info: Dict = None) -> str:
     """
     Détection universelle et intelligente du type SQL pour une colonne.
-    Basée uniquement sur l'analyse des données avec marges x8.
-    NOUVELLE RÈGLE : Protection INSEE anti-ZZZZZZ automatique.
+    Basée sur l'analyse des données, du nom de colonne et du dictionnaire.
     
     Args:
         clean_values: Liste des valeurs nettoyées de la colonne
         csv_separator: Séparateur CSV utilisé (';' ou ',')
-    
+        column_name: Nom de la colonne pour une meilleure détection
+        dict_info: Informations du dictionnaire pour cette colonne
+        
     Returns:
-        Type SQL approprié avec marges x8 de sécurité
+        Type SQL approprié avec marges de sécurité
     """
     if not clean_values:
         return 'VARCHAR(255)'
     
-    # Analyse de base
+    # 1. Vérification du dictionnaire si disponible
+    if dict_info:
+        dict_type = _detect_column_type_from_dictionary(dict_info)
+        if dict_type:
+            return dict_type
+    
+    # 2. Analyse du nom de colonne
+    col_lower = column_name.lower() if column_name else ''
+    
+    # Détection des colonnes géographiques
+    if any(col_lower == x for x in ['lat', 'latitude', 'long', 'longitude']):
+        return 'DECIMAL(10,6)'
+    
+    # Détection des codes géographiques
+    if col_lower in ['codgeo', 'code_insee', 'insee']:
+        return 'VARCHAR(5)'
+    elif any(pattern in col_lower for pattern in ['code_dep', 'dep']):
+        return 'VARCHAR(3)'
+    elif any(pattern in col_lower for pattern in ['code_reg', 'reg']):
+        return 'VARCHAR(2)'
+    elif col_lower.startswith('code') or col_lower.endswith('_id'):
+        return 'VARCHAR(20)'
+    
+    # Détection des dates et années
+    elif any(pattern in col_lower for pattern in ['annee', 'year']):
+        return 'INTEGER'
+    elif any(pattern in col_lower for pattern in ['date', 'timestamp']):
+        return 'DATE'
+    
+    # Détection des pourcentages
+    elif any(pattern in col_lower for pattern in ['taux', '%', 'pct', 'pourcentage', 'part']):
+        return 'DECIMAL(5,2)'
+    
+    # 3. Analyse des valeurs avec gestion du masquage INSEE
     max_len = max(len(str(v)) for v in clean_values)
     
-    # NOUVELLE RÈGLE PRIORITAIRE : Détection explicite des valeurs de masquage INSEE
-    has_insee_masking = False
+    # Détection du masquage INSEE
     insee_masking_patterns = ['ZZZZZZ', 'ZZZZZ', 'ZZZZ', 'ZZZ', 'XX', 'XXX', 'XXXX', 's', 'SECRET']
+    has_insee_masking = any(
+        str(val).strip().upper() in insee_masking_patterns 
+        for val in clean_values
+    )
     
-    for val in clean_values:
-        val_str = str(val).strip().upper()
-        if val_str in insee_masking_patterns:
-            has_insee_masking = True
-            break
-    
-    # Si masquage INSEE détecté, forcer VARCHAR même si les autres valeurs sont numériques
     if has_insee_masking:
         if max_len <= 10:
-            return 'VARCHAR(50)'    # Sécurité pour codes + masquage
+            return 'VARCHAR(50)'
         elif max_len <= 25:
-            return 'VARCHAR(200)'   
+            return 'VARCHAR(200)'
         else:
             return 'TEXT'
     
-    # Test numérique ultra-strict (seulement si pas de masquage INSEE)
+    # Test numérique strict
     all_numeric = True
     has_decimals = False
     
     for val in clean_values:
         val_str = str(val).strip()
         
-        # Test numérique selon le séparateur
+        # Gestion selon le séparateur décimal
         if csv_separator == ';':
-            # Format français : virgule = décimal
+            # Format français
             if not re.match(r'^-?\d+(,\d*)?$', val_str.replace(' ', '')):
                 all_numeric = False
                 break
             if ',' in val_str:
                 has_decimals = True
         else:
-            # Format anglais : point = décimal
+            # Format anglais
             if not re.match(r'^-?\d+(\.\d*)?$', val_str.replace(' ', '')):
                 all_numeric = False
                 break
             if '.' in val_str:
                 has_decimals = True
     
-    # Décision finale
+    # Décision finale avec marges de sécurité
     if all_numeric:
-        return 'DECIMAL(15,6)' if has_decimals else 'INTEGER'
+        if has_decimals:
+            return 'DECIMAL(15,6)'
+        else:
+            # Test pour les petits entiers
+            try:
+                max_val = max(abs(int(str(v).replace(' ', ''))) for v in clean_values)
+                if max_val < 32768:
+                    return 'SMALLINT'
+                elif max_val < 2147483648:
+                    return 'INTEGER'
+                else:
+                    return 'BIGINT'
+            except:
+                return 'INTEGER'
     else:
-        # VARCHAR avec marges x8 pures basées uniquement sur les données
+        # VARCHAR avec marges de sécurité
         if max_len <= 5:
-            return 'VARCHAR(40)'    # Marge x8
+            return 'VARCHAR(40)'
         elif max_len <= 10:
-            return 'VARCHAR(80)'    # Marge x8
+            return 'VARCHAR(80)'
         elif max_len <= 25:
-            return 'VARCHAR(200)'   # Marge x8
+            return 'VARCHAR(200)'
         elif max_len <= 50:
-            return 'VARCHAR(400)'   # Marge x8
+            return 'VARCHAR(400)'
         elif max_len <= 100:
-            return 'VARCHAR(800)'   # Marge x8
+            return 'VARCHAR(800)'
         else:
             return 'TEXT'
 
@@ -416,128 +538,214 @@ def parse_csv_line(line: str, separator: str) -> list:
 
 def generate_sql_from_metadata(table_name: str, debug_mode: bool = False) -> str:
     """
-    Génère le script SQL d'import basé sur les métadonnées.
+    Génère une requête SQL d'import complète basée sur les métadonnées stockées.
+    Version améliorée avec support complet du dictionnaire et détection intelligente des types.
     
     Args:
-        table_name: Nom de la table pour laquelle générer le script
-        debug_mode: Si True, affiche les informations de debug via Streamlit
-    
+        table_name: Nom de la table dans la base de métadonnées
+        debug_mode: Si True, affiche des informations de débogage
+        
     Returns:
-        Script SQL complet ou message d'erreur
+        Script SQL complet pour l'import des données
     """
     try:
+        # Connexion à la base de métadonnées
         conn = get_db_connection()
         cursor = conn.cursor()
         
+        # Récupération des métadonnées
         cursor.execute("SELECT * FROM metadata WHERE nom_table = %s", (table_name,))
         result = cursor.fetchone()
         
         if not result:
-            return f"❌ Table '{table_name}' non trouvée dans les métadonnées"
+            raise ValueError(f"Table '{table_name}' non trouvée dans la base de métadonnées")
         
+        # Conversion en dictionnaire
         columns = [desc[0] for desc in cursor.description]
         metadata = dict(zip(columns, result))
         
-        # Extraction des infos principales
+        # Extraction des informations principales
         nom_table = metadata.get('nom_table', 'unknown_table')
         schema = metadata.get('schema', 'public')
+        nom_base = metadata.get('nom_base', 'database')
         description = metadata.get('description', '')
         producteur = metadata.get('producteur', '')
+        type_donnees = metadata.get('type_donnees', '')
+        date_maj = metadata.get('date_maj', '')
+        frequence_maj = metadata.get('frequence_maj', '')
+        millesime = metadata.get('date_creation', '')
         
-        # Récupération de la structure CSV
+        # Extraction du contenu CSV et du dictionnaire
         contenu_csv = metadata.get('contenu_csv', {})
+        dictionnaire = metadata.get('dictionnaire', {})
+        
+        # Vérification de la présence des en-têtes CSV
         if not contenu_csv or 'header' not in contenu_csv:
-            return f"❌ Structure CSV non disponible pour '{table_name}'"
+            raise ValueError(f"Structure CSV non disponible pour la table '{table_name}'")
         
         colonnes = contenu_csv['header']
         separateur = contenu_csv.get('separator', ';')
         donnees_exemple = contenu_csv.get('data', [])
         
-        # Affichage de debug optionnel
-        if debug_mode:
-            st.write(f"🔍 DEBUG: Colonnes trouvées: {len(colonnes)}")
-            st.write(f"🔍 DEBUG: Données d'exemple: {len(donnees_exemple)} lignes")
+        # Création du dictionnaire des variables pour l'inférence de type
+        dict_mapping = {}
+        if dictionnaire and 'header' in dictionnaire and 'data' in dictionnaire:
+            dict_headers = dictionnaire['header']
+            dict_data = dictionnaire['data']
+            
+            # Pour chaque ligne du dictionnaire, créer un mapping nom_colonne -> infos
+            for row in dict_data:
+                if len(row) >= len(dict_headers):
+                    var_info = dict(zip(dict_headers, row))
+                    if dict_headers and row:
+                        var_name = row[0]
+                        dict_mapping[var_name] = var_info
         
         # Génération du SQL
-        sql = f"""-- =====================================================================================
--- SCRIPT D'IMPORT POUR LA TABLE {nom_table}
--- =====================================================================================
--- Producteur: {producteur}
--- Schema: {schema}
--- Genere automatiquement le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
--- 
--- NOUVELLE HIÉRARCHIE DE DÉTECTION UNIVERSELLE ET INTELLIGENTE :
--- 1. Type explicite dans le dictionnaire des variables (si disponible)
--- 2. Analyse sémantique des descriptions (protection anti-ZZZZZZ universelle)
--- 3. Analyse des données réelles (avec détection masquage)
--- 4. Patterns de noms de colonnes (fallback précis uniquement)
--- =====================================================================================
-
--- 1. Suppression de la table existante (si elle existe)
-DROP TABLE IF EXISTS "{schema}"."{nom_table}";
-
--- 2. Creation de la table
-CREATE TABLE "{schema}"."{nom_table}" (
-"""
+        sql_lines = []
         
-        # Récupération du dictionnaire des variables s'il existe
-        dictionnaire = metadata.get('dictionnaire', {})
-        dict_data = dictionnaire.get('data', []) if dictionnaire else []
+        # En-tête avec informations détaillées
+        sql_lines.extend([
+            "-- =====================================================================================",
+            f"-- SCRIPT D'IMPORT POUR LA TABLE {nom_table}",
+            "-- =====================================================================================",
+            f"-- Producteur: {producteur}",
+            f"-- Type de données: {type_donnees}",
+            f"-- Schéma: {schema}",
+            f"-- Base de données: {nom_base}",
+            f"-- Description: {description}",
+            f"-- Millésime: {millesime}",
+            f"-- Dernière mise à jour: {date_maj}",
+            f"-- Fréquence de mise à jour: {frequence_maj}",
+            f"-- Généré le {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            "-- =====================================================================================",
+            ""
+        ])
         
-        # Traitement des colonnes avec la nouvelle logique intelligente
-        cols = []
+        # 1. Création du schéma
+        sql_lines.extend([
+            "-- 1. Création du schéma (si nécessaire)",
+            f'CREATE SCHEMA IF NOT EXISTS "{schema}";',
+            ""
+        ])
+        
+        # 2. Suppression de la table existante
+        sql_lines.extend([
+            "-- 2. Suppression de la table existante (si elle existe)",
+            f'DROP TABLE IF EXISTS "{schema}"."{nom_table}";',
+            ""
+        ])
+        
+        # 3. Création de la table avec inférence de types
+        sql_lines.extend([
+            "-- 3. Création de la table avec types optimisés",
+            f'CREATE TABLE "{schema}"."{nom_table}" ('
+        ])
+        
+        # Génération des définitions de colonnes
+        column_definitions = []
         for i, col in enumerate(colonnes):
+            # Nettoyage du nom de colonne
             col_clean = col.strip()
             
             # Récupération des valeurs d'exemple pour cette colonne
             sample_values = [row[i] if len(row) > i else None for row in donnees_exemple]
-            clean_values = [str(v).strip() for v in sample_values if v is not None and str(v).strip()]
             
-            # Recherche de la ligne correspondante dans le dictionnaire des variables
-            dict_row = None
-            if dict_data:
-                for row in dict_data:
-                    if len(row) >= 1 and row[0].strip().lower() == col.lower():
-                        dict_row = row
-                        break
+            # Recherche des informations du dictionnaire
+            dict_info = dict_mapping.get(col, {})
             
-            # NOUVELLE LOGIQUE UNIVERSELLE : Utilisation de la hiérarchie de priorités
-            sql_type = detect_column_type_intelligent_universal(
-                clean_values=clean_values,
+            # Inférence du type SQL avec toutes les informations disponibles
+            sql_type = detect_column_type(
+                clean_values=sample_values,
                 csv_separator=separateur,
                 column_name=col_clean,
-                dict_row=dict_row
+                dict_info=dict_info
             )
             
-            # Debug optionnel
-            if debug_mode:
-                if dict_row:
-                    st.write(f"🔍 DEBUG {col_clean} - Dictionnaire: {dict_row}")
-                st.write(f"🔍 DEBUG {col_clean} - Type détecté: {sql_type}")
+            # Ajout de contraintes spéciales
+            constraints = []
+            if col_clean.lower() in ['code_insee', 'codgeo', 'id']:
+                constraints.append("NOT NULL")
             
-            cols.append(f'    "{col_clean}" {sql_type}')
+            constraint_str = " " + " ".join(constraints) if constraints else ""
+            
+            # Ajout de la définition de colonne
+            column_definitions.append(f'    "{col_clean}" {sql_type}{constraint_str}')
+            
+            # Debug mode : afficher les détails de l'inférence
+            if debug_mode:
+                st.write(f"Colonne: {col_clean}")
+                st.write(f"Type inféré: {sql_type}")
+                st.write(f"Contraintes: {constraints}")
+                st.write("---")
         
-        sql += ",\n".join(cols)
-        sql += "\n);\n"
+        sql_lines.append(",\n".join(column_definitions))
+        sql_lines.append(");")
+        sql_lines.append("")
         
-        # Description
-        if description:
-            desc_lines = description.replace('\r\n', '\n').replace('\r', '\n').split('\n')
-            sql += "\n-- ====================================================================================="
-            sql += "\n-- DESCRIPTION DES DONNEES"
-            sql += "\n-- ====================================================================================="
-            for line in desc_lines:
-                sql += f"\n-- {line}"
-            sql += "\n-- ====================================================================================="
+        # 4. Commentaires sur la table
+        sql_lines.extend([
+            "-- 4. Commentaires sur la table et les colonnes",
+            f"COMMENT ON TABLE \"{schema}\".\"{nom_table}\" IS '{description.replace(\"'\", \"''\")} (Producteur: {producteur})';",
+            ""
+        ])
+        
+        # Ajout des commentaires sur les colonnes si disponibles dans le dictionnaire
+        if dict_mapping:
+            for col in colonnes:
+                if col in dict_mapping:
+                    dict_info = dict_mapping[col]
+                    if 'Description' in dict_info:
+                        comment = dict_info['Description'].replace("'", "''")
+                        sql_lines.append(f"COMMENT ON COLUMN \"{schema}\".\"{nom_table}\".\"{col}\" IS '{comment}';")
+            sql_lines.append("")
+        
+        # 5. Import des données
+        sql_lines.extend([
+            "-- 5. Import des données",
+            "-- ATTENTION: Modifier le chemin vers votre fichier CSV",
+            f"COPY \"{schema}\".\"{nom_table}\" FROM '/chemin/vers/votre/{nom_table}.csv'",
+            f"WITH (FORMAT csv, HEADER true, DELIMITER '{separateur}', ENCODING 'UTF8');",
+            ""
+        ])
+        
+        # 6. Index recommandés
+        sql_lines.append("-- 6. Index recommandés")
+        for col in colonnes:
+            col_clean = col.strip()
+            if any(pattern in col_clean.lower() for pattern in ['code', 'id', 'insee', 'commune', 'geo', 'date']):
+                index_name = f"idx_{nom_table}_{re.sub(r'[^a-zA-Z0-9_]', '_', col_clean.lower())}"
+                sql_lines.append(f"CREATE INDEX IF NOT EXISTS {index_name} ON \"{schema}\".\"{nom_table}\" (\"{col_clean}\");")
+        sql_lines.append("")
+        
+        # 7. Vérifications post-import
+        sql_lines.extend([
+            "-- 7. Vérifications post-import",
+            f"SELECT COUNT(*) as nb_lignes FROM \"{schema}\".\"{nom_table}\";",
+            "",
+            "-- Aperçu des données",
+            f"SELECT * FROM \"{schema}\".\"{nom_table}\" LIMIT 5;",
+            "",
+            "-- Vérification des valeurs NULL par colonne",
+            "SELECT",
+            "    column_name,",
+            "    COUNT(*) as total_rows,",
+            "    COUNT(*) FILTER (WHERE column_value IS NULL) as null_count,",
+            "    ROUND(COUNT(*) FILTER (WHERE column_value IS NULL)::float / COUNT(*) * 100, 2) as null_percentage",
+            f"FROM \"{schema}\".\"{nom_table}\" t",
+            "CROSS JOIN LATERAL jsonb_each_text(to_jsonb(t)) AS j(column_name, column_value)",
+            "GROUP BY column_name",
+            "ORDER BY null_percentage DESC;",
+            ""
+        ])
         
         conn.close()
-        return sql
+        return "\n".join(sql_lines)
         
     except Exception as e:
-        error_msg = f"❌ Erreur lors de la génération : {str(e)}"
         if debug_mode:
-            st.error(error_msg)
-        return error_msg
+            st.error(f"Erreur lors de la génération du SQL : {str(e)}")
+        raise
 
 
 def generate_sql_download_button(table_name: str, button_label: str = "💾 Télécharger le script SQL") -> None:

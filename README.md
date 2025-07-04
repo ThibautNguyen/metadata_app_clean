@@ -18,6 +18,7 @@ Application Streamlit pour la saisie, consultation et suivi des métadonnées de
 - [Structure du projet](#structure-du-projet)
 - [Déploiement](#déploiement)
 - [Maintenance](#maintenance)
+- [Génération de scripts SQL](#génération-de-scripts-sql)
 
 ## Aperçu du projet
 
@@ -385,6 +386,53 @@ streamlit run Catalogue.py
 - ✅ Génération automatique de SQL
 - ✅ Visualisations interactives
 - ✅ Déploiement Streamlit Cloud opérationnel
+
+## Génération de scripts SQL
+
+Le module `utils/sql_generator.py` fournit des fonctionnalités avancées pour générer des scripts SQL d'import basés sur les métadonnées :
+
+- Détection intelligente des types SQL basée sur :
+  - Le dictionnaire des variables
+  - L'analyse des données
+  - Les noms de colonnes
+  - Les patterns spécifiques (codes INSEE, géographie, etc.)
+
+- Gestion automatique des cas particuliers :
+  - Masquage INSEE (ZZZZ, SECRET, etc.)
+  - Codes géographiques
+  - Formats de dates
+  - Pourcentages et taux
+
+- Génération de scripts SQL complets avec :
+  - Création de schéma
+  - Création de table avec types optimisés
+  - Commentaires sur la table et les colonnes
+  - Index recommandés
+  - Commandes d'import COPY
+  - Vérifications post-import
+
+### Utilisation
+
+La génération SQL peut être lancée de deux façons :
+
+1. Via l'interface Streamlit (page "Saisie") :
+   - Remplir le formulaire de métadonnées
+   - Cliquer sur "Générer le script SQL d'import"
+
+2. Via Python :
+```python
+from utils.sql_generator import generate_sql_from_metadata
+
+sql = generate_sql_from_metadata("nom_table", debug_mode=False)
+print(sql)
+```
+
+### Bonnes pratiques
+
+- Toujours fournir un dictionnaire des variables pour une meilleure détection des types
+- Inclure suffisamment de lignes d'exemple dans l'extrait CSV
+- Vérifier les types détectés en mode debug si nécessaire
+- Adapter les chemins d'import CSV avant d'exécuter le script
 
 ---
 
