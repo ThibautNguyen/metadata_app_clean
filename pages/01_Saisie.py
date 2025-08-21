@@ -211,8 +211,8 @@ with col9:
     nom_base = st.selectbox("Nom de la base de données*", ["opendata"], help="Nom de la base de données dans le SGBD")
 with col10:
     schema = st.selectbox("Schéma thématique*", [
-        "economie", "education", "energie", "environnement", 
-        "geo", "logement", "mobilite", "population", "reseau", "securite"
+        "raw_eco", "raw_educ", "raw_energie", "raw_envir", "raw_fin_loc", 
+        "raw_log", "raw_mobil", "raw_pop", "raw_reseau", "raw_sante_soc", "raw_securite"
     ], help="Schéma du SGBD dans lequel la table est importée")
 
 # Nom de la table (moitié de ligne)

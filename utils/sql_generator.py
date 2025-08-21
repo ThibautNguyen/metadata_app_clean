@@ -547,12 +547,17 @@ def generate_sql_script(table_name: str, schema: str, columns: List[Dict], descr
     wrapped_description = []
     for line in description.split('\n'):
         if line.strip():  # Si la ligne n'est pas vide
+            # Découper la ligne en segments de 77 caractères max
             wrapped = textwrap.wrap(line, width=77)  # 77 pour tenir compte du "-- "
+            # Ajouter chaque segment avec le préfixe "--"
             wrapped_description.extend([f"-- {wrapped_line}" for wrapped_line in wrapped])
         else:
-            wrapped_description.append("--")  # Ligne vide devient juste "--"
+            # Pour les lignes vides, ajouter un commentaire vide
+            wrapped_description.append("--")
 
-    description_formatted = '\n'.join(wrapped_description)
+    # S'assurer que toutes les lignes commencent par "--"
+    description_formatted = '\n'.join(line if line.startswith('--') else f"-- {line}" 
+                                    for line in wrapped_description)
 
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
